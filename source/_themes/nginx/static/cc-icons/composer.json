@@ -1,0 +1,24 @@
+{
+"name": "cc-icons",
+"description": "CSS framework for Creative Commons logo",
+"keywords": ["font", "creative", "commons", "icon", "font", "bootstrap"],
+"homepage": "https://github.com/cc-icons/cc-icons",
+"authors": [
+{
+"name": "Ricardo Barros",
+"role": "Developer",
+"email": "richardtrle at gmail dot com",
+"web": "http://twitter.com/richardba"
+}
+],
+"extra": {
+"branch-alias": {
+"dev-master": "0.1.x-dev"
+}
+},
+"license": ["CC-BY-4.0","MIT"],
+"require-dev": {
+"jekyll": "1.0.2",
+"lessc": "1.4.2"
+}
+}
