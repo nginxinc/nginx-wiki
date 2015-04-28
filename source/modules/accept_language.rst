@@ -3,7 +3,7 @@ Accept Language Module
 
 This module is not distributed with the Nginx source. See the installation instructions.
 
-Available on github at http://github.com/giom/nginx_accept_language_module/
+Available on github at https://github.com/giom/nginx_accept_language_module/
 
 Description
 -----------
@@ -25,7 +25,7 @@ If none of the locales from ``accept_language`` is available on your website, it
 
 Installation
 ------------
-Download the module source from `github <http://github.com/giom/nginx_accept_language_module>`_.
+Download the module source from `github <https://github.com/giom/nginx_accept_language_module>`_.
 
 Unpack, and then compile nginx with:
 
@@ -38,7 +38,10 @@ Why did I create it?
 --------------------
 
 I'm using page caching with merb on a multi-lingual website and I needed a way to serve the correct language page from the cache
-I'll soon put an example on http://gom-jabbar.org
+
+..
+   Commenting out this bit due to dead link - LinuxJedi
+   I'll soon put an example on http://gom-jabbar.org
 
 Bugs
 ----
@@ -48,7 +51,7 @@ Send Bugs to Guillaume Maury (dev@gom-jabbar.org)
 Credits
 -------
 
-Thanks to Evan Miller for his `guide on writing nginx modules <http://evanmiller.org/nginx-modules-guide.html>`_.
+Thanks to Evan Miller for his `guide on writing nginx modules <http://www.evanmiller.org/nginx-modules-guide.html>`_.
 
 
 Alternative
