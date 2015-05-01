@@ -40,7 +40,7 @@ def icon_role(role, rawtext, text, lineno, inliner, options={}, content=[]):
 
 def github_role(role, rawtext, text, lineno, inliner, options={}, content=[]):
 
-    font_options = {'classes': ["fa", "fa-github"]}
+    font_options = {'classes': ["fa", "fa-github", "fa-fw"]}
     set_classes(options)
     node = reference(rawtext, text, refuri="https://github.com/"+text, **options)
     set_classes(font_options)
@@ -51,7 +51,7 @@ def github_role(role, rawtext, text, lineno, inliner, options={}, content=[]):
 
 def bitbucket_role(role, rawtext, text, lineno, inliner, options={}, content=[]):
 
-    font_options = {'classes': ["fa", "fa-bitbucket"]}
+    font_options = {'classes': ["fa", "fa-bitbucket", "fa-fw"]}
     set_classes(options)
     node = reference(rawtext, text, refuri="https://bitbucket.org/"+text, **options)
     set_classes(font_options)
@@ -66,6 +66,6 @@ def setup(app): # pragma: no cover
     app.info('Adding the font awesome github role')
     app.add_role('github', github_role)
     app.info('Adding the font awesome bitbucket role')
-    app.add_role('bitbucket', github_role)
+    app.add_role('bitbucket', bitbucket_role)
 
     return

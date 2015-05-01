@@ -8,17 +8,18 @@ Welcome to Nginx Wiki's documentation!
 
 .. _introtable:
 
-+----------------+------------------+---------------+
-| |startedicon|_ | |communityicon|_ | |moduleicon|_ |
-+----------------+------------------+---------------+
-| |startedtext|_ | |communitytext|_ | |moduletext|_ |
-+----------------+------------------+---------------+
++----------------+------------------+---------------+----------------+
+| |startedicon|_ | |communityicon|_ | |moduleicon|_ | |contribicon|_ |
++----------------+------------------+---------------+----------------+
+| |startedtext|_ | |communitytext|_ | |moduletext|_ | |contribtext|_ |
++----------------+------------------+---------------+----------------+
 
 .. toctree::
    :hidden:
 
    community/index
    modules/index
+   contributing/index
 
 .. |moduleicon| replace:: :icon:`puzzle-piece,5x`
 .. _moduleicon: modules/index.html
@@ -37,3 +38,9 @@ Welcome to Nginx Wiki's documentation!
 
 .. |startedtext| replace:: Getting Started
 .. _startedtext: start/index.html
+
+.. |contribicon| replace:: :icon:`wrench,5x`
+.. _contribicon: contributing/index.html
+
+.. |contribtext| replace:: Contributing
+.. _contribtext: contributing/index.html

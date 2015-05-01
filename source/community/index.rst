@@ -2,6 +2,5 @@ Community
 =========
 
 .. toctree::
-   :hidden:
+   :maxdepth: 2
 
-   contributing
