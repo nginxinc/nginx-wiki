@@ -38,25 +38,25 @@ Zappos, Media Temple, Heroku, RightScale, Engine Yard, and many others.
    contributing/index
    start/index
 
-.. |moduleicon| replace:: :icon:`puzzle-piece,5x`
+.. |moduleicon| replace:: :icon:`puzzle-piece`
 .. _moduleicon: modules/index.html
 
 .. |moduletext| replace:: 3\ :sup:`rd` Party Modules
 .. _moduletext: modules/index.html
 
-.. |communityicon| replace:: :icon:`users,5x`
+.. |communityicon| replace:: :icon:`users`
 .. _communityicon: community/index.html
 
 .. |communitytext| replace:: Community
 .. _communitytext: community/index.html
 
-.. |startedicon| replace:: :icon:`play,5x`
+.. |startedicon| replace:: :icon:`play`
 .. _startedicon: start/index.html
 
 .. |startedtext| replace:: Getting Started
 .. _startedtext: start/index.html
 
-.. |contribicon| replace:: :icon:`wrench,5x`
+.. |contribicon| replace:: :icon:`wrench`
 .. _contribicon: contributing/index.html
 
 .. |contribtext| replace:: Contributing

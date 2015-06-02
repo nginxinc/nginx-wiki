@@ -331,9 +331,9 @@ A few extra roles have been added to assist with creating documentation for this
 
    .. code-block:: rst
 
-      A 2x sized globe example: :icon:`globe,2x`
+      A globe example: :icon:`globe`
 
-   A 2x sized globe example: :icon:`globe,2x`
+   A globe example: :icon:`globe`
 
 .. rst:role:: github
 
