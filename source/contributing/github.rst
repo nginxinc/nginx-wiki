@@ -11,6 +11,13 @@ You will also need *python-sphinx* installed, some linux distributions have this
 
    $ pip install -U Sphinx
 
+GitHub's Two Factor Authentication
+----------------------------------
+
+If you use `two-factor authentication <https://github.com/settings/two_factor_authentication/configure>`_ with GitHub (highly recommended) you can access GitHub using the instructions outlined in this document with an access token instead of a password. This can be obtained from your `application settings page <https://github.com/settings/applications>`_.
+
+Alternatively you can use SSH to access GitHub. Simply go to your `SSH keys page <https://github.com/settings/ssh>`_, add your key and change the URLs in this document from ``https://github.com/user/project.git`` to ``git@github.com:user/project.git``.
+
 Forking
 -------
 
@@ -25,7 +32,7 @@ You then need to make your local clone aware of the upstream repository:
 .. code-block:: bash
 
    $ cd nginx-wiki
-   $ git remote add upstream https://github.com/user/nginx-wiki.git
+   $ git remote add upstream https://github.com/nginxinc/nginx-wiki.git
 
 Branch
 ------
