@@ -1,7 +1,6 @@
 {%- extends "basic/layout.html" %}
 {%- block extrahead %}
   {{ super() }}
-  <link rel="stylesheet" href="{{ pathto('_static/' + 'font-awesome-4.3.0/css/font-awesome.min.css', true) }}">
   <link rel="stylesheet" href="{{ pathto('_static/' + 'cc-icons/css/cc-icons.min.css', true) }}">
   {% if theme_touch_icon %}
     <link rel="apple-touch-icon" href="{{ pathto('_static/' ~ theme_touch_icon, 1) }}" />
@@ -25,7 +24,7 @@
       Powered by <a href="http://sphinx-doc.org/">Sphinx {{ sphinx_version }}</a>
       &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster {{ alabaster_version }}</a>
       {% endif %}
-      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><i class="cc cc-SIX"></i></a>&nbsp;This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
+      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="{{ pathto('_static/' + 'by-sa.svg', true) }}" /></i></a>&nbsp;This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
       {%- if show_source and has_source and sourcename %}
       |
       <a href="{{ pathto('_sources/' + sourcename, true)|e }}"

@@ -27,36 +27,38 @@
 
 import re
 
-from docutils.nodes import emphasis,reference,Text
+from docutils.nodes import emphasis,reference,Text,raw
 from docutils.parsers.rst.roles import set_classes
 
 def icon_role(role, rawtext, text, lineno, inliner, options={}, content=[]):
 
-    options.update({'classes': ["fa"]+["fa-" + x for x in text.split(",")]})
-    options['classes'].append('icon-holder')
-    set_classes(options)
-    node = emphasis(**options)
+    out = '<span class="icon-holder">'
+    with open("source/exts/icons/" + text + ".svg", "r") as svg:
+        out = out + svg.read() + "</span>"
+        node = raw('', text=out, format='html')
     return [node], []
 
 def github_role(role, rawtext, text, lineno, inliner, options={}, content=[]):
 
-    font_options = {'classes': ["fa", "fa-github", "fa-fw"]}
+    out = '<span class="icon-holder">'
+    with open("source/exts/icons/github.svg", "r") as svg:
+        out = out + svg.read() + "</span>"
+        node = raw('', text=out, format='html')
     set_classes(options)
     node = reference(rawtext, text, refuri="https://github.com/"+text, **options)
-    set_classes(font_options)
-    node.insert(0, emphasis(**font_options))
-    node.insert(1, Text(u"\u00A0"))
+    node.insert(0, raw('', text=out, format='html'))
 
     return [node], []
 
 def bitbucket_role(role, rawtext, text, lineno, inliner, options={}, content=[]):
 
-    font_options = {'classes': ["fa", "fa-bitbucket", "fa-fw"]}
+    out = '<span class="icon-holder">'
+    with open("source/exts/icons/bitbucket.svg", "r") as svg:
+        out = out + svg.read() + "</span>"
+        node = raw('', text=out, format='html')
     set_classes(options)
     node = reference(rawtext, text, refuri="https://bitbucket.org/"+text, **options)
-    set_classes(font_options)
-    node.insert(0, emphasis(**font_options))
-    node.insert(1, Text(u"\u00A0"))
+    node.insert(0, raw('', text=out, format='html'))
 
     return [node], []
 

@@ -602,6 +602,16 @@ a:hover tt, a:hover code {
     border: none;
 }
 
+svg {
+    height: 16px;
+    width: 16px;
+}
+
+#introtable svg {
+    width: 100px;
+    height: 100px;
+}
+
 /* misc. */
 
 .revsys-inline {
@@ -623,4 +633,20 @@ table.docutils.citation, table.docutils.citation td, table.docutils.citation th 
   -moz-box-shadow: none;
   -webkit-box-shadow: none;
   box-shadow: none;
+}
+
+.icon-holder {
+  fill: #282728;
+}
+
+.icon-holder svg {
+  vertical-align: middle;
+}
+
+a .icon-holder {
+  fill: #009639;
+}
+
+a:hover .icon-holder {
+  fill: {{ theme_link_hover }};
 }
