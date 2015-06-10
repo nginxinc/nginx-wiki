@@ -1,0 +1,7 @@
+language: python
+
+before_install:
+    - sudo apt-get install python-sphinx
+
+script:
+    - sphinx-build -nW -b html -d build/doctrees source build/html
