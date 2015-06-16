@@ -5,12 +5,6 @@ Getting Started
    :hidden:
 
    topics/recipes
-   topics/community/bugs
-   topics/community/email
-   topics/community/get_involved
-   topics/community/irc
-   topics/community/irc_ops
-   topics/community/planet
    topics/depth/ifisevil
    topics/recipes/alkaline
    topics/recipes/drupal
@@ -120,24 +114,3 @@ Advanced Deployments
       1.  :doc:`Compiling Nginx<topics/depth/compiling>`
       2.  :doc:`Adding Aditional Modules<topics/depth/modules>`
       3.  :doc:`Nginx Version Numbers<topics/depth/versions>`
-
-Getting Help
-============
-
-The Community
--------------
-
-This documentation project is entirely a community effort driven by the `Nginx
-Community Center`_ and not directly affiliated with the `Nginx Company`_. Our
-goals are different and here we care strictly about the community (you).
-
-.. _`Nginx Community Center`: http://ngx.cc/
-.. _`Nginx Company`: http://nginx.com/
-
-We offer additional resources if you get stuck or just get bored and want to talk.
-
-1. :ref:`community-irc`
-#. :ref:`community-planet`
-#. :ref:`community-email`
-#. :ref:`community-bugs`
-#. :ref:`community-get_involved`
