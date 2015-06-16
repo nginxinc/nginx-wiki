@@ -1,0 +1,42 @@
+ X accept_language
+ X audio_track
+ X auth_digest
+ X circle_gif
+ X clojure
+ X concat
+ X consistent_hash
+ X domain_resolve
+ X drizzle <--------- note: fix a few references
+ X echo
+ X extended_status
+ X fair_balancer
+ X fancy_index
+ X foot_filter
+ X form_input
+   groovy_handler
+   headers_more
+   healthcheck
+   iconv
+   java_handler
+   keepalive
+   ketama_chash
+   lua
+   memc
+   mp4_streaming
+   owner_match
+   push_stream
+   rdns
+   redis
+   redis2
+   rrd_graph
+ X secure_download
+   set_misc
+   slice
+   sr_cache
+   substitutions
+   upload
+   upload_progress
+   user_agent
+   wsgi
+ X zip
+ 
