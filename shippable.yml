@@ -3,8 +3,9 @@ language: python
 before_install:
     - sudo apt-get install python-sphinx
 
-matrix:
-    - script:
-        - sphinx-build -nW -b html -d build/doctrees source build/html
-    - script:
-        - sphinx-build -b linkcheck -d build/doctrees source build/linkcheck
+script:
+    - ".ci/${CI_TARGET}.sh"
+
+env:
+    - CI_TARGET=html
+    - CI_TARGET=linkcheck
