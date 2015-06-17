@@ -1,42 +1,42 @@
- X accept_language
- X audio_track
- X auth_digest
- X circle_gif
- X clojure
- X concat
- X consistent_hash
- X domain_resolve
- X drizzle <--------- note: fix a few references
- X echo
- X extended_status
- X fair_balancer
- X fancy_index
- X foot_filter
- X form_input
-   groovy_handler
-   headers_more
-   healthcheck
-   iconv
-   java_handler
-   keepalive
-   ketama_chash
-   lua
-   memc
-   mp4_streaming
-   owner_match
-   push_stream
-   rdns
-   redis
-   redis2
-   rrd_graph
- X secure_download
-   set_misc
-   slice
-   sr_cache
-   substitutions
-   upload
-   upload_progress
-   user_agent
-   wsgi
- X zip
+- [x] accept_language
+- [x] audio_track
+- [x] auth_digest
+- [x] circle_gif
+- [x] clojure
+- [x] concat
+- [x] consistent_hash
+- [x] domain_resolve
+- [x] drizzle <--------- note: fix a few references
+- [x] echo
+- [x] extended_status
+- [x] fair_balancer
+- [x] fancy_index
+- [x] foot_filter
+- [x] form_input
+- [x] groovy_handler
+- [x] headers_more <---- note: assert :doc:`echo module <echo>` works...
+- [x] healthcheck
+- [x] iconv
+- [x] java_handler
+- [x] keepalive <------- note: obsolete?
+- [ ] ketama_chash
+- [ ] lua
+- [ ] memc
+- [ ] mp4_streaming
+- [ ] owner_match
+- [ ] push_stream
+- [ ] rdns
+- [ ] redis
+- [ ] redis2
+- [ ] rrd_graph
+- [x] secure_download
+- [ ] set_misc
+- [ ] slice
+- [ ] sr_cache
+- [ ] substitutions
+- [ ] upload
+- [ ] upload_progress
+- [ ] user_agent
+- [ ] wsgi
+- [x] zip
  
