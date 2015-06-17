@@ -285,4 +285,7 @@ texinfo_documents = [
 #texinfo_no_detailmenu = False
 
 
-linkcheck_ignore = [r'https://github.com/nginxinc/nginx-wiki.*']
+linkcheck_ignore = [
+                    r'https://github.com/nginxinc/nginx-wiki.*',
+                    r'http://.*sourceforge.net/.*'
+                   ]

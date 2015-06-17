@@ -96,7 +96,7 @@ This goes into dokuwiki.conf, for convenience.  This is basically the same as th
     }
 
 You can force your users to switch to SSL for login and administration.
-As also displayed on the page `HTTPS Login for Dokuwiki <http://www.dokuwiki.org/tips:httpslogin#nginx>`_, you have to create two ``server{}`` instances.
+As also displayed on the page `HTTPS Login for Dokuwiki <https://www.dokuwiki.org/tips:httpslogin#nginx>`_, you have to create two ``server{}`` instances.
 
 .. code-block:: nginx
 
