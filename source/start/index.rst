@@ -4,10 +4,15 @@ Getting Started
 .. toctree::
    :hidden:
 
-   topics/recipes
    topics/depth/ifisevil
+   topics/examples/dynamic_ssi
+   topics/examples/full
+   topics/examples/server_blocks
    topics/recipes/alkaline
+   topics/recipes/cms_made_simple
+   topics/recipes/codeigniter
    topics/recipes/drupal
+   topics/recipes/dokuwiki
    topics/recipes/mailman
    topics/recipes/pmwiki
    topics/tutorials/basics_linux
@@ -22,7 +27,7 @@ is NOT Apache. It is not lighttpd. It is not IIS. A successful Nginx deployment
 requires basic understanding of your server and of Nginx configuration. In this
 tutorial, we aim to get you through the "bare minimum" basics.
 
-1.  :doc:`Getting Started with Linux<topics/tutorials/basics_linux>`
+* :doc:`Getting Started with Linux<topics/tutorials/basics_linux>`
 
 .. todo::
    ..
@@ -42,7 +47,7 @@ and get rocking with Nginx. Are you excited yet?
       2.  :doc:`The Static Content Configuration<topics/tutorials/config_static>`
       3.  :doc:`The Dynamic Content Configuration<topics/tutorials/config_dynamic>`
 
-4.  :doc:`Things to Avoid at all Costs<topics/tutorials/config_pitfalls>`
+* :doc:`Things to Avoid at all Costs<topics/tutorials/config_pitfalls>`
 
 Tutorial 3: Dynamic Content
 ---------------------------
@@ -56,7 +61,7 @@ focusses on getting you familiar with how Nginx serves dynamic content.
    ..
       1.  :doc:`Why is it Different<topics/tutorials/dynamic_why>`
 
-2.  :doc:`Serving PHP<topics/tutorials/dynamic_php>`
+* :doc:`Serving PHP<topics/tutorials/dynamic_php>`
 
 .. todo::
    ..
@@ -79,9 +84,14 @@ address these quirks and then share the resulting configurations. This has
 resulted in many "copy and paste" configurations that are almost guaranteed
 to work.
 
-.. todo::
-   ..
-      1.  :doc:`Application Configurations<topics/apps>`
+* :doc:`topics/recipes/alkaline`
+* :doc:`topics/recipes/cms_made_simple`
+* :doc:`topics/recipes/codeigniter`
+* :doc:`topics/recipes/dokuwiki`
+* :doc:`topics/recipes/drupal`
+* :doc:`topics/recipes/mailman`
+* :doc:`topics/recipes/pmwiki`
+
 
 Other Examples
 --------------
@@ -90,9 +100,9 @@ Of course, Nginx can do much more. We're barely scratching the surface. If
 you're interested, you can take a look at some other examples that have been
 developed.
 
-.. todo::
-   ..
-      1.  :doc:`Examples<topics/examples>`
+* :doc:`topics/examples/full`
+* :doc:`topics/examples/server_blocks`
+* :doc:`topics/examples/dynamic_ssi`
 
 Nginx in Depth
 ==============
@@ -100,9 +110,10 @@ Nginx in Depth
 Tricky Concepts
 ---------------
 
+1.  :doc:`Why IF Really is Evil<topics/depth/ifisevil>`
+
 .. todo::
    ..
-      1.  :doc:`Why IF Really is Evil<topics/depth/if>`
       2.  :doc:`How Rewrites Work<topics/depth/rewrites>`
       3.  :doc:`The Tricky Location Blocks<topics/depth/location>`
 

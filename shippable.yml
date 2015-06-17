@@ -4,4 +4,8 @@ before_install:
     - sudo apt-get install python-sphinx
 
 script:
-    - sphinx-build -nW -b html -d build/doctrees source build/html
+    - ".ci/${CI_TARGET}.sh"
+
+env:
+    - CI_TARGET=html
+    - CI_TARGET=linkcheck

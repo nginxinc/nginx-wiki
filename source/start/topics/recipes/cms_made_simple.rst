@@ -1,0 +1,32 @@
+CMS Made Simple
+===============
+
+"CMS Made Simple - the open source content management system for the rest of us."
+
+Requirements
+------------
+
+* :ref:`tutorials-phpfpm`
+
+Recipe
+------
+
+.. code-block:: nginx
+
+    server {
+            listen 80;
+            server_name .domain.tld;
+            root /var/www/cms;  # Directory root of your CMS.
+            index index.php index.html index.htm;
+
+            location / {
+                    try_files $uri $uri/ /index.php?page=$request_uri;
+            }
+
+            location ~ \.php$ {
+                    include fastcgi_params;
+                    fastcgi_pass 127.0.0.1:9000;
+                    fastcgi_index index.php;
+                    fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+            }
+    }
