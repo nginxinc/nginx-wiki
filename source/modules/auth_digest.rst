@@ -178,6 +178,6 @@ This module is licensed under the terms of the `BSD license <https://github.com/
 See Also
 --------
 
-* The `RFC 2617 <http://www.ietf.org/rfc/rfc2617.txt RFC 2617>`_ definition of basic and digest authentication.
-* Shane Holloway's werkzeug `module <https://bitbucket.org/shanewholloway/werkzeug-main/src/tip/werkzeug/contrib/authdigest.py>`_ which was used as a reference implementation.
+* The `RFC 2617 <http://www.ietf.org/rfc/rfc2617.txt>`_ definition of basic and digest authentication.
+* Shane Holloway's werkzeug `module <https://github.com/shanewholloway/werkzeug/blob/master/werkzeug/contrib/authdigest.py>`_ which was used as a reference implementation.
 

@@ -16,7 +16,7 @@ are wrong, but a scary number of them are. Even the Linode library has poor
 quality information that some Nginx community members have futily attempted to
 correct.
 
-The Ngx CC Docs were created and reviewed by community members that work
+These docs were created and reviewed by community members that work
 directly with all types of Nginx users. This specific document exists only
 because of the volume of common and recurring issues that community members see.
 

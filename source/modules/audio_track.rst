@@ -69,7 +69,7 @@ This module is under heavy development. Feedbacks, issues and patches are welcom
 Requirements
 ------------
 
-This module depends from some libraries (headers and shared objects) which has to be installed before it, all are commonly distributed with `FFmpeg <http://ffmpeg.org FFmpeg>`_:
+This module depends from some libraries (headers and shared objects) which has to be installed before it, all are commonly distributed with `FFmpeg <http://ffmpeg.org>`_:
 
 * avformat >= 55.0.0 (tested version: 55.0.0)
 * avcodec >= 55.3.0 (tested version: 55.3.0)
@@ -93,7 +93,7 @@ Follow the steps:
 
      $ git clone git://github.com/flavioribeiro/nginx-audio-track-for-hls-module.git
 
-* Clone `Lua module <https://github.com/chaoslawful/lua-nginx-module>`_
+* Clone `Lua module <https://github.com/openresty/lua-nginx-module>`_
 
   .. code-block:: bash
 
