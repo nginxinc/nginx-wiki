@@ -18,12 +18,14 @@ section of the tutorial.
 ..
   Dead link now
   - Basic Linux Commands via `Google Code University`_
+
 - Command Line Introduction via `tuxFiles`_
 - Learning the Shell via `LinuxCommand`_
 
 ..
   Dead link now
   .. _Google Code University: http://code.google.com/edu/tools101/linux/basics.html
+
 .. _tuXfiles: http://www.tuxfiles.org/linuxhelp/cli.html
 .. _LinuxCommand: http://linuxcommand.org/learning_the_shell.php
 
