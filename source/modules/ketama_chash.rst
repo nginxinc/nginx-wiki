@@ -1,37 +1,50 @@
 Upstream Ketama CHash
 =====================
 
-= ngx_http_upstream_hash_module =
+Description
+-----------
 
-''This module is not distributed with the Nginx source. Installation instructions are [[#Installation|Installation]] below.''
+**usptream_ketama_chash module** - a load balancer which provides upstream load distribution by hashing a configurable variable using ketama consistent hashing algorithm. 
 
-The usptream_ketama_chash module is a load balancer which provides upstream load distribution by hashing a configurable variable using ketama consistent hashing algorithm. 
+.. note:: *This module is not distributed with the Nginx source.* See the installation instructions_.
 
-== Directives ==
+Directives
+----------
 
-=== hash ===
-'''syntax''' ''ketama_chash $variable''
+hash
+^^^^
 
-'''context''' ''upstream''
+:Syntax: ``ketama_chash`` *$variable*
+:Default: *none*
+:Context: *upstream*
 
-Enables upstream ketama consistent hashing of $variable.
+Enables upstream ketama consistent hashing of *$variable*.
 
-== Synopsis ==
+Synopsis
+--------
 
- upstream backend {
-     ...
-     ketama_chash    $uri;
- }
+.. code-block:: nginx
 
-== Installation ==
+  upstream backend {
+      ...
+      ketama_chash    $uri;
+  }
 
-This module is not distributed with the Nginx source. You can download the request_hash module from [https://github.com/flygoast/ngx_http_upstream_ketama_chash Github]
+.. _installation instructions:
 
- cd nginx-*version*
- ./configure --add-module=/path/to/this/directory
- make
- make install
+Installation
+------------
 
-== Bugs ==
+This module is not distributed with the Nginx source. You can download the request_hash module from `Github <https://github.com/flygoast/ngx_http_upstream_ketama_chash>`_.
 
-Send bug reports to [https://github.com/flygoast/ngx_http_upstream_ketama_chash FengGu] .
+.. code-block:: bash
+
+  cd nginx-*version*
+  ./configure --add-module=/path/to/this/directory
+  make
+  make install
+
+Bugs
+----
+
+Send bug reports to `FengGu <https://github.com/flygoast/ngx_http_upstream_ketama_chash>`_.

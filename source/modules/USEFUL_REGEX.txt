@@ -1,5 +1,3 @@
-for headings
-
 \n= (.*?) =\s*\n
 \n\1\n-------------\n\n
 
@@ -12,10 +10,10 @@ for headings
 <code>([.\n]*?)</code>
 ``\1``
 
-<pre>([.\n]*?)</pre>
+<pre>(.*?)</pre>
 .. code-block:: \n\1\n
 
-<geshi lang="(.*?)">([.\n]*?)</geshi>
+<geshi lang="(.*?)">(.*?)</geshi>
 .. code-block:: \1\n\2\n
 
 \*([^\s].*?)\*

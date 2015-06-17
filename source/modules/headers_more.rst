@@ -1,143 +1,147 @@
 Headers More
 ============
 
-= Name =
+Name
+----
 
-'''ngx_headers_more''' - Set and clear input and output headers...more than "add"!
+**ngx_headers_more** - Set and clear input and output headers...more than "add"!
 
-''This module is not distributed with the Nginx source.'' See [[#Installation|the installation instructions]].
+.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions`_.
 
-= Version =
+Version
+-------
 
-This document describes headers-more-nginx-module [http://github.com/agentzh/headers-more-nginx-module/tags v0.25] released on 10 January 2014.
+This document describes headers-more-nginx-module `v0.25 <http://github.com/agentzh/headers-more-nginx-module/tags>`_ released on 10 January 2014.
 
-= Synopsis =
+Synopsis
+--------
 
-<geshi lang="nginx">
-    # set the Server output header
-    more_set_headers 'Server: my-server';
+.. code-block:: nginx
 
-    # set and clear output headers
-    location /bar {
-        more_set_headers 'X-MyHeader: blah' 'X-MyHeader2: foo';
-        more_set_headers -t 'text/plain text/css' 'Content-Type: text/foo';
-        more_set_headers -s '400 404 500 503' -s 413 'Foo: Bar';
-        more_clear_headers 'Content-Type';
-        
-        # your proxy_pass/memcached_pass/or any other config goes here...
-    }
+  # set the Server output header
+  more_set_headers 'Server: my-server';
 
-    # set output headers
-    location /type {
-        more_set_headers 'Content-Type: text/plain';
-        # ...
-    }
+  # set and clear output headers
+  location /bar {
+      more_set_headers 'X-MyHeader: blah' 'X-MyHeader2: foo';
+      more_set_headers -t 'text/plain text/css' 'Content-Type: text/foo';
+      more_set_headers -s '400 404 500 503' -s 413 'Foo: Bar';
+      more_clear_headers 'Content-Type';
+      
+      # your proxy_pass/memcached_pass/or any other config goes here...
+  }
 
-    # set input headers
-    location /foo {
-        set $my_host 'my dog';
-        more_set_input_headers 'Host: $my_host';
-        more_set_input_headers -t 'text/plain' 'X-Foo: bah';
-       
-        # now $host and $http_host have their new values...
-        # ...
-    }
+  # set output headers
+  location /type {
+      more_set_headers 'Content-Type: text/plain';
+      # ...
+  }
 
-    # replace input header X-Foo *only* if it already exists
-    more_set_input_headers -r 'X-Foo: howdy';
-</geshi>
+  # set input headers
+  location /foo {
+      set $my_host 'my dog';
+      more_set_input_headers 'Host: $my_host';
+      more_set_input_headers -t 'text/plain' 'X-Foo: bah';
+     
+      # now $host and $http_host have their new values...
+      # ...
+  }
 
-= Description =
+  # replace input header X-Foo *only* if it already exists
+  more_set_input_headers -r 'X-Foo: howdy';
+
+Description
+-----------
 
 This module allows you to add, set, or clear any output
 or input header that you specify.
 
 This is an enhanced version of the standard
-[[HttpHeadersModule|headers]] module because it provides more utilities like
-resetting or clearing "builtin headers" like <code>Content-Type</code>,
-<code>Content-Length</code>, and <code>Server</code>.
+`headers <http://nginx.org/en/docs/http/ngx_http_headers_module.html>`_ module because it provides more utilities like
+resetting or clearing "builtin headers" like ``Content-Type``,
+``Content-Length``, and ``Server``.
 
 It also allows you to specify an optional HTTP status code
-criteria using the <code>-s</code> option and an optional content
-type criteria using the <code>-t</code> option while modifying the
-output headers with the [[#more_set_headers|more_set_headers]] and
-[[#more_clear_headers|more_clear_headers]] directives. For example,
+criteria using the ``-s`` option and an optional content
+type criteria using the ``-t`` option while modifying the
+output headers with the more_set_headers_ and
+more_clear_headers_ directives. For example,
 
-<geshi lang="nginx">
-    more_set_headers -s 404 -t 'text/html' 'X-Foo: Bar';
-</geshi>
+.. code-block:: nginx
+
+  more_set_headers -s 404 -t 'text/html' 'X-Foo: Bar';
 
 Input headers can be modified as well. For example
 
-<geshi lang="nginx">
-    location /foo {
-        more_set_input_headers 'Host: foo' 'User-Agent: faked';
-        # now $host, $http_host, $user_agent, and
-        #   $http_user_agent all have their new values.
-    }
-</geshi>
+.. code-block:: nginx
 
-The option <code>-t</code> is also available in the
-[[#more_set_input_headers|more_set_input_headers]] and
-[[#more_clear_input_headers|more_clear_input_headers]] directives (for request header filtering) while the <code>-s</code> option
-is not allowed.
+  location /foo {
+      more_set_input_headers 'Host: foo' 'User-Agent: faked';
+      # now $host, $http_host, $user_agent, and
+      #   $http_user_agent all have their new values.
+  }
 
-Unlike the standard [[HttpHeadersModule|headers]] module, this module's directives will by
-default apply to all the status codes, including <code>4xx</code> and <code>5xx</code>.
 
-= Directives =
 
-== more_set_headers ==
-'''syntax:''' ''more_set_headers [-t <content-type list>]... [-s <status-code list>]... <new-header>...''
+The option ``-t`` is also available in the
+more_set_input_headers_ andmore_clear_input_headers_ directives (for request header filtering) while the ``-s`` option is not allowed.
 
-'''default:''' ''no''
+Unlike the standard `headers <http://nginx.org/en/docs/http/ngx_http_headers_module.html>`_ module, this module's directives will by
+default apply to all the status codes, including ``4xx`` and ``5xx``.
 
-'''context:''' ''http, server, location, location if''
+Directives
+----------
 
-'''phase:''' ''output-header-filter''
+more_set_headers
+^^^^^^^^^^^^^^^^
 
-Replaces (if any) or adds (if not any) the specified output headers when the response status code matches the codes specified by the <code>-s</code> option ''AND'' the response content type matches the types specified by the <code>-t</code> option.
+:Syntax: ``more_set_headers [-t <``\ *content-type list*\ ``>]... [-s <``\ *status-code list*\ ``>]... <``\ *new-header*\ ``>...``
+:Default: *none*
+:Context: *http, server, location, location if*
+:Phase: *output-header-filter*
 
-If either <code>-s</code> or <code>-t</code> is not specified or has an empty list value, then no match is required. Therefore, the following directive set the <code>Server</code> output header to the custom value for ''any'' status code and ''any'' content type:
+Replaces (if any) or adds (if not any) the specified output headers when the response status code matches the codes specified by the ``-s`` option *AND* the response content type matches the types specified by the ``-t`` option.
 
-<geshi lang="nginx">
+If either ``-s`` or ``-t`` is not specified or has an empty list value, then no match is required. Therefore, the following directive set the ``Server`` output header to the custom value for *any* status code and *any* content type:
+
+.. code-block:: nginx
+
   more_set_headers    "Server: my_server";
-</geshi>
 
-Existing response headers with the same name are always overridden. If you want to add headers incrementally, use the standard [[HttpHeadersModule#add_header|add_header]] directive instead.
+Existing response headers with the same name are always overridden. If you want to add headers incrementally, use the standard `add_header <http://nginx.org/en/docs/http/ngx_http_headers_module.html#add_header>`_ directive instead.
 
 A single directive can set/add multiple output headers. For example
 
-<geshi lang="nginx">
+.. code-block:: nginx
+
   more_set_headers 'Foo: bar' 'Baz: bah';
-</geshi>
 
 Multiple occurrences of the options are allowed in a single directive. Their values will be merged together. For instance
 
-<geshi lang="nginx">
+.. code-block:: nginx
+
   more_set_headers -s 404 -s '500 503' 'Foo: bar';
-</geshi>
 
 is equivalent to
 
-<geshi lang="nginx">
+.. code-block:: nginx
+
   more_set_headers -s '404 500 503' 'Foo: bar';
-</geshi>
 
 The new header should be the one of the forms:
 
-# <code>Name: Value</code>
-# <code>Name: </code>
-# <code>Name</code>
+# ``Name: Value``
+# ``Name: ``
+# ``Name``
 
-The last two effectively clear the value of the header <code>Name</code>.
+The last two effectively clear the value of the header ``Name``.
 
 Nginx variables are allowed in header values. For example:
 
-<geshi lang="nginx">
-   set $my_var "dog";
-   more_set_headers "Server: $my_var";
-</geshi>
+.. code-block:: nginx
+
+  set $my_var "dog";
+  more_set_headers "Server: $my_var";
 
 But variables won't work in header keys due to performance considerations.
 
@@ -145,223 +149,249 @@ Multiple set/clear header directives are allowed in a single location, and they'
 
 Directives inherited from an upper level scope (say, http block or server blocks) are executed before the directives in the location block.
 
-Note that although <code>more_set_headers</code> is allowed in ''location'' if blocks, it is ''not'' allowed in the ''server'' if blocks, as in
+Note that although ``more_set_headers`` is allowed in *location* if blocks, it is *not* allowed in the *server* if blocks, as in
 
-<geshi lang="nginx">
-      ?  # This is NOT allowed!
-      ?  server {
-      ?      if ($args ~ 'download') {
-      ?          more_set_headers 'Foo: Bar';
-      ?      }
-      ?      ...
-      ?  }
-</geshi>
+.. code-block:: nginx
 
-Behind the scene, use of this directive and its friend [[#more_clear_headers|more_clear_headers]] will (lazily) register an ouput header filter that modifies <code>r->headers_out</code> the way you specify.
+  ?  # This is NOT allowed!
+  ?  server {
+  ?      if ($args ~ 'download') {
+  ?          more_set_headers 'Foo: Bar';
+  ?      }
+  ?      ...
+  ?  }
 
-== more_clear_headers ==
-'''syntax:''' ''more_clear_headers [-t <content-type list>]... [-s <status-code list>]... <new-header>...''
+Behind the scene, use of this directive and its friend more_clear_headers_ will (lazily) register an ouput header filter that modifies ``r->headers_out`` the way you specify.
 
-'''default:''' ''no''
+more_clear_headers
+^^^^^^^^^^^^^^^^^^
 
-'''context:''' ''http, server, location, location if''
-
-'''phase:''' ''output-header-filter''
+:Syntax: ``more_clear_headers [-t <``\ *content-type list*\ ``>]... [-s <``\ *status-code list*\ ``>]... <``\ *new-header*\ ``>...``
+:Default: *none*
+:Context: *http, server, location, location if*
+:Phase: *output-header-filter*
 
 Clears the specified output headers.
 
 In fact,
 
-<geshi lang="nginx">
-   more_clear_headers -s 404 -t 'text/plain' Foo Baz;
-</geshi>
+.. code-block:: nginx
+
+  more_clear_headers -s 404 -t 'text/plain' Foo Baz;
 
 is exactly equivalent to
 
-<geshi lang="nginx">
-   more_set_headers -s 404 -t 'text/plain' "Foo: " "Baz: ";
-</geshi>
+.. code-block:: nginx
+
+  more_set_headers -s 404 -t 'text/plain' "Foo: " "Baz: ";
 
 or
 
-<geshi lang="nginx">
-   more_set_headers -s 404 -t 'text/plain' Foo Baz
-</geshi>
+.. code-block:: nginx
 
-See [[#more_set_headers|more_set_headers]] for more details.
+  more_set_headers -s 404 -t 'text/plain' Foo Baz
 
-Wildcard <code>*</code> can also be used to specify a header name pattern. For example, the following directive effectively clears ''any'' output headers starting by "<code>X-Hidden-</code>":
+See more_set_headers_ for more details.
 
-<geshi lang="nginx">
-    more_clear_headers 'X-Hidden-*';
-</geshi>
+Wildcard ``*`` can also be used to specify a header name pattern. For example, the following directive effectively clears *any* output headers starting by "``X-Hidden-``":
 
-The <code>*</code> wildcard support was first introduced in [[#v0.09|v0.09]].
+.. code-block:: nginx
 
-== more_set_input_headers ==
-'''syntax:''' ''more_set_input_headers [-r] [-t <content-type list>]... <new-header>...''
+  more_clear_headers 'X-Hidden-*';
 
-'''default:''' ''no''
+The ``*`` wildcard support was first introduced in `v0.09 <http://github.com/agentzh/headers-more-nginx-module/tags>`_.
 
-'''context:''' ''http, server, location, location if''
+more_set_input_headers
+^^^^^^^^^^^^^^^^^^^^^^
 
-'''phase:''' ''rewrite tail''
+:Syntax: ``more_set_input_headers [-r] [-t <``\ *content-type list*\ ``>]... <``\ *new-header*\ ``>...``
+:Default: *none*
+:Context: *http, server, location, location if*
+:Phase: *rewrite tail*
 
-Very much like [[#more_set_headers|more_set_headers]] except that it operates on input headers (or request headers) and it only supports the <code>-t</code> option.
+Very much like more_set_headers_ except that it operates on input headers (or request headers) and it only supports the ``-t`` option.
 
-Note that using the <code>-t</code> option in this directive means filtering by the <code>Content-Type</code> ''request'' header, rather than the response header.
+Note that using the ``-t`` option in this directive means filtering by the ``Content-Type`` *request* header, rather than the response header.
 
-Behind the scene, use of this directive and its friend [[#more_clear_input_headers|more_clear_input_headers]] will (lazily) register a <code>rewrite phase</code> handler that modifies <code>r->headers_in</code> the way you specify. Note that it always run at the ''end'' of the <code>rewrite</code> so that it runs ''after'' the standard [[HttpRewriteModule|rewrite module]] and works in subrequests as well.
+Behind the scene, use of this directive and its friend more_clear_input_headers_ will (lazily) register a ``rewrite phase`` handler that modifies ``r->headers_in`` the way you specify. Note that it always run at the *end* of the ``rewrite`` so that it runs *after* the standard `rewrite module <http://nginx.org/en/docs/http/ngx_http_rewrite_module.html>`_ and works in subrequests as well.
 
-If the <code>-r</code> option is specified, then the headers will be replaced to the new values ''only if'' they already exist.
+If the ``-r`` option is specified, then the headers will be replaced to the new values *only if* they already exist.
 
-== more_clear_input_headers ==
-'''syntax:''' ''more_clear_input_headers [-t <content-type list>]... <new-header>...''
+more_clear_input_headers
+^^^^^^^^^^^^^^^^^^^^^^^^
 
-'''default:''' ''no''
-
-'''context:''' ''http, server, location, location if''
-
-'''phase:''' ''rewrite tail''
+:Syntax: ``more_clear_input_headers [-t <``\ *content-type list*\ ``>]... <``\ *new-header*\ ``>...``
+:Default: *none*
+:Context: *http, server, location, location if*
+:Phase: *rewrite tail*
 
 Clears the specified input headers.
 
 In fact,
 
-<geshi lang="nginx">
-   more_clear_input_headers -s 404 -t 'text/plain' Foo Baz;
-</geshi>
+.. code-block:: nginx
+
+  more_clear_input_headers -s 404 -t 'text/plain' Foo Baz;
 
 is exactly equivalent to
 
-<geshi lang="nginx">
-   more_set_input_headers -s 404 -t 'text/plain' "Foo: " "Baz: ";
-</geshi>
+.. code-block:: nginx
+
+  more_set_input_headers -s 404 -t 'text/plain' "Foo: " "Baz: ";
 
 or
 
-<geshi lang="nginx">
-   more_set_input_headers -s 404 -t 'text/plain' Foo Baz
-</geshi>
+.. code-block:: nginx
 
-See [[#more_set_input_headers|more_set_input_headers]] for more details.
+  more_set_input_headers -s 404 -t 'text/plain' Foo Baz
 
-= Limitations =
+See more_set_input_headers_ for more details.
 
-* Unlike the standard [[HttpHeadersModule|headers]] module, this module does not automatically take care of the constraint among the <code>Expires</code>, <code>Cache-Control</code>, and <code>Last-Modified</code> headers. You have to get them right yourself or use the [[HttpHeadersModule|headers]] module together with this module.
-* You cannot remove the <code>Connection</code> response header using this module because the <code>Connection</code> response header is generated by the standard <code>ngx_http_header_filter_module</code> in the Nginx core, whose output header filter runs always ''after'' the filter of this module. The only way to actually remove the <code>Connection</code> header is to patch the Nginx core, that is, editing the C function <code>ngx_http_header_filter</code> in the <code>src/http/ngx_http_header_filter_module.c</code> file.
+Limitations
+-----------
 
-= Installation =
+* Unlike the standard `headers <http://nginx.org/en/docs/http/ngx_http_headers_module.html>`_ module, this module does not automatically take care of the constraint among the ``Expires``, ``Cache-Control``, and ``Last-Modified`` headers. You have to get them right yourself or use the `headers <http://nginx.org/en/docs/http/ngx_http_headers_module.html>`_ module together with this module.
+* You cannot remove the ``Connection`` response header using this module because the ``Connection`` response header is generated by the standard ``ngx_http_header_filter_module`` in the Nginx core, whose output header filter runs always *after* the filter of this module. The only way to actually remove the ``Connection`` header is to patch the Nginx core, that is, editing the C function ``ngx_http_header_filter`` in the ``src/http/ngx_http_header_filter_module.c`` file.
 
-Grab the nginx source code from [http://nginx.org/ nginx.org], for example,
-the version 1.7.7 (see [[#Compatibility|nginx compatibility]]), and then build the source with this module:
+.. _installation instructions: 
 
-<geshi lang="bash">
-    wget 'http://nginx.org/download/nginx-1.7.7.tar.gz'
-    tar -xzvf nginx-1.7.7.tar.gz
-    cd nginx-1.7.7/
-    
-    # Here we assume you would install you nginx under /opt/nginx/.
-    ./configure --prefix=/opt/nginx \
-        --add-module=/path/to/headers-more-nginx-module
-     
-    make
-    make install
-</geshi>
+Installation
+------------
 
-Download the latest version of the release tarball of this module from [http://github.com/agentzh/headers-more-nginx-module/tags headers-more-nginx-module file list].
+Grab the nginx source code from `nginx.org <http://nginx.org/>`_, for example,
+the version 1.7.7 (see `nginx compatibility`_), and then build the source with this module:
 
-Also, this module is included and enabled by default in the [http://openresty.org ngx_openresty bundle].
+.. code-block:: bash
 
-= Compatibility =
+  wget 'http://nginx.org/download/nginx-1.7.7.tar.gz'
+  tar -xzvf nginx-1.7.7.tar.gz
+  cd nginx-1.7.7/
+
+  # Here we assume you would install you nginx under /opt/nginx/.
+  ./configure --prefix=/opt/nginx \
+      --add-module=/path/to/headers-more-nginx-module
+   
+  make
+  make install
+
+
+
+Download the latest version of the release tarball of this module from `headers-more-nginx-module file list <http://github.com/agentzh/headers-more-nginx-module/tags>`_.
+
+Also, this module is included and enabled by default in the `ngx_openresty bundle <http://openresty.org>`_.
+
+.. _nginx compatibility:
+
+Compatibility
+-------------
 
 The following versions of Nginx should work with this module:
 
-* '''1.7.x'''                       (last tested: 1.7.7)
-* '''1.6.x'''                       (last tested: 1.6.2)
-* '''1.5.x'''                       (last tested: 1.5.8)
-* '''1.4.x'''                       (last tested: 1.4.4)
-* '''1.3.x'''                       (last tested: 1.3.7)
-* '''1.2.x'''                       (last tested: 1.2.9)
-* '''1.1.x'''                       (last tested: 1.1.5)
-* '''1.0.x'''                       (last tested: 1.0.11)
-* '''0.9.x'''                       (last tested: 0.9.4)
-* '''0.8.x'''                       (last tested: 0.8.54)
-* '''0.7.x >= 0.7.44'''             (last tested: 0.7.68)
+* **1.7.x**                       (last tested: 1.7.7)
+* **1.6.x**                       (last tested: 1.6.2)
+* **1.5.x**                       (last tested: 1.5.8)
+* **1.4.x**                       (last tested: 1.4.4)
+* **1.3.x**                       (last tested: 1.3.7)
+* **1.2.x**                       (last tested: 1.2.9)
+* **1.1.x**                       (last tested: 1.1.5)
+* **1.0.x**                       (last tested: 1.0.11)
+* **0.9.x**                       (last tested: 0.9.4)
+* **0.8.x**                       (last tested: 0.8.54)
+* **0.7.x >= 0.7.44**             (last tested: 0.7.68)
 
-Earlier versions of Nginx like 0.6.x and 0.5.x will ''not'' work.
+Earlier versions of Nginx like 0.6.x and 0.5.x will *not* work.
 
-If you find that any particular version of Nginx above 0.7.44 does not work with this module, please consider [[#Report Bugs|reporting a bug]].
+If you find that any particular version of Nginx above 0.7.44 does not work with this module, please consider `reporting a bug`_.
 
-= Community =
+.. _OpenResty community:
 
-== English Mailing List ==
+Community
+---------
 
-The [https://groups.google.com/group/openresty-en openresty-en] mailing list is for English speakers.
+English Mailing List
+^^^^^^^^^^^^^^^^^^^^
 
-== Chinese Mailing List ==
+The `openresty-en <https://groups.google.com/group/openresty-en>`_ mailing list is for English speakers.
 
-The [https://groups.google.com/group/openresty openresty] mailing list is for Chinese speakers.
+Chinese Mailing List
+^^^^^^^^^^^^^^^^^^^^
 
-= Bugs and Patches =
+The `openresty <https://groups.google.com/group/openresty>`_ mailing list is for Chinese speakers.
+
+.. _reporting a bug:
+
+Bugs and Patches
+----------------
 
 Please submit bug reports, wishlists, or patches by
 
-# creating a ticket on the [http://github.com/chaoslawful/lua-nginx-module/issues GitHub Issue Tracker],
-# or posting to the [[#Community|OpenResty community]].
+# creating a ticket on the `GitHub Issue Tracker <http://github.com/chaoslawful/lua-nginx-module/issues>`_,
+# or posting to the `OpenResty community`_.
 
-= Source Repository =
+.. _source repository: 
 
-Available on github at [http://github.com/agentzh/headers-more-nginx-module agentzh/headers-more-nginx-module].
+Source Repository
+-----------------
 
-= Changes =
+Available on github at `agentzh/headers-more-nginx-module <http://github.com/agentzh/headers-more-nginx-module>`_.
+
+Changes
+-------
 
 The changes of every release of this module can be obtained from the ngx_openresty bundle's change logs:
 
 http://openresty.org/#Changes
 
-= Test Suite =
+Test Suite
+----------
 
-This module comes with a Perl-driven test suite. The [http://github.com/agentzh/headers-more-nginx-module/tree/master/t/ test cases] are
-[http://github.com/agentzh/headers-more-nginx-module/blob/master/t/sanity.t declarative] too. Thanks to the [http://search.cpan.org/perldoc?Test::Nginx Test::Nginx] module in the Perl world.
+This module comes with a Perl-driven test suite. The `test cases <http://github.com/agentzh/headers-more-nginx-module/tree/master/t/>`_ are
+`declarative <http://github.com/agentzh/headers-more-nginx-module/blob/master/t/sanity.t>`_ too. Thanks to the `Test::Nginx <http://search.cpan.org/perldoc?Test::Nginx>`_ module in the Perl world.
 
 To run it on your side:
 
-<geshi lang="bash">
-    $ PATH=/path/to/your/nginx-with-headers-more-module:$PATH prove -r t
-</geshi>
+.. code-block:: bash
+
+  $ PATH=/path/to/your/nginx-with-headers-more-module:$PATH prove -r t
 
 To run the test suite with valgrind's memcheck, use the following commands:
 
-<geshi lang="bash">
-    $ export PATH=/path/to/your/nginx-with-headers-more-module:$PATH
-    $ TEST_NGINX_USE_VALGRIND=1 prove -r t
-</geshi>
+.. code-block:: bash
+
+  $ export PATH=/path/to/your/nginx-with-headers-more-module:$PATH
+  $ TEST_NGINX_USE_VALGRIND=1 prove -r t
+
 
 You need to terminate any Nginx processes before running the test suite if you have changed the Nginx server binary.
 
-Because a single nginx server (by default, <code>localhost:1984</code>) is used across all the test scripts (<code>.t</code> files), it's meaningless to run the test suite in parallel by specifying <code>-jN</code> when invoking the <code>prove</code> utility.
+Because a single nginx server (by default, ``localhost:1984``) is used across all the test scripts (``.t`` files), it's meaningless to run the test suite in parallel by specifying ``-jN`` when invoking the ``prove`` utility.
 
-Some parts of the test suite requires modules [[HttpProxyModule|proxy]], [[HttpRewriteModule|rewrite]], and [[HttpEchoModule|echo]] to be enabled as well when building Nginx.
+Some parts of the test suite requires modules `proxy <http://nginx.org/en/docs/http/ngx_http_proxy_module.html>`_, `rewrite <http://nginx.org/en/docs/http/ngx_http_rewrite_module.html>`_, and :doc:`echo <echo>` to be enabled as well when building Nginx.
 
-= TODO =
+TODO
+----
 
 * Support variables in new headers' keys.
 
-= Getting involved =
+Getting involved
+----------------
 
-You'll be very welcomed to submit patches to the [[#Author|author]] or just ask for a commit bit to the [[#Source Repository|source repository]] on GitHub.
+You'll be very welcomed to submit patches to the author_ or just ask for a commit bit to the `source repository`_ on GitHub.
 
-= Authors =
+.. _author:
 
-* Yichun "agentzh" Zhang (章亦春) ''<agentzh@gmail.com>'', CloudFlare Inc.
+Authors
+-------
+
+* Yichun "agentzh" Zhang (章亦春) *<agentzh@gmail.com>*, CloudFlare Inc.
 * Bernd Dorn ( http://www.lovelysystems.com/ )
 
 This wiki page is also maintained by the author himself, and everybody is encouraged to improve this page as well.
 
-= Copyright & License =
+Copyright & License
+-------------------
 
-The code base is borrowed directly from the standard [[HttpHeadersModule|headers]] module in Nginx 0.8.24. This part of code is copyrighted by Igor Sysoev.
+The code base is borrowed directly from the standard `headers <http://nginx.org/en/docs/http/ngx_http_headers_module.html>`_ module in Nginx 0.8.24. This part of code is copyrighted by Igor Sysoev.
 
 Copyright (c) 2009-2014, Yichun "agentzh" Zhang (章亦春) <agentzh@gmail.com>, CloudFlare Inc.
 
@@ -388,10 +418,11 @@ LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-= See Also =
+See Also
+--------
 
-* The original thread on the Nginx mailing list that inspires this module's development: [http://forum.nginx.org/read.php?2,11206,11738 "A question about add_header replication"].
-* The orginal announcement thread on the Nginx mailing list: [http://forum.nginx.org/read.php?2,23460 "The "headers_more" module: Set and clear output headers...more than 'add'!"].
-* The original [http://agentzh.blogspot.com/2009/11/headers-more-module-scripting-input-and.html blog post] about this module's initial development.
-* The [[HttpEchoModule|echo module]] for Nginx module's automated testing.
-* The standard [[HttpHeadersModule|headers]] module.
+* The original thread on the Nginx mailing list that inspires this module's development: `"A question about add_header replication" <http://forum.nginx.org/read.php?2,11206,11738>`_.
+* The orginal announcement thread on the Nginx mailing list: `"The "headers_more" module: Set and clear output headers...more than 'add'!" <http://forum.nginx.org/read.php?2,23460>`_.
+* The original `blog post <http://agentzh.blogspot.com/2009/11/headers-more-module-scripting-input-and.html>`_ about this module's initial development.
+* The :doc:`echo module <echo>` for Nginx module's automated testing.
+* The standard `headers <http://nginx.org/en/docs/http/ngx_http_headers_module.html>`_ module.

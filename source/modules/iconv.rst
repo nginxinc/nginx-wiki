@@ -1,57 +1,59 @@
 Iconv
 =====
 
-= Name =
+Description
+-----------
 
-iconv-nginx-module
+**iconv-nginx-module** - an nginx module that uses libiconv to convert characters of different
+encoding. It brings the ``set_iconv`` command to nginx.
 
-= Description =
+This module depends on the ngx_devel_kit (NDK) module.
 
-This is a nginx module that uses libiconv to convert characters of different
-encoding. It brings the 'set_iconv' command to nginx.
+Installation
+------------
 
-This module depends on the ngx_devel_kit(NDK) module.
+#. Get the nginx source code from nginx.net (`<http://nginx.net/>`_).
+#. Untar the source code and build nginx with this module.
 
-= Installation =
+.. code-block:: bash
 
-    Get the nginx source code from nginx.net (http://nginx.net/).
-    Untar the source code and build nginx with this module.
+  $ wget 'http://sysoev.ru/nginx/nginx-0.8.28.tar.gz'
+  $ tar -xzvf nginx-0.8.28.tar.gz
+  $ cd nginx-0.8.28/
 
-<geshi lang="bash">
-        $ wget 'http://sysoev.ru/nginx/nginx-0.8.28.tar.gz'
-        $ tar -xzvf nginx-0.8.28.tar.gz
-        $ cd nginx-0.8.28/
+  $ git-clone http://github.com/simpl-it/ngx_devel_kit.git
+  $ git-clone http://github.com/calio/form-input-module.git
 
-        $ git-clone http://github.com/simpl-it/ngx_devel_kit.git
-        $ git-clone http://github.com/calio/form-input-module.git
+  $ ./configure --add-module=/somepath/iconv-nginx-module/ --add-module=/somepath/ngx_devel_kit
+  $ make -j2
+  $ make install
 
-        $ ./configure --add-module=/somepath/iconv-nginx-module/ --add-module=/somepath/ngx_devel_kit
-        $ make -j2
-        $ make install
-</geshi>
+Usage
+-----
 
-= Usage =
-
-    set_iconv <destination variable> <from variable> from=<from encoding> to=<to encoding>;
-    iconv_buffer_size <size>;   #default iconv_buffer_size is ngx_pagesize
-    iconv_filter from=<from encoding> to=<to encoding>;
+- ``set_iconv <``\ *destination_variable*\ ``> <``\ *from_variable*\ ``> from=<``\ *from_encoding*\ ``> to=<``\ *to_encoding*\ ``>;``
+- ``iconv_buffer_size <``\ *size*\ ``>;   #default iconv_buffer_size is ngx_pagesize``
+- ``iconv_filter from=<``\ *from_encoding*\ ``> to=<``\ *to_encoding*\ ``>;``
 
 Here is a basic example:
-<geshi lang="nginx">
-    #nginx.conf
-        location /foo {
-            set $src '你好'; #in UTF-8
-            set_iconv $dst $src from=utf8 to=gbk; #now $dst holds 你好 in GBK
-        }
-        #everything generated from /foo will be converted from utf8 to gbk
-        location /bar {
-            iconv_filter from=utf-8 to=gbk;
-            iconv_buffer_size 1k;
-            #content handler here
-        }
-</geshi>
 
-= Copyright & License =
+.. code-block:: nginx
+
+  #nginx.conf
+
+  location /foo {
+      set $src '你好'; #in UTF-8
+      set_iconv $dst $src from=utf8 to=gbk; #now $dst holds 你好 in GBK
+  }
+  #everything generated from /foo will be converted from utf8 to gbk
+  location /bar {
+      iconv_filter from=utf-8 to=gbk;
+      iconv_buffer_size 1k;
+      #content handler here
+  }
+
+Copyright & License
+-------------------
 
 This program is licenced under the BSD license.
 
@@ -85,7 +87,8 @@ LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-= Changelog =
-v0.02   add iconv_filter and iconv_buffer_size instruction
+Changelog
+---------
 
-v0.01   implement  set_iconv instruction
+- **v0.02**   *added iconv_filter and iconv_buffer_size instruction*
+- **v0.01**   *implemented set_iconv instruction*
