@@ -1,4 +1,4 @@
-build_environment: Ubuntu 14.04
+build_image: shippableimages/ubuntu1404_python
 language: python
 
 before_install:
