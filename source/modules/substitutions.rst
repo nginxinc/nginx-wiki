@@ -1,106 +1,113 @@
 Substitutions
 =============
 
-= nginx_substitutions_filter =
+Description
+-----------
 
-''Note: this module is not distributed with the Nginx source. Installation instructions can be found [[#Installation|below]].''
+**nginx_substitutions_filter** - a filter module which can do both regular expression and fixed string substitutions on response bodies. This module is quite different from the Nginx's native Substitution Module. It scans the output chains buffer and matches string line by line, just like Apache's `mod_substitute <http://httpd.apache.org/docs/trunk/mod/mod_substitute.html>`_.
 
-== Description ==
+.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions`_.
 
-'''nginx_substitutions_filter''' is a filter module which can do both regular expression and fixed string substitutions on response bodies. This module is quite different from the Nginx's native Substitution Module. It scans the output chains buffer and matches string line by line, just like Apache's [http://httpd.apache.org/docs/trunk/mod/mod_substitute.html mod_substitute].
+Example
+-------
 
-== Example ==
+.. code-block:: nginx
 
-<geshi lang="nginx">
-location / {
+  location / {
+      subs_filter_types text/html text/css text/xml;
+      subs_filter st(\d*).example.com $1.example.com ir;
+      subs_filter a.example.com s.example.com;
+  }
 
-    subs_filter_types text/html text/css text/xml;
-    subs_filter st(\d*).example.com $1.example.com ir;
-    subs_filter a.example.com s.example.com;
+Directives
+----------
 
-}
-</geshi>
+* subs_filter_types_
+* subs_filter_
 
-== Directives ==
+subs_filter_types
+^^^^^^^^^^^^^^^^^
 
-* [[#subs_filter_types|subs_filter_types]]
-* [[#subs_filter|subs_filter]]
+:Syntax: ``subs_filter_types mime-type [`` *mime-types* ``]``
+:Default: ``text/html``
+:Context: *http, server, location*
 
-=== subs_filter_types ===
+subs_filter_types_ is used to specify which content types should be checked for subs_filter_.
 
-'''syntax:''' ''subs_filter_types mime-type [mime-types] ''
+This module just works with plain text. If the response is compressed, it can't uncompress the
+response and will ignore this response. This module can be compatible with gzip filter module.
+But it will not work with proxy compressed response. You can disable the compressed response like this:
 
-'''default:''' ''subs_filter_types text/html''
+.. code-block:: nginx
 
-'''context:''' ''http, server, location''
+  proxy_set_header Accept-Encoding "";
 
-''subs_filter_types'' is used to specify which content types should be checked for ''subs_filter''. The default is only ''text/html''. 
+subs_filter
+^^^^^^^^^^^
 
-This module just works with plain text. If the response is compressed, it can't uncompress the response and will ignore this response. This module can be compatible with gzip filter module. But it will not work with proxy compressed response. You can disable the compressed response like this:
+:Syntax: ``subs_filter`` *source_str* *destination_str* ``[gior]``
+:Default: ``g``
+:Context: *http, server, location*
 
-proxy_set_header Accept-Encoding "";
+subs_filter_ allows replacing source string (regular expression or fixed) in the nginx response with
+destination string. Substitution text may contain variables. More than one substitution rules per
+location is supported. The meaning of the third flags are:
 
-=== subs_filter ===
+* ``g``: Replace all the match strings.
+* ``i``: Perform a case-insensitive match.
+* ``o``: Just replace the first one.
+* ``r``: The pattern is treated as a regular expression, default is fixed string.
 
-'''syntax:''' ''subs_filter source_str destination_str [gior] ''
+.. _installation instructions:
 
-'''default:''' ''none''
-
-'''context:''' ''http, server, location''
-
-''subs_filter'' allows replacing source string(regular expression or fixed) in the nginx response with destination string. Substitution text may contain variables. More than one substitution rules per location is supported. The meaning of the third flags are:
-* ''g''(default): Replace all the match strings.
-* ''i'': Perform a case-insensitive match.
-* ''o'': Just replace the first one.
-* ''r'': The pattern is treated as a regular expression, default is fixed string.
-
-== Installation ==
+Installation
+---------------
 
 To install, get the source with subversion:
 
-<code>
-git clone git://github.com/yaoweibin/ngx_http_substitutions_filter_module.git
-</code>
+.. code-block:: bash
+
+  git clone git://github.com/yaoweibin/ngx_http_substitutions_filter_module.git
+
 
 and then compile nginx with the following option:
 
-<code>
-./configure --add-module=/path/to/module
-</code>
+.. code-block:: bash
 
-== Known issue ==
- 
-*
+  ./configure --add-module=/path/to/module
 
-== CHANGES ==
 
-Changes with nginx_substitutions_filter 0.6.0                                     2012-06-30
+Changelog
+---------
 
-* refactor this module
+06/30/2012: Changes with nginx_substitutions_filter 0.6.0
 
-Changes with nginx_substitutions_filter 0.5.2                                     2010-08-11
+- refactored this module
 
-* do many optimizing for this module
-* fix a bug of buffer overlap
-* fix a segment fault bug when output chain return NGX_AGAIN.
-* fix a bug about last buffer with no linefeed. This may cause segment fault. Thanks for Josef Fröhle 
+08/11/2010: Changes with nginx_substitutions_filter 0.5.2
 
-Changes with nginx_substitutions_filter 0.5                                       2010-04-15
+- optimizations
+- fixed a bug of buffer overlap
+- fixed a segment fault bug when output chain return NGX_AGAIN.
+- fixed a bug about last buffer with no linefeed. This may cause segment fault. Thanks for Josef Fröhle
 
-* refactor the source structure, create branches of dev
-* fix a bug of small chunk of buffers causing lose content
-* fix the bug of last_buf and the nginx's compatibility above 0.8.25
-* fix a bug with unwanted capture config error in fix string substitution
-* add feature of regex captures
+04/15/2010: Changes with nginx_substitutions_filter 0.5
 
-Changes with nginx_substitutions_filter 0.4                                       2009-12-23
+- refactored the source structure, create branches of dev
+- fixed a bug of small chunk of buffers causing lose content
+- fixed the bug of last_buf and the nginx's compatibility above 0.8.25
+- fixed a bug with unwanted capture config error in fix string substitution
+- added feature of regex captures
 
-* fix many bugs
+12/23/2009: Changes with nginx_substitutions_filter 0.4
 
-Changes with nginx_substitutions_filter 0.3                                       2009-02-04
+- fixed many bugs
 
-* Initial public release
+02/04/2009: Changes with nginx_substitutions_filter 0.3
 
-== Reporting a bug ==
+- initial public release
+
+Reporting a bug
+---------------
 
 Questions/patches may be directed to Weibin Yao, yaoweibin@gmail.com.

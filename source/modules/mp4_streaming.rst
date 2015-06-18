@@ -1,78 +1,77 @@
 MP4 Streaming Lite
 ==================
 
-= mod_mp4_streaming_lite =
+Description
+-----------
 
-''Note: this module is not distributed with the Nginx source. Installation instructions are [#installation below] .''
-
-mod_mp4_streaming_lite will seek to a certain time within H.264/MP4 files when provided with a "start" parameter in the URL.
-
-All users installed this module before Nov 20, 2008 are encouraged to upgrade to the latest source package.
+**mod_mp4_streaming_lite** - seeks a certain time within H.264/MP4 files when provided when a "start" parameter is provided in the URL.
 
 This module is written by Jiang Hong. You can contact him for a full (but commercial) version which supports a wider variety of MP4 files.
 
-The most recent package can be downloaded at:
+The most recent package can be downloaded here:
 
-http://i.6.cn/nginx_mp4_streaming_public_20081229.tar.bz2
+`<http://i.6.cn/nginx_mp4_streaming_public_20081229.tar.bz2>`_.
 
-== Revision History ==
+.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions`_.
 
-*  2008-11-01
-: - start=0 (or 0.0) was allowed in order to send the re-indexed whole file.<BR> 
-: - a directio-related neglect was fixed.<BR> 
-: - mp4_directio directive was removed and the module now follows the server-wide directio setting.<BR> 
-: - Content-Length calculation bug was fixed. Thanks go to Nick Melnikov.<BR> 
+Revision History
+----------------
 
-*  2008-11-13
-: - directio-related bug fixed.<BR> 
-: - The access denials and pread() errors, which caused by an uninitialized variable, are fixed.<BR> 
+* **12/28/2008**
+    - more return value checks (reported by Jan Ślusarczyk).
 
-*  2008-11-20
-: - Another Content-Length bug fixed.
+* **12/05/2008**
+    - An 'off-by-one' bug fixed.
 
-*  2008-12-05
-: - An 'off-by-one' bug fixed.
+* **11/20/2008**
+    - Another ``Content-Length`` bug fixed.
 
-*  2008-12-28
-: - more return value checks (reported by Jan Ślusarczyk).
+* **11/13/2008**
+    - directio-related bug fixed.
+    - The access denials and pread() errors, which caused by an uninitialized variable, are fixed.
 
+* **11/01/2008**
+    - start=0 (or 0.0) was allowed in order to send the re-indexed whole file.
+    - a directio-related neglect was fixed.
+    - ``mp4_directio`` directive was removed and the module now follows the server-wide directio setting.
+    - ``Content-Length`` calculation bug was fixed. Thanks go to Nick Melnikov.
 
-== Directives ==
+Directives
+----------
 
-* [#mp4 mp4] 
+mp4
+^^^
 
-{{Anchor|mp4}}
-== mp4 ==
-
-'''syntax''': ''mp4''
-
-'''default''': ''n/a''
-
-'''context''': ''location''
+:Syntax: ``mp4``
+:Default: *none*
+:Context: *location*
 
 Enable MP4 streaming at a particular location.
 
-{{Anchor|installation}}
-== Installation ==
+.. _installation instructions:
 
-Download the tarball as described above and 'tar jx' it.
+Installation
+------------
 
-After extracting, add the following option to your Nginx ./configure command:
+Download the tarball as described above and ``tar jx`` it.
 
-<pre>
-: --add-module=path/to/mp4_streaming_lite/directory
-</pre>
+After extracting, add the following option to your Nginx ``./configure`` command::
 
-By default, nginx uses -O to compile the source code. You should use
+  --add-module=path/to/mp4_streaming_lite/directory
+  
 
-<pre>
-: --with-cc-opt='-O3'
-</pre>
+By default, nginx uses ``-O`` to compile the source code. You should use::
+  
+  --with-cc-opt='-O3'
+  
 
-with configure to retrieve maximum performance.
+with ``./configure`` to retrieve maximum performance.
 
-== More ==
+More
+----
+
 More widely MP4 files supported can be found here:
-http://h264.code-shop.com/trac/wiki/Mod-H264-Streaming-Nginx-Version2
 
-And you may ask '''arjen''' for help if you have some questions
+`<http://h264.code-shop.com/trac/wiki/Mod-H264-Streaming-Nginx-Version2>`_.
+
+And you may ask *arjen* for help if you have some questions

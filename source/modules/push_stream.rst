@@ -1,7 +1,6 @@
 HTTP Push Stream
 ================
 
-
 = Nginx Push Stream Module =
 
 A pure stream http push technology for your Nginx setup.

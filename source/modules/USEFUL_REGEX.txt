@@ -49,5 +49,5 @@
 \[\[HttpSsiModule(.*?)\|(.*?)\]\]
 `\2 <http://nginx.org/en/docs/http/ngx_http_ssi_module.html\1>`_
 
-\[\[HttpSsiModule(.*?)\|(.*?)\]\]
+\[\[HttpCoreModule(.*?)\|(.*?)\]\]
 `\2 <http://nginx.org/en/docs/http/ngx_http_core_module.html\1>`_
