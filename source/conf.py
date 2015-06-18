@@ -287,5 +287,7 @@ texinfo_documents = [
 
 linkcheck_ignore = [
                     r'https://github.com/nginxinc/nginx-wiki.*',
-                    r'http://.*sourceforge.net/.*'
+                    r'http://.*sourceforge.net/.*',
+                    r'.*zend-server.htm.*',
+                    r'http://lemp.test.*'
                    ]
