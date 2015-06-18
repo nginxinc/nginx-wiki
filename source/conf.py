@@ -286,8 +286,9 @@ texinfo_documents = [
 
 
 linkcheck_ignore = [
-                    r'https://github.com/nginxinc/nginx-wiki.*',
-                    r'http://.*sourceforge.net/.*',
-                    r'.*zend-server.htm.*',
-                    r'http://lemp.test.*'
+                    r'https://github.com/nginxinc/nginx-wiki.*', # while the repo is private
+                    r'http://.*sourceforge.net/.*', # CI system is blocked from accessing sourceforge
+                    r'.*zend-server.htm.*', # Some Javascript voodoo that fails linkcheck
+                    r'http://lemp.test.*', # An example URL
+                    r'https://qwebirc.org.*' # Fails in CI system due to https://bugs.launchpad.net/ubuntu/+source/openssl/+bug/861137
                    ]
