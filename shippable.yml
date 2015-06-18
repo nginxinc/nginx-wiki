@@ -2,7 +2,7 @@ build_image: shippableimages/ubuntu1404_python
 language: python
 
 before_install:
-    - sudo apt-get install python-sphinx
+    - sudo apt-get install -y python-sphinx
 
 script:
     - ".ci/${CI_TARGET}.sh"
