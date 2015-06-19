@@ -1,0 +1,53 @@
+\n= (.*?) =\s*\n
+\n\1\n-------------\n\n
+
+\n== (.*?) ==\s*\n
+\n\1\n^^^^^^^^^^^^^\n\n
+
+\n=== (.*?) ===\s*\n
+\n\1\n"""""""""""""\n\n
+
+<code>([.\n]*?)</code>
+``\1``
+
+<pre>(.*?)</pre>
+.. code-block:: \n\1\n
+
+<geshi lang="(.*?)">(.*?)</geshi>
+.. code-block:: \1\n\2\n
+
+\*([^\s].*?)\*
+\\*\1\\*
+
+'''(.*?)'''
+**\1**
+
+''(.*?)''
+*\1*
+
+\[([^\[\|\s\n]*?) ([^\]\|\n]*?)\]
+`\2 <\1>`_
+
+\[([^\[\|\s\n]*?)\]
+`<\1>`_
+
+\[\[#([^\s]*?)\|\1\]\]
+\1_
+
+\[\[
+
+
+\[\[HttpAdditionModule(.*?)\|(.*?)\]\]
+`\2 <http://nginx.org/en/docs/http/ngx_http_addition_module.html\1>`_
+
+\[\[HttpRewriteModule(.*?)\|(.*?)\]\]
+`\2 <http://nginx.org/en/docs/http/ngx_http_rewrite_module.html\1>`_
+
+\[\[HttpProxyModule(.*?)\|(.*?)\]\]
+`\2 <http://nginx.org/en/docs/http/ngx_http_proxy_module.html\1>`_
+
+\[\[HttpSsiModule(.*?)\|(.*?)\]\]
+`\2 <http://nginx.org/en/docs/http/ngx_http_ssi_module.html\1>`_
+
+\[\[HttpSsiModule(.*?)\|(.*?)\]\]
+`\2 <http://nginx.org/en/docs/http/ngx_http_core_module.html\1>`_
