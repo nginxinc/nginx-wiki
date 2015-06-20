@@ -10,6 +10,19 @@ Name
 
 
 
+<<<<<<< HEAD
+=======
+Table of Contents
+-----------------
+.. toctree::
+   :titlesonly:
+   :maxdepth: 3
+   
+   lua
+
+
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
 Status
 ------
 Production ready.
@@ -39,6 +52,7 @@ Synopsis
       location /inline_concat {
           # MIME type determined by default_type:
           default_type 'text/plain';
+<<<<<<< HEAD
 
           set $a "hello";
           set $b "world";
@@ -74,6 +88,43 @@ Synopsis
           content_by_lua "ngx.say('Hello,world!')";
       }
 
+=======
+
+          set $a "hello";
+          set $b "world";
+          # inline Lua script
+          set_by_lua $res "return ngx.arg[1]..ngx.arg[2]" $a $b;
+          echo $res;
+      }
+
+      location /rel_file_concat {
+          set $a "foo";
+          set $b "bar";
+          # script path relative to nginx prefix
+          # $ngx_prefix/conf/concat.lua contents:
+          #
+          #    return ngx.arg[1]..ngx.arg[2]
+          #
+          set_by_lua_file $res conf/concat.lua $a $b;
+          echo $res;
+      }
+
+      location /abs_file_concat {
+          set $a "fee";
+          set $b "baz";
+          # absolute script path not modified
+          set_by_lua_file $res /usr/nginx/conf/concat.lua $a $b;
+          echo $res;
+      }
+
+      location /lua_content {
+          # MIME type determined by default_type:
+          default_type 'text/plain';
+
+          content_by_lua "ngx.say('Hello,world!')";
+      }
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
       location /nginx_var {
           # MIME type determined by default_type:
           default_type 'text/plain';
@@ -235,6 +286,7 @@ Almost all the Nginx modules can be used with this ngx_lua module by means of
 to use those ``lua-resty-*`` libraries instead of creating subrequests to access 
 the Nginx upstream modules because the former is usually much more flexible and 
 memory-efficient.
+<<<<<<< HEAD
 
 The Lua interpreter or LuaJIT instance is shared across all the requests in a 
 single nginx worker process but request contexts are segregated using 
@@ -245,6 +297,18 @@ small memory footprint in Lua even when under heavy loads.
 
 
 
+=======
+
+The Lua interpreter or LuaJIT instance is shared across all the requests in a 
+single nginx worker process but request contexts are segregated using 
+lightweight Lua coroutines.
+
+Loaded Lua modules persist in the nginx worker process level resulting in a 
+small memory footprint in Lua even when under heavy loads.
+
+
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
 Typical Uses
 ------------
 Just to name a few:
@@ -276,6 +340,7 @@ user. The module provides the full flexibility of scripting while offering
 performance levels comparable with native C language programs both in terms of 
 CPU time as well as memory footprint. This is particularly the case when LuaJIT 
 2.x is enabled.
+<<<<<<< HEAD
 
 Other scripting language implementations typically struggle to match this 
 performance level.
@@ -283,6 +348,15 @@ performance level.
 The Lua state (Lua VM instance) is shared across all the requests handled by a 
 single nginx worker process to minimize memory use.
 
+=======
+
+Other scripting language implementations typically struggle to match this 
+performance level.
+
+The Lua state (Lua VM instance) is shared across all the requests handled by a 
+single nginx worker process to minimize memory use.
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
 .. _lua.compatibility:
 
 Nginx Compatibility
@@ -302,6 +376,7 @@ The latest module is compatible with the following versions of Nginx:
 * **0.8.x** >= 0.8.54 (last tested: 0.8.54)
 
 
+<<<<<<< HEAD
 
 .. _lua.installation:
 
@@ -312,6 +387,18 @@ It is highly recommended to use the `ngx_openresty bundle
 optional standard Lua 5.1 interpreter), as well as a package of powerful 
 companion Nginx modules. The basic installation step is a simple command:
 
+=======
+
+.. _lua.installation:
+
+Installation
+------------
+It is highly recommended to use the `ngx_openresty bundle 
+<http://openresty.org>`__ that bundles Nginx, ngx_lua,  LuaJIT 2.0/2.1 (or the 
+optional standard Lua 5.1 interpreter), as well as a package of powerful 
+companion Nginx modules. The basic installation step is a simple command:
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
 .. code-block:: bash
 
   ./configure --with-luajit && make && make install
@@ -333,6 +420,7 @@ Build the source with this module:
   wget 'http://nginx.org/download/nginx-1.7.10.tar.gz'
   tar -xzvf nginx-1.7.10.tar.gz
   cd nginx-1.7.10/
+<<<<<<< HEAD
 
   # tell nginx's build system where to find LuaJIT 2.0:
   export LUAJIT_LIB=/path/to/luajit/lib
@@ -399,6 +487,74 @@ command to install it from the Ubuntu repository:
 
 .. code-block:: bash
 
+=======
+
+  # tell nginx's build system where to find LuaJIT 2.0:
+  export LUAJIT_LIB=/path/to/luajit/lib
+  export LUAJIT_INC=/path/to/luajit/include/luajit-2.0
+
+  # tell nginx's build system where to find LuaJIT 2.1:
+  export LUAJIT_LIB=/path/to/luajit/lib
+  export LUAJIT_INC=/path/to/luajit/include/luajit-2.1
+
+  # or tell where to find Lua if using Lua instead:
+  #export LUA_LIB=/path/to/lua/lib
+  #export LUA_INC=/path/to/lua/include
+
+  # Here we assume Nginx is to be installed under /opt/nginx/.
+  ./configure --prefix=/opt/nginx \
+              --with-ld-opt='-Wl,-rpath,/path/to/luajit-or-lua/lib" \
+              --add-module=/path/to/ngx_devel_kit \
+              --add-module=/path/to/lua-nginx-module
+
+  make -j2
+  make install
+
+
+
+C Macro Configurations
+^^^^^^^^^^^^^^^^^^^^^^
+While building this module either via OpenResty or with the NGINX core, you can 
+define the following C macros via the C compiler options:
+
+* ``NGX_LUA_USE_ASSERT``
+    When defined, will enable assertions in the ngx_lua C code base. Recommended
+    for debugging or testing builds. It can introduce some (small) runtime 
+    overhead when enabled. This macro was first introduced in the ``v0.9.10`` 
+    release.
+    
+* ``NGX_LUA_ABORT_AT_PANIC``
+    When the Lua/LuaJIT VM panics, ngx_lua will instruct the current nginx 
+    worker process to quit gracefully by default. By specifying this C macro, 
+    ngx_lua will abort the current nginx worker process (which usually result in
+    a core dump file) immediately. This option is useful for debugging VM 
+    panics. This option was first introduced in the ``v0.9.8`` release.
+    
+* ``NGX_LUA_NO_FFI_API``
+    Excludes pure C API functions for FFI-based Lua API for NGINX (as required 
+    by :github:`lua-resty-core <openresty/lua-resty-core#readme>`, for example).
+    Enabling this macro can make the resulting binary code size smaller.
+
+To enable one or more of these macros, just pass extra C compiler options to the
+``./configure`` script of either NGINX or OpenResty. For instance,
+
+.. code-block:: bash
+
+  ./configure --with-cc-opt="-DNGX_LUA_USE_ASSERT -DNGX_LUA_ABORT_AT_PANIC"
+
+
+
+Installation on Ubuntu 11.10
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Note that it is recommended to use LuaJIT 2.0 or LuaJIT 2.1 instead of the 
+standard Lua 5.1 interpreter wherever possible.
+
+If the standard Lua 5.1 interpreter is required however, run the following 
+command to install it from the Ubuntu repository:
+
+.. code-block:: bash
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
   apt-get install -y lua5.1 liblua5.1-0 liblua5.1-0-dev
 
 
@@ -411,6 +567,7 @@ be found during the configuration process.
 .. code-block:: bash
 
   ln -s /usr/lib/x86_64-linux-gnu/liblua5.1.so /usr/lib/liblua.so
+<<<<<<< HEAD
 
 
 
@@ -440,6 +597,37 @@ The source repository of this project is hosted on GitHub at
 
 
 
+=======
+
+
+
+.. _lua.community:
+
+Community
+---------
+
+English Mailing List
+^^^^^^^^^^^^^^^^^^^^
+The `openresty-en <https://groups.google.com/group/openresty-en>`_ mailing list 
+is for English speakers.
+
+
+
+Chinese Mailing List
+^^^^^^^^^^^^^^^^^^^^
+The `openresty <https://groups.google.com/group/openresty>`_ mailing list is for
+Chinese speakers.
+
+
+
+Source Repository
+-----------------
+The source repository of this project is hosted on GitHub at 
+:github:`openresty/lua-nginx-module <openresty/lua-nginx-module>`.
+
+
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
 Bugs and Patches
 ----------------
 Please submit bug reports, wishlists, or patches by
@@ -523,6 +711,7 @@ also list this environment variable name in your ``nginx.conf`` file via the
 example:
 
 .. code-block:: nginx
+<<<<<<< HEAD
 
   env foo;
 
@@ -567,6 +756,52 @@ following ``.lua`` file named ``foo.lua``:
   -- foo.lua
   local _M = {}
 
+=======
+
+  env foo;
+
+
+
+HTTP 1.0 support
+----------------
+The HTTP 1.0 protocol does not support chunked output and requires an explicit 
+``Content-Length`` header when the response body is not empty in order to 
+support the HTTP 1.0 keep-alive. So when a HTTP 1.0 request is made and the 
+`lua_http10_buffering`_ directive is turned ``on``, ngx_lua will buffer the 
+output of `ngx.say`_ and `ngx.print`_ calls and also postpone sending response 
+headers until all the response body output is received. At that time ngx_lua can
+calculate the total length of the body and construct a proper ``Content-Length``
+header to return to the HTTP 1.0 client. If the ``Content-Length`` response 
+header is set in the running Lua code, however, this buffering will be disabled 
+even if the `lua_http10_buffering`_ directive is turned ``on``.
+
+For large streaming output responses, it is important to disable the 
+`lua_http10_buffering`_ directive to minimise memory usage.
+
+Note that common HTTP benchmark tools such as ``ab`` and ``http_load`` issue 
+HTTP 1.0 requests by default.
+To force ``curl`` to send HTTP 1.0 requests, use the ``-0`` option.
+
+
+
+Statically Linking Pure Lua Modules
+-----------------------------------
+When LuaJIT 2.x is used, it is possible to statically link the bytecode of pure 
+Lua modules into the Nginx executable.
+
+Basically you use the ``luajit`` executable to compile ``.lua`` Lua module files
+to ``.o`` object files containing the exported bytecode data, and then link the
+``.o`` files directly in your Nginx build.
+
+Below is a trivial example to demonstrate this. Consider that we have the 
+following ``.lua`` file named ``foo.lua``:
+
+.. code-block:: lua
+
+  -- foo.lua
+  local _M = {}
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
   function _M.go()
       print("Hello from foo")
   end
@@ -604,6 +839,7 @@ Finally, you can just do the following in any Lua code run by ngx_lua:
 
 And this piece of code no longer depends on the external ``foo.lua`` file any 
 more because it has already been compiled into the ``nginx`` executable.
+<<<<<<< HEAD
 
 If you want to use dot in the Lua module name when calling ``require``, as in
 
@@ -642,6 +878,46 @@ them all in a single command. In this case, you can build a static library
 then you can link the ``myluafiles`` archive as a whole to your nginx 
 executable:
 
+=======
+
+If you want to use dot in the Lua module name when calling ``require``, as in
+
+.. code-block:: lua
+
+  local foo = require "resty.foo"
+
+
+then you need to rename the ``foo.lua`` file to ``resty_foo.lua`` before 
+compiling it down to a ``.o`` file with the ``luajit`` command-line utility.
+
+It is important to use exactly the same version of LuaJIT when compiling 
+``.lua`` files to ``.o`` files as building nginx + ngx_lua. This is because 
+the LuaJIT bytecode format may be incompatible between different LuaJIT 
+versions. When the bytecode format is incompatible, you will see a Lua runtime 
+error saying that the Lua module is not found.
+
+When you have multiple ``.lua`` files to compile and link, then just specify 
+their ``.o`` files at the same time in the value of the ``--with-ld-opt`` 
+option. For instance,
+
+.. code-block:: bash
+
+  ./configure --with-ld-opt="/path/to/foo.o /path/to/bar.o" ...
+
+
+If you have just too many ``.o`` files, then it might not be feasible to name 
+them all in a single command. In this case, you can build a static library 
+(or archive) for your ``.o`` files, as in
+
+.. code-block:: bash
+
+  ar rcus libmyluafiles.a *.o
+
+
+then you can link the ``myluafiles`` archive as a whole to your nginx 
+executable:
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
 .. code-block:: bash
 
   ./configure \
@@ -682,6 +958,7 @@ Here is a complete small example:
   function _M.get_age(name)
       return data[name]
   end
+<<<<<<< HEAD
 
   return _M
 
@@ -767,6 +1044,93 @@ Lua Coroutine Yielding/Resuming
 
 
 
+=======
+
+  return _M
+
+
+and then accessing it from ``nginx.conf``:
+
+.. code-block:: nginx
+
+  location /lua {
+      content_by_lua '
+          local mydata = require "mydata"
+          ngx.say(mydata.get_age("dog"))
+      ';
+  }
+
+
+The ``mydata`` module in this example will only be loaded and run on the first 
+request to the location ``/lua``, and all subsequent requests to the same nginx 
+worker process will use the reloaded instance of the module as well as the same 
+copy of the data in it, until a ``HUP`` signal is sent to the Nginx master 
+process to force a reload. This data sharing technique is essential for high 
+performance Lua applications based on this module.
+
+.. note:: that this data sharing is on a *per-worker* basis and not on a 
+  *per-server* basis. That is, when there are multiple nginx worker processes 
+  under an Nginx master, data sharing cannot cross the process boundary between 
+  these workers.
+
+It is usually recommended to share read-only data this way. You can also share 
+changeable data among all the concurrent requests of each nginx worker process 
+as long as there is *no* nonblocking I/O operations (including `ngx.sleep`_) in 
+the middle of your calculations. As long as you do not give the control back to 
+the nginx event loop and ngx_lua's light thread scheduler (even implicitly), 
+there can never be any race conditions in between. For this reason, always be 
+very careful when you want to share changeable data on the worker level. Buggy 
+optimizations can easily lead to hard-to-debug race conditions under load.
+
+If server-wide data sharing is required, then use one or more of the following 
+approaches:
+
+#. Use the `ngx.shared.DICT`_ API provided by this module.
+#. Use only a single nginx worker and a single server (this is however not recommended when there is a multi core CPU or multiple CPUs in a single machine).
+#. Use data storage mechanisms such as ``memcached``, ``redis``, ``MySQL`` or ``PostgreSQL``. `The ngx_openresty bundle <http://openresty.org>`_ associated with this module comes with a set of companion Nginx modules and Lua libraries that provide interfaces with these data storage mechanisms.
+
+
+
+Known Issues
+------------
+
+TCP socket connect operation issues
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+The `tcpsock:connect`_ method may indicate ``success`` despite connection 
+failures such as with ``Connection Refused`` errors.
+
+However, later attempts to manipulate the cosocket object will fail and return 
+the actual error status message generated by the failed connect operation.
+
+This issue is due to limitations in the Nginx event model and only appears to 
+affect Mac OS X.
+
+
+
+Lua Coroutine Yielding/Resuming
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+* Because Lua's ``dofile`` and ``require`` builtins are currently implemented as
+  C functions in both Lua 5.1 and LuaJIT 2.0/2.1, if the Lua file being loaded 
+  by ``dofile`` or ``require`` invokes `ngx.location.capture`_, `ngx.exec`_, 
+  `ngx.exit`_, or other API functions requiring yielding in the *top-level* 
+  scope of the Lua file, then the Lua error "attempt to yield across C-call 
+  boundary" will be raised. To avoid this, put these calls requiring yielding 
+  into your own Lua functions in the Lua file instead of the top-level scope of 
+  the file.
+  
+* As the standard Lua 5.1 interpreter's VM is not fully resumable, the methods 
+  `ngx.location.capture`_, `ngx.location.capture_multi`_, `ngx.redirect`_, 
+  `ngx.exec`_, and `ngx.exit`_ cannot be used within the context of a Lua 
+  `pcall() <http://www.lua.org/manual/5.1/manual.html#pdf-pcall>`_ or `xpcall() 
+  <http://www.lua.org/manual/5.1/manual.html#pdf-xpcall>`_ or even the first 
+  line of the ``for ... in ...`` statement when the standard Lua 5.1 interpreter
+  is used and the ``attempt to yield across metamethod/C-call boundary`` error 
+  will be produced. Please use LuaJIT 2.x, which supports a fully resumable VM, 
+  to avoid this.
+
+
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
 Lua Variable Scope
 ^^^^^^^^^^^^^^^^^^
 Care must be taken when importing modules and this form should be used:
@@ -920,6 +1284,7 @@ To avoid this, *double* escape the backslash:
 Here, ``\\\\d+`` is stripped down to ``\\d+`` by the Nginx config file parser 
 and this is further stripped down to ``\d+`` by the Lua language parser before 
 running.
+<<<<<<< HEAD
 
 Alternatively, the regex pattern can be presented as a long-bracketed Lua string 
 literal by encasing it in "long brackets", ``&#91;[...]]``, in which case 
@@ -1000,6 +1365,88 @@ Certain Lua APIs provided by ngx_lua do not work in Nginx's SPDY mode yet:
 `ngx.location.capture`_, `ngx.location.capture_multi`_, and `ngx.req.socket`_.
 
 
+=======
+
+Alternatively, the regex pattern can be presented as a long-bracketed Lua string 
+literal by encasing it in "long brackets", ``&#91;[...]]``, in which case 
+backslashes have to only be escaped once for the Nginx config file parser.
+
+.. code-block:: nginx
+
+  # nginx.conf
+  location /test {
+      content_by_lua '
+          local regex = [[\\d+]]
+          local m = ngx.re.match("hello, 1234", regex)
+          if m then ngx.say(m[0]) else ngx.say("not matched!") end
+      ';
+  }
+  # evaluates to "1234"
+
+
+Here, ``&#91;[\\d+]]`` is stripped down to ``&#91;[\d+]]`` by the Nginx config 
+file parser and this is processed correctly.
+
+Note that a longer from of the long bracket, ``[=[...]=]``, may be required if 
+the regex pattern contains ``&#91;...]`` sequences.
+The ``[=[...]=]`` form may be used as the default form if desired.
+
+.. code-block:: nginx
+
+  # nginx.conf
+  location /test {
+      content_by_lua '
+          local regex = [=[[0-9]+]=]
+          local m = ngx.re.match("hello, 1234", regex)
+          if m then ngx.say(m[0]) else ngx.say("not matched!") end
+      ';
+  }
+  # evaluates to "1234"
+
+
+An alternative approach to escaping PCRE sequences is to ensure that Lua code is
+placed in external script files and executed using the various ``*_by_lua_file``
+directives.
+With this approach, the backslashes are only stripped by the Lua language parser
+and therefore only need to be escaped once each.
+
+.. code-block:: lua
+
+  -- test.lua
+  local regex = "\\d+"
+  local m = ngx.re.match("hello, 1234", regex)
+  if m then ngx.say(m[0]) else ngx.say("not matched!") end
+  -- evaluates to "1234"
+
+
+Within external script files, PCRE sequences presented as long-bracketed Lua 
+string literals do not require modification.
+
+.. code-block:: lua
+
+  -- test.lua
+  local regex = [[\d+]]
+  local m = ngx.re.match("hello, 1234", regex)
+  if m then ngx.say(m[0]) else ngx.say("not matched!") end
+  -- evaluates to "1234"
+
+
+
+Mixing with SSI Not Supported
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Mixing SSI with ngx_lua in the same Nginx request is not supported at all. Just 
+use ngx_lua exclusively. Everything you can do with SSI can be done atop ngx_lua
+anyway and it can be more efficient when using ngx_lua.
+
+
+
+SPDY Mode Not Fully Supported
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Certain Lua APIs provided by ngx_lua do not work in Nginx's SPDY mode yet: 
+`ngx.location.capture`_, `ngx.location.capture_multi`_, and `ngx.req.socket`_.
+
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
 
 Missing data on short circuited requests
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -1090,9 +1537,15 @@ TODO
 * add ``ignore_resp_headers``, ``ignore_resp_body``, and ``ignore_resp`` options to `ngx.location.capture`_ and `ngx.location.capture_multi`_ methods, to allowmicro performance tuning on the user side.
 * add automatic Lua code time slicing support by yielding and resuming the Lua VM actively via Lua's debug hooks.
 * add ``stat`` mode similar to `mod_lua <https://httpd.apache.org/docs/trunk/mod/mod_lua.html>`_.
+<<<<<<< HEAD
 
 
 
+=======
+
+
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
 Changes
 -------
 The changes of every release of this module can be obtained from the 
@@ -1177,12 +1630,21 @@ Copyright and License
 This module is licensed under the BSD license.
 
 Copyright (C) 2009-2015, by Xiaozhe Wang (chaoslawful) <chaoslawful@gmail.com>.
+<<<<<<< HEAD
 
 Copyright (C) 2009-2015, by Yichun "agentzh" Zhang (章亦春) <agentzh@gmail.com>, 
 CloudFlare Inc.
 
 All rights reserved.
 
+=======
+
+Copyright (C) 2009-2015, by Yichun "agentzh" Zhang (章亦春) <agentzh@gmail.com>, 
+CloudFlare Inc.
+
+All rights reserved.
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
 Redistribution and use in source and binary forms, with or without modification,
 are permitted provided that the following conditions are met:
 
@@ -1312,6 +1774,7 @@ lua_regex_match_limit
 :Context: *http*
 
 Specifies the "match limit" used by the PCRE library when executing the `ngx.re API <ngx.re.match_>`_. To quote the PCRE manpage, "the limit ... has the effect of limiting the amount of backtracking that can take place."
+<<<<<<< HEAD
 
 When the limit is hit, the error string "pcre_exec() failed: -8" will be returned by the `ngx.re API <ngx.re.match_>`_ functions on the Lua land.
 
@@ -1331,6 +1794,27 @@ Sets the Lua module search path used by scripts specified by `set_by_lua`_,
 `content_by_lua`_ and others. The path string is in standard Lua path form, and ``;;``
 can be used to stand for the original search paths.
 
+=======
+
+When the limit is hit, the error string "pcre_exec() failed: -8" will be returned by the `ngx.re API <ngx.re.match_>`_ functions on the Lua land.
+
+When setting the limit to 0, the default "match limit" when compiling the PCRE library is used. And this is the default value of this directive.
+
+This directive was first introduced in the ``v0.8.5`` release.
+
+
+
+lua_package_path
+^^^^^^^^^^^^^^^^
+:Syntax: ``lua_package_path <``\ *lua-style-path-str*\ ``>``
+:Default: *The content of LUA_PATH environ variable or Lua's compiled-in defaults.*
+:Context: *http*
+
+Sets the Lua module search path used by scripts specified by `set_by_lua`_,
+`content_by_lua`_ and others. The path string is in standard Lua path form, and ``;;``
+can be used to stand for the original search paths.
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
 As from the ``v0.5.0rc29`` release, the special notation ``$prefix`` or ``${prefix}`` can be used in the search path string to indicate the path of the ``server prefix`` usually determined by the ``-p PATH`` command-line option while starting the Nginx server.
 
 
@@ -1400,6 +1884,7 @@ But note that, the `lua_shared_dict`_'s shm storage will not be cleared through 
 Because the Lua code in this context runs before Nginx forks its worker processes (if any), data or code loaded here will enjoy the `Copy-on-write (COW) <http://en.wikipedia.org/wiki/Copy-on-write>`_ feature provided by many operating systems among all the worker processes, thus saving a lot of memory.
 
 Do *not* initialize your own Lua global variables in this context because use of Lua global variables have performance penalties and can lead to global namespace pollution (see the [[#Lua_Variable_Scope|Lua Variable Scope]] section for more details). The recommended way is to use proper `Lua module <http://www.lua.org/manual/5.1/manual.html#5.3>`_ files (but do not use the standard Lua function `module() <http://www.lua.org/manual/5.1/manual.html#pdf-module>`_ to define Lua modules because it pollutes the global namespace as well) and call `require() <http://www.lua.org/manual/5.1/manual.html#pdf-require>`_ to load your own module files in ``init_by_lua`` or other contexts (`require() <http://www.lua.org/manual/5.1/manual.html#pdf-require>`_ does cache the loaded Lua modules in the global ``package.loaded`` table in the Lua registry so your modules will only loaded once for the whole Lua VM instance).
+<<<<<<< HEAD
 
 Only a small set of the `Nginx API for Lua`_ is supported in this context:
 
@@ -1442,12 +1927,57 @@ This hook is often used to create per-worker reoccurring timers (via the `ngx.ti
 
 .. code-block:: nginx
 
+=======
+
+Only a small set of the `Nginx API for Lua`_ is supported in this context:
+
+* Logging APIs: `ngx.log`_ and `print`_,
+* Shared Dictionary API: `ngx.shared.DICT`_.
+
+More Nginx APIs for Lua may be supported in this context upon future user requests.
+
+Basically you can safely use Lua libraries that do blocking I/O in this very context because blocking the master process during server start-up is completely okay. Even the Nginx core does blocking I/O (at least on resolving upstream's host names) at the configure-loading phase.
+
+You should be very careful about potential security vulnerabilities in your Lua code registered in this context because the Nginx master process is often run under the ``root`` account.
+
+This directive was first introduced in the ``v0.5.5`` release.
+
+
+
+init_by_lua_file
+^^^^^^^^^^^^^^^^
+:Syntax: ``init_by_lua_file <``\ *path-to-lua-script-file*\ ``>``
+:Context: *http*
+:Phase: *loading-config*
+
+Equivalent to `init_by_lua`_, except that the file specified by ``<path-to-lua-script-file>`` contains the Lua code or [[#Lua/LuaJIT bytecode support|Lua/LuaJIT bytecode]] to be executed.
+
+When a relative path like ``foo/bar.lua`` is given, they will be turned into the absolute path relative to the ``server prefix`` path determined by the ``-p PATH`` command-line option while starting the Nginx server.
+
+This directive was first introduced in the ``v0.5.5`` release.
+
+
+
+init_worker_by_lua
+^^^^^^^^^^^^^^^^^^
+:Syntax: ``init_worker_by_lua <``\ *lua-script-str*\ ``>``
+:Context: *http*
+:Phase: *starting-worker*
+
+Runs the specified Lua code upon every Nginx worker process's startup when the master process is enabled. When the master process is disabled, this hook will just run after `init_by_lua`_.
+
+This hook is often used to create per-worker reoccurring timers (via the `ngx.timer.at`_ Lua API), either for backend healthcheck or other timed routine work. Below is an example,
+
+.. code-block:: nginx
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
   init_worker_by_lua '
       local delay = 3  -- in seconds
       local new_timer = ngx.timer.at
       local log = ngx.log
       local ERR = ngx.ERR
       local check
+<<<<<<< HEAD
 
       check = function(premature)
           if not premature then
@@ -1490,6 +2020,50 @@ set_by_lua
 :Context: *server, server if, location, location if*
 :Phase: *rewrite*
 
+=======
+
+      check = function(premature)
+          if not premature then
+              -- do the health check or other routine work
+              local ok, err = new_timer(delay, check)
+              if not ok then
+                  log(ERR, "failed to create timer: ", err)
+                  return
+              end
+          end
+      end
+
+      local ok, err = new_timer(delay, check)
+      if not ok then
+          log(ERR, "failed to create timer: ", err)
+          return
+      end
+  ';
+
+
+This directive was first introduced in the ``v0.9.5`` release.
+
+
+
+init_worker_by_lua_file
+^^^^^^^^^^^^^^^^^^^^^^^
+:Syntax: ``init_worker_by_lua_file <``\ *lua-file-path*\ ``>``
+:Context: *http*
+:Phase: *starting-worker*
+
+Similar to `init_worker_by_lua`_, but accepts the file path to a Lua source file or Lua bytecode file.
+
+This directive was first introduced in the ``v0.9.5`` release.
+
+
+
+set_by_lua
+^^^^^^^^^^
+:Syntax: ``set_by_lua`` *$res* ``<``\ *lua-script-str*\ ``> [``\ *$arg1 $arg2*\ `` ...]``
+:Context: *server, server if, location, location if*
+:Phase: *rewrite*
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
 Executes code specified in ``<lua-script-str>`` with optional input arguments ``$arg1 $arg2 ...``, and returns string output to ``$res``.
 The code in ``<lua-script-str>`` can make `API calls <Nginx API for Lua>`_ and can retrieve input arguments from the ``ngx.arg`` table (index starts from ``1`` and increases sequentially).
 
@@ -1547,11 +2121,19 @@ set_by_lua_file
 :Phase: *rewrite*
 
 Equivalent to `set_by_lua`_, except that the file specified by ``<path-to-lua-script-file>`` contains the Lua code, or, as from the ``v0.5.0rc32`` release, the [[#Lua/LuaJIT bytecode support|Lua/LuaJIT bytecode]] to be executed.
+<<<<<<< HEAD
 
 Nginx variable interpolation is supported in the ``<path-to-lua-script-file>`` argument string of this directive. But special care must be taken for injection attacks.
 
 When a relative path like ``foo/bar.lua`` is given, they will be turned into the absolute path relative to the ``server prefix`` path determined by the ``-p PATH`` command-line option while starting the Nginx server.
 
+=======
+
+Nginx variable interpolation is supported in the ``<path-to-lua-script-file>`` argument string of this directive. But special care must be taken for injection attacks.
+
+When a relative path like ``foo/bar.lua`` is given, they will be turned into the absolute path relative to the ``server prefix`` path determined by the ``-p PATH`` command-line option while starting the Nginx server.
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
 When the Lua code cache is turned on (by default), the user code is loaded once at the first request and cached
 and the Nginx config must be reloaded each time the Lua source file is modified.
 The Lua code cache can be temporarily disabled during development by
@@ -1572,6 +2154,7 @@ The Lua code may make [[#Nginx API for Lua|API calls]] and is executed as a new 
 
 Do not use this directive and other content handler directives in the same location. For example, this directive and the [[HttpProxyModule#proxy_pass|proxy_pass]] directive should not be used in the same location.
 
+<<<<<<< HEAD
 
 
 content_by_lua_file
@@ -1586,6 +2169,22 @@ Nginx variables can be used in the ``<path-to-lua-script-file>`` string to provi
 
 When a relative path like ``foo/bar.lua`` is given, they will be turned into the absolute path relative to the ``server prefix`` path determined by the ``-p PATH`` command-line option while starting the Nginx server.
 
+=======
+
+
+content_by_lua_file
+^^^^^^^^^^^^^^^^^^^
+:Syntax: ``content_by_lua_file <path-to-lua-script-file>``
+:Default: *location, location if*
+:Phase: *content*
+
+Equivalent to `content_by_lua`_, except that the file specified by ``<path-to-lua-script-file>`` contains the Lua code, or, as from the ``v0.5.0rc32`` release, the [[#Lua/LuaJIT bytecode support|Lua/LuaJIT bytecode]] to be executed.
+
+Nginx variables can be used in the ``<path-to-lua-script-file>`` string to provide flexibility. This however carries some risks and is not ordinarily recommended.
+
+When a relative path like ``foo/bar.lua`` is given, they will be turned into the absolute path relative to the ``server prefix`` path determined by the ``-p PATH`` command-line option while starting the Nginx server.
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
 When the Lua code cache is turned on (by default), the user code is loaded once at the first request and cached
 and the Nginx config must be reloaded each time the Lua source file is modified.
 The Lua code cache can be temporarily disabled during development by
@@ -1619,6 +2218,7 @@ The Lua code may make [[#Nginx API for Lua|API calls]] and is executed as a new 
 Note that this handler always runs *after* the standard [[HttpRewriteModule]]. So the following will work as expected:
 
 .. code-block:: nginx
+<<<<<<< HEAD
 
   location /foo {
       set $a 12; # create and initialize $a
@@ -1627,6 +2227,16 @@ Note that this handler always runs *after* the standard [[HttpRewriteModule]]. S
       echo "res = $b";
   }
 
+=======
+
+  location /foo {
+      set $a 12; # create and initialize $a
+      set $b ""; # create and initialize $b
+      rewrite_by_lua 'ngx.var.b = tonumber(ngx.var.a) + 1';
+      echo "res = $b";
+  }
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
 
 because ``set $a 12`` and ``set $b ""`` run *before* `rewrite_by_lua`_.
 
@@ -1706,6 +2316,7 @@ can be implemented in ngx_lua as:
 
 
 Just as any other rewrite phase handlers, `rewrite_by_lua`_ also runs in subrequests.
+<<<<<<< HEAD
 
 Note that when calling ``ngx.exit(ngx.OK)`` within a `rewrite_by_lua`_ handler, the nginx request processing control flow will still continue to the content handler. To terminate the current request from within a `rewrite_by_lua`_ handler, calling `ngx.exit`_ with status >= 200 (``ngx.HTTP_OK``) and status < 300 (``ngx.HTTP_SPECIAL_RESPONSE``) for successful quits and ``ngx.exit(ngx.HTTP_INTERNAL_SERVER_ERROR)`` (or its friends) for failures.
 
@@ -1747,6 +2358,49 @@ The ``rewrite_by_lua_file`` code will always run at the end of the ``rewrite`` r
 Nginx variables are supported in the file path for dynamic dispatch just as in `content_by_lua_file`_.
 
 
+=======
+
+Note that when calling ``ngx.exit(ngx.OK)`` within a `rewrite_by_lua`_ handler, the nginx request processing control flow will still continue to the content handler. To terminate the current request from within a `rewrite_by_lua`_ handler, calling `ngx.exit`_ with status >= 200 (``ngx.HTTP_OK``) and status < 300 (``ngx.HTTP_SPECIAL_RESPONSE``) for successful quits and ``ngx.exit(ngx.HTTP_INTERNAL_SERVER_ERROR)`` (or its friends) for failures.
+
+If the [[HttpRewriteModule]]'s [[HttpRewriteModule#rewrite|rewrite]] directive is used to change the URI and initiate location re-lookups (internal redirections), then any `rewrite_by_lua`_ or `rewrite_by_lua_file`_ code sequences within the current location will not be executed. For example,
+
+.. code-block:: nginx
+
+  location /foo {
+      rewrite ^ /bar;
+      rewrite_by_lua 'ngx.exit(503)';
+  }
+  location /bar {
+      ...
+  }
+
+
+Here the Lua code ``ngx.exit(503)`` will never run. This will be the case if ``rewrite ^ /bar last`` is used as this will similarly initiate an internal redirection. If the ``break`` modifier is used instead, there will be no internal redirection and the ``rewrite_by_lua`` code will be executed.
+
+The ``rewrite_by_lua`` code will always run at the end of the ``rewrite`` request-processing phase unless `rewrite_by_lua_no_postpone`_ is turned on.
+
+
+
+rewrite_by_lua_file
+^^^^^^^^^^^^^^^^^^^
+:Syntax: ``rewrite_by_lua_file <path-to-lua-script-file>``
+:Default: *http, server, location, location if*
+:Phase: *rewrite tail*
+
+Equivalent to `rewrite_by_lua`_, except that the file specified by ``<path-to-lua-script-file>`` contains the Lua code, or, as from the ``v0.5.0rc32`` release, the [[#Lua/LuaJIT bytecode support|Lua/LuaJIT bytecode]] to be executed.
+
+Nginx variables can be used in the ``<path-to-lua-script-file>`` string to provide flexibility. This however carries some risks and is not ordinarily recommended.
+
+When a relative path like ``foo/bar.lua`` is given, they will be turned into the absolute path relative to the ``server prefix`` path determined by the ``-p PATH`` command-line option while starting the Nginx server.
+
+When the Lua code cache is turned on (by default), the user code is loaded once at the first request and cached and the Nginx config must be reloaded each time the Lua source file is modified. The Lua code cache can be temporarily disabled during development by switching `lua_code_cache`_ ``off`` in ``nginx.conf`` to avoid reloading Nginx.
+
+The ``rewrite_by_lua_file`` code will always run at the end of the ``rewrite`` request-processing phase unless `rewrite_by_lua_no_postpone`_ is turned on.
+
+Nginx variables are supported in the file path for dynamic dispatch just as in `content_by_lua_file`_.
+
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
 
 access_by_lua
 ^^^^^^^^^^^^^
@@ -1823,6 +2477,7 @@ access_by_lua_file
 :Syntax: ``access_by_lua_file <path-to-lua-script-file>``
 :Default: *http, server, location, location if*
 :Phase: *access tail*
+<<<<<<< HEAD
 
 Equivalent to `access_by_lua`_, except that the file specified by ``<path-to-lua-script-file>`` contains the Lua code, or, as from the ``v0.5.0rc32`` release, the [[#Lua/LuaJIT bytecode support|Lua/LuaJIT bytecode]] to be executed.
 
@@ -1844,6 +2499,29 @@ header_filter_by_lua
 :Default: *http, server, location, location if*
 :Phase: *output-header-filter*
 
+=======
+
+Equivalent to `access_by_lua`_, except that the file specified by ``<path-to-lua-script-file>`` contains the Lua code, or, as from the ``v0.5.0rc32`` release, the [[#Lua/LuaJIT bytecode support|Lua/LuaJIT bytecode]] to be executed.
+
+Nginx variables can be used in the ``<path-to-lua-script-file>`` string to provide flexibility. This however carries some risks and is not ordinarily recommended.
+
+When a relative path like ``foo/bar.lua`` is given, they will be turned into the absolute path relative to the ``server prefix`` path determined by the ``-p PATH`` command-line option while starting the Nginx server.
+
+When the Lua code cache is turned on (by default), the user code is loaded once at the first request and cached
+and the Nginx config must be reloaded each time the Lua source file is modified.
+The Lua code cache can be temporarily disabled during development by switching `lua_code_cache`_ ``off`` in ``nginx.conf`` to avoid repeatedly reloading Nginx.
+
+Nginx variables are supported in the file path for dynamic dispatch just as in `content_by_lua_file`_.
+
+
+
+header_filter_by_lua
+^^^^^^^^^^^^^^^^^^^^
+:Syntax: ``header_filter_by_lua <lua-script-str>``
+:Default: *http, server, location, location if*
+:Phase: *output-header-filter*
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
 Uses Lua code specified in ``<lua-script-str>`` to define an output header filter.
 
 Note that the following API functions are currently disabled within this context:
@@ -1966,6 +2644,7 @@ Note that the following API functions are currently disabled within this context
 Nginx output filters may be called multiple times for a single request because response body may be delivered in chunks. Thus, the Lua code specified by in this directive may also run multiple times in the lifetime of a single HTTP request.
 
 This directive was first introduced in the ``v0.5.0rc32`` release.
+<<<<<<< HEAD
 
 
 
@@ -1989,6 +2668,31 @@ log_by_lua
 :Default: *http, server, location, location if*
 :Phase: *log*
 
+=======
+
+
+
+body_filter_by_lua_file
+^^^^^^^^^^^^^^^^^^^^^^^
+:Syntax: ``body_filter_by_lua_file <path-to-lua-script-file>``
+:Default: *http, server, location, location if*
+:Phase: *output-body-filter*
+
+Equivalent to `body_filter_by_lua`_, except that the file specified by ``<path-to-lua-script-file>`` contains the Lua code, or, as from the ``v0.5.0rc32`` release, the [[#Lua/LuaJIT bytecode support|Lua/LuaJIT bytecode]] to be executed.
+
+When a relative path like ``foo/bar.lua`` is given, they will be turned into the absolute path relative to the ``server prefix`` path determined by the ``-p PATH`` command-line option while starting the Nginx server.
+
+This directive was first introduced in the ``v0.5.0rc32`` release.
+
+
+
+log_by_lua
+^^^^^^^^^^
+:Syntax: ``log_by_lua <lua-script-str>``
+:Default: *http, server, location, location if*
+:Phase: *log*
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
 Run the Lua source code inlined as the ``<lua-script-str>`` at the ``log`` request processing phase. This does not replace the current access logs, but runs after.
 
 Note that the following API functions are currently disabled within this context:
@@ -2039,6 +2743,7 @@ Here is an example of gathering average data for [[HttpUpstreamModule#$upstream_
             ';
         }
     }
+<<<<<<< HEAD
 
 
 This directive was first introduced in the ``v0.5.0rc31`` release.
@@ -2068,6 +2773,37 @@ lua_need_request_body
 
 Determines whether to force the request body data to be read before running rewrite/access/access_by_lua or not. The Nginx core does not read the client request body by default and if request body data is required, then this directive should be turned ``on`` or the `ngx.req.read_body`_ function should be called within the Lua code.
 
+=======
+
+
+This directive was first introduced in the ``v0.5.0rc31`` release.
+
+
+
+log_by_lua_file
+^^^^^^^^^^^^^^^
+:Syntax: ``log_by_lua_file <path-to-lua-script-file>``
+:Default: *http, server, location, location if*
+:Phase: *log*
+
+Equivalent to `log_by_lua`_, except that the file specified by ``<path-to-lua-script-file>`` contains the Lua code, or, as from the ``v0.5.0rc32`` release, the [[#Lua/LuaJIT bytecode support|Lua/LuaJIT bytecode]] to be executed.
+
+When a relative path like ``foo/bar.lua`` is given, they will be turned into the absolute path relative to the ``server prefix`` path determined by the ``-p PATH`` command-line option while starting the Nginx server.
+
+This directive was first introduced in the ``v0.5.0rc31`` release.
+
+
+
+lua_need_request_body
+^^^^^^^^^^^^^^^^^^^^^
+:Syntax: ``lua_need_request_body <on|off>``
+:Default: *off*
+:Context: *http, server, location, location if*
+:Phase: *depends on usage*
+
+Determines whether to force the request body data to be read before running rewrite/access/access_by_lua or not. The Nginx core does not read the client request body by default and if request body data is required, then this directive should be turned ``on`` or the `ngx.req.read_body`_ function should be called within the Lua code.
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
 To read the request body data within the [[HttpCoreModule#$request_body|$request_body]] variable,
 [[HttpCoreModule#client_body_buffer_size|client_body_buffer_size]] must have the same value as [[HttpCoreModule#client_max_body_size|client_max_body_size]]. Because when the content length exceeds [[HttpCoreModule#client_body_buffer_size|client_body_buffer_size]] but less than [[HttpCoreModule#client_max_body_size|client_max_body_size]], Nginx will buffer the data into a temporary file on the disk, which will lead to empty value in the [[HttpCoreModule#$request_body|$request_body]] variable.
 
@@ -2078,6 +2814,7 @@ the request body will not be read until the content handler's Lua code is
 about to run (i.e., the request body will be read during the content phase).
 
 It is recommended however, to use the `ngx.req.read_body`_ and `ngx.req.discard_body`_ functions for finer control over the request body reading process instead.
+<<<<<<< HEAD
 
 This also applies to `access_by_lua`_ and `access_by_lua_file`_.
 
@@ -2090,6 +2827,20 @@ lua_shared_dict
 :Context: *http*
 :Phase: *depends on usage*
 
+=======
+
+This also applies to `access_by_lua`_ and `access_by_lua_file`_.
+
+
+
+lua_shared_dict
+^^^^^^^^^^^^^^^
+:Syntax: ``lua_shared_dict <name> <size>``
+:Default: *none*
+:Context: *http*
+:Phase: *depends on usage*
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
 Declares a shared memory zone, ``<name>``, to serve as storage for the shm based Lua dictionary ``ngx.shared.<name>``.
 
 Shared memory zones are always shared by all the nginx worker processes in the current nginx server instance.
@@ -2133,6 +2884,7 @@ lua_socket_send_timeout
 Controls the default timeout value used in TCP/unix-domain socket object's [[#tcpsock:send|send]] method and can be overridden by the [[#tcpsock:settimeout|settimeout]] method.
 
 The ``<time>`` argument can be an integer, with an optional time unit, like ``s`` (second), ``ms`` (millisecond), ``m`` (minute). The default time unit is ``s``, i.e., "second". The default setting is ``60s``.
+<<<<<<< HEAD
 
 This directive was first introduced in the ``v0.5.0rc1`` release.
 
@@ -2148,6 +2900,23 @@ Controls the ``lowat`` (low water) value for the cosocket send buffer.
 
 
 
+=======
+
+This directive was first introduced in the ``v0.5.0rc1`` release.
+
+
+
+lua_socket_send_lowat
+^^^^^^^^^^^^^^^^^^^^^
+:Syntax: ``lua_socket_send_lowat <size>``
+:Default: *lua_socket_send_lowat 0*
+:Context: *http, server, location*
+
+Controls the ``lowat`` (low water) value for the cosocket send buffer.
+
+
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
 lua_socket_read_timeout
 ^^^^^^^^^^^^^^^^^^^^^^^
 :Syntax: ``lua_socket_read_timeout <time>``
@@ -2158,11 +2927,19 @@ lua_socket_read_timeout
 This directive controls the default timeout value used in TCP/unix-domain socket object's [[#tcpsock:receive|receive]] method and iterator functions returned by the [[#tcpsock:receiveuntil|receiveuntil]] method. This setting can be overridden by the [[#tcpsock:settimeout|settimeout]] method.
 
 The ``<time>`` argument can be an integer, with an optional time unit, like ``s`` (second), ``ms`` (millisecond), ``m`` (minute). The default time unit is ``s``, i.e., "second". The default setting is ``60s``.
+<<<<<<< HEAD
 
 This directive was first introduced in the ``v0.5.0rc1`` release.
 
 
 
+=======
+
+This directive was first introduced in the ``v0.5.0rc1`` release.
+
+
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
 lua_socket_buffer_size
 ^^^^^^^^^^^^^^^^^^^^^^
 :Syntax: ``lua_socket_buffer_size <size>``
@@ -2172,11 +2949,19 @@ lua_socket_buffer_size
 Specifies the buffer size used by cosocket reading operations.
 
 This buffer does not have to be that big to hold everything at the same time because cosocket supports 100% non-buffered reading and parsing. So even ``1`` byte buffer size should still work everywhere but the performance could be terrible.
+<<<<<<< HEAD
 
 This directive was first introduced in the ``v0.5.0rc1`` release.
 
 
 
+=======
+
+This directive was first introduced in the ``v0.5.0rc1`` release.
+
+
+
+>>>>>>> 518e98d... Working versions of every module are complete, just need to add some external references on some pages
 lua_socket_pool_size
 ^^^^^^^^^^^^^^^^^^^^
 :Syntax: ``lua_socket_pool_size <size>``
