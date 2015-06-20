@@ -6,7 +6,7 @@ Description
 
 **nginx_substitutions_filter** - a filter module which can do both regular expression and fixed string substitutions on response bodies. This module is quite different from the Nginx's native Substitution Module. It scans the output chains buffer and matches string line by line, just like Apache's `mod_substitute <http://httpd.apache.org/docs/trunk/mod/mod_substitute.html>`_.
 
-.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions`_.
+.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions <substitutions.installation_>`_.
 
 Example
 -------
@@ -58,10 +58,10 @@ location is supported. The meaning of the third flags are:
 * ``o``: Just replace the first one.
 * ``r``: The pattern is treated as a regular expression, default is fixed string.
 
-.. _installation instructions:
+.. _substitutions.installation:
 
 Installation
----------------
+------------
 
 To install, get the source with subversion:
 

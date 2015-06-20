@@ -1,10 +1,10 @@
 Circle Gif
 ==========
 
-ngx_http_circle_gif_module
---------------------------
+Description
+-----------
 
-The ngx_http_circle_gif_module generates simple circle images with the colors and size specified in the URL. The images are served quickly, much faster than if they had been read from disk. The module was made to help web designers change the colors of their "round corners" without having to fire up PhotoShop. 
+**ngx_http_circle_gif_module** - Generates simple circle images with the colors and size specified in the URL. The images are served quickly, much faster than if they had been read from disk. The module was made to help web designers change the colors of their "round corners" without having to fire up PhotoShop. 
 
 Example usage:
 
@@ -14,19 +14,21 @@ Example usage:
       circle_gif;
   }
 
-.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions`_.
+.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions <circle_gif.installation_>`_.
 
 Directives
 ----------
 
 circle_gif
 ^^^^^^^^^^
+
 :Syntax: ``circle_gif``
 :Default: *none*
 :Context: *location*
 
 circle_gif_min_radius
 ^^^^^^^^^^^^^^^^^^^^^
+
 :Syntax: ``circle_min_radius`` *radius*
 :Default: ``10``
 :Context: *location*
@@ -35,6 +37,7 @@ The minimum radius of generated circle images, in pixels.
 
 circle_gif_max_radius
 ^^^^^^^^^^^^^^^^^^^^^
+
 :Syntax: ``circle_max_radius`` *radius*
 :Default: ``20``
 :Context: *location*
@@ -43,6 +46,7 @@ The maximum radius of generated circle images, in pixels.
 
 circle_gif_step_radius
 ^^^^^^^^^^^^^^^^^^^^^^
+
 :Syntax: ``circle_step_radius`` *step*
 :Default: ``2``
 :Context: *location*
@@ -64,7 +68,7 @@ Where *radius* is the radius in pixels, and the colors are 24-bit hex colors (e.
 
   /circles/ffffff/000000/20.gif
 
-.. _installation instructions:
+.. _circle_gif.installation:
 
 Installation
 ------------

@@ -160,4 +160,4 @@ Mail: mauro.stettler(A.T)gmail.com
 Download
 ^^^^^^^^
 
-`from GitHub <https://github.com/replay/ngx_http_secure_download>`_
+:github:`from GitHub <replay/ngx_http_secure_download>`

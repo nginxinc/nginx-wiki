@@ -1,7 +1,7 @@
 Clojure
 =======
 
-`nginx-clojure <http://nginx-clojure.github.io>`_ is a Nginx module for embedding Clojure or Java or Groovy programs, typically those Ring based handlers.
+`Nginx-Clojure <http://nginx-clojure.github.io>`_ is a Nginx module for embedding Clojure or Java or Groovy programs, typically those Ring based handlers.
 
 There are some core features:
 
@@ -19,6 +19,6 @@ There are some core features:
 #. Utilizes Nginx zero copy file sending mechanism to fast handle static contents controlled by Clojure or Java code.
 #. Supports Linux x64, Linux x86 32bit, Win32 and Mac OS X. Win64 users can also run it with a 32bit JRE/JDK.
 
-By the way, it is very fast. The benchmarks can be found `here <https://github.com/ptaoussanis/clojure-web-server-benchmarks>`_.
+By the way, it is very fast. The benchmarks can be found :github:`here <ptaoussanis/clojure-web-server-benchmarks>`.
 
 Please visit `nginx-clojure.github.io <http://nginx-clojure.github.io>`_ for more details.

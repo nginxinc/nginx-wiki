@@ -6,7 +6,7 @@ Description
 
 **extended_status module** - an extended module for Nginx status.
 
-.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions`_.
+.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions <extended_status.installation_>`_.
 
 Directives
 ----------
@@ -30,7 +30,7 @@ Example:
   }
 
 
-.. _installation instructions:
+.. _extended_status.installation:
 
 Installation
 ------------

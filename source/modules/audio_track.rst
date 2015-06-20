@@ -3,7 +3,7 @@ Audio Track for HTTP Live Streaming
 
 This nginx module generates audio track for hls streams on the fly.
 
-Available on `GitHub <https://github.com/flavioribeiro/nginx-audio-track-for-hls-module>`_.
+Available on :github:`GitHub <flavioribeiro/nginx-audio-track-for-hls-module>`.
 
 Why?
 ----
@@ -21,43 +21,43 @@ A viewer requests the master playlist, and the response is modified. A simple lu
 
 .. code-block:: nginx
 
-   location ~ /master-playlist.m3u8$ {
-       rewrite (.*)master-playlist.m3u8$ $1playlist.m3u8 break;
-       content_by_lua '
-           local res = ngx.location.capture(ngx.var.uri);
-           local first_playlist = res.body:match("[^\\n]*m3u8")
-           local audio_playlist = first_playlist:gsub("\.m3u8", "-audio.m3u8")
-           local ext_inf = "#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=64000\\n"
-           ngx.print(res.body)
-           ngx.print(ext_inf)
-           ngx.print(audio_playlist)
-           ngx.print("\\n")
-       ';
-   }
+  location ~ /master-playlist.m3u8$ {
+      rewrite (.*)master-playlist.m3u8$ $1playlist.m3u8 break;
+      content_by_lua '
+          local res = ngx.location.capture(ngx.var.uri);
+          local first_playlist = res.body:match("[^\\n]*m3u8")
+          local audio_playlist = first_playlist:gsub("\.m3u8", "-audio.m3u8")
+          local ext_inf = "#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=64000\\n"
+          ngx.print(res.body)
+          ngx.print(ext_inf)
+          ngx.print(audio_playlist)
+          ngx.print("\\n")
+      ';
+  }
 
 Then, when user's connection goes bad and he needs to go to the audio target, another location will handle the request, getting the original (video) playlist and changing the extension of the chunks:
 
 .. code-block:: nginx
 
-   location ~ -audio\.m3u8$ {
-       default_type application/vnd.apple.mpegurl;
-       content_by_lua '
-           local base_m3u8_url = ngx.var.uri:gsub("-audio.m3u8", ".m3u8")
-           local res = ngx.location.capture(base_m3u8_url)
-           local new_body = res.body:gsub("\.ts", ".aac")
-           ngx.print(new_body)
-       ';
-    }
+  location ~ -audio\.m3u8$ {
+      default_type application/vnd.apple.mpegurl;
+      content_by_lua '
+          local base_m3u8_url = ngx.var.uri:gsub("-audio.m3u8", ".m3u8")
+          local res = ngx.location.capture(base_m3u8_url)
+          local new_body = res.body:gsub("\.ts", ".aac")
+          ngx.print(new_body)
+      ';
+  }
 
 Every request for ``.aac`` extensions will invoke audio extract module:
 
 .. code-block:: nginx
 
-   location ~ (\.aac)$ {
-       ngx_hls_audio_track;
-       ngx_hls_audio_track_rootpath "/path/were/video/chunks/are/";
-       expires 10m;
-   }
+  location ~ (\.aac)$ {
+      ngx_hls_audio_track;
+      ngx_hls_audio_track_rootpath "/path/were/video/chunks/are/";
+      expires 10m;
+  }
 
 That's it!
 
@@ -80,7 +80,8 @@ Supported Formats
 
 For now, the audio extractor module only supports extraction from ``mpegts`` video chunks to ``aac`` audio-only chunks.
 
-Look at `project issues <https://github.com/flavioribeiro/nginx-audio-track-for-hls-module/issues>`_ to see which other formats are going to be supported in the future.
+Look at :github:`project issues <flavioribeiro/nginx-audio-track-for-hls-module/issues>` to see which other formats are going to be supported in the future.
+
 
 Installation
 ------------
@@ -93,20 +94,24 @@ Follow the steps:
 
      $ git clone git://github.com/flavioribeiro/nginx-audio-track-for-hls-module.git
 
+<<<<<<< HEAD
 * Clone `Lua module <https://github.com/openresty/lua-nginx-module>`_
+=======
+* Clone :github:`Lua module <chaoslawful/lua-nginx-module>`
+>>>>>>> 533cc60... Working versions of every module are complete, just need to add some external references on some pages
 
   .. code-block:: bash
 
-     $ git clone git://github.com/chaoslawful/lua-nginx-module.git
+    $ git clone git://github.com/chaoslawful/lua-nginx-module.git
 
 * Download nginx and compile it using both modules:
 
   .. code-block:: bash
 
-     $ ./configure --add-module=/path/to/nginx-audio-track-for-hls-module --add-module=/path/to/lua-nginx-module
-     $ make install
+    $ ./configure --add-module=/path/to/nginx-audio-track-for-hls-module --add-module=/path/to/lua-nginx-module
+    $ make install
 
-Now you can look at our `nginx configuration example <https://github.com/flavioribeiro/nginx-audio-track-for-hls-module/blob/master/nginx.conf>`_ and make your changes. Have fun!
+Now you can look at our :github:`nginx configuration example <flavioribeiro/nginx-audio-track-for-hls-module/blob/master/nginx.conf>` and make your changes. Have fun!
 
 .. warning::
 

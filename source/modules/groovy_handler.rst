@@ -1,7 +1,7 @@
 Groovy
 ======
 
-`Nginx-Clojure <http://nginx-clojure.github.io>`_ is a Nginx module for embedding Clojure or Java or Groovy programs, typically those `Ring <https://github.com/ring-clojure/ring/blob/master/SPEC>`_ based handlers.
+`Nginx-Clojure <http://nginx-clojure.github.io>`_ is a Nginx module for embedding Clojure or Java or Groovy programs, typically those `Ring <ring-clojure/ring/blob/master/SPEC>` based handlers.
 
 There are some simple examples about Groovy handler.
 
@@ -11,7 +11,7 @@ Inline Groovy Handler
 In nginx.conf
 
 .. code-block:: nginx
-  
+
   location /groovy {
       handler_type 'groovy';
       handler_code ' 

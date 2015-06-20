@@ -12,7 +12,7 @@ The most recent package can be downloaded here:
 
 `<http://i.6.cn/nginx_mp4_streaming_public_20081229.tar.bz2>`_.
 
-.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions`_.
+.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions <mp4_streaming.installation_>`_.
 
 Revision History
 ----------------
@@ -48,22 +48,26 @@ mp4
 
 Enable MP4 streaming at a particular location.
 
-.. _installation instructions:
+.. _mp4_streaming.installation:
 
 Installation
 ------------
 
 Download the tarball as described above and ``tar jx`` it.
 
-After extracting, add the following option to your Nginx ``./configure`` command::
+After extracting, add the following option to your Nginx ``./configure`` command:
+
+.. code-block:: bash
 
   --add-module=path/to/mp4_streaming_lite/directory
-  
 
-By default, nginx uses ``-O`` to compile the source code. You should use::
-  
+
+By default, nginx uses ``-O`` to compile the source code. You should use:
+
+.. code-block:: bash
+
   --with-cc-opt='-O3'
-  
+
 
 with ``./configure`` to retrieve maximum performance.
 

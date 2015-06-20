@@ -4,20 +4,22 @@ HTTP rDNS
 **ngx_http_rdns_module** - enables reverse DNS (rDNS) lookups for incoming connections and provides simple access control of incoming hostname by allow/deny rules (similar to HttpAccessModule allow/deny directives; regular expressions are supported). Module works with the DNS server defined by the standard resolver directive.
 
 Features
----------------
+--------
 
 * usual rDNS lookup (saving result in $rdns_hostname variable);
 * "double lookup": rDNS to get the name and DNS to get the IP address back;
-* rewrite module support ("rdns" can be used inside ``if`` blocks);
+* rewrite module support (``rdns`` can be used inside ``if`` blocks);
 * simple access control to allow/deny connections from given DNS names.
 
-.. note:: *This module is not distributed with nginx source.* You can get the module on `GitHub <https://github.com/flant/nginx-http-rdns>`_.
+You can get the module on :github:`GitHub <flant/nginx-http-rdns>`.
+
+.. note:: *This module is not distributed with nginx source.* See the `installation instructions <rdns.installation_>`_.
 
 Directives
----------------
+----------
 
 rdns
-^^^^^^^^^^^^^
+^^^^
 
 :Syntax: ``rdns [ on | off | double ]``
 :Default: *none*
@@ -59,7 +61,7 @@ Grants access for domain matched by regular expression.
 rdns_deny
 ^^^^^^^^^
 
-:Syntax: ''rdns_deny regex''
+:Syntax: ``rdns_deny regex``
 :Default: *none*
 :Context: *http, server, location*
 :Phase: *access*
@@ -108,24 +110,29 @@ Being in a named location and restarting request handling pipeline, nginx contin
       }
   }
 
+.. _rdns.installation:
 
 Installation
----------------
+------------
 
-Get source code from `GitHub <https://github.com/flant/nginx-http-rdns>`_ and follow :doc:`common 3rd party modules instructions <index>`.
+Get source code from :github:`GitHub <flant/nginx-http-rdns>` 
+
+..
+  commenting out until we have 3rd party module instructions page
+  and follow common [[3rd party modules instructions]]
 
 Bugs / patches
----------------
+--------------
 
-Please, report bugs & propose your patches at `GitHub <https://github.com/flant/nginx-http-rdns>`_.
+Please, report bugs & propose your patches at :github:`GitHub <flant/nginx-http-rdns>`.
 
 Credits
----------------
+-------
 
 The original version of this module has been designed by Dmitry Stolyarov, written by Timofey Kirillov, `CJSC Flant <http://flant.com/>`_.
 
 Links
----------------
+-----
 
 * Source code on GitHub: https://github.com/flant/nginx-http-rdns
 * Module homepage (in Russian): http://flant.ru/projects/nginx-http-rdns

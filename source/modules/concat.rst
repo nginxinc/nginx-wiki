@@ -35,7 +35,7 @@ Configuration example:
        concat_max_files 30;
    }
 
-The original description was written by `António P. P. Almeida <https://github.com/perusio>`_.
+The original description was written by :github:`António P. P. Almeida <perusio>`.
 
 Directives
 ----------
@@ -155,9 +155,9 @@ I'm tagging each release in synch with the
 Other tengine modules on Github
 -------------------------------
 
-*  `footer filter <https://github.com/taobao/nginx-http-footer-filter>`_:
+*  :github:`footer filter <taobao/nginx-http-footer-filter>`:
     allows to add some extra data (markup or not) at the end of a request body. It's pratical for things like adding time stamps or other miscellaneous stuff without having to tweak your application.
-*  `http slice <https://github.com/taobao/nginx-http-slice>`_:
+*  :github:`http slice <taobao/nginx-http-slice>`:
     allows to serve a file by slices. A sort of reverse byte-range. Useful for serving large files while not hogging the network.
 
 Other builds

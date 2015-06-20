@@ -1,11 +1,10 @@
 Upstream Fair Balancer
 ======================
 
-ngx_http_upstream_fair_module
------------------------------
+Description
+-----------
 
-The upstream_fair module sends an incoming request to the least-busy backend server, rather 
-than distributing requests round-robin.
+**ngx_http_upstream_fair_module** - sends an incoming request to the least-busy backend server, rather than distributing requests round-robin.
 
 Example:
 
@@ -17,7 +16,8 @@ Example:
     fair;
   }
 
-.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions`_.
+.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions <fair_balancer.installation_>`_.
+
 
 fair
 ^^^^
@@ -38,14 +38,14 @@ upstream_fair_shm_size
 Size of the shared memory for storing information about the busy-ness of backends. Defaults 
 to 8 pages (so 32k on most systems).
 
-.. _installation instructions:
+.. _fair_balancer.installation:
 
 Installation
 ------------
 
 This module is not distributed with the Nginx source. You can browse its 
-`git repository <http://github.com/gnosek/nginx-upstream-fair/tree/master>`_, 
-or `download the tar ball <http://github.com/gnosek/nginx-upstream-fair/tarball/master>`_.
+:github:`git repository <gnosek/nginx-upstream-fair/tree/master>`, 
+or :github:`download the tar ball <gnosek/nginx-upstream-fair/tarball/master>`.
 
 After extracting, add the following option to your Nginx ``./configure`` command:
 

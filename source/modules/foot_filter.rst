@@ -68,25 +68,25 @@ I'm tagging each release in synch with the `Tengine <http://tengine.taobao.org>`
 Other tengine modules on Github
 -------------------------------
 
-* `backtrace_module <https://github.com/taobao/nginx-backtrace>`_:
+* :github:`backtrace_module <taobao/nginx-backtrace>`:
     Can be used to dump backtrace of nginx in case a worker process exits abnormally,
     e.g. when some signal is received (SIGABR, SIGBUS, SIGFPE, SIGILL, SIGIOT, SIGSEGV).
     It's quite handy for debugging purpose.
 
-* `http slice <https://github.com/taobao/nginx-http-slice>`_:
+* :github:`http slice <taobao/nginx-http-slice>`:
     Allows to serve a file by slices. A sort of reverse byte-range. Useful for serving large files while not hogging the network.
 
 Other builds
 ------------
 
-1. As referred at the outset this module is part of the `Tengine <http://tengine.taobao.org>`_ Nginx distribution. So you might want to save yourself some work and just build it from scratch using ''Tengine'' in lieu if the official Nginx source.
+1. As referred at the outset this module is part of the `Tengine <http://tengine.taobao.org>`_ Nginx distribution. So you might want to save yourself some work and just build it from scratch using *Tengine* in lieu if the official Nginx source.
 
 2. If you fancy a bleeding edge Nginx package (from the dev releases) for Debian made to measure then you might be interested in my `debian <http://debian.perusio.net/unstable>`_ Nginx package. Instructions for using the repository and making the package live happily inside a stable distribution installation are `provided <http://debian.perusio.net>`_.
 
 Acknowledgments
 ---------------
 
-Thanks to `Joshua Zhu <http://blog.zhuzhaoyuan.com>`_ and the Taobao platform engineering team for releasing ''Tengine''. Also for being kind
+Thanks to `Joshua Zhu <http://blog.zhuzhaoyuan.com>`_ and the Taobao platform engineering team for releasing *Tengine*. Also for being kind
 enough to clarify things regarding this module on the `Nginx mailing list <http://mailman.nginx.org/pipermail/nginx/2011-December/030830.html>`_.
 
 License
@@ -186,25 +186,25 @@ I'm tagging each release in synch with the `Tengine <http://tengine.taobao.org>`
 Other tengine modules on Github
 -------------------------------
 
-* `backtrace_module <https://github.com/taobao/nginx-backtrace>`_:
+* :github:`backtrace_module <taobao/nginx-backtrace>`:
     Can be used to dump backtrace of nginx in case a worker process exits abnormally,
     e.g. when some signal is received (SIGABR, SIGBUS, SIGFPE, SIGILL, SIGIOT, SIGSEGV).
     It's quite handy for debugging purpose.
 
-* `http slice <https://github.com/taobao/nginx-http-slice>`_:
+* :github:`http slice <taobao/nginx-http-slice>`:
     Allows to serve a file by slices. A sort of reverse byte-range. Useful for serving large files while not hogging the network.
 
 Other builds
 ------------
 
-1. As referred at the outset this module is part of the `Tengine <http://tengine.taobao.org>`_ Nginx distribution. So you might want to save yourself some work and just build it from scratch using ''Tengine'' in lieu if the official Nginx source.
+1. As referred at the outset this module is part of the `Tengine <http://tengine.taobao.org>`_ Nginx distribution. So you might want to save yourself some work and just build it from scratch using *Tengine* in lieu if the official Nginx source.
 
 2. If you fancy a bleeding edge Nginx package (from the dev releases) for Debian made to measure then you might be interested in my `debian <http://debian.perusio.net/unstable>`_ Nginx package. Instructions for using the repository and making the package live happily inside a stable distribution installation are `provided <http://debian.perusio.net>`_.
 
 Acknowledgments
 ---------------
 
-Thanks to `Joshua Zhu <http://blog.zhuzhaoyuan.com>`_ and the Taobao platform engineering team for releasing ''Tengine''. Also for being kind
+Thanks to `Joshua Zhu <http://blog.zhuzhaoyuan.com>`_ and the Taobao platform engineering team for releasing *Tengine*. Also for being kind
 enough to clarify things regarding this module on the `Nginx mailing list <http://mailman.nginx.org/pipermail/nginx/2011-December/030830.html>`_.
 
 License

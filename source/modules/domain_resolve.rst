@@ -55,7 +55,7 @@ retry_off
 Installtion
 -----------
 
-`Download <http://github.com/wdaike/ngx_upstream_jdomain>`_ the module.
+:github:`Download <wdaike/ngx_upstream_jdomain>` the module.
 
 .. code-block:: bash
 

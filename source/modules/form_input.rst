@@ -14,7 +14,7 @@ Installation
 ------------
 
 #. Get the nginx source code from `nginx.net <http://nginx.net/>`_.
-#. Get the ngx_devel_kit source code from `GitHub simpl-it/ngx_devel_kit repository <http://github.com/simpl-it/ngx_devel_kit>`_.
+#. Get the ngx_devel_kit source code from :github:`GitHub simpl-it/ngx_devel_kit repository <simpl-it/ngx_devel_kit>`.
 #. Unpack the source code and build nginx with this module.
 
 .. code-block:: bash

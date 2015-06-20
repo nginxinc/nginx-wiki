@@ -7,7 +7,7 @@
 \n=== (.*?) ===\s*\n
 \n\1\n"""""""""""""\n\n
 
-<code>([.\n]*?)</code>
+<code>(.*?)</code>
 ``\1``
 
 <pre>(.*?)</pre>
@@ -25,16 +25,28 @@
 ''(.*?)''
 *\1*
 
-\[([^\[\|\s\n]*?) ([^\]\|\n]*?)\]
-`\2 <\1>`_
+\[(https?://)([^\[\|\s\n]*?) ([^\]\|\n]*?)\]
+`\3 <\1\2>`_
 
 \[([^\[\|\s\n]*?)\]
 `<\1>`_
 
-\[\[#([^\s]*?)\|\1\]\]
-\1_
+\[\[#([^\s]*?)\|\1(\*?)\]\]
+`\1`_
 
 \[\[
+
+'''syntax(:?)'''
+:Syntax:
+
+\n'''default(:?)'''
+:Default:
+
+\n'''context(:?)'''
+:Context:
+
+\n'''phase(:?)'''
+:Phase:
 
 
 \[\[HttpAdditionModule(.*?)\|(.*?)\]\]
@@ -51,3 +63,11 @@
 
 \[\[HttpCoreModule(.*?)\|(.*?)\]\]
 `\2 <http://nginx.org/en/docs/http/ngx_http_core_module.html\1>`_
+
+
+
+^\Q.. code-block:: \E(.*?)\R(?s:^\s\s{4}\S.*?)(?=^\S)
+manually fix indentation              ^ number of spaces
+
+`(.*?) <https?://github.com/(.*?)>`_
+:github:`\1 <\2>`

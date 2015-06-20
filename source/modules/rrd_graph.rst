@@ -8,7 +8,7 @@ Description
 
 **mod_rrd_graph** - is an Nginx module that provides an HTTP interface to RRDtool's graphing facilities. By linking RRDtool directly into Nginx, ngx_rrd_graph is faster than scripts and CGIs with similar purposes.
 
-.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions`_.
+.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions <rrd_graph.installation_>`_.
 
 Directives
 ----------
@@ -19,7 +19,7 @@ Directives
 rrd_graph
 ^^^^^^^^^
 
-:Syntax: *rrd_graph*
+:Syntax: ``rrd_graph``
 :Default: *none*
 :Context: *location*
 
@@ -55,13 +55,13 @@ rrd_graph_root
 
 If you'd prefer not to provide absolute paths to files referenced in DEF commands, you may supply a root directory with the rrd_graph_root_ directive. Files mentioned in DEF commands will be automatically prefixed with the value of rrd_graph_root_.
 
-.. _installation instructions:
+.. _rrd_graph.installation:
 
 Installation
----------------
+------------
 
 * ngx_rrd_graph requires `RRDtool 1.3 <http://oss.oetiker.ch/rrdtool-trac/wiki/RRDtool13>`_  or later.
-* After installing RRDtool, get the mod_rrd_graph source code from `Github <https://github.com/evanmiller/mod_rrd_graph>`_.
+* After installing RRDtool, get the mod_rrd_graph source code from :github:`Github <evanmiller/mod_rrd_graph>`.
 * Extract the archive and add the following option to your Nginx ``./configure`` command:
 
   .. code-block:: bash
@@ -71,6 +71,6 @@ Installation
 * Then ``make`` and ``make install`` as usual.
 
 Bugs
----------------
+----
 
 Please report bugs to `Evan Miller <http://www.evanmiller.org/>`_.

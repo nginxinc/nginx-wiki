@@ -1,1086 +1,1295 @@
 Set Misc
 ========
 
-= Name =
+Name
+----
+**ngx_set_misc** - Various set_xxx directives added to nginx's rewrite module 
+(md5/sha1, sql/json quoting, and many more).
 
-'''ngx_set_misc''' - Various set_xxx directives added to nginx's rewrite module (md5/sha1, sql/json quoting, and many more)
+.. note:: *This module is not distributed with the Nginx source.* See the 
+  `installation instructions <set_misc.installation_>`_.
 
-''This module is not distributed with the Nginx source.'' See [[#Installation|the installation instructions]].
 
-= Version =
 
-This document describes ngx_set_misc [https://github.com/openresty/set-misc-nginx-module/tags v0.28] released on 21 January 2015.
+Version
+-------
+This document describes ngx_set_misc 
+:github:`v0.28 <openresty/set-misc-nginx-module/tags>` released 
+on January 21, 2015.
 
-= Synopsis =
 
-<geshi lang="nginx">
-    location /foo {
-        set $a $arg_a;
-        set_if_empty $a 56;
 
-        # GET /foo?a=32 will yield $a == 32
-        # while GET /foo and GET /foo?a= will
-        # yeild $a == 56 here.
-    }
+Synopsis
+--------
 
-    location /bar {
-        set $foo "hello\n\n'\"\\";
-        set_quote_sql_str $foo $foo; # for mysql
+.. code-block:: nginx
 
-        # OR in-place editing:
-        #   set_quote_sql_str $foo;
+  location /foo {
+      set $a $arg_a;
+      set_if_empty $a 56;
 
-        # now $foo is: 'hello\n\n\'\"\\'
-    }
+      # GET /foo?a=32 will yield $a == 32
+      # while GET /foo and GET /foo?a= will
+      # yeild $a == 56 here.
+  }
 
-    location /bar {
-        set $foo "hello\n\n'\"\\";
-        set_quote_pgsql_str $foo;  # for PostgreSQL
+  location /bar {
+      set $foo "hello\n\n'\"\\";
+      set_quote_sql_str $foo $foo; # for mysql
 
-        # now $foo is: E'hello\n\n\'\"\\'
-    }
+      # OR in-place editing:
+      #   set_quote_sql_str $foo;
 
-    location /json {
-        set $foo "hello\n\n'\"\\";
-        set_quote_json_str $foo $foo;
+      # now $foo is: 'hello\n\n\'\"\\'
+  }
 
-        # OR in-place editing:
-        #   set_quote_json_str $foo;
+  location /bar {
+      set $foo "hello\n\n'\"\\";
+      set_quote_pgsql_str $foo;  # for PostgreSQL
 
-        # now $foo is: "hello\n\n'\"\\"
-    }
+      # now $foo is: E'hello\n\n\'\"\\'
+  }
 
-    location /baz {
-        set $foo "hello%20world";
-        set_unescape_uri $foo $foo;
+  location /json {
+      set $foo "hello\n\n'\"\\";
+      set_quote_json_str $foo $foo;
 
-        # OR in-place editing:
-        #   set_unescape_uri $foo;
+      # OR in-place editing:
+      #   set_quote_json_str $foo;
 
-        # now $foo is: hello world
-    }
+      # now $foo is: "hello\n\n'\"\\"
+  }
 
-    upstream_list universe moon sun earth;
-    upstream moon { ... }
-    upstream sun { ... }
-    upstream earth { ... }
-    location /foo {
-        set_hashed_upstream $backend universe $arg_id;
-        drizzle_pass $backend; # used with ngx_drizzle
-    }
+  location /baz {
+      set $foo "hello%20world";
+      set_unescape_uri $foo $foo;
 
-    location /base32 {
-        set $a 'abcde';
-        set_encode_base32 $a;
-        set_decode_base32 $b $a;
+      # OR in-place editing:
+      #   set_unescape_uri $foo;
 
-        # now $a == 'c5h66p35' and
-        # $b == 'abcde'
-    }
+      # now $foo is: hello world
+  }
 
-    location /base64 {
-        set $a 'abcde';
-        set_encode_base64 $a;
-        set_decode_base64 $b $a;
+  upstream_list universe moon sun earth;
+  upstream moon { ... }
+  upstream sun { ... }
+  upstream earth { ... }
+  location /foo {
+      set_hashed_upstream $backend universe $arg_id;
+      drizzle_pass $backend; # used with ngx_drizzle
+  }
 
-        # now $a == 'YWJjZGU=' and
-        # $b == 'abcde'
-    }
+  location /base32 {
+      set $a 'abcde';
+      set_encode_base32 $a;
+      set_decode_base32 $b $a;
 
-    location /hex {
-        set $a 'abcde';
-        set_encode_hex $a;
-        set_decode_hex $b $a;
+      # now $a == 'c5h66p35' and
+      # $b == 'abcde'
+  }
 
-        # now $a == '6162636465' and
-        # $b == 'abcde'
-    }
+  location /base64 {
+      set $a 'abcde';
+      set_encode_base64 $a;
+      set_decode_base64 $b $a;
 
-    # GET /sha1 yields the output
-    #   aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d
-    location /sha1 {
-        set_sha1 $a hello;
-        echo $a;
-    }
+      # now $a == 'YWJjZGU=' and
+      # $b == 'abcde'
+  }
 
-    # ditto
-    location /sha1 {
-        set $a hello;
-        set_sha1 $a;
-        echo $a;
-    }
+  location /hex {
+      set $a 'abcde';
+      set_encode_hex $a;
+      set_decode_hex $b $a;
 
-    # GET /today yields the date of today in local time using format 'yyyy-mm-dd'
-    location /today {
-        set_local_today $today;
-        echo $today;
-    }
+      # now $a == '6162636465' and
+      # $b == 'abcde'
+  }
 
-    # GET /signature yields the hmac-sha-1 signature
-    # given a secret and a string to sign
-    # this example yields the base64 encoded singature which is
-    # "HkADYytcoQQzqbjQX33k/ZBB/DQ="
-    location /signature {
-        set $secret_key 'secret-key';
-        set $string_to_sign "some-string-to-sign";
-        set_hmac_sha1 $signature $secret_key $string_to_sign;
-        set_encode_base64 $signature $signature;
-        echo $signature;
-    }
+  # GET /sha1 yields the output
+  #   aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d
+  location /sha1 {
+      set_sha1 $a hello;
+      echo $a;
+  }
 
-    location = /rand {
-        set $from 3;
-        set $to 15;
-        set_random $rand $from $to;
+  # ditto
+  location /sha1 {
+      set $a hello;
+      set_sha1 $a;
+      echo $a;
+  }
 
-        # or write directly
-        #   set_random $rand 3 15;
+  # GET /today yields the date of today in local time using format 'yyyy-mm-dd'
+  location /today {
+      set_local_today $today;
+      echo $today;
+  }
 
-        echo $rand;  # will print a random integer in the range [3, 15]
-    }
-</geshi>
+  # GET /signature yields the hmac-sha-1 signature
+  # given a secret and a string to sign
+  # this example yields the base64 encoded singature which is
+  # "HkADYytcoQQzqbjQX33k/ZBB/DQ="
+  location /signature {
+      set $secret_key 'secret-key';
+      set $string_to_sign "some-string-to-sign";
+      set_hmac_sha1 $signature $secret_key $string_to_sign;
+      set_encode_base64 $signature $signature;
+      echo $signature;
+  }
 
-= Description =
+  location = /rand {
+      set $from 3;
+      set $to 15;
+      set_random $rand $from $to;
 
-This module extends the standard HttpRewriteModule's directive set to provide more functionalities like URI escaping and unescaping, JSON quoting, Hexadecimal/MD5/SHA1/Base32/Base64 digest encoding and decoding, random number generator, and more!
+      # or write directly
+      #   set_random $rand 3 15;
 
-Every directive provided by this module can be mixed freely with other [[HttpRewriteModule]]'s directives, like [[HttpRewriteModule#if|if]] and [[HttpRewriteModule#set|set]]. (Thanks to the [https://github.com/simpl/ngx_devel_kit Nginx Devel Kit]!)
+      echo $rand;  # will print a random integer in the range [3, 15]
+  }
 
-= Directives =
 
-== set_if_empty ==
-'''syntax:''' ''set_if_empty $dst <src>''
+Description
+-----------
+This module extends the standard HttpRewriteModule's directive set to provide 
+more functionalities like URI escaping and unescaping, JSON quoting, 
+Hexadecimal/MD5/SHA1/Base32/Base64 digest encoding and decoding, random number 
+generator, and more!
 
-'''default:''' ''no''
+Every directive provided by this module can be mixed freely with other 
+[[HttpRewriteModule]]'s directives, like [[HttpRewriteModule#if|if]] and
+[[HttpRewriteModule#set|set]]. (Thanks to the :github:`Nginx Devel Kit <simpl/ngx_devel_kit>`!)
 
-'''context:''' ''location, location if''
 
-'''phase:''' ''rewrite''
 
-Assign the value of the argument <code><src></code> if and only if variable <code>$dst</code> is empty (i.e., not found or has an empty string value).
+Directives
+----------
+
+set_if_empty
+^^^^^^^^^^^^
+:Syntax: ``set_if_empty`` *$dst* ``<``\ *src*\ ``>``
+:Default: *none*
+:Context: *location, location if*
+:Phase: *rewrite*
+
+Assign the value of the argument ``<src>`` if and only if variable ``$dst`` 
+is empty (i.e., not found or has an empty string value).
 
 In the following example,
 
-<geshi lang="nginx">
-    set $a 32;
-    set_if_empty $a 56;
-</geshi>
+.. code-block:: nginx
 
-the variable <code>$dst</code> will take the value 32 at last. But in the sample
+  set $a 32;
+  set_if_empty $a 56;
 
-<geshi lang="nginx">
-    set $a '';
-    set $value "hello, world"
-    set_if_empty $a $value;
-</geshi>
 
-<code>$a</code> will take the value <code>"hello, world"</code> at last.
+the variable ``$dst`` will take the value 32 at last. But in the sample
 
-== set_quote_sql_str ==
-'''syntax:''' ''set_quote_sql_str $dst <src>''
+.. code-block:: nginx
 
-'''syntax:''' ''set_quote_sql_str $dst''
+  set $a '';
+  set $value "hello, world"
+  set_if_empty $a $value;
 
-'''default:''' ''no''
 
-'''context:''' ''location, location if''
+``$a`` will take the value ``"hello, world"`` at last.
 
-'''phase:''' ''rewrite''
 
-'''category:''' ''ndk_set_var_value''
 
-When taking two arguments, this directive will quote the value of the second argument <code><src></code> by MySQL's string value quoting rule and assign the result into the first argument, variable <code>$dst</code>. For example,
+set_quote_sql_str
+^^^^^^^^^^^^^^^^^
+:Syntax: ``set_quote_sql_str`` *$dst* ``<``\ *src*\ ``>``
+:Syntax: ``set_quote_sql_str`` *$dst*
+:Default: *none*
+:Context: *location, location if*
+:Phase: *rewrite*
+:Category: ``ndk_set_var_value``
 
-<geshi lang="nginx">
-    location /test {
-        set $value "hello\n\r'\"\\";
-        set_quote_sql_str $quoted $value;
-    
-        echo $quoted;
-    }
-</geshi>
+When taking two arguments, this directive will quote the value of the second 
+argument ``<src>`` by MySQL's string value quoting rule and assign the result 
+into the first argument, variable ``$dst``. 
 
-Then request <code>GET /test</code> will yield the following output
+For example,
 
-<geshi lang="sql">
-'hello\n\r\'\"\\'
-</geshi>
+.. code-block:: nginx
 
-Please note that we're using [[HttpEchoModule]]'s [[HttpEchoModule#echo|echo directive]] here to output values of nginx variables directly.
+  location /test {
+      set $value "hello\n\r'\"\\";
+      set_quote_sql_str $quoted $value;
+  
+      echo $quoted;
+  }
 
-When taking a single argument, this directive will do in-place modification of the argument variable. For example,
 
-<geshi lang="nginx">
-    location /test {
-        set $value "hello\n\r'\"\\";
-        set_quote_sql_str $value;
-    
-        echo $value;
-    }
-</geshi>
+Then request ``GET /test`` will yield the following output
 
-then request <code>GET /test</code> will give exactly the same output as the previous example.
+.. code-block:: sql
+
+  'hello\n\r\'\"\\'
+
+
+.. note:: We're using :doc:`echo_module's <echo>` ``echo`` directive here to output 
+  values of nginx variables directly.
+  
+When taking a single argument, this directive will do in-place modification 
+of the argument variable. 
+
+For example,
+
+.. code-block:: nginx
+
+  location /test {
+      set $value "hello\n\r'\"\\";
+      set_quote_sql_str $value;
+  
+      echo $value;
+  }
+
+
+then request ``GET /test`` will give exactly the same output as the previous 
+example.
 
 This directive is usually used to prevent SQL injection.
 
-This directive can be invoked by [[HttpLuaModule]]'s [[HttpLuaModule#ndk.set_var.DIRECTIVE|ndk.set_var.DIRECTIVE]] interface and [[HttpArrayVarModule]]'s [[HttpArrayVarModule#array_map_op|array_map_op]] directive.
+This directive can be invoked by :doc:`ngx_lua's <lua>` 
+``ndk.set_var.DIRECTIVE`` interface and [[HttpArrayVarModule]]'s 
+[[HttpArrayVarModule#array_map_op|array_map_op]] directive.
 
-== set_quote_pgsql_str ==
-'''syntax:''' ''set_quote_pgsql_str $dst <src>''
 
-'''syntax:''' ''set_quote_pgsql_str $dst''
 
-'''default:''' ''no''
+set_quote_pgsql_str
+^^^^^^^^^^^^^^^^^^^
+:Syntax: ``set_quote_pgsql_str`` *$dst* ``<``\ *src*\ ``>``
+:Syntax: ``set_quote_pgsql_str`` *$dst*
+:Default: *none*
+:Context: *location, location if*
+:Phase: *rewrite*
+:Category: ``ndk_set_var_value``
 
-'''context:''' ''location, location if''
+Very much like `set_quote_sql_str`_, but with PostgreSQL quoting rules for 
+SQL string literals.
 
-'''phase:''' ''rewrite''
 
-'''category:''' ''ndk_set_var_value''
 
-Very much like [[#set_quote_sql_str|set_quote_sql_str]], but with PostgreSQL quoting rules for SQL string literals.
+set_quote_json_str
+^^^^^^^^^^^^^^^^^^
+:Syntax: ``set_quote_json_str`` *$dst* ``<``\ *src*\ ``>``
+:Syntax: ``set_quote_json_str`` *$dst*
+:Default: *none*
+:Context: *location, location if*
+:Phase: *rewrite*
+:Category: ``ndk_set_var_value``
 
-== set_quote_json_str ==
-'''syntax:''' ''set_quote_json_str $dst <src>''
+When taking two arguments, this directive will quote the value of the second 
+argument ``<src>`` by JSON string value quoting rule and assign the result 
+into the first argument, variable ``$dst``. For example,
 
-'''syntax:''' ''set_quote_json_str $dst''
+.. code-block:: nginx
 
-'''default:''' ''no''
+  location /test {
+      set $value "hello\n\r'\"\\";
+      set_quote_json_str $quoted $value;
+  
+      echo $quoted;
+  }
 
-'''context:''' ''location, location if''
 
-'''phase:''' ''rewrite''
+Then request ``GET /test`` will yield the following output
 
-'''category:''' ''ndk_set_var_value''
+.. code-block:: javascript
 
-When taking two arguments, this directive will quote the value of the second argument <code><src></code> by JSON string value quoting rule and assign the result into the first argument, variable <code>$dst</code>. For example,
+  "hello\n\r'\"\\"
 
-<geshi lang="nginx">
-    location /test {
-        set $value "hello\n\r'\"\\";
-        set_quote_json_str $quoted $value;
-    
-        echo $quoted;
-    }
-</geshi>
 
-Then request <code>GET /test</code> will yield the following output
+.. note:: We're using :doc:`echo_module's <echo>` ``echo`` directive here to output 
+  values of nginx variables directly.
 
-<geshi lang="javascript">
-"hello\n\r'\"\\"
-</geshi>
+When taking a single argument, this directive will do in-place modification of 
+the argument variable. For example,
 
-Please note that we're using [[HttpEchoModule]]'s [[HttpEchoModule#echo|echo directive]] here to output values of nginx variables directly.
+.. code-block:: nginx
 
-When taking a single argument, this directive will do in-place modification of the argument variable. For example,
+  location /test {
+      set $value "hello\n\r'\"\\";
+      set_quote_json_str $value;
+  
+      echo $value;
+  }
 
-<geshi lang="nginx">
-    location /test {
-        set $value "hello\n\r'\"\\";
-        set_quote_json_str $value;
-    
-        echo $value;
-    }
-</geshi>
 
-then request <code>GET /test</code> will give exactly the same output as the previous example.
+then request ``GET /test`` will give exactly the same output as the previous 
+example.
 
-This directive can be invoked by [[HttpLuaModule]]'s [[HttpLuaModule#ndk.set_var.DIRECTIVE|ndk.set_var.DIRECTIVE]] interface and [[HttpArrayVarModule]]'s [[HttpArrayVarModule#array_map_op|array_map_op]] directive.
+This directive can be invoked by :doc:`ngx_lua's <lua>` 
+``ndk.set_var.DIRECTIVE`` interface and [[HttpArrayVarModule]]'s 
+[[HttpArrayVarModule#array_map_op|array_map_op]] directive.
 
-== set_unescape_uri ==
-'''syntax:''' ''set_unescape_uri $dst <src>''
 
-'''syntax:''' ''set_unescape_uri $dst''
 
-'''default:''' ''no''
+set_unescape_uri
+^^^^^^^^^^^^^^^^
+:Syntax: ``set_unescape_uri`` *$dst* ``<``\ *src*\ ``>``
+:Syntax: ``set_unescape_uri`` *$dst*
+:Default: *none*
+:Context: *location, location if*
+:Phase: *rewrite*
+:Category: ``ndk_set_var_value``
 
-'''context:''' ''location, location if''
+When taking two arguments, this directive will unescape the value of the second 
+argument ``<src>`` as a URI component and assign the result into the first 
+argument, variable ``$dst``. For example,
 
-'''phase:''' ''rewrite''
+.. code-block:: nginx
 
-'''category:''' ''ndk_set_var_value''
+  location /test {
+      set_unescape_uri $key $arg_key;
+      echo $key;
+  }
 
-When taking two arguments, this directive will unescape the value of the second argument <code><src></code> as a URI component and assign the result into the first argument, variable <code>$dst</code>. For example,
 
-<geshi lang="nginx">
-    location /test {
-        set_unescape_uri $key $arg_key;
-        echo $key;
-    }
-</geshi>
+Then request ``GET /test?key=hello+world%21`` will yield the following output
 
-Then request <code>GET /test?key=hello+world%21</code> will yield the following output
+.. code-block:: text
 
-<geshi lang="text">
-hello world!
-</geshi>
+  hello world!
 
-The nginx standard [[HttpCoreModule#$arg_PARAMETER|$arg_PARAMETER]] variable holds the raw (escaped) value of the URI parameter. So we need the <code>set_unescape_uri</code> directive to unescape it first.
 
-Please note that we're using [[HttpEchoModule]]'s [[HttpEchoModule#echo|echo directive]] here to output values of nginx variables directly.
+The nginx standard [[HttpCoreModule#$arg_PARAMETER|$arg_PARAMETER]] variable 
+holds the raw (escaped) value of the URI parameter. So we need the 
+``set_unescape_uri`` directive to unescape it first.
 
-When taking a single argument, this directive will do in-place modification of the argument variable. For example,
+.. note:: We're using :doc:`echo_module's <echo>` ``echo`` directive here to output 
+  values of nginx variables directly.
 
-<geshi lang="nginx">
-    location /test {
-        set $key $arg_key;
-        set_unescape_uri $key;
+When taking a single argument, this directive will do in-place modification of 
+the argument variable. For example,
 
-        echo $key;
-    }
-</geshi>
+.. code-block:: nginx
 
-then request <code>GET /test?key=hello+world%21</code> will give exactly the same output as the previous example.
+  location /test {
+      set $key $arg_key;
+      set_unescape_uri $key;
 
-This directive can be invoked by [[HttpLuaModule]]'s [[HttpLuaModule#ndk.set_var.DIRECTIVE|ndk.set_var.DIRECTIVE]] interface and [[HttpArrayVarModule]]'s [[HttpArrayVarModule#array_map_op|array_map_op]] directive.
+      echo $key;
+  }
 
-== set_escape_uri ==
-'''syntax:''' ''set_escape_uri $dst <src>''
 
-'''syntax:''' ''set_escape_uri $dst''
+then request ``GET /test?key=hello+world%21`` will give exactly the same 
+output as the previous example.
 
-'''default:''' ''no''
+This directive can be invoked by :doc:`ngx_lua's <lua>` 
+``ndk.set_var.DIRECTIVE`` interface and [[HttpArrayVarModule]]'s 
+[[HttpArrayVarModule#array_map_op|array_map_op]] directive.
 
-'''context:''' ''location, location if''
 
-'''phase:''' ''rewrite''
 
-'''category:''' ''ndk_set_var_value''
+set_escape_uri
+^^^^^^^^^^^^^^
+:Syntax: ``set_escape_uri`` *$dst* ``<``\ *src*\ ``>``
+:Syntax: ``set_escape_uri`` *$dst*
+:Default: *none*
+:Context: *location, location if*
+:Phase: *rewrite*
+:Category: ``ndk_set_var_value``
 
-Very much like the [[#set_unescape_uri|set_unescape_uri]] directive, but does the conversion the other way around, i.e., URL component escaping.
+Very much like the `set_unescape_uri`_ directive, but does the conversion the 
+other way around, i.e., URL component escaping.
 
-== set_hashed_upstream ==
-'''syntax:''' ''set_hashed_upstream $dst <upstream_list_name> <src>''
 
-'''default:''' ''no''
 
-'''context:''' ''location, location if''
+set_hashed_upstream
+^^^^^^^^^^^^^^^^^^^
+:Syntax: ``set_hashed_upstream`` *$dst* ``<``\ *upstream_list_name*\ ``> 
+  <``\ *src*\ ``>``
+:Default: *none*
+:Context: *location, location if*
+:Phase: *rewrite*
 
-'''phase:''' ''rewrite''
+Hashes the string argument ``<src>`` into one of the upstream name included 
+in the upstream list named ``<upstream_list_name>``. The hash function being 
+used is simple modulo.
 
-Hashes the string argument <code><src></code> into one of the upstream name included in the upstream list named <code><upstream_list_name></code>. The hash function being used is simple modulo.
+For example,
 
-Here's an example,
+.. code-block:: nginx
 
-<geshi lang="nginx">
-    upstream moon { ... }
-    upstream sun { ... }
-    upstream earth { ... }
+  upstream moon { ... }
+  upstream sun { ... }
+  upstream earth { ... }
 
-    upstream_list universe moon sun earth;
+  upstream_list universe moon sun earth;
 
-    location /test {
-        set_unescape_uri $key $arg_key;
-        set $list_name universe;
-        set_hashed_upstream $backend $list_name $key;
+  location /test {
+      set_unescape_uri $key $arg_key;
+      set $list_name universe;
+      set_hashed_upstream $backend $list_name $key;
 
-        echo $backend;        
-    }
-</geshi>
+      echo $backend;        
+  }
 
-Then <code>GET /test?key=blah</code> will output either "moon", "sun", or "earth", depending on the actual value of the <code>key</code> query argument.
 
-This directive is usually used to compute an nginx variable to be passed to [[HttpMemcModule]]'s [[HttpMemcModule#memc_pass|memc_pass]] directive, [[HttpRedis2Module]]'s [[HttpRedis2Module#redis2_pass]] directive, and [[HttpProxyModule]]'s [[HttpProxyModule#proxy_pass|proxy_pass]] directive, among others.
+Then ``GET /test?key=blah`` will output either "moon", "sun", or "earth", 
+depending on the actual value of the ``key`` query argument.
 
-== set_encode_base32 ==
-'''syntax:''' ''set_encode_base32 $dst <src>''
+This directive is usually used to compute an nginx variable to be passed 
+to [[HttpMemcModule]]'s [[HttpMemcModule#memc_pass|memc_pass]] directive,
+[[HttpRedis2Module]]'s [[HttpRedis2Module#redis2_pass]] directive, and 
+[[HttpProxyModule]]'s [[HttpProxyModule#proxy_pass|proxy_pass]] directive, 
+among others.
 
-'''syntax:''' ''set_encode_base32 $dst''
 
-'''default:''' ''no''
 
-'''context:''' ''location, location if''
+set_encode_base32
+^^^^^^^^^^^^^^^^^
+:Syntax: ``set_encode_base32`` *$dst* ``<``\ *src*\ ``>``
+:Syntax: ``set_encode_base32`` *$dst*
+:Default: *none*
+:Context: *location, location if*
+:Phase: *rewrite*
+:Category: ``ndk_set_var_value``
 
-'''phase:''' ''rewrite''
+When taking two arguments, this directive will encode the value of the second 
+argument ``<src>`` to its base32(hex) digest and assign the result into the 
+first argument, variable ``$dst``. For example,
 
-'''category:''' ''ndk_set_var_value''
+.. code-block:: nginx
 
-When taking two arguments, this directive will encode the value of the second argument <code><src></code> to its base32(hex) digest and assign the result into the first argument, variable <code>$dst</code>. For example,
+  location /test {
+      set $raw "abcde";
+      set_encode_base32 $digest $raw;
 
-<geshi lang="nginx">
-    location /test {
-        set $raw "abcde";
-        set_encode_base32 $digest $raw;
+      echo $digest;
+  }
 
-        echo $digest;
-    }
-</geshi>
 
-Then request <code>GET /test</code> will yield the following output
+Then request ``GET /test`` will yield the following output
 
-<geshi lang="text">
-c5h66p35
-</geshi>
+.. code-block:: text
 
-Please note that we're using [[HttpEchoModule]]'s [[HttpEchoModule#echo|echo directive]] here to output values of nginx variables directly.
+  c5h66p35
 
-RFC forces the <code>[A-Z2-7]</code> RFC-3548 compliant encoding, but we are using the "base32hex" encoding (<code>[0-9a-v]</code>) by default. The [[#set_base32_alphabet|set_base32_alphabet]] directive (first introduced in <code>v0.28</code>) allows you to change the alphabet used for encoding/decoding so RFC-3548 compliant encoding is still possible by custom configurations.
 
-By default, the <code>=</code> character is used to pad the left-over bytes due to alignment. But the padding behavior can be completely disabled by setting [[#set_base32_padding|set_base32_padding]] <code>off</code>.
+Please note that we're using :doc:`echo_module's <echo>` 
+``echo`` directive here to output values of nginx variables directly.
 
-When taking a single argument, this directive will do in-place modification of the argument variable. For example,
+RFC forces the ``[A-Z2-7]`` RFC-3548 compliant encoding, but we are using the 
+"base32hex" encoding (``[0-9a-v]``) by default. The `set_base32_alphabet`_ 
+directive (first introduced in ``v0.28``) allows you to change the alphabet 
+used for encoding/decoding so RFC-3548 compliant encoding is still possible 
+by custom configurations.
 
-<geshi lang="nginx">
-    location /test {
-        set $value "abcde";
-        set_encode_base32 $value;
+By default, the ``=`` character is used to pad the left-over bytes due to 
+alignment. But the padding behavior can be completely disabled by setting 
+`set_base32_padding`_ ``off``.
 
-        echo $value;
-    }
-</geshi>
+When taking a single argument, this directive will do in-place modification 
+of the argument variable. For example,
 
-then request <code>GET /test</code> will give exactly the same output as the previous example.
+.. code-block:: nginx
 
-This directive can be invoked by [[HttpLuaModule]]'s [[HttpLuaModule#ndk.set_var.DIRECTIVE|ndk.set_var.DIRECTIVE]] interface and [[HttpArrayVarModule]]'s [[HttpArrayVarModule#array_map_op|array_map_op]] directive.
+  location /test {
+      set $value "abcde";
+      set_encode_base32 $value;
 
-== set_base32_padding ==
-'''syntax:''' ''set_base32_padding on|off''
+      echo $value;
+  }
 
-'''default:''' ''on''
 
-'''context:''' ''http, server, server if, location, location if''
+then request ``GET /test`` will give exactly the same output as the previous 
+example.
 
-'''phase:''' ''no''
+This directive can be invoked by :doc:`ngx_lua's <lua>` 
+``ndk.set_var.DIRECTIVE`` interface and [[HttpArrayVarModule]]'s 
+[[HttpArrayVarModule#array_map_op|array_map_op]] directive.
 
-This directive can control whether to pad left-over bytes with the "=" character when encoding a base32 digest by the
-[[#set_encode_base32|set_encode_base32]] directive.
 
-This directive was first introduced in <code>v0.28</code>. If you use earlier versions of this module, then you should use [[#set_misc_base32_padding|set_misc_base32_padding]] instead.
 
-== set_misc_base32_padding ==
-'''syntax:''' ''set_misc_base32_padding on|off''
+set_base32_padding
+^^^^^^^^^^^^^^^^^^
+:Syntax: ``set_base32_padding [ on | off ]``
+:Default: ``on``
+:Context: *http, server, server if, location, location if*
+:Phase: *none*
 
-'''default:''' ''on''
+This directive can control whether to pad left-over bytes with the "=" 
+character when encoding a base32 digest by the `set_encode_base32`_ directive.
 
-'''context:''' ''http, server, server if, location, location if''
+This directive was first introduced in ``v0.28``. If you use earlier versions 
+of this module, then you should use `set_misc_base32_padding`_ instead.
 
-'''phase:''' ''no''
 
-This directive has been deprecated since <code>v0.28</code>. Use [[#set_base32_padding|set_base32_padding]] instead if you are using <code>v0.28+</code>.
 
-== set_base32_alphabet ==
-'''syntax:''' ''set_base32_alphabet <alphabet>''
+set_misc_base32_padding
+^^^^^^^^^^^^^^^^^^^^^^^
+:Syntax: ``set_misc_base32_padding [ on | off ]``
+:Default: ``on``
+:Context: *http, server, server if, location, location if*
+:Phase: *none*
 
-'''default:''' ''"0123456789abcdefghijklmnopqrstuv"''
+This directive has been deprecated since ``v0.28``. Use `set_base32_padding`_ 
+instead if you are using ``v0.28+``.
 
-'''context:''' ''http, server, server if, location, location if''
 
-'''phase:''' ''no''
 
-This directive controls the alphabet used for encoding/decoding a base32 digest. It accepts a string containing the desired alphabet like "ABCDEFGHIJKLMNOPQRSTUVWXYZ234567" for standard alphabet.
+set_base32_alphabet
+^^^^^^^^^^^^^^^^^^^
+:Syntax: ``set_base32_alphabet <``\ *alphabet*\ ``>``
+:Default: ``"0123456789abcdefghijklmnopqrstuv"``
+:Context: *http, server, server if, location, location if*
+:Phase: *none*
+
+This directive controls the alphabet used for encoding/decoding a base32 
+digest. It accepts a string containing the desired alphabet like 
+"ABCDEFGHIJKLMNOPQRSTUVWXYZ234567" for standard alphabet.
 
 Extended (base32hex) alphabet is used by default.
 
-This directive was first introduced in <code>v0.28</code>.
+This directive was first introduced in ``v0.28``.
 
-== set_decode_base32 ==
-'''syntax:''' ''set_decode_base32 $dst <src>''
 
-'''syntax:''' ''set_decode_base32 $dst''
 
-'''default:''' ''no''
+set_decode_base32
+^^^^^^^^^^^^^^^^^
+:Syntax: ``set_decode_base32`` *$dst* ``<``\ *src*\ ``>``
+:Syntax: ``set_decode_base32`` *$dst*
+:Default: *none*
+:Context: *location, location if*
+:Phase: *rewrite*
+:Category: ``ndk_set_var_value``
 
-'''context:''' ''location, location if''
+Similar to the `set_encode_base32`_ directive, but does exactly the the 
+opposite operation, .i.e, decoding a base32(hex) digest into its original form.
 
-'''phase:''' ''rewrite''
 
-'''category:''' ''ndk_set_var_value''
 
-Similar to the [[#set_encode_base32|set_encode_base32]] directive, but does exactly the the opposite operation, .i.e, decoding a base32(hex) digest into its original form.
+set_encode_base64
+^^^^^^^^^^^^^^^^^
+:Syntax: ``set_encode_base64`` *$dst* ``<``\ *src*\ ``>``
+:Syntax: ``set_encode_base64`` *$dst*
+:Default: *none*
+:Context: *location, location if*
+:Phase: *rewrite*
+:Category: ``ndk_set_var_value``
 
-== set_encode_base64 ==
-'''syntax:''' ''set_encode_base64 $dst <src>''
+When taking two arguments, this directive will encode the value of the second 
+argument ``<src>`` to its base64 digest and assign the result into the first 
+argument, variable ``$dst``. For example,
 
-'''syntax:''' ''set_encode_base64 $dst''
+.. code-block:: nginx
 
-'''default:''' ''no''
+  location /test {
+      set $raw "abcde";
+      set_encode_base64 $digest $raw;
 
-'''context:''' ''location, location if''
+      echo $digest;
+  }
 
-'''phase:''' ''rewrite''
 
-'''category:''' ''ndk_set_var_value''
+Then request ``GET /test`` will yield the following output
 
-When taking two arguments, this directive will encode the value of the second argument <code><src></code> to its base64 digest and assign the result into the first argument, variable <code>$dst</code>. For example,
+.. code-block:: text
 
-<geshi lang="nginx">
-    location /test {
-        set $raw "abcde";
-        set_encode_base64 $digest $raw;
+  YWJjZGU=
 
-        echo $digest;
-    }
-</geshi>
 
-Then request <code>GET /test</code> will yield the following output
+.. note:: We're using :doc:`echo_module's <echo>` ``echo`` directive here to output 
+  values of nginx variables directly.
 
-<geshi lang="text">
-YWJjZGU=
-</geshi>
+When taking a single argument, this directive will do in-place modification of 
+the argument variable. For example,
 
-Please note that we're using [[HttpEchoModule]]'s [[HttpEchoModule#echo|echo directive]] here to output values of nginx variables directly.
+.. code-block:: nginx
 
-When taking a single argument, this directive will do in-place modification of the argument variable. For example,
+  location /test {
+      set $value "abcde";
+      set_encode_base64 $value;
 
-<geshi lang="nginx">
-    location /test {
-        set $value "abcde";
-        set_encode_base64 $value;
+      echo $value;
+  }
 
-        echo $value;
-    }
-</geshi>
 
-then request <code>GET /test</code> will give exactly the same output as the previous example.
+then request ``GET /test`` will give exactly the same output as the previous 
+example.
 
-This directive can be invoked by [[HttpLuaModule]]'s [[HttpLuaModule#ndk.set_var.DIRECTIVE|ndk.set_var.DIRECTIVE]] interface and [[HttpArrayVarModule]]'s [[HttpArrayVarModule#array_map_op|array_map_op]] directive.
+This directive can be invoked by :doc:`ngx_lua's <lua>` 
+``ndk.set_var.DIRECTIVE`` interface and [[HttpArrayVarModule]]'s 
+[[HttpArrayVarModule#array_map_op|array_map_op]] directive.
 
-== set_decode_base64 ==
-'''syntax:''' ''set_decode_base64 $dst <src>''
 
-'''syntax:''' ''set_decode_base64 $dst''
 
-'''default:''' ''no''
+set_decode_base64
+^^^^^^^^^^^^^^^^^
+:Syntax: ``set_decode_base64`` *$dst* ``<``\ *src*\ ``>``
+:Syntax: ``set_decode_base64`` *$dst*
+:Default: *none*
+:Context: *location, location if*
+:Phase: *rewrite*
+:Category: ``ndk_set_var_value``
 
-'''context:''' ''location, location if''
+Similar to the `set_encode_base64`_ directive, but does exactly the the 
+opposite operation, .i.e, decoding a base64 digest into its original form.
 
-'''phase:''' ''rewrite''
 
-'''category:''' ''ndk_set_var_value''
 
-Similar to the [[#set_encode_base64|set_encode_base64]] directive, but does exactly the the opposite operation, .i.e, decoding a base64 digest into its original form.
+set_encode_hex
+^^^^^^^^^^^^^^
+:Syntax: ``set_encode_hex`` *$dst* ``<``\ *src*\ ``>``
+:Syntax: ``set_encode_hex`` *$dst*
+:Default: *none*
+:Context: *location, location if*
+:Phase: *rewrite*
+:Category: ``ndk_set_var_value``
 
-== set_encode_hex ==
-'''syntax:''' ''set_encode_hex $dst <src>''
+When taking two arguments, this directive will encode the value of the second 
+argument ``<src>`` to its hexadecimal digest and assign the result into the 
+first argument, variable ``$dst``. For example,
 
-'''syntax:''' ''set_encode_hex $dst''
+.. code-block:: nginx
 
-'''default:''' ''no''
+  location /test {
+      set $raw "章亦春";
+      set_encode_hex $digest $raw;
 
-'''context:''' ''location, location if''
+      echo $digest;
+  }
 
-'''phase:''' ''rewrite''
 
-'''category:''' ''ndk_set_var_value''
+Then request ``GET /test`` will yield the following output
 
-When taking two arguments, this directive will encode the value of the second argument <code><src></code> to its hexadecimal digest and assign the result into the first argument, variable <code>$dst</code>. For example,
+.. code-block:: text
 
-<geshi lang="nginx">
-    location /test {
-        set $raw "章亦春";
-        set_encode_hex $digest $raw;
+  e7aba0e4baa6e698a5
 
-        echo $digest;
-    }
-</geshi>
 
-Then request <code>GET /test</code> will yield the following output
+.. note:: We're using :doc:`echo_module's <echo>` ``echo`` directive here to output 
+  values of nginx variables directly.
 
-<geshi lang="text">
-e7aba0e4baa6e698a5
-</geshi>
+When taking a single argument, this directive will do in-place modification of 
+the argument variable. For example,
 
-Please note that we're using [[HttpEchoModule]]'s [[HttpEchoModule#echo|echo directive]] here to output values of nginx variables directly.
+.. code-block:: nginx
 
-When taking a single argument, this directive will do in-place modification of the argument variable. For example,
+  location /test {
+      set $value "章亦春";
+      set_encode_hex $value;
 
-<geshi lang="nginx">
-    location /test {
-        set $value "章亦春";
-        set_encode_hex $value;
+      echo $value;
+  }
 
-        echo $value;
-    }
-</geshi>
 
-then request <code>GET /test</code> will give exactly the same output as the previous example.
+then request ``GET /test`` will give exactly the same output as the previous 
+example.
 
-This directive can be invoked by [[HttpLuaModule]]'s [[HttpLuaModule#ndk.set_var.DIRECTIVE|ndk.set_var.DIRECTIVE]] interface and [[HttpArrayVarModule]]'s [[HttpArrayVarModule#array_map_op|array_map_op]] directive.
+This directive can be invoked by :doc:`ngx_lua's <lua>` 
+``ndk.set_var.DIRECTIVE`` interface and [[HttpArrayVarModule]]'s 
+[[HttpArrayVarModule#array_map_op|array_map_op]] directive.
 
-== set_decode_hex ==
-'''syntax:''' ''set_decode_hex $dst <src>''
 
-'''syntax:''' ''set_decode_hex $dst''
 
-'''default:''' ''no''
+set_decode_hex
+^^^^^^^^^^^^^^
+:Syntax: ``set_decode_hex`` *$dst* ``<``\ *src*\ ``>``
+:Syntax: ``set_decode_hex`` *$dst*
+:Default: *none*
+:Context: *location, location if*
+:Phase: *rewrite*
+:Category: ``ndk_set_var_value``
 
-'''context:''' ''location, location if''
+Similar to the `set_encode_hex`_ directive, but does exactly the the opposite 
+operation, .i.e, decoding a hexadecimal digest into its original form.
 
-'''phase:''' ''rewrite''
 
-'''category:''' ''ndk_set_var_value''
 
-Similar to the [[#set_encode_hex|set_encode_hex]] directive, but does exactly the the opposite operation, .i.e, decoding a hexadecimal digest into its original form.
+set_sha1
+^^^^^^^^
+:Syntax: ``set_sha1`` *$dst* ``<``\ *src*\ ``>``
+:Syntax: ``set_sha1`` *$dst*
+:Default: *none*
+:Context: *location, location if*
+:Phase: *rewrite*
+:Category: ``ndk_set_var_value``
 
-== set_sha1 ==
-'''syntax:''' ''set_sha1 $dst <src>''
+When taking two arguments, this directive will encode the value of the second 
+argument ``<src>`` to its `SHA-1 <http://en.wikipedia.org/wiki/SHA-1>`_ digest 
+and assign the result into the first argument, variable ``$dst``. The 
+hexadecimal form of the ``SHA-1`` digest will be generated automatically,
+use `set_decode_hex`_ to decode the result if you want the binary form of the 
+``SHA-1`` digest.
 
-'''syntax:''' ''set_sha1 $dst''
+For example:
 
-'''default:''' ''no''
+.. code-block:: nginx
 
-'''context:''' ''location, location if''
+  location /test {
+      set $raw "hello";
+      set_sha1 $digest $raw;
 
-'''phase:''' ''rewrite''
+      echo $digest;
+  }
 
-'''category:''' ''ndk_set_var_value''
 
-When taking two arguments, this directive will encode the value of the second argument <code><src></code> to its [http://en.wikipedia.org/wiki/SHA-1 SHA-1] digest and assign the result into the first argument, variable <code>$dst</code>. The hexadecimal form of the <code>SHA-1</code> digest will be generated automatically, use [[#set_decode_hex|set_decode_hex]] to decode the result if you want the binary form of the <code>SHA-1</code> digest.
+Then request ``GET /test`` will yield the following output
+
+.. code-block:: text
+
+  aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d
+
+
+.. note:: We're using :doc:`echo_module's <echo>` ``echo`` directive here to output 
+  values of nginx variables directly.
+  
+When taking a single argument, this directive will do in-place modification of 
+the argument variable. For example,
+
+.. code-block:: nginx
+
+  location /test {
+      set $value "hello";
+      set_sha1 $value;
+
+      echo $value;
+  }
+
+
+then request ``GET /test`` will give exactly the same output as the previous 
+example.
+
+This directive can be invoked by :doc:`ngx_lua's <lua>` 
+``ndk.set_var.DIRECTIVE`` interface and [[HttpArrayVarModule]]'s 
+[[HttpArrayVarModule#array_map_op|array_map_op]] directive.
+
+
+
+set_md5
+^^^^^^^
+:Syntax: ``set_md5`` *$dst* ``<``\ *src*\ ``>``
+:Syntax: ``set_md5`` *$dst*
+:Default: *none*
+:Context: *location, location if*
+:Phase: *rewrite*
+:Category: ``ndk_set_var_value``
+
+When taking two arguments, this directive will encode the value of the second
+argument ``<src>`` to its `MD5 <http://en.wikipedia.org/wiki/MD5>`_ digest and 
+assign the result into the first argument, variable ``$dst``. The hexadecimal 
+form of the ``MD5`` digest will be generated automatically, use 
+`set_decode_hex`_ to decode the result if you want the binary form of the 
+``MD5`` digest.
 
 For example,
 
-<geshi lang="nginx">
-    location /test {
-        set $raw "hello";
-        set_sha1 $digest $raw;
+.. code-block:: nginx
 
-        echo $digest;
-    }
-</geshi>
+  location /test {
+      set $raw "hello";
+      set_md5 $digest $raw;
 
-Then request <code>GET /test</code> will yield the following output
+      echo $digest;
+  }
 
-<geshi lang="text">
-aaf4c61ddcc5e8a2dabede0f3b482cd9aea9434d
-</geshi>
 
-Please note that we're using [[HttpEchoModule]]'s [[HttpEchoModule#echo|echo directive]] here to output values of nginx variables directly.
+Then request ``GET /test`` will yield the following output
 
-When taking a single argument, this directive will do in-place modification of the argument variable. For example,
+.. code-block:: text
 
-<geshi lang="nginx">
-    location /test {
-        set $value "hello";
-        set_sha1 $value;
+  5d41402abc4b2a76b9719d911017c592
 
-        echo $value;
-    }
-</geshi>
 
-then request <code>GET /test</code> will give exactly the same output as the previous example.
+.. note:: We're using :doc:`echo_module's <echo>` ``echo`` directive here to output 
+  values of nginx variables directly.
 
-This directive can be invoked by [[HttpLuaModule]]'s [[HttpLuaModule#ndk.set_var.DIRECTIVE|ndk.set_var.DIRECTIVE]] interface and [[HttpArrayVarModule]]'s [[HttpArrayVarModule#array_map_op|array_map_op]] directive.
+When taking a single argument, this directive will do in-place modification of 
+the argument variable. For example,
 
-== set_md5 ==
-'''syntax:''' ''set_md5 $dst <src>''
+.. code-block:: nginx
 
-'''syntax:''' ''set_md5 $dst''
+  location /test {
+      set $value "hello";
+      set_md5 $value;
 
-'''default:''' ''no''
+      echo $value;
+  }
 
-'''context:''' ''location, location if''
 
-'''phase:''' ''rewrite''
+then request ``GET /test`` will give exactly the same output as the previous 
+example.
 
-'''category:''' ''ndk_set_var_value''
+This directive can be invoked by :doc:`ngx_lua's <lua>` 
+``ndk.set_var.DIRECTIVE`` interface and [[HttpArrayVarModule]]'s 
+[[HttpArrayVarModule#array_map_op|array_map_op]] directive.
 
-When taking two arguments, this directive will encode the value of the second argument <code><src></code> to its [http://en.wikipedia.org/wiki/MD5 MD5] digest and assign the result into the first argument, variable <code>$dst</code>. The hexadecimal form of the <code>MD5</code> digest will be generated automatically, use [[#set_decode_hex|set_decode_hex]] to decode the result if you want the binary form of the <code>MD5</code> digest.
 
-For example,
 
-<geshi lang="nginx">
-    location /test {
-        set $raw "hello";
-        set_md5 $digest $raw;
+set_hmac_sha1
+^^^^^^^^^^^^^
+:Syntax: ``set_hmac_sha1`` *$dst* ``<``\ *secret_key*\ ``> <``\ *src*\ ``>``
+:Syntax: ``set_hmac_sha1`` *$dst*
+:Default: *none*
+:Context: *location, location if*
+:Phase: *rewrite*
 
-        echo $digest;
-    }
-</geshi>
+Computes the `HMAC-SHA1 <http://en.wikipedia.org/wiki/HMAC>`_ digest of the 
+argument ``<src>`` and assigns the result into the argument variable ``$dst`` 
+with the secret key ``<secret_key>``.
 
-Then request <code>GET /test</code> will yield the following output
-
-<geshi lang="text">
-5d41402abc4b2a76b9719d911017c592
-</geshi>
-
-Please note that we're using [[HttpEchoModule]]'s [[HttpEchoModule#echo|echo directive]] here to output values of nginx variables directly.
-
-When taking a single argument, this directive will do in-place modification of the argument variable. For example,
-
-<geshi lang="nginx">
-    location /test {
-        set $value "hello";
-        set_md5 $value;
-
-        echo $value;
-    }
-</geshi>
-
-then request <code>GET /test</code> will give exactly the same output as the previous example.
-
-This directive can be invoked by [[HttpLuaModule]]'s [[HttpLuaModule#ndk.set_var.DIRECTIVE|ndk.set_var.DIRECTIVE]] interface and [[HttpArrayVarModule]]'s [[HttpArrayVarModule#array_map_op|array_map_op]] directive.
-
-== set_hmac_sha1 ==
-'''syntax:''' ''set_hmac_sha1 $dst <secret_key> <src>''
-
-'''syntax:''' ''set_hmac_sha1 $dst''
-
-'''default:''' ''no''
-
-'''context:''' ''location, location if''
-
-'''phase:''' ''rewrite''
-
-Computes the [http://en.wikipedia.org/wiki/HMAC HMAC-SHA1] digest of the argument <code><src></code> and assigns the result into the argument variable <code>$dst</code> with the secret key <code><secret_key></code>.
-
-The raw binary form of the <code>HMAC-SHA1</code> digest will be generated, use [[#set_encode_base64|set_encode_base64]], for example, to encode the result to a textual representation if desired.
+The raw binary form of the ``HMAC-SHA1`` digest will be generated, use 
+`set_encode_base64`_, for example, to encode the result to a textual 
+representation if desired.
 
 For example,
 
-<geshi lang="nginx">
-    location /test {
-        set $secret 'thisisverysecretstuff';
-        set $string_to_sign 'some string we want to sign';
-        set_hmac_sha1 $signature $secret $string_to_sign;
-        set_encode_base64 $signature $signature;
-        echo $signature;
-    }
-</geshi>
+.. code-block:: nginx
 
-Then request <code>GET /test</code> will yield the following output
+  location /test {
+      set $secret 'thisisverysecretstuff';
+      set $string_to_sign 'some string we want to sign';
+      set_hmac_sha1 $signature $secret $string_to_sign;
+      set_encode_base64 $signature $signature;
+      echo $signature;
+  }
 
-<geshi lang="text">
-R/pvxzHC4NLtj7S+kXFg/NePTmk=
-</geshi>
 
-Please note that we're using [[HttpEchoModule]]'s [[HttpEchoModule#echo|echo directive]] here to output values of nginx variables directly.
+Then request ``GET /test`` will yield the following output
 
-This directive requires the OpenSSL library enabled in your Nignx build (usually by passing the <code>--with-http_ssl_module</code> option to the <code>./configure</code> script).
+.. code-block:: text
 
-== set_random ==
-'''syntax:''' ''set_random $res <from> <to>''
+  R/pvxzHC4NLtj7S+kXFg/NePTmk=
 
-'''default:''' ''no''
 
-'''context:''' ''location, location if''
+.. note:: We're using :doc:`echo_module's <echo>` ``echo`` directive here to output 
+  values of nginx variables directly.
 
-'''phase:''' ''rewrite''
+This directive requires the OpenSSL library enabled in your Nignx build 
+(usually by passing the ``--with-http_ssl_module`` option to the 
+``./configure`` script).
 
-Generates a (pseudo) random number (in textual form) within the range <code>[<$from>, <$to>]</code> (inclusive).
 
-Only non-negative numbers are allowed for the <code><from></code> and <code><to></code> arguments.
 
-When <code><from></code> is greater than <code><to></code>, their values will be exchanged accordingly.
+set_random
+^^^^^^^^^^
+:Syntax: ``set_random`` *$res* ``<``\ *from*\ ``> <``\ *to*\ ``>``
+:Default: *none*
+:Context: *location, location if*
+:Phase: *rewrite*
+
+Generates a (pseudo) random number (in textual form) within the range 
+``[<$from>, <$to>]`` (inclusive).
+
+Only non-negative numbers are allowed for the ``<from>`` and ``<to>`` 
+arguments.
+
+When ``<from>`` is greater than ``<to>``, their values will be exchanged 
+accordingly.
 
 For instance,
 
-<geshi lang="nginx">
-    location /test {
-        set $from 5;                              
-        set $to 7;                                
-        set_random $res $from $to;                
-                                                  
-        echo $res;                                
-    }
-</geshi>
+.. code-block:: nginx
 
-then request <code>GET /test</code> will output a number between 5 and 7 (i.e., among 5, 6, 7).
+  location /test {
+      set $from 5;                              
+      set $to 7;                                
+      set_random $res $from $to;                
+                                                
+      echo $res;                                
+  }
+
+
+then request ``GET /test`` will output a number between 5 and 7 (i.e., among 5, 
+6, 7).
 
 For now, there's no way to configure a custom random generator seed.
 
-Behind the scene, it makes use of the standard C function <code>rand()</code>.
+Behind the scene, it makes use of the standard C function ``rand()``.
 
-This directive was first introduced in the <code>v0.22rc1</code> release.
+This directive was first introduced in the ``v0.22rc1`` release.
 
-See also [[#set_secure_random_alphanum|set_secure_random_alphanum]] and [[#set_secure_random_lcalpha|set_secure_random_lcalpha]].
+.. seealso:: `set_secure_random_alphanum`_ and `set_secure_random_lcalpha`_.
 
-== set_secure_random_alphanum ==
-'''syntax:''' ''set_secure_random_alphanum $res <length>''
 
-'''default:''' ''no''
 
-'''context:''' ''location, location if''
+set_secure_random_alphanum
+^^^^^^^^^^^^^^^^^^^^^^^^^^
+:Syntax: ``set_secure_random_alphanum`` *$res* ``<``\ *length*\ ``>``
+:Default: *none*
+:Context: *location, location if*
+:Phase: *rewrite*
 
-'''phase:''' ''rewrite''
+Generates a cryptographically-strong random string ``<length>`` characters long 
+with the alphabet ``[a-zA-Z0-9]``.
 
-Generates a cryptographically-strong random string <code><length></code> characters long with the alphabet <code>[a-zA-Z0-9]</code>.
+``<length>`` may be between 1 and 64, inclusive.
 
-<code><length></code> may be between 1 and 64, inclusive.
+For example,
 
-For instance,
+.. code-block:: nginx
 
-<geshi lang="nginx">
-    location /test {
-        set_secure_random_alphanum $res 32;
+  location /test {
+      set_secure_random_alphanum $res 32;
 
-        echo $res;
-    }
-</geshi>
+      echo $res;
+  }
 
-then request <code>GET /test</code> will output a string like <code>ivVVRP2DGaAqDmdf3Rv4ZDJ7k0gOfASz</code>.
 
-This functionality depends on the presence of the <code>/dev/urandom</code> device, available on most UNIX-like systems.
+then request ``GET /test`` will output a string like 
+``ivVVRP2DGaAqDmdf3Rv4ZDJ7k0gOfASz``.
 
-See also [[#set_secure_random_lcalpha|set_secure_random_lcalpha]] and [[#set_random|set_random]].
+This functionality depends on the presence of the ``/dev/urandom`` device, 
+available on most UNIX-like systems.
 
-This directive was first introduced in the <code>v0.22rc8</code> release.
+.. seealso:: `set_secure_random_lcalpha`_ and `set_random`_.
 
-== set_secure_random_lcalpha ==
-'''syntax:''' ''set_secure_random_lcalpha $res <length>''
+This directive was first introduced in the ``v0.22rc8`` release.
 
-'''default:''' ''no''
 
-'''context:''' ''location, location if''
 
-'''phase:''' ''rewrite''
+set_secure_random_lcalpha
+^^^^^^^^^^^^^^^^^^^^^^^^^
+:Syntax: ``set_secure_random_lcalpha`` *$res* ``<``\ *length*\ ``>``
+:Default: *none*
+:Context: *location, location if*
+:Phase: *rewrite*
 
-Generates a cryptographically-strong random string <code><length></code> characters long with the alphabet <code>[a-z]</code>.
+Generates a cryptographically-strong random string ``<length>`` characters long 
+with the alphabet ``[a-z]``.
 
-<code><length></code> may be between 1 and 64, inclusive.
+``<length>`` may be between 1 and 64, inclusive.
 
-For instance,
+For example,
 
-<geshi lang="nginx">
-    location /test {
-        set_secure_random_lcalpha $res 32;
+.. code-block:: nginx
 
-        echo $res;
-    }
-</geshi>
+  location /test {
+      set_secure_random_lcalpha $res 32;
 
-then request <code>GET /test</code> will output a string like <code>kcuxcddktffsippuekhshdaclaquiusj</code>.
+      echo $res;
+  }
 
-This functionality depends on the presence of the <code>/dev/urandom</code> device, available on most UNIX-like systems.
 
-This directive was first introduced in the <code>v0.22rc8</code> release.
+then request ``GET /test`` will output a string like 
+``kcuxcddktffsippuekhshdaclaquiusj``.
 
-See also [[#set_secure_random_alphanum|set_secure_random_alphanum]] and [[#set_random|set_random]].
+This functionality depends on the presence of the ``/dev/urandom`` device, 
+available on most UNIX-like systems.
 
-== set_rotate ==
-'''syntax:''' ''set_rotate $value <from> <to>''
+This directive was first introduced in the ``v0.22rc8`` release.
 
-'''default:''' ''no''
+.. seealso:: `set_secure_random_alphanum`_ and `set_random`_.
 
-'''context:''' ''location, location if''
 
-'''phase:''' ''rewrite''
 
-Increments <code>$value</code> but keeps it in range from <code><from></code> to <code><to></code>. 
-If <code>$value</code> is greater than <code><to></code> or less than <code><from></code> is will be 
-set to <code><from></code> value.
+set_rotate
+^^^^^^^^^^
+:Syntax: ``set_rotate`` *$value* ``<``\ *from*\ ``> <``\ *to*\ ``>``
+:Default: *none*
+:Context: *location, location if*
+:Phase: *rewrite*
 
-The current value after running this directive will always be saved on a per-location basis. And the this saved value will be used for incrementation when the <code>$value</code> is not initialized or has a bad value.
+Increments ``$value`` but keeps it in range from ``<from>`` to ``<to>``. 
+If ``$value`` is greater than ``<to>`` or less than ``<from>`` is will be 
+set to ``<from>`` value.
 
-Only non-negative numbers are allowed for the <code><from></code> and <code><to></code> arguments.
+The current value after running this directive will always be saved on a 
+per-location basis. And the this saved value will be used for incrementation 
+when the ``$value`` is not initialized or has a bad value.
 
-When <code><from></code> is greater than <code><to></code>, their values will be exchanged accordingly.
+Only non-negative numbers are allowed for the ``<from>`` and ``<to>`` 
+arguments.
 
-For instance,
+When ``<from>`` is greater than ``<to>``, their values will be exchanged 
+accordingly.
 
-<geshi lang="nginx">
-    location /rotate {
-        default_type text/plain;
-        set $counter $cookie_counter;
-        set_rotate $counter 1 5;
-        echo $counter;
-        add_header Set-Cookie counter=$counter;
-    }
-</geshi>
+For example,
 
-then request <code>GET /rotate</code> will output next number between 1 and 5 (i.e., 1, 2, 3, 4, 5) on each
-refresh of the page. This directive may be userful for banner rotation purposes.
+.. code-block:: nginx
 
-Another example is to use server-side value persistence to do simple round-robin:
+  location /rotate {
+      default_type text/plain;
+      set $counter $cookie_counter;
+      set_rotate $counter 1 5;
+      echo $counter;
+      add_header Set-Cookie counter=$counter;
+  }
 
-<geshi lang="nginx">
-    location /rotate {
-        default_type text/plain;
-        set_rotate $counter 0 3;
-        echo $counter;
-    }
-</geshi>
 
-And accessing <code>/rotate</code> will also output integer sequence 0, 1, 2, 3, 0, 1, 2, 3, and so on.
+then request ``GET /rotate`` will output next number between 1 and 5 (i.e., 1, 
+2, 3, 4, 5) on each
+refresh of the page. This directive may be userful for banner rotation 
+purposes.
 
-This directive was first introduced in the <code>v0.22rc7</code> release.
+Another example is to use server-side value persistence to do simple 
+round-robin:
 
-== set_local_today ==
-'''syntax:''' ''set_local_today $dst''
+.. code-block:: nginx
 
-'''default:''' ''no''
+  location /rotate {
+      default_type text/plain;
+      set_rotate $counter 0 3;
+      echo $counter;
+  }
 
-'''context:''' ''location, location if''
 
-'''phase:''' ''rewrite''
+And accessing ``/rotate`` will also output integer sequence 0, 1, 2, 3, 0, 1, 
+2, 3, and so on.
 
-Set today's date ("yyyy-mm-dd") in localtime to the argument variable <code>$dst</code>.
+This directive was first introduced in the ``v0.22rc7`` release.
 
-Here's an example,
 
-<geshi lang="nginx">
-    location /today {
-        set_local_today $today;
-        echo $today;
-    }
-</geshi>
 
-then request <code>GET /today</code> will output something like
+set_local_today
+^^^^^^^^^^^^^^^
+:Syntax: ``set_local_today`` *$dst*
+:Default: *none*
+:Context: *location, location if*
+:Phase: *rewrite*
 
-<geshi lang="text">
-2011-08-16
-</geshi>
+Set today's date ("yyyy-mm-dd") in localtime to the argument variable ``$dst``.
+
+For example,
+
+.. code-block:: nginx
+
+  location /today {
+      set_local_today $today;
+      echo $today;
+  }
+
+
+then request ``GET /today`` will output something like
+
+.. code-block:: text
+
+  2011-08-16
+
 
 and year, the actual date you get here will vary every day ;)
 
-Behind the scene, this directive utilizes the <code>ngx_time</code> API in the Nginx core, so usually no syscall is involved due to the time caching mechanism in the Nginx core.
+Behind the scene, this directive utilizes the ``ngx_time`` API in the Nginx 
+core, so usually no syscall is involved due to the time caching mechanism in 
+the Nginx core.
 
-== set_formatted_gmt_time ==
-'''syntax:''' ''set_formatted_gmt_time $res &lt;time-format&gt;''
 
-'''default:''' ''no''
 
-'''context:''' ''location, location if''
+set_formatted_gmt_time
+^^^^^^^^^^^^^^^^^^^^^^
+:Syntax: ``set_formatted_gmt_time`` *$res* *&lt;time-format&gt;*
+:Default: *none*
+:Context: *location, location if*
+:Phase: *rewrite*
 
-'''phase:''' ''rewrite''
+Set a formatted GMT time to variable ``$res`` (as the first argument) using the 
+format string in the second argument.
 
-Set a formatted GMT time to variable <code>$res</code> (as the first argument) using the format string in the second argument.
+All the conversion specification notations in the standard C function 
+``strftime`` are supported, like ``%Y`` (for 4-digit years) and ``%M`` 
+(for minutes in decimal). See http://linux.die.net/man/3/strftime for a 
+complete list of conversion specification symbols.
 
-All the conversion specification notations in the standard C function <code>strftime</code> are supported, like <code>%Y</code> (for 4-digit years) and <code>%M</code> (for minutes in decimal). See http://linux.die.net/man/3/strftime for a complete list of conversion specification symbols.
+For example,
 
-Below is an example:
+.. code-block:: nginx
 
-<geshi lang="nginx">
-    location = /t {
-        set_formatted_gmt_time $timestr "%a %b %e %H:%M:%S %Y GMT";
-        echo $timestr;
-    }
-</geshi>
+  location = /t {
+      set_formatted_gmt_time $timestr "%a %b %e %H:%M:%S %Y GMT";
+      echo $timestr;
+  }
 
-Accessing <code>/t</code> yields the output
 
-    Fri Dec 13 15:34:37 2013 GMT
+Accessing ``/t`` yields the output::
 
-This directive was first added in the <code>0.23</code> release.
+  ``Fri Dec 13 15:34:37 2013 GMT``
 
-See also [[#set_formatted_local_time|set_formatted_local_time]].
+This directive was first added in the ``0.23`` release.
 
-== set_formatted_local_time ==
-'''syntax:''' ''set_formatted_local_time $res &lt;time-format&gt;''
+.. seealso:: `set_formatted_local_time`_.
 
-'''default:''' ''no''
 
-'''context:''' ''location, location if''
 
-'''phase:''' ''rewrite''
+set_formatted_local_time
+^^^^^^^^^^^^^^^^^^^^^^^^
+:Syntax: ``set_formatted_local_time`` *$res* *&lt;time-format&gt;*
+:Default: *none*
+:Context: *location, location if*
+:Phase: *rewrite*
 
-Set a formatted local time to variable <code>$res</code> (as the first argument) using the format string in the second argument.
+Set a formatted local time to variable ``$res`` (as the first argument) 
+using the format string in the second argument.
 
-All the conversion specification notations in the standard C function <code>strftime</code> are supported, like <code>%Y</code> (for 4-digit years) and <code>%M</code> (for minutes in decimal). See http://linux.die.net/man/3/strftime for a complete list of conversion specification symbols.
+All the conversion specification notations in the standard C function 
+``strftime`` are supported, like ``%Y`` (for 4-digit years) and ``%M`` 
+(for minutes in decimal). See http://linux.die.net/man/3/strftime for a 
+complete list of conversion specification symbols.
 
-Below is an example:
+For example,
 
-<geshi lang="nginx">
-    location = /t {
-        set_formatted_local_time $timestr "%a %b %e %H:%M:%S %Y %Z";
-        echo $timestr;
-    }
-</geshi>
+.. code-block:: nginx
 
-Accessing <code>/t</code> yields the output
+  location = /t {
+      set_formatted_local_time $timestr "%a %b %e %H:%M:%S %Y %Z";
+      echo $timestr;
+  }
 
-    Fri Dec 13 15:42:15 2013 PST
 
-This directive was first added in the <code>0.23</code> release.
+Accessing ``/t`` yields the output::
 
-See also [[#set_formatted_gmt_time|set_formatted_gmt_time]].
+  Fri Dec 13 15:42:15 2013 PST
 
-= Caveats =
+This directive was first added in the ``0.23`` release.
 
-Do not use [[HttpCoreModule#$arg_PARAMETER|$arg_PARAMETER]], [[HttpCoreModule#$cookie_COOKIE|$cookie_COOKIE]], [[HttpCoreModule#$http_HEADER|$http_HEADER]] or other special variables defined in the Nginx core module as the target variable in this module's directives. For instance,
+.. seealso:: `set_formatted_gmt_time`_.
 
-<geshi lang="nginx">
-    set_if_empty $arg_user 'foo';  # DO NOT USE THIS!
-</geshi>
+
+
+Caveats
+-------
+Do not use [[HttpCoreModule#$arg_PARAMETER|$arg_PARAMETER]], 
+[[HttpCoreModule#$cookie_COOKIE|$cookie_COOKIE]], 
+[[HttpCoreModule#$http_HEADER|$http_HEADER]] or other special variables defined 
+in the Nginx core module as the target variable in this module's directives. 
+For instance,
+
+.. code-block:: nginx
+
+  set_if_empty $arg_user 'foo';  # DO NOT USE THIS!
+
 
 may lead to segmentation faults.
 
-= Installation =
 
-This module is included and enabled by default in the [http://openresty.org ngx_openresty bundle]. If you want to install this module manually with your own Nginx source tarball, then follow the steps below:
 
-Grab the nginx source code from [http://nginx.org/ nginx.org], for example,
-the version 1.7.7 (see [[#Compatibility|nginx compatibility]]), and then build the source with this module:
+.. _set_misc.installation:
 
-<geshi lang="bash">
-    wget 'http://nginx.org/download/nginx-1.7.7.tar.gz'
-    tar -xzvf nginx-1.7.7.tar.gz
-    cd nginx-1.7.7/
-    
-    # Here we assume you would install you nginx under /opt/nginx/.
-    ./configure --prefix=/opt/nginx \
-        --with-http_ssl_module \
-        --add-module=/path/to/ngx_devel_kit \
-        --add-module=/path/to/set-misc-nginx-module
-    
-    make -j2
-    make install
-</geshi>
+Installation
+------------
+This module is included and enabled by default in the 
+`ngx_openresty bundle <http://openresty.org>`__. If you want to install this 
+module manually with your own Nginx source tarball, then follow the steps 
+below:
 
-Download the latest version of the release tarball of this module from [http://github.com/openresty/set-misc-nginx-module/tags set-misc-nginx-module file list], and the latest tarball for [https://github.com/simpl/ngx_devel_kit ngx_devel_kit] from its [https://github.com/simpl/ngx_devel_kit/tags file list].
+Grab the nginx source code from `nginx.org <http://nginx.org/>`_, for example, 
+the version 1.7.7 (see Compatibility_), and then build the source with this
+module:
 
-Also, this module is included and enabled by default in the [http://openresty.org/ ngx_openresty bundle].
+.. code-block:: bash
 
-= Compatibility =
+  wget 'http://nginx.org/download/nginx-1.7.7.tar.gz'
+  tar -xzvf nginx-1.7.7.tar.gz
+  cd nginx-1.7.7/
+  
+  # Here we assume you would install you nginx under /opt/nginx/.
+  ./configure --prefix=/opt/nginx \
+      --with-http_ssl_module \
+      --add-module=/path/to/ngx_devel_kit \
+      --add-module=/path/to/set-misc-nginx-module
+  
+  make -j2
+  make install
 
+
+Download the latest version of the release tarball of this module from 
+:github:`set-misc-nginx-module file list <openresty/set-misc-nginx-module/tags>`, 
+and the latest tarball for :github:`ngx_devel_kit <simpl/ngx_devel_kit>` 
+from its :github:`file list <simpl/ngx_devel_kit/tags>`.
+
+Also, this module is included and enabled by default in the 
+`ngx_openresty bundle <http://openresty.org/>`__.
+
+
+
+Compatibility
+-------------
 The following versions of Nginx should work with this module:
 
-* '''1.7.x'''                       (last tested: 1.7.7)
-* '''1.6.x'''
-* '''1.5.x'''                       (last tested: 1.5.8)
-* '''1.4.x'''                       (last tested: 1.4.4)
-* '''1.2.x'''                       (last tested: 1.2.9)
-* '''1.1.x'''                       (last tested: 1.1.5)
-* '''1.0.x'''                       (last tested: 1.0.15)
-* '''0.9.x'''                       (last tested: 0.9.4)
-* '''0.8.x'''                       (last tested: 0.8.54)
-* '''0.7.x >= 0.7.46'''             (last tested: 0.7.68)
+* **1.7.x**     (last tested: 1.7.7)
+* **1.6.x**
+* **1.5.x**     (last tested: 1.5.8)
+* **1.4.x**     (last tested: 1.4.4)
+* **1.2.x**     (last tested: 1.2.9)
+* **1.1.x**     (last tested: 1.1.5)
+* **1.0.x**     (last tested: 1.0.15)
+* **0.9.x**     (last tested: 0.9.4)
+* **0.8.x**     (last tested: 0.8.54)
+* **>= 0.7.46** (last tested: 0.7.68)
 
-If you find that any particular version of Nginx above 0.7.46 does not work with this module, please consider [[#Report Bugs|reporting a bug]].
+If you find that any particular version of Nginx above 0.7.46 does not work 
+with this module, please consider [[#Report Bugs|reporting a bug]].
 
-= Report Bugs =
 
-Although a lot of effort has been put into testing and code tuning, there must be some serious bugs lurking somewhere in this module. So whenever you are bitten by any quirks, please don't hesitate to
 
-# send a bug report or even patches to the [https://groups.google.com/group/openresty-en openresty-en mailing list],
-# or create a ticket on the [http://github.com/openresty/set-misc-nginx-module/issues issue tracking interface] provided by GitHub.
+Report Bugs
+-----------
+Although a lot of effort has been put into testing and code tuning, there must 
+be some serious bugs lurking somewhere in this module. So whenever you are 
+bitten by any quirks, please don't hesitate to
 
-= Source Repository =
+#. send a bug report or even patches to the `openresty-en mailing list <https://groups.google.com/group/openresty-en>`_,
+#. or create a ticket on the :github:`issue tracking interface <openresty/set-misc-nginx-module/issues>` provided by GitHub.
 
-Available on github at [http://github.com/openresty/set-misc-nginx-module openresty/set-misc-nginx-module].
 
-= Changes =
 
-The change logs for every release of this module can be obtained from the ngx_openresty bundle's change logs:
+.. _set_misc.source-repository:
+
+Source Repository
+-----------------
+Available on github at 
+:github:`openresty/set-misc-nginx-module <openresty/set-misc-nginx-module>`.
+
+
+
+Changes
+-------
+The change logs for every release of this module can be obtained from the 
+ngx_openresty bundle's change logs:
 
 http://openresty.org/#Changes
 
-= Test Suite =
 
-This module comes with a Perl-driven test suite. The [http://github.com/openresty/set-misc-nginx-module/tree/master/t/ test cases] are
-[http://github.com/openresty/set-misc-nginx-module/blob/master/t/escape-uri.t declarative] too. Thanks to the [http://search.cpan.org/perldoc?Test::Nginx Test::Nginx] module in the Perl world.
+
+Test Suite
+----------
+This module comes with a Perl-driven test suite. The 
+:github:`test cases <openresty/set-misc-nginx-module/tree/master/t/>` 
+are :github:`declarative <openresty/set-misc-nginx-module/blob/master/t/escape-uri.t>` 
+too. Thanks to the `Test::Nginx <http://search.cpan.org/perldoc?Test::Nginx>`_ 
+module in the Perl world.
 
 To run it on your side:
 
-<geshi lang="bash">
-    $ PATH=/path/to/your/nginx-with-set-misc-module:$PATH prove -r t
-</geshi>
+.. code-block:: bash
 
-You need to terminate any Nginx processes before running the test suite if you have changed the Nginx server binary.
+  $ PATH=/path/to/your/nginx-with-set-misc-module:$PATH prove -r t
 
-Because a single nginx server (by default, <code>localhost:1984</code>) is used across all the test scripts (<code>.t</code> files), it's meaningless to run the test suite in parallel by specifying <code>-jN</code> when invoking the <code>prove</code> utility.
 
-= Getting involved =
+You need to terminate any Nginx processes before running the test suite if you 
+have changed the Nginx server binary.
 
-You'll be very welcomed to submit patches to the [[#Author|author]] or just ask for a commit bit to the [[#Source Repository|source repository]] on GitHub.
+Because a single nginx server (by default, ``localhost:1984``) is used across 
+all the test scripts (``.t`` files), it's meaningless to run the test suite in 
+parallel by specifying ``-jN`` when invoking the ``prove`` utility.
 
-= Author =
 
-Yichun Zhang (agentzh) ''<agentzh@gmail.com>'', CloudFlare Inc.
 
-This wiki page is also maintained by the author himself, and everybody is encouraged to improve this page as well.
+Getting involved
+----------------
+You'll be very welcomed to submit patches to the `Author <set_misc.author_>`_ or 
+just ask for a commit bit to the `Source Repository <set_misc.source-repository_>`_ 
+on GitHub.
 
-= Copyright & License =
 
+
+.. _set_misc.author:
+
+Author
+------
+Yichun Zhang (agentzh) *<agentzh@gmail.com>*, CloudFlare Inc.
+
+This wiki page is also maintained by the author himself, and everybody is 
+encouraged to improve this page as well.
+
+
+
+Copyright & License
+-------------------
 Copyright (C) 2009-2015, Yichun Zhang (章亦春) <agentzh@gmail.com>, CloudFlare Inc.
 
 This module is licensed under the terms of the BSD license.
@@ -1089,8 +1298,12 @@ Redistribution and use in source and binary forms, with or without
 modification, are permitted provided that the following conditions
 are met:
 
-* Redistributions of source code must retain the above copyright notice, this list of conditions and the following disclaimer.
-* Redistributions in binary form must reproduce the above copyright notice, this list of conditions and the following disclaimer in the documentation and/or other materials provided with the distribution.
+* Redistributions of source code must retain the above copyright notice, 
+  this list of conditions and the following disclaimer.
+  
+* Redistributions in binary form must reproduce the above copyright notice, 
+  this list of conditions and the following disclaimer in the documentation 
+  and/or other materials provided with the distribution.
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS
 "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT
@@ -1104,6 +1317,9 @@ LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-= See Also =
-* [https://github.com/simpl/ngx_devel_kit Nginx Devel Kit]
-* [http://openresty.org The ngx_openresty bundle]
+
+
+See Also
+--------
+* :github:`Nginx Devel Kit <simpl/ngx_devel_kit>`
+* `The ngx_openresty bundle <http://openresty.org>`_

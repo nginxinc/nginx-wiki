@@ -26,7 +26,7 @@ Directives
 omallow
 ^^^^^^^
 
-:Syntax: ``omallow [`` *username* ``|`` *username groupname* ``| all ]``
+:Syntax: ``omallow [`` *username* ``|`` *username:groupname* ``| all ]``
 :Default: *none*
 :Context: *http, server, location, limit_except*
 
@@ -36,7 +36,7 @@ Directive grants access for the username or user:group indicated.
 omdeny
 ^^^^^^
 
-:Syntax: ``omdeny [`` *username* ``|`` *username groupname* ``| all ]``
+:Syntax: ``omdeny [`` *username* ``|`` *username:groupname* ``| all ]``
 :Default: *none*
 :Context: *http, server, location, limit_except*
 
