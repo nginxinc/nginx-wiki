@@ -4,7 +4,7 @@ RRD Graph
 Description
 -----------
 
-`RRDtool <http://oss.oetiker.ch/rrdtool/RRDtool>`_ stores and graphs time-series data. 
+`RRDtool <http://oss.oetiker.ch/rrdtool/index.en.html>`_ stores and graphs time-series data. 
 
 **mod_rrd_graph** - is an Nginx module that provides an HTTP interface to RRDtool's graphing facilities. By linking RRDtool directly into Nginx, ngx_rrd_graph is faster than scripts and CGIs with similar purposes.
 
@@ -40,9 +40,9 @@ RRDtool graphing commands can then be appended to that location in request URLs.
   DEF:ds0=test.rrd:reading:AVERAGE \
   LINE1:ds0#00FF00
 
-becomes:
+becomes::
 
-http://mysite.com/rrdtool--start%20now-300s%20--end%20now%20DEF%3Ads0%3Dtest.rrd%3Areading%3AAVERAGE%20LINE1%3Ads0%2300FF00
+  http://mysite.com/rrdtool--start%20now-300s%20--end%20now%20DEF%3Ads0%3Dtest.rrd%3Areading%3AAVERAGE%20LINE1%3Ads0%2300FF00
 
 The module supports all the features of your copy of RRDtool. It can output PNG, PDF, SVG, and EPS graphics (see the ``--imgformat`` option of `rrdgraph(1) <http://oss.oetiker.ch/rrdtool/doc/rrdgraph.en.html>`_).
 
@@ -61,7 +61,7 @@ Installation
 ------------
 
 * ngx_rrd_graph requires `RRDtool 1.3 <http://oss.oetiker.ch/rrdtool-trac/wiki/RRDtool13>`_  or later.
-* After installing RRDtool, get the mod_rrd_graph source code from :github:`Github <evanmiller/mod_rrd_graph>`.
+* After installing RRDtool, get the mod_rrd_graph source code from :github:`Github <evanmiller/mod_rrd_graph>`
 * Extract the archive and add the following option to your Nginx ``./configure`` command:
 
   .. code-block:: bash

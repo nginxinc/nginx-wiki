@@ -102,4 +102,4 @@ Send bug reports to `Evan Miller <http://www.evanmiller.org/>`_.
 Thanks
 ------
 
-Thanks to `box.net <http://box.net/>`_  for sponsoring the initial development of mod_zip and to `vtunnel.com <http://vtunnel.com/>`_  for sponsoring byte-range support.
+Thanks to `box.com <https://www.box.com/>`_  for sponsoring the initial development of mod_zip and to `vtunnel.com <http://vtunnel.com/>`_  for sponsoring byte-range support.

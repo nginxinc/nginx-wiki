@@ -19,7 +19,7 @@ This module is production ready.
 Version
 -------
 This document describes srcache-nginx-module 
-:github:`v0.29 <openresty/srcache-nginx-module/tags>` 
+:github:`v0.29 <openresty/srcache-nginx-module/tags>`
 released on February 18, 2015.
 
 
@@ -882,7 +882,7 @@ Alternatively, you can build Nginx with this module all by yourself:
 
 * Grab the nginx source code from `nginx.org <http://nginx.org>`_, for example, the version 1.7.10 (see [[#Compatibility|Nginx Compatibility]]),
 * and then apply the patch to your nginx source tree that fixes an important bug in the mainline Nginx core: https://raw.github.com/openresty/ngx_openresty/master/patches/nginx-1.4.3-upstream_truncation.patch (you do NOT need this patch if you are using nginx 1.5.3 and later versions.)
-* after that, download the latest version of the release tarball of this module from srcache-nginx-module :github:`file list <openresty/srcache-nginx-module/tags>`,
+* after that, download the latest version of the release tarball of this module from srcache-nginx-module :github:`file list <openresty/srcache-nginx-module/tags>`
 * and finally build the Nginx source with this module
   
   .. code-block:: nginx
@@ -942,14 +942,14 @@ Bugs and Patches
 ----------------
 Please submit bug reports, wishlists, or patches by
 
-#. creating a ticket on the :github:`GitHub Issue Tracker <openresty/srcache-nginx-module/issues>`,
+#. creating a ticket on the :github:`GitHub Issue Tracker <openresty/srcache-nginx-module/issues>`
 #. or posting to the `OpenResty community <sr_cache.community_>`_.
 
 
 
 Source Repository
 -----------------
-Available on github at :github:`openresty/srcache-nginx-module <openresty/srcache-nginx-module>`.
+Available on github at :github:`openresty/srcache-nginx-module <openresty/srcache-nginx-module>`
 
 
 

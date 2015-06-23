@@ -44,8 +44,8 @@ Installation
 ------------
 
 This module is not distributed with the Nginx source. You can browse its 
-:github:`git repository <gnosek/nginx-upstream-fair/tree/master>`, 
-or :github:`download the tar ball <gnosek/nginx-upstream-fair/tarball/master>`.
+:github:`git repository <gnosek/nginx-upstream-fair/tree/master>` 
+or :github:`download the tar ball <gnosek/nginx-upstream-fair/tarball/master>`
 
 After extracting, add the following option to your Nginx ``./configure`` command:
 

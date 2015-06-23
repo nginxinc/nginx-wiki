@@ -8,7 +8,7 @@ A pure stream http push technology for your Nginx setup.
 Comet made easy and **really scalable**.
 
 Available on github at 
-:github:`nginx_push_stream_module <wandenberg/nginx-push-stream-module>`.
+:github:`nginx_push_stream_module <wandenberg/nginx-push-stream-module>`
 
 .. note:: *This module is not distributed with the Nginx source.* See the 
   `installation instructions <push_stream.installation_>`_.
@@ -18,7 +18,7 @@ Available on github at
 Changelog
 ---------
 Always take a look at 
-:github:`CHANGELOG.textile <wandenberg/nginx-push-stream-module/blob/master/CHANGELOG.textile>` 
+:github:`CHANGELOG.textile <wandenberg/nginx-push-stream-module/blob/master/CHANGELOG.textile>`
 to see what’s new.
 
 
@@ -26,7 +26,7 @@ to see what’s new.
 Contribute
 ----------
 After you try this module and like it, feel free to 
-`give something back <https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=4LP6P9A7BC37S>`_, 
+`give something back <https://www.paypal.com/us/cgi-bin/webscr?cmd=_flow&SESSION=j6q7Fyp4cLjVJZpbBKHSQvJNNKC0BJ-e_KIinYxZwQlqESvriMdPT6HT0_q&dispatch=5885d80a13c0db1f8e263663d3faee8de6030e9239419d79c3f52f70a3ed57ec>`_, 
 and help in the maintenance of the project ;)
 
 
@@ -613,7 +613,7 @@ push_stream_eventsource_support
 
 **release version:** *0.3.0*
 
-Enable `Event Source <http://dev.w3.org/html5/eventsource/>`_ support for 
+Enable `Event Source <https://w3c.github.io/eventsource/>`_ support for 
 subscribers.
 
 
@@ -689,7 +689,7 @@ and can combine any of these parameters, like:
 Discussion
 ----------
 Nginx Push Stream Module 
-`Discussion Group <https://groups.google.com/group/nginxpushstream>`_
+`Discussion Group <https://groups.google.com/forum/#!forum/nginxpushstream>`_
 
 
 

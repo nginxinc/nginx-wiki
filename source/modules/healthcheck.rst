@@ -7,7 +7,7 @@ Description
 HTTP 200 + an optional request body, they are marked good. Otherwise, they 
 are marked bad.
 
-You can get the module from :github:`GitHub <cep21/healthcheck_nginx_upstreams>`.
+You can get the module from :github:`GitHub <cep21/healthcheck_nginx_upstreams>`
 
 .. note:: This also gives you access to a health status page that lets you 
   seehow well your healthcheck are doing.
@@ -17,7 +17,7 @@ You can get the module from :github:`GitHub <cep21/healthcheck_nginx_upstreams>`
 
 .. warning:: The docs on this wiki can get out of date. For the authoritative 
   information, please see the README file inside the plugin's 
-  :github:`git repository <cep21/healthcheck_nginx_upstreams>`.
+  :github:`git repository <cep21/healthcheck_nginx_upstreams>`
 
 
 
@@ -124,7 +124,7 @@ status. Use similarly to the stub_status module.
 Installation
 ------------
 This module is not distributed with the Nginx source. You can download the 
-module from :github:`here <cep21/healthcheck_nginx_upstreams>`. 
+module from :github:`here <cep21/healthcheck_nginx_upstreams>` 
 Read the installation instructions inside the README file.
 
 

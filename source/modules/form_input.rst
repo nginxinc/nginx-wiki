@@ -1,6 +1,7 @@
 Form Input
 ==========
 
+
 Description
 -----------
 
@@ -10,11 +11,13 @@ into nginx variables.
 
 This module depends on the ngx_devel_kit (NDK) module.
 
+
+
 Installation
 ------------
 
-#. Get the nginx source code from `nginx.net <http://nginx.net/>`_.
-#. Get the ngx_devel_kit source code from :github:`GitHub simpl-it/ngx_devel_kit repository <simpl-it/ngx_devel_kit>`.
+#. Get the nginx source code from `nginx.org <http://nginx.org/>`_.
+#. Get the ngx_devel_kit source code from :github:`GitHub simpl-it/ngx_devel_kit repository <simpl-it/ngx_devel_kit>`
 #. Unpack the source code and build nginx with this module.
 
 .. code-block:: bash
@@ -29,6 +32,8 @@ Installation
   $ ./configure --add-module=/somepath/form-input-nginx-module --add-module=/somepath/ngx_devel_kit
   $ make -j2
   $ make install
+
+
 
 Usage
 -----
@@ -59,6 +64,7 @@ Example:
   }
 
 
+
 Compatibility
 -------------
 
@@ -67,10 +73,12 @@ The following versions of Nginx should work with this module:
 * **0.8.x <= 0.8.41**                       (last tested version is 0.8.43)
 * **0.7.x**                                 (last tested version is 0.7.67)
 
+
+
 Copyright & License
 -------------------
 
-Copyright (c) 2010, Taobao Inc., Alibaba Group ( http://www.taobao.com ).
+Copyright (c) 2010, Taobao Inc., Alibaba Group ( http://www.taobao.com/market/global/index_new.php ).
 
 Copyright (c) 2010, calio <vipcalio@gmail.com>.
 
@@ -95,6 +103,8 @@ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
 LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+
 
 Changelog
 ---------

@@ -12,7 +12,7 @@ This module depends on the ngx_devel_kit (NDK) module.
 
 Installation
 ------------
-#. Get the nginx source code from nginx.net (http://nginx.net/).
+#. Get the nginx source code from http://nginx.org.
 #. Untar the source code and build nginx with this module.
 
 .. code-block:: bash
@@ -76,7 +76,7 @@ Copyright & License
 -------------------
 This program is licenced under the BSD license.
 
-Copyright (c) 2010, Taobao Inc, Alibaba Group ( http://www.taobao.com/).
+Copyright (c) 2010, Taobao Inc, Alibaba Group ( http://www.taobao.com/market/global/index_new.php ).
 Copyright (c) 2010, Calio <vipcalio@gmail.com>.
 
 All rights reserved.

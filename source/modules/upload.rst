@@ -13,7 +13,7 @@ The module parses request body storing all files being uploaded to a directory s
 
 Source Repository
 -----------------
-Get it from :github:`GitHub <vkholodkov/nginx-upload-module/tree/2.2>`.
+Get it from :github:`GitHub <vkholodkov/nginx-upload-module/tree/2.2>`
 
 
 
@@ -308,7 +308,7 @@ Example Configuration
 Example Form
 ^^^^^^^^^^^^
 
-.. code-block:: HTML
+.. code-block:: html
 
   <html>
     <head>

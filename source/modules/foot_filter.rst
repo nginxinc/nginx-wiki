@@ -4,11 +4,9 @@ Foot Filter
 Synopsis
 --------
 
-This is a module that is distributed with
-`Tengine <http://tengine.taobao.org>`_ which is a distribution
-of Nginx that is used by the e-commerce/auction site Taobao.com.
-This distribution contains some modules that are new on the Nginx
-scene.The ngx_http_footer_filter_module is one of them.
+This is a module that is distributed with `Tengine <http://tengine.taobao.org>`_ which is a distribution of Nginx that is used by the e-commerce/auction site Taobao.com.
+This distribution contains some modules that are new on the Nginx scene.
+The **ngx_http_footer_filter_module** is one of them.
 
 This module implements a body filter that adds a given string
 to the page footer.
@@ -38,7 +36,7 @@ footer_types
 :Default: ``text/html``
 :Context: *http, server, location*
 
-Defines the `MIME types <http://en.wikipedia.org/wiki/MIME_type>`_ of the files where the footer will be included.
+Defines the `MIME types <https://en.wikipedia.org/wiki/MIME_type>`_ of the files where the footer will be included.
 
 Installation
 ------------
@@ -68,12 +66,12 @@ I'm tagging each release in synch with the `Tengine <http://tengine.taobao.org>`
 Other tengine modules on Github
 -------------------------------
 
-* :github:`backtrace_module <taobao/nginx-backtrace>`:
+* :github:`backtrace_module <taobao/nginx-backtrace>`
     Can be used to dump backtrace of nginx in case a worker process exits abnormally,
     e.g. when some signal is received (SIGABR, SIGBUS, SIGFPE, SIGILL, SIGIOT, SIGSEGV).
     It's quite handy for debugging purpose.
 
-* :github:`http slice <taobao/nginx-http-slice>`:
+* :github:`http slice <taobao/nginx-http-slice>`
     Allows to serve a file by slices. A sort of reverse byte-range. Useful for serving large files while not hogging the network.
 
 Other builds
@@ -156,7 +154,7 @@ footer_types
 :Default: ``text/html``
 :Context: *http, server, location*
 
-Defines the `MIME types <http://en.wikipedia.org/wiki/MIME_type>`_ of the files where the footer will be included.
+Defines the `MIME types <https://en.wikipedia.org/wiki/MIME_type>`_ of the files where the footer will be included.
 
 Installation
 ------------
@@ -186,12 +184,12 @@ I'm tagging each release in synch with the `Tengine <http://tengine.taobao.org>`
 Other tengine modules on Github
 -------------------------------
 
-* :github:`backtrace_module <taobao/nginx-backtrace>`:
+* :github:`backtrace_module <taobao/nginx-backtrace>`
     Can be used to dump backtrace of nginx in case a worker process exits abnormally,
     e.g. when some signal is received (SIGABR, SIGBUS, SIGFPE, SIGILL, SIGIOT, SIGSEGV).
     It's quite handy for debugging purpose.
 
-* :github:`http slice <taobao/nginx-http-slice>`:
+* :github:`http slice <taobao/nginx-http-slice>`
     Allows to serve a file by slices. A sort of reverse byte-range. Useful for serving large files while not hogging the network.
 
 Other builds

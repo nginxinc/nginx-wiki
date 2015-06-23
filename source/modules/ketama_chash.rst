@@ -35,7 +35,7 @@ Synopsis
 Installation
 ------------
 
-This module is not distributed with the Nginx source. You can download the request_hash module from :github:`Github <flygoast/ngx_http_upstream_ketama_chash>`.
+This module is not distributed with the Nginx source. You can download the request_hash module from :github:`Github <flygoast/ngx_http_upstream_ketama_chash>`
 
 .. code-block:: bash
 
@@ -47,4 +47,4 @@ This module is not distributed with the Nginx source. You can download the reque
 Bugs
 ----
 
-Send bug reports to :github:`FengGu <flygoast/ngx_http_upstream_ketama_chash>`.
+Send bug reports to :github:`FengGu <flygoast/ngx_http_upstream_ketama_chash>`

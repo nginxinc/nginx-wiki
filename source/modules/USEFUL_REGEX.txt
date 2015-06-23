@@ -61,8 +61,8 @@
 \[\[HttpSsiModule(.*?)\|(.*?)\]\]
 `\2 <http://nginx.org/en/docs/http/ngx_http_ssi_module.html\1>`_
 
-\[\[HttpCoreModule(.*?)\|(.*?)\]\]
-`\2 <http://nginx.org/en/docs/http/ngx_http_core_module.html\1>`_
+\[\[Http(Core|Ssi|Proxy|Rewrite|Addition|Fastcgi|Access)Module(.*?)\|(.*?)\]\]
+`\3 <http://nginx.org/en/docs/http/ngx_http_\u\1_module.html\2>`_
 
 
 

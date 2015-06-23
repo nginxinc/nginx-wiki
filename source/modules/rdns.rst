@@ -11,7 +11,7 @@ Features
 * rewrite module support (``rdns`` can be used inside ``if`` blocks);
 * simple access control to allow/deny connections from given DNS names.
 
-You can get the module on :github:`GitHub <flant/nginx-http-rdns>`.
+You can get the module on :github:`GitHub <flant/nginx-http-rdns>`
 
 .. note:: *This module is not distributed with nginx source.* See the `installation instructions <rdns.installation_>`_.
 
@@ -115,7 +115,7 @@ Being in a named location and restarting request handling pipeline, nginx contin
 Installation
 ------------
 
-Get source code from :github:`GitHub <flant/nginx-http-rdns>` 
+Get source code from :github:`GitHub <flant/nginx-http-rdns>`
 
 ..
   commenting out until we have 3rd party module instructions page
@@ -124,7 +124,7 @@ Get source code from :github:`GitHub <flant/nginx-http-rdns>`
 Bugs / patches
 --------------
 
-Please, report bugs & propose your patches at :github:`GitHub <flant/nginx-http-rdns>`.
+Please, report bugs & propose your patches at :github:`GitHub <flant/nginx-http-rdns>`
 
 Credits
 -------

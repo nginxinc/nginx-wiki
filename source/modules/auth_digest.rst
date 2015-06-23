@@ -6,7 +6,7 @@ Name
 
 **ngx_http_auth_digest** - HTTP Digest Authentication support for Nginx.
 
-.. note:: *This module is not distributed with the Nginx source.* See the :github:`installation instructions <samizdatco/nginx-http-auth-digest/blob/master/readme.rst>`.
+.. note:: *This module is not distributed with the Nginx source.* See the :github:`installation instructions <samizdatco/nginx-http-auth-digest/blob/master/readme.rst>`
 
 Status
 ------
@@ -161,7 +161,7 @@ The basic request-handling and password-file-parsing is based on the ``ngx_http_
 
 Copyright (c) 2011, Christian Swinehart
 
-This module is licensed under the terms of the :github:`BSD license <samizdatco/nginx-http-auth-digest/blob/master/LICENSE>`.
+This module is licensed under the terms of the :github:`BSD license <samizdatco/nginx-http-auth-digest/blob/master/LICENSE>`
 
 See Also
 --------

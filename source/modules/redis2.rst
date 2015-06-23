@@ -17,7 +17,7 @@ This module is already production ready.
 Version
 -------
 This document describes ngx_redis2 
-:github:`v0.11 <openresty/redis2-nginx-module/tags>` 
+:github:`v0.11 <openresty/redis2-nginx-module/tags>`
 released on 24 April 2014.
 
 
@@ -339,7 +339,7 @@ A sample config snippet looks like this
 Lua Interoperability
 --------------------
 
-This module can be served as a non-blocking redis2 client for :doc::github:`lua` (but nowadays it is recommended to use the `lua-resty-redis <openresty/lua-resty-redis>` library instead, which is much simpler to use and more efficient most of the time).
+This module can be served as a non-blocking redis2 client for :doc:`lua` (but nowadays it is recommended to use the :github:`lua-resty-redis <openresty/lua-resty-redis>` library instead, which is much simpler to use and more efficient most of the time).
 Here's an example using a GET subrequest:
 
 .. code-block:: nginx
@@ -567,7 +567,7 @@ You are recommended to install this module (as well as the Nginx core and many m
 Alternatively, you can install this module manually by recompiling the standard Nginx core as follows:
 
 * Grab the nginx source code from `nginx.org <http://nginx.org>`_, for example, the version 1.7.4 (see Compatibility_),
-* and then download the latest version of the release tarball of this module from ngx_redis2's :github:`file list <openresty/redis2-nginx-module/tags>`.
+* and then download the latest version of the release tarball of this module from ngx_redis2's :github:`file list <openresty/redis2-nginx-module/tags>`
 * and finally build the source with this module:
 
   .. code-block:: bash
@@ -632,14 +632,14 @@ Bugs and Patches
 ----------------
 Please submit bug reports, wishlists, or patches by
 
-#. creating a ticket on the :github:`GitHub Issue Tracker <openresty/redis2-nginx-module/issues>`,
+#. creating a ticket on the :github:`GitHub Issue Tracker <openresty/redis2-nginx-module/issues>`
 #. or posting to the `OpenResty community <redis2.community_>`_.
 
 
 
 Source Repository
 -----------------
-Available on github at :github:`openresty/redis2-nginx-module <openresty/redis2-nginx-module>`.
+Available on github at :github:`openresty/redis2-nginx-module <openresty/redis2-nginx-module>`
 
 
 

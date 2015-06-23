@@ -71,7 +71,7 @@ hashring which contains each server (160 * weight) times in the same way as the
 of ``$request_uri`` it will decide which backend server has to be used. Now the 
 ``test.php`` script from the above example could look like following:
 
-.. code-block:: PHP
+.. code-block:: php
 
   $memcache = new Memcache;
 

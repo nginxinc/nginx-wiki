@@ -3,7 +3,7 @@ Audio Track for HTTP Live Streaming
 
 This nginx module generates audio track for hls streams on the fly.
 
-Available on :github:`GitHub <flavioribeiro/nginx-audio-track-for-hls-module>`.
+Available on :github:`GitHub <flavioribeiro/nginx-audio-track-for-hls-module>`
 
 Why?
 ----
@@ -94,11 +94,7 @@ Follow the steps:
 
      $ git clone git://github.com/flavioribeiro/nginx-audio-track-for-hls-module.git
 
-<<<<<<< HEAD
-* Clone `Lua module <https://github.com/openresty/lua-nginx-module>`_
-=======
 * Clone :github:`Lua module <chaoslawful/lua-nginx-module>`
->>>>>>> 533cc60... Working versions of every module are complete, just need to add some external references on some pages
 
   .. code-block:: bash
 

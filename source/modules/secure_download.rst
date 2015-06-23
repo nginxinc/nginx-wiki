@@ -11,25 +11,24 @@ Directives
 
 secure_download
 ^^^^^^^^^^^^^^^
-
 :Syntax: ``secure_download [on|off]``
 :Default: ``off``
 :Context: *location*
 
 This can turn the module on/off.
 
+
 secure_download_secret
 ^^^^^^^^^^^^^^^^^^^^^^
-
 :Syntax: ``secure_download_secret <``\ *secret string*\ ``>``
 :Default: *none*
 :Context: *location*
 
 Defines the string which is included in the md5 hash. It can also contain variables.
 
+
 secure_download_path_mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-
 :Syntax: ``secure_download_path_mode [file|folder]``
 :Default: ``folder``
 :Context: *location*
@@ -43,7 +42,6 @@ Variables
 
 $secure_download
 ^^^^^^^^^^^^^^^^
-
 This variable contains the result of the request URL validation process. It always contains a number and can have the following possible values:
 
 - ">0": link is valid and the value is the amount of seconds until it expires
@@ -56,7 +54,6 @@ Explanation
 
 The theory
 ^^^^^^^^^^
-
 A generated URI must have the following format::
 
   <real_path>/<md5_hash>/<expiration_timestamp>
@@ -67,18 +64,18 @@ the md5 hash gets generated out of the following string::
 
 * ``real_path`` can be either the path of the file which you want to access or the folder which contains the file, which of those two has to be defined in the nginx config
 * ``secret`` is some random string which must be known by the nginx config and by the link generating script
-* ``expiration_timestamp`` is a unix_timestamp (seconds since beginning of 1970) in hexadecimal format
+* ``expiration_timestamp`` is a unix_timestamp (seconds since beginning of 1970) in hexadecimal forma
+
 
 By example
 ^^^^^^^^^^
-
 Lets say you have a file in your document root under the path ``/somefolder/protected.html``. Now you want to generate a link which expires in 20 minutes, so you do following:
 
 * Get the current timestamp, for example from http://www.unixtimestamp.com/index.php. In this example our timestamp would be ``1240928342``
-* Convert the timestamp into hex, like for example http://www.easycalculation.com/decimal-converter.php does. Our timestamp in hex is ``49F71056``
+* Convert the timestamp into hex, like for example https://www.easycalculation.com/decimal-converter.php does. Our timestamp in hex is ``49F71056``
 * Now you need to decide for a secret string. It needs to be set in the nginx config with the parameter secure_download_secret_. For example "privatestring"
 * Then you put the following string together ``/somefolder/protected.html/privatestring/49F71056`` which consists of ``<real path/secret string/timestamp in hex``
-* Now you need to create an md5 hash of that string which we put together, for example on http://www.xs4all.nl/~jlpoutre/BoT/Javascript/Utils/md5_hashing.html. Then the resulting md5 should be ``f901b5272c17b456fabf49c3e9bcc120``
+* Now you need to create an md5 hash of that string which we put together. The resulting md5 should be ``f901b5272c17b456fabf49c3e9bcc120``
 * ok, you got everything you need, now you just have to put it together in the format ``<real_path>/<md5>/<timestamp>`` in our example this would look like ``/somefolder/protected.html/f901b5272c17b456fabf49c3e9bcc120/49F71056``
 * thats it, now you got your link which is only valid until the included timestamp gets reached
 
@@ -139,16 +136,15 @@ OR:
 
 Requirements
 ------------
-
 To compile the nginx with this module you will need to have following:
 
 - The mod_rewrite in the nginx has to be enabled
 - You need the mhash library, it is used by the secure-download module to create the md5 hashes
 - I tested the module only with nginx 0.7.61 and 0.8.33, no guarantee for other versions
 
+
 Bugs/Feedback
 ^^^^^^^^^^^^^
-
 In case you find any bugs, please write me a mail and I will try to help.
 
 If you are using that module, I would appreciate every kind of feedback or problem reports.
@@ -157,7 +153,7 @@ I tried to give some meaningful output in the error log if you set its log level
 
 Mail: mauro.stettler(A.T)gmail.com 
 
+
 Download
 ^^^^^^^^
-
 :github:`from GitHub <replay/ngx_http_secure_download>`

@@ -159,7 +159,7 @@ generator, and more!
 
 Every directive provided by this module can be mixed freely with other 
 [[HttpRewriteModule]]'s directives, like [[HttpRewriteModule#if|if]] and
-[[HttpRewriteModule#set|set]]. (Thanks to the :github:`Nginx Devel Kit <simpl/ngx_devel_kit>`!)
+[[HttpRewriteModule#set|set]]. (Thanks to the :github:`Nginx Devel Kit <simpl/ngx_devel_kit>` 
 
 
 
@@ -1187,9 +1187,9 @@ module:
 
 
 Download the latest version of the release tarball of this module from 
-:github:`set-misc-nginx-module file list <openresty/set-misc-nginx-module/tags>`, 
-and the latest tarball for :github:`ngx_devel_kit <simpl/ngx_devel_kit>` 
-from its :github:`file list <simpl/ngx_devel_kit/tags>`.
+:github:`set-misc-nginx-module file list <openresty/set-misc-nginx-module/tags>` 
+and the latest tarball for :github:`ngx_devel_kit <simpl/ngx_devel_kit>`
+from its :github:`file list <simpl/ngx_devel_kit/tags>`
 
 Also, this module is included and enabled by default in the 
 `ngx_openresty bundle <http://openresty.org/>`__.
@@ -1232,7 +1232,7 @@ bitten by any quirks, please don't hesitate to
 Source Repository
 -----------------
 Available on github at 
-:github:`openresty/set-misc-nginx-module <openresty/set-misc-nginx-module>`.
+:github:`openresty/set-misc-nginx-module <openresty/set-misc-nginx-module>`
 
 
 
@@ -1248,8 +1248,8 @@ http://openresty.org/#Changes
 Test Suite
 ----------
 This module comes with a Perl-driven test suite. The 
-:github:`test cases <openresty/set-misc-nginx-module/tree/master/t/>` 
-are :github:`declarative <openresty/set-misc-nginx-module/blob/master/t/escape-uri.t>` 
+:github:`test cases <openresty/set-misc-nginx-module/tree/master/t/>`
+are :github:`declarative <openresty/set-misc-nginx-module/blob/master/t/escape-uri.t>`
 too. Thanks to the `Test::Nginx <http://search.cpan.org/perldoc?Test::Nginx>`_ 
 module in the Perl world.
 
@@ -1321,5 +1321,5 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 See Also
 --------
-* :github:`Nginx Devel Kit <simpl/ngx_devel_kit>`
+* :github:`Nginx Development Kit <simpl/ngx_devel_kit>`
 * `The ngx_openresty bundle <http://openresty.org>`_

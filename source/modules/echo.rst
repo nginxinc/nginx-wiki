@@ -3,20 +3,23 @@ HTTP Echo Module
 
 Name
 ----
-
 **ngx_echo** - Brings "echo", "sleep", "time", "exec" and more shell-style goodies to Nginx config file.
 
 .. note:: *This module is not distributed with the Nginx source.* See the `installation instructions <echo.installation_>`_.
 
+
+
 Status
 ------
-
 This module is production ready.
+
+
 
 Version
 -------
-
 This document describes ngx_echo :github:`v0.57 <agentzh/echo-nginx-module/tags>` released on 21 November 2014.
+
+
 
 Synopsis
 --------
@@ -205,7 +208,6 @@ Synopsis
 
 Description
 -----------
-
 This module wraps lots of Nginx internal APIs for streaming input and output, parallel/sequential subrequests, timers and sleeping, as well as various meta data accessing.
 
 Basically it provides various utilities that help testing and debugging of other modules by trivially emulating different kinds of faked subrequest locations.
@@ -230,11 +232,12 @@ Technially, this module has also demonstrated the following techniques that migh
 #. Read client request body from the content handler, and returns back (asynchronously) to the content handler after completion.
 #. Use Perl-based declarative `test suite`_ to drive the development of Nginx C modules.
 
+
+
 .. _content handler directives:
 
 Content Handler Directives
 --------------------------
-
 Use of the following directives register this module to the current Nginx location as a content handler. If you want to use another module, like the `standard proxy module <http://nginx.org/en/docs/http/ngx_http_proxy_module.html>`_, as the content handler, use the `filter directives`_ provided by this module.
 
 All the content handler directives can be mixed together in a single Nginx location and they're supposed to run sequentially just as in the Bash scripting language.
@@ -279,7 +282,6 @@ Since the :github:`v0.22 <openresty/echo-nginx-module/tags>` release, all of the
 
 echo
 ^^^^
-
 :Syntax: ``echo [``\ *options*\ ``] <``\ *string*\ ``>...``
 :Default: *none*
 :Context: *location, location if*
@@ -384,7 +386,6 @@ which yields
 
 echo_duplicate
 ^^^^^^^^^^^^^^
-
 :Syntax: ``echo_duplicate <``\ *count*\ ``> <``\ *string*\ ``>``
 :Default: *none*
 :Context: *location, location if*
@@ -433,11 +434,11 @@ You get
   ------ END ------
 
 
-This directive was first introduced in :github:`v0.11 <openresty/echo-nginx-module/tags>`.
+This directive was first introduced in :github:`v0.11 <openresty/echo-nginx-module/tags>`
+
 
 echo_flush
 ^^^^^^^^^^
-
 :Syntax: ``echo_flush``
 :Default: *none*
 :Context: *location, location if*
@@ -498,9 +499,9 @@ The client will immediately see "hello" before ``/sub`` enters sleeping.
 
 See also echo_, `echo_sleep`_, and `echo_location_async`_.
 
+
 echo_sleep
 ^^^^^^^^^^
-
 :Syntax: ``echo_sleep <``\ *seconds*\ ``>``
 :Default: *none*
 :Context: *location, location if*
@@ -524,9 +525,9 @@ An example is
 
 Behind the scene, it sets up a per-request "sleep" ngx_event_t object, and adds a timer using that custom event to the Nginx event model and just waits for a timeout on that event. Because the "sleep" event is per-request, this directive can work in parallel subrequests.
 
+
 echo_blocking_sleep
 ^^^^^^^^^^^^^^^^^^^
-
 :Syntax: ``echo_blocking_sleep <``\ *seconds*\ ``>``
 :Default: *none*
 :Context: *location, location if*
@@ -540,9 +541,9 @@ Behind the curtain, it calls the ngx_msleep macro provided by the Nginx core whi
 
 Note that this directive will block the current Nginx worker process completely while being executed, so never use it in production environment.
 
+
 echo_reset_timer
 ^^^^^^^^^^^^^^^^
-
 :Syntax: ``echo_reset_timer``
 :Default: *none*
 :Context: *location, location if*
@@ -580,9 +581,9 @@ Invocation of this directive will force the underlying Nginx timer to get update
 
 See also `echo_sleep`_ and `$echo_timer_elapsed`_.
 
+
 echo_read_request_body
 ^^^^^^^^^^^^^^^^^^^^^^
-
 :Syntax: ``echo_read_request_body``
 :Default: *none*
 :Context: *location, location if*
@@ -627,11 +628,11 @@ Because ``/echoback`` is the main request, `$request_body <http://nginx.org/en/d
 
 Before Nginx 0.7.56, it makes no sense to use this directive because `$request_body <http://nginx.org/en/docs/http/ngx_http_core_module.html#$request_body>`_ was first introduced in Nginx 0.7.58.
 
-This directive itself was first introduced in the echo module's :github:`v0.14 <openresty/echo-nginx-module/tags>`.
+This directive itself was first introduced in the echo module's :github:`v0.14 <openresty/echo-nginx-module/tags>`
+
 
 echo_location_async
 ^^^^^^^^^^^^^^^^^^^
-
 :Syntax: ``echo_location_async <``\ *location*\ ``> [<``\ *url_args*\ ``>]``
 :Default: *none*
 :Context: *location, location if*
@@ -743,9 +744,9 @@ There is a known issue with this directive when disabling the standard `standard
 
 This directive is first introduced in :github:`v0.09 <openresty/echo-nginx-module/tags>` of this module and requires at least Nginx 0.7.46.
 
+
 echo_location
 ^^^^^^^^^^^^^
-
 :Syntax: ``echo_location <``\ *location*\ ``> [<``\ *url_args*\ ``>]``
 :Default: *none*
 :Context: *location, location if*
@@ -808,13 +809,13 @@ Behind the scene, it creates an ``ngx_http_post_subrequest_t`` object as a *cont
 
 Nginx named locations like ``@foo`` is *not* supported here.
 
-This directive was first introduced in the :github:`v0.12 <openresty/echo-nginx-module/tags>`.
+This directive was first introduced in the :github:`v0.12 <openresty/echo-nginx-module/tags>`
 
 See also `echo_location_async`_ for more details about the meaning of the arguments.
 
+
 echo_subrequest_async
 ^^^^^^^^^^^^^^^^^^^^^
-
 :Syntax: ``echo_subrequest_async <``\ *HTTP_method*\ ``> <``\ *location*\ ``> [-q <``\ *url_args*\ ``>] [-b <``\ *request_body*\ ``>] [-f <``\ *request_body_path*\ ``>]``
 :Default: *none*
 :Context: *location, location if*
@@ -903,17 +904,17 @@ This directive takes several options:
   -b <data>            Specify the request body data
 
 
-This directive was first introduced in the :github:`v0.15 <openresty/echo-nginx-module/tags>`.
+This directive was first introduced in the :github:`v0.15 <openresty/echo-nginx-module/tags>`
 
-The :github:``-f`` option to define a file path for the body was introduced in the `v0.35 <openresty/echo-nginx-module/tags>`.
+The :github:``-f`` option to define a file path for the body was introduced in the `v0.35 <openresty/echo-nginx-module/tags>`
 
 See also the `echo_subrequest`_ and `echo_location_async`_ directives.
 
 There is a known issue with this directive when disabling the standard `standard SSI module <http://nginx.org/en/docs/http/ngx_http_ssi_module.html>`_. See `Known Issues`_ for more details.
 
+
 echo_subrequest
 ^^^^^^^^^^^^^^^
-
 :Syntax: ``echo_subrequest <``\ *HTTP_method*\ ``> <``\ *location*\ ``> [-q <``\ *url_args*\ ``>] [-b <``\ *request_body*\ ``>] [-f <``\ *request_body_path*\ ``>]``
 :Default: *none*
 :Context: *location, location if*
@@ -925,11 +926,11 @@ See `echo_subrequest_async`_ for more details.
 
 Nginx named locations like ``@foo`` is *not* supported here.
 
-This directive was first introduced in the :github:`v0.15 <openresty/echo-nginx-module/tags>`.
+This directive was first introduced in the :github:`v0.15 <openresty/echo-nginx-module/tags>`
+
 
 echo_foreach_split
 ^^^^^^^^^^^^^^^^^^
-
 :Syntax: ``echo_foreach_split <``\ *delimiter*\ ``> <``\ *string*\ ``>``
 :Default: *none*
 :Context: *location, location if*
@@ -999,11 +1000,11 @@ Then accessing /merge to merge the ``.js`` resources specified in the query stri
 
 One can also use third-party Nginx cache module to cache the merged response generated by the ``/merge`` location in the previous example.
 
-This directive was first introduced in the :github:`v0.17 <openresty/echo-nginx-module/tags>`.
+This directive was first introduced in the :github:`v0.17 <openresty/echo-nginx-module/tags>`
+
 
 echo_end
 ^^^^^^^^
-
 :Syntax: ``echo_end``
 :Default: *none*
 :Context: *location, location if*
@@ -1011,11 +1012,11 @@ echo_end
 
 This directive is used to terminate the body of looping and conditional control structures like `echo_foreach_split`_.
 
-This directive was first introduced in the :github:`v0.17 <openresty/echo-nginx-module/tags>`.
+This directive was first introduced in the :github:`v0.17 <openresty/echo-nginx-module/tags>`
+
 
 echo_request_body
 ^^^^^^^^^^^^^^^^^
-
 :Syntax: ``echo_request_body``
 :Default: *none*
 :Context: *location, location if*
@@ -1025,7 +1026,7 @@ Outputs the contents of the request body previous read.
 
 Behind the scene, it's implemented roughly like this:
 
-.. code-block:: C
+.. code-block:: c
 
   if (r->request_body && r->request_body->bufs) {
       return ngx_http_output_filter(r, r->request_body->bufs);
@@ -1035,13 +1036,13 @@ Unlike the `$echo_request_body`_ and $request_body variables, this directive wil
 
 It is a "no-op" if no request body has been read yet.
 
-This directive was first introduced in the :github:`v0.18 <openresty/echo-nginx-module/tags>`.
+This directive was first introduced in the :github:`v0.18 <openresty/echo-nginx-module/tags>`
 
 See also `echo_read_request_body`_.
 
+
 echo_exec
 ^^^^^^^^^
-
 :Syntax: ``echo_exec <``\ *location*\ ``> [<``\ *query_string*\ ``>]``
 :Syntax: ``echo_exec <``\ *named_location*\ ``>``
 :Default: *none*
@@ -1089,11 +1090,11 @@ Never try to echo things before the ``echo_exec`` directive or you won't see the
 
 Technically speaking, this directive exposes the Nginx internal API functions ``ngx_http_internal_redirect`` and ``ngx_http_named_location``.
 
-This directive was first introduced in the :github:`v0.21 <openresty/echo-nginx-module/tags>`.
+This directive was first introduced in the :github:`v0.21 <openresty/echo-nginx-module/tags>`
+
 
 echo_status
 ^^^^^^^^^^^
-
 :Syntax: ``echo_status <``\ *status-num*\ ``>``
 :Default: ``200``
 :Context: *location, location if*
@@ -1125,18 +1126,18 @@ then we get a response like this:
 
 This directive was first introduced in the ``v0.40`` release.
 
+
 .. _filter directives:
 
 Filter Directives
 -----------------
-
 Use of the following directives trigger the filter registration of this module. By default, no filter will be registered by this module.
 
 Every filter directive supports variable interpolation in its arguments (if any).
 
+
 echo_before_body
 ^^^^^^^^^^^^^^^^
-
 :Syntax: ``echo_before_body [``\ *options*\ ``] [``\ *argument*\ ``]...``
 :Default: *none*
 :Context: *location, location if*
@@ -1193,9 +1194,9 @@ This directive also supports the ``-n`` and ``--`` options like the echo_ direct
 
 This directive can be mixed with its brother directive `echo_after_body`_.
 
+
 echo_after_body
 ^^^^^^^^^^^^^^^
-
 :Syntax: ``echo_after_body [``\ *argument*\ ``]...``
 :Default: *none*
 :Context: *location, location if*
@@ -1255,26 +1256,25 @@ Variables
 
 $echo_it
 ^^^^^^^^
-
 This is a "topic variable" used by `echo_foreach_split`_, just like the ``$_`` variable in Perl.
+
 
 $echo_timer_elapsed
 ^^^^^^^^^^^^^^^^^^^
-
 This variable holds the seconds elapsed since the start of the current request (might be a subrequest though) or the last invocation of the `echo_reset_timer`_ command.
 
 The timing result takes three digits after the decimal point.
 
 References of this variable will force the underlying Nginx timer to update to the current system time, regardless the timer resolution settings elsewhere in the config file, just like the `echo_reset_timer`_ directive.
 
+
 $echo_request_body
 ^^^^^^^^^^^^^^^^^^
-
 Evaluates to the current (sub)request's request body previously read if no part of the body has been saved to a temporary file. To always show the request body even if it's very large, use the `echo_request_body`_ directive.
+
 
 $echo_request_method
 ^^^^^^^^^^^^^^^^^^^^
-
 Evaluates to the HTTP request method of the current request (it can be a subrequest).
 
 Behind the scene, it just takes the string data stored in ``r->method_name``.
@@ -1283,22 +1283,22 @@ Compare it to the `$echo_client_request_method`_ variable.
 
 At least for Nginx 0.8.20 and older, the `$request_method <http://nginx.org/en/docs/http/ngx_http_core_module.html#$request_method>`_ variable provided by the `http core module <http://nginx.org/en/docs/http/ngx_http_core_module.html>`_ is actually doing what our `$echo_client_request_method`_ is doing.
 
-This variable was first introduced in our :github:`v0.15 <openresty/echo-nginx-module/tags>`.
+This variable was first introduced in our :github:`v0.15 <openresty/echo-nginx-module/tags>`
+
 
 $echo_client_request_method
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Always evaluates to the main request's HTTP method even if the current request is a subrequest.
 
 Behind the scene, it just takes the string data stored in ``r->main->method_name``.
 
 Compare it to the `$echo_request_method`_ variable.
 
-This variable was first introduced in our :github:`v0.15 <openresty/echo-nginx-module/tags>`.
+This variable was first introduced in our :github:`v0.15 <openresty/echo-nginx-module/tags>`
+
 
 $echo_client_request_headers
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Evaluates to the original client request's headers.
 
 Just as the name suggests, it will always take the main request (or the client request) even if it's currently executed in a subrequest.
@@ -1327,29 +1327,29 @@ Accessing ``/echoback`` yields
 
 Behind the scene, it recovers ``r->main->header_in`` (or the large header buffers, if any) on the C level and does not construct the headers itself by traversing parsed results in the request object.
 
-This variable was first introduced in :github:`v0.15 <openresty/echo-nginx-module/tags>`.
+This variable was first introduced in :github:`v0.15 <openresty/echo-nginx-module/tags>`
+
 
 $echo_cacheable_request_uri
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
 Evaluates to the parsed form of the URI (usually led by ``/``) of the current (sub-)request. Unlike the `$echo_request_uri`_ variable, it is cacheable.
 
 See `$echo_request_uri`_ for more details.
 
-This variable was first introduced in :github:`v0.17 <openresty/echo-nginx-module/tags>`.
+This variable was first introduced in :github:`v0.17 <openresty/echo-nginx-module/tags>`
+
 
 $echo_request_uri
 ^^^^^^^^^^^^^^^^^
-
 Evaluates to the parsed form of the URI (usually led by ``/``) of the current (sub-)request. Unlike the `$echo_cacheable_request_uri`_ variable, it is *not* cacheable.
 
 This is quite different from the `$request_uri <http://nginx.org/en/docs/http/ngx_http_core_module.html#$request_uri>`_ variable exported by the `HttpCoreModule <http://nginx.org/en/docs/http/ngx_http_core_module.html>`_, because ``$request_uri`` is the *unparsed* form of the current request's URI.
 
-This variable was first introduced in :github:`v0.17 <openresty/echo-nginx-module/tags>`.
+This variable was first introduced in :github:`v0.17 <openresty/echo-nginx-module/tags>`
+
 
 $echo_incr
 ^^^^^^^^^^
-
 It is a counter that always generate the current counting number, starting from 1. The counter is always associated with the main request even if it is accessed within a subrequest.
 
 Consider the following example
@@ -1376,22 +1376,22 @@ Accessing ``/main`` yields
   sub: 4
   main post: 2
 
-This directive was first introduced in the :github:`v0.18 <openresty/echo-nginx-module/tags>`.
+This directive was first introduced in the :github:`v0.18 <openresty/echo-nginx-module/tags>`
+
 
 $echo_response_status
 ^^^^^^^^^^^^^^^^^^^^^
-
 Evaluates to the status code of the current (sub)request, null if not any.
 
 Behind the scene, it's just the textual representation of ``r->headers_out->status``.
 
-This directive was first introduced in the :github:`v0.23 <openresty/echo-nginx-module/tags>` release]].
+This directive was first introduced in the :github:`v0.23 <openresty/echo-nginx-module/tags>` release.
+
 
 .. _echo.installation:
 
 Installation
 ------------
-
 You're recommended to install this module (as well as the Nginx core and many other goodies) via the `ngx_openresty bundle <http://openresty.org>`__. See `the detailed instructions <http://openresty.org/#Installation>`_ for downloading and installing ngx_openresty into your system. This is the easiest and most safe way to set things up.
 
 Alternatively, you can install this module manually with the Nginx source:
@@ -1413,7 +1413,7 @@ the version 1.7.7 (see `nginx compatibility <echo.compatibility_>`_), and then b
   $ make install
 
 
-Download the latest version of the release tarball of this module from :github:`echo-nginx-module file list <agentzh/echo-nginx-module/tags>`.
+Download the latest version of the release tarball of this module from :github:`echo-nginx-module file list <agentzh/echo-nginx-module/tags>`
 
 Also, this module is included and enabled by default in the `ngx_openresty bundle <http://openresty.org>`__.
 
@@ -1444,11 +1444,12 @@ In particular,
 
 Earlier versions of Nginx like 0.6.x and 0.5.x will *not* work at all.
 
-If you find that any particular version of Nginx above 0.7.21 does not work with this module, please consider `reporting a bug`_.
+If you find that any particular version of Nginx above 0.7.21 does not work with this module, please consider `echo.reporting-a-bug`_.
+
+
 
 Known Issues
 ------------
-
 Due to an unknown bug in Nginx (it still exists in Nginx 1.7.7), the `standard SSI module <http://nginx.org/en/docs/http/ngx_http_ssi_module.html>`_ is required to ensure that the contents of the subrequests issued by `echo_location_async`_ and `echo_subrequest_async`_ are correctly merged into the output chains of the main one. Fortunately, the SSI module is enabled by default during Nginx's ``configure`` process.
 
 If calling this directive without SSI module enabled, you'll get truncated response without contents of any subrequests and get an alert message in your Nginx's ``error.log``, like this:
@@ -1460,7 +1461,6 @@ If calling this directive without SSI module enabled, you'll get truncated respo
 
 Modules that use this module for testing
 ----------------------------------------
-
 The following modules take advantage of this ``echo`` module in their test suite:
 
 * The :doc:`memc` module that supports almost the whole memcached TCP protocol.
@@ -1469,6 +1469,8 @@ The following modules take advantage of this ``echo`` module in their test suite
 
 Please mail me other modules that use ``echo`` in any form and I'll add them to the list above :)
 
+
+
 .. _OpenResty Community:
 
 Community
@@ -1476,43 +1478,46 @@ Community
 
 English Mailing List
 ^^^^^^^^^^^^^^^^^^^^
-
 The `openresty-en <https://groups.google.com/group/openresty-en>`_ mailing list is for English speakers.
+
 
 Chinese Mailing List
 ^^^^^^^^^^^^^^^^^^^^
-
 The `openresty <https://groups.google.com/group/openresty>`_ mailing list is for Chinese speakers.
 
-.. _reporting a bug:
+
+
+.. _echo.reporting-a-bug:
 
 Report Bugs
 -----------
-
 Although a lot of effort has been put into testing and code tuning, there must be some serious bugs lurking somewhere in this module. So whenever you are bitten by any quirks, please don't hesitate to
 
 #. create a ticket on the :github:`issue tracking interface <agentzh/echo-nginx-module/issues>` provided by GitHub,
 #. or send a bug report, questions, or even patches to the `OpenResty Community`_.
 
-.. _source repository:
+
+
+.. _echo.source-repository:
 
 Source Repository
 -----------------
+Available on github at :github:`agentzh/echo-nginx-module <agentzh/echo-nginx-module>`
 
-Available on github at :github:`agentzh/echo-nginx-module <agentzh/echo-nginx-module>`.
+
 
 Changes
 -------
-
 The changes of every release of this module can be obtained from the ngx_openresty bundle's change logs:
 
 http://openresty.org/#Changes
 
 .. _test suite:
 
+
+
 Test Suite
 ----------
-
 This module comes with a Perl-driven test suite. The :github:`test cases <agentzh/echo-nginx-module/tree/master/t/>` are
 :github:`declarative <agentzh/echo-nginx-module/blob/master/t/echo.t>` too. Thanks to the `Test::Nginx <http://search.cpan.org/perldoc?Test::Nginx>` module in the Perl world.
 
@@ -1529,9 +1534,10 @@ Because a single nginx server (by default, ``localhost:1984``) is used across al
 
 Some parts of the test suite requires standard modules `proxy <http://nginx.org/en/docs/http/ngx_http_proxy_module.html>`_, `rewrite <http://nginx.org/en/docs/http/ngx_http_rewrite_module.html>`_ and `SSI <http://nginx.org/en/docs/http/ngx_http_ssi_module.html>`_ to be enabled as well when building Nginx.
 
+
+
 TODO
 ----
-
 * Fix the `echo_after_body`_ directive in subrequests.
 * Add directives *echo_read_client_request_body* and *echo_request_headers*.
 * Add new directive *echo_log* to use Nginx's logging facility directly from the config file and specific loglevel can be specified, as in
@@ -1602,21 +1608,24 @@ TODO
 
   Thanks Marcus Clyne for providing this idea.
 
+
+
 Getting involved
 ----------------
+You'll be very welcomed to submit patches to the Author_ or just ask for a commit bit to the `echo.source-repository`_ on GitHub.
 
-You'll be very welcomed to submit patches to the Author_ or just ask for a commit bit to the `source repository`_ on GitHub.
+
 
 Author
 ------
-
 Yichun "agentzh" Zhang (章亦春) *<agentzh@gmail.com>*, CloudFlare Inc.
 
 This wiki page is also maintained by the author himself, and everybody is encouraged to improve this page as well.
 
+
+
 Copyright & License
 -------------------
-
 Copyright (c) 2009-2014, Yichun "agentzh" Zhang (章亦春) <agentzh@gmail.com>, CloudFlare Inc.
 
 This module is licensed under the terms of the BSD license.
@@ -1640,10 +1649,11 @@ LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-See Also
---------
 
-* The original `blog post <http://agentzh.blogspot.com/2009/10/hacking-on-nginx-echo-module.html>`_ about this module's initial development.
-* The standard `addition filter module <http://nginx.org/en/docs/http/ngx_http_addition_module.html>`_.
-* The standard `proxy module <http://nginx.org/en/docs/http/ngx_http_proxy_module.html>`_.
-* The `ngx_openresty <http://openresty.org>`_ bundle.
+
+.. seealso::
+
+  * The original `blog post <http://agentzh.blogspot.com/2009/10/hacking-on-nginx-echo-module.html>`_ about this module's initial development.
+  * The standard `addition filter module <http://nginx.org/en/docs/http/ngx_http_addition_module.html>`_.
+  * The standard `proxy module <http://nginx.org/en/docs/http/ngx_http_proxy_module.html>`_.
+  * The `ngx_openresty <http://openresty.org>`_ bundle.
