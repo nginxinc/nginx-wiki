@@ -720,7 +720,7 @@ Accessing ``/main`` yields
 
 Querystrings is *not* allowed to be concatenated onto the ``location`` argument with "?" directly, for example, ``/sub?foo=Foo&bar=Bar`` is an invalid location, and shouldn't be fed as the first argument to this directive.
 
-Technically speaking, this directive is an example that Nginx content handler issues one or more subrequests directly. AFAIK, the :github:`fancyindex module <https://github.com/aperezdc/ngx-fancyindex>` also does such kind of things ;)
+Technically speaking, this directive is an example that Nginx content handler issues one or more subrequests directly. AFAIK, the :github:`fancyindex module <aperezdc/ngx-fancyindex>` also does such kind of things ;)
 
 Nginx named locations like ``@foo`` is *not* supported here.
 

@@ -294,5 +294,6 @@ linkcheck_ignore = [
                     r'http://lemp.test.*', # An example URL
                     r'.*redis.io.*', # Always 404s but actually works?!
                     r'.*heiher.info.*', # Bad SSL cert
-                    r'.*lua.org.*' # 'utf8' codec can't decode byte 0xea in position 888: invalid continuation byte
+                    r'.*lua.org.*', # 'utf8' codec can't decode byte 0xea in position 888: invalid continuation byte
+                    r'http://i.6.cn.*' # timeouts on CI
                    ]
