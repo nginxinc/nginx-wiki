@@ -17,7 +17,7 @@ This module is production ready.
 
 Version
 -------
-This document describes ngx_echo :github:`v0.57 <agentzh/echo-nginx-module/tags>` released on 21 November 2014.
+This document describes ngx_echo :github:`v0.57 <openresty/echo-nginx-module/tags>` released on 21 November 2014.
 
 
 
@@ -720,7 +720,7 @@ Accessing ``/main`` yields
 
 Querystrings is *not* allowed to be concatenated onto the ``location`` argument with "?" directly, for example, ``/sub?foo=Foo&bar=Bar`` is an invalid location, and shouldn't be fed as the first argument to this directive.
 
-Technically speaking, this directive is an example that Nginx content handler issues one or more subrequests directly. AFAIK, the `fancyindex module <https://connectical.com/projects/ngx-fancyindex/wiki>`_ also does such kind of things ;)
+Technically speaking, this directive is an example that Nginx content handler issues one or more subrequests directly. AFAIK, the :github:`fancyindex module <https://github.com/aperezdc/ngx-fancyindex>` also does such kind of things ;)
 
 Nginx named locations like ``@foo`` is *not* supported here.
 
@@ -1413,7 +1413,7 @@ the version 1.7.7 (see `nginx compatibility <echo.compatibility_>`_), and then b
   $ make install
 
 
-Download the latest version of the release tarball of this module from :github:`echo-nginx-module file list <agentzh/echo-nginx-module/tags>`
+Download the latest version of the release tarball of this module from :github:`echo-nginx-module file list <openresty/echo-nginx-module/tags>`
 
 Also, this module is included and enabled by default in the `ngx_openresty bundle <http://openresty.org>`__.
 
@@ -1493,7 +1493,7 @@ Report Bugs
 -----------
 Although a lot of effort has been put into testing and code tuning, there must be some serious bugs lurking somewhere in this module. So whenever you are bitten by any quirks, please don't hesitate to
 
-#. create a ticket on the :github:`issue tracking interface <agentzh/echo-nginx-module/issues>` provided by GitHub,
+#. create a ticket on the :github:`issue tracking interface <openresty/echo-nginx-module/issues>` provided by GitHub,
 #. or send a bug report, questions, or even patches to the `OpenResty Community`_.
 
 
@@ -1502,7 +1502,7 @@ Although a lot of effort has been put into testing and code tuning, there must b
 
 Source Repository
 -----------------
-Available on github at :github:`agentzh/echo-nginx-module <agentzh/echo-nginx-module>`
+Available on github at :github:`openresty/echo-nginx-module`
 
 
 
@@ -1518,8 +1518,8 @@ http://openresty.org/#Changes
 
 Test Suite
 ----------
-This module comes with a Perl-driven test suite. The :github:`test cases <agentzh/echo-nginx-module/tree/master/t/>` are
-:github:`declarative <agentzh/echo-nginx-module/blob/master/t/echo.t>` too. Thanks to the `Test::Nginx <http://search.cpan.org/perldoc?Test::Nginx>` module in the Perl world.
+This module comes with a Perl-driven test suite. The :github:`test cases <openresty/echo-nginx-module/tree/master/t/>` are
+:github:`declarative <openresty/echo-nginx-module/blob/master/t/echo.t>` too. Thanks to the `Test::Nginx <http://search.cpan.org/perldoc?Test::Nginx>` module in the Perl world.
 
 To run it on your side:
 

@@ -94,7 +94,7 @@ Follow the steps:
 
      $ git clone git://github.com/flavioribeiro/nginx-audio-track-for-hls-module.git
 
-* Clone :github:`Lua module <chaoslawful/lua-nginx-module>`
+* Clone :github:`Lua module <openresty/lua-nginx-module>`
 
   .. code-block:: bash
 

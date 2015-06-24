@@ -27,8 +27,12 @@
 
 import re
 
+from docutils import utils
 from docutils.nodes import emphasis,reference,Text,raw
 from docutils.parsers.rst.roles import set_classes
+
+from sphinx.util.nodes import split_explicit_title
+
 
 def icon_role(role, rawtext, text, lineno, inliner, options={}, content=[]):
 
@@ -41,11 +45,16 @@ def icon_role(role, rawtext, text, lineno, inliner, options={}, content=[]):
 def github_role(role, rawtext, text, lineno, inliner, options={}, content=[]):
 
     out = '<span class="icon-holder">'
+    text = utils.unescape(text)
+    has_explicit_title, title, part = split_explicit_title(text)
     with open("source/exts/icons/github.svg", "r") as svg:
         out = out + svg.read() + "</span>"
         node = raw('', text=out, format='html')
     set_classes(options)
-    node = reference(rawtext, text, refuri="https://github.com/"+text, **options)
+    if not has_explicit_title:
+        node = reference(rawtext, text, refuri="https://github.com/"+text, **options)
+    else:
+        node = reference(title, title, refuri="https://github.com/"+part, **options)
     node.insert(0, raw('', text=out, format='html'))
 
     return [node], []
@@ -53,11 +62,16 @@ def github_role(role, rawtext, text, lineno, inliner, options={}, content=[]):
 def bitbucket_role(role, rawtext, text, lineno, inliner, options={}, content=[]):
 
     out = '<span class="icon-holder">'
+    text = utils.unescape(text)
+    has_explicit_title, title, part = split_explicit_title(text)
     with open("source/exts/icons/bitbucket.svg", "r") as svg:
         out = out + svg.read() + "</span>"
         node = raw('', text=out, format='html')
     set_classes(options)
-    node = reference(rawtext, text, refuri="https://bitbucket.org/"+text, **options)
+    if not has_explicit_title:
+        node = reference(rawtext, text, refuri="https://bitbucket.org/"+text, **options)
+    else:
+        node = reference(title, tilte, refuri="https://bitbucket.org/"+part, **options)
     node.insert(0, raw('', text=out, format='html'))
 
     return [node], []
