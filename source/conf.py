@@ -287,6 +287,9 @@ texinfo_documents = [
 # Many websites use anchors for JS which confuses linkcheck
 linkcheck_anchors = False
 
+# Some links don't run Nginx and can be slow
+linkcheck_timeout = 60
+
 linkcheck_ignore = [
                     r'https://github.com/nginxinc/nginx-wiki.*', # while the repo is private
                     r'http://.*sourceforge.net/.*', # CI system is blocked from accessing sourceforge
