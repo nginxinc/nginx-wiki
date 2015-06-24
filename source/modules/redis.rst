@@ -165,4 +165,4 @@ See Also
 
 * :doc:`redis2` that implements almost the whole Redis 2.0 protocol.
 * :doc:`sr_cache` that can be used with this module to do transparent response caching for arbitrary Nginx locations.
-* The :github:`lua-resty-redis <agentzh/lua-resty-redis>` library for :doc:`lua`.
+* The :github:`lua-resty-redis <openresty/lua-resty-redis>` library for :doc:`lua`.

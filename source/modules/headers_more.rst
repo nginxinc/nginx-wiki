@@ -11,7 +11,7 @@ Name
 
 Version
 -------
-This document describes headers-more-nginx-module :github:`v0.25 </agentzh/headers-more-nginx-module/tags>` released on January 10, 2014.
+This document describes headers-more-nginx-module :github:`v0.25 <openresty/headers-more-nginx-module/tags>` released on January 10, 2014.
 
 
 
@@ -205,7 +205,7 @@ Wildcard ``*`` can also be used to specify a header name pattern. For example, t
   more_clear_headers 'X-Hidden-*';
 
 
-The ``*`` wildcard support was first introduced in :github:`v0.09 <agentzh/headers-more-nginx-module/tags>`
+The ``*`` wildcard support was first introduced in :github:`v0.09 <openresty/headers-more-nginx-module/tags>`
 
 
 
@@ -288,7 +288,7 @@ Grab the nginx source code from `nginx.org <http://nginx.org/>`_, for example, t
   make install
 
 
-Download the latest version of the release tarball of this module from :github:`headers-more-nginx-module file list <agentzh/headers-more-nginx-module/tags>`
+Download the latest version of the release tarball of this module from :github:`headers-more-nginx-module file list <openresty/headers-more-nginx-module/tags>`
 
 Also, this module is included and enabled by default in the `ngx_openresty bundle <http://openresty.org>`__.
 
@@ -339,7 +339,7 @@ Bugs and Patches
 ----------------
 Please submit bug reports, wishlists, or patches by
 
-#. creating a ticket on the :github:`GitHub Issue Tracker <chaoslawful/lua-nginx-module/issues>`
+#. creating a ticket on the :github:`GitHub Issue Tracker <openresty/lua-nginx-module/issues>`
 #. or posting to the `OpenResty community <headers_more.community_>`_.
 
 
@@ -349,7 +349,7 @@ Please submit bug reports, wishlists, or patches by
 Source Repository
 -----------------
 
-Available on GitHub at :github:`agentzh/headers-more-nginx-module <agentzh/headers-more-nginx-module>`
+Available on GitHub at :github:`openresty/headers-more-nginx-module`
 
 
 
@@ -365,7 +365,7 @@ The changes of every release of this module can be obtained from the ngx_openres
 Test Suite
 ----------
 
-This module comes with a Perl-driven test suite. The :github:`test cases <agentzh/headers-more-nginx-module/tree/master/t/>` are :github:`declarative <agentzh/headers-more-nginx-module/blob/master/t/sanity.t>` too. Thanks to the `Test::Nginx <http://search.cpan.org/perldoc?Test::Nginx>`_ module in the Perl world.
+This module comes with a Perl-driven test suite. The :github:`test cases <openresty/headers-more-nginx-module/tree/master/t/>` are :github:`declarative <openresty/headers-more-nginx-module/blob/master/t/sanity.t>` too. Thanks to the `Test::Nginx <http://search.cpan.org/perldoc?Test::Nginx>`_ module in the Perl world.
 
 To run it on your side:
 

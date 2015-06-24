@@ -881,7 +881,7 @@ It is recommended to install this module as well as the Nginx core and many othe
 Alternatively, you can build Nginx with this module all by yourself:
 
 * Grab the nginx source code from `nginx.org <http://nginx.org>`_, for example, the version 1.7.10 (see [[#Compatibility|Nginx Compatibility]]),
-* and then apply the patch to your nginx source tree that fixes an important bug in the mainline Nginx core: https://raw.github.com/openresty/ngx_openresty/master/patches/nginx-1.4.3-upstream_truncation.patch (you do NOT need this patch if you are using nginx 1.5.3 and later versions.)
+* and then apply the patch to your nginx source tree that fixes an important bug in the mainline Nginx core: https://raw.githubusercontent.com/openresty/ngx_openresty/master/patches/nginx-1.4.3-upstream_truncation.patch (you do NOT need this patch if you are using nginx 1.5.3 and later versions.)
 * after that, download the latest version of the release tarball of this module from srcache-nginx-module :github:`file list <openresty/srcache-nginx-module/tags>`
 * and finally build the Nginx source with this module
   
@@ -955,7 +955,7 @@ Available on github at :github:`openresty/srcache-nginx-module <openresty/srcach
 
 Test Suite
 ----------
-This module comes with a Perl-driven test suite. The :github:`test cases <openresty/srcache-nginx-module/tree/master/test/t>` are :github:`declarative <openresty/srcache-nginx-module/blob/master/test/t/main-req.t>` too. Thanks to the `Test::Nginx <http://search.cpan.org/perldoc?Test::Base>` module in the Perl world.
+This module comes with a Perl-driven test suite. The :github:`test cases <openresty/srcache-nginx-module/tree/master/t>` are :github:`declarative <openresty/srcache-nginx-module/blob/master/t/main-req.t>` too. Thanks to the `Test::Nginx <http://search.cpan.org/perldoc?Test::Base>` module in the Perl world.
 
 To run it on your side:
 

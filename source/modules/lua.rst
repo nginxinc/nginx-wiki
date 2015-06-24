@@ -197,7 +197,7 @@ Description
 -----------
 This module embeds Lua, via the standard Lua 5.1 interpreter or `LuaJIT 2.0/2.1 <http://luajit.org/luajit.html>`_, into Nginx and by leveraging Nginx's subrequests, allows the integration of the powerful Lua threads (Lua coroutines) into the Nginx event model.
 
-Unlike `Apache's mod_lua <https://httpd.apache.org/docs/trunk/mod/mod_lua.html>`_ and `Lighttpd's mod_magnet <http://redmine.lighttpd.net/wiki/1/Docs:ModMagnet>`_, Lua code executed using this module can be *100% non-blocking* on network traffic as long as the `Nginx API for Lua`_ provided by this module is used to handle requests to upstream services such as MySQL, PostgreSQL, Memcached, Redis, or upstream HTTP web services.
+Unlike `Apache's mod_lua <https://httpd.apache.org/docs/trunk/mod/mod_lua.html>`_ and `Lighttpd's mod_magnet <http://redmine.lighttpd.net/projects/1/wiki/Docs_ModMagnet>`_, Lua code executed using this module can be *100% non-blocking* on network traffic as long as the `Nginx API for Lua`_ provided by this module is used to handle requests to upstream services such as MySQL, PostgreSQL, Memcached, Redis, or upstream HTTP web services.
 
 At least the following Lua libraries and Nginx modules can be used with this ngx_lua module:
 
@@ -1125,7 +1125,7 @@ You can also initialize the `lua_shared_dict`_ shm storage at this phase. Here i
 
 But note that, the `lua_shared_dict`_'s shm storage will not be cleared through a config reload (via the ``HUP`` signal, for example). So if you do *not* want to re-initialize the shm storage in your ``init_by_lua`` code in this case, then you just need to set a custom flag in the shm storage and always check the flag in your ``init_by_lua`` code.
 
-Because the Lua code in this context runs before Nginx forks its worker processes (if any), data or code loaded here will enjoy the `Copy-on-write (COW) <http://en.wikipedia.org/wiki/Copy-on-write>`_ feature provided by many operating systems among all the worker processes, thus saving a lot of memory.
+Because the Lua code in this context runs before Nginx forks its worker processes (if any), data or code loaded here will enjoy the `Copy-on-write (COW) <https://en.wikipedia.org/wiki/Copy-on-write>`_ feature provided by many operating systems among all the worker processes, thus saving a lot of memory.
 
 Do *not* initialize your own Lua global variables in this context because use of Lua global variables have performance penalties and can lead to global namespace pollution (see the `Lua Variable Scope <Lua Variable Scope_>`_ section for more details). The recommended way is to use proper `Lua module <http://www.lua.org/manual/5.1/manual.html#5.3>`_ files (but do not use the standard Lua function `module() <http://www.lua.org/manual/5.1/manual.html#pdf-module>`_ to define Lua modules because it pollutes the global namespace as well) and call `require() <http://www.lua.org/manual/5.1/manual.html#pdf-require>`_ to load your own module files in ``init_by_lua`` or other contexts (`require() <http://www.lua.org/manual/5.1/manual.html#pdf-require>`_ does cache the loaded Lua modules in the global ``package.loaded`` table in the Lua registry so your modules will only loaded once for the whole Lua VM instance).
 
@@ -3615,7 +3615,7 @@ Since the ``v0.9.0`` release, this function accepts an optional boolean ``raw`` 
 
 When the ``raw`` argument is ``true``, it is required that no pending data from any previous `ngx.say`_, `ngx.print`_, or `ngx.send_headers`_ calls exists. So if you have these downstream output calls previously, you should call `ngx.flush(true) <ngx.flush_>`_ before calling ``ngx.req.socket(true)`` to ensure that there is no pending output data. If the request body has not been read yet, then this "raw socket" can also be used to read the request body.
 
-You can use the "raw request socket" returned by ``ngx.req.socket(true)`` to implement fancy protocols like `WebSocket <http://en.wikipedia.org/wiki/WebSocket>`_, or just emit your own raw HTTP response header or body data. You can refer to the :github:`lua-resty-websocket library <openresty/lua-resty-websocket>` for a real world example.
+You can use the "raw request socket" returned by ``ngx.req.socket(true)`` to implement fancy protocols like `WebSocket <https://en.wikipedia.org/wiki/WebSocket>`_, or just emit your own raw HTTP response header or body data. You can refer to the :github:`lua-resty-websocket library <openresty/lua-resty-websocket>` for a real world example.
 
 This function was first introduced in the ``v0.5.0rc1`` release.
 
@@ -4092,7 +4092,7 @@ ngx.hmac_sha1
 :Syntax: *digest = ngx.hmac_sha1(secret_key, str)*
 :Context: *set_by_lua\*, rewrite_by_lua\*, access_by_lua\*, content_by_lua\*, header_filter_by_lua\*, body_filter_by_lua\*, log_by_lua\*, ngx.timer.\**
 
-Computes the `HMAC-SHA1 <http://en.wikipedia.org/wiki/HMAC>`_ digest of the argument ``str`` and turns the result using the secret key ``<secret_key>``.
+Computes the `HMAC-SHA1 <https://en.wikipedia.org/wiki/HMAC>`_ digest of the argument ``str`` and turns the result using the secret key ``<secret_key>``.
 
 The raw binary form of the ``HMAC-SHA1`` digest will be generated, use `ngx.encode_base64`_, for example, to encode the result to a textual representation if desired.
 

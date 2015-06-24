@@ -711,7 +711,7 @@ set_sha1
 :Category: ``ndk_set_var_value``
 
 When taking two arguments, this directive will encode the value of the second 
-argument ``<src>`` to its `SHA-1 <http://en.wikipedia.org/wiki/SHA-1>`_ digest 
+argument ``<src>`` to its `SHA-1 <https://en.wikipedia.org/wiki/SHA-1>`_ digest 
 and assign the result into the first argument, variable ``$dst``. The 
 hexadecimal form of the ``SHA-1`` digest will be generated automatically,
 use `set_decode_hex`_ to decode the result if you want the binary form of the 
@@ -771,7 +771,7 @@ set_md5
 :Category: ``ndk_set_var_value``
 
 When taking two arguments, this directive will encode the value of the second
-argument ``<src>`` to its `MD5 <http://en.wikipedia.org/wiki/MD5>`_ digest and 
+argument ``<src>`` to its `MD5 <https://en.wikipedia.org/wiki/MD5>`_ digest and 
 assign the result into the first argument, variable ``$dst``. The hexadecimal 
 form of the ``MD5`` digest will be generated automatically, use 
 `set_decode_hex`_ to decode the result if you want the binary form of the 
@@ -829,7 +829,7 @@ set_hmac_sha1
 :Context: *location, location if*
 :Phase: *rewrite*
 
-Computes the `HMAC-SHA1 <http://en.wikipedia.org/wiki/HMAC>`_ digest of the 
+Computes the `HMAC-SHA1 <https://en.wikipedia.org/wiki/HMAC>`_ digest of the 
 argument ``<src>`` and assigns the result into the argument variable ``$dst`` 
 with the secret key ``<secret_key>``.
 

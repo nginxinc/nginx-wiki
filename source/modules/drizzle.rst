@@ -72,7 +72,7 @@ This is an nginx upstream module integrating `libdrizzle <https://launchpad.net/
 
 Essentially it provides a very efficient and flexible way for nginx internals to access MySQL, Drizzle, as well as other RDBMS's that support the Drizzle or MySQL wired protocol. Also it can serve as a direct REST interface to those RDBMS backends.
 
-This module does not generate human-readable outputs, rather, in a binary format called Resty-DBD-Stream (RDS) designed by ourselves. You usually need other components, like :github:`HttpRdsJsonModule <agentzh/rds-json-nginx-module>`, :github:`HttpRdsCsvModule <agentzh/rds-csv-nginx-module>`, or :github:`HttpLuaRdsParser <agentzh/lua-rds-parser>` to work with this module. See `Output Format`_ for details.
+This module does not generate human-readable outputs, rather, in a binary format called Resty-DBD-Stream (RDS) designed by ourselves. You usually need other components, like :github:`HttpRdsJsonModule <openresty/rds-json-nginx-module>`, :github:`HttpRdsCsvModule <openresty/rds-csv-nginx-module>`, or :github:`HttpLuaRdsParser <openresty/lua-rds-parser>` to work with this module. See `Output Format`_ for details.
 
 
 
@@ -398,11 +398,11 @@ Here's an example:
     '
   }
 
-where we make use of :doc::github:`headers_more`, :doc:`lua`, and `HttpRdsJsonModule <agentzh/rds-json-nginx-module>` too. When the SQL query timed out, we'll explicitly cancel it immediately. One pitfall here is that you have to add these modules in this order while building Nginx:
+where we make use of :doc:`headers_more`, :doc:`lua`, and `HttpRdsJsonModule <openresty/rds-json-nginx-module>` too. When the SQL query timed out, we'll explicitly cancel it immediately. One pitfall here is that you have to add these modules in this order while building Nginx:
 
 * :doc:`lua`
 * :doc:`headers_more`
-* :github:`HttpRdsJsonModule <agentzh/rds-json-nginx-module>`
+* :github:`HttpRdsJsonModule <openresty/rds-json-nginx-module>`
 
 Such that, their output filters will work in the *reversed* order, i.e., first convert RDS to JSON, and then add our ``X-Mysql-Tid`` custom header, and finally capture the whole (subrequest) response with the Lua module. You're recommended to use the `OpenResty bundle <http://openresty.org/>`_ though, it ensures the module building order automatically for you.
 
@@ -412,9 +412,9 @@ This module generates binary query results in a format that is shared among the 
 
 If you're a web app developer, you may be more interested in
 
-* using :github:`HttpRdsJsonModule <agentzh/rds-json-nginx-module>` to obtain JSON output,
-* using :github:`HttpRdsCsvModule <agentzh/rds-csv-nginx-module>` to obain Comma-Separated-Value (CSV) output, or
-* using :github:`HttpLuaRdsParser <agentzh/lua-rds-parser>` to parse the RDS data into Lua data structures.
+* using :github:`HttpRdsJsonModule <openresty/rds-json-nginx-module>` to obtain JSON output,
+* using :github:`HttpRdsCsvModule <openresty/rds-csv-nginx-module>` to obain Comma-Separated-Value (CSV) output, or
+* using :github:`HttpLuaRdsParser <openresty/lua-rds-parser>` to parse the RDS data into Lua data structures.
 
 For the HTTP response header part, the ``200 OK`` status code should always be returned. The ``Content-Type`` header *must* be set to ``application/x-resty-dbd-stream``. And the driver generating this response also sets a ``X-Resty-DBD`` header. For instance, this module adds the following output header:
 
@@ -571,7 +571,7 @@ Known Issues
 Installation
 ------------
 
-You're recommended to install this module as well as :github:`HttpRdsJsonModule <agentzh/rds-json-nginx-module>` via the ngx_openresty bundle::
+You're recommended to install this module as well as :github:`HttpRdsJsonModule <openresty/rds-json-nginx-module>` via the ngx_openresty bundle::
 
   http://openresty.org
 
@@ -579,7 +579,7 @@ The installation steps are usually as simple as ``./configure --with-http_drizzl
 
 Alternatively, you can compile this module with Nginx core's source by hand:
 
-1. You should first install libdrizzle 1.0 which is now distributed with the drizzle project and can be obtained from `https://launchpad.net/drizzle <https://launchpad.net/drizzle>`_. The latest drizzle7 release does not support building libdrizzle 1.0 separately and requires a lot of external dependencies like Boost and Protobuf which are painful to install. The last version supporting building libdrizzle 1.0 separately is ``2011.07.21``. You can download it from http://agentzh.org/misc/nginx/drizzle7-2011.07.21.tar.gz . Which this version of drizzle7, installation of libdrizzle 1.0 is usually as simple as
+1. You should first install libdrizzle 1.0 which is now distributed with the drizzle project and can be obtained from `https://launchpad.net/drizzle <https://launchpad.net/drizzle>`_. The latest drizzle7 release does not support building libdrizzle 1.0 separately and requires a lot of external dependencies like Boost and Protobuf which are painful to install. The last version supporting building libdrizzle 1.0 separately is ``2011.07.21``. You can download it from http://openresty.org/download/drizzle7-2011.07.21.tar.gz . Which this version of drizzle7, installation of libdrizzle 1.0 is usually as simple as
   
   .. code-block:: bash
 
@@ -623,7 +623,7 @@ Alternatively, you can compile this module with Nginx core's source by hand:
     make install
 
 
-You usually also need :github:`HttpRdsJsonModule <agentzh/rds-json-nginx-module>` to obtain JSON output from the binary RDS output generated by this upstream module.
+You usually also need :github:`HttpRdsJsonModule <openresty/rds-json-nginx-module>` to obtain JSON output from the binary RDS output generated by this upstream module.
 
 .. _drizzle.compatibility:
 
@@ -745,9 +745,9 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 See Also
 --------
 
-* :github:`rds-json-nginx-module <agentzh/rds-json-nginx-module>`
-* :github:`rds-csv-nginx-module <agentzh/rds-csv-nginx-module>`
-* :github:`lua-rds-parser <agentzh/lua-rds-parser>`
+* :github:`rds-json-nginx-module <openresty/rds-json-nginx-module>`
+* :github:`rds-csv-nginx-module <openresty/rds-csv-nginx-module>`
+* :github:`lua-rds-parser <openresty/lua-rds-parser>`
 * `The ngx_openresty bundle <http://openresty.org>`_
 * drizzle-nginx-module (i.e., this module)
 * :github:`postgres-nginx-module <FRiCKLE/ngx_postgres>`

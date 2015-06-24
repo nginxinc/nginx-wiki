@@ -35,7 +35,7 @@ Nginx 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Backtrace                 | A nginx module to dump backtrace case a worker process exits abnormally | :github:`alibaba/nginx-backtrace`                                                       |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| Cache Purge               | Adds ability to purge content from FastCGI, proxy, and uWSGI caches     | :github:`FRiCKLE/nginx-cache-purge`                                                     |
+| Cache Purge               | Adds ability to purge content from FastCGI, proxy, and uWSGI caches     | :github:`FRiCKLE/ngx_cache_purge`                                                       |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`circle_gif`         | Generates simple circle images with colors/size specified in the URL    | :github:`evanmiller/nginx_circle_gif`                                                   |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -49,25 +49,25 @@ Nginx 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`domain_resolve`     | An asynchronous domain name resolve module for nginx upstream           | :github:`wdaike/ngx_upstream_jdomain/`                                                  |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| :doc:`drizzle`            | Make nginx talk directly to mysql and drizzle                           | :github:`chaoslawful/drizzle-nginx-module`                                              |
+| :doc:`drizzle`            | Make nginx talk directly to mysql and drizzle                           | :github:`openresty/drizzle-nginx-module`                                                |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Dynamic etags             | Nginx module for etags on dynamic content                               | :github:`kali/nginx-dynamic-etags`                                                      |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Dynamic Upstream          | Update upstreams' config by restful interface                           | :github:`yzprofile/ngx_http_dyups_module`                                               |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| :doc:`echo`               | Provides familiar shell commands to nginx config files                  | :github:`agentzh/echo-nginx-module`                                                     |
+| :doc:`echo`               | Provides familiar shell commands to nginx config files                  | :github:`openresty/echo-nginx-module`                                                   |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| Encrypted Session         | Encrypt nginx variables for light-weight session-based authentication   | :github:`agentzh/encrypted-session-nginx-module`                                        |
+| Encrypted Session         | Encrypt nginx variables for light-weight session-based authentication   | :github:`openresty/encrypted-session-nginx-module`                                      |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Enhanced Memcached        | Repackaging of the standard memcached module to add features            | :github:`bpaquet/ngx_http_enhanced_memcached_module`                                    |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Eval                      | A module for evaluating memcached or proxy response into variable       | :github:`vkholodkov/nginx-eval-module`                                                  |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| Eval (agentzh's fork)     | Captures arbitrary subrequest's responses into nginx variables          | :github:`agentzh/nginx-eval-module`                                                     |
+| Eval (agentzh's fork)     | Captures arbitrary subrequest's responses into nginx variables          | :github:`openresty/nginx-eval-module`                                                   |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`extended_status`    | Extended status module for nginx                                        | :github:`zealot83/ngx_http_extended_status_module`                                      |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| EY Balancer               | Provides a request queue for limiting concurrent requests               | :github:`ry/nginx-ey-balancer/tree/master`                                              |
+| EY Balancer               | Provides a request queue for limiting concurrent requests               | :github:`ezmobius/nginx-ey-balancer`                                                    |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`fair_balancer`      | Distributes incoming requests to least-busy servers                     | :github:`gnosek/nginx-upstream-fair`                                                    |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -85,7 +85,7 @@ Nginx 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`groovy_handler`     | A module for embedding Clojure, Java, and Groovy programs               | :github:`nginx-clojure/nginx-clojure`                                                   |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| :doc:`headers_more`       | Set and clear input and output headers... more than "add"!              | :github:`agentzh/headers-more-nginx-module`                                             |
+| :doc:`headers_more`       | Set and clear input and output headers... more than "add"!              | :github:`openresty/headers-more-nginx-module`                                           |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`healthcheck`        | Health check HTTP servers inside an upstream                            | :github:`cep21/healthcheck_nginx_upstreams`                                             |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -115,13 +115,13 @@ Nginx 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Lower Upper Case          | Provides upper/lowercase string functions in nginx config files         | :github:`replay/ngx_http_lower_upper_case`                                              |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| :doc:`lua`                | Embed the power of Lua into nginx                                       | :github:`chaoslawful/lua-nginx-module`                                                  |
+| :doc:`lua`                | Embed the power of Lua into nginx                                       | :github:`openresty/lua-nginx-module`                                                    |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Luafile                   | Embed the power of Lua into nginx                                       | :github:`alacner/nginx_lua_module`                                                      |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | MD5 Filter                | Returns the MD5 sum of content that would've otherwise been served      | :github:`kainswor/nginx_md5_filter`                                                     |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| :doc:`memc`               | Extension of the standard memcached module                              | :github:`agentzh/memc-nginx-module`                                                     |
+| :doc:`memc`               | Extension of the standard memcached module                              | :github:`openresty/memc-nginx-module`                                                   |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | ModSecurity               | Web application firewall                                                | :github:`spiderlabs/modsecurity/`                                                       |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -133,13 +133,13 @@ Nginx 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Naxsi                     | Web Application Firewall for nginx                                      | :github:`nbs-system/naxsi`                                                              |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| Notice                    | Serve static file to POST requests                                      | `Download <http://xph.us/software/nginx-notice/nginx-notice-2.tar.gz>`__                |
+| Notice                    | Serve static file to POST requests                                      | :github:`kr/nginx-notice`                                                               |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | OCSP proxy                | OCSP processing module designed for response caching                    | :github:`kyprizel/nginx_ocsp_proxy-module`                                              |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | OpenSSL Version           | OpenSSL minimum version constraints in configuration                    | :github:`apcera/nginx-openssl-version`                                                  |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| :doc:`owner_match`        | Provides a simple file owner-based access control                       | `Download <http://heiher.info/sftp/files/Nginx-0.8.54-Add-OwnerMatch-module.patch>`__   |
+| :doc:`owner_match`        | Provides a simple file owner-based access control                       |                                                                                         |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | PageSpeed                 | Rewrites webpages and associated assets to reduce latency and bandwidth | :github:`pagespeed/ngx_pagespeed`                                                       |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -149,21 +149,21 @@ Nginx 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Postgres                  | Allows nginx to communicate directly with PostgreSQL database           | `Download <http://labs.frickle.com/nginx_ngx_postgres>`__                               |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| Pubcookie                 | Adds Pubcookie-based cross-site authentication method to nginx          | `Download <http://vitki.net/pubcookie>`__                                               |
+| Pubcookie                 | Adds Pubcookie-based cross-site authentication method to nginx          | `Download <http://www.vanko.me/book/page/pubcookie-module-nginx>`__                     |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`push_stream`        | Turns nginx into an adept stream HTTP Push server                       | :github:`wandenberg/nginx-push-stream-module`                                           |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`rdns`               | Makes a reverse DNS lookup and provides control of incoming hostname    | :github:`flant/nginx-http-rdns`                                                         |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| RDS CSV                   | Helps ngx_drizzle, ngx_postgres, and others emit Comma-Separated Values | :github:`agentzh/rds-csv-nginx-module`                                                  |
+| RDS CSV                   | Helps ngx_drizzle, ngx_postgres, and others emit Comma-Separated Values | :github:`openresty/rds-csv-nginx-module`                                                |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| RDS JSON                  | Helps ngx_drizzle, ngx_postgres, and others emit JSON data              | :github:`agentzh/rds-json-nginx-module`                                                 |
+| RDS JSON                  | Helps ngx_drizzle, ngx_postgres, and others emit JSON data              | :github:`openresty/rds-json-nginx-module`                                               |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`redis`              | Redis support module                                                    | `Download <http://people.FreeBSD.ORG/~osa/ngx_http_redis-0.3.5.tar.gz>`__               |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| :doc:`redis2`             | Upstream module for the full Redis 2.0 protocol                         | :github:`agentzh/redis2-nginx-module/tags`                                              |
+| :doc:`redis2`             | Upstream module for the full Redis 2.0 protocol                         | :github:`openresty/redis2-nginx-module`                                                 |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| Replace Filter            | Performs regular expression substitutions on response bodies            | :github:`agentzh/replace-filter-nginx-module#name`                                      |
+| Replace Filter            | Performs regular expression substitutions on response bodies            | :github:`openresty/replace-filter-nginx-module`                                         |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Roboo                     | HTTP Robot Mitigator that integrates easily with Nginx                  | :github:`yuri-gushin/Roboo/downloads`                                                   |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -183,7 +183,7 @@ Nginx 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Set Lang                  | Set a variable to indicate the language based on a variety of sources   | :github:`simpl/ngx_http_set_lang/downloads`                                             |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| :doc:`set_misc`           | Various set_xxx directives added to nginx's rewrite module              | :github:`agentzh/set-misc-nginx-module`                                                 |
+| :doc:`set_misc`           | Various set_xxx directives added to nginx's rewrite module              | :github:`openresty/set-misc-nginx-module`                                               |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | sFlow                     | Operational performance monitoring with standard sFlow protocol         | `Download <http://code.google.com/p/nginx-sflow-module/downloads/list>`__               |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -197,7 +197,7 @@ Nginx 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | SPNEGO                    | Support for SPNEGO/gssapi in nginx                                      | :github:`stnoonan/spnego-http-auth-nginx-module`                                        |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| :doc:`sr_cache`           | Transparent subrequest-based caching layout for nginx locations         | :github:`agentzh/srcache-nginx-module`                                                  |
+| :doc:`sr_cache`           | Transparent subrequest-based caching layout for nginx locations         | :github:`openresty/srcache-nginx-module`                                                |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Static etags              | Generates etags for static content                                      | :github:`mikewest/nginx-static-etags`                                                   |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -233,7 +233,7 @@ Nginx 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | VTS                       | A virtual host and upstream traffic status module                       | :github:`vozlt/nginx-module-vts`                                                        |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| XSS                       | Native support for cross-site scripting (XSS)                           | :github:`agentzh/xss-nginx-module`                                                      |
+| XSS                       | Native support for cross-site scripting (XSS)                           | :github:`openresty/xss-nginx-module`                                                    |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`zip`                | Assemble ZIP archives on the fly                                        | :github:`evanmiller/mod_zip/`                                                           |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -322,7 +322,11 @@ Nginx 3\ :sup:`rd` Party Modules
    * Upstream Request Hash - obsolete as of Nginx 1.7.2
    * Upload Progress - incompatible with Nginx 0.9.0+
    * WSGI - most recent patch was for Nginx 0.8.x, links broken
-   
+
+..
+   Other notes:
+   * Ownermatch patch link is a dead link, removed
+
 .. toctree::
    :hidden:
 
