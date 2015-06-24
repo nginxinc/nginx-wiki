@@ -1,0 +1,73 @@
+\n= (.*?) =\s*\n
+\n\1\n-------------\n\n
+
+\n== (.*?) ==\s*\n
+\n\1\n^^^^^^^^^^^^^\n\n
+
+\n=== (.*?) ===\s*\n
+\n\1\n"""""""""""""\n\n
+
+<code>(.*?)</code>
+``\1``
+
+<pre>(.*?)</pre>
+.. code-block:: \n\1\n
+
+<geshi lang="(.*?)">(.*?)</geshi>
+.. code-block:: \1\n\2\n
+
+\*([^\s].*?)\*
+\\*\1\\*
+
+'''(.*?)'''
+**\1**
+
+''(.*?)''
+*\1*
+
+\[(https?://)([^\[\|\s\n]*?) ([^\]\|\n]*?)\]
+`\3 <\1\2>`_
+
+\[([^\[\|\s\n]*?)\]
+`<\1>`_
+
+\[\[#([^\s]*?)\|\1(\*?)\]\]
+`\1`_
+
+\[\[
+
+'''syntax(:?)'''
+:Syntax:
+
+\n'''default(:?)'''
+:Default:
+
+\n'''context(:?)'''
+:Context:
+
+\n'''phase(:?)'''
+:Phase:
+
+
+\[\[HttpAdditionModule(.*?)\|(.*?)\]\]
+`\2 <http://nginx.org/en/docs/http/ngx_http_addition_module.html\1>`_
+
+\[\[HttpRewriteModule(.*?)\|(.*?)\]\]
+`\2 <http://nginx.org/en/docs/http/ngx_http_rewrite_module.html\1>`_
+
+\[\[HttpProxyModule(.*?)\|(.*?)\]\]
+`\2 <http://nginx.org/en/docs/http/ngx_http_proxy_module.html\1>`_
+
+\[\[HttpSsiModule(.*?)\|(.*?)\]\]
+`\2 <http://nginx.org/en/docs/http/ngx_http_ssi_module.html\1>`_
+
+\[\[Http(Core|Ssi|Proxy|Rewrite|Addition|Fastcgi|Access)Module(.*?)\|(.*?)\]\]
+`\3 <http://nginx.org/en/docs/http/ngx_http_\u\1_module.html\2>`_
+
+
+
+^\Q.. code-block:: \E(.*?)\R(?s:^\s\s{4}\S.*?)(?=^\S)
+manually fix indentation              ^ number of spaces
+
+`(.*?) <https?://github.com/(.*?)>`_
+:github:`\1 <\2>`
