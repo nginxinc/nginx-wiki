@@ -1,7 +1,6 @@
 Concat
 ======
 
-
 Synopsis
 --------
 This is a module that is distributed with `Tengine <http://tengine.taobao.org>`_ which is a distribution of Nginx that is used by the e-commerce/auction site `Taobao.com <https://en.wikipedia.org/wiki/Taobao>`_. 
@@ -48,8 +47,8 @@ Directives
 
 concat
 ^^^^^^
-:Syntax: ``concat [on|off]``
-:Default: ``off``
+:Syntax: *concat [on|off]*
+:Default: *off*
 :Context: *http, server, location*
 
 It enables the concatenation in a given context.
@@ -57,8 +56,8 @@ It enables the concatenation in a given context.
 
 concat_types
 ^^^^^^^^^^^^
-:Syntax: ``concat_types`` *MIME types*
-:Default: ``text/css application/x-javascript``
+:Syntax: *concat_types MIME types*
+:Default: *text/css application/x-javascript*
 :Context: *http, server, location*
 
 Defines the `MIME types <https://en.wikipedia.org/wiki/MIME_type>`_ which
@@ -67,8 +66,8 @@ can be concatenated in a given context.
 
 concat_unique
 ^^^^^^^^^^^^^
-:Syntax: ``concat_unique [on|off]``
-:Default: ``on``
+:Syntax: *concat_unique [on|off]*
+:Default: *on*
 :Context: *http, server, location*
 
 Defines if only files of a given MIME type can concatenated or if
@@ -88,8 +87,8 @@ the respective MIME type via ``concat_types``,
 
 concat_max_files
 ^^^^^^^^^^^^^^^^
-:Syntax: ``concat_max_files`` *number*
-:Default: ``10``
+:Syntax: *concat_max_files number*
+:Default: *10*
 :Context: *http, server, location*
 
 Defines the **maximum** number of files that can be concatenated in a
@@ -107,7 +106,7 @@ directive. Set it to the value you need.
 
 concat_delimiter
 ^^^^^^^^^^^^^^^^
-:Syntax: ``concat_delimiter`` *string*
+:Syntax: *concat_delimiter string*
 :Default: *none*
 :Context: *http, server, locatione*
 
@@ -117,8 +116,8 @@ If the config is ``concat_delimiter "\n"``,a ``"\n"`` would be inserted betwen 1
 
 concat_ignore_file_error
 ^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``concat_ignore_file_error [on|off]``
-:Default: ``off``
+:Syntax: *concat_ignore_file_error [on|off]*
+:Default: *off*
 :Context: *http, server, location*
 
 Whether to ignore 404 and 403 or not.

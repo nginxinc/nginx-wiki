@@ -1,21 +1,22 @@
 HTTP Digest Authentication
 ==========================
 
-Name
-----
-
+Description
+-----------
 **ngx_http_auth_digest** - HTTP Digest Authentication support for Nginx.
 
 .. note:: *This module is not distributed with the Nginx source.* See the :github:`installation instructions <samizdatco/nginx-http-auth-digest/blob/master/readme.rst>`
 
+
+
 Status
 ------
-
 The module is feature-complete with respect to the RFC but is in need of broader testing before it can be considered secure enough for use in production. See the :github:`bugs.txt <samizdatco/nginx-http-auth-digest/blob/master/bugs.txt>` file and the github :github:`issue tracker <samizdatco/nginx-http-auth-digest/issues>` for the current set of caveats.
+
+
 
 Synopsis
 --------
-
 You can limit access to a directory tree by adding the following lines into
 a *server* section in your Nginx configuration file:
 
@@ -57,14 +58,15 @@ disable authentication for specific sub-branches off a uri, set ``auth_digest`` 
       }
   }
 
+
+
 Directives
 ----------
 
 auth_digest
 ^^^^^^^^^^^
-
-:Syntax:  ``auth_digest [`` *realm-name* ``| off ]``
-:Default: ``off``
+:Syntax:  *auth_digest [ realm-name | off ]*
+:Default: *off*
 :Context: *server, location*
 
 Enable or disable digest authentication for a server or location block. The realm name
@@ -74,10 +76,10 @@ able to access files after authenticating.
 To selectively disable authentication within a protected uri hierarchy, set ``auth_digest`` 
 to “``off``” within a more-specific location block (see example).
 
+
 auth_digest_user_file
 ^^^^^^^^^^^^^^^^^^^^^
-
-:Syntax: ``auth_digest_user_file`` */path/to/passwd/file*
+:Syntax: *auth_digest_user_file /path/to/passwd/file*
 :Default: *none*
 :Context: *server, location*
 
@@ -89,11 +91,11 @@ of a username, realm, and md5 hash combining name, realm, and password. For exam
 
    joi:enfield:ef25e85b34208c246cfd09ab76b01db7
 
+
 auth_digest_timeout
 ^^^^^^^^^^^^^^^^^^^
-
-:Syntax: ``auth_digest_timeout`` *delay-time*
-:Default: ``60s``
+:Syntax: *auth_digest_timeout delay-time*
+:Default: *60s*
 :Context: *server, location*
 
 When a client first requests a protected page, the server returns a 401 status code along with
@@ -104,11 +106,11 @@ directive defines how long challenges will remain valid. If the user waits longe
 before submitting their name and password, the challenge will be considered ‘stale’ and they will
 be prompted to log in again.
 
+
 auth_digest_expires
 ^^^^^^^^^^^^^^^^^^^
-
-:Syntax: ``auth_digest_expires`` *lifetime-in-seconds*
-:Default: ``10s``
+:Syntax: *auth_digest_expires lifetime-in-seconds*
+:Default: *10s*
 :Context: *server, location*
 
 Once a digest challenge has been successfully answered by the client, subsequent requests 
@@ -116,22 +118,22 @@ will attempt to re-use the ‘nonce’ value from the original challenge. To com
 attacks, it's best to limit the number of times a cached nonce will be accepted. This
 directive sets the duration for this re-use period after the first successful authentication.
 
+
 auth_digest_replays
 ^^^^^^^^^^^^^^^^^^^
-
-:Syntax: ``auth_digest_replays`` *number-of-uses*
-:Default: ``20``
+:Syntax: *auth_digest_replays number-of-uses*
+:Default: *20*
 :Context: *server, location*
 
 Nonce re-use should also be limited to a fixed number of requests. Note that increasing this
 value will cause a proportional increase in memory usage and the shm_size may have to be
 adjusted to keep up with heavy traffic within the digest-protected location blocks.
 
+
 auth_digest_shm_size
 ^^^^^^^^^^^^^^^^^^^^
-
-:Syntax: ``auth_digest_shm_size`` *size-in-bytes*
-:Default: ``4096k``
+:Syntax: *auth_digest_shm_size size-in-bytes*
+:Default: *4096k*
 :Context: *server*
 
 The module maintains a fixed-size cache of active digest sessions to save state between 
@@ -144,28 +146,32 @@ and will live for up to ``auth_digest_timeout + auth_digest_expires`` seconds. W
 default module settings this translates into allowing around 82k non-replay requests every 70
 seconds.
 
+
+
 Source Repository
 -----------------
-
 Available on github at :github:`samizdatco/nginx-http-auth-digest`.
+
+
 
 Author
 ------
-
 Christian Swinehart / `Samizdat Drafting Co. <http://samizdat.cc>`_
+
+
 
 Copyright & License
 -------------------
-
 The basic request-handling and password-file-parsing is based on the ``ngx_http_auth_basic`` module in the Nginx 1.0.8 sources. The original code is copyright Igor Sysoev.
 
 Copyright (c) 2011, Christian Swinehart
 
 This module is licensed under the terms of the :github:`BSD license <samizdatco/nginx-http-auth-digest/blob/master/LICENSE>`
 
-See Also
---------
 
-* The `RFC 2617 <http://www.ietf.org/rfc/rfc2617.txt>`_ definition of basic and digest authentication.
-* Shane Holloway's werkzeug `module <https://github.com/shanewholloway/werkzeug/blob/master/werkzeug/contrib/authdigest.py>`_ which was used as a reference implementation.
+
+.. seealso::
+
+  * The `RFC 2617 <http://www.ietf.org/rfc/rfc2617.txt>`_ definition of basic and digest authentication.
+  * Shane Holloway's werkzeug `module <https://github.com/shanewholloway/werkzeug/blob/master/werkzeug/contrib/authdigest.py>`_ which was used as a reference implementation.
 

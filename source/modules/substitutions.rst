@@ -3,10 +3,11 @@ Substitutions
 
 Description
 -----------
-
 **nginx_substitutions_filter** - a filter module which can do both regular expression and fixed string substitutions on response bodies. This module is quite different from the Nginx's native Substitution Module. It scans the output chains buffer and matches string line by line, just like Apache's `mod_substitute <http://httpd.apache.org/docs/trunk/mod/mod_substitute.html>`_.
 
 .. note:: *This module is not distributed with the Nginx source.* See the `installation instructions <substitutions.installation_>`_.
+
+
 
 Example
 -------
@@ -19,17 +20,18 @@ Example
       subs_filter a.example.com s.example.com;
   }
 
+
+
 Directives
 ----------
-
 * subs_filter_types_
 * subs_filter_
 
+
 subs_filter_types
 ^^^^^^^^^^^^^^^^^
-
-:Syntax: ``subs_filter_types mime-type [`` *mime-types* ``]``
-:Default: ``text/html``
+:Syntax: *subs_filter_types mime-type [ mime-types ]*
+:Default: *text/html*
 :Context: *http, server, location*
 
 subs_filter_types_ is used to specify which content types should be checked for subs_filter_.
@@ -42,11 +44,11 @@ But it will not work with proxy compressed response. You can disable the compres
 
   proxy_set_header Accept-Encoding "";
 
+
 subs_filter
 ^^^^^^^^^^^
-
-:Syntax: ``subs_filter`` *source_str* *destination_str* ``[gior]``
-:Default: ``g``
+:Syntax: *subs_filter source_str destination_str [gior]*
+:Default: *g*
 :Context: *http, server, location*
 
 subs_filter_ allows replacing source string (regular expression or fixed) in the nginx response with
@@ -58,11 +60,12 @@ location is supported. The meaning of the third flags are:
 * ``o``: Just replace the first one.
 * ``r``: The pattern is treated as a regular expression, default is fixed string.
 
+
+
 .. _substitutions.installation:
 
 Installation
 ------------
-
 To install, get the source with subversion:
 
 .. code-block:: bash
@@ -77,9 +80,9 @@ and then compile nginx with the following option:
   ./configure --add-module=/path/to/module
 
 
+
 Changelog
 ---------
-
 06/30/2012: Changes with nginx_substitutions_filter 0.6.0
 
 - refactored this module
@@ -107,7 +110,8 @@ Changelog
 
 - initial public release
 
+
+
 Reporting a bug
 ---------------
-
 Questions/patches may be directed to Weibin Yao, yaoweibin@gmail.com.

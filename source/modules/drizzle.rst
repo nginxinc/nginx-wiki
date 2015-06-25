@@ -3,21 +3,23 @@ Drizzle
 
 Name
 ----
-
 drizzle-nginx-module - Upstream module for talking to MySQL and Drizzle directly
 
 .. note:: *This module is not distributed with the Nginx source.* See the `installation instructions <drizzle.installation_>`_.
 
 
+
 Status
 ------
-
 This module is already production ready and is powering `the Taobao LineZing site <http://lz.taobao.com>`_.
+
+
 
 Version
 -------
-
 This document describes ngx_drizzle :github:`v0.1.8 <openresty/drizzle-nginx-module/tags>` released on 21 November 2014.
+
+
 
 Synopsis
 --------
@@ -66,6 +68,7 @@ Synopsis
   }
 
 
+
 Description
 -----------
 This is an nginx upstream module integrating `libdrizzle <https://launchpad.net/drizzle>`_ into Nginx in a non-blocking and streamming way.
@@ -73,8 +76,6 @@ This is an nginx upstream module integrating `libdrizzle <https://launchpad.net/
 Essentially it provides a very efficient and flexible way for nginx internals to access MySQL, Drizzle, as well as other RDBMS's that support the Drizzle or MySQL wired protocol. Also it can serve as a direct REST interface to those RDBMS backends.
 
 This module does not generate human-readable outputs, rather, in a binary format called Resty-DBD-Stream (RDS) designed by ourselves. You usually need other components, like :github:`HttpRdsJsonModule <openresty/rds-json-nginx-module>`, :github:`HttpRdsCsvModule <openresty/rds-csv-nginx-module>`, or :github:`HttpLuaRdsParser <openresty/lua-rds-parser>` to work with this module. See `Output Format`_ for details.
-
-
 
 Keepalive connection pool
 ^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -131,15 +132,15 @@ Then request ``GET /test`` gives the following outputs:
 
 You can see the ``insert_id`` field (as well as the ``affected_rows`` field in the 3rd JSON response.
 
+
+
 Directives
 ----------
 
-
-
 drizzle_server
 ^^^^^^^^^^^^^^
-:Syntax: ``drizzle_server <``\ *host*\ ``> user=<``\ *user*\ ``> password=<``\ *pass*\ ``> dbname=<``\ *database*\ ``>``
-:Syntax: ``drizzle_server <``\ *host*\ ``>:<``\ *port*\ ``> user=<``\ *user*\ ``> password=<``\ *pass*\ ``> dbname=<``\ *database*\ ``> protocol=<``\ *protocol*\ ``> charset=<``\ *charset*\ ``>``
+:Syntax: *drizzle_server <host> user=<user> password=<pass> dbname=<database>*
+:Syntax: *drizzle_server <host>:<port> user=<user> password=<pass> dbname=<database> protocol=<protocol> charset=<charset>*
 :Default: *none*
 :Context: *upstream*
 
@@ -180,8 +181,8 @@ The following options are supported:
 
 drizzle_keepalive
 ^^^^^^^^^^^^^^^^^
-:Syntax: ``drizzle_keepalive max=<``\ *size*\ ``> mode=<``\ *mode*\ ``>``
-:Default: ``max=0 mode=single``
+:Syntax: *drizzle_keepalive max=<size> mode=<mode>*
+:Default: *max=0 mode=single*
 :Context: *upstream*
 
 Configures the keep-alive connection pool for MySQL/Drizzle connections.
@@ -200,28 +201,28 @@ The following options are supported:
 
 drizzle_query
 ^^^^^^^^^^^^^
-:Syntax: ``drizzle_query <``\ *sql*\ ``>``
+:Syntax: *drizzle_query <sql>*
 :Default: *none*
 :Context: *http, server, location, location if*
 
 Specify the SQL queries sent to the Drizzle/MySQL backend.
 
-Nginx variable interpolation is supported, but you must be careful with SQL injection attacks. You can use the [[HttpSetMiscModule#set_quote_sql_str|set_quote_sql_str]] directive, for example, to quote values for SQL interpolation:
+Nginx variable interpolation is supported, but you must be careful with SQL injection attacks. You can use the ``set_quote_sql_str`` directive, for example, to quote values for SQL interpolation:
 
 .. code-block:: nginx
 
   location /cat {
-    set_unescape_uri $name $arg_name;
-    set_quote_sql_str $quoted_name $name;
+      set_unescape_uri $name $arg_name;
+      set_quote_sql_str $quoted_name $name;
 
-    drizzle_query "select * from cats where name = $quoted_name";
-    drizzle_pass my_backend;
+      drizzle_query "select * from cats where name = $quoted_name";
+      drizzle_pass my_backend;
   }
 
 
 drizzle_pass
 ^^^^^^^^^^^^
-:Syntax: ``drizzle_pass <``\ *remote*\ ``>``
+:Syntax: *drizzle_pass <remote>*
 :Default: *none*
 :Context: *location, location if*
 :Phase: *content*
@@ -246,8 +247,8 @@ Nginx variables can also be interpolated into the ``<remote>`` argument, so as t
 
 drizzle_connect_timeout
 ^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``drizzle_connect_time <``\ *time*\ ``>``
-:Default: ``60s``
+:Syntax: *drizzle_connect_time <time>*
+:Default: *60s*
 :Context: *http, server, location, location if*
 
 Specify the (total) timeout for connecting to a remote Drizzle or MySQL server.
@@ -257,8 +258,8 @@ The ``<time>`` argument can be an integer, with an optional time unit, like ``s`
 
 drizzle_send_query_timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``drizzle_send_query_timeout <``\ *time*\ ``>``
-:Default: ``60s``
+:Syntax: *drizzle_send_query_timeout <time>*
+:Default: *60s*
 :Context: *http, server, location, location if*
 
 Specify the (total) timeout for sending a SQL query to a remote Drizzle or MySQL server.
@@ -268,8 +269,8 @@ The ``<time>`` argument can be an integer, with an optional time unit, like ``s`
 
 drizzle_recv_cols_timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``drizzle_recv_cols_timeout <``\ *time*\ ``>``
-:Default: ``60s``
+:Syntax: *drizzle_recv_cols_timeout <time>*
+:Default: *60s*
 :Context: *http, server, location, location if*
 
 Specify the (total) timeout for receiving the columns metadata of the result-set to a remote Drizzle or MySQL server.
@@ -277,11 +278,10 @@ Specify the (total) timeout for receiving the columns metadata of the result-set
 The ``<time>`` argument can be an integer, with an optional time unit, like ``s`` (second), ``ms`` (millisecond), ``m`` (minute). The default time unit is ``s``, ie, "second". The default setting is ``60s``.
 
 
-
 drizzle_recv_rows_timeout
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``drizzle_recv_rows_timeout <``\ *time*\ ``>``
-:Default: ``60s``
+:Syntax: *drizzle_recv_rows_timeout <time>*
+:Default: *60s*
 :Context: *http, server, location, location if*
 
 Specify the (total) timeout for receiving the rows data of the result-set (if any) to a remote Drizzle or MySQL server.
@@ -289,21 +289,19 @@ Specify the (total) timeout for receiving the rows data of the result-set (if an
 The ``<time>`` argument can be an integer, with an optional time unit, like ``s`` (second), ``ms`` (millisecond), ``m`` (minute). The default time unit is ``s``, ie, "second". The default setting is ``60s``.
 
 
-
 drizzle_buffer_size
 ^^^^^^^^^^^^^^^^^^^
-:Syntax: ``drizzle_buffer_size <``\ *size*\ ``>``
-:Default: ``4k/8k``
+:Syntax: *drizzle_buffer_size <size>*
+:Default: *4k/8k*
 :Context: *http, server, location, location if*
 
 Specify the buffer size for drizzle outputs. Default to the page size (4k/8k). The larger the buffer, the less streammy the outputing process will be.
 
 
-
 drizzle_module_header
 ^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``drizzle_module_header [on|off]``
-:Default: ``on``
+:Syntax: *drizzle_module_header [on|off]*
+:Default: *on*
 :Context: *http, server, location, location if*
 
 Controls whether to output the drizzle header in the response. Default on.
@@ -315,10 +313,9 @@ The drizzle module header looks like this:
   X-Resty-DBD-Module: ngx_drizzle 0.1.0
 
 
-
 drizzle_status
 ^^^^^^^^^^^^^^
-:Syntax: ``drizzle_status``
+:Syntax: *drizzle_status*
 :Default: *none*
 :Context: *location, location if*
 :Phase: *content*
@@ -350,12 +347,11 @@ The output looks like this:
 
 .. note:: This is *not* the global statistics if you do have multiple Nginx worker processes configured in your ``nginx.conf``.
 
+
+
 Variables
 ---------
-
 This module creates the following Nginx variables:
-
-
 
 $drizzle_thread_id
 ^^^^^^^^^^^^^^^^^^
@@ -406,6 +402,8 @@ where we make use of :doc:`headers_more`, :doc:`lua`, and `HttpRdsJsonModule <op
 
 Such that, their output filters will work in the *reversed* order, i.e., first convert RDS to JSON, and then add our ``X-Mysql-Tid`` custom header, and finally capture the whole (subrequest) response with the Lua module. You're recommended to use the `OpenResty bundle <http://openresty.org/>`_ though, it ensures the module building order automatically for you.
 
+
+
 Output Format
 -------------
 This module generates binary query results in a format that is shared among the various Nginx database driver modules like :github:`ngx_postgres <FRiCKLE/ngx_postgres/>`. This data format is named ``Resty DBD Stream`` (RDS).
@@ -425,7 +423,6 @@ For the HTTP response header part, the ``200 OK`` status code should always be r
 where ``0.1.0`` is this module's own version number. This ``X-Resty-DBD-Module`` header is optional though.
 
 Below is the HTTP response body format (version 0.0.3):
-
 
 RDS Header Part
 ^^^^^^^^^^^^^^^
@@ -470,7 +467,6 @@ The RDS Body Part consists of two sections, Columns_ and Rows_.
 
 Columns
 """""""
-
 The columns part consists of zero or more column data. The number of columns is determined by ``column count`` field in `RDS Header Part`_.
 
 Each column consists of the following fields
@@ -487,22 +483,21 @@ Each column consists of the following fields
 * ``u_char``
     column name data
 
+
 Rows
 """"
-
 The rows part consists of zero or more row data, terminated by a 8-bit zero.
 
 Each row data consists of a `Row Flag`_ and an optional `Fields Data`_ part.
 
 Row Flag
 ########
-
 * ``uint8_t``
     valid row (1 means valid, and 0 means the row list terminator)
 
+
 Fields Data
 ###########
-
 The Fields Data consists zero or more fields of data. The field count is predetermined by the ``column number`` specified in `RDS Header Part`_.
 
 * ``uint32_t``
@@ -521,21 +516,24 @@ On the nginx output chain link level, the following components should be put int
 * each row's valid flag byte and row list terminator
 * each field in each row (if any) but the field data can span multiple bufs.
 
+
+
 Status Code
 -----------
-
 If the MySQL error code in MySQL's query result is not OK, then a 500 error page is returned by this module, except for the table non-existent error, which results in the ``410 Gone`` error page.
+
+
 
 Caveats
 -------
-
 * Other usptream modules like ``upstream_hash`` and :doc:`keepalive` *must not* be used with this module in a single upstream block.
-* Directives like [[HttpUpstreamModule#server|server]] *must not* be mixed with drizzle_server_ either.
+* Directives like the `server <|HttpUpstreamModule|#server>` *must not* be mixed with drizzle_server_ either.
 * Upstream backends that don't use drizzle_server_ to define server entries *must not* be used in the drizzle_pass_ directive.
+
+
 
 Troubleshooting
 ---------------
-
 * When you see the following error message in ``error.log``:
 
   .. code-block:: text
@@ -559,18 +557,20 @@ Troubleshooting
 
 .. note:: the ``--protocol=tcp`` option is required here, or your MySQL client may use Unix Domain Socket to connect to your MySQL server.
 
+
+
 Known Issues
 ------------
-
 * Calling mysql procedures are currently not supported because the underlying libdrizzle library does not support the ``CLIENT_MULTI_RESULTS`` flag yet :( But we'll surely work on it.
 * Multiple SQL statements in a single query are not supported due to the lack of ``CLIENT_MULTI_STATEMENTS`` support in the underlying libdrizzle library.
 * This module does not (yet) work with the ``RTSIG`` event model.
+
+
 
 .. _drizzle.installation:
 
 Installation
 ------------
-
 You're recommended to install this module as well as :github:`HttpRdsJsonModule <openresty/rds-json-nginx-module>` via the ngx_openresty bundle::
 
   http://openresty.org
@@ -625,11 +625,12 @@ Alternatively, you can compile this module with Nginx core's source by hand:
 
 You usually also need :github:`HttpRdsJsonModule <openresty/rds-json-nginx-module>` to obtain JSON output from the binary RDS output generated by this upstream module.
 
+
+
 .. _drizzle.compatibility:
 
 Compatibility
 -------------
-
 If you're using MySQL, then MySQL ``5.0 ~ 5.5`` is required. We're not sure if MySQL ``5.6+`` work; reports welcome!
 
 This module has been tested on Linux and Mac OS X. Reports on other POSIX-compliant systems will be highly appreciated.
@@ -651,11 +652,12 @@ Earlier versions of Nginx like ``0.6.x`` and ``0.5.x`` will *not* work.
 
 If you find that any particular version of Nginx above ``0.7.44`` does not work with this module, please consider reporting a bug.
 
+
+
 .. _drizzle.community: 
 
 Community
 ---------
-
 
 English Mailing List
 ^^^^^^^^^^^^^^^^^^^^
@@ -666,22 +668,25 @@ Chinese Mailing List
 ^^^^^^^^^^^^^^^^^^^^
 The `openresty <https://groups.google.com/group/openresty>`_ mailing list is for Chinese speakers.
 
+
+
 Report Bugs
 -----------
-
 Please submit bug reports, wishlists, or patches by
 
 #. creating a ticket on the :github:`issue tracking interface <openresty/drizzle-nginx-module/issues>` provided by GitHub,
 #. or sending an email to the `OpenResty community <drizzle.community_>`_.
 
+
+
 Source Repository
 -----------------
-
 Available on github at :github:`openresty/drizzle-nginx-module <openresty/drizzle-nginx-module>`
+
+
 
 Test Suite
 ----------
-
 This module comes with a Perl-driven test suite. The :github:`test cases <openresty/drizzle-nginx-module/tree/master/t/>` are
 :github:`declarative <openresty/drizzle-nginx-module/blob/master/t/sanity.t>` too. Thanks to the `Test::Nginx <http://search.cpan.org/perldoc?Test::Nginx>` module in the Perl world.
 
@@ -693,9 +698,10 @@ To run it on your side:
 
 Because a single nginx server (by default, ``localhost:1984``) is used across all the test scripts (``.t`` files), it's meaningless to run the test suite in parallel by specifying ``-jN`` when invoking the ``prove`` utility.
 
+
+
 TODO
 ----
-
 * add the MySQL transaction support.
 * add multi-statement MySQL query support.
 * implement the **drizzle_max_output_size** directive. When the RDS data is larger then the size specified, the module will try to terminate the output as quickly as possible but will still ensure the resulting response body is still in valid RDS format.
@@ -707,23 +713,26 @@ TODO
 * add Unix domain socket support in the drizzle_server_ directive.
 * make the drizzle_query_ directive reject variables that have not been processed by a **drizzle_process** directive. This will pretect us from SQL injections. There will also be an option ("strict=no") to disable such checks.
 
+
+
 Changes
 -------
-
 The changes of every release of this module can be obtained from the ngx_openresty bundle's change logs:
 
   http://openresty.org/#Changes
 
+
+
 Authors
 -------
-
 * chaoslawful (王晓哲) <chaoslawful at gmail dot com>
 * Yichun "agentzh" Zhang (章亦春) <agentzh at gmail dot com>, CloudFlare Inc.
 * Piotr Sikora <piotr.sikora at frickle dot com>, CloudFlare Inc.
 
+
+
 Copyright & License
 -------------------
-
 This module is licenced under the BSD license.
 
 Copyright (C) 2009-2014, by Xiaozhe Wang (chaoslawful) <chaoslawful@gmail.com>.
@@ -742,14 +751,15 @@ Redistribution and use in source and binary forms, with or without modification,
 
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
-See Also
---------
 
-* :github:`rds-json-nginx-module <openresty/rds-json-nginx-module>`
-* :github:`rds-csv-nginx-module <openresty/rds-csv-nginx-module>`
-* :github:`lua-rds-parser <openresty/lua-rds-parser>`
-* `The ngx_openresty bundle <http://openresty.org>`_
-* drizzle-nginx-module (i.e., this module)
-* :github:`postgres-nginx-module <FRiCKLE/ngx_postgres>`
-* :doc:`lua`
-* The :github:`lua-resty-mysql <openresty/lua-resty-mysql>` library based on the :doc:`lua` cosocket API.
+
+.. seealso::
+
+  * :github:`rds-json-nginx-module <openresty/rds-json-nginx-module>`
+  * :github:`rds-csv-nginx-module <openresty/rds-csv-nginx-module>`
+  * :github:`lua-rds-parser <openresty/lua-rds-parser>`
+  * `The ngx_openresty bundle <http://openresty.org>`_
+  * drizzle-nginx-module (i.e., this module)
+  * :github:`postgres-nginx-module <FRiCKLE/ngx_postgres>`
+  * :doc:`lua`
+  * The :github:`lua-resty-mysql <openresty/lua-resty-mysql>` library based on the :doc:`lua` cosocket API.

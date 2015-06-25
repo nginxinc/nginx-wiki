@@ -40,6 +40,53 @@ templates_path = ['_templates']
 # source_suffix = ['.rst', '.md']
 source_suffix = '.rst'
 
+rst_epilog = """
+.. |HttpRewriteModule| replace:: HttpRewriteModule
+
+.. _HttpRewriteModule: http://nginx.org/en/docs/http/ngx_http_rewrite_module.html
+
+.. |HttpAccessModule| replace:: HttpAccessModule
+
+.. _HttpAccessModule: http://nginx.org/en/docs/http/ngx_http_access_module.html
+
+.. |HttpLogModule| replace:: HttpLogModule
+
+.. _HttpLogModule: http://nginx.org/en/docs/http/ngx_http_log_module.html
+
+.. |HttpCoreModule| replace:: HttpCoreModule
+
+.. _HttpCoreModule: http://nginx.org/en/docs/http/ngx_http_core_module.html
+
+.. |HttpEchoModule| replace:: HttpEchoModule
+
+.. _HttpEchoModule: http://nginx.org/en/docs/http/ngx_http_echo_module.html
+
+.. |HttpUpstreamModule| replace:: HttpUpstreamModule
+
+.. _HttpUpstreamModule: http://nginx.org/en/docs/http/ngx_http_upstream_module.html
+
+.. |HttpProxyModule| replace:: HttpProxyModule
+
+.. _HttpProxyModule: http://nginx.org/en/docs/http/ngx_http_proxy_module.html
+
+.. |HttpFastCGIModule| replace:: HttpFastCGIModule
+
+.. _HttpFastCGIModule: http://nginx.org/en/docs/http/ngx_http_fastcgi_module.html
+
+.. |HttpSsiModule| replace:: HttpSsiModule
+
+.. _HttpSsiModule: http://nginx.org/en/docs/http/ngx_http_ssi_module.html
+
+.. |HttpMapModule| replace:: HttpMapModule
+
+.. _HttpMapModule: http://nginx.org/en/docs/http/ngx_http_map_module.html
+
+.. |HttpGZipModule| replace:: HttpGZipModule
+
+.. _HttpGZipModule: http://nginx.org/en/docs/http/ngx_http_gzip_module.html
+
+"""
+
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'
 

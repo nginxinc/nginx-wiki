@@ -1,13 +1,9 @@
 Upload
 ======
 
-Nginx Upload Module
---------------------
-
-
 Description
 ^^^^^^^^^^^
-The module parses request body storing all files being uploaded to a directory specified by upload_store directive. The files are then being stripped from body and altered request is then passed to a location specified by upload_pass directive, thus allowing arbitrary handling of uploaded files. Each of file fields are being replaced by a set of fields specified by upload_set_form_field directive. The content of each uploaded file then could be read from a file specified by $upload_tmp_path variable or the file could be simply moved to ultimate destination. Removal of output files is controlled by directive upload_cleanup. If a request has a method other than POST, the module returns error 405 (Method not allowed). Requests with such methods could be processed in alternative location via error_page directive.
+**nginx-upload-module** - parses request body storing all files being uploaded to a directory specified by upload_store directive. The files are then being stripped from body and altered request is then passed to a location specified by upload_pass directive, thus allowing arbitrary handling of uploaded files. Each of file fields are being replaced by a set of fields specified by upload_set_form_field directive. The content of each uploaded file then could be read from a file specified by $upload_tmp_path variable or the file could be simply moved to ultimate destination. Removal of output files is controlled by directive upload_cleanup. If a request has a method other than POST, the module returns error 405 (Method not allowed). Requests with such methods could be processed in alternative location via error_page directive.
 
 
 
@@ -31,7 +27,7 @@ Directives
 
 upload_pass
 ^^^^^^^^^^^
-:Syntax: ``upload_pass <location>``
+:Syntax: *upload_pass <location>*
 :Default: *none*
 :Context: *server,location*
 
@@ -41,7 +37,7 @@ Specifies location to pass request body to. File fields will be stripped and rep
 
 upload_resumable
 ^^^^^^^^^^^^^^^^
-:Syntax: ``upload_resumable <on/off>``
+:Syntax: *upload_resumable <on/off>*
 :Default: *off*
 :Context: *http,server,location*
 
@@ -51,7 +47,7 @@ Enables resumable uploads.
 
 upload_store
 ^^^^^^^^^^^^
-:Syntax: ``upload_store <directory> [<level 1> [<level 2> ] ... ]``
+:Syntax: *upload_store <directory> [<level 1> [<level 2> ] ... ]*
 :Default: *none*
 :Context: *server,location*
 
@@ -61,7 +57,7 @@ Specifies a directory to which output files will be saved to. The directory coul
 
 upload_state_store
 ^^^^^^^^^^^^^^^^^^
-:Syntax: ``upload_state_store <directory> [<level 1> [<level 2> ] ... ]``
+:Syntax: *upload_state_store <directory> [<level 1> [<level 2> ] ... ]*
 :Default: *none*
 :Context: *server,location*
 
@@ -71,7 +67,7 @@ Optional. Specifies a directory that will contain state files for resumable uplo
 
 upload_store_access
 ^^^^^^^^^^^^^^^^^^^
-:Syntax: ``upload_store_access <mode>``
+:Syntax: *upload_store_access <mode>*
 :Default: *user:rw*
 :Context: *server,location*
 
@@ -81,7 +77,7 @@ Specifies access mode which will be used to create output files.
 
 upload_set_form_field
 ^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``upload_set_form_field <name> <value>``
+:Syntax: *upload_set_form_field <name> <value>*
 :Default: *none*
 :Context: *server,location*
 
@@ -104,7 +100,7 @@ For example,
 
 upload_aggregate_form_field
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``upload_aggregate_form_field <name> <value>``
+:Syntax: *upload_aggregate_form_field <name> <value>*
 :Default: *none*
 :Context: *server,location*
 
@@ -132,7 +128,7 @@ For example,
 
 upload_pass_form_field
 ^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``upload_pass_form_field <regex>``
+:Syntax: *upload_pass_form_field <regex>*
 :Default: *none*
 :Context: *server,location*
 
@@ -156,7 +152,7 @@ For PCRE-unaware environments:
 
 upload_cleanup
 ^^^^^^^^^^^^^^
-:Syntax: ``upload_cleanup <HTTP status/range> [<HTTP status/range ...]``
+:Syntax: *upload_cleanup <HTTP status/range> [<HTTP status/range ...]*
 :Default: *none*
 :Context: *server,location*
 
@@ -172,7 +168,7 @@ For example,
 
 upload_buffer_size
 ^^^^^^^^^^^^^^^^^^
-:Syntax: ``upload__buffer_size <size>``
+:Syntax: *upload__buffer_size <size>*
 :Default: *size of memory page in bytes*
 :Context: *server,location*
 
@@ -182,7 +178,7 @@ Size in bytes of write buffer which will be used to accumulate file data and wri
 
 upload_max_part_header_len
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``upload_max_part_header_len <size>``
+:Syntax: *upload_max_part_header_len <size>*
 :Default: *512*
 :Context: *server,location*
 
@@ -192,7 +188,7 @@ Specifies maximal length of part header in bytes. Determines the size of the buf
 
 upload_max_file_size
 ^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``upload_max_file_size <size>``
+:Syntax: *upload_max_file_size <size>*
 :Default: *none*
 :Context: *server,location*
 
@@ -202,7 +198,7 @@ Specifies maximal size of the file. Files longer than the value of this directiv
 
 upload_limit_rate
 ^^^^^^^^^^^^^^^^^
-:Syntax: ``upload_limit_rate <rate>``
+:Syntax: *upload_limit_rate <rate>*
 :Default: *0*
 :Context: *main,server,location*
 
@@ -212,7 +208,7 @@ Specifies upload rate limit in bytes per second. Zero means rate is unlimited.
 
 upload_max_output_body_len
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``upload_max_output_body_len <size>``
+:Syntax: *upload_max_output_body_len <size>*
 :Default: *100k*
 :Context: *main,server,location*
 
@@ -222,7 +218,7 @@ Specifies maximal length of the output body. This prevents piling up of non-file
 
 upload_tame_arrays
 ^^^^^^^^^^^^^^^^^^
-:Syntax: ``upload_tame_arrays <on/off>``
+:Syntax: *upload_tame_arrays <on/off>*
 :Default: *off*
 :Context: *main,server,location*
 
@@ -232,7 +228,7 @@ Specifies whether square brackets in file field names must be dropped (required 
 
 upload_pass_args
 ^^^^^^^^^^^^^^^^
-:Syntax: ``upload_pass_args <on/off>``
+:Syntax: *upload_pass_args <on/off>*
 :Default: *off*
 :Context: *main,server,location*
 

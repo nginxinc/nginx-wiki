@@ -3,16 +3,17 @@ Secure Download
 
 Description
 -----------
-
 **ngx_http_secure_download_module** - a module that enables you to create links which are only valid until a certain datetime is reached. The way it works is similar to lightttpd's mod_secdownload, but not exactly same. 
+
+
 
 Directives
 ----------
 
 secure_download
 ^^^^^^^^^^^^^^^
-:Syntax: ``secure_download [on|off]``
-:Default: ``off``
+:Syntax: *secure_download [ on | off ]*
+:Default: *off*
 :Context: *location*
 
 This can turn the module on/off.
@@ -20,7 +21,7 @@ This can turn the module on/off.
 
 secure_download_secret
 ^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``secure_download_secret <``\ *secret string*\ ``>``
+:Syntax: *secure_download_secret <secret string>*
 :Default: *none*
 :Context: *location*
 
@@ -29,8 +30,8 @@ Defines the string which is included in the md5 hash. It can also contain variab
 
 secure_download_path_mode
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``secure_download_path_mode [file|folder]``
-:Default: ``folder``
+:Syntax: *secure_download_path_mode [ file | folder ]*
+:Default: *folder*
 :Context: *location*
 
 This defines if the md5 hash has to be done for the full path, including filename, or just the folders which contain the file, without the filename. Depending on this your link will be valid either for a whole directory, or only for one file.
@@ -48,6 +49,8 @@ This variable contains the result of the request URL validation process. It alwa
 - "-1": the timestamp is expired
 - "-2": the md5 hash is wrong
 - "-3": other problem like f.e. parsing problem or module config problem
+
+
 
 Explanation
 -----------
@@ -80,9 +83,6 @@ Lets say you have a file in your document root under the path ``/somefolder/prot
 * thats it, now you got your link which is only valid until the included timestamp gets reached
 
 Now your config could look like following:
-
-Configuration example
----------------------
 
 .. code-block:: nginx
 
@@ -134,6 +134,8 @@ OR:
      root static;
   }   
 
+
+
 Requirements
 ------------
 To compile the nginx with this module you will need to have following:
@@ -141,6 +143,7 @@ To compile the nginx with this module you will need to have following:
 - The mod_rewrite in the nginx has to be enabled
 - You need the mhash library, it is used by the secure-download module to create the md5 hashes
 - I tested the module only with nginx 0.7.61 and 0.8.33, no guarantee for other versions
+
 
 
 Bugs/Feedback
@@ -152,6 +155,7 @@ If you are using that module, I would appreciate every kind of feedback or probl
 I tried to give some meaningful output in the error log if you set its log level to debug.
 
 Mail: mauro.stettler(A.T)gmail.com 
+
 
 
 Download

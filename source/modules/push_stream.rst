@@ -1,25 +1,21 @@
 HTTP Push Stream
 ================
 
-Nginx Push Stream Module
-------------------------
-A pure stream http push technology for your Nginx setup.
+Description
+-----------
+**nginx-push-stream-module** - A pure stream http push technology for your Nginx setup.
 
 Comet made easy and **really scalable**.
 
-Available on github at 
-:github:`nginx_push_stream_module <wandenberg/nginx-push-stream-module>`
+Available on github at :github:`nginx-push-stream-module <wandenberg/nginx-push-stream-module>`
 
-.. note:: *This module is not distributed with the Nginx source.* See the 
-  `installation instructions <push_stream.installation_>`_.
+.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions <push_stream.installation_>`_.
 
 
 
 Changelog
 ---------
-Always take a look at 
-:github:`CHANGELOG.textile <wandenberg/nginx-push-stream-module/blob/master/CHANGELOG.textile>`
-to see what’s new.
+Always take a look at :github:`CHANGELOG.textile <wandenberg/nginx-push-stream-module/blob/master/CHANGELOG.textile>` to see what’s new.
 
 
 
@@ -223,7 +219,7 @@ Directives
 
 push_stream_channels_statistics
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_channels_statistics``
+:Syntax: *push_stream_channels_statistics*
 :Default: *location*
 
 **release version:** *0.2.0*
@@ -261,8 +257,8 @@ values like “text/plain”, “application/xml”, “application/yaml” and
 
 push_stream_publisher
 ^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_publisher [`` *normal* ``|`` *admin* ``]``
-:Default: ``normal``
+:Syntax: *push_stream_publisher [ normal | admin ]*
+:Default: *normal*
 :Context: *location*
 
 Defines a location as a message publisher. Requests to a publisher location are 
@@ -297,9 +293,9 @@ Available only if *admin* value is used in this directive.
 
 push_stream_subscriber
 ^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_subscriber [`` *streaming* ``|`` *polling* ``|`` 
+:Syntax: *push_stream_subscriber [ streaming | polling |* 
   *long-polling* ``]``
-:Default: ``streaming``
+:Default: *streaming*
 :Context: *location*
 
 Defines a location as a subscriber. This location represents a subscriber’s 
@@ -346,8 +342,8 @@ The polling and long-polling modes could be set by the request header
 
 push_stream_shared_memory_size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_shared_memory_size`` *size*
-:Default: ``32M``
+:Syntax: *push_stream_shared_memory_size size*
+:Default: *32M*
 :Context: *http*
 
 The size of the memory chunk this module will use to store published messages, 
@@ -359,8 +355,8 @@ channel will receive an 500 Internal Server Error response.
 
 push_stream_shared_memory_cleanup_objects_ttl
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_shared_memory_cleanup_objects_ttl`` *time*
-:Default: ``30 seconds``
+:Syntax: *push_stream_shared_memory_cleanup_objects_ttl time*
+:Default: *30 seconds*
 :Context: *http*
 
 The length of time a message or a channel will stay on garbage collection area 
@@ -373,8 +369,8 @@ create messages and channels, so do not use a large time.
 
 push_stream_channel_deleted_message_text
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_channel_deleted_message_text`` *string*
-:Default: ``"Channel deleted"``
+:Syntax: *push_stream_channel_deleted_message_text string*
+:Default: *"Channel deleted"*
 :Context: *http*
 
 **release version:** *0.2.5*
@@ -386,7 +382,7 @@ is deleted by a publisher.
 
 push_stream_ping_message_text
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_ping_message_text`` *string*
+:Syntax: *push_stream_ping_message_text string*
 :Default: *none*
 :Context: *http*
 
@@ -398,7 +394,7 @@ The string used on ping message sent to subscribers.
 
 push_stream_message_ttl
 ^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_message_ttl`` *time*
+:Syntax: *push_stream_message_ttl time*
 :Default: *none*
 :Context: *http*
 
@@ -409,7 +405,7 @@ you do not want messages to expire, just not set this directive.
 
 push_stream_max_subscribers_per_channel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_max_subscribers_per_channel`` *number*
+:Syntax: *push_stream_max_subscribers_per_channel number*
 :Default: *none*
 :Context: *http*
 
@@ -420,7 +416,7 @@ limit number of subscribers access to channels, just not set this directive.
 
 push_stream_max_messages_stored_per_channel
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_max_messages_stored_per_channel`` *number*
+:Syntax: *push_stream_max_messages_stored_per_channel number*
 :Default: *none*
 :Context: *http*
 
@@ -432,7 +428,7 @@ to be discarded by length, just not set this directive.
 
 push_stream_max_channel_id_length
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_max_channel_id_length`` *number*
+:Syntax: *push_stream_max_channel_id_length number*
 :Default: *none*
 :Context: *http*
 
@@ -444,7 +440,7 @@ length, just not set this directive.
 
 push_stream_ping_message_interval
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_ping_message_interval`` *time*
+:Syntax: *push_stream_ping_message_interval time*
 :Default: *none*
 :Context: *http*
 
@@ -455,7 +451,7 @@ do not want to send ping messages, just not set this directive.
 
 push_stream_subscriber_connection_ttl
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_subscriber_connection_ttl`` *time*
+:Syntax: *push_stream_subscriber_connection_ttl time*
 :Default: *none*
 :Context: *http*
 
@@ -469,7 +465,7 @@ to send messages to susbscriber, allocated at pool request.
 
 push_stream_max_number_of_channels
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_max_number_of_channels`` *number*
+:Syntax: *push_stream_max_number_of_channels number*
 :Default: *none*
 :Context: *http*
 
@@ -480,7 +476,7 @@ limit the number of channels, just not set this directive.
 
 push_stream_max_number_of_broadcast_channels
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_max_number_of_broadcast_channels`` *number*
+:Syntax: *push_stream_max_number_of_broadcast_channels number*
 :Default: *none*
 :Context: *http*
 
@@ -492,7 +488,7 @@ directive.
 
 push_stream_broadcast_channel_prefix
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_broadcast_channel_prefix`` *string*
+:Syntax: *push_stream_broadcast_channel_prefix string*
 :Default: *none*
 :Context: *http*
 
@@ -504,8 +500,8 @@ broadcast channel
 
 push_stream_store_messages
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_store_messages [ on | off ]``
-:Default: ``off``
+:Syntax: *push_stream_store_messages [ on | off ]*
+:Default: *off*
 :Context: *location (push_stream_publisher)*
 
 Whether or not message queuing is enabled.
@@ -516,8 +512,8 @@ push_stream_message_ttl_ or push_stream_max_messages_stored_per_channel_.
 
 push_stream_authorized_channels_only
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_authorized_channels_only [ on | off ]``
-:Default: ``off``
+:Syntax: *push_stream_authorized_channels_only [ on | off ]*
+:Default: *off*
 :Context: *location (push_stream_subscriber)*
 
 Whether or not a subscriber may create a channel by making a request to a 
@@ -533,7 +529,7 @@ and if this directive is set to on this channel has to be created before.
 
 push_stream_header_template
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_header_template`` *string*
+:Syntax: *push_stream_header_template string*
 :Default: *none*
 :Context: *location (push_stream_subscriber)*
 
@@ -543,8 +539,8 @@ The text that will be sended to subscribers when they arrive.
 
 push_stream_message_template
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_message_template`` *string*
-:Default: ``~text~``
+:Syntax: *push_stream_message_template string*
+:Default: *~text~*
 :Context: *location (push_stream_subscriber)*
 
 The text template that will be used to format the message before be sended to 
@@ -556,7 +552,7 @@ example: "<script>p(~id~,'~channel~','~text~');</script>"
 
 push_stream_footer_template
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_footer_template`` *string*
+:Syntax: *push_stream_footer_template string*
 :Default: *none*
 :Context: *location (push_stream_subscriber)*
 
@@ -569,8 +565,8 @@ The text that will be sended to subscribers before connection is closed
 
 push_stream_content_type
 ^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_content_type`` *string*
-:Default: ``text/plain``
+:Syntax: *push_stream_content_type string*
+:Default: *text/plain*
 :Context: *location (push_stream_subscriber)*
 
 The content type used on responses to subscribers. Must be complient with 
@@ -581,7 +577,7 @@ push_stream_footer_template_.
 
 push_stream_broadcast_channel_max_qtd
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_broadcast_channel_max_qtd`` *number*
+:Syntax: *push_stream_broadcast_channel_max_qtd number*
 :Default: *none*
 :Context: *location (push_stream_subscriber)*
 
@@ -595,8 +591,8 @@ channel and many nonexistent broadcast channels.
 
 push_stream_keepalive
 ^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_keepalive [ on | off ]``
-:Default: ``off``
+:Syntax: *push_stream_keepalive [ on | off ]*
+:Default: *off*
 :Context: *location (push_stream_publisher, push_stream_channels_statistics)*
 
 **release version:** *0.2.4*
@@ -607,8 +603,8 @@ Enable keepalive connections, on publisher or channels statistics locations.
 
 push_stream_eventsource_support
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``push_stream_eventsource_support [ on | off ]``
-:Default: ``off``
+:Syntax: *push_stream_eventsource_support [ on | off ]*
+:Default: *off*
 :Context: *location (push_stream_subscriber)*
 
 **release version:** *0.3.0*

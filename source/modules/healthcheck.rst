@@ -26,7 +26,7 @@ Directives
 
 healthcheck_enabled
 ^^^^^^^^^^^^^^^^^^^
-:Syntax: ``healthcheck_enabled``
+:Syntax: *healthcheck_enabled*
 :Default: *none*
 :Context: *upstream*
 
@@ -36,8 +36,8 @@ Enables health checking of an upstream
 
 healthcheck_delay
 ^^^^^^^^^^^^^^^^^
-:Syntax: ``healthcheck_delay <``\ *milliseconds*\ ``>``
-:Default: ``10000``
+:Syntax: *healthcheck_delay <milliseconds>*
+:Default: *10000*
 :Context: *upstream*
 
 Delay in msec between healthchecks for a single peer.
@@ -46,8 +46,8 @@ Delay in msec between healthchecks for a single peer.
 
 healthcheck_timeout
 ^^^^^^^^^^^^^^^^^^^
-:Syntax: ``healthcheck_timeout <``\ *milliseconds*\ ``>``
-:Default: ``2000``
+:Syntax: *healthcheck_timeout <milliseconds>*
+:Default: *2000*
 :Context: *upstream*
 
 How many milliseconds a healthcheck is allowed to take place
@@ -56,8 +56,8 @@ How many milliseconds a healthcheck is allowed to take place
 
 healthcheck_failcount
 ^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``healthcheck_failcount <``\ *count*\ ``>``
-:Default: ``2``
+:Syntax: *healthcheck_failcount <count>*
+:Default: *2*
 :Context: *upstream*
 
 Number of healthchecks good or bad in a row it takes to switch from down 
@@ -67,7 +67,7 @@ to up and back. Good to prevent flapping
 
 healthcheck_send
 ^^^^^^^^^^^^^^^^
-:Syntax: ``healthcheck_send <``\ *content*\ ``>``
+:Syntax: *healthcheck_send <content>*
 :Default: *empty*
 :Context: *upstream*
 
@@ -88,7 +88,7 @@ For example,
 
 healthcheck_expected
 ^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``healthcheck_expected  <``\ *content*\ ``>``
+:Syntax: *healthcheck_expected <content>*
 :Default: *unset*
 :Context: *upstream*
 
@@ -99,8 +99,8 @@ response.  If unset, just a HTTP 200 status code is required for a peer
 
 healthcheck_buffer
 ^^^^^^^^^^^^^^^^^^
-:Syntax: ``healthcheck_buffer  <``\ *size*\ ``>``
-:Default: ``1000``
+:Syntax: *healthcheck_buffer <size>*
+:Default: *1000*
 :Context: *upstream*
 
 How big a buffer to use for the health check. Remember to include headers 
@@ -110,7 +110,7 @@ PLUS body, not just body.
 
 healthcheck_status
 ^^^^^^^^^^^^^^^^^^
-:Syntax: ``healthcheck_status``
+:Syntax: *healthcheck_status*
 :Default: *none*
 :Context: *upstream*
 

@@ -46,7 +46,7 @@ Directives
 
 slice
 ^^^^^
-:Syntax: ``slice``
+:Syntax: *slice*
 :Default: *none*
 :Context: *location*
 
@@ -55,7 +55,7 @@ It enables the content slicing in a given location.
 
 slice_arg_begin
 ^^^^^^^^^^^^^^^
-:Syntax: ``slice_arg_begin`` *string*
+:Syntax: *slice_arg_begin string*
 :Default: *start*
 :Context: *http, server, location*
 
@@ -64,7 +64,7 @@ Defines the argument that defines the request range of bytes *start*.
 
 slice_arg_end
 ^^^^^^^^^^^^^
-:Syntax: ``slice_arg_end`` *string*
+:Syntax: *slice_arg_end string*
 :Default: *end*
 :Context: *http, server, location*
 
@@ -73,7 +73,7 @@ Defines the argument that defines the request range of bytes *end*.
 
 slice_header
 ^^^^^^^^^^^^
-:Syntax: ``slice_header`` *string*
+:Syntax: *slice_header string*
 :Default: *none*
 :Context: *http, server, location*
 
@@ -82,7 +82,7 @@ Defines the string to be used as the *header* of each slice being served by Ngin
 
 slice_footer
 ^^^^^^^^^^^^
-:Syntax: ``slice_footer`` *string*
+:Syntax: *slice_footer string*
 :Default: *none*
 :Context: *http, server, location*
 
@@ -91,8 +91,8 @@ Defines the string to be used as the *footer* of each slice being served by Ngin
 
 slice_header_first
 ^^^^^^^^^^^^^^^^^^
-:Syntax: ``slice_header_first [ on | off ]``
-:Default: ``on``
+:Syntax: *slice_header_first [on|off]*
+:Default: *on*
 :Context: *http, server, location*
 
 If set to ``off`` and when requesting the *first* byte of the file *do not* serve the header.
@@ -102,8 +102,8 @@ This directive is particularly useful to differentiate the *first* slice from th
 
 slice_footer_last
 ^^^^^^^^^^^^^^^^^
-:Syntax: ``slice_footer_last [ on | off ]``
-:Default: ``on``
+:Syntax: *slice_footer_last [on|off]*
+:Default: *on*
 :Context: *http, server, location*
 
 If set to ``off`` and when requesting the *last* bytes of the file *do not* serve the header.

@@ -22,15 +22,15 @@ Directives
 
 circle_gif
 ^^^^^^^^^^
-:Syntax: ``circle_gif``
+:Syntax: *circle_gif*
 :Default: *none*
 :Context: *location*
 
 
 circle_gif_min_radius
 ^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``circle_min_radius`` *radius*
-:Default: ``10``
+:Syntax: *circle_min_radius radius*
+:Default: *10*
 :Context: *location*
 
 The minimum radius of generated circle images, in pixels.
@@ -38,8 +38,8 @@ The minimum radius of generated circle images, in pixels.
 
 circle_gif_max_radius
 ^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``circle_max_radius`` *radius*
-:Default: ``20``
+:Syntax: *circle_max_radius radius*
+:Default: *20*
 :Context: *location*
 
 The maximum radius of generated circle images, in pixels.
@@ -47,8 +47,8 @@ The maximum radius of generated circle images, in pixels.
 
 circle_gif_step_radius
 ^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``circle_step_radius`` *step*
-:Default: ``2``
+:Syntax: *circle_step_radius step*
+:Default: *2*
 :Context: *location*
 
 The *step* in between generated circle images, in pixels.

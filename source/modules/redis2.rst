@@ -118,7 +118,7 @@ Directives
 
 redis2_query
 ^^^^^^^^^^^^
-:Syntax: ``redis2_query <``\ *cmd*\ ``> [``\ *arg1*\ ``] [``\ *arg2*\ ``]...``
+:Syntax: *redis2_query <cmd> [arg1] [arg2]...*
 :Default: *none*
 :Context: *location, location if*
 
@@ -151,7 +151,7 @@ while newlines here are actually ``CR LF`` (``\r\n``).
 
 redis2_raw_query
 ^^^^^^^^^^^^^^^^
-:Syntax: ``redis2_raw_query`` *QUERY*
+:Syntax: *redis2_raw_query QUERY*
 :Default: *none*
 :Context: *location, location if*
 
@@ -163,7 +163,7 @@ Only *one* Redis command is allowed in the ``QUERY`` argument, or you'll receive
 
 redis2_raw_queries
 ^^^^^^^^^^^^^^^^^^
-:Syntax: ``redis2_raw_queries`` *N* *QUERIES*
+:Syntax: *redis2_raw_queries N QUERIES*
 :Default: *none*
 :Context: *location, location if*
 
@@ -197,7 +197,7 @@ Here's some examples:
 
 redis2_literal_raw_query
 ^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``redis2_literal_raw_query`` *QUERY*
+:Syntax: *redis2_literal_raw_query QUERY*
 :Default: *none*
 :Context: *location, location if*
 
@@ -209,8 +209,8 @@ Only One redis command is allowed in the ``QUERY`` argument.
 
 redis2_pass
 ^^^^^^^^^^^
-:Syntax: ``redis2_pass <``\ *upstream_name*\ ``>``
-:Syntax: ``redis2_pass <``\ *host*\ ``>:<``\ *port*\ ``>``
+:Syntax: *redis2_pass <upstream_name>*
+:Syntax: *redis2_pass <host>:<port>*
 :Default: *none*
 :Context: *location, location if*
 :Phase: *content*
@@ -221,8 +221,8 @@ Specify the Redis server backend.
 
 redis2_connect_timeout
 ^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``redis2_connect_timeout <``\ *time*\ ``>``
-:Default: ``60s``
+:Syntax: *redis2_connect_timeout <time>*
+:Default: *60s*
 :Context: *http, server, location*
 
 The timeout for connecting to the Redis server, in seconds by default.
@@ -238,8 +238,8 @@ This time must be less than 597 hours.
 
 redis2_send_timeout
 ^^^^^^^^^^^^^^^^^^^
-:Syntax: ``redis2_send_timeout <``\ *time*\ ``>``
-:Default: ``60s``
+:Syntax: *redis2_send_timeout <time>*
+:Default: *60s*
 :Context: *http, server, location*
 
 The timeout for sending TCP requests to the Redis server, in seconds by default.
@@ -253,8 +253,8 @@ units supported are ``s``\ (seconds), ``ms``\ (milliseconds), ``y``\ (years),
 
 redis2_read_timeout
 ^^^^^^^^^^^^^^^^^^^
-:Syntax: ``redis2_read_timeout <``\ *time*\ ``>``
-:Default: ``60s``
+:Syntax: *redis2_read_timeout <time>*
+:Default: *60s*
 :Context: *http, server, location*
 
 The timeout for reading TCP responses from the redis server, in seconds by default.
@@ -268,8 +268,8 @@ units supported are ``s``\ (seconds), ``ms``\ (milliseconds), ``y``\ (years),
 
 redis2_buffer_size
 ^^^^^^^^^^^^^^^^^^
-:Syntax: ``redis2_buffer_size <``\ *size*\ ``>``
-:Default: ``4k/8k``
+:Syntax: *redis2_buffer_size <size>*
+:Default: *4k/8k*
 :Context: *http, server, location*
 
 This buffer size is used for reading Redis replies, but it's not required to be
@@ -281,8 +281,8 @@ This default size is the page size, may be 4k or 8k.
 
 redis2_next_upstream
 ^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``redis2_next_upstream [ error | timeout | invalid_response | off ]``
-:Default: ``error timeout``
+:Syntax: *redis2_next_upstream [ error | timeout | invalid_response | off ]*
+:Default: *error timeout*
 :Context: *http, server, location*
 
 Specify which failure conditions should cause the request to be forwarded to 
