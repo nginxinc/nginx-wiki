@@ -56,7 +56,7 @@ to work.
 * :doc:`topics/recipes/cms_made_simple`
 * :doc:`topics/recipes/codeigniter`
 * `Contao <https://www.howtoforge.com/running-contao-2.10.2-on-nginx-lemp-on-debian-squeeze-ubuntu-11.10>`_
-* `CS-Cart <https://www.howtoforge.com/running-cs-cart-on-nginx-lemp-on-debian-wheezy-ubuntu-13.04>_`
+* `CS-Cart <https://www.howtoforge.com/running-cs-cart-on-nginx-lemp-on-debian-wheezy-ubuntu-13.04>`_
 * :doc:`topics/recipes/dokuwiki`
 * :doc:`topics/recipes/drupal`
 * :doc:`topics/recipes/elgg`
