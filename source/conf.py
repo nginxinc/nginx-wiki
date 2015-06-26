@@ -347,3 +347,7 @@ linkcheck_ignore = [
                     r'.*lua.org.*', # 'utf8' codec can't decode byte 0xea in position 888: invalid continuation byte
                     r'http://i.6.cn.*' # timeouts on CI
                    ]
+
+
+# Turn on nitpicky mode to make sure docs build clean
+nitpicky = True
