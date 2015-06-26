@@ -5,8 +5,7 @@ Name
 ----
 **ngx_srcache** - Transparent subrequest-based caching layout for arbitrary nginx locations
 
-.. note:: *This module is not distributed with the Nginx source.* See the 
-  `installation instructions <sr_cache.installation_>`_.
+.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions <sr_cache.installation_>`_.
 
 
 
@@ -18,9 +17,7 @@ This module is production ready.
 
 Version
 -------
-This document describes srcache-nginx-module 
-:github:`v0.29 <openresty/srcache-nginx-module/tags>`
-released on February 18, 2015.
+This document describes srcache-nginx-module :github:`v0.29 <openresty/srcache-nginx-module/tags>` released on February 18, 2015.
 
 
 
@@ -114,7 +111,7 @@ This module provides a transparent caching layer for arbitrary nginx locations (
 
 Usually, :doc:`memc` is used together with this module to provide a concrete caching storage backend. But technically, any modules that provide a REST interface can be used as the fetching and storage subrequests used by this module.
 
-For main requests, the `srcache_fetch`_ directive works at the end of the access phase, so the [[HttpAccessModule|standard access module]]'s [[HttpAccessModule#allow|allow]] and [[HttpAccessModule#deny|deny]] direcives run *before* ours, which is usually the desired behavior for security reasons.
+For main requests, the `srcache_fetch`_ directive works at the end of the access phase, so the `standard access module <|HttpAccessModule|>`_'s `allow <|HttpAccessModule|#allow>`_ and `deny <|HttpAccessModule|#deny>`_ direcives run *before* ours, which is usually the desired behavior for security reasons.
 
 The workflow of this module looks like below:
 
@@ -287,10 +284,7 @@ we want to remove the ``SID`` and ``UID`` arguments from it. It is easy to achie
   }
 
 
-Here we use the ``echo`` directive from :doc:`echo` to dump out
-the final value of [[HttpCoreModule#$args|$args]] in the end. You can replace it with your
-:doc:`sr_cache` configurations and upstream configurations instead for
-your case. Let's test this /t interface with curl:
+Here we use the ``echo`` directive from :doc:`echo` to dump out the final value of `$args <|HttpCoreModule|#$args>`_ in the end. You can replace it with your :doc:`sr_cache` configurations and upstream configurations instead for your case. Let's test this /t interface with curl:
 
 .. code-block:: bash
 
@@ -298,9 +292,7 @@ your case. Let's test this /t interface with curl:
   M=1&UNC=0&RT=62&H=1&L=EN&SRC=LK
 
 
-It is worth mentioning that, if you want to retain the order of the URI arguments, then 
-you can do string substitutions on the value of [[HttpCoreModule#$args|$args]] directly, 
-for example:
+It is worth mentioning that, if you want to retain the order of the URI arguments, then you can do string substitutions on the value of `$args <|HttpCoreModule|#$args>`_ directly, for example:
 
 .. code-block:: nginx
 
@@ -322,10 +314,7 @@ Now test it with the original curl command again, we get exactly what we would e
   RT=62&L=EN&M=1&H=1&UNC=0&SRC=LK
 
 
-But for caching purposes, it's good to normalize the URI argument
-order so that you can increase the cache hit rate. And the hash table
-entry order used by LuaJIT or Lua can be used to normalize the order
-as a nice side effect.
+But for caching purposes, it's good to normalize the URI argument order so that you can increase the cache hit rate. And the hash table entry order used by LuaJIT or Lua can be used to normalize the order as a nice side effect.
 
 
 
@@ -333,16 +322,16 @@ Directives
 ----------
 srcache_fetch
 ^^^^^^^^^^^^^
-:Syntax: ``srcache_fetch <``\ *method*\ ``> <``\ *uri*\ ``> [``\ *args*\ ``]...``
+:Syntax: *srcache_fetch <method> <uri> [args]...*
 :Default: *none*
 :Context: *http, server, location, location if*
 :Phase: *post-access*
 
 This directive registers an access phase handler that will issue an Nginx subrequest to lookup the cache.
 
-When the subrequest returns status code other than ``200``, than a cache miss is signaled and the control flow will continue to the later phases including the content phase configured by [[HttpProxyModule]], [[HttpFcgiModule]], and others. If the subrequest returns ``200 OK``, then a cache hit is signaled and this module will send the subrequest's response as the current main request's response to the client directly.
+When the subrequest returns status code other than ``200``, than a cache miss is signaled and the control flow will continue to the later phases including the content phase configured by |HttpProxyModule|, |HttpFastCGIModule|, and others. If the subrequest returns ``200 OK``, then a cache hit is signaled and this module will send the subrequest's response as the current main request's response to the client directly.
 
-This directive will always run at the end of the access phase, such that [[HttpAccessModule]]'s [[HttpAccessModule#allow|allow]] and [[HttpAccessModule#deny|deny]] will always run *before* this.
+This directive will always run at the end of the access phase, such that |HttpAccessModule|'s `allow <|HttpAccessModule|#allow>`_ and `deny <|HttpAccessModule|#deny>`_ will always run *before* this.
 
 You can use the `srcache_fetch_skip`_ directive to disable cache look-up selectively.
 
@@ -350,8 +339,8 @@ You can use the `srcache_fetch_skip`_ directive to disable cache look-up selecti
 
 srcache_fetch_skip
 ^^^^^^^^^^^^^^^^^^
-:Syntax: ``srcache_fetch_skip <``\ *flag*\ ``>``
-:Default: ``0``
+:Syntax: *srcache_fetch_skip <flag>*
+:Default: *0*
 :Context: *http, server, location, location if*
 :Phase: *post-access*
 
@@ -380,9 +369,9 @@ For example, to skip caching requests which have a cookie named ``foo`` with the
   }
 
 
-where :doc:`lua` is used to calculate the value of the ``$skip`` variable at the (earlier) rewrite phase. Similarly, the ``$key`` variable can be computed by Lua using the [[HttpLuaModule#set_by_lua|set_by_lua]] or [[HttpLuaModule#rewrite_by_lua|rewrite_by_lua]] directive too.
+where :doc:`lua` is used to calculate the value of the ``$skip`` variable at the (earlier) rewrite phase. Similarly, the ``$key`` variable can be computed by Lua using the `set_by_lua <|HttpLuaModule|#set_by_lua>`_ or `rewrite_by_lua <|HttpLuaModule|#rewrite_by_lua>`_ directive too.
 
-The standard [[HttpMapModule#map|map]] directive can also be used to compute the value of the ``$skip`` variable used in the sample above:
+The standard `map <|HttpMapModule|#map>`_ directive can also be used to compute the value of the ``$skip`` variable used in the sample above:
 
 .. code-block:: nginx
 
@@ -392,13 +381,13 @@ The standard [[HttpMapModule#map|map]] directive can also be used to compute the
   }
 
 
-but your [[HttpMapModule#map|map]] statement should be put into the ``http`` config block in your ``nginx.conf`` file though.
+but your `map <|HttpMapModule|#map>`_ statement should be put into the ``http`` config block in your ``nginx.conf`` file though.
 
 
 
 srcache_store
 ^^^^^^^^^^^^^
-:Syntax: ``srcache_store <``\ *method*\ ``> <``\ *uri*\ ``> [``\ *args*\ ``]...``
+:Syntax: *srcache_store <method> <uri> [args]...*
 :Default: *none*
 :Context: *http, server, location, location if*
 :Phase: *output-filter*
@@ -421,8 +410,7 @@ Since the ``v0.12rc7`` release, both the response status line, response headers,
 
 You can use the `srcache_store_pass_header`_ and/or `srcache_store_hide_header`_ directives to control what headers to cache and what not.
 
-The original response's data chunks get emitted as soon as 
-they arrive. ``srcache_store`` just copies and collects the data in an output filter without postponing them from being sent downstream.
+The original response's data chunks get emitted as soon as they arrive. ``srcache_store`` just copies and collects the data in an output filter without postponing them from being sent downstream.
 
 But please note that even though all the response data will be sent immediately, the current Nginx request lifetime will not finish until the srcache_store subrequest completes. That means a delay in closing the TCP connection on the server side (when HTTP keepalive is disabled, but proper HTTP clients should close the connection actively on the client side, which adds no extra delay or other issues at all) or serving the next request sent on the same TCP connection (when HTTP keepalive is in action).
 
@@ -430,8 +418,8 @@ But please note that even though all the response data will be sent immediately,
 
 srcache_store_max_size
 ^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``srcache_store_max_size <``\ *size*\ ``>``
-:Default: ``0``
+:Syntax: *srcache_store_max_size <size>*
+:Default: *0*
 :Context: *http, server, location, location if*
 :Phase: *output-header-filter*
 
@@ -445,8 +433,8 @@ When ``0`` is specified (the default value), there's no limit check at all.
 
 srcache_store_skip
 ^^^^^^^^^^^^^^^^^^
-:Syntax: ``srcache_store_skip <``\ *flag*\ ``>``
-:Default: ``0``
+:Syntax: *srcache_store_skip <flag>*
+:Default: *0*
 :Context: *http, server, location, location if*
 :Phase: *output-header-filter*
 
@@ -471,8 +459,8 @@ Here's an example using Lua to set $nocache to avoid storing URIs that contain t
 
 srcache_store_statuses
 ^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``srcache_store_statuses <``\ *status1*\ ``> <``\ *status2*\ ``>...``
-:Default: ``200 301 302``
+:Syntax: *srcache_store_statuses <status1> <status2>...*
+:Default: *200 301 302*
 :Context: *http, server, location, location if*
 :Phase: *output-header-filter*
 
@@ -495,8 +483,8 @@ This directive was first introduced in the ``v0.13rc2`` release.
 
 srcache_store_ranges
 ^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``srcache_store_ranges [ on | off ]``
-:Default: ``off``
+:Syntax: *srcache_store_ranges [ on | off ]*
+:Default: *off*
 :Context: *http, server, location, location if*
 :Phase: *output-body-filter*
 
@@ -517,8 +505,8 @@ This directive was first introduced in the ``v0.27`` release.
 
 srcache_header_buffer_size
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``srcache_header_buffer_size <``\ *size*\ ``>``
-:Default: ``4k/8k``
+:Syntax: *srcache_header_buffer_size <size>*
+:Default: *4k/8k*
 :Context: *http, server, location, location if*
 :Phase: *output-header-filter*
 
@@ -532,8 +520,8 @@ This directive was first introduced in the ``v0.12rc7`` release.
 
 srcache_store_hide_header
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``srcache_store_hide_header <``\ *header*\ ``>``
-:Default: ``no``
+:Syntax: *srcache_store_hide_header <header>*
+:Default: *no*
 :Context: *http, server, location, location if*
 :Phase: *output-header-filter*
 
@@ -567,8 +555,8 @@ See also `srcache_store_pass_header`_.
 
 srcache_store_pass_header
 ^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``srcache_store_pass_header <``\ *header*\ ``>``
-:Default: ``no``
+:Syntax: *srcache_store_pass_header <header>*
+:Default: *no*
 :Context: *http, server, location, location if*
 :Phase: *output-header-filter*
 
@@ -602,8 +590,8 @@ See also `srcache_store_hide_header`_.
 
 srcache_methods
 ^^^^^^^^^^^^^^^
-:Syntax: ``srcache_methods <``\ *method*\ ``>...``
-:Default: ``GET HEAD``
+:Syntax: *srcache_methods <method>...*
+:Default: *GET HEAD*
 :Context: *http, server, location*
 :Phase: *post-access, output-header-filter*
 
@@ -619,8 +607,8 @@ This directive was first introduced in the ``v0.12rc7`` release.
 
 srcache_ignore_content_encoding
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``srcache_ignore_content_encoding [ on | off ]``
-:Default: ``off``
+:Syntax: *srcache_ignore_content_encoding [ on | off ]*
+:Default: *off*
 :Context: *http, server, location, location if*
 :Phase: *output-header-filter*
 
@@ -647,8 +635,8 @@ This directive was first introduced in the ``v0.12rc7`` release.
 
 srcache_request_cache_control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``srcache_request_cache_control [ on | off ]``
-:Default: ``off``
+:Syntax: *srcache_request_cache_control [ on | off ]*
+:Default: *off*
 :Context: *http, server, location*
 :Phase: *post-access, output-header-filter*
 
@@ -667,8 +655,8 @@ See also `srcache_response_cache_control`_.
 
 srcache_response_cache_control
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``srcache_response_cache_control [ on | off ]``
-:Default: ``on``
+:Syntax: *srcache_response_cache_control [ on | off ]*
+:Default: *on*
 :Context: *http, server, location*
 :Phase: *output-header-filter*
 
@@ -690,8 +678,8 @@ See also `srcache_request_cache_control`_.
 
 srcache_store_no_store
 ^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``srcache_store_no_store [ on | off ]``
-:Default: ``off``
+:Syntax: *srcache_store_no_store [ on | off ]*
+:Default: *off*
 :Context: *http, server, location*
 :Phase: *output-header-filter*
 
@@ -703,8 +691,8 @@ This directive was first introduced in the ``v0.12rc7`` release.
 
 srcache_store_no_cache
 ^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``srcache_store_no_cache [ on | off ]``
-:Default: ``off``
+:Syntax: *srcache_store_no_cache [ on | off ]*
+:Default: *off*
 :Context: *http, server, location*
 :Phase: *output-header-filter*
 
@@ -716,8 +704,8 @@ This directive was first introduced in the ``v0.12rc7`` release.
 
 srcache_store_private
 ^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``srcache_store_private [ on | off ]``
-:Default: ``off``
+:Syntax: *srcache_store_private [ on | off ]*
+:Default: *off*
 :Context: *http, server, location*
 :Phase: *output-header-filter*
 
@@ -729,8 +717,8 @@ This directive was first introduced in the ``v0.12rc7`` release.
 
 srcache_default_expire
 ^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``srcache_default_expire <``\ *time*\ ``>``
-:Default: ``60s``
+:Syntax: *srcache_default_expire <time>*
+:Default: *60s*
 :Context: *http, server, location, location if*
 :Phase: *output-header-filter*
 
@@ -751,8 +739,8 @@ This directive was first introduced in the ``v0.12rc7`` release.
 
 srcache_max_expire
 ^^^^^^^^^^^^^^^^^^
-:Syntax: ``srcache_max_expire <``\ *time*\ ``>``
-:Default: ``0``
+:Syntax: *srcache_max_expire <time>*
+:Default: *0*
 :Context: *http, server, location, location if*
 :Phase: *output-header-filter*
 
@@ -825,14 +813,14 @@ Known Issues
 
 Caveats
 -------
-* It is recommended to disable your backend server's gzip compression and use nginx's [[HttpGzipModule]] to do the job. In case of [[HttpProxyModule]], you can use the following configure setting to disable backend gzip compression:
+* It is recommended to disable your backend server's gzip compression and use nginx's |HttpGzipModule| to do the job. In case of |HttpProxyModule|, you can use the following configure setting to disable backend gzip compression:
 
   .. code-block:: nginx
 
     proxy_set_header  Accept-Encoding  "";
 
 
-* Do *not* use [[HttpRewriteModule]]'s [[HttpRewriteModule#if|if]] directive in the same location as this module's, because "[[HttpRewriteModule#if|if]] is evil". Instead, use [[HttpMapModule]] or :doc:`lua` combined with this module's `srcache_store_skip`_ and/or `srcache_fetch_skip`_ directives. For example:
+* Do *not* use |HttpRewriteModule|'s `if <|HttpRewriteModule|#if>`_ directive in the same location as this module's, because "`if <|HttpRewriteModule|#if>`_ is evil". Instead, use |HttpMapModule| or :doc:`lua` combined with this module's `srcache_store_skip`_ and/or `srcache_fetch_skip`_ directives. For example:
 
   .. code-block:: nginx
 
@@ -875,8 +863,7 @@ Several common pitfalls for beginners:
 
 Installation
 ------------
-It is recommended to install this module as well as the Nginx core and many other goodies via the `ngx_openresty bundle <http://openresty.org>`__. It is the easiest way and most safe way to set things up. See OpenResty's `installation instructions <http://openresty.org/#Installation>`_
- for details.
+It is recommended to install this module as well as the Nginx core and many other goodies via the `ngx_openresty bundle <http://openresty.org>`__. It is the easiest way and most safe way to set things up. See OpenResty's `installation instructions <http://openresty.org/#Installation>`_ for details.
 
 Alternatively, you can build Nginx with this module all by yourself:
 
@@ -968,7 +955,7 @@ You need to terminate any Nginx processes before running the test suite if you h
 
 Because a single nginx server (by default, ``localhost:1984``) is used across all the test scripts (``.t`` files), it's meaningless to run the test suite in parallel by specifying ``-jN`` when invoking the ``prove`` utility.
 
-Some parts of the test suite requires modules [[HttpRewriteModule]], :doc:`echo`, [[HttpRdsJsonModule]], and :doc:`drizzle` to be enabled as well when building Nginx.
+Some parts of the test suite requires modules |HttpRewriteModule|, :doc:`echo`, :github:`HttpRdsJsonModule <openresty/rds-json-nginx-module>`, and :doc:`drizzle` to be enabled as well when building Nginx.
 
 
 
@@ -1005,11 +992,10 @@ Redistribution and use in source and binary forms, with or without modification,
 THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 
+.. seealso::
 
-See Also
---------
-* :doc:`memc`
-* :doc:`lua`
-* :doc:`set_misc`
-* The `ngx_openresty bundle <http://openresty.org>`__
+  * :doc:`memc`
+  * :doc:`lua`
+  * :doc:`set_misc`
+  * The `ngx_openresty bundle <http://openresty.org>`__
 

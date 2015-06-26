@@ -3,22 +3,24 @@ Upstream Ketama CHash
 
 Description
 -----------
-
 **usptream_ketama_chash module** - a load balancer which provides upstream load distribution by hashing a configurable variable using ketama consistent hashing algorithm. 
 
 .. note:: *This module is not distributed with the Nginx source.* See the `installation instructions <ketama_chash.installation_>`_.
+
+
 
 Directives
 ----------
 
 hash
 ^^^^
-
-:Syntax: ``ketama_chash`` *$variable*
+:Syntax: *ketama_chash $variable*
 :Default: *none*
 :Context: *upstream*
 
 Enables upstream ketama consistent hashing of *$variable*.
+
+
 
 Synopsis
 --------
@@ -30,11 +32,12 @@ Synopsis
       ketama_chash    $uri;
   }
 
+
+
 .. _ketama_chash.installation:
 
 Installation
 ------------
-
 This module is not distributed with the Nginx source. You can download the request_hash module from :github:`Github <flygoast/ngx_http_upstream_ketama_chash>`
 
 .. code-block:: bash
@@ -44,7 +47,8 @@ This module is not distributed with the Nginx source. You can download the reque
   make
   make install
 
+
+
 Bugs
 ----
-
 Send bug reports to :github:`FengGu <flygoast/ngx_http_upstream_ketama_chash>`

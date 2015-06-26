@@ -3,7 +3,6 @@ Upstream Keepalive
 
 Description
 -----------
-
 **upstream_keepalive** - enables keep-alive connections for upstream servers.
 
 .. note:: Description below is obsolete and needs editing.  Keepalive connections to upstream servers are in the main code since 1.1.4, including the latest stable branch of 1.2.x. Check the documentation at `nginx.org <http://nginx.org/en/docs/http/ngx_http_upstream_module.html#keepalive>`_.
@@ -18,13 +17,14 @@ Example:
       keepalive 1024 single;
   }
 
+
+
 Directives
 ----------
 
 keepalive
 ^^^^^^^^^
-
-:Syntax: ``keepalive ``\ *num*\ `` [``\ *single*\ ``]``
+:Syntax: *keepalive num [single]*
 :Context: *upstream*
 
 Enables keep-alive connections for the upstream.
@@ -44,9 +44,10 @@ This module was tested to work with standard round-robin balancing, but it's bel
       keepalive 512;
   }
 
+
+
 Installation
 -------------
-
 `Download <http://mdounin.ru/hg/ngx_http_upstream_keepalive/>`_ the module.
 
 .. code-block:: bash

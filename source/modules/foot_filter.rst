@@ -3,7 +3,6 @@ Foot Filter
 
 Synopsis
 --------
-
 This is a module that is distributed with `Tengine <http://tengine.taobao.org>`_ which is a distribution of Nginx that is used by the e-commerce/auction site Taobao.com.
 This distribution contains some modules that are new on the Nginx scene.
 The **ngx_http_footer_filter_module** is one of them.
@@ -17,26 +16,29 @@ You can do the same using the http sub module but using the
 footer filter should be faster since there's no string matching
 done on the request body.
 
+
+
 Directives
 ----------
 
 footer
 ^^^^^^
-
-:Syntax: ``footer`` *string*
-:Default: ``''``
+:Syntax: *footer string*
+:Default: *''*
 :Context: *http, server, location*
 
 It defines the string to be printed at the footer of the request body. This string can have variables embedded.
 
+
 footer_types
 ^^^^^^^^^^^^
-
-:Syntax: ``footer_types`` *MIME types*
-:Default: ``text/html``
+:Syntax: *footer_types MIME types*
+:Default: *text/html*
 :Context: *http, server, location*
 
 Defines the `MIME types <https://en.wikipedia.org/wiki/MIME_type>`_ of the files where the footer will be included.
+
+
 
 Installation
 ------------
@@ -58,14 +60,16 @@ Installation
 #. Configure contexts where footer filter is enabled.
 #. Done.
 
+
+
 Tagging releases
 ----------------
-
 I'm tagging each release in synch with the `Tengine <http://tengine.taobao.org>`_ releases.
+
+
 
 Other tengine modules on Github
 -------------------------------
-
 * :github:`backtrace_module <alibaba/nginx-backtrace>`
     Can be used to dump backtrace of nginx in case a worker process exits abnormally,
     e.g. when some signal is received (SIGABR, SIGBUS, SIGFPE, SIGILL, SIGIOT, SIGSEGV).
@@ -74,22 +78,25 @@ Other tengine modules on Github
 * :github:`http slice <taobao/nginx-http-slice>`
     Allows to serve a file by slices. A sort of reverse byte-range. Useful for serving large files while not hogging the network.
 
+
+
 Other builds
 ------------
-
 1. As referred at the outset this module is part of the `Tengine <http://tengine.taobao.org>`_ Nginx distribution. So you might want to save yourself some work and just build it from scratch using *Tengine* in lieu if the official Nginx source.
 
 2. If you fancy a bleeding edge Nginx package (from the dev releases) for Debian made to measure then you might be interested in my `debian <http://debian.perusio.net/unstable>`_ Nginx package. Instructions for using the repository and making the package live happily inside a stable distribution installation are `provided <http://debian.perusio.net>`_.
 
+
+
 Acknowledgments
 ---------------
-
 Thanks to `Joshua Zhu <http://blog.zhuzhaoyuan.com>`_ and the Taobao platform engineering team for releasing *Tengine*. Also for being kind
 enough to clarify things regarding this module on the `Nginx mailing list <http://mailman.nginx.org/pipermail/nginx/2011-December/030830.html>`_.
 
+
+
 License
 -------
-
 Copyright (C) 2010-2012 Alibaba Group Holding Limited
 
 Redistribution and use in source and binary forms, with or without

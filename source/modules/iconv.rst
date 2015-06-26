@@ -35,21 +35,19 @@ Usage
 
 set_iconv
 ^^^^^^^^^
-:Syntax: ``set_iconv <``\ *destination_variable*\ ``> <``\ *from_variable*\ ``> 
-  from=<``\ *from_encoding*\ ``> to=<``\ *to_encoding*\ ``>``
+:Syntax: *set_iconv <destination_variable> <from_variable> from=<from_encoding> to=<to_encoding>*
 :Default: *none*
 
 
 iconv_buffer_size
 ^^^^^^^^^^^^^^^^^
-:Syntax: ``iconv_buffer_size <``\ *size*\ ``>``
+:Syntax: *iconv_buffer_size <size>*
 :Default: *ngx_pagesize*
 
 
 iconv_filter
 ^^^^^^^^^^^^
-:Syntax: ``iconv_filter from=<``\ *from_encoding*\ ``> 
-  to=<``\ *to_encoding*\ ``>``
+:Syntax: *iconv_filter from=<from_encoding> to=<to_encoding>*
 :Default: *none*
 
 

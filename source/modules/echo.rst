@@ -282,7 +282,7 @@ Since the :github:`v0.22 <openresty/echo-nginx-module/tags>` release, all of the
 
 echo
 ^^^^
-:Syntax: ``echo [``\ *options*\ ``] <``\ *string*\ ``>...``
+:Syntax: *echo [options] <string>...*
 :Default: *none*
 :Context: *location, location if*
 :Phase: *content*
@@ -386,7 +386,7 @@ which yields
 
 echo_duplicate
 ^^^^^^^^^^^^^^
-:Syntax: ``echo_duplicate <``\ *count*\ ``> <``\ *string*\ ``>``
+:Syntax: *echo_duplicate <count> <string>*
 :Default: *none*
 :Context: *location, location if*
 :Phase: *content*
@@ -439,7 +439,7 @@ This directive was first introduced in :github:`v0.11 <openresty/echo-nginx-modu
 
 echo_flush
 ^^^^^^^^^^
-:Syntax: ``echo_flush``
+:Syntax: *echo_flush*
 :Default: *none*
 :Context: *location, location if*
 :Phase: *content*
@@ -502,7 +502,7 @@ See also echo_, `echo_sleep`_, and `echo_location_async`_.
 
 echo_sleep
 ^^^^^^^^^^
-:Syntax: ``echo_sleep <``\ *seconds*\ ``>``
+:Syntax: *echo_sleep <seconds>*
 :Default: *none*
 :Context: *location, location if*
 :Phase: *content*
@@ -528,7 +528,7 @@ Behind the scene, it sets up a per-request "sleep" ngx_event_t object, and adds 
 
 echo_blocking_sleep
 ^^^^^^^^^^^^^^^^^^^
-:Syntax: ``echo_blocking_sleep <``\ *seconds*\ ``>``
+:Syntax: *echo_blocking_sleep <seconds>*
 :Default: *none*
 :Context: *location, location if*
 :Phase: *content*
@@ -544,7 +544,7 @@ Note that this directive will block the current Nginx worker process completely 
 
 echo_reset_timer
 ^^^^^^^^^^^^^^^^
-:Syntax: ``echo_reset_timer``
+:Syntax: *echo_reset_timer*
 :Default: *none*
 :Context: *location, location if*
 :Phase: *content*
@@ -584,7 +584,7 @@ See also `echo_sleep`_ and `$echo_timer_elapsed`_.
 
 echo_read_request_body
 ^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``echo_read_request_body``
+:Syntax: *echo_read_request_body*
 :Default: *none*
 :Context: *location, location if*
 :Phase: *content*
@@ -633,7 +633,7 @@ This directive itself was first introduced in the echo module's :github:`v0.14 <
 
 echo_location_async
 ^^^^^^^^^^^^^^^^^^^
-:Syntax: ``echo_location_async <``\ *location*\ ``> [<``\ *url_args*\ ``>]``
+:Syntax: *echo_location_async <location> [<url_args>]*
 :Default: *none*
 :Context: *location, location if*
 :Phase: *content*
@@ -747,7 +747,7 @@ This directive is first introduced in :github:`v0.09 <openresty/echo-nginx-modul
 
 echo_location
 ^^^^^^^^^^^^^
-:Syntax: ``echo_location <``\ *location*\ ``> [<``\ *url_args*\ ``>]``
+:Syntax: *echo_location <location> [<url_args>]*
 :Default: *none*
 :Context: *location, location if*
 :Phase: *content*
@@ -816,7 +816,7 @@ See also `echo_location_async`_ for more details about the meaning of the argume
 
 echo_subrequest_async
 ^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``echo_subrequest_async <``\ *HTTP_method*\ ``> <``\ *location*\ ``> [-q <``\ *url_args*\ ``>] [-b <``\ *request_body*\ ``>] [-f <``\ *request_body_path*\ ``>]``
+:Syntax: *echo_subrequest_async <HTTP_method> <location> [-q <url_args>] [-b <request_body>] [-f <request_body_path>]*
 :Default: *none*
 :Context: *location, location if*
 :Phase: *content*
@@ -915,7 +915,7 @@ There is a known issue with this directive when disabling the standard `standard
 
 echo_subrequest
 ^^^^^^^^^^^^^^^
-:Syntax: ``echo_subrequest <``\ *HTTP_method*\ ``> <``\ *location*\ ``> [-q <``\ *url_args*\ ``>] [-b <``\ *request_body*\ ``>] [-f <``\ *request_body_path*\ ``>]``
+:Syntax: *echo_subrequest <HTTP_method> <location> [-q <url_args>] [-b <request_body>] [-f <request_body_path>]*
 :Default: *none*
 :Context: *location, location if*
 :Phase: *content*
@@ -931,7 +931,7 @@ This directive was first introduced in the :github:`v0.15 <openresty/echo-nginx-
 
 echo_foreach_split
 ^^^^^^^^^^^^^^^^^^
-:Syntax: ``echo_foreach_split <``\ *delimiter*\ ``> <``\ *string*\ ``>``
+:Syntax: *echo_foreach_split <delimiter> <string>*
 :Default: *none*
 :Context: *location, location if*
 :Phase: *content*
@@ -1005,7 +1005,7 @@ This directive was first introduced in the :github:`v0.17 <openresty/echo-nginx-
 
 echo_end
 ^^^^^^^^
-:Syntax: ``echo_end``
+:Syntax: *echo_end*
 :Default: *none*
 :Context: *location, location if*
 :Phase: *content*
@@ -1017,7 +1017,7 @@ This directive was first introduced in the :github:`v0.17 <openresty/echo-nginx-
 
 echo_request_body
 ^^^^^^^^^^^^^^^^^
-:Syntax: ``echo_request_body``
+:Syntax: *echo_request_body*
 :Default: *none*
 :Context: *location, location if*
 :Phase: *content*
@@ -1043,8 +1043,8 @@ See also `echo_read_request_body`_.
 
 echo_exec
 ^^^^^^^^^
-:Syntax: ``echo_exec <``\ *location*\ ``> [<``\ *query_string*\ ``>]``
-:Syntax: ``echo_exec <``\ *named_location*\ ``>``
+:Syntax: *echo_exec <location> [<query_string>]*
+:Syntax: *echo_exec <named_location>*
 :Default: *none*
 :Context: *location, location if*
 :Phase: *content*
@@ -1095,8 +1095,8 @@ This directive was first introduced in the :github:`v0.21 <openresty/echo-nginx-
 
 echo_status
 ^^^^^^^^^^^
-:Syntax: ``echo_status <``\ *status-num*\ ``>``
-:Default: ``200``
+:Syntax: *echo_status <status-num>*
+:Default: *200*
 :Context: *location, location if*
 :Phase: *content*
 
@@ -1138,7 +1138,7 @@ Every filter directive supports variable interpolation in its arguments (if any)
 
 echo_before_body
 ^^^^^^^^^^^^^^^^
-:Syntax: ``echo_before_body [``\ *options*\ ``] [``\ *argument*\ ``]...``
+:Syntax: *echo_before_body [options] [argument]...*
 :Default: *none*
 :Context: *location, location if*
 :Phase: *output filter*
@@ -1197,7 +1197,7 @@ This directive can be mixed with its brother directive `echo_after_body`_.
 
 echo_after_body
 ^^^^^^^^^^^^^^^
-:Syntax: ``echo_after_body [``\ *argument*\ ``]...``
+:Syntax: *echo_after_body [argument]...*
 :Default: *none*
 :Context: *location, location if*
 :Phase: *output filter*
@@ -1388,6 +1388,7 @@ Behind the scene, it's just the textual representation of ``r->headers_out->stat
 This directive was first introduced in the :github:`v0.23 <openresty/echo-nginx-module/tags>` release.
 
 
+
 .. _echo.installation:
 
 Installation
@@ -1417,11 +1418,12 @@ Download the latest version of the release tarball of this module from :github:`
 
 Also, this module is included and enabled by default in the `ngx_openresty bundle <http://openresty.org>`__.
 
+
+
 .. _echo.compatibility:
 
 Compatibility
 -------------
-
 The following versions of Nginx should work with this module:
 
 * **1.7.x**                       (last tested: 1.7.7)
@@ -1457,6 +1459,7 @@ If calling this directive without SSI module enabled, you'll get truncated respo
 .. code-block:: nginx
 
   [alert] 24212#0: *1 the http output chain is empty, client: 127.0.0.1, ...
+
 
 
 Modules that use this module for testing
@@ -1648,7 +1651,6 @@ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
 LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
 NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
 SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
-
 
 
 .. seealso::

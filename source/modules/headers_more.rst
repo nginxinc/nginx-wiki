@@ -89,7 +89,7 @@ Directives
 
 more_set_headers
 ^^^^^^^^^^^^^^^^
-:Syntax: ``more_set_headers [-t <``\ *content-type list*\ ``>]... [-s <``\ *status-code list*\ ``>]... <``\ *new-header*\ ``>...``
+:Syntax: *more_set_headers [-t <content-type list>]... [-s <status-code list>]... <new-header>...*
 :Default: *none*
 :Context: *http, server, location, location if*
 :Phase: *output-header-filter*
@@ -167,7 +167,7 @@ Behind the scene, use of this directive and its friend `more_clear_headers`_ wil
 
 more_clear_headers
 ^^^^^^^^^^^^^^^^^^
-:Syntax: ``more_clear_headers [-t <``\ *content-type list*\ ``>]... [-s <``\ *status-code list*\ ``>]... <``\ *new-header*\ ``>...``
+:Syntax: *more_clear_headers [-t <content-type list>]... [-s <status-code list>]... <new-header>...*
 :Default: *none*
 :Context: *http, server, location, location if*
 :Phase: *output-header-filter*
@@ -211,7 +211,7 @@ The ``*`` wildcard support was first introduced in :github:`v0.09 <openresty/hea
 
 more_set_input_headers
 ^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``more_set_input_headers [-r] [-t <``\ *content-type list*\ ``>]... <``\ *new-header*\ ``>...``
+:Syntax: *more_set_input_headers [-r] [-t <content-type list>]... <new-header>...*
 :Default: *none*
 :Context: *http, server, location, location if*
 :Phase: *rewrite tail*
@@ -228,7 +228,7 @@ If the ``-r`` option is specified, then the headers will be replaced to the new 
 
 more_clear_input_headers
 ^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``more_clear_input_headers [-t <``\ *content-type list*\ ``>]... <``\ *new-header*\ ``>...``
+:Syntax: *more_clear_input_headers [-t <content-type list>]... <new-header>...*
 :Default: *none*
 :Context: *http, server, location, location if*
 :Phase: *rewrite tail*

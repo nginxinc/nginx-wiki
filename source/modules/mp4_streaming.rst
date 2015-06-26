@@ -3,7 +3,6 @@ MP4 Streaming Lite
 
 Description
 -----------
-
 **mod_mp4_streaming_lite** - seeks a certain time within H.264/MP4 files when provided when a "start" parameter is provided in the URL.
 
 This module is written by Jiang Hong. You can contact him for a full (but commercial) version which supports a wider variety of MP4 files.
@@ -14,9 +13,10 @@ The most recent package can be downloaded here:
 
 .. note:: *This module is not distributed with the Nginx source.* See the `installation instructions <mp4_streaming.installation_>`_.
 
+
+
 Revision History
 ----------------
-
 * **12/28/2008**
     - more return value checks (reported by Jan Ślusarczyk).
 
@@ -36,17 +36,21 @@ Revision History
     - ``mp4_directio`` directive was removed and the module now follows the server-wide directio setting.
     - ``Content-Length`` calculation bug was fixed. Thanks go to Nick Melnikov.
 
+
+
 Directives
 ----------
 
 mp4
 ^^^
 
-:Syntax: ``mp4``
+:Syntax: *mp4*
 :Default: *none*
 :Context: *location*
 
 Enable MP4 streaming at a particular location.
+
+
 
 .. _mp4_streaming.installation:
 
@@ -70,6 +74,8 @@ By default, nginx uses ``-O`` to compile the source code. You should use:
 
 
 with ``./configure`` to retrieve maximum performance.
+
+
 
 More
 ----

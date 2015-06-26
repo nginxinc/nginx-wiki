@@ -11,6 +11,8 @@ Version
 -------
 This document describes ngx_memc :github:`v0.15 <openresty/memc-nginx-module/tags>` released on 8 July 2014.
 
+
+
 Synopsis
 --------
 .. code-block:: nginx
@@ -166,9 +168,9 @@ The module itself does not keep TCP connections to the upstream memcached server
 
 Memcached commands supported
 ----------------------------
-The memcached storage commands [[#set $memc_key $memc_flags $memc_exptime $memc_value|set]], [[#add $memc_key $memc_flags $memc_exptime $memc_value|add]], [[#replace $memc_key $memc_flags $memc_exptime $memc_value|replace]], [[#prepend $memc_key $memc_flags $memc_exptime $memc_value|prepend]], and [[#append $memc_key $memc_flags $memc_exptime $memc_value|append]] uses the ``$memc_key`` as the key, ``$memc_exptime`` as the expiration time (or delay) (defaults to 0), ``$memc_flags`` as the flags (defaults to 0), to build the corresponding memcached queries.
+The memcached storage commands `set command <memc.set_>`_, `add command <memc.add_>`_, `replace command <memc.replace_>`_, `prepend command <memc.prepend_>`_, and `append command <memc.append_>`_ uses the ``$memc_key`` as the key, ``$memc_exptime`` as the expiration time (or delay) (defaults to 0), ``$memc_flags`` as the flags (defaults to 0), to build the corresponding memcached queries.
 
-If ``$memc_value`` is not defined at all, then the request body will be used as the value of the ``$memc_value`` except for the [[#incr $memc_key $memc_value|incr]] and [[#decr $memc_key $memc_value|decr]] commands. Note that if ``$memc_value`` is defined as an empty string (``""``), that empty string will still be used as the value as is.
+If ``$memc_value`` is not defined at all, then the request body will be used as the value of the ``$memc_value`` except for the `incr command <memc.incr_>`_ and `decr command <memc.decr_>`_ commands. Note that if ``$memc_value`` is defined as an empty string (``""``), that empty string will still be used as the value as is.
 
 The following memcached commands have been implemented and tested (with their parameters marked by corresponding
 nginx variables defined by this module):
@@ -190,10 +192,12 @@ Retrieves the value using a key.
   }
 
 
-Returns ``200 OK`` with the value put into the response body if the key is found, or ``404 Not Found`` otherwise. The ``flags`` number will be set into the ``$memc_flags`` variable so it's often desired to put that info into the response headers by means of the standard [[HttpHeadersModule#add_header|add_header directive]].
+Returns ``200 OK`` with the value put into the response body if the key is found, or ``404 Not Found`` otherwise. The ``flags`` number will be set into the ``$memc_flags`` variable so it's often desired to put that info into the response headers by means of the standard `HttpHeadersModule <http://nginx.org/en/docs/http/ngx_http_headers_module.html>`_.
 
 It returns ``502`` for ``ERROR``, ``CLIENT_ERROR``, or ``SERVER_ERROR``.
 
+
+.. _memc.set:
 
 set $memc_key $memc_flags $memc_exptime $memc_value
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -233,26 +237,34 @@ Returns ``201 Created`` if the upstream memcached server replies ``STORED``, ``2
 The original memcached responses are returned as the response body except for ``404 NOT FOUND``.
 
 
+.. _memc.add:
+
 add $memc_key $memc_flags $memc_exptime $memc_value
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Similar to the [[#set $memc_key $memc_flags $memc_exptime $memc_value|set command]].
+Similar to the `set command <memc.set_>`_.
 
+
+.. _memc.replace:
 
 replace $memc_key $memc_flags $memc_exptime $memc_value
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Similar to the [[#set $memc_key $memc_flags $memc_exptime $memc_value|set command]].
+Similar to the `set command <memc.set_>`_.
 
+
+.. _memc.append:
 
 append $memc_key $memc_flags $memc_exptime $memc_value
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Similar to the [[#set $memc_key $memc_flags $memc_exptime $memc_value|set command]].
+Similar to the `set command <memc.set_>`_.
 
 Note that at least memcached version 1.2.2 does not support the "append" and "prepend" commands. At least 1.2.4 and later versions seem to supports these two commands.
 
 
+.. _memc.prepend:
+
 prepend $memc_key $memc_flags $memc_exptime $memc_value
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Similar to the [[#append $memc_key $memc_flags $memc_exptime $memc_value|append command]].
+Similar to the `append command <memc.append_>`_.
 
 
 delete $memc_key
@@ -284,6 +296,8 @@ Similar to the `delete $memc_key`_ command except it accepts an optional
 This command is no longer available in the latest memcached version 1.4.4.
 
 
+.. _memc.incr:
+
 incr $memc_key $memc_value
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 Increments the existing value of ``$memc_key`` by the amount specified by 
@@ -306,6 +320,8 @@ body if successful, or ``404 Not Found`` if the key is not found.
 
 It returns ``502`` for ``ERROR``, ``CLIENT_ERROR``, or ``SERVER_ERROR``.
 
+
+.. _memc.decr:
 
 decr $memc_key $memc_value
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -382,10 +398,10 @@ directive introduced by this module).
 
 memc_pass
 ^^^^^^^^^
-:Syntax: ``memc_pass <memcached server IP address>:<memcached server port>``
-:Syntax: ``memc_pass <memcached server hostname>:<memcached server port>``
-:Syntax: ``memc_pass <upstream_backend_name>``
-:Syntax: ``memc_pass unix:<path_to_unix_domain_socket>``
+:Syntax: *memc_pass <memcached server IP address>:<memcached server port>*
+:Syntax: *memc_pass <memcached server hostname>:<memcached server port>*
+:Syntax: *memc_pass <upstream_backend_name>*
+:Syntax: *memc_pass unix:<path_to_unix_domain_socket>*
 :Default: *none*
 :Context: *http, server, location, if*
 :Phase: *content*
@@ -395,7 +411,7 @@ Specify the memcached server backend.
 
 memc_cmds_allowed
 ^^^^^^^^^^^^^^^^^
-:Syntax: ``memc_cmds_allowed <cmd>...``
+:Syntax: *memc_cmds_allowed <cmd>...*
 :Default: *none*
 :Context: *http, server, location, if*
 
@@ -418,7 +434,7 @@ An example is
 
 memc_flags_to_last_modified
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``memc_flags_to_last_modified on|off``
+:Syntax: *memc_flags_to_last_modified on|off*
 :Default: *off*
 :Context: *http, server, location, if*
 
@@ -429,7 +445,7 @@ Read the memcached flags as epoch seconds and set it as the value of the
 
 memc_connect_timeout
 ^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``memc_connect_timeout <time>``
+:Syntax: *memc_connect_timeout <time>*
 :Default: *60s*
 :Context: *http, server, location*
 
@@ -444,7 +460,7 @@ This time must be less than 597 hours.
 
 memc_send_timeout
 ^^^^^^^^^^^^^^^^^
-:Syntax: ``memc_send_timeout <time>``
+:Syntax: *memc_send_timeout <time>*
 :Default: *60s*
 :Context: *http, server, location*
 
@@ -460,7 +476,7 @@ This time must be less than 597 hours.
 
 memc_read_timeout
 ^^^^^^^^^^^^^^^^^
-:Syntax: ``memc_read_timeout <time>``
+:Syntax: *memc_read_timeout <time>*
 :Default: *60s*
 :Context: *http, server, location*
 
@@ -476,7 +492,7 @@ This time must be less than 597 hours.
 
 memc_buffer_size
 ^^^^^^^^^^^^^^^^
-:Syntax: ``memc_buffer_size <size>``
+:Syntax: *memc_buffer_size <size>*
 :Default: *4k/8k*
 :Context: *http, server, location*
 
@@ -490,7 +506,7 @@ This default size is the page size, may be ``4k`` or ``8k``.
 
 memc_ignore_client_abort
 ^^^^^^^^^^^^^^^^^^^^^^^^
-:Syntax: ``memc_ignore_client_abort on|off``
+:Syntax: *memc_ignore_client_abort on|off*
 :Default: *off*
 :Context: *location*
 
@@ -566,7 +582,7 @@ It's worth mentioning that some 0.7.x versions older than 0.7.46 might also work
 
 Earlier versions of Nginx like 0.6.x and 0.5.x will *not* work.
 
-If you find that any particular version of Nginx above 0.7.46 does not work with this module, please consider [[#Report Bugs|reporting a bug]].
+If you find that any particular version of Nginx above 0.7.46 does not work with this module, please consider `reporting a bug <memc.report-bugs_>`_.
 
 
 
@@ -582,6 +598,8 @@ Chinese Mailing List
 The `openresty <https://groups.google.com/group/openresty>`_ mailing list is for Chinese speakers.
 
 
+
+.. _memc.report-bugs:
 
 Report Bugs
 -----------
