@@ -1,7 +1,6 @@
 {%- extends "basic/layout.html" %}
 {%- block extrahead %}
   {{ super() }}
-  <link rel="stylesheet" href="{{ pathto('_static/' + 'cc-icons/css/cc-icons.min.css', true) }}">
   {% if theme_touch_icon %}
     <link rel="apple-touch-icon" href="{{ pathto('_static/' ~ theme_touch_icon, 1) }}" />
   {% endif %}
