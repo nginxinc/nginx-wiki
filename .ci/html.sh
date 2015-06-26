@@ -1,1 +1,1 @@
-sphinx-build -nW -b html -d build/doctrees source build/html
+sphinx-build -W -b html -d build/doctrees source build/html
