@@ -1,0 +1,158 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/form_input.rst:2
+msgid "Form Input"
+msgstr ""
+
+#: ../../source/modules/form_input.rst:6
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/form_input.rst:8
+msgid ""
+"**form-input-nginx-module** - an nginx module that reads HTTP POST and PUT "
+"request body encoded in ``application/x-www-form-urlencoded``, and parses "
+"the arguments in request body into nginx variables."
+msgstr ""
+
+#: ../../source/modules/form_input.rst:12
+msgid "This module depends on the ngx_devel_kit (NDK) module."
+msgstr ""
+
+#: ../../source/modules/form_input.rst:17
+msgid "Installation"
+msgstr ""
+
+#: ../../source/modules/form_input.rst:19
+msgid "Get the nginx source code from `nginx.org <http://nginx.org/>`_."
+msgstr ""
+
+#: ../../source/modules/form_input.rst:20
+msgid ""
+"Get the ngx_devel_kit source code from :github:`GitHub simpl-"
+"it/ngx_devel_kit repository <simpl-it/ngx_devel_kit>`"
+msgstr ""
+
+#: ../../source/modules/form_input.rst:21
+msgid "Unpack the source code and build nginx with this module."
+msgstr ""
+
+#: ../../source/modules/form_input.rst:39
+msgid "Usage"
+msgstr ""
+
+#: ../../source/modules/form_input.rst:49
+msgid "Example:"
+msgstr ""
+
+#: ../../source/modules/form_input.rst:69
+msgid "Compatibility"
+msgstr ""
+
+#: ../../source/modules/form_input.rst:71
+msgid "The following versions of Nginx should work with this module:"
+msgstr ""
+
+#: ../../source/modules/form_input.rst:73
+msgid ""
+"**0.8.x <= 0.8.41**                       (last tested version is 0.8.43)"
+msgstr ""
+
+#: ../../source/modules/form_input.rst:74
+msgid ""
+"**0.7.x**                                 (last tested version is 0.7.67)"
+msgstr ""
+
+#: ../../source/modules/form_input.rst:79
+msgid "Copyright & License"
+msgstr ""
+
+#: ../../source/modules/form_input.rst:81
+msgid ""
+"Copyright (c) 2010, Taobao Inc., Alibaba Group ( "
+"http://www.taobao.com/market/global/index_new.php )."
+msgstr ""
+
+#: ../../source/modules/form_input.rst:83
+msgid "Copyright (c) 2010, calio <vipcalio@gmail.com>."
+msgstr ""
+
+#: ../../source/modules/form_input.rst:85
+msgid "This module is licensed under the terms of the BSD license."
+msgstr ""
+
+#: ../../source/modules/form_input.rst:87
+msgid ""
+"Redistribution and use in source and binary forms, with or without "
+"modification, are permitted provided that the following conditions are met:"
+msgstr ""
+
+#: ../../source/modules/form_input.rst:91
+msgid ""
+"Redistributions of source code must retain the above copyright notice, this "
+"list of conditions and the following disclaimer."
+msgstr ""
+
+#: ../../source/modules/form_input.rst:92
+msgid ""
+"Redistributions in binary form must reproduce the above copyright notice, "
+"this list of conditions and the following disclaimer in the documentation "
+"and/or other materials provided with the distribution."
+msgstr ""
+
+#: ../../source/modules/form_input.rst:93
+msgid ""
+"Neither the name of the Taobao Inc. nor the names of its contributors may be"
+" used to endorse or promote products derived from this software without "
+"specific prior written permission."
+msgstr ""
+
+#: ../../source/modules/form_input.rst:95
+msgid ""
+"THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS "
+"IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, "
+"THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR "
+"PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR "
+"CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, "
+"EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, "
+"PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; "
+"OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, "
+"WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR "
+"OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF "
+"ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+msgstr ""
+
+#: ../../source/modules/form_input.rst:110
+msgid "Changelog"
+msgstr ""
+
+#: ../../source/modules/form_input.rst:112
+msgid "Changes with form-input-module v0.0.2"
+msgstr ""
+
+#: ../../source/modules/form_input.rst:114
+msgid "Supports ``set_form_input_multi``"
+msgstr ""
+
+#: ../../source/modules/form_input.rst:115
+msgid "Supports ``PUT`` method"
+msgstr ""
+
+#: ../../source/modules/form_input.rst:117
+msgid "Changes with form-input-module v0.0.1"
+msgstr ""
+
+#: ../../source/modules/form_input.rst:119
+msgid "Supports ``set_form_input``"
+msgstr ""

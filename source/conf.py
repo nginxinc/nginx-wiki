@@ -112,7 +112,7 @@ release = '1.0'
 #
 # This is also used if you do content translation via gettext catalogs.
 # Usually you set "language" from the command line for these cases.
-language = None
+language = 'en'
 
 # There are two options for replacing |today|: either, you set today to some
 # non-false value, then it is used:
@@ -351,3 +351,7 @@ linkcheck_ignore = [
 
 # Turn on nitpicky mode to make sure docs build clean
 nitpicky = True
+
+# Translations
+locale_dirs = ['locale/']
+gettext_compact = False

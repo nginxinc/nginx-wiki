@@ -1,0 +1,29 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/tutorial3.rst:2
+msgid "Tutorial 3: Dynamic Content"
+msgstr ""
+
+#: ../../source/start/tutorial3.rst:9
+msgid ""
+"Now that you have the basics out of the way, you're ready to get something a"
+" bit more useful out of Nginx. After all, you probably are interested in "
+"serving more than just static content. Most content on the web is dynamic, "
+"this tutorial focusses on getting you familiar with how Nginx serves dynamic"
+" content."
+msgstr ""
+
+#: ../../source/start/tutorial3.rst:18
+msgid ":doc:`Serving PHP<topics/tutorials/dynamic_php>`"
+msgstr ""

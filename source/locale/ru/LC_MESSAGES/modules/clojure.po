@@ -1,0 +1,112 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/clojure.rst:2
+msgid "Clojure"
+msgstr ""
+
+#: ../../source/modules/clojure.rst:4
+msgid ""
+"`Nginx-Clojure <http://nginx-clojure.github.io>`_ is a Nginx module for "
+"embedding Clojure or Java or Groovy programs, typically those Ring based "
+"handlers."
+msgstr ""
+
+#: ../../source/modules/clojure.rst:6
+msgid "There are some core features:"
+msgstr ""
+
+#: ../../source/modules/clojure.rst:8
+msgid ""
+"Compatible with Ring and obviously supports those Ring based frameworks, "
+"such as Compojure etc."
+msgstr ""
+
+#: ../../source/modules/clojure.rst:9
+msgid ""
+"Use Clojure / Java / Groovy to write simple ring handlers for http services."
+msgstr ""
+
+#: ../../source/modules/clojure.rst:10
+msgid ""
+"Use Clojure / Java / Groovy to write a simple Nginx rewrite handler to set "
+"var or return errors before proxy pass or content ring handler."
+msgstr ""
+
+#: ../../source/modules/clojure.rst:11
+msgid ""
+"Non-blocking coroutine based socket which is Compatible with Java Socket API"
+" and works well with largely existing java library such as apache http "
+"client, mysql jdbc drivers. With this feature one java main thread can "
+"handle thousands of connections."
+msgstr ""
+
+#: ../../source/modules/clojure.rst:12
+msgid ""
+"Handle multiple sockets parallel in sub coroutines, e.g. we can invoke two "
+"remote services at the same time."
+msgstr ""
+
+#: ../../source/modules/clojure.rst:13
+msgid "Asynchronous callback API of socket for some advanced usage."
+msgstr ""
+
+#: ../../source/modules/clojure.rst:14
+msgid "Run initialization clojure code when nginx worker starting."
+msgstr ""
+
+#: ../../source/modules/clojure.rst:15
+msgid "Support user defined http request method."
+msgstr ""
+
+#: ../../source/modules/clojure.rst:16
+msgid ""
+"Compatible with the Nginx lastest stable version 1.6.0. (Nginx 1.4.x is also"
+" ok, older version is not tested and maybe works)."
+msgstr ""
+
+#: ../../source/modules/clojure.rst:17
+msgid ""
+"One of benifits of Nginx is worker processes are automatically restarted by "
+"a master process if they crash."
+msgstr ""
+
+#: ../../source/modules/clojure.rst:18
+msgid ""
+"Utilizes lazy headers and direct memory operation between Nginx and JVM to "
+"fast handle dynamic contents from Clojure or Java code."
+msgstr ""
+
+#: ../../source/modules/clojure.rst:19
+msgid ""
+"Utilizes Nginx zero copy file sending mechanism to fast handle static "
+"contents controlled by Clojure or Java code."
+msgstr ""
+
+#: ../../source/modules/clojure.rst:20
+msgid ""
+"Supports Linux x64, Linux x86 32bit, Win32 and Mac OS X. Win64 users can "
+"also run it with a 32bit JRE/JDK."
+msgstr ""
+
+#: ../../source/modules/clojure.rst:22
+msgid ""
+"By the way, it is very fast. The benchmarks can be found :github:`here "
+"<ptaoussanis/clojure-web-server-benchmarks>`"
+msgstr ""
+
+#: ../../source/modules/clojure.rst:24
+msgid ""
+"Please visit `nginx-clojure.github.io <http://nginx-clojure.github.io>`_ for"
+" more details."
+msgstr ""

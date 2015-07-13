@@ -1,0 +1,41 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/recipes/mybb.rst:2
+msgid "MyBB"
+msgstr ""
+
+#: ../../source/start/topics/recipes/mybb.rst:5
+msgid "Recipe"
+msgstr ""
+
+#: ../../source/start/topics/recipes/mybb.rst:37
+msgid ""
+"There is a potential security flaw, e.g. if a user uploads an avatar images "
+"pic.gif with valid PHP-Code and calls it with "
+"/uploades/avatars/pic.gif/foo.php. The issue is discussed `here "
+"<http://wiki.nginx.org/Pitfalls#Passing_Uncontrolled_Requests_to_PHP>`_. "
+"Because the link is ending with .php, nginx is passing it to the PHP "
+"interpreter. PHP can't find the file /uploades/avatars/pic.gif/foo.php, but "
+"it tries to be smart and executes /uploades/avatars/pic.gif as an PHP-"
+"script. To avoid this, you need to set cgi.fix_pathinfo=0 in your php.ini, "
+"which is set to cgi.fix_pathinfo=1 as default (unfortunately)."
+msgstr ""
+
+#: ../../source/start/topics/recipes/mybb.rst:39
+msgid ""
+"See :doc:`../examples/phpfcgi` for details on creating the UNIX socket and "
+"`this forum post <http://community.mybb.com/thread-51764.html>`_ on enabling"
+" human-understandable (aka SEO-friendly or human-readable) URLs using the "
+"Google SEO plugin."
+msgstr ""

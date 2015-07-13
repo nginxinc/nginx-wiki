@@ -1,0 +1,1455 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/sr_cache.rst:2
+msgid "SR Cache"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:5
+msgid "Name"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:6
+msgid ""
+"**ngx_srcache** - Transparent subrequest-based caching layout for arbitrary "
+"nginx locations"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:8
+msgid ""
+"*This module is not distributed with the Nginx source.* See the "
+"`installation instructions <sr_cache.installation_>`_."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:13
+msgid "Status"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:14
+msgid "This module is production ready."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:19
+msgid "Version"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:20
+msgid ""
+"This document describes srcache-nginx-module :github:`v0.29 <openresty"
+"/srcache-nginx-module/tags>` released on February 18, 2015."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:25
+msgid "Synopsis"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:109
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:110
+msgid ""
+"This module provides a transparent caching layer for arbitrary nginx "
+"locations (like those use an upstream or even serve static disk files). The "
+"caching behavior is mostly compatible with `RFC 2616 "
+"<http://www.ietf.org/rfc/rfc2616.txt>`_."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:112
+msgid ""
+"Usually, :doc:`memc` is used together with this module to provide a concrete"
+" caching storage backend. But technically, any modules that provide a REST "
+"interface can be used as the fetching and storage subrequests used by this "
+"module."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:114
+msgid ""
+"For main requests, the `srcache_fetch`_ directive works at the end of the "
+"access phase, so the `standard access module <|HttpAccessModule|>`_'s `allow"
+" <|HttpAccessModule|#allow>`_ and `deny <|HttpAccessModule|#deny>`_ "
+"direcives run *before* ours, which is usually the desired behavior for "
+"security reasons."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:116
+msgid "The workflow of this module looks like below:"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:118
+msgid "http://agentzh.org/misc/image/srcache-flowchart.png"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:123
+msgid "Subrequest caching"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:124
+msgid ""
+"For *subrequests*, we explicitly **disallow** the use of this module because"
+" it's too difficult to get right. There used to be an implementation but it "
+"was buggy and I finally gave up fixing it and abandoned it."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:126
+msgid ""
+"However, if you're using :doc:`lua`, it's easy to do subrequest caching in "
+"Lua all by yourself. That is, first issue a subrequest to an :doc:`memc` "
+"location to do an explicit cache lookup, if cache hit, just use the cached "
+"data returned; otherwise, fall back to the true backend, and finally do a "
+"cache insertion to feed the data into the cache."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:128
+msgid ""
+"Using this module for main request caching and Lua for subrequest caching is"
+" the approach that we're taking in our business. This hybrid solution works "
+"great in production."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:133
+msgid "Distributed Memcached Caching"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:134
+msgid ""
+"Here is a simple example demonstrating a distributed memcached caching "
+"mechanism built atop this module. Suppose we do have three different "
+"memcacached nodes and we use simple modulo to hash our keys."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:179
+msgid "Here's what is going on in the sample above:"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:181
+msgid ""
+"We first define three upstreams, ``moon``, ``earth``, and ``sun``. These are"
+" our three memcached servers."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:182
+msgid ""
+"And then we group them together as an upstream list entity named "
+"``universe`` with the ``upstream_list`` directive provided by "
+":doc:`set_misc`."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:183
+msgid ""
+"After that, we define an internal location named ``/memc`` for talking to "
+"the memcached cluster."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:184
+msgid ""
+"In this ``/memc`` location, we first set the ``$memc_key`` variable with the"
+" query string (``$args``), and then use the ``set_hashed_upstream`` "
+"directive to hash our ``$memc_key`` over the upsteam list ``universe``, so "
+"as to obtain a concrete upstream name to be assigned to the variable "
+"``$backend``."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:185
+msgid ""
+"We pass this ``$backend`` variable into the ``memc_pass`` directive. The "
+"``$backend`` variable can hold a value among ``moon``, ``earth``, and "
+"``sun``."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:186
+msgid ""
+"Also, we define the memcached caching expiration time to be 3600 seconds "
+"(i.e., an hour) by overriding the ``$memc_exptime`` variable."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:187
+msgid ""
+"In our main public location ``/``, we configure the ``$uri`` variable as our"
+" cache key, and then configure `srcache_fetch`_ for cache lookups and "
+"`srcache_store`_ for cache updates. We're using two subrequests to our "
+"``/memc`` location defined earlier in these two directives."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:189
+msgid ""
+"One can use :doc:`lua`'s ``set_by_lua`` or ``rewrite_by_lua`` directives to "
+"inject custom Lua code to compute the ``$backend`` and/or ``$key`` variables"
+" in the sample above."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:191
+msgid ""
+"One thing that should be taken care of is that memcached does have "
+"restriction on key lengths, i.e., 250 bytes, so for keys that may be very "
+"long, one could use the ``set_md5`` directive or its friends to pre-hash the"
+" key to a fixed-length digest before assigning it to ``$memc_key`` in the "
+"``/memc`` location or the like."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:193
+msgid ""
+"Further, one can utilize the `srcache_fetch_skip`_ and `srcache_store_skip`_"
+" directives to control what to cache and what not on a per-request basis, "
+"and Lua can also be used here in a similar way. So the possibility is really"
+" unlimited."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:195
+msgid ""
+"To maximize speed, we often enable TCP (or Unix Domain Socket) connection "
+"pool for our memcached upstreams provided by :doc:`keepalive`, for example,"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:206
+msgid ""
+"where we define a connection pool which holds up to 10 keep-alive "
+"connections (per nginx worker process) for our ``moon`` upstream (cluster)."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:211
+msgid "Caching with Redis"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:212
+msgid ""
+"One annoyance with Memcached backed caching is Memcached server's 1 MB value"
+" size limit. So it is often desired to use some more permissive backend "
+"storage services like Redis to serve as this module's backend."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:214
+msgid "Here is a working example by using Redis:"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:250
+msgid ""
+"This example makes use of the ``$echo_request_body`` variable provided by "
+":doc:`echo`. Note that you need the latest version of :doc:`echo`, "
+"``v0.38rc2`` because earlier versions may not work reliably."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:252
+msgid ""
+"Also, you need both :doc:`redis` and :doc:`redis2`. The former is used in "
+"the `srcache_fetch`_ subrequest and the latter is used in the "
+"`srcache_store`_ subrequest."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:254
+msgid ""
+"The Nginx core also has a bug that could prevent :doc:`redis2`'s pipelining "
+"support from working properly in certain extreme conditions. And the "
+"following patch fixes this::"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:258
+msgid ""
+"Note that, however, if you are using the `ngx_openresty "
+"<http://openresty.org/>`_ 1.0.15.3 bundle or later, then you already have "
+"everything that you need here in the bundle."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:263
+msgid "Cache Key Preprocessing"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:264
+msgid ""
+"It is often desired to preprocess the cache key to exclude random noises "
+"that may hurt the cache hit rate. For example, random session IDs in the URI"
+" arguments are usually desired to get removed."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:266
+msgid "Consider the following URI querystring::"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:271
+msgid ""
+"we want to remove the ``SID`` and ``UID`` arguments from it. It is easy to "
+"achieve if you use :doc:`lua` at the same time:"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:287
+msgid ""
+"Here we use the ``echo`` directive from :doc:`echo` to dump out the final "
+"value of `$args <|HttpCoreModule|#$args>`_ in the end. You can replace it "
+"with your :doc:`sr_cache` configurations and upstream configurations instead"
+" for your case. Let's test this /t interface with curl:"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:295
+msgid ""
+"It is worth mentioning that, if you want to retain the order of the URI "
+"arguments, then you can do string substitutions on the value of `$args "
+"<|HttpCoreModule|#$args>`_ directly, for example:"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:312
+msgid ""
+"Now test it with the original curl command again, we get exactly what we "
+"would expect::"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:317
+msgid ""
+"But for caching purposes, it's good to normalize the URI argument order so "
+"that you can increase the cache hit rate. And the hash table entry order "
+"used by LuaJIT or Lua can be used to normalize the order as a nice side "
+"effect."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:322
+msgid "Directives"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:324
+msgid "srcache_fetch"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:325
+msgid "*srcache_fetch <method> <uri> [args]...*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:326 ../../source/modules/sr_cache.rst:391
+msgid "*none*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:327 ../../source/modules/sr_cache.rst:344
+#: ../../source/modules/sr_cache.rst:392 ../../source/modules/sr_cache.rst:423
+#: ../../source/modules/sr_cache.rst:438 ../../source/modules/sr_cache.rst:464
+#: ../../source/modules/sr_cache.rst:488 ../../source/modules/sr_cache.rst:510
+#: ../../source/modules/sr_cache.rst:525 ../../source/modules/sr_cache.rst:560
+#: ../../source/modules/sr_cache.rst:612 ../../source/modules/sr_cache.rst:722
+#: ../../source/modules/sr_cache.rst:744
+msgid "*http, server, location, location if*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:328 ../../source/modules/sr_cache.rst:345
+msgid "*post-access*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:330
+msgid ""
+"This directive registers an access phase handler that will issue an Nginx "
+"subrequest to lookup the cache."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:332
+msgid ""
+"When the subrequest returns status code other than ``200``, than a cache "
+"miss is signaled and the control flow will continue to the later phases "
+"including the content phase configured by |HttpProxyModule|, "
+"|HttpFastCGIModule|, and others. If the subrequest returns ``200 OK``, then "
+"a cache hit is signaled and this module will send the subrequest's response "
+"as the current main request's response to the client directly."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:334
+msgid ""
+"This directive will always run at the end of the access phase, such that "
+"|HttpAccessModule|'s `allow <|HttpAccessModule|#allow>`_ and `deny "
+"<|HttpAccessModule|#deny>`_ will always run *before* this."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:336
+msgid ""
+"You can use the `srcache_fetch_skip`_ directive to disable cache look-up "
+"selectively."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:341
+msgid "srcache_fetch_skip"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:342
+msgid "*srcache_fetch_skip <flag>*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:343 ../../source/modules/sr_cache.rst:422
+#: ../../source/modules/sr_cache.rst:437 ../../source/modules/sr_cache.rst:743
+msgid "*0*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:347
+msgid ""
+"The ``<flag>`` argument supports nginx variables. When this argument's value"
+" is not empty *and* not equal to ``0``, then the fetching process will be "
+"unconditionally skipped."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:349
+msgid ""
+"For example, to skip caching requests which have a cookie named ``foo`` with"
+" the value ``bar``, we can write"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:372
+msgid ""
+"where :doc:`lua` is used to calculate the value of the ``$skip`` variable at"
+" the (earlier) rewrite phase. Similarly, the ``$key`` variable can be "
+"computed by Lua using the `set_by_lua <|HttpLuaModule|#set_by_lua>`_ or "
+"`rewrite_by_lua <|HttpLuaModule|#rewrite_by_lua>`_ directive too."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:374
+msgid ""
+"The standard `map <|HttpMapModule|#map>`_ directive can also be used to "
+"compute the value of the ``$skip`` variable used in the sample above:"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:384
+msgid ""
+"but your `map <|HttpMapModule|#map>`_ statement should be put into the "
+"``http`` config block in your ``nginx.conf`` file though."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:389
+msgid "srcache_store"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:390
+msgid "*srcache_store <method> <uri> [args]...*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:393
+msgid "*output-filter*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:395
+msgid ""
+"This directive registers an output filter handler that will issue an Nginx "
+"subrequest to save the response of the current main request into a cache "
+"backend. The status code of the subrequest will be ignored."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:397
+msgid ""
+"You can use the `srcache_store_skip`_ and `srcache_store_max_size`_ "
+"directives to disable caching for certain requests in case of a cache miss."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:399
+msgid ""
+"Since the ``v0.12rc7`` release, both the response status line, response "
+"headers, and response bodies will be put into the cache. By default, the "
+"following special response headers will not be cached:"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:401 ../../source/modules/sr_cache.rst:530
+#: ../../source/modules/sr_cache.rst:565
+msgid "Connection"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:402 ../../source/modules/sr_cache.rst:531
+#: ../../source/modules/sr_cache.rst:566
+msgid "Keep-Alive"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:403 ../../source/modules/sr_cache.rst:532
+#: ../../source/modules/sr_cache.rst:567
+msgid "Proxy-Authenticate"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:404 ../../source/modules/sr_cache.rst:533
+#: ../../source/modules/sr_cache.rst:568
+msgid "Proxy-Authorization"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:405 ../../source/modules/sr_cache.rst:534
+#: ../../source/modules/sr_cache.rst:569
+msgid "TE"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:406 ../../source/modules/sr_cache.rst:535
+#: ../../source/modules/sr_cache.rst:570
+msgid "Trailers"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:407 ../../source/modules/sr_cache.rst:536
+#: ../../source/modules/sr_cache.rst:571
+msgid "Transfer-Encoding"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:408 ../../source/modules/sr_cache.rst:537
+#: ../../source/modules/sr_cache.rst:572
+msgid "Upgrade"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:409 ../../source/modules/sr_cache.rst:538
+#: ../../source/modules/sr_cache.rst:573
+msgid "Set-Cookie"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:411
+msgid ""
+"You can use the `srcache_store_pass_header`_ and/or "
+"`srcache_store_hide_header`_ directives to control what headers to cache and"
+" what not."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:413
+msgid ""
+"The original response's data chunks get emitted as soon as they arrive. "
+"``srcache_store`` just copies and collects the data in an output filter "
+"without postponing them from being sent downstream."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:415
+msgid ""
+"But please note that even though all the response data will be sent "
+"immediately, the current Nginx request lifetime will not finish until the "
+"srcache_store subrequest completes. That means a delay in closing the TCP "
+"connection on the server side (when HTTP keepalive is disabled, but proper "
+"HTTP clients should close the connection actively on the client side, which "
+"adds no extra delay or other issues at all) or serving the next request sent"
+" on the same TCP connection (when HTTP keepalive is in action)."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:420
+msgid "srcache_store_max_size"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:421
+msgid "*srcache_store_max_size <size>*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:424 ../../source/modules/sr_cache.rst:439
+#: ../../source/modules/sr_cache.rst:465 ../../source/modules/sr_cache.rst:511
+#: ../../source/modules/sr_cache.rst:526 ../../source/modules/sr_cache.rst:561
+#: ../../source/modules/sr_cache.rst:613 ../../source/modules/sr_cache.rst:661
+#: ../../source/modules/sr_cache.rst:684 ../../source/modules/sr_cache.rst:697
+#: ../../source/modules/sr_cache.rst:710 ../../source/modules/sr_cache.rst:723
+#: ../../source/modules/sr_cache.rst:745
+msgid "*output-header-filter*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:426
+msgid ""
+"When the response body length is exceeding this size, this module will not "
+"try to store the response body into the cache using the subrequest template "
+"that is specified in `srcache_store`_."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:428
+msgid ""
+"This is particular useful when using cache storage backend that does have a "
+"hard upper limit on the input data. For example, for Memcached server, the "
+"limit is usually ``1 MB``."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:430
+msgid ""
+"When ``0`` is specified (the default value), there's no limit check at all."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:435
+msgid "srcache_store_skip"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:436
+msgid "*srcache_store_skip <flag>*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:441
+msgid ""
+"The ``<flag>`` argument supports Nginx variables. When this argument's value"
+" is not empty *and* not equal to ``0``, then the storing process will be "
+"unconditionally skipped."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:443
+msgid ""
+"Starting from the ``v0.25`` release, the ``<flag>`` expression (possibly "
+"containing Nginx variables) can be evaluated up to twice: the first time is "
+"right after the response header is being sent and when the ``<flag>`` "
+"expression is not evaluated to true values it will be evaluated again right "
+"after the end of the response body data stream is seen. Before ``v0.25``, "
+"only the first time evaluation is performed."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:445
+msgid ""
+"Here's an example using Lua to set $nocache to avoid storing URIs that "
+"contain the string \"/tmp\":"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:461
+msgid "srcache_store_statuses"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:462
+msgid "*srcache_store_statuses <status1> <status2>...*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:463
+msgid "*200 301 302*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:467
+msgid ""
+"This directive controls what responses to store to the cache according to "
+"their status code."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:469
+msgid ""
+"By default, only ``200``, ``301``, and ``302`` responses will be stored to "
+"cache and any other responses will skip `srcache_store`_."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:471
+msgid ""
+"You can specify arbitrary positive numbers for the response status code that"
+" you'd like to cache, even including error code like ``404`` and ``503``. "
+"For example:"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:478
+msgid "At least one argument should be given to this directive."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:480
+msgid "This directive was first introduced in the ``v0.13rc2`` release."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:485
+msgid "srcache_store_ranges"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:486
+msgid "*srcache_store_ranges [ on | off ]*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:487 ../../source/modules/sr_cache.rst:611
+#: ../../source/modules/sr_cache.rst:639 ../../source/modules/sr_cache.rst:682
+#: ../../source/modules/sr_cache.rst:695 ../../source/modules/sr_cache.rst:708
+msgid "*off*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:489
+msgid "*output-body-filter*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:491
+msgid ""
+"When this directive is turned on, `srcache_store`_ will also store 206 "
+"Partial Content responses generated by the standard "
+"``ngx_http_range_filter_module``. If you turn this directive on, you MUST "
+"add ``$http_range`` to your cache keys. For example,"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:502
+msgid "This directive was first introduced in the ``v0.27`` release."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:507
+msgid "srcache_header_buffer_size"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:508
+msgid "*srcache_header_buffer_size <size>*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:509
+msgid "*4k/8k*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:513
+msgid ""
+"This directive controles the header buffer when serializing response headers"
+" for `srcache_store`_. The default size is the page size, usually ``4k`` or "
+"``8k`` depending on specific platforms."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:515
+msgid ""
+"Note that the buffer is not used to hold all the response headers, but just "
+"each individual header. So the buffer is merely needed to be big enough to "
+"hold the longest response header."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:517 ../../source/modules/sr_cache.rst:550
+#: ../../source/modules/sr_cache.rst:585 ../../source/modules/sr_cache.rst:604
+#: ../../source/modules/sr_cache.rst:632 ../../source/modules/sr_cache.rst:650
+#: ../../source/modules/sr_cache.rst:673 ../../source/modules/sr_cache.rst:688
+#: ../../source/modules/sr_cache.rst:701 ../../source/modules/sr_cache.rst:714
+#: ../../source/modules/sr_cache.rst:736 ../../source/modules/sr_cache.rst:760
+msgid "This directive was first introduced in the ``v0.12rc7`` release."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:522
+msgid "srcache_store_hide_header"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:523
+msgid "*srcache_store_hide_header <header>*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:524 ../../source/modules/sr_cache.rst:559
+msgid "*no*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:528 ../../source/modules/sr_cache.rst:563
+msgid ""
+"By default, this module caches all the response headers except the following"
+" ones:"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:540
+msgid ""
+"You can hide even more response headers from `srcache_store`_ by listing "
+"their names (case-insensitive) by means of this directive. For examples,"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:548 ../../source/modules/sr_cache.rst:583
+msgid ""
+"Multiple occurrences of this directive are allowed in a single location."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:552
+msgid "See also `srcache_store_pass_header`_."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:557
+msgid "srcache_store_pass_header"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:558
+msgid "*srcache_store_pass_header <header>*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:575
+msgid ""
+"You can force `srcache_store`_ to store one or more of these response "
+"headers from `srcache_store`_ by listing their names (case-insensitive) by "
+"means of this directive. For examples,"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:587
+msgid "See also `srcache_store_hide_header`_."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:592
+msgid "srcache_methods"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:593
+msgid "*srcache_methods <method>...*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:594
+msgid "*GET HEAD*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:595 ../../source/modules/sr_cache.rst:640
+#: ../../source/modules/sr_cache.rst:660 ../../source/modules/sr_cache.rst:683
+#: ../../source/modules/sr_cache.rst:696 ../../source/modules/sr_cache.rst:709
+msgid "*http, server, location*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:596 ../../source/modules/sr_cache.rst:641
+msgid "*post-access, output-header-filter*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:598
+msgid ""
+"This directive specifies HTTP request methods that are considered by either "
+"`srcache_fetch`_ or `srcache_store`_. HTTP request methods not listed will "
+"be skipped completely from the cache."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:600
+msgid ""
+"The following HTTP methods are allowed: ``GET``, ``HEAD``, ``POST``, "
+"``PUT``, and ``DELETE``. The ``GET`` and ``HEAD`` methods are always "
+"implicitly included in the list regardless of their presence in this "
+"directive."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:602
+msgid ""
+"Note that since the ``v0.17`` release ``HEAD`` requests are always skipped "
+"by `srcache_store`_ because their responses never carry a response body."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:609
+msgid "srcache_ignore_content_encoding"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:610
+msgid "*srcache_ignore_content_encoding [ on | off ]*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:615
+msgid ""
+"When this directive is turned ``off`` (which is the default), non-empty "
+"``Content-Encoding`` response header will cause `srcache_store`_ skip "
+"storing the whole response into the cache and issue a warning into nginx's "
+"``error.log`` file like this:"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:623
+msgid ""
+"Turning on this directive will ignore the ``Content-Encoding`` response "
+"header and store the response as usual (and also without warning)."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:625
+msgid ""
+"It's recommended to always disable gzip/deflate compression on your backend "
+"server by specifying the following line in your ``nginx.conf`` file:"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:637
+msgid "srcache_request_cache_control"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:638
+msgid "*srcache_request_cache_control [ on | off ]*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:643
+msgid ""
+"When this directive is turned ``on``, the request headers ``Cache-Control`` "
+"and ``Pragma`` will be honored by this module in the following ways:"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:645
+msgid ""
+"`srcache_fetch`_, i.e., the cache lookup operation, will be skipped when "
+"request headers ``Cache-Control: no-cache`` and/or ``Pragma: no-cache`` are "
+"present."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:646
+msgid ""
+"`srcache_store`_, i.e., the cache store operation, will be skipped when the "
+"request header ``Cache-Control: no-store`` is specified."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:648
+msgid ""
+"Turning off this directive will disable this functionality and is considered"
+" safer for busy sites mainly relying on cache for speed."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:652
+msgid "See also `srcache_response_cache_control`_."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:657
+msgid "srcache_response_cache_control"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:658
+msgid "*srcache_response_cache_control [ on | off ]*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:659
+msgid "*on*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:663
+msgid ""
+"When this directive is turned ``on``, the response headers ``Cache-Control``"
+" and ``Expires`` will be honored by this module in the following ways:"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:665
+msgid "``Cache-Control: private`` skips `srcache_store`_,"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:666
+msgid "``Cache-Control: no-store`` skips `srcache_store`_,"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:667
+msgid "``Cache-Control: no-cache`` skips `srcache_store`_,"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:668
+msgid "``Cache-Control: max-age=0`` skips `srcache_store`_,"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:669
+msgid "``Expires: <date-no-more-recently-than-now>`` skips `srcache_store`_."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:671
+msgid ""
+"This directive takes priority over the `srcache_store_no_store`_, "
+"`srcache_store_no_cache`_, and `srcache_store_private`_ directives."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:675
+msgid "See also `srcache_request_cache_control`_."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:680
+msgid "srcache_store_no_store"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:681
+msgid "*srcache_store_no_store [ on | off ]*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:686
+msgid ""
+"Turning this directive on will force responses with the header ``Cache-"
+"Control: no-store`` to be stored into the cache when "
+"`srcache_response_cache_control`_ is turned ``on`` *and* other conditions "
+"are met. Default to ``off``."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:693
+msgid "srcache_store_no_cache"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:694
+msgid "*srcache_store_no_cache [ on | off ]*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:699
+msgid ""
+"Turning this directive on will force responses with the header ``Cache-"
+"Control: no-cache`` to be stored into the cache when "
+"`srcache_response_cache_control`_ is turned ``on`` *and* other conditions "
+"are met. Default to ``off``."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:706
+msgid "srcache_store_private"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:707
+msgid "*srcache_store_private [ on | off ]*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:712
+msgid ""
+"Turning this directive on will force responses with the header ``Cache-"
+"Control: private`` to be stored into the cache when "
+"`srcache_response_cache_control`_ is turned ``on`` *and* other conditions "
+"are met. Default to ``off``."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:719
+msgid "srcache_default_expire"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:720
+msgid "*srcache_default_expire <time>*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:721
+msgid "*60s*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:725
+msgid ""
+"This directive controls the default expiration time period that is allowed "
+"for the `$srcache_expire`_ variable value when neither ``Cache-Control: max-"
+"age=N`` nor ``Expires`` are specified in the response headers."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:727 ../../source/modules/sr_cache.rst:749
+msgid ""
+"The ``<time>`` argument values are in seconds by default. But it's wise to "
+"always explicitly specify the time unit to avoid confusion. Time units "
+"supported are \"s\"(seconds), \"ms\"(milliseconds), \"y\"(years), "
+"\"M\"(months), \"w\"(weeks), \"d\"(days), \"h\"(hours), and \"m\"(minutes). "
+"For example,"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:734 ../../source/modules/sr_cache.rst:756
+msgid "This time must be less than 597 hours."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:741
+msgid "srcache_max_expire"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:742
+msgid "*srcache_max_expire <time>*"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:747
+msgid ""
+"This directive controls the maximal expiration time period that is allowed "
+"for the `$srcache_expire`_ variable value. This setting takes priority over "
+"other calculating methods."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:758
+msgid ""
+"When ``0`` is specified, which is the default setting, then there will be "
+"*no* limit at all."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:765
+msgid "Variables"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:768
+msgid "$srcache_expire"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:769
+msgid ""
+"This Nginx integer value represents the recommended expiration time period "
+"(in seconds) for the current response being stored into the cache. The "
+"algorithm of computing the value is as follows:"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:771
+msgid ""
+"When the response header ``Cache-Control: max-age=N`` is specified, then "
+"``N`` will be used as the expiration time,"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:772
+msgid ""
+"otherwise if the response header ``Expires`` is specified, then the "
+"expiration time will be obtained by subtracting the current time stamp from "
+"the time specified in the ``Expires`` header,"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:773
+msgid ""
+"when neither ``Cache-Control: max-age=N`` nor ``Expires`` headers are "
+"specified, use the value specified in the `srcache_default_expire`_ "
+"directive."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:775
+msgid ""
+"The final value of this variable will be the value specified by the "
+"`srcache_max_expire`_ directive if the value obtained in the algorithm above"
+" exceeds the maximal value (if any)."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:777
+msgid "You don't have to use this variable for the expiration time."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:779
+msgid "This variable was first introduced in the ``v0.12rc7`` release."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:784
+msgid "$srcache_fetch_status"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:785
+msgid ""
+"This Nginx variable is evaluated to the status of the \"fetch\" phase for "
+"the caching system. Three values are possible, ``HIT``, ``MISS``, and "
+"``BYPASS``."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:787
+msgid ""
+"When the \"fetch\" subrequest returns status code other than ``200`` or its "
+"response data is not well-formed, then this variable is evaluated to the "
+"value ``MISS``."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:789
+msgid ""
+"The value of this variable is only meaningful after the ``access`` request "
+"processing phase, or ``BYPASS`` is always given."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:791 ../../source/modules/sr_cache.rst:803
+msgid "This variable was first introduced in the ``v0.14`` release."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:796
+msgid "$srcache_store_status"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:797
+msgid ""
+"This Nginx variable gives the current caching status for the \"store\" "
+"phase. Two possible values, ``STORE`` and ``BYPASS`` can be obtained."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:799
+msgid ""
+"Because the responses for the \"store\" subrequest are always discarded, so "
+"the value of this variable will always be ``STORE`` as long as the \"store\""
+" subrequest is actually issued."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:801
+msgid ""
+"The value of this variable is only meaningful at least when the request "
+"headers of the current (main) request are being sent. The final result can "
+"only be obtained after all the response body has been sent if the ``Content-"
+"Length`` response header is not specified for the main request."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:808
+msgid "Known Issues"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:809
+msgid ""
+"On certain systems, enabling aio and/or sendfile may stop `srcache_store`_ "
+"from working. You can disable them in the locations configured by "
+"`srcache_store`_."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:810
+msgid ""
+"The `srcache_store`_ directive can not be used to capture the responses "
+"generated by :doc:`echo`'s subrequest directivees like "
+"``echo_subrequest_async`` and ``echo_location``. You are recommended to use "
+"*ngx_lua* to initiate and capture subrequests, which should work with "
+"`srcache_store`_."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:815
+msgid "Caveats"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:816
+msgid ""
+"It is recommended to disable your backend server's gzip compression and use "
+"nginx's |HttpGzipModule| to do the job. In case of |HttpProxyModule|, you "
+"can use the following configure setting to disable backend gzip compression:"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:823
+msgid ""
+"Do *not* use |HttpRewriteModule|'s `if <|HttpRewriteModule|#if>`_ directive "
+"in the same location as this module's, because \"`if "
+"<|HttpRewriteModule|#if>`_ is evil\". Instead, use |HttpMapModule| or "
+":doc:`lua` combined with this module's `srcache_store_skip`_ and/or "
+"`srcache_fetch_skip`_ directives. For example:"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:852
+msgid "Trouble Shooting"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:853
+msgid ""
+"To debug issues, you should always check your Nginx ``error.log`` file "
+"first. If no error messages are printed, you need to enable the Nginx "
+"debugging logs to get more details, as explained in `debugging log "
+"<http://nginx.org/en/docs/debugging_log.html>`_."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:855
+msgid "Several common pitfalls for beginners:"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:857
+msgid ""
+"The original response carries a ``Cache-Control`` header that explicitly "
+"disables caching and you do not configure directives like "
+"`srcache_response_cache_control`_."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:858
+msgid ""
+"The original response is already gzip compressed, which is not cached by "
+"default (see `srcache_ignore_content_encoding`_)."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:865
+msgid "Installation"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:866
+msgid ""
+"It is recommended to install this module as well as the Nginx core and many "
+"other goodies via the `ngx_openresty bundle <http://openresty.org>`__. It is"
+" the easiest way and most safe way to set things up. See OpenResty's "
+"`installation instructions <http://openresty.org/#Installation>`_ for "
+"details."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:868
+msgid "Alternatively, you can build Nginx with this module all by yourself:"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:870
+msgid ""
+"Grab the nginx source code from `nginx.org <http://nginx.org>`_, for "
+"example, the version 1.7.10 (see [[#Compatibility|Nginx Compatibility]]),"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:871
+msgid ""
+"and then apply the patch to your nginx source tree that fixes an important "
+"bug in the mainline Nginx core: "
+"https://raw.githubusercontent.com/openresty/ngx_openresty/master/patches/nginx-1.4.3-upstream_truncation.patch"
+" (you do NOT need this patch if you are using nginx 1.5.3 and later "
+"versions.)"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:872
+msgid ""
+"after that, download the latest version of the release tarball of this "
+"module from srcache-nginx-module :github:`file list <openresty/srcache-"
+"nginx-module/tags>`"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:873
+msgid "and finally build the Nginx source with this module"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:891
+msgid "Compatibility"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:892
+msgid "The following versions of Nginx should work with this module:"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:894
+msgid "**1.7.x** (last tested: 1.7.10)"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:895
+msgid "**1.5.x** (last tested: 1.5.12)"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:896
+msgid "**1.4.x** (last tested: 1.4.4)"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:897
+msgid "**1.3.x** (last tested: 1.3.7)"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:898
+msgid "**1.2.x** (last tested: 1.2.9)"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:899
+msgid "**1.1.x** (last tested: 1.1.5)"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:900
+msgid "**1.0.x** (last tested: 1.0.11)"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:901
+msgid "**0.9.x** (last tested: 0.9.4)"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:902
+msgid "**0.8.x** >= 0.8.54 (last tested: 0.8.54)"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:904
+msgid "Earlier versions of Nginx like 0.7.x, 0.6.x and 0.5.x will *not* work."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:906
+msgid ""
+"If you find that any particular version of Nginx above 0.7.44 does not work "
+"with this module, please consider reporting a bug."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:915
+msgid "Community"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:918
+msgid "English Mailing List"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:919
+msgid ""
+"The `openresty-en <https://groups.google.com/group/openresty-en>`_ mailing "
+"list is for English speakers."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:923
+msgid "Chinese Mailing List"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:924
+msgid ""
+"The `openresty <https://groups.google.com/group/openresty>`_ mailing list is"
+" for Chinese speakers."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:929
+msgid "Bugs and Patches"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:930
+msgid "Please submit bug reports, wishlists, or patches by"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:932
+msgid ""
+"creating a ticket on the :github:`GitHub Issue Tracker <openresty/srcache-"
+"nginx-module/issues>`"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:933
+msgid "or posting to the `OpenResty community <sr_cache.community_>`_."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:938
+msgid "Source Repository"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:939
+msgid ""
+"Available on github at :github:`openresty/srcache-nginx-module <openresty"
+"/srcache-nginx-module>`"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:944
+msgid "Test Suite"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:945
+msgid ""
+"This module comes with a Perl-driven test suite. The :github:`test cases "
+"<openresty/srcache-nginx-module/tree/master/t>` are :github:`declarative "
+"<openresty/srcache-nginx-module/blob/master/t/main-req.t>` too. Thanks to "
+"the `Test::Nginx <http://search.cpan.org/perldoc?Test::Base>` module in the "
+"Perl world."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:947
+msgid "To run it on your side:"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:954
+msgid ""
+"You need to terminate any Nginx processes before running the test suite if "
+"you have changed the Nginx server binary."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:956
+msgid ""
+"Because a single nginx server (by default, ``localhost:1984``) is used "
+"across all the test scripts (``.t`` files), it's meaningless to run the test"
+" suite in parallel by specifying ``-jN`` when invoking the ``prove`` "
+"utility."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:958
+msgid ""
+"Some parts of the test suite requires modules |HttpRewriteModule|, "
+":doc:`echo`, :github:`HttpRdsJsonModule <openresty/rds-json-nginx-module>`, "
+"and :doc:`drizzle` to be enabled as well when building Nginx."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:963
+msgid "TODO"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:964
+msgid "add gzip compression and decompression support."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:965
+msgid ""
+"add new nginx variable ``$srcache_key`` and new directives "
+"``srcache_key_ignore_args``, ``srcache_key_filter_args``, and "
+"``srcache_key_sort_args``."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:970
+msgid "Getting involved"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:971
+msgid ""
+"You'll be very welcomed to submit patches to the author or just ask for a "
+"commit bit to the source repository on GitHub."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:976
+msgid "Author"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:977
+msgid "Yichun \"agentzh\" Zhang (章亦春) <agentzh@gmail.com>, CloudFlare Inc."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:982
+msgid "Copyright & License"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:983
+msgid ""
+"Copyright (c) 2010-2015, Yichun \"agentzh\" Zhang (章亦春) <agentzh@gmail.com>,"
+" CloudFlare Inc."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:985
+msgid "This module is licensed under the terms of the BSD license."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:987
+msgid ""
+"Redistribution and use in source and binary forms, with or without "
+"modification, are permitted provided that the following conditions are met:"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:989
+msgid ""
+"Redistributions of source code must retain the above copyright notice, this "
+"list of conditions and the following disclaimer."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:990
+msgid ""
+"Redistributions in binary form must reproduce the above copyright notice, "
+"this list of conditions and the following disclaimer in the documentation "
+"and/or other materials provided with the distribution."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:992
+msgid ""
+"THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS "
+"IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, "
+"THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR "
+"PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR "
+"CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, "
+"EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, "
+"PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; "
+"OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, "
+"WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR "
+"OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF "
+"ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:997
+msgid ":doc:`memc`"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:998
+msgid ":doc:`lua`"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:999
+msgid ":doc:`set_misc`"
+msgstr ""
+
+#: ../../source/modules/sr_cache.rst:1000
+msgid "The `ngx_openresty bundle <http://openresty.org>`__"
+msgstr ""

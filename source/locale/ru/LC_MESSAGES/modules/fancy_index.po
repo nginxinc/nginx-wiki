@@ -1,0 +1,253 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/fancy_index.rst:2
+msgid "Fancy Index"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:5
+msgid "Synopsis"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:6
+msgid ""
+"The Fancy Index module makes possible the generation of file listings, like "
+"the built-in autoindex module does, but adding a touch of style. This is "
+"possible because the module module allows a certain degree of customization "
+"of the generated content:"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:8
+msgid "Custom headers (either local or stored remotely)."
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:9
+msgid "Custom footers (either local or stored remotely)."
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:10
+msgid "Add you own CSS style rules."
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:11
+msgid ""
+"Allow choosing to sort elements by name (default), modification time, or "
+"size; both ascending (default), or descending (new in 0.3.3)."
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:13
+msgid ""
+"This module is designed to work with Nginx, a high performance open source "
+"web server written by Igor Sysoev."
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:15
+msgid ""
+"I have compiled this module with Nginx 1.0.10 on a server running Debian "
+"Squeeze - however the README only talks about Nginx 0.8"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:20
+msgid "Requirements"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:21
+msgid ""
+"Sources for Nginx 0.8.x, and its requirements. - The module compiles with "
+"0.7.x versions as well. - It *might* compile with 0.6.x applying "
+"\"nginx-0.6-support.patch\", YMMV."
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:24
+msgid "Patience, and some Coffee™."
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:29
+msgid "Building"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:30
+msgid "Unpack the Nginx sources."
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:36
+msgid "Download the latest version using Git."
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:42
+msgid ""
+"Change to the directory which contains the Nginx sources, run the "
+"configuration script with the desired options and be sure to put an ``--add-"
+"module`` flag pointing to the directory which contains the source of the "
+"fancy indexing module."
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:49
+msgid "Build and install the software."
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:56
+msgid "Configure Nginx by using the modules' configuration directives_."
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:61
+msgid "Example Enable"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:62
+msgid ""
+"You can test the default built-in style by adding the following lines into a"
+" ``server`` section in your Nginx configuration file:"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:74
+msgid "Directives"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:77
+msgid "fancyindex"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:78
+msgid "*fancyindex [on|off]*"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:79
+#: ../../source/modules/fancy_index.rst:140
+msgid "*off*"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:80
+#: ../../source/modules/fancy_index.rst:89
+#: ../../source/modules/fancy_index.rst:100
+#: ../../source/modules/fancy_index.rst:109
+#: ../../source/modules/fancy_index.rst:121
+#: ../../source/modules/fancy_index.rst:131
+#: ../../source/modules/fancy_index.rst:141
+msgid "*http, server, location*"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:82
+msgid "Enables or disables fancy directory indexes."
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:86
+msgid "fancyindex_css_href"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:87
+msgid "*fancyindex_css_href uri*"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:88
+#: ../../source/modules/fancy_index.rst:108
+#: ../../source/modules/fancy_index.rst:120
+msgid "*\"\"*"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:91
+msgid ""
+"Allows inserting a link to a CSS style sheet in generated listings. The "
+"provided *uri* parameter will be inserted as-is in a ``<link>`` HTML tag. "
+"The link is inserted after the built-in CSS rules, so you can override the "
+"default styles."
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:97
+msgid "fancyindex_exact_size"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:98
+msgid "*fancyindex_exact_size [on|off]*"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:99
+msgid "*on*"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:102
+msgid ""
+"Defines how to represent file sizes in the directory listing; either "
+"accurately, or rounding off to the kilobyte, the megabyte and the gigabyte."
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:106
+msgid "fancyindex_footer"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:107
+msgid "*fancyindex_footer path*"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:111
+msgid ""
+"Specifies which file should be inserted at the foot of directory listings. "
+"If set to an empty string, the default footer supplied by the module will be"
+" sent."
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:114
+msgid ""
+"When inserting custom header/footer a subrequest will be issued so "
+"potentially any URL can be used as source for them. Although it will work "
+"with external URLs, only using internal ones is supported. External URLs are"
+" totally untested and using them will make Nginx block while waiting for the"
+" subrequest to complete. If you feel like external header/footer is a must-"
+"have for you, please `let me know <mailto:aperez@igalia.com>`_."
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:118
+msgid "fancyindex_header"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:119
+msgid "*fancyindex_header path*"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:123
+msgid ""
+"Specifies which file should be inserted at the head of directory listings. "
+"If set to an empty string, the default header supplied by the module will be"
+" sent."
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:128
+msgid "fancyindex_ignore"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:129
+msgid "*fancyindex_ignore string1 [string2 [... stringN]]*"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:130
+msgid "*none*"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:133
+msgid ""
+"Specifies a list of file names which will be not be shown in generated "
+"listings. If Nginx was built with PCRE support strings are interpreted as "
+"regular expressions."
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:138
+msgid "fancyindex_localtime"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:139
+msgid "*fancyindex_localtime [ on | off ]*"
+msgstr ""
+
+#: ../../source/modules/fancy_index.rst:143
+msgid "Enables showing file times as local time. Default is “off” (GMT time)."
+msgstr ""

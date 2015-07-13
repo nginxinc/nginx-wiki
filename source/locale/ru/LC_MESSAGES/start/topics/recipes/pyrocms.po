@@ -1,0 +1,40 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/recipes/pyrocms.rst:2
+msgid "PyroCMS"
+msgstr ""
+
+#: ../../source/start/topics/recipes/pyrocms.rst:5
+msgid "Recipe"
+msgstr ""
+
+#: ../../source/start/topics/recipes/pyrocms.rst:7
+msgid "Edit /installer/config/config.php:"
+msgstr ""
+
+#: ../../source/start/topics/recipes/pyrocms.rst:14
+msgid "Edit /system/cms/config/config.php:"
+msgstr ""
+
+#: ../../source/start/topics/recipes/pyrocms.rst:74
+msgid "Fastcgi Params:"
+msgstr ""
+
+#: ../../source/start/topics/recipes/pyrocms.rst:110
+msgid "drop.conf:"
+msgstr ""
+
+#: ../../source/start/topics/recipes/pyrocms.rst:119
+msgid "PHP-FPM Pool (If using PHP-FPM with unix sockets):"
+msgstr ""

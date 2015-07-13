@@ -1,0 +1,22 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/tutorials/dynamic_php.rst:4
+msgid "PHP-FPM"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/dynamic_php.rst:6
+msgid ""
+"The php-fpm package provides a FastCGI Process Manager for PHP. This is the "
+"preferred method of running PHP applications."
+msgstr ""

@@ -1,0 +1,85 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/recipes/mailman.rst:4
+msgid "Mailman"
+msgstr ""
+
+#: ../../source/start/topics/recipes/mailman.rst:6
+msgid ""
+"`Mailman`_ is free software for managing electronic mail discussion and "
+"e-newsletter lists. Mailman is integrated with the web, making it easy for "
+"users to manage their accounts and for list owners to administer their "
+"lists. Mailman supports built-in archiving, automatic bounce processing, "
+"content filtering, digest delivery, spam filters, and more."
+msgstr ""
+
+#: ../../source/start/topics/recipes/mailman.rst:12
+msgid ""
+"Mailman is crazy. This page used to focus on giving you options to install, "
+"configure, and run it as you wish. Because of the crazy that is mailman, "
+"this will show you the most common and best supported way to set up Mailman "
+"software behind Nginx."
+msgstr ""
+
+#: ../../source/start/topics/recipes/mailman.rst:18
+msgid "The Recipe"
+msgstr ""
+
+#: ../../source/start/topics/recipes/mailman.rst:61
+msgid "CGI"
+msgstr ""
+
+#: ../../source/start/topics/recipes/mailman.rst:63
+msgid ""
+"In order for this to work you will need to have CGI processing available. "
+"There are a few guides to this but I \"hopefully\" took the pain out of it."
+msgstr ""
+
+#: ../../source/start/topics/recipes/mailman.rst:66
+msgid ""
+"Here, we're using thttpd. Edit the configuration file and make it match this"
+" exactly."
+msgstr ""
+
+#: ../../source/start/topics/recipes/mailman.rst:69
+msgid "/etc/thttpd/thttpd.conf:"
+msgstr ""
+
+#: ../../source/start/topics/recipes/mailman.rst:83
+msgid "Removing /cgi-bin/ from URL"
+msgstr ""
+
+#: ../../source/start/topics/recipes/mailman.rst:85
+msgid ""
+"Edit /usr/lib/mailman/Mailman/mm_cfg.py and change the following parameters."
+msgstr ""
+
+#: ../../source/start/topics/recipes/mailman.rst:93
+msgid "Fix Authentication"
+msgstr ""
+
+#: ../../source/start/topics/recipes/mailman.rst:95
+msgid ""
+"If you end up running into an issue where you have to authenticate for every"
+" link clicked in the admin interface, you may have changed the URI. This "
+"would happen if you are migrating from Apache or something else to Nginx. "
+"You can either try to match what you were using previously by manipulating "
+"the location blocks and thttpd config so the /mailman or the /cgi-"
+"bin/mailman will be passed to mailman. The other option is to run the "
+"command below."
+msgstr ""
+
+#: ../../source/start/topics/recipes/mailman.rst:106
+msgid "This will clear that cache and let you access things normally again."
+msgstr ""

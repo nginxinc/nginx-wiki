@@ -1,0 +1,291 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/secure_download.rst:2
+msgid "Secure Download"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:5
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:6
+msgid ""
+"**ngx_http_secure_download_module** - a module that enables you to create "
+"links which are only valid until a certain datetime is reached. The way it "
+"works is similar to lightttpd's mod_secdownload, but not exactly same."
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:11
+msgid "Directives"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:14
+msgid "secure_download"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:15
+msgid "*secure_download [ on | off ]*"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:16
+msgid "*off*"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:17
+#: ../../source/modules/secure_download.rst:26
+#: ../../source/modules/secure_download.rst:35
+msgid "*location*"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:19
+msgid "This can turn the module on/off."
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:23
+msgid "secure_download_secret"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:24
+msgid "*secure_download_secret <secret string>*"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:25
+msgid "*none*"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:28
+msgid ""
+"Defines the string which is included in the md5 hash. It can also contain "
+"variables."
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:32
+msgid "secure_download_path_mode"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:33
+msgid "*secure_download_path_mode [ file | folder ]*"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:34
+msgid "*folder*"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:37
+msgid ""
+"This defines if the md5 hash has to be done for the full path, including "
+"filename, or just the folders which contain the file, without the filename. "
+"Depending on this your link will be valid either for a whole directory, or "
+"only for one file."
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:39
+msgid ""
+"The way this works is simply that if you specify ``folder``, it will drop "
+"the last part of the accessed path and to the hash on the rest. This means "
+"that if you use a path which doesn't specify a filename, because you maybe "
+"want to access the index.html or you rely on some rewriting, you better "
+"specify ``file`` to make it match the full path."
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:42
+msgid "Variables"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:45
+msgid "$secure_download"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:46
+msgid ""
+"This variable contains the result of the request URL validation process. It "
+"always contains a number and can have the following possible values:"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:48
+msgid ""
+"\">0\": link is valid and the value is the amount of seconds until it "
+"expires"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:49
+msgid "\"-1\": the timestamp is expired"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:50
+msgid "\"-2\": the md5 hash is wrong"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:51
+msgid "\"-3\": other problem like f.e. parsing problem or module config problem"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:56
+msgid "Explanation"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:59
+msgid "The theory"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:60
+msgid "A generated URI must have the following format::"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:64
+msgid "the md5 hash gets generated out of the following string::"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:68
+msgid ""
+"``real_path`` can be either the path of the file which you want to access or"
+" the folder which contains the file, which of those two has to be defined in"
+" the nginx config"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:69
+msgid ""
+"``secret`` is some random string which must be known by the nginx config and"
+" by the link generating script"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:70
+msgid ""
+"``expiration_timestamp`` is a unix_timestamp (seconds since beginning of "
+"1970) in hexadecimal forma"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:74
+msgid "By example"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:75
+msgid ""
+"Lets say you have a file in your document root under the path "
+"``/somefolder/protected.html``. Now you want to generate a link which "
+"expires in 20 minutes, so you do following:"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:77
+msgid ""
+"Get the current timestamp, for example from "
+"http://www.unixtimestamp.com/index.php. In this example our timestamp would "
+"be ``1240928342``"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:78
+msgid ""
+"Convert the timestamp into hex, like for example "
+"https://www.easycalculation.com/decimal-converter.php does. Our timestamp in"
+" hex is ``49F71056``"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:79
+msgid ""
+"Now you need to decide for a secret string. It needs to be set in the nginx "
+"config with the parameter secure_download_secret_. For example "
+"\"privatestring\""
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:80
+msgid ""
+"Then you put the following string together "
+"``/somefolder/protected.html/privatestring/49F71056`` which consists of "
+"``<real path/secret string/timestamp in hex``"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:81
+msgid ""
+"Now you need to create an md5 hash of that string which we put together. The"
+" resulting md5 should be ``f901b5272c17b456fabf49c3e9bcc120``"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:82
+msgid ""
+"ok, you got everything you need, now you just have to put it together in the"
+" format ``<real_path>/<md5>/<timestamp>`` in our example this would look "
+"like "
+"``/somefolder/protected.html/f901b5272c17b456fabf49c3e9bcc120/49F71056``"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:83
+msgid ""
+"thats it, now you got your link which is only valid until the included "
+"timestamp gets reached"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:85
+msgid "Now your config could look like following:"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:107
+msgid "OR:"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:140
+msgid "Requirements"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:141
+msgid "To compile the nginx with this module you will need to have following:"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:143
+msgid "The mod_rewrite in the nginx has to be enabled"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:144
+msgid ""
+"You need the mhash library, it is used by the secure-download module to "
+"create the md5 hashes"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:145
+msgid ""
+"I tested the module only with nginx 0.7.61 and 0.8.33, no guarantee for "
+"other versions"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:150
+msgid "Bugs/Feedback"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:151
+msgid ""
+"In case you find any bugs, please write me a mail and I will try to help."
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:153
+msgid ""
+"If you are using that module, I would appreciate every kind of feedback or "
+"problem reports."
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:155
+msgid ""
+"I tried to give some meaningful output in the error log if you set its log "
+"level to debug."
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:157
+msgid "Mail: mauro.stettler(A.T)gmail.com"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:162
+msgid "Download"
+msgstr ""
+
+#: ../../source/modules/secure_download.rst:163
+msgid ":github:`from GitHub <replay/ngx_http_secure_download>`"
+msgstr ""

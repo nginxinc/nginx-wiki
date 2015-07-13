@@ -1,0 +1,241 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/rdns.rst:2
+msgid "HTTP rDNS"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:5
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:6
+msgid ""
+"**ngx_http_rdns_module** - enables reverse DNS (rDNS) lookups for incoming "
+"connections and provides simple access control of incoming hostname by "
+"allow/deny rules (similar to HttpAccessModule allow/deny directives; regular"
+" expressions are supported). Module works with the DNS server defined by the"
+" standard resolver directive."
+msgstr ""
+
+#: ../../source/modules/rdns.rst:11
+msgid "Features"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:12
+msgid "usual rDNS lookup (saving result in $rdns_hostname variable);"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:13
+msgid ""
+"\"double lookup\": rDNS to get the name and DNS to get the IP address back;"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:14
+msgid "rewrite module support (``rdns`` can be used inside ``if`` blocks);"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:15
+msgid "simple access control to allow/deny connections from given DNS names."
+msgstr ""
+
+#: ../../source/modules/rdns.rst:17
+msgid "You can get the module on :github:`GitHub <flant/nginx-http-rdns>`"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:19
+msgid ""
+"*This module is not distributed with nginx source.* See the `installation "
+"instructions <rdns.installation_>`_."
+msgstr ""
+
+#: ../../source/modules/rdns.rst:24
+msgid "Directives"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:27
+msgid "rdns"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:28
+msgid "*rdns [ on | off | double ]*"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:29 ../../source/modules/rdns.rst:56
+#: ../../source/modules/rdns.rst:66
+msgid "*none*"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:30
+msgid "*http, server, location, if-in-server, if-in-location*"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:31
+msgid "*rewrite*"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:33
+msgid "Enables/disables rDNS lookups."
+msgstr ""
+
+#: ../../source/modules/rdns.rst:35
+msgid "enable rDNS lookup in this context."
+msgstr ""
+
+#: ../../source/modules/rdns.rst:36
+msgid "disable rDNS lookup in this context."
+msgstr ""
+
+#: ../../source/modules/rdns.rst:37
+msgid ""
+"enable double DNS lookup in this context. If the reverse lookup (rDNS "
+"request) succeeded, module performs a forward lookup (DNS request) for its "
+"result. If this forward lookup has failed or none of the forward lookup IP "
+"addresses have matched the original address, *$rdns_hostname* is set to "
+"``not found``."
+msgstr ""
+
+#: ../../source/modules/rdns.rst:39
+msgid "The *$rdns_hostname* variable may have:"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:41
+msgid "result of lookup;"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:42
+msgid ""
+"special value ``not found`` if not found or error occurred during request;"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:43
+msgid "special value ``-`` if lookup disabled."
+msgstr ""
+
+#: ../../source/modules/rdns.rst:45
+msgid ""
+"After performing a lookup, module restarts request handling pipeline to make"
+" new $rdns_hostname variable value visible to other directives."
+msgstr ""
+
+#: ../../source/modules/rdns.rst:48
+msgid ""
+"Internally, in server's or location's ``if``, module works through rewrite "
+"module codes. When any enabling directive (``on`` or ``double``) are "
+"executed for the first time, it enables DNS lookup and makes a break (to "
+"prevent executing further directives in this ``if``). After the lookup is "
+"done, directives in ``if`` using rewrite module codes are executed for the "
+"second time, without any breaks. Disabling directive (``off``) makes no "
+"breaks."
+msgstr ""
+
+#: ../../source/modules/rdns.rst:50
+msgid "Core module resolver should be defined to use this directive."
+msgstr ""
+
+#: ../../source/modules/rdns.rst:54
+msgid "rdns_allow"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:55
+msgid "*rdns_allow regex*"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:57 ../../source/modules/rdns.rst:67
+msgid "*http, server, location*"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:58 ../../source/modules/rdns.rst:68
+msgid "*access*"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:60
+msgid "Grants access for domain matched by regular expression."
+msgstr ""
+
+#: ../../source/modules/rdns.rst:64
+msgid "rdns_deny"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:65
+msgid "*rdns_deny regex*"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:70
+msgid "Forbids access for domain matched by regular expression."
+msgstr ""
+
+#: ../../source/modules/rdns.rst:74
+msgid ""
+"The ``rdns_allow`` and ``rdns_deny`` directives define a new access list for"
+" the context in which they are used. Access list inheritance in contexts "
+"works only if child context doesn't define own rules."
+msgstr ""
+
+#: ../../source/modules/rdns.rst:79
+msgid "Warning on named locations"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:80
+msgid ""
+"Making rDNS requests in named locations isn't supported and may invoke a "
+"loop. For example:"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:97
+msgid ""
+"Being in a named location and restarting request handling pipeline, nginx "
+"continue its request handling in usual (unnamed) location. That's why this "
+"example will make a loop if you don't disable the module in your named "
+"location. The correct config for this example should be as follows:"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:119
+msgid "Installation"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:120
+msgid "Get source code from :github:`GitHub <flant/nginx-http-rdns>`"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:129
+msgid "Bugs / patches"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:130
+msgid ""
+"Please, report bugs & propose your patches at :github:`GitHub <flant/nginx-"
+"http-rdns>`"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:135
+msgid "Credits"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:136
+msgid ""
+"The original version of this module has been designed by Dmitry Stolyarov, "
+"written by Timofey Kirillov, `CJSC Flant <http://flant.com/>`_."
+msgstr ""
+
+#: ../../source/modules/rdns.rst:141
+msgid "Links"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:142
+msgid "Source code on GitHub: https://github.com/flant/nginx-http-rdns"
+msgstr ""
+
+#: ../../source/modules/rdns.rst:143
+msgid "Module homepage (in Russian): http://flant.ru/projects/nginx-http-rdns"
+msgstr ""

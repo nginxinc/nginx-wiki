@@ -1,0 +1,39 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/recipes/yii.rst:2
+msgid "Yii"
+msgstr ""
+
+#: ../../source/start/topics/recipes/yii.rst:5
+msgid "Recipe"
+msgstr ""
+
+#: ../../source/start/topics/recipes/yii.rst:7
+msgid "This configuring gives SEF URLs for Yii"
+msgstr ""
+
+#: ../../source/start/topics/recipes/yii.rst:11
+msgid "Nginx configuration"
+msgstr ""
+
+#: ../../source/start/topics/recipes/yii.rst:59
+msgid "Yii confugration"
+msgstr ""
+
+#: ../../source/start/topics/recipes/yii.rst:61
+msgid ""
+"After this, make sure that your Yii configuration file (main.php) for your "
+"app( sampleapp) contains the following information to enable SEF URLs in the"
+" app:"
+msgstr ""

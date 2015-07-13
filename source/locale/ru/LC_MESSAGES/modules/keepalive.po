@@ -1,0 +1,86 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/keepalive.rst:2
+msgid "Upstream Keepalive"
+msgstr ""
+
+#: ../../source/modules/keepalive.rst:5
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/keepalive.rst:6
+msgid ""
+"**upstream_keepalive** - enables keep-alive connections for upstream "
+"servers."
+msgstr ""
+
+#: ../../source/modules/keepalive.rst:8
+msgid ""
+"Description below is obsolete and needs editing.  Keepalive connections to "
+"upstream servers are in the main code since 1.1.4, including the latest "
+"stable branch of 1.2.x. Check the documentation at `nginx.org "
+"<http://nginx.org/en/docs/http/ngx_http_upstream_module.html#keepalive>`_."
+msgstr ""
+
+#: ../../source/modules/keepalive.rst:10
+msgid "Example:"
+msgstr ""
+
+#: ../../source/modules/keepalive.rst:23
+msgid "Directives"
+msgstr ""
+
+#: ../../source/modules/keepalive.rst:26
+msgid "keepalive"
+msgstr ""
+
+#: ../../source/modules/keepalive.rst:27
+msgid "*keepalive num [single]*"
+msgstr ""
+
+#: ../../source/modules/keepalive.rst:28
+msgid "*upstream*"
+msgstr ""
+
+#: ../../source/modules/keepalive.rst:30
+msgid "Enables keep-alive connections for the upstream."
+msgstr ""
+
+#: ../../source/modules/keepalive.rst:32
+msgid ""
+"*num* specifies the max number of connections to keep open before, if the "
+"max is reached it will close the least recently used connections."
+msgstr ""
+
+#: ../../source/modules/keepalive.rst:34
+msgid ""
+"*single* treats everything as a single host. With this flag connections to "
+"different backends are treated as equal."
+msgstr ""
+
+#: ../../source/modules/keepalive.rst:36
+msgid ""
+"This module was tested to work with standard round-robin balancing, but it's"
+" believed to be compatible with more sophisticated balancers. The only "
+"requirement is to activate them *before* this module, e.g:"
+msgstr ""
+
+#: ../../source/modules/keepalive.rst:50
+msgid "Installation"
+msgstr ""
+
+#: ../../source/modules/keepalive.rst:51
+msgid ""
+"`Download <http://mdounin.ru/hg/ngx_http_upstream_keepalive/>`_ the module."
+msgstr ""

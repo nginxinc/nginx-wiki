@@ -1,0 +1,158 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/recipes/wordpress.rst:2
+msgid "WordPress"
+msgstr ""
+
+#: ../../source/start/topics/recipes/wordpress.rst:4
+msgid ""
+"`Nginx <http://nginx.org>`_ works perfectly well with a wide variety of "
+"applications, and `WordPress <https://wordpress.org>`_ is certainly one of "
+"them.  Nginx's configuration language is very powerful and straightforward "
+"if one is familiar with it, but often people coming from other servers are "
+"not sure how things work in Nginx and just copy and paste whatever they see "
+"from a blog that seems to fill their needs.  Everyone, especially people new"
+" to Nginx, should check out the `nginx.org documentation "
+"<http://nginx.org/en/docs/>`_ for an overview of how things work and should "
+"be done in Nginx."
+msgstr ""
+
+#: ../../source/start/topics/recipes/wordpress.rst:7
+msgid "Recipe"
+msgstr ""
+
+#: ../../source/start/topics/recipes/wordpress.rst:10
+msgid "Abridged basic setup"
+msgstr ""
+
+#: ../../source/start/topics/recipes/wordpress.rst:12
+msgid ""
+"Hopefully you have read the documentation above and maybe worked on setting "
+"up a virtual server or two in Nginx already - if not there are a few notes "
+"below, but you should still read the documentation."
+msgstr ""
+
+#: ../../source/start/topics/recipes/wordpress.rst:14
+msgid ""
+"First we setup a named upstream for our php, which allows us to abstract the"
+" backend and easily change the port or add more backends. After that, we "
+"setup our virtual host configuration for domain.tld."
+msgstr ""
+
+#: ../../source/start/topics/recipes/wordpress.rst:62
+msgid ""
+"With this configuration we should be able to serve wordpress very easily. "
+"Once you setup your backend (php-cgi or php-fpm) should work perfectly."
+msgstr ""
+
+#: ../../source/start/topics/recipes/wordpress.rst:65
+msgid "Location Strategies"
+msgstr ""
+
+#: ../../source/start/topics/recipes/wordpress.rst:67
+msgid ""
+"There are many ways to declare your locations in your configuration that "
+"allow you to do basically whatever you want with your URLs. Usually, people "
+"want to have \"pretty\" URLs that hide the query strings and script files. "
+"Here are a few different strategies based on different goals. Here we are "
+"defining locations that should be used to replace the basic locations above "
+"in order to achieve the desired results."
+msgstr ""
+
+#: ../../source/start/topics/recipes/wordpress.rst:70
+msgid "Non-root try_files to URL redirect"
+msgstr ""
+
+#: ../../source/start/topics/recipes/wordpress.rst:72
+msgid ""
+"If you want to serve WordPress as a sub directory, you will want to make the"
+" following changes (relative to the above configuration)."
+msgstr ""
+
+#: ../../source/start/topics/recipes/wordpress.rst:85
+msgid "Pre-0.8.30 fastcgi settings"
+msgstr ""
+
+#: ../../source/start/topics/recipes/wordpress.rst:87
+msgid ""
+"If you are using a version below 0.8.30, you will want to add this to your "
+"fastcgi_params file."
+msgstr ""
+
+#: ../../source/start/topics/recipes/wordpress.rst:95
+msgid "Rewrite rules for Multisite"
+msgstr ""
+
+#: ../../source/start/topics/recipes/wordpress.rst:97
+msgid ""
+"`WordPress Multisite <http://codex.wordpress.org/Create_A_Network>`_ can be "
+"used in multiple ways. Most notably \"subdirectories\" mode and "
+"\"subdomains\" mode."
+msgstr ""
+
+#: ../../source/start/topics/recipes/wordpress.rst:99
+msgid ""
+"Nginx provides 2 special directive: `X-Accel-Redirect "
+"<http://wiki.nginx.org/XSendfile>`_ and `map "
+"<http://nginx.org/en/docs/http/ngx_http_map_module.html#map>`_. Using these "
+"2 directives, one can eliminate performance hit for static-file serving on "
+"WordPress multisite network."
+msgstr ""
+
+#: ../../source/start/topics/recipes/wordpress.rst:102
+msgid "Rewrite rules for Multisite using subdirectories"
+msgstr ""
+
+#: ../../source/start/topics/recipes/wordpress.rst:155
+msgid "Rewrite rules for Multisite using subdomains"
+msgstr ""
+
+#: ../../source/start/topics/recipes/wordpress.rst:201
+msgid ""
+"For wordpress-nginx based sites management, `EasyEngine "
+"<https://github.com/rtCamp/easyengine>`_ can be used. EasyEngine is "
+"collection of shell scripts for Ubuntu."
+msgstr ""
+
+#: ../../source/start/topics/recipes/wordpress.rst:202
+msgid ""
+"map section can be completed manually for small sites. On large multisite "
+"network `nginx-helper <https://wordpress.org/plugins/nginx-helper/>`_ "
+"wordpress plugin can be used."
+msgstr ""
+
+#: ../../source/start/topics/recipes/wordpress.rst:203
+msgid ""
+"Further performance gain is possible by using Nginx's fastcgi_cache. When "
+"using `fastcgi_cache "
+"<http://nginx.org/en/docs/http/ngx_http_fastcgi_module.html#fastcgi_cache>`_,"
+" compile nginx with `ngx_cache_purge "
+"<https://github.com/FRiCKLE/ngx_cache_purge>`_ module and add a wordpress-"
+"plugin which performs automatic cache purge on events e.g. a wordpress "
+"post/page is edited."
+msgstr ""
+
+#: ../../source/start/topics/recipes/wordpress.rst:204
+msgid ""
+"`Nginx Cache Controller <https://wordpress.org/plugins/nginx-champuru/>`_ "
+"WordPress plugin provides some functions of controlling Nginx proxy server "
+"cache."
+msgstr ""
+
+#: ../../source/start/topics/recipes/wordpress.rst:205
+msgid ""
+"`Nginx Mobile Theme <https://wordpress.org/plugins/nginx-mobile-theme/>`_ "
+"WordPress plugin allows you to switch theme according to the User Agent on "
+"the Nginx reverse proxy."
+msgstr ""

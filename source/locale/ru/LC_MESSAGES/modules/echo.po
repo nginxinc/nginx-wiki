@@ -1,0 +1,1845 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/echo.rst:2
+msgid "HTTP Echo Module"
+msgstr ""
+
+#: ../../source/modules/echo.rst:5
+msgid "Name"
+msgstr ""
+
+#: ../../source/modules/echo.rst:6
+msgid ""
+"**ngx_echo** - Brings \"echo\", \"sleep\", \"time\", \"exec\" and more "
+"shell-style goodies to Nginx config file."
+msgstr ""
+
+#: ../../source/modules/echo.rst:8
+msgid ""
+"*This module is not distributed with the Nginx source.* See the "
+"`installation instructions <echo.installation_>`_."
+msgstr ""
+
+#: ../../source/modules/echo.rst:13
+msgid "Status"
+msgstr ""
+
+#: ../../source/modules/echo.rst:14
+msgid "This module is production ready."
+msgstr ""
+
+#: ../../source/modules/echo.rst:19
+msgid "Version"
+msgstr ""
+
+#: ../../source/modules/echo.rst:20
+msgid ""
+"This document describes ngx_echo :github:`v0.57 <openresty/echo-nginx-"
+"module/tags>` released on 21 November 2014."
+msgstr ""
+
+#: ../../source/modules/echo.rst:25
+msgid "Synopsis"
+msgstr ""
+
+#: ../../source/modules/echo.rst:210
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/echo.rst:211
+msgid ""
+"This module wraps lots of Nginx internal APIs for streaming input and "
+"output, parallel/sequential subrequests, timers and sleeping, as well as "
+"various meta data accessing."
+msgstr ""
+
+#: ../../source/modules/echo.rst:213
+msgid ""
+"Basically it provides various utilities that help testing and debugging of "
+"other modules by trivially emulating different kinds of faked subrequest "
+"locations."
+msgstr ""
+
+#: ../../source/modules/echo.rst:215
+msgid ""
+"People will also find it useful in real-world applications that need to"
+msgstr ""
+
+#: ../../source/modules/echo.rst:217
+msgid ""
+"serve static contents directly from memory (loading from the Nginx config "
+"file)."
+msgstr ""
+
+#: ../../source/modules/echo.rst:218
+msgid ""
+"wrap the upstream response with custom header and footer (kinda like the "
+"`addition module "
+"<http://nginx.org/en/docs/http/ngx_http_addition_module.html>`_ but with "
+"contents read directly from the config file and Nginx variables)."
+msgstr ""
+
+#: ../../source/modules/echo.rst:219
+msgid ""
+"merge contents of various \"Nginx locations\" (i.e., subrequests) together "
+"in a single main request (using `echo_location`_ and its friends)."
+msgstr ""
+
+#: ../../source/modules/echo.rst:221
+msgid ""
+"This is a special dual-role module that can *lazily* serve as a content "
+"handler or register itself as an output filter only upon demand. By default,"
+" this module does not do anything at all."
+msgstr ""
+
+#: ../../source/modules/echo.rst:223
+msgid ""
+"Technially, this module has also demonstrated the following techniques that "
+"might be helpful for module writers:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:225
+msgid "Issue parallel subreqeusts directly from content handler."
+msgstr ""
+
+#: ../../source/modules/echo.rst:226
+msgid ""
+"Issue chained subrequests directly from content handler, by passing "
+"continuation along the subrequest chain."
+msgstr ""
+
+#: ../../source/modules/echo.rst:227
+msgid ""
+"Issue subrequests with all HTTP 1.1 methods and even an optional faked HTTP "
+"request body."
+msgstr ""
+
+#: ../../source/modules/echo.rst:228
+msgid ""
+"Interact with the Nginx event model directly from content handler using "
+"custom events and timers, and resume the content handler back if necessary."
+msgstr ""
+
+#: ../../source/modules/echo.rst:229
+msgid ""
+"Dual-role module that can (lazily) serve as a content handler or an output "
+"filter or both."
+msgstr ""
+
+#: ../../source/modules/echo.rst:230
+msgid "Nginx config file variable creation and interpolation."
+msgstr ""
+
+#: ../../source/modules/echo.rst:231
+msgid "Streaming output control using output_chain, flush and its friends."
+msgstr ""
+
+#: ../../source/modules/echo.rst:232
+msgid ""
+"Read client request body from the content handler, and returns back "
+"(asynchronously) to the content handler after completion."
+msgstr ""
+
+#: ../../source/modules/echo.rst:233
+msgid ""
+"Use Perl-based declarative `test suite`_ to drive the development of Nginx C"
+" modules."
+msgstr ""
+
+#: ../../source/modules/echo.rst:240
+msgid "Content Handler Directives"
+msgstr ""
+
+#: ../../source/modules/echo.rst:241
+msgid ""
+"Use of the following directives register this module to the current Nginx "
+"location as a content handler. If you want to use another module, like the "
+"`standard proxy module "
+"<http://nginx.org/en/docs/http/ngx_http_proxy_module.html>`_, as the content"
+" handler, use the `filter directives`_ provided by this module."
+msgstr ""
+
+#: ../../source/modules/echo.rst:243
+msgid ""
+"All the content handler directives can be mixed together in a single Nginx "
+"location and they're supposed to run sequentially just as in the Bash "
+"scripting language."
+msgstr ""
+
+#: ../../source/modules/echo.rst:245
+msgid ""
+"Every content handler directive supports variable interpolation in its "
+"arguments (if any)."
+msgstr ""
+
+#: ../../source/modules/echo.rst:247
+msgid ""
+"The MIME type set by the `standard default_type directive "
+"<http://nginx.org/en/docs/http/ngx_http_core_module.html#default_type>`_ is "
+"respected by this module, as in:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:257 ../../source/modules/echo.rst:846
+msgid "Then on the client side:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:269
+msgid ""
+"Since the :github:`v0.22 <openresty/echo-nginx-module/tags>` release, all of"
+" the directives are allowed in the `rewrite module "
+"<http://nginx.org/en/docs/http/ngx_http_rewrite_module.html>`_'s `if "
+"<http://nginx.org/en/docs/http/ngx_http_rewrite_module.html#if>`_ directive "
+"block, for instance:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:284
+msgid "echo"
+msgstr ""
+
+#: ../../source/modules/echo.rst:285
+msgid "*echo [options] <string>...*"
+msgstr ""
+
+#: ../../source/modules/echo.rst:286 ../../source/modules/echo.rst:390
+#: ../../source/modules/echo.rst:443 ../../source/modules/echo.rst:506
+#: ../../source/modules/echo.rst:532 ../../source/modules/echo.rst:548
+#: ../../source/modules/echo.rst:588 ../../source/modules/echo.rst:637
+#: ../../source/modules/echo.rst:751 ../../source/modules/echo.rst:820
+#: ../../source/modules/echo.rst:919 ../../source/modules/echo.rst:935
+#: ../../source/modules/echo.rst:1009 ../../source/modules/echo.rst:1021
+#: ../../source/modules/echo.rst:1048 ../../source/modules/echo.rst:1142
+#: ../../source/modules/echo.rst:1201
+msgid "*none*"
+msgstr ""
+
+#: ../../source/modules/echo.rst:287 ../../source/modules/echo.rst:391
+#: ../../source/modules/echo.rst:444 ../../source/modules/echo.rst:507
+#: ../../source/modules/echo.rst:533 ../../source/modules/echo.rst:549
+#: ../../source/modules/echo.rst:589 ../../source/modules/echo.rst:638
+#: ../../source/modules/echo.rst:752 ../../source/modules/echo.rst:821
+#: ../../source/modules/echo.rst:920 ../../source/modules/echo.rst:936
+#: ../../source/modules/echo.rst:1010 ../../source/modules/echo.rst:1022
+#: ../../source/modules/echo.rst:1049 ../../source/modules/echo.rst:1100
+#: ../../source/modules/echo.rst:1143 ../../source/modules/echo.rst:1202
+msgid "*location, location if*"
+msgstr ""
+
+#: ../../source/modules/echo.rst:288 ../../source/modules/echo.rst:392
+#: ../../source/modules/echo.rst:445 ../../source/modules/echo.rst:508
+#: ../../source/modules/echo.rst:534 ../../source/modules/echo.rst:550
+#: ../../source/modules/echo.rst:590 ../../source/modules/echo.rst:639
+#: ../../source/modules/echo.rst:753 ../../source/modules/echo.rst:822
+#: ../../source/modules/echo.rst:921 ../../source/modules/echo.rst:937
+#: ../../source/modules/echo.rst:1011 ../../source/modules/echo.rst:1023
+#: ../../source/modules/echo.rst:1050 ../../source/modules/echo.rst:1101
+msgid "*content*"
+msgstr ""
+
+#: ../../source/modules/echo.rst:290
+msgid ""
+"Sends arguments joined by spaces, along with a trailing newline, out to the "
+"client."
+msgstr ""
+
+#: ../../source/modules/echo.rst:292
+msgid ""
+"Note that the data might be buffered by Nginx's underlying buffer. To force "
+"the output data flushed immediately, use the `echo_flush`_ command just "
+"after ``echo``, as in"
+msgstr ""
+
+#: ../../source/modules/echo.rst:300
+msgid ""
+"When no argument is specified, *echo* emits the trailing newline alone, just"
+" like the *echo* command in shell."
+msgstr ""
+
+#: ../../source/modules/echo.rst:302
+msgid "Variables may appear in the arguments. An example is"
+msgstr ""
+
+#: ../../source/modules/echo.rst:309
+msgid ""
+"where `$request_uri "
+"<http://nginx.org/en/docs/http/ngx_http_core_module.html#$request_uri>`_ is "
+"a variable exposed by the `HttpCoreModule "
+"<http://nginx.org/en/docs/http/ngx_http_core_module.html>`_."
+msgstr ""
+
+#: ../../source/modules/echo.rst:311
+msgid ""
+"This command can be used multiple times in a single location configuration, "
+"as in"
+msgstr ""
+
+#: ../../source/modules/echo.rst:321
+msgid "The output on the client side looks like this"
+msgstr ""
+
+#: ../../source/modules/echo.rst:330
+msgid ""
+"Special characters like newlines (``\\n``) and tabs (``\\t``) can be escaped"
+" using C-style escaping sequences. But a notable exception is the dollar "
+"sign (``$``). As of Nginx 0.8.20, there's still no clean way to esacpe this "
+"characters. (A work-around might be to use a ``$echo_dollor`` variable that "
+"is always evaluated to the constant ``$`` character. This feature will "
+"possibly be introduced in a future version of this module.)"
+msgstr ""
+
+#: ../../source/modules/echo.rst:332
+msgid ""
+"As of the echo :github:`v0.28 <openresty/echo-nginx-module/tags>` release, "
+"one can suppress the trailing newline character in the output by using the "
+"``-n`` option, as in"
+msgstr ""
+
+#: ../../source/modules/echo.rst:342
+msgid "Accessing ``/echo`` gives"
+msgstr ""
+
+#: ../../source/modules/echo.rst:350
+msgid ""
+"Leading ``-n`` in variable values won't take effect and will be emitted "
+"literally, as in"
+msgstr ""
+
+#: ../../source/modules/echo.rst:361
+msgid "This gives the following output"
+msgstr ""
+
+#: ../../source/modules/echo.rst:370
+msgid ""
+"One can output leading ``-n`` literals and other options using the special "
+"``--`` option like this"
+msgstr ""
+
+#: ../../source/modules/echo.rst:379
+msgid "which yields"
+msgstr ""
+
+#: ../../source/modules/echo.rst:388
+msgid "echo_duplicate"
+msgstr ""
+
+#: ../../source/modules/echo.rst:389
+msgid "*echo_duplicate <count> <string>*"
+msgstr ""
+
+#: ../../source/modules/echo.rst:394
+msgid ""
+"Outputs duplication of a string indicated by the second argument, using the "
+"times specified in the first argument."
+msgstr ""
+
+#: ../../source/modules/echo.rst:396
+msgid "For instance,"
+msgstr ""
+
+#: ../../source/modules/echo.rst:405
+msgid "will lead to an output of ``\"abcabcabc\"``."
+msgstr ""
+
+#: ../../source/modules/echo.rst:407
+msgid ""
+"Underscores are allowed in the count number, just like in Perl. For example,"
+" to emit 1000,000,000 instances of ``\"hello, world\"``:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:416
+msgid ""
+"The ``count`` argument could be zero, but not negative. The second "
+"``string`` argument could be an empty string (\"\") likewise."
+msgstr ""
+
+#: ../../source/modules/echo.rst:418
+msgid ""
+"Unlike the echo_ directive, no trailing newline is appended to the result. "
+"So it's possible to \"abuse\" this directive as a no-trailing-newline "
+"version of echo_ by using \"count\" 1, as in"
+msgstr ""
+
+#: ../../source/modules/echo.rst:430
+msgid "You get"
+msgstr ""
+
+#: ../../source/modules/echo.rst:437
+msgid ""
+"This directive was first introduced in :github:`v0.11 <openresty/echo-nginx-"
+"module/tags>`"
+msgstr ""
+
+#: ../../source/modules/echo.rst:441
+msgid "echo_flush"
+msgstr ""
+
+#: ../../source/modules/echo.rst:442
+msgid "*echo_flush*"
+msgstr ""
+
+#: ../../source/modules/echo.rst:447
+msgid ""
+"Forces the data potentially buffered by underlying Nginx output filters to "
+"send immediately to the client side via socket."
+msgstr ""
+
+#: ../../source/modules/echo.rst:449
+msgid ""
+"Note that techically the command just emits a ngx_buf_t object with "
+"``flush`` slot set to 1, so certain weird third-party output filter module "
+"could still block it before it reaches Nginx's (last) write filter."
+msgstr ""
+
+#: ../../source/modules/echo.rst:451
+msgid "This directive does not take any argument."
+msgstr ""
+
+#: ../../source/modules/echo.rst:453 ../../source/modules/echo.rst:759
+msgid "Consider the following example:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:467
+msgid ""
+"Then on the client side, using curl to access ``/flush``, you'll see the "
+"\"hello\" line immediately, but only after 1 second, the last \"world\" "
+"line. Without calling ``echo_flush`` in the example above, you'll most "
+"likely see no output until 1 second is elapsed due to the internal buffering"
+" of Nginx."
+msgstr ""
+
+#: ../../source/modules/echo.rst:469
+msgid ""
+"This directive will fail to flush the output buffer in case of subrequests "
+"get involved. Consider the following example:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:483
+msgid ""
+"Then the client won't see \"hello\" appear even if ``echo_flush`` has been "
+"executed before the subrequest to ``/sub`` has actually started executing. "
+"The outputs of ``/main`` that are sent *after* `echo_location_async`_ will "
+"be postponed and buffered firmly."
+msgstr ""
+
+#: ../../source/modules/echo.rst:485
+msgid ""
+"This does *not* apply to outputs sent before the subrequest initiated. For a"
+" modified version of the example given above:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:498
+msgid "The client will immediately see \"hello\" before ``/sub`` enters sleeping."
+msgstr ""
+
+#: ../../source/modules/echo.rst:500
+msgid "See also echo_, `echo_sleep`_, and `echo_location_async`_."
+msgstr ""
+
+#: ../../source/modules/echo.rst:504
+msgid "echo_sleep"
+msgstr ""
+
+#: ../../source/modules/echo.rst:505
+msgid "*echo_sleep <seconds>*"
+msgstr ""
+
+#: ../../source/modules/echo.rst:510
+msgid ""
+"Sleeps for the time period specified by the argument, which is in seconds."
+msgstr ""
+
+#: ../../source/modules/echo.rst:512
+msgid ""
+"This operation is non-blocking on server side, so unlike the "
+"`echo_blocking_sleep`_ directive, it won't block the whole Nginx worker "
+"process."
+msgstr ""
+
+#: ../../source/modules/echo.rst:514
+msgid ""
+"The period might takes three digits after the decimal point and must be "
+"greater than 0.001."
+msgstr ""
+
+#: ../../source/modules/echo.rst:516 ../../source/modules/echo.rst:1148
+msgid "An example is"
+msgstr ""
+
+#: ../../source/modules/echo.rst:526
+msgid ""
+"Behind the scene, it sets up a per-request \"sleep\" ngx_event_t object, and"
+" adds a timer using that custom event to the Nginx event model and just "
+"waits for a timeout on that event. Because the \"sleep\" event is per-"
+"request, this directive can work in parallel subrequests."
+msgstr ""
+
+#: ../../source/modules/echo.rst:530
+msgid "echo_blocking_sleep"
+msgstr ""
+
+#: ../../source/modules/echo.rst:531
+msgid "*echo_blocking_sleep <seconds>*"
+msgstr ""
+
+#: ../../source/modules/echo.rst:536
+msgid "This is a blocking version of the `echo_sleep`_ directive."
+msgstr ""
+
+#: ../../source/modules/echo.rst:538
+msgid "See the documentation of `echo_sleep`_ for more detail."
+msgstr ""
+
+#: ../../source/modules/echo.rst:540
+msgid ""
+"Behind the curtain, it calls the ngx_msleep macro provided by the Nginx core"
+" which maps to usleep on POSIX-compliant systems."
+msgstr ""
+
+#: ../../source/modules/echo.rst:542
+msgid ""
+"Note that this directive will block the current Nginx worker process "
+"completely while being executed, so never use it in production environment."
+msgstr ""
+
+#: ../../source/modules/echo.rst:546
+msgid "echo_reset_timer"
+msgstr ""
+
+#: ../../source/modules/echo.rst:547
+msgid "*echo_reset_timer*"
+msgstr ""
+
+#: ../../source/modules/echo.rst:552
+msgid ""
+"Reset the timer begin time to *now*, i.e., the time when this command is "
+"executed during request."
+msgstr ""
+
+#: ../../source/modules/echo.rst:554
+msgid ""
+"The timer begin time is default to the starting time of the current request "
+"and can be overridden by this directive, potentially multiple times in a "
+"single location. For example:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:569
+msgid "The output on the client side might be"
+msgstr ""
+
+#: ../../source/modules/echo.rst:578
+msgid ""
+"The actual figures you get on your side may vary a bit due to your system's "
+"current activities."
+msgstr ""
+
+#: ../../source/modules/echo.rst:580
+msgid ""
+"Invocation of this directive will force the underlying Nginx timer to get "
+"updated to the current system time (regardless the timer resolution "
+"specified elsewhere in the config file). Furthermore, references of the "
+"`$echo_timer_elapsed`_ variable will also trigger timer update forcibly."
+msgstr ""
+
+#: ../../source/modules/echo.rst:582
+msgid "See also `echo_sleep`_ and `$echo_timer_elapsed`_."
+msgstr ""
+
+#: ../../source/modules/echo.rst:586
+msgid "echo_read_request_body"
+msgstr ""
+
+#: ../../source/modules/echo.rst:587
+msgid "*echo_read_request_body*"
+msgstr ""
+
+#: ../../source/modules/echo.rst:592
+msgid ""
+"Explicitly reads request body so that the `$request_body "
+"<http://nginx.org/en/docs/http/ngx_http_core_module.html#$request_body>`_ "
+"variable will always have non-empty values (unless the body is so big that "
+"it has been saved by Nginx to a local temporary file)."
+msgstr ""
+
+#: ../../source/modules/echo.rst:594
+msgid ""
+"Note that this might not be the original client request body because the "
+"current request might be a subrequest with a \"artificial\" body specified "
+"by its parent."
+msgstr ""
+
+#: ../../source/modules/echo.rst:596
+msgid ""
+"This directive does not generate any output itself, just like `echo_sleep`_."
+msgstr ""
+
+#: ../../source/modules/echo.rst:598
+msgid ""
+"Here's an example for echo'ing back the original HTTP client request (both "
+"headers and body are included):"
+msgstr ""
+
+#: ../../source/modules/echo.rst:610
+msgid ""
+"The content of ``/echoback`` looks like this on my side (I was using Perl's "
+"LWP utility to access this location on the server):"
+msgstr ""
+
+#: ../../source/modules/echo.rst:627
+msgid ""
+"Because ``/echoback`` is the main request, `$request_body "
+"<http://nginx.org/en/docs/http/ngx_http_core_module.html#$request_body>`_ "
+"holds the original client request body."
+msgstr ""
+
+#: ../../source/modules/echo.rst:629
+msgid ""
+"Before Nginx 0.7.56, it makes no sense to use this directive because "
+"`$request_body "
+"<http://nginx.org/en/docs/http/ngx_http_core_module.html#$request_body>`_ "
+"was first introduced in Nginx 0.7.58."
+msgstr ""
+
+#: ../../source/modules/echo.rst:631
+msgid ""
+"This directive itself was first introduced in the echo module's "
+":github:`v0.14 <openresty/echo-nginx-module/tags>`"
+msgstr ""
+
+#: ../../source/modules/echo.rst:635
+msgid "echo_location_async"
+msgstr ""
+
+#: ../../source/modules/echo.rst:636
+msgid "*echo_location_async <location> [<url_args>]*"
+msgstr ""
+
+#: ../../source/modules/echo.rst:641
+msgid ""
+"Issue GET subrequest to the location specified (first argument) with "
+"optional url arguments specified in the second argument."
+msgstr ""
+
+#: ../../source/modules/echo.rst:643
+msgid ""
+"As of Nginx 0.8.20, the ``location`` argument does *not* support named "
+"location, due to a limitation in the ``ngx_http_subrequest`` function. The "
+"same is true for its brother, the `echo_location`_ directive."
+msgstr ""
+
+#: ../../source/modules/echo.rst:645
+msgid "A very simple example is"
+msgstr ""
+
+#: ../../source/modules/echo.rst:657
+msgid "Accessing ``/main`` gets"
+msgstr ""
+
+#: ../../source/modules/echo.rst:664
+msgid "Calling multiple locations in parallel is also possible:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:683 ../../source/modules/echo.rst:713
+#: ../../source/modules/echo.rst:1370
+msgid "Accessing ``/main`` yields"
+msgstr ""
+
+#: ../../source/modules/echo.rst:697
+msgid ""
+"You can see that the main handler ``/main`` does *not* wait the subrequests "
+"``/sub1`` and ``/sub2`` to complete and quickly goes on, hence the \"0.000 "
+"sec\" timing result. The whole request, however takes approximately 2 sec in"
+" total to complete because ``/sub1`` and ``/sub2`` run in parallel (or "
+"\"concurrently\" to be more accurate)."
+msgstr ""
+
+#: ../../source/modules/echo.rst:699
+msgid ""
+"If you use `echo_blocking_sleep`_ in the previous example instead, then "
+"you'll get the same output, but with 3 sec total response time, because "
+"\"blocking sleep\" blocks the whole Nginx worker process."
+msgstr ""
+
+#: ../../source/modules/echo.rst:701
+msgid "Locations can also take an optional querystring argument, for instance"
+msgstr ""
+
+#: ../../source/modules/echo.rst:721
+msgid ""
+"Querystrings is *not* allowed to be concatenated onto the ``location`` "
+"argument with \"?\" directly, for example, ``/sub?foo=Foo&bar=Bar`` is an "
+"invalid location, and shouldn't be fed as the first argument to this "
+"directive."
+msgstr ""
+
+#: ../../source/modules/echo.rst:723
+msgid ""
+"Technically speaking, this directive is an example that Nginx content "
+"handler issues one or more subrequests directly. AFAIK, the "
+":github:`fancyindex module <aperezdc/ngx-fancyindex>` also does such kind of"
+" things ;)"
+msgstr ""
+
+#: ../../source/modules/echo.rst:725 ../../source/modules/echo.rst:810
+#: ../../source/modules/echo.rst:893 ../../source/modules/echo.rst:927
+msgid "Nginx named locations like ``@foo`` is *not* supported here."
+msgstr ""
+
+#: ../../source/modules/echo.rst:727
+msgid ""
+"This directive is logically equivalent to the GET version of "
+"`echo_subrequest_async`_. For example,"
+msgstr ""
+
+#: ../../source/modules/echo.rst:734 ../../source/modules/echo.rst:800
+msgid "is logically equivalent to"
+msgstr ""
+
+#: ../../source/modules/echo.rst:741
+msgid ""
+"But calling this directive is slightly faster than calling "
+"`echo_subrequest_async`_ using ``GET`` because we don't have to parse the "
+"HTTP method names like ``GET`` and options like ``-q``."
+msgstr ""
+
+#: ../../source/modules/echo.rst:743 ../../source/modules/echo.rst:913
+msgid ""
+"There is a known issue with this directive when disabling the standard "
+"`standard SSI module "
+"<http://nginx.org/en/docs/http/ngx_http_ssi_module.html>`_. See `Known "
+"Issues`_ for more details."
+msgstr ""
+
+#: ../../source/modules/echo.rst:745
+msgid ""
+"This directive is first introduced in :github:`v0.09 <openresty/echo-nginx-"
+"module/tags>` of this module and requires at least Nginx 0.7.46."
+msgstr ""
+
+#: ../../source/modules/echo.rst:749
+msgid "echo_location"
+msgstr ""
+
+#: ../../source/modules/echo.rst:750
+msgid "*echo_location <location> [<url_args>]*"
+msgstr ""
+
+#: ../../source/modules/echo.rst:755
+msgid ""
+"Just like the `echo_location_async`_ directive, but ``echo_location`` issues"
+" subrequests *in series* rather than in parallel. That is, the content "
+"handler directives following this directive won't be executed until the "
+"subrequest issued by this directive completes."
+msgstr ""
+
+#: ../../source/modules/echo.rst:757
+msgid ""
+"The final response body is almost always equivalent to the case when "
+"`echo_location_async`_ is used instead, only if timing variables is used in "
+"the outputs."
+msgstr ""
+
+#: ../../source/modules/echo.rst:779
+msgid ""
+"The location ``/main`` above will take for total 3 sec to complete (compared"
+" to 2 sec if `echo_location_async`_ is used instead here). Here's the result"
+" in action on my machine:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:793
+msgid ""
+"This directive is logically equivalent to the GET version of "
+"`echo_subrequest`_. For example,"
+msgstr ""
+
+#: ../../source/modules/echo.rst:806
+msgid ""
+"But calling this directive is slightly faster than calling "
+"`echo_subrequest`_ using ``GET`` because we don't have to parse the HTTP "
+"method names like ``GET`` and options like ``-q``."
+msgstr ""
+
+#: ../../source/modules/echo.rst:808
+msgid ""
+"Behind the scene, it creates an ``ngx_http_post_subrequest_t`` object as a "
+"*continuation* and passes it into the ``ngx_http_subrequest`` function call."
+" Nginx will later reopen this \"continuation\" in the subrequest's "
+"``ngx_http_finalize_request`` function call. We resumes the execution of the"
+" parent-request's content handler and starts to run the next directive "
+"(command) if any."
+msgstr ""
+
+#: ../../source/modules/echo.rst:812
+msgid ""
+"This directive was first introduced in the :github:`v0.12 <openresty/echo-"
+"nginx-module/tags>`"
+msgstr ""
+
+#: ../../source/modules/echo.rst:814
+msgid ""
+"See also `echo_location_async`_ for more details about the meaning of the "
+"arguments."
+msgstr ""
+
+#: ../../source/modules/echo.rst:818
+msgid "echo_subrequest_async"
+msgstr ""
+
+#: ../../source/modules/echo.rst:819
+msgid ""
+"*echo_subrequest_async <HTTP_method> <location> [-q <url_args>] [-b "
+"<request_body>] [-f <request_body_path>]*"
+msgstr ""
+
+#: ../../source/modules/echo.rst:824
+msgid ""
+"Initiate an asynchronous subrequest using HTTP method, an optional url "
+"arguments (or querystring) and an optional request body which can be defined"
+" as a string or as a path to a file which contains the body."
+msgstr ""
+
+#: ../../source/modules/echo.rst:826
+msgid ""
+"This directive is very much like a generalized version of the "
+"`echo_location_async`_ directive."
+msgstr ""
+
+#: ../../source/modules/echo.rst:828
+msgid "Here's a small example demonstrating its usage:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:863
+msgid ""
+"Here's more funny example using the standard `proxy module "
+"<http://nginx.org/en/docs/http/ngx_http_proxy_module.html>`_ to handle the "
+"subrequest:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:884
+msgid "Then on the client side, we can see that"
+msgstr ""
+
+#: ../../source/modules/echo.rst:895
+msgid "This directive takes several options:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:907 ../../source/modules/echo.rst:929
+msgid ""
+"This directive was first introduced in the :github:`v0.15 <openresty/echo-"
+"nginx-module/tags>`"
+msgstr ""
+
+#: ../../source/modules/echo.rst:909
+msgid ""
+"The :github:``-f`` option to define a file path for the body was introduced "
+"in the `v0.35 <openresty/echo-nginx-module/tags>`"
+msgstr ""
+
+#: ../../source/modules/echo.rst:911
+msgid "See also the `echo_subrequest`_ and `echo_location_async`_ directives."
+msgstr ""
+
+#: ../../source/modules/echo.rst:917
+msgid "echo_subrequest"
+msgstr ""
+
+#: ../../source/modules/echo.rst:918
+msgid ""
+"*echo_subrequest <HTTP_method> <location> [-q <url_args>] [-b "
+"<request_body>] [-f <request_body_path>]*"
+msgstr ""
+
+#: ../../source/modules/echo.rst:923
+msgid ""
+"This is the synchronous version of the `echo_subrequest_async`_ directive. "
+"And just like `echo_location`_, it does not block the Nginx worker process "
+"(while `echo_blocking_sleep`_ does), rather, it uses continuation to pass "
+"control along the subrequest chain."
+msgstr ""
+
+#: ../../source/modules/echo.rst:925
+msgid "See `echo_subrequest_async`_ for more details."
+msgstr ""
+
+#: ../../source/modules/echo.rst:933
+msgid "echo_foreach_split"
+msgstr ""
+
+#: ../../source/modules/echo.rst:934
+msgid "*echo_foreach_split <delimiter> <string>*"
+msgstr ""
+
+#: ../../source/modules/echo.rst:939
+msgid ""
+"Split the second argument ``string`` using the delimiter specified in the "
+"first argument, and then iterate through the resulting items. For instance:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:949
+msgid "Accessing /main yields"
+msgstr ""
+
+#: ../../source/modules/echo.rst:958
+msgid ""
+"As seen in the previous example, this directive should always be accompanied"
+" by an `echo_end`_ directive."
+msgstr ""
+
+#: ../../source/modules/echo.rst:960
+msgid ""
+"Parallel ``echo_foreach_split`` loops are allowed, but nested ones are "
+"currently forbidden."
+msgstr ""
+
+#: ../../source/modules/echo.rst:962
+msgid ""
+"The ``delimiter`` argument could contain *multiple* arbitrary characters, "
+"like"
+msgstr ""
+
+#: ../../source/modules/echo.rst:972
+msgid ""
+"Logically speaking, this looping structure is just the ``foreach`` loop "
+"combined with a ``split`` function call in Perl (using the previous "
+"example):"
+msgstr ""
+
+#: ../../source/modules/echo.rst:981
+msgid ""
+"People will also find it useful in merging multiple ``.js`` or ``.css`` "
+"resources into a whole. Here's an example:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:995
+msgid ""
+"Then accessing /merge to merge the ``.js`` resources specified in the query "
+"string:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1001
+msgid ""
+"One can also use third-party Nginx cache module to cache the merged response"
+" generated by the ``/merge`` location in the previous example."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1003 ../../source/modules/echo.rst:1015
+msgid ""
+"This directive was first introduced in the :github:`v0.17 <openresty/echo-"
+"nginx-module/tags>`"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1007
+msgid "echo_end"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1008
+msgid "*echo_end*"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1013
+msgid ""
+"This directive is used to terminate the body of looping and conditional "
+"control structures like `echo_foreach_split`_."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1019
+msgid "echo_request_body"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1020
+msgid "*echo_request_body*"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1025
+msgid "Outputs the contents of the request body previous read."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1027
+msgid "Behind the scene, it's implemented roughly like this:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1035
+msgid ""
+"Unlike the `$echo_request_body`_ and $request_body variables, this directive"
+" will show the whole request body even if some parts or all parts of it are "
+"saved in temporary files on the disk."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1037
+msgid "It is a \"no-op\" if no request body has been read yet."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1039 ../../source/modules/echo.rst:1379
+msgid ""
+"This directive was first introduced in the :github:`v0.18 <openresty/echo-"
+"nginx-module/tags>`"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1041
+msgid "See also `echo_read_request_body`_."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1045
+msgid "echo_exec"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1046
+msgid "*echo_exec <location> [<query_string>]*"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1047
+msgid "*echo_exec <named_location>*"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1052
+msgid ""
+"Does an internal redirect to the location specified. An optional query "
+"string can be specified for normal locations, as in"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1063
+msgid "Or equivalently"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1074
+msgid "Named locations are also supported. Here's an example:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1087
+msgid ""
+"But query string (if any) will always be ignored for named location "
+"redirects due to a limitation in the ``ngx_http_named_location`` function."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1089
+msgid ""
+"Never try to echo things before the ``echo_exec`` directive or you won't see"
+" the proper response of the location you want to redirect to. Because any "
+"echoing will cause the original location handler to send HTTP headers before"
+" the redirection happens."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1091
+msgid ""
+"Technically speaking, this directive exposes the Nginx internal API "
+"functions ``ngx_http_internal_redirect`` and ``ngx_http_named_location``."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1093
+msgid ""
+"This directive was first introduced in the :github:`v0.21 <openresty/echo-"
+"nginx-module/tags>`"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1097
+msgid "echo_status"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1098
+msgid "*echo_status <status-num>*"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1099
+msgid "*200*"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1103
+msgid ""
+"Specify the default response status code. Default to ``200``. This directive"
+" is declarative and the relative order with other echo-like directives is "
+"not important."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1105
+msgid "Here is an example,"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1114
+msgid "then we get a response like this:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1127
+msgid "This directive was first introduced in the ``v0.40`` release."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1133
+msgid "Filter Directives"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1134
+msgid ""
+"Use of the following directives trigger the filter registration of this "
+"module. By default, no filter will be registered by this module."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1136
+msgid ""
+"Every filter directive supports variable interpolation in its arguments (if "
+"any)."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1140
+msgid "echo_before_body"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1141
+msgid "*echo_before_body [options] [argument]...*"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1144 ../../source/modules/echo.rst:1203
+msgid "*output filter*"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1146
+msgid ""
+"It's the filter version of the echo_ directive, and prepends its output to "
+"the beginning of the original outputs generated by the underlying content "
+"handler."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1161 ../../source/modules/echo.rst:1220
+msgid "Accessing ``/echo`` from the client side yields"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1169
+msgid ""
+"In the previous sample, we borrow the `standard proxy module "
+"<http://nginx.org/en/docs/http/ngx_http_proxy_module.html>`_ to serve as the"
+" underlying content handler that generates the \"main contents\"."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1171
+msgid "Multiple instances of this filter directive are also allowed, as in:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1182
+msgid "On the client side, the output is like"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1191
+msgid ""
+"In this example, we also use the `content handler directives`_ provided by "
+"this module as the underlying content handler."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1193 ../../source/modules/echo.rst:1250
+msgid ""
+"This directive also supports the ``-n`` and ``--`` options like the echo_ "
+"directive."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1195
+msgid ""
+"This directive can be mixed with its brother directive `echo_after_body`_."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1199
+msgid "echo_after_body"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1200
+msgid "*echo_after_body [argument]...*"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1205
+msgid ""
+"It's very much like the `echo_before_body`_ directive, but *appends* its "
+"output to the end of the original outputs generated by the underlying "
+"content handler."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1207
+msgid "Here's a simple example:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1228
+msgid "Multiple instances are allowed, as in:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1240
+msgid ""
+"The output on the client side while accessing the ``/echo`` location looks "
+"like"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1252
+msgid ""
+"This directive can be mixed with its brother directive `echo_before_body`_."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1255
+msgid "Variables"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1258
+msgid "$echo_it"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1259
+msgid ""
+"This is a \"topic variable\" used by `echo_foreach_split`_, just like the "
+"``$_`` variable in Perl."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1263
+msgid "$echo_timer_elapsed"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1264
+msgid ""
+"This variable holds the seconds elapsed since the start of the current "
+"request (might be a subrequest though) or the last invocation of the "
+"`echo_reset_timer`_ command."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1266
+msgid "The timing result takes three digits after the decimal point."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1268
+msgid ""
+"References of this variable will force the underlying Nginx timer to update "
+"to the current system time, regardless the timer resolution settings "
+"elsewhere in the config file, just like the `echo_reset_timer`_ directive."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1272
+msgid "$echo_request_body"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1273
+msgid ""
+"Evaluates to the current (sub)request's request body previously read if no "
+"part of the body has been saved to a temporary file. To always show the "
+"request body even if it's very large, use the `echo_request_body`_ "
+"directive."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1277
+msgid "$echo_request_method"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1278
+msgid ""
+"Evaluates to the HTTP request method of the current request (it can be a "
+"subrequest)."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1280
+msgid ""
+"Behind the scene, it just takes the string data stored in "
+"``r->method_name``."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1282
+msgid "Compare it to the `$echo_client_request_method`_ variable."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1284
+msgid ""
+"At least for Nginx 0.8.20 and older, the `$request_method "
+"<http://nginx.org/en/docs/http/ngx_http_core_module.html#$request_method>`_ "
+"variable provided by the `http core module "
+"<http://nginx.org/en/docs/http/ngx_http_core_module.html>`_ is actually "
+"doing what our `$echo_client_request_method`_ is doing."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1286 ../../source/modules/echo.rst:1297
+msgid ""
+"This variable was first introduced in our :github:`v0.15 <openresty/echo-"
+"nginx-module/tags>`"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1290
+msgid "$echo_client_request_method"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1291
+msgid ""
+"Always evaluates to the main request's HTTP method even if the current "
+"request is a subrequest."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1293
+msgid ""
+"Behind the scene, it just takes the string data stored in "
+"``r->main->method_name``."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1295
+msgid "Compare it to the `$echo_request_method`_ variable."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1301
+msgid "$echo_client_request_headers"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1302
+msgid "Evaluates to the original client request's headers."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1304
+msgid ""
+"Just as the name suggests, it will always take the main request (or the "
+"client request) even if it's currently executed in a subrequest."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1306
+msgid "A simple example is below:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1316
+msgid "Accessing ``/echoback`` yields"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1328
+msgid ""
+"Behind the scene, it recovers ``r->main->header_in`` (or the large header "
+"buffers, if any) on the C level and does not construct the headers itself by"
+" traversing parsed results in the request object."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1330
+msgid ""
+"This variable was first introduced in :github:`v0.15 <openresty/echo-nginx-"
+"module/tags>`"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1334
+msgid "$echo_cacheable_request_uri"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1335
+msgid ""
+"Evaluates to the parsed form of the URI (usually led by ``/``) of the "
+"current (sub-)request. Unlike the `$echo_request_uri`_ variable, it is "
+"cacheable."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1337
+msgid "See `$echo_request_uri`_ for more details."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1339 ../../source/modules/echo.rst:1348
+msgid ""
+"This variable was first introduced in :github:`v0.17 <openresty/echo-nginx-"
+"module/tags>`"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1343
+msgid "$echo_request_uri"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1344
+msgid ""
+"Evaluates to the parsed form of the URI (usually led by ``/``) of the "
+"current (sub-)request. Unlike the `$echo_cacheable_request_uri`_ variable, "
+"it is *not* cacheable."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1346
+msgid ""
+"This is quite different from the `$request_uri "
+"<http://nginx.org/en/docs/http/ngx_http_core_module.html#$request_uri>`_ "
+"variable exported by the `HttpCoreModule "
+"<http://nginx.org/en/docs/http/ngx_http_core_module.html>`_, because "
+"``$request_uri`` is the *unparsed* form of the current request's URI."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1352
+msgid "$echo_incr"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1353
+msgid ""
+"It is a counter that always generate the current counting number, starting "
+"from 1. The counter is always associated with the main request even if it is"
+" accessed within a subrequest."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1355
+msgid "Consider the following example"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1383
+msgid "$echo_response_status"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1384
+msgid ""
+"Evaluates to the status code of the current (sub)request, null if not any."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1386
+msgid ""
+"Behind the scene, it's just the textual representation of "
+"``r->headers_out->status``."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1388
+msgid ""
+"This directive was first introduced in the :github:`v0.23 <openresty/echo-"
+"nginx-module/tags>` release."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1395
+msgid "Installation"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1396
+msgid ""
+"You're recommended to install this module (as well as the Nginx core and "
+"many other goodies) via the `ngx_openresty bundle <http://openresty.org>`__."
+" See `the detailed instructions <http://openresty.org/#Installation>`_ for "
+"downloading and installing ngx_openresty into your system. This is the "
+"easiest and most safe way to set things up."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1398
+msgid ""
+"Alternatively, you can install this module manually with the Nginx source:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1400
+msgid ""
+"Grab the nginx source code from `nginx.org <http://nginx.org/>`_, for "
+"example, the version 1.7.7 (see `nginx compatibility "
+"<echo.compatibility_>`_), and then build the source with this module:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1417
+msgid ""
+"Download the latest version of the release tarball of this module from "
+":github:`echo-nginx-module file list <openresty/echo-nginx-module/tags>`"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1419
+msgid ""
+"Also, this module is included and enabled by default in the `ngx_openresty "
+"bundle <http://openresty.org>`__."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1426
+msgid "Compatibility"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1427
+msgid "The following versions of Nginx should work with this module:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1429
+msgid "**1.7.x**                       (last tested: 1.7.7)"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1430
+msgid "**1.6.x**"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1431
+msgid "**1.5.x**                       (last tested: 1.5.12)"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1432
+msgid "**1.4.x**                       (last tested: 1.4.4)"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1433
+msgid "**1.3.x**                       (last tested: 1.3.7)"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1434
+msgid "**1.2.x**                       (last tested: 1.2.9)"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1435
+msgid "**1.1.x**                       (last tested: 1.1.5)"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1436
+msgid "**1.0.x**                       (last tested: 1.0.11)"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1437
+msgid "**0.9.x**                       (last tested: 0.9.4)"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1438
+msgid "**0.8.x**                       (last tested: 0.8.54)"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1439
+msgid "**0.7.x >= 0.7.21**             (last tested: 0.7.68)"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1441
+msgid "In particular,"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1443
+msgid ""
+"the directive `echo_location_async`_ and its brother "
+"`echo_subrequest_async`_ do *not* work with **0.7.x < 0.7.46**."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1444
+msgid ""
+"the `echo_after_body`_ directive does *not* work at all with nginx **< "
+"0.8.7**."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1445
+msgid ""
+"the `echo_sleep`_ directive cannot be used after `echo_location`_ or "
+"`echo_subrequest`_ for nginx **< 0.8.11**."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1447
+msgid "Earlier versions of Nginx like 0.6.x and 0.5.x will *not* work at all."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1449
+msgid ""
+"If you find that any particular version of Nginx above 0.7.21 does not work "
+"with this module, please consider `echo.reporting-a-bug`_."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1454
+msgid "Known Issues"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1455
+msgid ""
+"Due to an unknown bug in Nginx (it still exists in Nginx 1.7.7), the "
+"`standard SSI module "
+"<http://nginx.org/en/docs/http/ngx_http_ssi_module.html>`_ is required to "
+"ensure that the contents of the subrequests issued by `echo_location_async`_"
+" and `echo_subrequest_async`_ are correctly merged into the output chains of"
+" the main one. Fortunately, the SSI module is enabled by default during "
+"Nginx's ``configure`` process."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1457
+msgid ""
+"If calling this directive without SSI module enabled, you'll get truncated "
+"response without contents of any subrequests and get an alert message in "
+"your Nginx's ``error.log``, like this:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1466
+msgid "Modules that use this module for testing"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1467
+msgid ""
+"The following modules take advantage of this ``echo`` module in their test "
+"suite:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1469
+msgid ""
+"The :doc:`memc` module that supports almost the whole memcached TCP "
+"protocol."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1470
+msgid ""
+"The :doc:`headers_more` module that allows you to add, set, and clear input "
+"and output headers under the conditions that you specify."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1471
+msgid "The ``echo`` module itself."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1473
+msgid ""
+"Please mail me other modules that use ``echo`` in any form and I'll add them"
+" to the list above :)"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1480
+msgid "Community"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1483
+msgid "English Mailing List"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1484
+msgid ""
+"The `openresty-en <https://groups.google.com/group/openresty-en>`_ mailing "
+"list is for English speakers."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1488
+msgid "Chinese Mailing List"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1489
+msgid ""
+"The `openresty <https://groups.google.com/group/openresty>`_ mailing list is"
+" for Chinese speakers."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1496
+msgid "Report Bugs"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1497
+msgid ""
+"Although a lot of effort has been put into testing and code tuning, there "
+"must be some serious bugs lurking somewhere in this module. So whenever you "
+"are bitten by any quirks, please don't hesitate to"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1499
+msgid ""
+"create a ticket on the :github:`issue tracking interface <openresty/echo-"
+"nginx-module/issues>` provided by GitHub,"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1500
+msgid ""
+"or send a bug report, questions, or even patches to the `OpenResty "
+"Community`_."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1507
+msgid "Source Repository"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1508
+msgid "Available on github at :github:`openresty/echo-nginx-module`"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1513
+msgid "Changes"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1514
+msgid ""
+"The changes of every release of this module can be obtained from the "
+"ngx_openresty bundle's change logs:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1516
+msgid "http://openresty.org/#Changes"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1523
+msgid "Test Suite"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1524
+msgid ""
+"This module comes with a Perl-driven test suite. The :github:`test cases "
+"<openresty/echo-nginx-module/tree/master/t/>` are :github:`declarative "
+"<openresty/echo-nginx-module/blob/master/t/echo.t>` too. Thanks to the "
+"`Test::Nginx <http://search.cpan.org/perldoc?Test::Nginx>` module in the "
+"Perl world."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1527
+msgid "To run it on your side:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1534
+msgid ""
+"You need to terminate any Nginx processes before running the test suite if "
+"you have changed the Nginx server binary."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1536
+msgid ""
+"Because a single nginx server (by default, ``localhost:1984``) is used "
+"across all the test scripts (``.t`` files), it's meaningless to run the test"
+" suite in parallel by specifying ``-jN`` when invoking the ``prove`` "
+"utility."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1538
+msgid ""
+"Some parts of the test suite requires standard modules `proxy "
+"<http://nginx.org/en/docs/http/ngx_http_proxy_module.html>`_, `rewrite "
+"<http://nginx.org/en/docs/http/ngx_http_rewrite_module.html>`_ and `SSI "
+"<http://nginx.org/en/docs/http/ngx_http_ssi_module.html>`_ to be enabled as "
+"well when building Nginx."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1543
+msgid "TODO"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1544
+msgid "Fix the `echo_after_body`_ directive in subrequests."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1545
+msgid ""
+"Add directives *echo_read_client_request_body* and *echo_request_headers*."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1546
+msgid ""
+"Add new directive *echo_log* to use Nginx's logging facility directly from "
+"the config file and specific loglevel can be specified, as in"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1553
+msgid ""
+"Add support for options ``-h`` and ``-t`` to `echo_subrequest_async`_ and "
+"`echo_subrequest`_. For example"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1560
+msgid ""
+"Add options to control whether a subrequest should inherit cached variables "
+"from its parent request (i.e. the current request that is calling the "
+"subrequest in question). Currently none of the subrequests issued by this "
+"module inherit the cached variables from the parent request."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1561
+msgid ""
+"Add new variable *$echo_active_subrequests* to show ``r->main->count - 1``."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1562
+msgid "Add the *echo_file* and *echo_cached_file* directives."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1563
+msgid ""
+"Add new varaible *$echo_request_headers* to accompany the existing "
+"`$echo_client_request_headers`_ variable."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1564
+msgid "Add new directive *echo_foreach*, as in"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1573
+msgid "Add new directive *echo_foreach_range*, as in"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1582
+msgid "Add new directive *echo_repeat*, as in"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1592
+msgid "This is just another way of saying"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1601 ../../source/modules/echo.rst:1612
+msgid "Thanks Marcus Clyne for providing this idea."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1603
+msgid ""
+"Add new variable $echo_random which always returns a random non-negative "
+"integer with the lower/upper limit specified by the new directives "
+"``echo_random_min`` and ``echo_random_max``. For example,"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1617
+msgid "Getting involved"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1618
+msgid ""
+"You'll be very welcomed to submit patches to the Author_ or just ask for a "
+"commit bit to the `echo.source-repository`_ on GitHub."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1623
+msgid "Author"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1624
+msgid "Yichun \"agentzh\" Zhang (章亦春) *<agentzh@gmail.com>*, CloudFlare Inc."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1626
+msgid ""
+"This wiki page is also maintained by the author himself, and everybody is "
+"encouraged to improve this page as well."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1631
+msgid "Copyright & License"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1632
+msgid ""
+"Copyright (c) 2009-2014, Yichun \"agentzh\" Zhang (章亦春) <agentzh@gmail.com>,"
+" CloudFlare Inc."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1634
+msgid "This module is licensed under the terms of the BSD license."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1636
+msgid ""
+"Redistribution and use in source and binary forms, with or without "
+"modification, are permitted provided that the following conditions are met:"
+msgstr ""
+
+#: ../../source/modules/echo.rst:1640
+msgid ""
+"Redistributions of source code must retain the above copyright notice, this "
+"list of conditions and the following disclaimer."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1641
+msgid ""
+"Redistributions in binary form must reproduce the above copyright notice, "
+"this list of conditions and the following disclaimer in the documentation "
+"and/or other materials provided with the distribution."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1643
+msgid ""
+"THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS "
+"IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, "
+"THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR "
+"PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR "
+"CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, "
+"EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, "
+"PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; "
+"OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, "
+"WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR "
+"OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF "
+"ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1658
+msgid ""
+"The original `blog post <http://agentzh.blogspot.com/2009/10/hacking-on-"
+"nginx-echo-module.html>`_ about this module's initial development."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1659
+msgid ""
+"The standard `addition filter module "
+"<http://nginx.org/en/docs/http/ngx_http_addition_module.html>`_."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1660
+msgid ""
+"The standard `proxy module "
+"<http://nginx.org/en/docs/http/ngx_http_proxy_module.html>`_."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1661
+msgid "The `ngx_openresty <http://openresty.org>`_ bundle."
+msgstr ""

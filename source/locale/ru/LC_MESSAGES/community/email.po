@@ -1,0 +1,24 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/community/email.rst:4
+msgid "Mailing List"
+msgstr ""
+
+#: ../../source/community/email.rst:6
+msgid ""
+"The `Nginx mailing list`_ is the most appropriate place for getting help "
+"with development questions. The IRC channel is filled mostly with server "
+"administrators that don't do much Nginx development. If you need help with "
+"Nginx development, then you should absolutely jump on the mailing list."
+msgstr ""

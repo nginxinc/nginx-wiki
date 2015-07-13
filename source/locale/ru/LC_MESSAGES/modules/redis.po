@@ -1,0 +1,260 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/redis.rst:2
+msgid "HTTP Redis"
+msgstr ""
+
+#: ../../source/modules/redis.rst:5
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/redis.rst:7
+msgid ""
+"You can use this module to perform simple caching.  There are plans to "
+"extend this module in the near future."
+msgstr ""
+
+#: ../../source/modules/redis.rst:9
+msgid ""
+"Latest version available at "
+"http://people.FreeBSD.org/~osa/ngx_http_redis-0.3.7.tar.gz."
+msgstr ""
+
+#: ../../source/modules/redis.rst:11
+msgid "Example configuration"
+msgstr ""
+
+#: ../../source/modules/redis.rst:32
+msgid "Directives"
+msgstr ""
+
+#: ../../source/modules/redis.rst:35
+msgid "redis_pass"
+msgstr ""
+
+#: ../../source/modules/redis.rst:36
+msgid "*redis_pass [name:port]*"
+msgstr ""
+
+#: ../../source/modules/redis.rst:37 ../../source/modules/redis.rst:46
+msgid "*none*"
+msgstr ""
+
+#: ../../source/modules/redis.rst:38 ../../source/modules/redis.rst:56
+#: ../../source/modules/redis.rst:65 ../../source/modules/redis.rst:74
+#: ../../source/modules/redis.rst:83 ../../source/modules/redis.rst:92
+msgid "*http, server, location*"
+msgstr ""
+
+#: ../../source/modules/redis.rst:40
+msgid ""
+"The backend should set the data in redis. The redis key is ``/uri?args``."
+msgstr ""
+
+#: ../../source/modules/redis.rst:44
+msgid "redis_bind"
+msgstr ""
+
+#: ../../source/modules/redis.rst:45
+msgid "*redis_bind [addr]*"
+msgstr ""
+
+#: ../../source/modules/redis.rst:47
+msgid "*http, server, localtion*"
+msgstr ""
+
+#: ../../source/modules/redis.rst:49
+msgid ""
+"Use the following IP address as the source address for redis connections."
+msgstr ""
+
+#: ../../source/modules/redis.rst:53
+msgid "redis_connect_timeout"
+msgstr ""
+
+#: ../../source/modules/redis.rst:54
+msgid "*redis_connect_timeout [time]*"
+msgstr ""
+
+#: ../../source/modules/redis.rst:55 ../../source/modules/redis.rst:64
+#: ../../source/modules/redis.rst:73
+msgid "*60000*"
+msgstr ""
+
+#: ../../source/modules/redis.rst:58
+msgid "The timeout for connecting to redis, in milliseconds."
+msgstr ""
+
+#: ../../source/modules/redis.rst:62
+msgid "redis_read_timeout"
+msgstr ""
+
+#: ../../source/modules/redis.rst:63
+msgid "*redis_read_timeout [time]*"
+msgstr ""
+
+#: ../../source/modules/redis.rst:67
+msgid "The timeout for reading from redis, in milliseconds."
+msgstr ""
+
+#: ../../source/modules/redis.rst:71
+msgid "redis_send_timeout"
+msgstr ""
+
+#: ../../source/modules/redis.rst:72
+msgid "*redis_send_timeout [time]*"
+msgstr ""
+
+#: ../../source/modules/redis.rst:76
+msgid "The timeout for sending to redis, in milliseconds."
+msgstr ""
+
+#: ../../source/modules/redis.rst:80
+msgid "redis_buffer_size"
+msgstr ""
+
+#: ../../source/modules/redis.rst:81
+msgid "*redis_buffer_size [size]*"
+msgstr ""
+
+#: ../../source/modules/redis.rst:82
+msgid "see getpagesize(2)"
+msgstr ""
+
+#: ../../source/modules/redis.rst:85
+msgid "The recv/send buffer size, in bytes."
+msgstr ""
+
+#: ../../source/modules/redis.rst:89
+msgid "redis_next_upstream"
+msgstr ""
+
+#: ../../source/modules/redis.rst:90
+msgid ""
+"*redis_next_upstream [error] [timeout] [invalid_response] [not_found] [off]*"
+msgstr ""
+
+#: ../../source/modules/redis.rst:91
+msgid "*error timeout*"
+msgstr ""
+
+#: ../../source/modules/redis.rst:94
+msgid ""
+"Which failure conditions should cause the request to be forwarded to another"
+" upstream server? Applies only when the value in redis_pass_ is an upstream "
+"with two or more servers."
+msgstr ""
+
+#: ../../source/modules/redis.rst:98
+msgid "redis_gzip_flag"
+msgstr ""
+
+#: ../../source/modules/redis.rst:99
+msgid "*redis_gzip_flag [number]*"
+msgstr ""
+
+#: ../../source/modules/redis.rst:100
+msgid "*unset*"
+msgstr ""
+
+#: ../../source/modules/redis.rst:101
+msgid "*location*"
+msgstr ""
+
+#: ../../source/modules/redis.rst:103
+msgid ""
+"Reimplementation of memcached_gzip_flag, see "
+"http://forum.nginx.org/read.php?29,34332,34463 for details."
+msgstr ""
+
+#: ../../source/modules/redis.rst:108
+msgid "Variables"
+msgstr ""
+
+#: ../../source/modules/redis.rst:111
+msgid "$redis_key"
+msgstr ""
+
+#: ../../source/modules/redis.rst:112
+msgid "The value of the redis key."
+msgstr ""
+
+#: ../../source/modules/redis.rst:116
+msgid "$redis_db"
+msgstr ""
+
+#: ../../source/modules/redis.rst:117
+msgid "The number of redis database (required for < 0.3.4)."
+msgstr ""
+
+#: ../../source/modules/redis.rst:119
+msgid ""
+"For ngx_http_redis >= 0.3.4 is not obligatory, default value is ``0`` if not"
+" defined."
+msgstr ""
+
+#: ../../source/modules/redis.rst:124
+msgid "Keep-alive connections to redis servers"
+msgstr ""
+
+#: ../../source/modules/redis.rst:125
+msgid ""
+"In 0.3.5 support of keep-alive connection backported from original "
+"ngx_http_memcached module of nginx 1.1.4. For previous versions of nginx you"
+" should use following instruction."
+msgstr ""
+
+#: ../../source/modules/redis.rst:128
+msgid ""
+"You need Maxim Dounin's third party ngx_upstream_keepalive module together "
+"with this module for keep-alive TCP connections to your backend redis "
+"servers."
+msgstr ""
+
+#: ../../source/modules/redis.rst:130
+msgid "Here's a sample configuration:"
+msgstr ""
+
+#: ../../source/modules/redis.rst:155
+msgid "Support"
+msgstr ""
+
+#: ../../source/modules/redis.rst:156
+msgid ""
+"Please use author's email address for submit bug reports, patches and fixes."
+msgstr ""
+
+#: ../../source/modules/redis.rst:161
+msgid "Author"
+msgstr ""
+
+#: ../../source/modules/redis.rst:162
+msgid "Sergey A. Osokin <osa@FreeBSD.ORG.ru>"
+msgstr ""
+
+#: ../../source/modules/redis.rst:167
+msgid ":doc:`redis2` that implements almost the whole Redis 2.0 protocol."
+msgstr ""
+
+#: ../../source/modules/redis.rst:168
+msgid ""
+":doc:`sr_cache` that can be used with this module to do transparent response"
+" caching for arbitrary Nginx locations."
+msgstr ""
+
+#: ../../source/modules/redis.rst:169
+msgid ""
+"The :github:`lua-resty-redis <openresty/lua-resty-redis>` library for "
+":doc:`lua`."
+msgstr ""

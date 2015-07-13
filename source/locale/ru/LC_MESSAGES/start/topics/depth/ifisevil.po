@@ -1,0 +1,127 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/depth/ifisevil.rst:2
+msgid "If Is Evil"
+msgstr ""
+
+#: ../../source/start/topics/depth/ifisevil.rst:4
+msgid ""
+"The if directive in nginx suffers from some weird implementation quirks that"
+" one needs to be aware of before they use it. The if directive is "
+"consistent, though, so with proper testing one can safely use it."
+msgstr ""
+
+#: ../../source/start/topics/depth/ifisevil.rst:8
+msgid ""
+"Do note that nginx has other directives that are often better suited than "
+"using an if. Please see the Alternative Solution section."
+msgstr ""
+
+#: ../../source/start/topics/depth/ifisevil.rst:11
+msgid ""
+"That said, there are quite a few scenarios where using the if directive is "
+"the only possible way to accomplish something, for instance, when checking "
+"url query arguments."
+msgstr ""
+
+#: ../../source/start/topics/depth/ifisevil.rst:21
+msgid ""
+"The following directives are always 100% safe to use in if-in-location "
+"context:"
+msgstr ""
+
+#: ../../source/start/topics/depth/ifisevil.rst:23
+msgid "return [...];"
+msgstr ""
+
+#: ../../source/start/topics/depth/ifisevil.rst:24
+msgid "rewrite [...];"
+msgstr ""
+
+#: ../../source/start/topics/depth/ifisevil.rst:26
+msgid "Anything else may possibly cause unpredictable behaviour."
+msgstr ""
+
+#: ../../source/start/topics/depth/ifisevil.rst:28
+msgid ""
+"If advanced logic is required within the nginx configuration then consider "
+"using one of the third party modules such as the lua module."
+msgstr ""
+
+#: ../../source/start/topics/depth/ifisevil.rst:32
+msgid "Alternative Solutions"
+msgstr ""
+
+#: ../../source/start/topics/depth/ifisevil.rst:35
+msgid "File System Operations"
+msgstr ""
+
+#: ../../source/start/topics/depth/ifisevil.rst:37
+msgid "**Short version:** Use try_files directive."
+msgstr ""
+
+#: ../../source/start/topics/depth/ifisevil.rst:39
+msgid ""
+"The ever popular check if a file or directory exist is the most popular "
+"incorrect usage of if. Coming from apache the if is the first thing people "
+"turn to."
+msgstr ""
+
+#: ../../source/start/topics/depth/ifisevil.rst:42
+msgid ""
+"However, nginx has a directive dedicated to check for the existance of "
+"files. The try_files directive takes n amount of path arguments and a "
+"fallback argument."
+msgstr ""
+
+#: ../../source/start/topics/depth/ifisevil.rst:45
+msgid ""
+"If one of the path arguments matches the internal uri is set to that and the"
+" file is served. Please note that location re-evaluation does not happen."
+msgstr ""
+
+#: ../../source/start/topics/depth/ifisevil.rst:48
+msgid ""
+"If the fallback argument matches then the request is internally rewritten to"
+" that uri and location re-evaluation happens. It's also possible to use a "
+"named location as the fallback argument."
+msgstr ""
+
+#: ../../source/start/topics/depth/ifisevil.rst:63
+msgid ""
+"In some cases it may be good idea to use embedded scripting modules "
+"(embedded perl, or various 3rd party modules) to do the scripting."
+msgstr ""
+
+#: ../../source/start/topics/depth/ifisevil.rst:67
+msgid "Examples"
+msgstr ""
+
+#: ../../source/start/topics/depth/ifisevil.rst:69
+msgid ""
+"Here are some examples which explain why if-in-location is unpredictable."
+msgstr ""
+
+#: ../../source/start/topics/depth/ifisevil.rst:136
+msgid "Why This Behavior Is Not a Bug"
+msgstr ""
+
+#: ../../source/start/topics/depth/ifisevil.rst:138
+msgid ""
+"Directive \"if\" is a part of the rewrite module which evaluates "
+"instructions imperatively. Conversely, the nginx configuration in general is"
+" declarative. Due to user demand, an attempt was made to enable some non-"
+"rewrite directives inside \"if\", and this lead to situation we have now. It"
+" works, but oddly."
+msgstr ""

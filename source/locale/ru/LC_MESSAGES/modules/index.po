@@ -1,0 +1,1366 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/index.rst:11
+msgid "Nginx 3\\ :sup:`rd` Party Modules"
+msgstr ""
+
+#: ../../source/modules/index.rst:14
+msgid "Module"
+msgstr ""
+
+#: ../../source/modules/index.rst:14
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/index.rst:14
+msgid "Repository"
+msgstr ""
+
+#: ../../source/modules/index.rst:16
+msgid ":doc:`accept_language`"
+msgstr ""
+
+#: ../../source/modules/index.rst:16
+msgid "Accept-Language header parser"
+msgstr ""
+
+#: ../../source/modules/index.rst:16
+msgid ":github:`giom/nginx_accept_language_module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:18
+msgid "AFCGI"
+msgstr ""
+
+#: ../../source/modules/index.rst:18
+msgid "Asynchronous/multiplexing FastCGI for nginx"
+msgstr ""
+
+#: ../../source/modules/index.rst:18
+msgid ":github:`rsms/afcgi`"
+msgstr ""
+
+#: ../../source/modules/index.rst:20
+msgid "Akamai G2O"
+msgstr ""
+
+#: ../../source/modules/index.rst:20
+msgid "Restricts access to content to Akamai edge servers using G2O headers"
+msgstr ""
+
+#: ../../source/modules/index.rst:20
+msgid ":github:`refractalize/nginx_mod_akamai_g2o`"
+msgstr ""
+
+#: ../../source/modules/index.rst:22
+msgid "Array Var"
+msgstr ""
+
+#: ../../source/modules/index.rst:22
+msgid "Add support for array variables to nginx config files"
+msgstr ""
+
+#: ../../source/modules/index.rst:22
+msgid ":github:`openresty/array-var-nginx-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:24
+msgid ":doc:`audio_track`"
+msgstr ""
+
+#: ../../source/modules/index.rst:24
+msgid "Generate audio track for HTTP Live Streaming (HLS) streams on the fly"
+msgstr ""
+
+#: ../../source/modules/index.rst:24
+msgid ":github:`flavioribeiro/nginx-audio-track-for-hls-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:26
+msgid ":doc:`auth_digest`"
+msgstr ""
+
+#: ../../source/modules/index.rst:26
+msgid "HTTP Digest Authentication"
+msgstr ""
+
+#: ../../source/modules/index.rst:26
+msgid ":github:`samizdatco/nginx-http-auth-digest`"
+msgstr ""
+
+#: ../../source/modules/index.rst:28
+msgid "PAM Authentication"
+msgstr ""
+
+#: ../../source/modules/index.rst:28
+msgid "HTTP Basic Authentication using PAM"
+msgstr ""
+
+#: ../../source/modules/index.rst:28
+msgid ":github:`stogh/ngx_http_auth_pam_module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:30
+msgid "Request Authentication"
+msgstr ""
+
+#: ../../source/modules/index.rst:30
+msgid "Allows authorization based on subrequest result"
+msgstr ""
+
+#: ../../source/modules/index.rst:30
+msgid ""
+"`ngx_http_auth_request_module "
+"<http://mdounin.ru/hg/ngx_http_auth_request_module/>`_"
+msgstr ""
+
+#: ../../source/modules/index.rst:32
+msgid "Auto Lib"
+msgstr ""
+
+#: ../../source/modules/index.rst:32
+msgid "Reuse pre-compiled/installed versions of OpenSSL, PCRE and Zlib"
+msgstr ""
+
+#: ../../source/modules/index.rst:32
+msgid ":github:`simpl/ngx_auto_lib`"
+msgstr ""
+
+#: ../../source/modules/index.rst:34
+msgid "AWS Auth"
+msgstr ""
+
+#: ../../source/modules/index.rst:34
+msgid "Generate security headers for GET requests to Amazon S3"
+msgstr ""
+
+#: ../../source/modules/index.rst:34
+msgid ":github:`anomalizer/ngx_aws_auth`"
+msgstr ""
+
+#: ../../source/modules/index.rst:36
+msgid "Backtrace"
+msgstr ""
+
+#: ../../source/modules/index.rst:36
+msgid ""
+"A nginx module to dump backtrace case a worker process exits abnormally"
+msgstr ""
+
+#: ../../source/modules/index.rst:36
+msgid ":github:`alibaba/nginx-backtrace`"
+msgstr ""
+
+#: ../../source/modules/index.rst:38
+msgid "Cache Purge"
+msgstr ""
+
+#: ../../source/modules/index.rst:38
+msgid "Adds ability to purge content from FastCGI, proxy, and uWSGI caches"
+msgstr ""
+
+#: ../../source/modules/index.rst:38
+msgid ":github:`FRiCKLE/ngx_cache_purge`"
+msgstr ""
+
+#: ../../source/modules/index.rst:40
+msgid ":doc:`circle_gif`"
+msgstr ""
+
+#: ../../source/modules/index.rst:40
+msgid "Generates simple circle images with colors/size specified in the URL"
+msgstr ""
+
+#: ../../source/modules/index.rst:40
+msgid ":github:`evanmiller/nginx_circle_gif`"
+msgstr ""
+
+#: ../../source/modules/index.rst:42
+msgid ":doc:`clojure`"
+msgstr ""
+
+#: ../../source/modules/index.rst:42 ../../source/modules/index.rst:86
+#: ../../source/modules/index.rst:102
+msgid "A module for embedding Clojure, Java, and Groovy programs"
+msgstr ""
+
+#: ../../source/modules/index.rst:42 ../../source/modules/index.rst:86
+#: ../../source/modules/index.rst:102
+msgid ":github:`nginx-clojure/nginx-clojure`"
+msgstr ""
+
+#: ../../source/modules/index.rst:44
+msgid ":doc:`concat`"
+msgstr ""
+
+#: ../../source/modules/index.rst:44
+msgid "Concatenates files in a given context"
+msgstr ""
+
+#: ../../source/modules/index.rst:44
+msgid ":github:`alibaba/nginx-http-concat`"
+msgstr ""
+
+#: ../../source/modules/index.rst:46
+msgid ":doc:`consistent_hash`"
+msgstr ""
+
+#: ../../source/modules/index.rst:46
+msgid "Select backend based on Consistent hash ring"
+msgstr ""
+
+#: ../../source/modules/index.rst:46
+msgid ":github:`replay/ngx_http_consistent_hash`"
+msgstr ""
+
+#: ../../source/modules/index.rst:48
+msgid "Development Kit"
+msgstr ""
+
+#: ../../source/modules/index.rst:48
+msgid "An extension to the core functionality of Nginx"
+msgstr ""
+
+#: ../../source/modules/index.rst:48
+msgid ":github:`simpl/ngx_devel_kit`"
+msgstr ""
+
+#: ../../source/modules/index.rst:50
+msgid ":doc:`domain_resolve`"
+msgstr ""
+
+#: ../../source/modules/index.rst:50
+msgid "An asynchronous domain name resolve module for nginx upstream"
+msgstr ""
+
+#: ../../source/modules/index.rst:50
+msgid ":github:`wdaike/ngx_upstream_jdomain/`"
+msgstr ""
+
+#: ../../source/modules/index.rst:52
+msgid ":doc:`drizzle`"
+msgstr ""
+
+#: ../../source/modules/index.rst:52
+msgid "Make nginx talk directly to mysql and drizzle"
+msgstr ""
+
+#: ../../source/modules/index.rst:52
+msgid ":github:`openresty/drizzle-nginx-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:54
+msgid "Dynamic etags"
+msgstr ""
+
+#: ../../source/modules/index.rst:54
+msgid "Nginx module for etags on dynamic content"
+msgstr ""
+
+#: ../../source/modules/index.rst:54
+msgid ":github:`kali/nginx-dynamic-etags`"
+msgstr ""
+
+#: ../../source/modules/index.rst:56
+msgid "Dynamic Upstream"
+msgstr ""
+
+#: ../../source/modules/index.rst:56
+msgid "Update upstreams' config by restful interface"
+msgstr ""
+
+#: ../../source/modules/index.rst:56
+msgid ":github:`yzprofile/ngx_http_dyups_module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:58
+msgid ":doc:`echo`"
+msgstr ""
+
+#: ../../source/modules/index.rst:58
+msgid "Provides familiar shell commands to nginx config files"
+msgstr ""
+
+#: ../../source/modules/index.rst:58
+msgid ":github:`openresty/echo-nginx-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:60
+msgid "Encrypted Session"
+msgstr ""
+
+#: ../../source/modules/index.rst:60
+msgid "Encrypt nginx variables for light-weight session-based authentication"
+msgstr ""
+
+#: ../../source/modules/index.rst:60
+msgid ":github:`openresty/encrypted-session-nginx-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:62
+msgid "Enhanced Memcached"
+msgstr ""
+
+#: ../../source/modules/index.rst:62
+msgid "Repackaging of the standard memcached module to add features"
+msgstr ""
+
+#: ../../source/modules/index.rst:62
+msgid ":github:`bpaquet/ngx_http_enhanced_memcached_module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:64
+msgid "Eval"
+msgstr ""
+
+#: ../../source/modules/index.rst:64
+msgid "A module for evaluating memcached or proxy response into variable"
+msgstr ""
+
+#: ../../source/modules/index.rst:64
+msgid ":github:`vkholodkov/nginx-eval-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:66
+msgid "Eval (agentzh's fork)"
+msgstr ""
+
+#: ../../source/modules/index.rst:66
+msgid "Captures arbitrary subrequest's responses into nginx variables"
+msgstr ""
+
+#: ../../source/modules/index.rst:66
+msgid ":github:`openresty/nginx-eval-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:68
+msgid ":doc:`extended_status`"
+msgstr ""
+
+#: ../../source/modules/index.rst:68
+msgid "Extended status module for nginx"
+msgstr ""
+
+#: ../../source/modules/index.rst:68
+msgid ":github:`zealot83/ngx_http_extended_status_module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:70
+msgid "EY Balancer"
+msgstr ""
+
+#: ../../source/modules/index.rst:70
+msgid "Provides a request queue for limiting concurrent requests"
+msgstr ""
+
+#: ../../source/modules/index.rst:70
+msgid ":github:`ezmobius/nginx-ey-balancer`"
+msgstr ""
+
+#: ../../source/modules/index.rst:72
+msgid ":doc:`fair_balancer`"
+msgstr ""
+
+#: ../../source/modules/index.rst:72
+msgid "Distributes incoming requests to least-busy servers"
+msgstr ""
+
+#: ../../source/modules/index.rst:72
+msgid ":github:`gnosek/nginx-upstream-fair`"
+msgstr ""
+
+#: ../../source/modules/index.rst:74
+msgid ":doc:`fancy_index`"
+msgstr ""
+
+#: ../../source/modules/index.rst:74
+msgid "Like the built-in autoindex module, but fancier"
+msgstr ""
+
+#: ../../source/modules/index.rst:74
+msgid ":github:`aperezdc/ngx-fancyindex`"
+msgstr ""
+
+#: ../../source/modules/index.rst:76
+msgid ":doc:`foot_filter`"
+msgstr ""
+
+#: ../../source/modules/index.rst:76
+msgid "Implements a body filter that adds a given string to the page footer"
+msgstr ""
+
+#: ../../source/modules/index.rst:76
+msgid ":github:`alibaba/nginx-http-footer-filter`"
+msgstr ""
+
+#: ../../source/modules/index.rst:78
+msgid "Footer If Filter"
+msgstr ""
+
+#: ../../source/modules/index.rst:78
+msgid "Applies a footer if a response meets a specified condition"
+msgstr ""
+
+#: ../../source/modules/index.rst:78
+msgid ":github:`flygoast/ngx_http_footer_if_filter/`"
+msgstr ""
+
+#: ../../source/modules/index.rst:80
+msgid ":doc:`form_input`"
+msgstr ""
+
+#: ../../source/modules/index.rst:80
+msgid "Parses HTTP POST request bodies and saves results to nginx variables"
+msgstr ""
+
+#: ../../source/modules/index.rst:80
+msgid ":github:`calio/form-input-nginx-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:82
+msgid "GeoIP2"
+msgstr ""
+
+#: ../../source/modules/index.rst:82
+msgid "City and country code lookups via the MaxMind GeoIP2 API"
+msgstr ""
+
+#: ../../source/modules/index.rst:82
+msgid ":github:`leev/ngx_http_geoip2_module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:84
+msgid "GridFS"
+msgstr ""
+
+#: ../../source/modules/index.rst:84
+msgid "Nginx module for serving files from MongoDB's GridFS"
+msgstr ""
+
+#: ../../source/modules/index.rst:84
+msgid ":github:`mdirolf/nginx-gridfs`"
+msgstr ""
+
+#: ../../source/modules/index.rst:86
+msgid ":doc:`groovy_handler`"
+msgstr ""
+
+#: ../../source/modules/index.rst:88
+msgid ":doc:`headers_more`"
+msgstr ""
+
+#: ../../source/modules/index.rst:88
+msgid "Set and clear input and output headers... more than \"add\"!"
+msgstr ""
+
+#: ../../source/modules/index.rst:88
+msgid ":github:`openresty/headers-more-nginx-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:90
+msgid ":doc:`healthcheck`"
+msgstr ""
+
+#: ../../source/modules/index.rst:90
+msgid "Health check HTTP servers inside an upstream"
+msgstr ""
+
+#: ../../source/modules/index.rst:90
+msgid ":github:`cep21/healthcheck_nginx_upstreams`"
+msgstr ""
+
+#: ../../source/modules/index.rst:92
+msgid "HTTP Accounting"
+msgstr ""
+
+#: ../../source/modules/index.rst:92
+msgid "Realtime netflow and status code monitoring"
+msgstr ""
+
+#: ../../source/modules/index.rst:92
+msgid ":github:`Lax/ngx_http_accounting_module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:94
+msgid "HTTP Push"
+msgstr ""
+
+#: ../../source/modules/index.rst:94
+msgid "Turns nginx into an adept long-polling HTTP Push server"
+msgstr ""
+
+#: ../../source/modules/index.rst:94
+msgid ":github:`slact/nginx_http_push_module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:96
+msgid ":doc:`iconv`"
+msgstr ""
+
+#: ../../source/modules/index.rst:96
+msgid "Converts character encodings"
+msgstr ""
+
+#: ../../source/modules/index.rst:96
+msgid ":github:`calio/iconv-nginx-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:98
+msgid "Internal Redirect"
+msgstr ""
+
+#: ../../source/modules/index.rst:98
+msgid "A nginx module for internal redirection"
+msgstr ""
+
+#: ../../source/modules/index.rst:98
+msgid ":github:`flygoast/ngx_http_internal_redirect/`"
+msgstr ""
+
+#: ../../source/modules/index.rst:100
+msgid "IP2Location"
+msgstr ""
+
+#: ../../source/modules/index.rst:100
+msgid "Identifies the country name/code of an IP address"
+msgstr ""
+
+#: ../../source/modules/index.rst:100
+msgid ":github:`chrislim2888/ip2location-nginx`"
+msgstr ""
+
+#: ../../source/modules/index.rst:102
+msgid ":doc:`java_handler`"
+msgstr ""
+
+#: ../../source/modules/index.rst:104
+msgid "JavaScript"
+msgstr ""
+
+#: ../../source/modules/index.rst:104
+msgid "Embedding SpiderMonkey, a full port of Perl module, and more"
+msgstr ""
+
+#: ../../source/modules/index.rst:104
+msgid ":github:`kung-fu-tzu/ngx_http_js_module#readme`"
+msgstr ""
+
+#: ../../source/modules/index.rst:106
+msgid ":doc:`keepalive`"
+msgstr ""
+
+#: ../../source/modules/index.rst:106
+msgid "Provides keep-alive connections to memcached upstreams"
+msgstr ""
+
+#: ../../source/modules/index.rst:106
+msgid "`Download <http://mdounin.ru/hg/ngx_http_upstream_keepalive>`__"
+msgstr ""
+
+#: ../../source/modules/index.rst:108
+msgid ":doc:`ketama_chash`"
+msgstr ""
+
+#: ../../source/modules/index.rst:108
+msgid "Provides upstream load distribution by hashing a configurable variable"
+msgstr ""
+
+#: ../../source/modules/index.rst:108
+msgid ":github:`flygoast/ngx_http_upstream_ketama_chash/releases/`"
+msgstr ""
+
+#: ../../source/modules/index.rst:110
+msgid "Limit Upload Rate"
+msgstr ""
+
+#: ../../source/modules/index.rst:110
+msgid "Limit the transmission rate of request body from a client"
+msgstr ""
+
+#: ../../source/modules/index.rst:110
+msgid ":github:`cfsego/limit_upload_rate`"
+msgstr ""
+
+#: ../../source/modules/index.rst:112
+msgid "Limit Upstream Connection"
+msgstr ""
+
+#: ../../source/modules/index.rst:112
+msgid "Limits the maximum connections to each server in a upstream"
+msgstr ""
+
+#: ../../source/modules/index.rst:112
+msgid ":github:`cfsego/nginx-limit-upstream/`"
+msgstr ""
+
+#: ../../source/modules/index.rst:114
+msgid "Log If"
+msgstr ""
+
+#: ../../source/modules/index.rst:114
+msgid "Log the requests only when given conditions are met"
+msgstr ""
+
+#: ../../source/modules/index.rst:114
+msgid ":github:`cfsego/ngx_log_if/`"
+msgstr ""
+
+#: ../../source/modules/index.rst:116
+msgid "Lower Upper Case"
+msgstr ""
+
+#: ../../source/modules/index.rst:116
+msgid "Provides upper/lowercase string functions in nginx config files"
+msgstr ""
+
+#: ../../source/modules/index.rst:116
+msgid ":github:`replay/ngx_http_lower_upper_case`"
+msgstr ""
+
+#: ../../source/modules/index.rst:118
+msgid ":doc:`lua`"
+msgstr ""
+
+#: ../../source/modules/index.rst:118 ../../source/modules/index.rst:120
+msgid "Embed the power of Lua into nginx"
+msgstr ""
+
+#: ../../source/modules/index.rst:118
+msgid ":github:`openresty/lua-nginx-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:120
+msgid "Luafile"
+msgstr ""
+
+#: ../../source/modules/index.rst:120
+msgid ":github:`alacner/nginx_lua_module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:122
+msgid "MD5 Filter"
+msgstr ""
+
+#: ../../source/modules/index.rst:122
+msgid "Returns the MD5 sum of content that would've otherwise been served"
+msgstr ""
+
+#: ../../source/modules/index.rst:122
+msgid ":github:`kainswor/nginx_md5_filter`"
+msgstr ""
+
+#: ../../source/modules/index.rst:124
+msgid ":doc:`memc`"
+msgstr ""
+
+#: ../../source/modules/index.rst:124
+msgid "Extension of the standard memcached module"
+msgstr ""
+
+#: ../../source/modules/index.rst:124
+msgid ":github:`openresty/memc-nginx-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:126
+msgid "ModSecurity"
+msgstr ""
+
+#: ../../source/modules/index.rst:126
+msgid "Web application firewall"
+msgstr ""
+
+#: ../../source/modules/index.rst:126
+msgid ":github:`spiderlabs/modsecurity/`"
+msgstr ""
+
+#: ../../source/modules/index.rst:128
+msgid "Mogilefs"
+msgstr ""
+
+#: ../../source/modules/index.rst:128
+msgid "Implements a MogileFS client"
+msgstr ""
+
+#: ../../source/modules/index.rst:128
+msgid ""
+"`Download "
+"<http://www.grid.net.ru/nginx/download/nginx_mogilefs_module-1.0.2.tar.gz>`__"
+msgstr ""
+
+#: ../../source/modules/index.rst:130
+msgid "Mongo"
+msgstr ""
+
+#: ../../source/modules/index.rst:130
+msgid "Upstream module for direct communication with MongoDB"
+msgstr ""
+
+#: ../../source/modules/index.rst:130
+msgid ":github:`simpl/ngx_mongo`"
+msgstr ""
+
+#: ../../source/modules/index.rst:132
+msgid ":doc:`mp4_streaming`"
+msgstr ""
+
+#: ../../source/modules/index.rst:132
+msgid "Seeks time within H.264/MP4 files if a \"start\" parameter is in the URL"
+msgstr ""
+
+#: ../../source/modules/index.rst:132
+msgid ""
+"`Download <http://i.6.cn/nginx_mp4_streaming_public_20081229.tar.bz2>`__"
+msgstr ""
+
+#: ../../source/modules/index.rst:134
+msgid "Naxsi"
+msgstr ""
+
+#: ../../source/modules/index.rst:134
+msgid "Web Application Firewall for nginx"
+msgstr ""
+
+#: ../../source/modules/index.rst:134
+msgid ":github:`nbs-system/naxsi`"
+msgstr ""
+
+#: ../../source/modules/index.rst:136
+msgid "Notice"
+msgstr ""
+
+#: ../../source/modules/index.rst:136
+msgid "Serve static file to POST requests"
+msgstr ""
+
+#: ../../source/modules/index.rst:136
+msgid ":github:`kr/nginx-notice`"
+msgstr ""
+
+#: ../../source/modules/index.rst:138
+msgid "OCSP proxy"
+msgstr ""
+
+#: ../../source/modules/index.rst:138
+msgid "OCSP processing module designed for response caching"
+msgstr ""
+
+#: ../../source/modules/index.rst:138
+msgid ":github:`kyprizel/nginx_ocsp_proxy-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:140
+msgid "OpenSSL Version"
+msgstr ""
+
+#: ../../source/modules/index.rst:140
+msgid "OpenSSL minimum version constraints in configuration"
+msgstr ""
+
+#: ../../source/modules/index.rst:140
+msgid ":github:`apcera/nginx-openssl-version`"
+msgstr ""
+
+#: ../../source/modules/index.rst:142
+msgid ":doc:`owner_match`"
+msgstr ""
+
+#: ../../source/modules/index.rst:142
+msgid "Provides a simple file owner-based access control"
+msgstr ""
+
+#: ../../source/modules/index.rst:142
+msgid "`Download <https://heiher.info/1755.html>`_"
+msgstr ""
+
+#: ../../source/modules/index.rst:144
+msgid "PageSpeed"
+msgstr ""
+
+#: ../../source/modules/index.rst:144
+msgid ""
+"Rewrites webpages and associated assets to reduce latency and bandwidth"
+msgstr ""
+
+#: ../../source/modules/index.rst:144
+msgid ":github:`pagespeed/ngx_pagespeed`"
+msgstr ""
+
+#: ../../source/modules/index.rst:146
+msgid "PHP Session Parser"
+msgstr ""
+
+#: ../../source/modules/index.rst:146
+msgid "Extract values that are stored in a serialized PHP session"
+msgstr ""
+
+#: ../../source/modules/index.rst:146
+msgid ":github:`replay/ngx_http_php_session`"
+msgstr ""
+
+#: ../../source/modules/index.rst:148
+msgid "PHP-Memache Standard Hash"
+msgstr ""
+
+#: ../../source/modules/index.rst:148
+msgid "Load balancer that imitates the PHP-Memcache standard hash's behaviour"
+msgstr ""
+
+#: ../../source/modules/index.rst:148
+msgid ":github:`replay/ngx_http_php_memcache_standard_balancer`"
+msgstr ""
+
+#: ../../source/modules/index.rst:150
+msgid "Postgres"
+msgstr ""
+
+#: ../../source/modules/index.rst:150
+msgid "Allows nginx to communicate directly with PostgreSQL database"
+msgstr ""
+
+#: ../../source/modules/index.rst:150
+msgid "`Download <http://labs.frickle.com/nginx_ngx_postgres>`__"
+msgstr ""
+
+#: ../../source/modules/index.rst:152
+msgid "Pubcookie"
+msgstr ""
+
+#: ../../source/modules/index.rst:152
+msgid "Adds Pubcookie-based cross-site authentication method to nginx"
+msgstr ""
+
+#: ../../source/modules/index.rst:152
+msgid "`Download <http://www.vanko.me/book/page/pubcookie-module-nginx>`__"
+msgstr ""
+
+#: ../../source/modules/index.rst:154
+msgid ":doc:`push_stream`"
+msgstr ""
+
+#: ../../source/modules/index.rst:154
+msgid "Turns nginx into an adept stream HTTP Push server"
+msgstr ""
+
+#: ../../source/modules/index.rst:154
+msgid ":github:`wandenberg/nginx-push-stream-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:156
+msgid ":doc:`rdns`"
+msgstr ""
+
+#: ../../source/modules/index.rst:156
+msgid "Makes a reverse DNS lookup and provides control of incoming hostname"
+msgstr ""
+
+#: ../../source/modules/index.rst:156
+msgid ":github:`flant/nginx-http-rdns`"
+msgstr ""
+
+#: ../../source/modules/index.rst:158
+msgid "RDS CSV"
+msgstr ""
+
+#: ../../source/modules/index.rst:158
+msgid ""
+"Helps ngx_drizzle, ngx_postgres, and others emit Comma-Separated Values"
+msgstr ""
+
+#: ../../source/modules/index.rst:158
+msgid ":github:`openresty/rds-csv-nginx-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:160
+msgid "RDS JSON"
+msgstr ""
+
+#: ../../source/modules/index.rst:160
+msgid "Helps ngx_drizzle, ngx_postgres, and others emit JSON data"
+msgstr ""
+
+#: ../../source/modules/index.rst:160
+msgid ":github:`openresty/rds-json-nginx-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:162
+msgid ":doc:`redis`"
+msgstr ""
+
+#: ../../source/modules/index.rst:162
+msgid "Redis support module"
+msgstr ""
+
+#: ../../source/modules/index.rst:162
+msgid ""
+"`Download <http://people.FreeBSD.ORG/~osa/ngx_http_redis-0.3.5.tar.gz>`__"
+msgstr ""
+
+#: ../../source/modules/index.rst:164
+msgid ":doc:`redis2`"
+msgstr ""
+
+#: ../../source/modules/index.rst:164
+msgid "Upstream module for the full Redis 2.0 protocol"
+msgstr ""
+
+#: ../../source/modules/index.rst:164
+msgid ":github:`openresty/redis2-nginx-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:166
+msgid "Replace Filter"
+msgstr ""
+
+#: ../../source/modules/index.rst:166
+msgid "Performs regular expression substitutions on response bodies"
+msgstr ""
+
+#: ../../source/modules/index.rst:166
+msgid ":github:`openresty/replace-filter-nginx-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:168
+msgid "Roboo"
+msgstr ""
+
+#: ../../source/modules/index.rst:168
+msgid "HTTP Robot Mitigator that integrates easily with Nginx"
+msgstr ""
+
+#: ../../source/modules/index.rst:168
+msgid ":github:`yuri-gushin/Roboo/downloads`"
+msgstr ""
+
+#: ../../source/modules/index.rst:170
+msgid ":doc:`rrd_graph`"
+msgstr ""
+
+#: ../../source/modules/index.rst:170
+msgid ""
+"This module provides an HTTP interface to RRDtool's graphing facilities"
+msgstr ""
+
+#: ../../source/modules/index.rst:170
+msgid ":github:`evanmiller/mod_rrd_graph`"
+msgstr ""
+
+#: ../../source/modules/index.rst:172
+msgid "RTMP"
+msgstr ""
+
+#: ../../source/modules/index.rst:172
+msgid "RTMP protocol support. Live streaming and video on demand"
+msgstr ""
+
+#: ../../source/modules/index.rst:172
+msgid ":github:`arut/nginx-rtmp-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:174
+msgid "Sass"
+msgstr ""
+
+#: ../../source/modules/index.rst:174
+msgid "Compiles SASS files in nginx before sending the response"
+msgstr ""
+
+#: ../../source/modules/index.rst:174
+msgid ":github:`mneudert/sass-nginx-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:176
+msgid ":doc:`secure_download`"
+msgstr ""
+
+#: ../../source/modules/index.rst:176
+msgid "Create expiring links"
+msgstr ""
+
+#: ../../source/modules/index.rst:176
+msgid ":github:`replay/ngx_http_secure_download`"
+msgstr ""
+
+#: ../../source/modules/index.rst:178
+msgid "Selective Cache Purge"
+msgstr ""
+
+#: ../../source/modules/index.rst:178
+msgid "A cache purge module that allows GLOB expressions like *.jpg or /test*"
+msgstr ""
+
+#: ../../source/modules/index.rst:178
+msgid ":github:`wandenberg/nginx-selective-cache-purge-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:180
+msgid "Set CConv"
+msgstr ""
+
+#: ../../source/modules/index.rst:180
+msgid "Conversion between Simplified and Traditional Chinese at rewrite phase"
+msgstr ""
+
+#: ../../source/modules/index.rst:180
+msgid ":github:`liseen/set-cconv-nginx-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:182
+msgid "Set Hash"
+msgstr ""
+
+#: ../../source/modules/index.rst:182
+msgid "Set a variable to hash functions, including MD5, SHA1 and Murmurhash 2"
+msgstr ""
+
+#: ../../source/modules/index.rst:182
+msgid ":github:`simpl/ngx_http_set_hash`"
+msgstr ""
+
+#: ../../source/modules/index.rst:184
+msgid "Set Lang"
+msgstr ""
+
+#: ../../source/modules/index.rst:184
+msgid "Set a variable to indicate the language based on a variety of sources"
+msgstr ""
+
+#: ../../source/modules/index.rst:184
+msgid ":github:`simpl/ngx_http_set_lang/downloads`"
+msgstr ""
+
+#: ../../source/modules/index.rst:186
+msgid ":doc:`set_misc`"
+msgstr ""
+
+#: ../../source/modules/index.rst:186
+msgid "Various set_xxx directives added to nginx's rewrite module"
+msgstr ""
+
+#: ../../source/modules/index.rst:186
+msgid ":github:`openresty/set-misc-nginx-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:188
+msgid "sFlow"
+msgstr ""
+
+#: ../../source/modules/index.rst:188
+msgid "Operational performance monitoring with standard sFlow protocol"
+msgstr ""
+
+#: ../../source/modules/index.rst:188
+msgid ""
+"`Download <http://code.google.com/p/nginx-sflow-module/downloads/list>`__"
+msgstr ""
+
+#: ../../source/modules/index.rst:190
+msgid ":doc:`slice`"
+msgstr ""
+
+#: ../../source/modules/index.rst:190
+msgid "Nginx module for serving a file in slices (reverse byte-range)"
+msgstr ""
+
+#: ../../source/modules/index.rst:190
+msgid ":github:`alibaba/nginx-http-slice`"
+msgstr ""
+
+#: ../../source/modules/index.rst:192
+msgid "SlowFS Cache"
+msgstr ""
+
+#: ../../source/modules/index.rst:192
+msgid "Adds ability to cache static files"
+msgstr ""
+
+#: ../../source/modules/index.rst:192
+msgid "`Download <http://labs.frickle.com/nginx_ngx_slowfs_cache>`__"
+msgstr ""
+
+#: ../../source/modules/index.rst:194
+msgid "SmallLight"
+msgstr ""
+
+#: ../../source/modules/index.rst:194
+msgid "Dynamic Image Transformation Module For nginx"
+msgstr ""
+
+#: ../../source/modules/index.rst:194
+msgid ":github:`cubicdaiya/ngx_small_light`"
+msgstr ""
+
+#: ../../source/modules/index.rst:196
+msgid "Sphinx"
+msgstr ""
+
+#: ../../source/modules/index.rst:196
+msgid "Nginx upstream module for Sphinx 2.x"
+msgstr ""
+
+#: ../../source/modules/index.rst:196
+msgid ":github:`reeteshranjan/sphinx2-nginx-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:198
+msgid "SPNEGO"
+msgstr ""
+
+#: ../../source/modules/index.rst:198
+msgid "Support for SPNEGO/gssapi in nginx"
+msgstr ""
+
+#: ../../source/modules/index.rst:198
+msgid ":github:`stnoonan/spnego-http-auth-nginx-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:200
+msgid ":doc:`sr_cache`"
+msgstr ""
+
+#: ../../source/modules/index.rst:200
+msgid "Transparent subrequest-based caching layout for nginx locations"
+msgstr ""
+
+#: ../../source/modules/index.rst:200
+msgid ":github:`openresty/srcache-nginx-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:202
+msgid "Static etags"
+msgstr ""
+
+#: ../../source/modules/index.rst:202
+msgid "Generates etags for static content"
+msgstr ""
+
+#: ../../source/modules/index.rst:202
+msgid ":github:`mikewest/nginx-static-etags`"
+msgstr ""
+
+#: ../../source/modules/index.rst:204
+msgid "Statsd"
+msgstr ""
+
+#: ../../source/modules/index.rst:204
+msgid "Adds the ability for Nginx to interacting with Statsd"
+msgstr ""
+
+#: ../../source/modules/index.rst:204
+msgid ":github:`zebrafishlabs/nginx-statsd`"
+msgstr ""
+
+#: ../../source/modules/index.rst:206
+msgid "Sticky upstream"
+msgstr ""
+
+#: ../../source/modules/index.rst:206
+msgid "Adds an upstream server persistance using cookies"
+msgstr ""
+
+#: ../../source/modules/index.rst:206
+msgid ":bitbucket:`nginx-goodies/nginx-sticky-module-ng/get/master.tar.gz`"
+msgstr ""
+
+#: ../../source/modules/index.rst:208
+msgid "Subrange"
+msgstr ""
+
+#: ../../source/modules/index.rst:208
+msgid "Split one big HTTP/Range request to multiple subrange requesets"
+msgstr ""
+
+#: ../../source/modules/index.rst:208
+msgid ":github:`Qihoo360/ngx_http_subrange_module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:210
+msgid ":doc:`substitutions`"
+msgstr ""
+
+#: ../../source/modules/index.rst:210
+msgid ""
+"Performs regular expression and string substitutions on response bodies"
+msgstr ""
+
+#: ../../source/modules/index.rst:210
+msgid ":github:`yaoweibin/ngx_http_substitutions_filter_module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:212
+msgid "Summarizer"
+msgstr ""
+
+#: ../../source/modules/index.rst:212
+msgid "An upstream module for Summarizer 1.0"
+msgstr ""
+
+#: ../../source/modules/index.rst:212
+msgid ":github:`reeteshranjan/summarizer-nginx-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:214
+msgid "Supervisord"
+msgstr ""
+
+#: ../../source/modules/index.rst:214
+msgid "Communicate with supervisord and manage backends on-demand"
+msgstr ""
+
+#: ../../source/modules/index.rst:214
+msgid "`Download <http://labs.frickle.com/nginx_ngx_supervisord>`__"
+msgstr ""
+
+#: ../../source/modules/index.rst:216
+msgid "SysGuard"
+msgstr ""
+
+#: ../../source/modules/index.rst:216
+msgid "Protects servers when system load or memory use goes too high"
+msgstr ""
+
+#: ../../source/modules/index.rst:216
+msgid ":github:`alibaba/nginx-http-sysguard`"
+msgstr ""
+
+#: ../../source/modules/index.rst:218
+msgid "TCP Proxy"
+msgstr ""
+
+#: ../../source/modules/index.rst:218
+msgid "TCP proxy with nginx, includes health check and status monitor"
+msgstr ""
+
+#: ../../source/modules/index.rst:218
+msgid ":github:`yaoweibin/nginx_tcp_proxy_module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:220
+msgid "TestCookie module"
+msgstr ""
+
+#: ../../source/modules/index.rst:220
+msgid "Simple robot (DDoS) mitigation module"
+msgstr ""
+
+#: ../../source/modules/index.rst:220
+msgid ":github:`kyprizel/testcookie-nginx-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:222
+msgid "Types Filter"
+msgstr ""
+
+#: ../../source/modules/index.rst:222
+msgid "Changes the *Content-Type* output header on specified conditions"
+msgstr ""
+
+#: ../../source/modules/index.rst:222
+msgid ":github:`flygoast/ngx_http_types_filter`"
+msgstr ""
+
+#: ../../source/modules/index.rst:224
+msgid "UnZip"
+msgstr ""
+
+#: ../../source/modules/index.rst:224
+msgid "serve file directly from the archives"
+msgstr ""
+
+#: ../../source/modules/index.rst:224
+msgid ":github:`youzee/nginx-unzip-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:226
+msgid ":doc:`upload`"
+msgstr ""
+
+#: ../../source/modules/index.rst:226
+msgid "Handles file uploads using multipart/form-data encoding (RFC 1867)"
+msgstr ""
+
+#: ../../source/modules/index.rst:226
+msgid ":github:`vkholodkov/nginx-upload-module/tree/2.2`"
+msgstr ""
+
+#: ../../source/modules/index.rst:228
+msgid "Url"
+msgstr ""
+
+#: ../../source/modules/index.rst:228
+msgid "A module to convert uri to user-defined encoding"
+msgstr ""
+
+#: ../../source/modules/index.rst:228
+msgid ":github:`vozlt/nginx-module-url`"
+msgstr ""
+
+#: ../../source/modules/index.rst:230
+msgid ":doc:`user_agent`"
+msgstr ""
+
+#: ../../source/modules/index.rst:230
+msgid "A more powerful module than the native BrowserModule"
+msgstr ""
+
+#: ../../source/modules/index.rst:230
+msgid ":github:`alibaba/nginx-http-user-agent`"
+msgstr ""
+
+#: ../../source/modules/index.rst:232
+msgid "Video Thumb Extractor"
+msgstr ""
+
+#: ../../source/modules/index.rst:232
+msgid "Nginx module to extract thumbs from a video file"
+msgstr ""
+
+#: ../../source/modules/index.rst:232
+msgid ":github:`wandenberg/nginx-video-thumbextractor-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:234
+msgid "VTS"
+msgstr ""
+
+#: ../../source/modules/index.rst:234
+msgid "A virtual host and upstream traffic status module"
+msgstr ""
+
+#: ../../source/modules/index.rst:234
+msgid ":github:`vozlt/nginx-module-vts`"
+msgstr ""
+
+#: ../../source/modules/index.rst:236
+msgid "XSS"
+msgstr ""
+
+#: ../../source/modules/index.rst:236
+msgid "Native support for cross-site scripting (XSS)"
+msgstr ""
+
+#: ../../source/modules/index.rst:236
+msgid ":github:`openresty/xss-nginx-module`"
+msgstr ""
+
+#: ../../source/modules/index.rst:238
+msgid ":doc:`zip`"
+msgstr ""
+
+#: ../../source/modules/index.rst:238
+msgid "Assemble ZIP archives on the fly"
+msgstr ""
+
+#: ../../source/modules/index.rst:238
+msgid ":github:`evanmiller/mod_zip/`"
+msgstr ""

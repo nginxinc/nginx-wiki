@@ -1,0 +1,664 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/headers_more.rst:2
+msgid "Headers More"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:5
+msgid "Name"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:6
+msgid ""
+"**ngx_headers_more** - Set and clear input and output headers... more than "
+"\"add\"!"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:8
+msgid ""
+"*This module is not distributed with the Nginx source.* See the "
+"`installation instructions <headers_more.installation_>`_."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:13
+msgid "Version"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:14
+msgid ""
+"This document describes headers-more-nginx-module :github:`v0.25 <openresty"
+"/headers-more-nginx-module/tags>` released on January 10, 2014."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:19
+msgid "Synopsis"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:58
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:59
+msgid ""
+"This module allows you to add, set, or clear any output or input header that"
+" you specify."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:61
+msgid ""
+"This is an enhanced version of the standard `headers "
+"<http://nginx.org/en/docs/http/ngx_http_headers_module.html>`_ module "
+"because it provides more utilities like resetting or clearing \"builtin "
+"headers\" like ``Content-Type``, ``Content-Length``, and ``Server``."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:63
+msgid ""
+"It also allows you to specify an optional HTTP status code criteria using "
+"the ``-s`` option and an optional content type criteria using the ``-t`` "
+"option while modifying the output headers with the `more_set_headers`_ and "
+"`more_clear_headers`_ directives. For example,"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:70
+msgid "Input headers can be modified as well. For example,"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:81
+msgid ""
+"The option ``-t`` is also available in the `more_set_input_headers`_ and "
+"`more_clear_input_headers`_ directives (for request header filtering) while "
+"the ``-s`` option is not allowed."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:83
+msgid ""
+"Unlike the standard `headers "
+"<http://nginx.org/en/docs/http/ngx_http_headers_module.html>`_ module, this "
+"module's directives will by default apply to all the status codes, including"
+" ``4xx`` and ``5xx``."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:88
+msgid "Directives"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:91
+msgid "more_set_headers"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:92
+msgid ""
+"*more_set_headers [-t <content-type list>]... [-s <status-code list>]... "
+"<new-header>...*"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:93
+#: ../../source/modules/headers_more.rst:171
+#: ../../source/modules/headers_more.rst:215
+#: ../../source/modules/headers_more.rst:232
+msgid "*none*"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:94
+#: ../../source/modules/headers_more.rst:172
+#: ../../source/modules/headers_more.rst:216
+#: ../../source/modules/headers_more.rst:233
+msgid "*http, server, location, location if*"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:95
+#: ../../source/modules/headers_more.rst:173
+msgid "*output-header-filter*"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:97
+msgid ""
+"Replaces (if any) or adds (if not any) the specified output headers when the"
+" response status code matches the codes specified by the ``-s`` option *AND*"
+" the response content type matches the types specified by the ``-t`` option."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:99
+msgid ""
+"If either ``-s`` or ``-t`` is not specified or has an empty list value, then"
+" no match is required. Therefore, the following directive set the ``Server``"
+" output header to the custom value for *any* status code and *any* content "
+"type:"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:106
+msgid ""
+"Existing response headers with the same name are always overridden. If you "
+"want to add headers incrementally, use the standard `add_header "
+"<http://nginx.org/en/docs/http/ngx_http_headers_module.html#add_header>`_ "
+"directive instead."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:108
+msgid "A single directive can set/add multiple output headers. For example"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:115
+msgid ""
+"Multiple occurrences of the options are allowed in a single directive. Their"
+" values will be merged together. For instance"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:122
+msgid "is equivalent to"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:129
+msgid "The new header should be the one of the forms:"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:131
+msgid "``Name: Value``"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:132
+msgid "``Name:``"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:133
+msgid "``Name``"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:135
+msgid "The last two effectively clear the value of the header ``Name``."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:137
+msgid "Nginx variables are allowed in header values. For example:"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:145
+msgid ""
+"But variables won't work in header keys due to performance considerations."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:147
+msgid ""
+"Multiple set/clear header directives are allowed in a single location, and "
+"they're executed sequentially."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:149
+msgid ""
+"Directives inherited from an upper level scope (say, http block or server "
+"blocks) are executed before the directives in the location block."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:151
+msgid ""
+"Note that although ``more_set_headers`` is allowed in *location* if blocks, "
+"it is *not* allowed in the *server* if blocks, as in"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:164
+msgid ""
+"Behind the scene, use of this directive and its friend `more_clear_headers`_"
+" will (lazily) register an ouput header filter that modifies "
+"``r->headers_out`` the way you specify."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:169
+msgid "more_clear_headers"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:170
+msgid ""
+"*more_clear_headers [-t <content-type list>]... [-s <status-code list>]... "
+"<new-header>...*"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:175
+msgid "Clears the specified output headers."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:177
+#: ../../source/modules/headers_more.rst:238
+msgid "In fact,"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:184
+#: ../../source/modules/headers_more.rst:245
+msgid "is exactly equivalent to"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:191
+#: ../../source/modules/headers_more.rst:252
+msgid "or"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:198
+msgid "See `more_set_headers`_ for more details."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:201
+msgid ""
+"Wildcard ``*`` can also be used to specify a header name pattern. For "
+"example, the following directive effectively clears *any* output headers "
+"starting by \"``X-Hidden-``\":"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:208
+msgid ""
+"The ``*`` wildcard support was first introduced in :github:`v0.09 <openresty"
+"/headers-more-nginx-module/tags>`"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:213
+msgid "more_set_input_headers"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:214
+msgid ""
+"*more_set_input_headers [-r] [-t <content-type list>]... <new-header>...*"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:217
+#: ../../source/modules/headers_more.rst:234
+msgid "*rewrite tail*"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:219
+msgid ""
+"Very much like more_set_headers_ except that it operates on input headers "
+"(or request headers) and it only supports the ``-t`` option."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:221
+msgid ""
+"Note that using the ``-t`` option in this directive means filtering by the "
+"``Content-Type`` *request* header, rather than the response header."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:223
+msgid ""
+"Behind the scene, use of this directive and its friend "
+"`more_clear_input_headers`_ will (lazily) register a ``rewrite phase`` "
+"handler that modifies ``r->headers_in`` the way you specify. Note that it "
+"always runs at the *end* of the ``rewrite`` so that it runs *after* the "
+"standard `rewrite module "
+"<http://nginx.org/en/docs/http/ngx_http_rewrite_module.html>`_ and works in "
+"subrequests as well."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:225
+msgid ""
+"If the ``-r`` option is specified, then the headers will be replaced to the "
+"new values *only if* they already exist."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:230
+msgid "more_clear_input_headers"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:231
+msgid "*more_clear_input_headers [-t <content-type list>]... <new-header>...*"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:236
+msgid "Clears the specified input headers."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:259
+msgid "See `more_set_input_headers`_ for more details."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:264
+msgid "Limitations"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:265
+msgid ""
+"Unlike the standard `headers "
+"<http://nginx.org/en/docs/http/ngx_http_headers_module.html>`_ module, this "
+"module does not automatically take care of the constraint among the "
+"``Expires``, ``Cache-Control``, and ``Last-Modified`` headers. You have to "
+"get them right yourself or use the `headers "
+"<http://nginx.org/en/docs/http/ngx_http_headers_module.html>`_  module "
+"together with this module."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:267
+msgid ""
+"You cannot remove the ``Connection`` response header using this module "
+"because the ``Connection`` response header is generated by the standard "
+"``ngx_http_header_filter_module`` in the Nginx core, whose output header "
+"filter runs always *after* the filter of this module. The only way to "
+"actually remove the ``Connection`` header is to patch the Nginx core, that "
+"is, editing the C function ``ngx_http_header_filter`` in the "
+"``src/http/ngx_http_header_filter_module.c`` file."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:274
+msgid "Installation"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:275
+msgid ""
+"Grab the nginx source code from `nginx.org <http://nginx.org/>`_, for "
+"example, the version 1.7.7 (see `nginx compatibility "
+"<headers_more.compatibility_>`_), and then build the source with this "
+"module:"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:291
+msgid ""
+"Download the latest version of the release tarball of this module from "
+":github:`headers-more-nginx-module file list <openresty/headers-more-nginx-"
+"module/tags>`"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:293
+msgid ""
+"Also, this module is included and enabled by default in the `ngx_openresty "
+"bundle <http://openresty.org>`__."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:300
+msgid "Compatibility"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:301
+msgid "The following versions of Nginx should work with this module:"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:303
+msgid "**1.7.x**                (last tested: 1.7.7)"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:304
+msgid "**1.6.x**                (last tested: 1.6.2)"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:305
+msgid "**1.5.x**                (last tested: 1.5.8)"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:306
+msgid "**1.4.x**                (last tested: 1.4.4)"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:307
+msgid "**1.3.x**                (last tested: 1.3.7)"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:308
+msgid "**1.2.x**                (last tested: 1.2.9)"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:309
+msgid "**1.1.x**                (last tested: 1.1.5)"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:310
+msgid "**1.0.x**                (last tested: 1.0.11)"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:311
+msgid "**0.9.x**                (last tested: 0.9.4)"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:312
+msgid "**0.8.x**                (last tested: 0.8.54)"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:313
+msgid "**0.7.x >= 0.7.44**      (last tested: 0.7.68)"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:315
+msgid "Earlier versions of Nginx like 0.6.x and 0.5.x will *not* work."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:317
+msgid ""
+"If you find that any particular version of Nginx above 0.7.44 does not work "
+"with this module, please consider `reporting a bug <headers_more.bug-"
+"reporting_>`_."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:324
+msgid "Community"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:326
+msgid "English Mailing List"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:327
+msgid ""
+"The `openresty-en <https://groups.google.com/forum/#!forum/openresty-en>`_ "
+"mailing list is for English speakers."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:331
+msgid "Chinese Mailing List"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:332
+msgid ""
+"The `openresty <https://groups.google.com/forum/#!forum/openresty>`_ mailing"
+" list is for Chinese speakers."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:339
+msgid "Bugs and Patches"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:340
+msgid "Please submit bug reports, wishlists, or patches by"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:342
+msgid ""
+"creating a ticket on the :github:`GitHub Issue Tracker <openresty/lua-nginx-"
+"module/issues>`"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:343
+msgid "or posting to the `OpenResty community <headers_more.community_>`_."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:350
+msgid "Source Repository"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:352
+msgid "Available on GitHub at :github:`openresty/headers-more-nginx-module`"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:357
+msgid "Changes"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:359
+msgid ""
+"The changes of every release of this module can be obtained from the "
+"ngx_openresty bundle's change logs::"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:366
+msgid "Test Suite"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:368
+msgid ""
+"This module comes with a Perl-driven test suite. The :github:`test cases "
+"<openresty/headers-more-nginx-module/tree/master/t/>` are "
+":github:`declarative <openresty/headers-more-nginx-"
+"module/blob/master/t/sanity.t>` too. Thanks to the `Test::Nginx "
+"<http://search.cpan.org/perldoc?Test::Nginx>`_ module in the Perl world."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:370
+msgid "To run it on your side:"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:377
+msgid ""
+"To run the test suite with valgrind's memcheck, use the following commands:"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:385
+msgid ""
+"You need to terminate any Nginx processes before running the test suite if "
+"you have changed the Nginx server binary."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:387
+msgid ""
+"Because a single nginx server (by default, ``localhost:1984``) is used "
+"across all the test scripts (``.t`` files), it's meaningless to run the test"
+" suite in parallel by specifying ``-jN`` when invoking the ``prove`` "
+"utility."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:389
+msgid ""
+"Some parts of the test suite requires modules `proxy "
+"<http://nginx.org/en/docs/http/ngx_http_proxy_module.html>`_, `rewrite "
+"<http://nginx.org/en/docs/http/ngx_http_rewrite_module.html>`_, and "
+":doc:`echo <echo>` to be enabled as well when building Nginx."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:394
+msgid "TODO"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:396
+msgid "Support variables in new headers' keys."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:401
+msgid "Getting involved"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:403
+msgid ""
+"You'll be very welcomed to submit patches to the `author "
+"<headers_more.author_>`_ or just ask for a commit bit to the `source "
+"repository <headers_more.source-repository_>`_ on GitHub."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:412
+msgid "Authors"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:414
+msgid "Yichun \"agentzh\" Zhang (章亦春) *<agentzh@gmail.com>*, CloudFlare Inc."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:415
+msgid "Bernd Dorn ( http://www.lovelysystems.com/ )"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:417
+msgid ""
+"This wiki page is also maintained by the author himself, and everybody is "
+"encouraged to improve this page as well."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:423
+msgid "Copyright & License"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:425
+msgid ""
+"The code base is borrowed directly from the standard `headers "
+"<http://nginx.org/en/docs/http/ngx_http_headers_module.html>`_ module in "
+"Nginx 0.8.24. This part of code is copyrighted by Igor Sysoev."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:429
+msgid ""
+"Copyright (c) 2009-2014, Yichun \"agentzh\" Zhang (章亦春) <agentzh@gmail.com>,"
+" CloudFlare Inc."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:432
+msgid "Copyright (c) 2010-2013, Bernd Dorn."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:434
+msgid "This module is licensed under the terms of the BSD license."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:436
+msgid ""
+"Redistribution and use in source and binary forms, with or without "
+"modification, are permitted provided that the following conditions are met:"
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:440
+msgid ""
+"Redistributions of source code must retain the above copyright notice, this "
+"list of conditions and the following disclaimer."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:443
+msgid ""
+"Redistributions in binary form must reproduce the above copyright notice, "
+"this list of conditions and the following disclaimer in the documentation "
+"and/or other materials provided with the distribution."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:447
+msgid ""
+"THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS "
+"IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, "
+"THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR "
+"PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR "
+"CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, "
+"EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, "
+"PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; "
+"OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, "
+"WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR "
+"OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF "
+"ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:463
+msgid ""
+"The original thread on the Nginx mailing list that inspires this module's "
+"development: `\"A question about add_header replication\" "
+"<http://forum.nginx.org/read.php?2,11206,11738>`_."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:465
+msgid ""
+"The orginal announcement thread on the Nginx mailing list: `\"The "
+"\"headers_more\" module: Set and clear output headers...more than 'add'!\" "
+"<http://forum.nginx.org/read.php?2,23460>`_."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:467
+msgid ""
+"The original `blog post <http://agentzh.blogspot.com/2009/11/headers-more-"
+"module-scripting-input-and.html>`_ about this module's initial development."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:469
+msgid "The :doc:`echo module <echo>` for Nginx module's automated testing."
+msgstr ""
+
+#: ../../source/modules/headers_more.rst:470
+msgid ""
+"The standard `headers "
+"<http://nginx.org/en/docs/http/ngx_http_headers_module.html>`_ module."
+msgstr ""

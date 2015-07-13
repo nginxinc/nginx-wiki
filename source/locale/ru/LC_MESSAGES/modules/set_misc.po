@@ -1,0 +1,1157 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/set_misc.rst:2
+msgid "Set Misc"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:5
+msgid "Name"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:6
+msgid ""
+"**ngx_set_misc** - Various set_xxx directives added to nginx's rewrite "
+"module (md5/sha1, sql/json quoting, and many more)."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:8
+msgid ""
+"*This module is not distributed with the Nginx source.* See the`installation"
+" instructions <set_misc.installation_>`_."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:13
+msgid "Version"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:14
+msgid ""
+"This document describes ngx_set_misc :github:`v0.28 <openresty/set-misc-"
+"nginx-module/tags>` released on January 21, 2015."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:19
+msgid "Synopsis"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:150
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:151
+msgid ""
+"This module extends the standard HttpRewriteModule's directive set to "
+"provide more functionalities like URI escaping and unescaping, JSON quoting,"
+" Hexadecimal/MD5/SHA1/Base32/Base64 digest encoding and decoding, random "
+"number generator, and more!"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:153
+msgid ""
+"Every directive provided by this module can be mixed freely with other "
+"|HttpRewriteModule|'s directives, like `if <|HttpRewriteModule|#if>`_ and "
+"`set <|HttpRewriteModule|#set>`_. (Thanks to the :github:`Nginx Devel Kit "
+"<simpl/ngx_devel_kit>`)"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:158
+msgid "Directives"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:161
+msgid "set_if_empty"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:162
+msgid "*set_if_empty $dst <src>*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:163 ../../source/modules/set_misc.rst:193
+#: ../../source/modules/set_misc.rst:246 ../../source/modules/set_misc.rst:258
+#: ../../source/modules/set_misc.rst:305 ../../source/modules/set_misc.rst:354
+#: ../../source/modules/set_misc.rst:365 ../../source/modules/set_misc.rst:399
+#: ../../source/modules/set_misc.rst:461 ../../source/modules/set_misc.rst:475
+#: ../../source/modules/set_misc.rst:486 ../../source/modules/set_misc.rst:499
+#: ../../source/modules/set_misc.rst:511 ../../source/modules/set_misc.rst:559
+#: ../../source/modules/set_misc.rst:571 ../../source/modules/set_misc.rst:621
+#: ../../source/modules/set_misc.rst:633 ../../source/modules/set_misc.rst:683
+#: ../../source/modules/set_misc.rst:735 ../../source/modules/set_misc.rst:771
+#: ../../source/modules/set_misc.rst:808 ../../source/modules/set_misc.rst:839
+#: ../../source/modules/set_misc.rst:870 ../../source/modules/set_misc.rst:918
+#: ../../source/modules/set_misc.rst:949 ../../source/modules/set_misc.rst:979
+msgid "*none*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:164 ../../source/modules/set_misc.rst:194
+#: ../../source/modules/set_misc.rst:247 ../../source/modules/set_misc.rst:259
+#: ../../source/modules/set_misc.rst:306 ../../source/modules/set_misc.rst:355
+#: ../../source/modules/set_misc.rst:366 ../../source/modules/set_misc.rst:400
+#: ../../source/modules/set_misc.rst:500 ../../source/modules/set_misc.rst:512
+#: ../../source/modules/set_misc.rst:560 ../../source/modules/set_misc.rst:572
+#: ../../source/modules/set_misc.rst:622 ../../source/modules/set_misc.rst:634
+#: ../../source/modules/set_misc.rst:684 ../../source/modules/set_misc.rst:736
+#: ../../source/modules/set_misc.rst:772 ../../source/modules/set_misc.rst:809
+#: ../../source/modules/set_misc.rst:840 ../../source/modules/set_misc.rst:871
+#: ../../source/modules/set_misc.rst:919 ../../source/modules/set_misc.rst:950
+#: ../../source/modules/set_misc.rst:980
+msgid "*location, location if*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:165 ../../source/modules/set_misc.rst:195
+#: ../../source/modules/set_misc.rst:248 ../../source/modules/set_misc.rst:260
+#: ../../source/modules/set_misc.rst:307 ../../source/modules/set_misc.rst:356
+#: ../../source/modules/set_misc.rst:367 ../../source/modules/set_misc.rst:401
+#: ../../source/modules/set_misc.rst:501 ../../source/modules/set_misc.rst:513
+#: ../../source/modules/set_misc.rst:561 ../../source/modules/set_misc.rst:573
+#: ../../source/modules/set_misc.rst:623 ../../source/modules/set_misc.rst:635
+#: ../../source/modules/set_misc.rst:685 ../../source/modules/set_misc.rst:737
+#: ../../source/modules/set_misc.rst:773 ../../source/modules/set_misc.rst:810
+#: ../../source/modules/set_misc.rst:841 ../../source/modules/set_misc.rst:872
+#: ../../source/modules/set_misc.rst:920 ../../source/modules/set_misc.rst:951
+#: ../../source/modules/set_misc.rst:981
+msgid "*rewrite*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:167
+msgid ""
+"Assign the value of the argument ``<src>`` if and only if variable ``$dst`` "
+"is empty (i.e., not found or has an empty string value)."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:169
+msgid "In the following example,"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:177
+msgid ""
+"the variable ``$dst`` will take the value 32 at last. But in the sample"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:186
+msgid "``$a`` will take the value ``\"hello, world\"`` at last."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:190
+msgid "set_quote_sql_str"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:191
+msgid "*set_quote_sql_str $dst <src>*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:192
+msgid "*set_quote_sql_str $dst*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:196 ../../source/modules/set_misc.rst:249
+#: ../../source/modules/set_misc.rst:261 ../../source/modules/set_misc.rst:308
+#: ../../source/modules/set_misc.rst:357 ../../source/modules/set_misc.rst:402
+#: ../../source/modules/set_misc.rst:502 ../../source/modules/set_misc.rst:514
+#: ../../source/modules/set_misc.rst:562 ../../source/modules/set_misc.rst:574
+#: ../../source/modules/set_misc.rst:624 ../../source/modules/set_misc.rst:636
+#: ../../source/modules/set_misc.rst:686
+msgid "*ndk_set_var_value*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:198
+msgid ""
+"When taking two arguments, this directive will quote the value of the second"
+" argument ``<src>`` by MySQL's string value quoting rule and assign the "
+"result into the first argument, variable ``$dst``."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:200 ../../source/modules/set_misc.rst:223
+#: ../../source/modules/set_misc.rst:371 ../../source/modules/set_misc.rst:690
+#: ../../source/modules/set_misc.rst:743 ../../source/modules/set_misc.rst:816
+#: ../../source/modules/set_misc.rst:847 ../../source/modules/set_misc.rst:882
+#: ../../source/modules/set_misc.rst:924 ../../source/modules/set_misc.rst:957
+#: ../../source/modules/set_misc.rst:987
+msgid "For example,"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:212 ../../source/modules/set_misc.rst:275
+#: ../../source/modules/set_misc.rst:418 ../../source/modules/set_misc.rst:528
+#: ../../source/modules/set_misc.rst:588 ../../source/modules/set_misc.rst:652
+#: ../../source/modules/set_misc.rst:702 ../../source/modules/set_misc.rst:756
+msgid "Then request ``GET /test`` will yield the following output"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:219 ../../source/modules/set_misc.rst:331
+#: ../../source/modules/set_misc.rst:535 ../../source/modules/set_misc.rst:595
+#: ../../source/modules/set_misc.rst:659 ../../source/modules/set_misc.rst:709
+#: ../../source/modules/set_misc.rst:763
+msgid ""
+"We're using :doc:`echo_module's <echo>` ``echo`` directive here to output "
+"values of nginx variables directly."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:221
+msgid ""
+"When taking a single argument, this directive will do in-place modification "
+"of the argument variable."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:235 ../../source/modules/set_misc.rst:296
+#: ../../source/modules/set_misc.rst:451 ../../source/modules/set_misc.rst:550
+#: ../../source/modules/set_misc.rst:611 ../../source/modules/set_misc.rst:674
+#: ../../source/modules/set_misc.rst:725
+msgid ""
+"then request ``GET /test`` will give exactly the same output as the previous"
+" example."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:237
+msgid "This directive is usually used to prevent SQL injection."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:239 ../../source/modules/set_misc.rst:298
+#: ../../source/modules/set_misc.rst:347 ../../source/modules/set_misc.rst:453
+#: ../../source/modules/set_misc.rst:552 ../../source/modules/set_misc.rst:614
+#: ../../source/modules/set_misc.rst:676 ../../source/modules/set_misc.rst:728
+msgid ""
+"This directive can be invoked by :doc:`ngx_lua's <lua>` "
+"``ndk.set_var.DIRECTIVE`` interface and :github:`HttpArrayVarModule "
+"<openresty/array-var-nginx-module>`'s :github:`array_map_op <openresty"
+"/array-var-nginx-module#array_map_op>` directive."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:243
+msgid "set_quote_pgsql_str"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:244
+msgid "*set_quote_pgsql_str $dst <src>*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:245
+msgid "*set_quote_pgsql_str $dst*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:251
+msgid ""
+"Very much like `set_quote_sql_str`_, but with PostgreSQL quoting rules for "
+"SQL string literals."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:255
+msgid "set_quote_json_str"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:256
+msgid "*set_quote_json_str $dst <src>*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:257
+msgid "*set_quote_json_str $dst*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:263
+msgid ""
+"When taking two arguments, this directive will quote the value of the second"
+" argument ``<src>`` by JSON string value quoting rule and assign the result "
+"into the first argument, variable ``$dst``. For example,"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:282
+msgid ""
+"We're using :doc:`echo_module's <echo>` ``echo`` directive here to output   "
+"values of nginx variables directly."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:284 ../../source/modules/set_misc.rst:333
+#: ../../source/modules/set_misc.rst:438 ../../source/modules/set_misc.rst:538
+#: ../../source/modules/set_misc.rst:598 ../../source/modules/set_misc.rst:662
+#: ../../source/modules/set_misc.rst:712
+msgid ""
+"When taking a single argument, this directive will do in-place modification "
+"of the argument variable. For example,"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:302
+msgid "set_unescape_uri"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:303
+msgid "*set_unescape_uri $dst <src>*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:304
+msgid "*set_unescape_uri $dst*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:310
+msgid ""
+"When taking two arguments, this directive will unescape the value of the "
+"second argument ``<src>`` as a URI component and assign the result into the "
+"first argument, variable ``$dst``. For example,"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:322
+msgid ""
+"Then request ``GET /test?key=hello+world%21`` will yield the following "
+"output"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:329
+msgid ""
+"The nginx standard `$arg_PARAMETER <|HttpCoreModule|#$arg_PARAMETER>`_ "
+"variable holds the raw (escaped) value of the URI parameter. So we need the "
+"``set_unescape_uri`` directive to unescape it first."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:345
+msgid ""
+"then request ``GET /test?key=hello+world%21`` will give exactly the same "
+"output as the previous example."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:351
+msgid "set_escape_uri"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:352
+msgid "*set_escape_uri $dst <src>*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:353
+msgid "*set_escape_uri $dst*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:359
+msgid ""
+"Very much like the `set_unescape_uri`_ directive, but does the conversion "
+"the other way around, i.e., URL component escaping."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:363
+msgid "set_hashed_upstream"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:364
+msgid "*set_hashed_upstream $dst <upstream_list_name> <src>*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:369
+msgid ""
+"Hashes the string argument ``<src>`` into one of the upstream name included "
+"in the upstream list named ``<upstream_list_name>``. The hash function being"
+" used is simple modulo."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:390
+msgid ""
+"Then ``GET /test?key=blah`` will output either \"moon\", \"sun\", or "
+"\"earth\", depending on the actual value of the ``key`` query argument."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:392
+msgid ""
+"This directive is usually used to compute an nginx variable to be passed to "
+":doc:`memc`'s ``memc_pass`` directive, :doc:`redis2`'s ``redis2_pass`` "
+"directive, and |HttpProxyModule|'s `proxy_pass "
+"<|HttpProxyModule|#proxy_pass>`_ directive, among others."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:396
+msgid "set_encode_base32"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:397
+msgid "*set_encode_base32 $dst <src>*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:398
+msgid "*set_encode_base32 $dst*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:404
+msgid ""
+"When taking two arguments, this directive will encode the value of the "
+"second argument ``<src>`` to its base32(hex) digest and assign the result "
+"into the first argument, variable ``$dst``. For example,"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:425
+msgid ""
+"Please note that we're using :doc:`echo_module's <echo>` ``echo`` directive "
+"here to output values of nginx variables directly."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:428
+msgid ""
+"RFC forces the ``[A-Z2-7]`` RFC-3548 compliant encoding, but we are using "
+"the \"base32hex\" encoding (``[0-9a-v]``) by default. The "
+"`set_base32_alphabet`_ directive (first introduced in ``v0.28``) allows you "
+"to change the alphabet used for encoding/decoding so RFC-3548 compliant "
+"encoding is still possible by custom configurations."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:434
+msgid ""
+"By default, the ``=`` character is used to pad the left-over bytes due to "
+"alignment. But the padding behavior can be completely disabled by setting "
+"`set_base32_padding`_ ``off``."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:457
+msgid "set_base32_padding"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:458
+msgid "*set_base32_padding [on|off]*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:459 ../../source/modules/set_misc.rst:473
+msgid "*on*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:460 ../../source/modules/set_misc.rst:474
+#: ../../source/modules/set_misc.rst:485
+msgid "*http, server, server if, location, location if*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:463
+msgid ""
+"This directive can control whether to pad left-over bytes with the \"=\" "
+"character when encoding a base32 digest by the `set_encode_base32`_ "
+"directive."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:466
+msgid ""
+"This directive was first introduced in ``v0.28``. If you use earlier "
+"versions of this module, then you should use `set_misc_base32_padding`_ "
+"instead."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:471
+msgid "set_misc_base32_padding"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:472
+msgid "*set_misc_base32_padding [on|off]*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:477
+msgid ""
+"This directive has been deprecated since ``v0.28``. Use "
+"`set_base32_padding`_ instead if you are using ``v0.28+``."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:482
+msgid "set_base32_alphabet"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:483
+msgid "*set_base32_alphabet <alphabet>*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:484
+msgid "*\"0123456789abcdefghijklmnopqrstuv\"*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:488
+msgid ""
+"This directive controls the alphabet used for encoding/decoding a base32 "
+"digest. It accepts a string containing the desired alphabet like "
+"\"ABCDEFGHIJKLMNOPQRSTUVWXYZ234567\" for standard alphabet."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:490
+msgid "Extended (base32hex) alphabet is used by default."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:492
+msgid "This directive was first introduced in ``v0.28``."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:496
+msgid "set_decode_base32"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:497
+msgid "*set_decode_base32 $dst <src>*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:498
+msgid "*set_decode_base32 $dst*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:504
+msgid ""
+"Similar to the `set_encode_base32`_ directive, but does exactly the the "
+"opposite operation, .i.e, decoding a base32(hex) digest into its original "
+"form."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:508
+msgid "set_encode_base64"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:509
+msgid "*set_encode_base64 $dst <src>*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:510
+msgid "*set_encode_base64 $dst*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:516
+msgid ""
+"When taking two arguments, this directive will encode the value of the "
+"second argument ``<src>`` to its base64 digest and assign the result into "
+"the first argument, variable ``$dst``. For example,"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:556
+msgid "set_decode_base64"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:557
+msgid "*set_decode_base64 $dst <src>*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:558
+msgid "*set_decode_base64 $dst*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:564
+msgid ""
+"Similar to the `set_encode_base64`_ directive, but does exactly the the "
+"opposite operation, .i.e, decoding a base64 digest into its original form."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:568
+msgid "set_encode_hex"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:569
+msgid "*set_encode_hex $dst <src>*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:570
+msgid "*set_encode_hex $dst*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:576
+msgid ""
+"When taking two arguments, this directive will encode the value of the "
+"second argument ``<src>`` to its hexadecimal digest and assign the result "
+"into the first argument, variable ``$dst``. For example,"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:618
+msgid "set_decode_hex"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:619
+msgid "*set_decode_hex $dst <src>*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:620
+msgid "*set_decode_hex $dst*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:626
+msgid ""
+"Similar to the `set_encode_hex`_ directive, but does exactly the the "
+"opposite operation, .i.e, decoding a hexadecimal digest into its original "
+"form."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:630
+msgid "set_sha1"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:631
+msgid "*set_sha1 $dst <src>*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:632
+msgid "*set_sha1 $dst*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:638
+msgid ""
+"When taking two arguments, this directive will encode the value of the "
+"second argument ``<src>`` to its `SHA-1 "
+"<https://en.wikipedia.org/wiki/SHA-1>`_ digest and assign the result into "
+"the first argument, variable ``$dst``. The hexadecimal form of the ``SHA-1``"
+" digest will be generated automatically,use `set_decode_hex`_ to decode the "
+"result if you want the binary form of the ``SHA-1`` digest."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:640
+msgid "For example:"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:680
+msgid "set_md5"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:681
+msgid "*set_md5 $dst <src>*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:682
+msgid "*set_md5 $dst*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:688
+msgid ""
+"When taking two arguments, this directive will encode the value of the "
+"second argument ``<src>`` to its `MD5 <https://en.wikipedia.org/wiki/MD5>`_ "
+"digest and assign the result into the first argument, variable ``$dst``. The"
+" hexadecimal form of the ``MD5`` digest will be generated automatically, use"
+" `set_decode_hex`_ to decode the result if you want the binary form of the "
+"``MD5`` digest."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:732
+msgid "set_hmac_sha1"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:733
+msgid "*set_hmac_sha1 $dst <secret_key> <src>*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:734
+msgid "*set_hmac_sha1 $dst*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:739
+msgid ""
+"Computes the `HMAC-SHA1 <https://en.wikipedia.org/wiki/HMAC>`_ digest of the"
+" argument ``<src>`` and assigns the result into the argument variable "
+"``$dst`` with the secret key ``<secret_key>``."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:741
+msgid ""
+"The raw binary form of the ``HMAC-SHA1`` digest will be generated, use "
+"`set_encode_base64`_, for example, to encode the result to a textual "
+"representation if desired."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:765
+msgid ""
+"This directive requires the OpenSSL library enabled in your Nignx build "
+"(usually by passing the ``--with-http_ssl_module`` option to the "
+"``./configure`` script)."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:769
+msgid "set_random"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:770
+msgid "*set_random $res <from> <to>*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:775
+msgid ""
+"Generates a (pseudo) random number (in textual form) within the range "
+"``[<$from>, <$to>]`` (inclusive)."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:777 ../../source/modules/set_misc.rst:878
+msgid ""
+"Only non-negative numbers are allowed for the ``<from>`` and ``<to>`` "
+"arguments."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:779 ../../source/modules/set_misc.rst:880
+msgid ""
+"When ``<from>`` is greater than ``<to>``, their values will be exchanged "
+"accordingly."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:781
+#: ../../source/modules/set_misc.rst:1011
+msgid "For instance,"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:794
+msgid ""
+"then request ``GET /test`` will output a number between 5 and 7 (i.e., among"
+" 5, 6, 7)."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:796
+msgid "For now, there's no way to configure a custom random generator seed."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:798
+msgid "Behind the scene, it makes use of the standard C function ``rand()``."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:800
+msgid "This directive was first introduced in the ``v0.22rc1`` release."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:802
+msgid "`set_secure_random_alphanum`_ and `set_secure_random_lcalpha`_."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:806
+msgid "set_secure_random_alphanum"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:807
+msgid "*set_secure_random_alphanum $res <length>*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:812
+msgid ""
+"Generates a cryptographically-strong random string ``<length>`` characters "
+"long with the alphabet ``[a-zA-Z0-9]``."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:814 ../../source/modules/set_misc.rst:845
+msgid "``<length>`` may be between 1 and 64, inclusive."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:827
+msgid ""
+"then request ``GET /test`` will output a string like "
+"``ivVVRP2DGaAqDmdf3Rv4ZDJ7k0gOfASz``."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:829 ../../source/modules/set_misc.rst:860
+msgid ""
+"This functionality depends on the presence of the ``/dev/urandom`` device, "
+"available on most UNIX-like systems."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:831
+msgid "`set_secure_random_lcalpha`_ and `set_random`_."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:833 ../../source/modules/set_misc.rst:862
+msgid "This directive was first introduced in the ``v0.22rc8`` release."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:837
+msgid "set_secure_random_lcalpha"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:838
+msgid "*set_secure_random_lcalpha $res <length>*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:843
+msgid ""
+"Generates a cryptographically-strong random string ``<length>`` characters "
+"long with the alphabet ``[a-z]``."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:858
+msgid ""
+"then request ``GET /test`` will output a string like "
+"``kcuxcddktffsippuekhshdaclaquiusj``."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:864
+msgid "`set_secure_random_alphanum`_ and `set_random`_."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:868
+msgid "set_rotate"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:869
+msgid "*set_rotate $value <from> <to>*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:874
+msgid ""
+"Increments ``$value`` but keeps it in range from ``<from>`` to ``<to>``. If "
+"``$value`` is greater than ``<to>`` or less than ``<from>`` is will be set "
+"to ``<from>`` value."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:876
+msgid ""
+"The current value after running this directive will always be saved on a "
+"per-location basis. And the this saved value will be used for incrementation"
+" when the ``$value`` is not initialized or has a bad value."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:895
+msgid ""
+"then request ``GET /rotate`` will output next number between 1 and 5 (i.e., "
+"1, 2, 3, 4, 5) on each refresh of the page. This directive may be useful for"
+" banner rotation purposes."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:898
+msgid ""
+"Another example is to use server-side value persistence to do simple round-"
+"robin:"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:910
+msgid ""
+"And accessing ``/rotate`` will also output integer sequence 0, 1, 2, 3, 0, "
+"1, 2, 3, and so on."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:912
+msgid "This directive was first introduced in the ``v0.22rc7`` release."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:916
+msgid "set_local_today"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:917
+msgid "*set_local_today $dst*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:922
+msgid ""
+"Set today's date (\"yyyy-mm-dd\") in localtime to the argument variable "
+"``$dst``."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:934
+msgid "then request ``GET /today`` will output something like"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:941
+msgid "and year, the actual date you get here will vary every day ;)"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:943
+msgid ""
+"Behind the scene, this directive utilizes the ``ngx_time`` API in the Nginx "
+"core, so usually no syscall is involved due to the time caching mechanism in"
+" the Nginx core."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:947
+msgid "set_formatted_gmt_time"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:948
+msgid "*set_formatted_gmt_time $res &lt;time-format&gt;*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:953
+msgid ""
+"Set a formatted GMT time to variable ``$res`` (as the first argument) using "
+"the format string in the second argument."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:955 ../../source/modules/set_misc.rst:985
+msgid ""
+"All the conversion specification notations in the standard C function "
+"``strftime`` are supported, like ``%Y`` (for 4-digit years) and ``%M`` (for "
+"minutes in decimal). See http://linux.die.net/man/3/strftime for a complete "
+"list of conversion specification symbols."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:967 ../../source/modules/set_misc.rst:997
+msgid "Accessing ``/t`` yields the output::"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:971
+#: ../../source/modules/set_misc.rst:1001
+msgid "This directive was first added in the ``0.23`` release."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:973
+msgid "`set_formatted_local_time`_."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:977
+msgid "set_formatted_local_time"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:978
+msgid "*set_formatted_local_time $res &lt;time-format&gt;*"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:983
+msgid ""
+"Set a formatted local time to variable ``$res`` (as the first argument) "
+"using the format string in the second argument."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1003
+msgid "`set_formatted_gmt_time`_."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1008
+msgid "Caveats"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1009
+msgid ""
+"Do not use `$arg_PARAMETER <|HttpCoreModule|#$arg_PARAMETER>`_, "
+"`$cookie_COOKIE <|HttpCoreModule|#$cookie_COOKIE>`_, `$http_HEADER "
+"<|HttpCoreModule|#$http_HEADER>`_ or other special variables defined in the "
+"Nginx core module as the target variable in this module's directives."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1018
+msgid "may lead to segmentation faults."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1025
+msgid "Installation"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1026
+msgid ""
+"This module is included and enabled by default in the `ngx_openresty bundle "
+"<http://openresty.org>`__. If you want to install this module manually with "
+"your own Nginx source tarball, then follow the steps below:"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1028
+msgid ""
+"Grab the nginx source code from `nginx.org <http://nginx.org/>`_, for "
+"example, the version 1.7.7 (see Compatibility_), and then build the source "
+"with this module:"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1046
+msgid ""
+"Download the latest version of the release tarball of this module from "
+":github:`set-misc-nginx-module file list <openresty/set-misc-nginx-"
+"module/tags>` and the latest tarball for :github:`ngx_devel_kit "
+"<simpl/ngx_devel_kit>` from its :github:`file list "
+"<simpl/ngx_devel_kit/tags>`."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1048
+msgid ""
+"Also, this module is included and enabled by default in the `ngx_openresty "
+"bundle <http://openresty.org/>`__."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1053
+msgid "Compatibility"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1054
+msgid "The following versions of Nginx should work with this module:"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1056
+msgid "**1.7.x**     (last tested: 1.7.7)"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1057
+msgid "**1.6.x**"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1058
+msgid "**1.5.x**     (last tested: 1.5.8)"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1059
+msgid "**1.4.x**     (last tested: 1.4.4)"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1060
+msgid "**1.2.x**     (last tested: 1.2.9)"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1061
+msgid "**1.1.x**     (last tested: 1.1.5)"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1062
+msgid "**1.0.x**     (last tested: 1.0.15)"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1063
+msgid "**0.9.x**     (last tested: 0.9.4)"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1064
+msgid "**0.8.x**     (last tested: 0.8.54)"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1065
+msgid "**>= 0.7.46** (last tested: 0.7.68)"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1067
+msgid ""
+"If you find that any particular version of Nginx above 0.7.46 does not work "
+"with this module, please consider `reporting a bug <set_misc.report-"
+"bugs_>`_."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1075
+msgid "Report Bugs"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1076
+msgid ""
+"Although a lot of effort has been put into testing and code tuning, there "
+"must be some serious bugs lurking somewhere in this module. So whenever you "
+"are bitten by any quirks, please don't hesitate to"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1080
+msgid ""
+"send a bug report or even patches to the `openresty-en mailing list "
+"<https://groups.google.com/group/openresty-en>`_,"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1081
+msgid ""
+"or create a ticket on the :github:`issue tracking interface <openresty/set-"
+"misc-nginx-module/issues>` provided by GitHub."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1088
+msgid "Source Repository"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1089
+msgid ""
+"Available on github at :github:`openresty/set-misc-nginx-module <openresty"
+"/set-misc-nginx-module>`"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1094
+msgid "Changes"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1095
+msgid ""
+"The change logs for every release of this module can be obtained from the "
+"ngx_openresty bundle's change logs:"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1098
+msgid "http://openresty.org/#Changes"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1103
+msgid "Test Suite"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1104
+msgid ""
+"This module comes with a Perl-driven test suite. The :github:`test cases "
+"<openresty/set-misc-nginx-module/tree/master/t/>` are :github:`declarative "
+"<openresty/set-misc-nginx-module/blob/master/t/escape-uri.t>` too. Thanks to"
+" the `Test::Nginx <http://search.cpan.org/perldoc?Test::Nginx>`_ module in "
+"the Perl world."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1106
+msgid "To run it on your side:"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1113
+msgid ""
+"You need to terminate any Nginx processes before running the test suite if "
+"you have changed the Nginx server binary."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1115
+msgid ""
+"Because a single nginx server (by default, ``localhost:1984``) is used "
+"across all the test scripts (``.t`` files), it's meaningless to run the test"
+" suite in parallel by specifying ``-jN`` when invoking the ``prove`` "
+"utility."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1120
+msgid "Getting involved"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1121
+msgid ""
+"You'll be very welcomed to submit patches to the `Author "
+"<set_misc.author_>`_ or just ask for a commit bit to the `Source Repository "
+"<set_misc.source-repository_>`_ on GitHub."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1128
+msgid "Author"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1129
+msgid "Yichun Zhang (agentzh) *<agentzh@gmail.com>*, CloudFlare Inc."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1131
+msgid ""
+"This wiki page is also maintained by the author himself, and everybody is "
+"encouraged to improve this page as well."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1136
+msgid "Copyright & License"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1137
+msgid ""
+"Copyright (C) 2009-2015, Yichun Zhang (章亦春) <agentzh@gmail.com>, CloudFlare "
+"Inc."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1139
+msgid "This module is licensed under the terms of the BSD license."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1141
+msgid ""
+"Redistribution and use in source and binary forms, with or without "
+"modification, are permitted provided that the following conditions are met:"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1143
+msgid ""
+"Redistributions of source code must retain the above copyright notice, this "
+"list of conditions and the following disclaimer."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1145
+msgid ""
+"Redistributions in binary form must reproduce the above copyright notice, "
+"this list of conditions and the following disclaimer in the documentation "
+"and/or other materials provided with the distribution."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1147
+msgid ""
+"THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS "
+"IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, "
+"THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR "
+"PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR "
+"CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, "
+"EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, "
+"PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; "
+"OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, "
+"WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR "
+"OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF "
+"ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1153
+msgid ":github:`Nginx Development Kit <simpl/ngx_devel_kit>`"
+msgstr ""
+
+#: ../../source/modules/set_misc.rst:1154
+msgid "`The ngx_openresty bundle <http://openresty.org>`_"
+msgstr ""

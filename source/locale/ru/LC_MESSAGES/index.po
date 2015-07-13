@@ -1,0 +1,75 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/index.rst:7
+msgid "Welcome to Nginx Wiki's documentation!"
+msgstr ""
+
+#: ../../source/index.rst:9
+msgid ""
+"Nginx is a free, open-source, high-performance HTTP server and reverse "
+"proxy, as well as an IMAP/POP3 proxy server. Nginx is known for its high "
+"performance, stability, rich feature set, simple configuration, and low "
+"resource consumption."
+msgstr ""
+
+#: ../../source/index.rst:13
+msgid ""
+"Unlike traditional servers, Nginx doesn't rely on threads to handle "
+"requests. Instead it uses a much more scalable event-driven (asynchronous) "
+"architecture. This architecture uses small, but more importantly, "
+"predictable amounts of memory under load. Even if you don't expect to handle"
+" thousands of simultaneous requests, you can still benefit from Nginx's "
+"high-performance and small memory footprint. Nginx scales in all directions:"
+" from the smallest VPS all the way up to large clusters of servers."
+msgstr ""
+
+#: ../../source/index.rst:21
+msgid ""
+"Nginx powers several high-visibility sites, such as Netflix, Hulu, "
+"Pinterest, CloudFlare, Airbnb, WordPress.com, GitHub, SoundCloud, Zynga, "
+"Eventbrite, Zappos, Media Temple, Heroku, RightScale, Engine Yard, and many "
+"others."
+msgstr ""
+
+#: ../../source/index.rst:28
+msgid "|startedicon|_"
+msgstr ""
+
+#: ../../source/index.rst:28
+msgid "|communityicon|_"
+msgstr ""
+
+#: ../../source/index.rst:28
+msgid "|moduleicon|_"
+msgstr ""
+
+#: ../../source/index.rst:28
+msgid "|contribicon|_"
+msgstr ""
+
+#: ../../source/index.rst:30
+msgid "|startedtext|_"
+msgstr ""
+
+#: ../../source/index.rst:30
+msgid "|communitytext|_"
+msgstr ""
+
+#: ../../source/index.rst:30
+msgid "|moduletext|_"
+msgstr ""
+
+#: ../../source/index.rst:30
+msgid "|contribtext|_"
+msgstr ""

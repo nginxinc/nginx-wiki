@@ -1,0 +1,26 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/recipes/piwik.rst:2
+msgid "Piwik"
+msgstr ""
+
+#: ../../source/start/topics/recipes/piwik.rst:5
+msgid "Recipe"
+msgstr ""
+
+#: ../../source/start/topics/recipes/piwik.rst:7
+msgid ""
+"This configuration file was provided by Seph. You can see the complete "
+"information [https://github.com/perusio/piwik-nginx here]."
+msgstr ""

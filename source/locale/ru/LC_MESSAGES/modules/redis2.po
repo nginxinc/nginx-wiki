@@ -1,0 +1,796 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/redis2.rst:2
+msgid "Redis2"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:5
+msgid "Name"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:6
+msgid "**ngx_redis2** - Nginx upstream module for the Redis 2.0 protocol."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:8
+msgid ""
+"*This module is not distributed with the Nginx source.* See the "
+"`installation instructions <redis2.installation_>`_."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:12
+msgid "Status"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:13
+msgid "This module is already production ready."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:18
+msgid "Version"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:19
+msgid ""
+"This document describes ngx_redis2 :github:`v0.11 <openresty/redis2-nginx-"
+"module/tags>` released on 24 April 2014."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:26
+msgid "Synopsis"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:95
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:96
+msgid ""
+"This is an Nginx upstream module that makes nginx talk to a `Redis "
+"<http://redis.io/>`_ 2.x server in a non-blocking way. The full Redis 2.0 "
+"unified protocol has been implemented including the Redis pipelining "
+"support."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:100
+msgid ""
+"This module returns the raw TCP response from the Redis server. It's "
+"recommended to use my [[LuaRedisParser]] (written in pure C) to parse these "
+"responses into lua data structure when combined with :doc:`lua`."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:104
+msgid ""
+"When used in conjunction with :doc::github:`lua`, it is recommended to use "
+"the `lua-resty-redis <openresty/lua-resty-redis>` library instead of this "
+"module though, because the former is much more flexible and memory-"
+"efficient."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:108
+msgid ""
+"If you only want to use the ``get`` redis command, you can try out the "
+":doc:`redis`. It returns the parsed content part of the Redis response "
+"because only ``get`` is needed to implement."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:112
+msgid ""
+"Another option is to parse the redis responses on your client side yourself."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:117
+msgid "Directives"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:120
+msgid "redis2_query"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:121
+msgid "*redis2_query <cmd> [arg1] [arg2]...*"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:122 ../../source/modules/redis2.rst:155
+#: ../../source/modules/redis2.rst:167 ../../source/modules/redis2.rst:201
+#: ../../source/modules/redis2.rst:214
+msgid "*none*"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:123 ../../source/modules/redis2.rst:156
+#: ../../source/modules/redis2.rst:168 ../../source/modules/redis2.rst:202
+#: ../../source/modules/redis2.rst:215
+msgid "*location, location if*"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:125
+msgid ""
+"Specify a Redis command by specifying its individual arguments (including "
+"the Redis command name itself) in a similar way to the ``redis-cli`` "
+"utility."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:127
+msgid ""
+"Multiple instances of this directive are allowed in a single location and "
+"these queries will be pipelined. For example,"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:139
+msgid "then ``GET /pipelined`` will yield two successive raw Redis responses"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:148
+msgid "while newlines here are actually ``CR LF`` (``\\r\\n``)."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:153
+msgid "redis2_raw_query"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:154
+msgid "*redis2_raw_query QUERY*"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:158
+msgid ""
+"Specify raw Redis queries and nginx variables are recognized in the "
+"``QUERY`` argument."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:160
+msgid ""
+"Only *one* Redis command is allowed in the ``QUERY`` argument, or you'll "
+"receive an error. If you want to specify multiple pipelined commands in a "
+"single query, use the `redis2_raw_queries`_ directive instead."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:165
+msgid "redis2_raw_queries"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:166
+msgid "*redis2_raw_queries N QUERIES*"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:170
+msgid ""
+"Specify ``N`` commands in the ``QUERIES`` argument. Both the ``N`` and "
+"``QUERIES`` arguments can take Nginx variables."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:173
+msgid "Here's some examples:"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:193
+msgid ""
+"In the second sample above, the ``set_unescape_uri`` directive is provided "
+"by the :doc:`set_misc`."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:199
+msgid "redis2_literal_raw_query"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:200
+msgid "*redis2_literal_raw_query QUERY*"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:204
+msgid ""
+"Specify a raw Redis query but Nginx variables in it will not be *not* "
+"recognized. In other words, you're free to use the dollar sign character "
+"(``$``) in your ``QUERY`` argument."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:206
+msgid "Only One redis command is allowed in the ``QUERY`` argument."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:211
+msgid "redis2_pass"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:212
+msgid "*redis2_pass <upstream_name>*"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:213
+msgid "*redis2_pass <host>:<port>*"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:216
+msgid "*content*"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:218
+msgid "Specify the Redis server backend."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:223
+msgid "redis2_connect_timeout"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:224
+msgid "*redis2_connect_timeout <time>*"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:225 ../../source/modules/redis2.rst:242
+#: ../../source/modules/redis2.rst:257
+msgid "*60s*"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:226 ../../source/modules/redis2.rst:243
+#: ../../source/modules/redis2.rst:258 ../../source/modules/redis2.rst:273
+#: ../../source/modules/redis2.rst:286
+msgid "*http, server, location*"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:228
+msgid "The timeout for connecting to the Redis server, in seconds by default."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:230 ../../source/modules/redis2.rst:247
+#: ../../source/modules/redis2.rst:262
+msgid ""
+"It's wise to always explicitly specify the time unit to avoid confusion. "
+"Time units supported are ``s``\\ (seconds), ``ms``\\ (milliseconds), ``y``\\"
+" (years), ``M``\\ (months), ``w``\\ (weeks), ``d``\\ (days), ``h``\\ "
+"(hours), and ``m``\\ (minutes)."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:235
+msgid "This time must be less than 597 hours."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:240
+msgid "redis2_send_timeout"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:241
+msgid "*redis2_send_timeout <time>*"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:245
+msgid ""
+"The timeout for sending TCP requests to the Redis server, in seconds by "
+"default."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:255
+msgid "redis2_read_timeout"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:256
+msgid "*redis2_read_timeout <time>*"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:260
+msgid ""
+"The timeout for reading TCP responses from the redis server, in seconds by "
+"default."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:270
+msgid "redis2_buffer_size"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:271
+msgid "*redis2_buffer_size <size>*"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:272
+msgid "*4k/8k*"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:275
+msgid ""
+"This buffer size is used for reading Redis replies, but it's not required to"
+" be as big as the largest possible Redis reply."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:278
+msgid "This default size is the page size, may be 4k or 8k."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:283
+msgid "redis2_next_upstream"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:284
+msgid "*redis2_next_upstream [ error | timeout | invalid_response | off ]*"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:285
+msgid "*error timeout*"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:288
+msgid ""
+"Specify which failure conditions should cause the request to be forwarded to"
+" another upstream server. Applies only when the value in `redis2_pass`_ is "
+"an upstream with two or more servers."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:292
+msgid "Here's an artificial example:"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:312
+msgid "Connection Pool"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:313
+msgid ""
+"You can use the excellent :doc:`keepalive` with this module to provide TCP "
+"connection pool for Redis."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:315
+msgid "A sample config snippet looks like this"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:340
+msgid "Lua Interoperability"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:342
+msgid ""
+"This module can be served as a non-blocking redis2 client for :doc:`lua` "
+"(but nowadays it is recommended to use the :github:`lua-resty-redis "
+"<openresty/lua-resty-redis>` library instead, which is much simpler to use "
+"and more efficient most of the time). Here's an example using a GET "
+"subrequest:"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:368
+msgid "Then accessing ``/main`` yields"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:375
+msgid ""
+"where ``\\r\\n`` is ``CRLF``. That is, this module returns the *raw* TCP "
+"responses from the remote redis server. For Lua-based application "
+"developers, they may want to utilize the [[LuaRedisParser]] library (written"
+" in pure C) to parse such raw responses into Lua data structures."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:377
+msgid ""
+"When moving the inlined Lua code into an external ``.lua`` file, it's "
+"important to use the escape sequence ``\\r\\n`` directly. We used "
+"``\\\\r\\\\n`` above just because the Lua code itself needs quoting when "
+"being put into an Nginx string literal."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:379
+msgid ""
+"You can also use POST/PUT subrequests to transfer the raw Redis request via "
+"request body, which does not require URI escaping and unescaping, thus "
+"saving some CPU cycles. Here's such an example:"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:403
+msgid "This yeilds exactly the same output as the previous (GET) sample."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:405
+msgid ""
+"One can also use Lua to pick up a concrete Redis backend based on some "
+"complicated hashing rules. For instance,"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:453
+msgid "Pipelined Redis Requests by Lua"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:454
+msgid ""
+"Here's a complete example demonstrating how to use Lua to issue multiple "
+"pipelined Redis requests via this Nginx module."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:456
+msgid "First of all, we include the following in our ``nginx.conf`` file:"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:472
+msgid ""
+"Basically we use URI query args to pass the number of Redis requests and "
+"request body to pass the pipelined Redis request string."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:474
+msgid ""
+"And then we create the ``conf/test.lua`` file (whose path is relative to the"
+" server root of Nginx) to include the following Lua code:"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:505
+msgid ""
+"Here we assume that your Redis server is listening on the default port "
+"(6379) of the localhost. We also make use of the [[LuaRedisParser]] library "
+"to construct raw Redis queries for us and also use it to parse the replies."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:507
+msgid ""
+"Accessing the ``/test`` location via HTTP clients like ``curl`` yields the "
+"following output"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:515
+msgid ""
+"A more realistic setting is to use a proper upstream definition for our "
+"Redis backend and enable TCP connection pool via the "
+"[[HttpUpstreamKeepaliveModule#keepalive|keepalive]] directive in it."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:518
+msgid "Redis Publish/Subscribe Support"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:520
+msgid ""
+"This module has limited support for Redis publish/subscribe feature. It "
+"cannot be fully supported due to the stateless nature of REST and HTTP "
+"model."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:522
+msgid "Consider the following example:"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:532
+msgid ""
+"And then publish a message for the key ``/foo/bar`` in the ``redis-cli`` "
+"command line. And then you'll receive two multi-bulk replies from the "
+"``/redis`` location."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:534
+msgid ""
+"You can surely parse the replies with the [[LuaRedisParser]] library if "
+"you're using Lua to access this module's location."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:541
+msgid "Limitations For Redis Publish/Subscribe"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:542
+msgid ""
+"If you want to use the `Redis pub/sub <http://redis.io/topics/pubsub>`_ "
+"feature with this module, then you must note the following limitations:"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:544
+msgid ""
+"You cannot use :doc:`keepalive` with this Redis upstream. Only short Redis "
+"connections will work."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:545
+msgid ""
+"There may be some race conditions that produce the harmless ``Redis server "
+"returned extra bytes`` warnings in your nginx's error.log. Such warnings "
+"might be rare but just be prepared for it."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:546
+msgid ""
+"You should tune the various timeout settings provided by this module like "
+"`redis2_connect_timeout`_ and `redis2_read_timeout`_."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:548
+msgid ""
+"If you cannot stand these limitations, then you are highly recommended to "
+"switch to the :github:`lua-resty-redis <openresty/lua-resty-redis>` library "
+"for :doc:`lua`."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:553
+msgid "Performance Tuning"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:555
+msgid ""
+"When you're using this module, please ensure you're using a TCP connection "
+"pool (provided by :doc:`keepalive`) and Redis pipelining wherever possible. "
+"These features will significantly improve performance."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:556
+msgid ""
+"Using multiple instance of Redis servers on your multi-core machines also "
+"help a lot due to the sequential processing nature of a single Redis server "
+"instance."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:557
+msgid ""
+"When you're benchmarking performance using something like ``ab`` or "
+"``http_load``, please ensure that your error log level is high enough (like "
+"``warn``) to prevent Nginx workers spend too much cycles on flushing the "
+"``error.log`` file, which is always non-buffered and blocking and thus very "
+"expensive."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:564
+msgid "Installation"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:565
+msgid ""
+"You are recommended to install this module (as well as the Nginx core and "
+"many many other goodies) via the `ngx_openresty bundle "
+"<http://openresty.org>`__. Check out the `installation instructions "
+"<http://openresty.org/#Installation>`_ for setting up `ngx_openresty "
+"<http://openresty.org>`_."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:567
+msgid ""
+"Alternatively, you can install this module manually by recompiling the "
+"standard Nginx core as follows:"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:569
+msgid ""
+"Grab the nginx source code from `nginx.org <http://nginx.org>`_, for "
+"example, the version 1.7.4 (see Compatibility_),"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:570
+msgid ""
+"and then download the latest version of the release tarball of this module "
+"from ngx_redis2's :github:`file list <openresty/redis2-nginx-module/tags>`"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:571
+msgid "and finally build the source with this module:"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:589
+msgid "Compatibility"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:591
+msgid ""
+"Redis 2.0, 2.2, 2.4, and above should work with this module without any "
+"issues. So is the `Alchemy Database "
+"<http://code.google.com/p/alchemydatabase/>`_"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:591
+msgid "(aka redisql in its early days)."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:593
+msgid "The following versions of Nginx should work with this module:"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:595
+msgid "**1.7.x** (last tested: 1.7.4)"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:596
+msgid "**1.6.x**"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:597
+msgid "**1.5.x** (last tested: 1.5.12)"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:598
+msgid "**1.4.x** (last tested: 1.4.3)"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:599
+msgid "**1.3.x** (last tested: 1.3.7)"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:600
+msgid "**1.2.x** (last tested: 1.2.7)"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:601
+msgid "**1.1.x** (last tested: 1.1.5)"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:602
+msgid "**1.0.x** (last tested: 1.0.10)"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:603
+msgid "**0.9.x** (last tested: 0.9.4)"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:604
+msgid "**0.8.x** >= 0.8.31 (last tested: 0.8.54)"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:606
+msgid "Earlier versions of Nginx will *not* work."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:608
+msgid ""
+"If you find that any particular version of Nginx above 0.8.31 does not work "
+"with this module, please consider reporting a bug."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:613
+msgid "Community"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:618
+msgid "English Mailing List"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:619
+msgid ""
+"The `openresty-en <https://groups.google.com/group/openresty-en>`_ mailing "
+"list is for English speakers."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:625
+msgid "Chinese Mailing List"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:626
+msgid ""
+"The `openresty <https://groups.google.com/group/openresty>`_ mailing list is"
+" for Chinese speakers."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:632
+msgid "Bugs and Patches"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:633
+msgid "Please submit bug reports, wishlists, or patches by"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:635
+msgid ""
+"creating a ticket on the :github:`GitHub Issue Tracker <openresty/redis2"
+"-nginx-module/issues>`"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:636
+msgid "or posting to the `OpenResty community <redis2.community_>`_."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:641
+msgid "Source Repository"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:642
+msgid ""
+"Available on github at :github:`openresty/redis2-nginx-module "
+"<openresty/redis2-nginx-module>`"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:647
+msgid "TODO"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:648
+msgid "Add the ``redis2_as_json`` directive to allow emitting JSON directly."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:653
+msgid "Author"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:654
+msgid "Yichun \"agentzh\" Zhang (章亦春) <agentzh@gmail.com>, CloudFlare Inc."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:659
+msgid "Getting involved"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:660
+msgid ""
+"You'll be very welcomed to submit patches to the author or just ask for a "
+"commit bit to the source repository on GitHub."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:666
+msgid "Copyright & License"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:667
+msgid "This module is licenced under the BSD license."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:669
+msgid ""
+"Copyright (C) 2010-2014, by Yichun \"agentzh\" Zhang (章亦春) "
+"<agentzh@gmail.com>, CloudFlare Inc."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:671
+msgid "All rights reserved."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:673
+msgid ""
+"Redistribution and use in source and binary forms, with or without "
+"modification, are permitted provided that the following conditions are met:"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:675
+msgid ""
+"Redistributions of source code must retain the above copyright notice, this "
+"list of conditions and the following disclaimer."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:677
+msgid ""
+"Redistributions in binary form must reproduce the above copyright notice, "
+"this list of conditions and the following disclaimer in the documentation "
+"and/or other materials provided with the distribution."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:679
+msgid ""
+"THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS "
+"IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, "
+"THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR "
+"PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR "
+"CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, "
+"EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, "
+"PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; "
+"OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, "
+"WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR "
+"OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF "
+"ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:684
+msgid "SEE ALSO"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:685
+msgid "The `Redis <http://redis.io/>`_ server homepage."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:686
+msgid "The Redis wire protocol: http://redis.io/topics/protocol"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:687
+msgid ""
+"a redis response parser and a request constructor for Lua: "
+"[[LuaRedisParser]]."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:688
+msgid ":doc:`lua`"
+msgstr ""
+
+#: ../../source/modules/redis2.rst:689
+msgid "The `ngx_openresty bundle <http://openresty.org>`__."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:690
+msgid ""
+"The :github:`lua-resty-redis <openresty/lua-resty-redis>` library based on "
+"the :doc:`lua` cosocket API."
+msgstr ""

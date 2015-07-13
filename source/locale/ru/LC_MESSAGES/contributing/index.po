@@ -1,0 +1,27 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/contributing/index.rst:2 ../../source/contributing/index.rst:5
+msgid "Contributing to Nginx"
+msgstr ""
+
+#: ../../source/contributing/index.rst:7
+msgid ""
+"A detailed breakdown of how to contribute code changes to Nginx can be found"
+" in the `Nginx documentation "
+"<http://nginx.org/en/docs/contributing_changes.html>`_."
+msgstr ""
+
+#: ../../source/contributing/index.rst:11
+msgid "Contributing to the Wiki"
+msgstr ""

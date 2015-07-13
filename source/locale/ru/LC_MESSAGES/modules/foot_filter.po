@@ -1,0 +1,225 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/foot_filter.rst:2
+msgid "Foot Filter"
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:5
+msgid "Synopsis"
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:6
+msgid ""
+"This is a module that is distributed with `Tengine "
+"<http://tengine.taobao.org>`_ which is a distribution of Nginx that is used "
+"by the e-commerce/auction site Taobao.com. This distribution contains some "
+"modules that are new on the Nginx scene. The "
+"**ngx_http_footer_filter_module** is one of them."
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:10
+msgid ""
+"This module implements a body filter that adds a given string to the page "
+"footer."
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:13
+msgid ""
+"You might say that it provides a particular case of the http sub module in "
+"the sense that it adds something to the footer. You can do the same using "
+"the http sub module but using the footer filter should be faster since "
+"there's no string matching done on the request body."
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:22
+msgid "Directives"
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:25
+msgid "footer"
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:26
+msgid "*footer string*"
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:27
+msgid "*''*"
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:28
+#: ../../source/modules/foot_filter.rst:37
+msgid "*http, server, location*"
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:30
+msgid ""
+"It defines the string to be printed at the footer of the request body. This "
+"string can have variables embedded."
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:34
+msgid "footer_types"
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:35
+msgid "*footer_types MIME types*"
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:36
+msgid "*text/html*"
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:39
+msgid ""
+"Defines the `MIME types <https://en.wikipedia.org/wiki/MIME_type>`_ of the "
+"files where the footer will be included."
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:44
+msgid "Installation"
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:46
+msgid "Clone the git repo."
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:52
+msgid "Add the module to the build configuration by adding:"
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:58
+msgid "Build the nginx binary."
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:59
+msgid "Install the nginx binary."
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:60
+msgid "Configure contexts where footer filter is enabled."
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:61
+msgid "Done."
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:66
+msgid "Tagging releases"
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:67
+msgid ""
+"I'm tagging each release in synch with the `Tengine "
+"<http://tengine.taobao.org>`_ releases."
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:72
+msgid "Other tengine modules on Github"
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:76
+msgid ":github:`backtrace_module <alibaba/nginx-backtrace>`"
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:74
+msgid ""
+"Can be used to dump backtrace of nginx in case a worker process exits "
+"abnormally, e.g. when some signal is received (SIGABR, SIGBUS, SIGFPE, "
+"SIGILL, SIGIOT, SIGSEGV). It's quite handy for debugging purpose."
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:81
+msgid ":github:`http slice <taobao/nginx-http-slice>`"
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:79
+msgid ""
+"Allows to serve a file by slices. A sort of reverse byte-range. Useful for "
+"serving large files while not hogging the network."
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:84
+msgid "Other builds"
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:85
+msgid ""
+"As referred at the outset this module is part of the `Tengine "
+"<http://tengine.taobao.org>`_ Nginx distribution. So you might want to save "
+"yourself some work and just build it from scratch using *Tengine* in lieu if"
+" the official Nginx source."
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:87
+msgid ""
+"If you fancy a bleeding edge Nginx package (from the dev releases) for "
+"Debian made to measure then you might be interested in my `debian "
+"<http://debian.perusio.net/unstable>`_ Nginx package. Instructions for using"
+" the repository and making the package live happily inside a stable "
+"distribution installation are `provided <http://debian.perusio.net>`_."
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:92
+msgid "Acknowledgments"
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:93
+msgid ""
+"Thanks to `Joshua Zhu <http://blog.zhuzhaoyuan.com>`_ and the Taobao "
+"platform engineering team for releasing *Tengine*. Also for being kind "
+"enough to clarify things regarding this module on the `Nginx mailing list "
+"<http://mailman.nginx.org/pipermail/nginx/2011-December/030830.html>`_."
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:99
+msgid "License"
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:100
+msgid "Copyright (C) 2010-2012 Alibaba Group Holding Limited"
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:102
+msgid ""
+"Redistribution and use in source and binary forms, with or without "
+"modification, are permitted provided that the following conditions are met:"
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:106
+msgid ""
+"Redistributions of source code must retain the above copyright notice, this "
+"list of con#.ditions and the following disclaimer."
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:109
+msgid ""
+"Redistributions in binary form must reproduce the above copyright notice, "
+"this list of conditions and the following disclaimer in the documentation "
+"and/or other materials provided with the distribution."
+msgstr ""
+
+#: ../../source/modules/foot_filter.rst:113
+msgid ""
+"THIS SOFTWARE IS PROVIDED BY AUTHOR AND CONTRIBUTORS \"AS IS\" AND ANY "
+"EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED "
+"WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE "
+"DISCLAIMED.  IN NO EVENT SHALL AUTHOR OR CONTRIBUTORS BE LIABLE FOR ANY "
+"DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES "
+"(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;"
+" LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND"
+" ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT "
+"(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF "
+"THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+msgstr ""

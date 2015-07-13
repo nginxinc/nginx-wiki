@@ -1,0 +1,162 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/audio_track.rst:2
+msgid "Audio Track for HTTP Live Streaming"
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:4
+msgid "This nginx module generates audio track for hls streams on the fly."
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:6
+msgid ""
+"Available on :github:`GitHub <flavioribeiro/nginx-audio-track-for-hls-"
+"module>`"
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:9
+msgid "Why?"
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:11
+msgid ""
+"Apple HTTP Live Streaming (HLS) has being adopted for almost all video "
+"stream players, and one of their recommendations is to serve an audio-only "
+"track to users that have experiencing bad bandwidth connections."
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:13
+msgid ""
+"This module aims to serve audio-only track directly on nginx, without the "
+"necessity to pre-demux the stream on Video On Demand (VoD) scenarios or the "
+"overhead and occupation of one stream output on the encoder side for live "
+"streams."
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:16
+msgid "How?"
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:18
+msgid ""
+"Using a combination of nginx locations with simple scripts written in Lua "
+"and this module, it's possible to generate the entire audio track on Nginx. "
+"Look at how things are done."
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:20
+msgid ""
+"A viewer requests the master playlist, and the response is modified. A "
+"simple lua script gets the first stream of the list and add an audio-"
+"playlist at the end:"
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:38
+msgid ""
+"Then, when user's connection goes bad and he needs to go to the audio "
+"target, another location will handle the request, getting the original "
+"(video) playlist and changing the extension of the chunks:"
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:52
+msgid ""
+"Every request for ``.aac`` extensions will invoke audio extract module:"
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:62
+msgid "That's it!"
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:65
+msgid "Status"
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:67
+msgid ""
+"This module is under heavy development. Feedbacks, issues and patches are "
+"welcome."
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:70
+msgid "Requirements"
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:72
+msgid ""
+"This module depends from some libraries (headers and shared objects) which "
+"has to be installed before it, all are commonly distributed with `FFmpeg "
+"<http://ffmpeg.org>`_:"
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:74
+msgid "avformat >= 55.0.0 (tested version: 55.0.0)"
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:75
+msgid "avcodec >= 55.3.0 (tested version: 55.3.0)"
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:76
+msgid "avutil >= 52.10.0 (tested version: 52.10.0)"
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:79
+msgid "Supported Formats"
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:81
+msgid ""
+"For now, the audio extractor module only supports extraction from ``mpegts``"
+" video chunks to ``aac`` audio-only chunks."
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:83
+msgid ""
+"Look at :github:`project issues <flavioribeiro/nginx-audio-track-for-hls-"
+"module/issues>` to see which other formats are going to be supported in the "
+"future."
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:87
+msgid "Installation"
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:89
+msgid "Follow the steps:"
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:91
+msgid "Clone this project"
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:97
+msgid "Clone :github:`Lua module <openresty/lua-nginx-module>`"
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:103
+msgid "Download nginx and compile it using both modules:"
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:110
+msgid ""
+"Now you can look at our :github:`nginx configuration example <flavioribeiro"
+"/nginx-audio-track-for-hls-module/blob/master/nginx.conf>` and make your "
+"changes. Have fun!"
+msgstr ""
+
+#: ../../source/modules/audio_track.rst:114
+msgid ""
+"It's highly recommended to use caching in all locations of HLS, in special "
+"the one that returns the generated ``.aac``."
+msgstr ""

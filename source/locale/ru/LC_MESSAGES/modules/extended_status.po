@@ -1,0 +1,78 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/extended_status.rst:2
+msgid "Extended Status"
+msgstr ""
+
+#: ../../source/modules/extended_status.rst:5
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/extended_status.rst:7
+msgid "**extended_status module** - an extended module for Nginx status."
+msgstr ""
+
+#: ../../source/modules/extended_status.rst:9
+msgid ""
+"*This module is not distributed with the Nginx source.* See the "
+"`installation instructions <extended_status.installation_>`_."
+msgstr ""
+
+#: ../../source/modules/extended_status.rst:12
+msgid "Directives"
+msgstr ""
+
+#: ../../source/modules/extended_status.rst:15
+msgid "extended_status"
+msgstr ""
+
+#: ../../source/modules/extended_status.rst:17
+msgid "``extended_status [on|off]``;"
+msgstr ""
+
+#: ../../source/modules/extended_status.rst:18
+msgid "``off``"
+msgstr ""
+
+#: ../../source/modules/extended_status.rst:19
+msgid "*http, server, location*"
+msgstr ""
+
+#: ../../source/modules/extended_status.rst:21
+msgid "Example:"
+msgstr ""
+
+#: ../../source/modules/extended_status.rst:36
+msgid "Installation"
+msgstr ""
+
+#: ../../source/modules/extended_status.rst:38
+msgid "Before compiling, apply any necessary patches_."
+msgstr ""
+
+#: ../../source/modules/extended_status.rst:49
+msgid "Patches"
+msgstr ""
+
+#: ../../source/modules/extended_status.rst:51
+msgid "For Nginx **0.8.54** (or **0.8.55**):"
+msgstr ""
+
+#: ../../source/modules/extended_status.rst:57
+msgid "For Nginx **1.0.11**:"
+msgstr ""
+
+#: ../../source/modules/extended_status.rst:63
+msgid "For Nginx **1.2.6**:"
+msgstr ""

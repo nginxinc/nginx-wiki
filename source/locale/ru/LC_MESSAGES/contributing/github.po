@@ -1,0 +1,204 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/contributing/github.rst:2
+msgid "Submitting Contributions"
+msgstr ""
+
+#: ../../source/contributing/github.rst:4
+msgid ""
+"The Nginx Wiki is automatically generated from `reStructuredText files "
+"<https://en.wikipedia.org/wiki/ReStructuredText>`_ using `Sphinx "
+"Documentation Generator <http://sphinx-doc.org/>`_. The source files are "
+"`stored in GitHub <https://github.com/nginxinc/nginx-wiki>`_ and are open to"
+" contributions via. pull requests. This document will help guide you through"
+" this process."
+msgstr ""
+
+#: ../../source/contributing/github.rst:6
+msgid ""
+"These instructions are for Linux and Mac users and assumes you have a GitHub"
+" account and the ``git`` command line tool is installed."
+msgstr ""
+
+#: ../../source/contributing/github.rst:8
+msgid ""
+"You will also need *python-sphinx* installed, some linux distributions have "
+"this in their repositories, others can install it using `pip`:"
+msgstr ""
+
+#: ../../source/contributing/github.rst:15
+msgid "GitHub's Two Factor Authentication"
+msgstr ""
+
+#: ../../source/contributing/github.rst:17
+msgid ""
+"If you use `two-factor authentication "
+"<https://github.com/settings/two_factor_authentication/configure>`_ with "
+"GitHub (highly recommended) you can access GitHub using the instructions "
+"outlined in this document with an access token instead of a password. This "
+"can be obtained from your `application settings page "
+"<https://github.com/settings/applications>`_."
+msgstr ""
+
+#: ../../source/contributing/github.rst:19
+msgid ""
+"Alternatively you can use SSH to access GitHub. Simply go to your `SSH keys "
+"page <https://github.com/settings/ssh>`_, add your key and change the URLs "
+"in this document from ``https://github.com/user/project.git`` to "
+"``git@github.com:user/project.git``."
+msgstr ""
+
+#: ../../source/contributing/github.rst:22
+msgid "Forking"
+msgstr ""
+
+#: ../../source/contributing/github.rst:24
+msgid ""
+"You need to create a *fork* of the source so that you have a working area "
+"for it. To do this go to the `wiki GitHub page <https://github.com/nginxinc"
+"/nginx-wiki>`_, sign in and click the *Fork* button near the top. Once you "
+"have forked you can get a local copy of this fork to work on. To do this run"
+" the following in your console (where *user* is your username):"
+msgstr ""
+
+#: ../../source/contributing/github.rst:30
+msgid ""
+"You then need to make your local clone aware of the upstream repository:"
+msgstr ""
+
+#: ../../source/contributing/github.rst:38
+msgid "Branch"
+msgstr ""
+
+#: ../../source/contributing/github.rst:40
+msgid ""
+"Every new batch of additions/edits to be merged into the wiki needs its own "
+"branch. Before creating a new branch you should first make sure your local "
+"copy is up to date:"
+msgstr ""
+
+#: ../../source/contributing/github.rst:48
+msgid ""
+"You can then create a new branch from master to work on (replacing "
+"*name_for_branch* with what you want to call the branch):"
+msgstr ""
+
+#: ../../source/contributing/github.rst:55
+msgid "Hack on the wiki!"
+msgstr ""
+
+#: ../../source/contributing/github.rst:57
+msgid ""
+"Hack away on the changes you wish to make. See :doc:`writing_docs` for more "
+"information."
+msgstr ""
+
+#: ../../source/contributing/github.rst:60
+msgid "Test"
+msgstr ""
+
+#: ../../source/contributing/github.rst:62
+msgid ""
+"Once your edits are ready to test you can check to see if they build "
+"correctly using:"
+msgstr ""
+
+#: ../../source/contributing/github.rst:69
+msgid ""
+"If either of these error then these edits will likely need fixing. The Nginx"
+" community team will be happy to assist you with this."
+msgstr ""
+
+#: ../../source/contributing/github.rst:71
+msgid "One way you could preview the output is to use PHP's built-in server:"
+msgstr ""
+
+#: ../../source/contributing/github.rst:78
+msgid ""
+"You can then use your web browser to go to ``http://localhost:8000/`` and "
+"view the result."
+msgstr ""
+
+#: ../../source/contributing/github.rst:81
+msgid "Commit and push"
+msgstr ""
+
+#: ../../source/contributing/github.rst:83
+msgid ""
+"When you are ready to push up your changes you need to commit these and push"
+" them up to GitHub."
+msgstr ""
+
+#: ../../source/contributing/github.rst:85
+msgid ""
+"If you have never pushed code up to GitHub before then you need to setup git"
+" so that is knows you for the commit:"
+msgstr ""
+
+#: ../../source/contributing/github.rst:92
+msgid ""
+"Make sure you use `git add` to add any new files to the respository and then"
+" commit:"
+msgstr ""
+
+#: ../../source/contributing/github.rst:98
+msgid ""
+"Your default text editor will pop up to enter a commit message above the "
+"comments. The first line should be no more than 50 characters and should be "
+"a subject of the commit. The second line should be blank. The third line "
+"onwards can contain details and these should be no more than 72 characters "
+"long per line."
+msgstr ""
+
+#: ../../source/contributing/github.rst:100
+msgid ""
+"If your commit fixes an issue you can add the following (for issue #45 for "
+"example)::"
+msgstr ""
+
+#: ../../source/contributing/github.rst:104
+msgid ""
+"Once all your commits are done a quick rebase may be needed to make sure "
+"your changes will merge OK with what is now in master:"
+msgstr ""
+
+#: ../../source/contributing/github.rst:111
+msgid ""
+"This should bring up a commit-style message in the editor with *pick* as the"
+" first word.  Save this and the rebase will complete.  If the rebase tells "
+"you there is a conflict you will need to locate the problem using ``git "
+"diff``, fix it and do:"
+msgstr ""
+
+#: ../../source/contributing/github.rst:118
+msgid ""
+"If things look like they are going wrong you can undo the rebase using the "
+"following and can get in touch with the Nginx Community team:"
+msgstr ""
+
+#: ../../source/contributing/github.rst:124
+msgid "You should now be ready to push up to GitHub:"
+msgstr ""
+
+#: ../../source/contributing/github.rst:131
+msgid "Pull Request"
+msgstr ""
+
+#: ../../source/contributing/github.rst:133
+msgid ""
+"If you go to your repository on GitHub's website you will an option to file "
+"a *Pull Request*. Use this to submit a pull request upstream for your "
+"branch. You are welcome to make multiple commits in a branch before opening "
+"a pull request."
+msgstr ""

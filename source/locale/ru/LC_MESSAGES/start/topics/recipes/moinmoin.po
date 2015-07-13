@@ -1,0 +1,43 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/recipes/moinmoin.rst:2
+msgid "MoinMoin"
+msgstr ""
+
+#: ../../source/start/topics/recipes/moinmoin.rst:5
+msgid "Recipe"
+msgstr ""
+
+#: ../../source/start/topics/recipes/moinmoin.rst:7
+msgid "in moin.wsgi:"
+msgstr ""
+
+#: ../../source/start/topics/recipes/moinmoin.rst:13
+msgid ""
+"This will let the web server serve the static content like CSS, JS, images."
+msgstr ""
+
+#: ../../source/start/topics/recipes/moinmoin.rst:29
+msgid ""
+"Should be obvious what this is once you've seen/done the WSGI configuration "
+"and read the `ngx_http_uwsgi_module "
+"<http://nginx.org/en/docs/http/ngx_http_uwsgi_module.html>`_ documentation."
+msgstr ""
+
+#: ../../source/start/topics/recipes/moinmoin.rst:31
+msgid ""
+"Uwsgi also needs ``--ignore-script-name`` (or equivalent config file "
+"setting) for `MoinMoin <https://moinmo.in/>`_ otherwise it'll interpret it "
+"as a literal path. Moin doesn't do ``PATH_INFO`` very well (or at all)."
+msgstr ""

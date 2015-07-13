@@ -1,0 +1,115 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/accept_language.rst:2
+msgid "Accept Language Module"
+msgstr ""
+
+#: ../../source/modules/accept_language.rst:6
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/accept_language.rst:7
+msgid ""
+"**nginx_accept_language_module** - Parses the Accept-Language header and "
+"gives the most suitable locale for the user from a list of supported locales"
+" from your website."
+msgstr ""
+
+#: ../../source/modules/accept_language.rst:11
+msgid "Available on github at :github:`giom/nginx_accept_language_module`"
+msgstr ""
+
+#: ../../source/modules/accept_language.rst:13
+msgid ""
+"*This module is not distributed with the Nginx source.* See the "
+"`installation instructions <accept_language.installation_>`_."
+msgstr ""
+
+#: ../../source/modules/accept_language.rst:18
+msgid "Example Configuration"
+msgstr ""
+
+#: ../../source/modules/accept_language.rst:23
+msgid ""
+"where ``$lang`` is the variable in which to store the locale and ``en ja "
+"pl`` are the locales supported by your website"
+msgstr ""
+
+#: ../../source/modules/accept_language.rst:26
+msgid ""
+"If none of the locales from ``accept_language`` is available on your "
+"website, it sets the variable to the first locale of your website's "
+"supported locales (in this case ``en``)."
+msgstr ""
+
+#: ../../source/modules/accept_language.rst:30
+msgid ""
+"It currently assumes that the accept-language is sorted by quality values "
+"(from my tests it's the case for Safari, Firefox, Opera and IE) and discards"
+" q (see http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html). In the "
+"situation where I'm using the module, this assumption works... but buyer "
+"beware :-)"
+msgstr ""
+
+#: ../../source/modules/accept_language.rst:41
+msgid "Installation"
+msgstr ""
+
+#: ../../source/modules/accept_language.rst:42
+msgid ""
+"Download the module source from :github:`GitHub "
+"<giom/nginx_accept_language_module>`"
+msgstr ""
+
+#: ../../source/modules/accept_language.rst:44
+msgid "Unpack, and then compile Nginx with:"
+msgstr ""
+
+#: ../../source/modules/accept_language.rst:53
+msgid "Why did I create it?"
+msgstr ""
+
+#: ../../source/modules/accept_language.rst:54
+msgid ""
+"I'm using page caching with merb on a multi-lingual website and I needed a "
+"way to serve the correct language page from the cache."
+msgstr ""
+
+#: ../../source/modules/accept_language.rst:63
+msgid "Bugs"
+msgstr ""
+
+#: ../../source/modules/accept_language.rst:64
+msgid "Send Bugs to Guillaume Maury (dev@gom-jabbar.org)"
+msgstr ""
+
+#: ../../source/modules/accept_language.rst:69
+msgid "Credits"
+msgstr ""
+
+#: ../../source/modules/accept_language.rst:70
+msgid ""
+"Thanks to Evan Miller for his `guide on writing nginx modules "
+"<http://www.evanmiller.org/nginx-modules-guide.html>`_."
+msgstr ""
+
+#: ../../source/modules/accept_language.rst:75
+msgid "Alternative"
+msgstr ""
+
+#: ../../source/modules/accept_language.rst:76
+msgid ""
+"You can manage *$language_suffix* by this setting when you cannot add this "
+"module into your system."
+msgstr ""

@@ -1,0 +1,123 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/consistent_hash.rst:2
+msgid "Upstream Consistent Hash"
+msgstr ""
+
+#: ../../source/modules/consistent_hash.rst:5
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/consistent_hash.rst:6
+msgid ""
+"**ngx_http_upstream_consistent_hash** - a load balancer that uses an "
+"internal consistent hash ring to select the right backend node. It is "
+"designed to be compatible with ``memcache.hash_strategy = consistent`` of "
+"the *php-memcache* module. This means you can store values into a memcached "
+"cluster using the *php-memcache* module, and later Nginx can find that value"
+" in the cluster and read it from there."
+msgstr ""
+
+#: ../../source/modules/consistent_hash.rst:11
+msgid "Directives"
+msgstr ""
+
+#: ../../source/modules/consistent_hash.rst:14
+msgid "consistent_hash"
+msgstr ""
+
+#: ../../source/modules/consistent_hash.rst:15
+msgid "*consistent_hash hash-key*"
+msgstr ""
+
+#: ../../source/modules/consistent_hash.rst:16
+msgid "*none*"
+msgstr ""
+
+#: ../../source/modules/consistent_hash.rst:17
+msgid "*upstream*"
+msgstr ""
+
+#: ../../source/modules/consistent_hash.rst:19
+msgid ""
+"This parameter has to be inside the upstream definition. It turns on the "
+"consistent hash upstream module and also defines the string which has to be "
+"hashed to find the right backend on the hash ring. As an example, you could "
+"do this:"
+msgstr ""
+
+#: ../../source/modules/consistent_hash.rst:60
+msgid ""
+"This example uses three backend servers. On initialization Nginx will create"
+" a hashring which contains each server (160 * weight) times in the same way "
+"as the *php-memcache* module with ``hash_strategy = consistent`` does. Based"
+" on a hash of ``$request_uri`` it will decide which backend server has to be"
+" used. Now the ``test.php`` script from the above example could look like "
+"following:"
+msgstr ""
+
+#: ../../source/modules/consistent_hash.rst:75
+msgid "Important to know"
+msgstr ""
+
+#: ../../source/modules/consistent_hash.rst:76
+msgid ""
+"I tested with the PHP memcache module version 1.2.8. It seems that the "
+"module in this version has a bug which causes it to completely ignore the "
+"weight if *hash_strategy* is set to consistent_hash. The Nginx consistent "
+"hash upstream knows the weight parameter, but if you use it together with "
+"memcache   module 1.2.8 you shouldn't touch the weight for any backend "
+"server."
+msgstr ""
+
+#: ../../source/modules/consistent_hash.rst:78
+msgid ""
+"I tested the module with Nginx 0.7.61 and 0.6.34, no guarantee for other "
+"versions"
+msgstr ""
+
+#: ../../source/modules/consistent_hash.rst:83
+msgid "Bugs/Feedback"
+msgstr ""
+
+#: ../../source/modules/consistent_hash.rst:84
+msgid "If you find any bugs, please email me and I will try to help."
+msgstr ""
+
+#: ../../source/modules/consistent_hash.rst:86
+msgid "I would appreciate every kind of feedback or problem reports."
+msgstr ""
+
+#: ../../source/modules/consistent_hash.rst:88
+msgid "Mail: mauro.stettler(A.T)gmail.com"
+msgstr ""
+
+#: ../../source/modules/consistent_hash.rst:93
+msgid "Download"
+msgstr ""
+
+#: ../../source/modules/consistent_hash.rst:94
+msgid ""
+"On github I have to branches \"master\" and \"dns\". The reason for this is "
+"that if you want to use DNS entries on the PHP side, instead of IPs, you "
+"will need to apply a patch to the Nginx to make this work. So if your PHP "
+"does not use DNS names to connect to memcache, its nicer to download the "
+"\"master\" branch, because this is a clean module. If your PHP uses DNS "
+"names, you have to download the \"dns\" branch, which includes a patch for "
+"Nginx."
+msgstr ""
+
+#: ../../source/modules/consistent_hash.rst:96
+msgid ":github:`Download from GitHub <replay/ngx_http_consistent_hash>`"
+msgstr ""

@@ -1,0 +1,50 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/groovy_handler.rst:2
+msgid "Groovy"
+msgstr ""
+
+#: ../../source/modules/groovy_handler.rst:4
+msgid ""
+"`Nginx-Clojure <http://nginx-clojure.github.io>`_ is a Nginx module for "
+"embedding Clojure or Java or Groovy programs, typically those `Ring <ring-"
+"clojure/ring/blob/master/SPEC>` based handlers."
+msgstr ""
+
+#: ../../source/modules/groovy_handler.rst:6
+msgid "There are some simple examples about Groovy handler."
+msgstr ""
+
+#: ../../source/modules/groovy_handler.rst:9
+msgid "Inline Groovy Handler"
+msgstr ""
+
+#: ../../source/modules/groovy_handler.rst:11
+#: ../../source/modules/groovy_handler.rst:33
+msgid "In nginx.conf"
+msgstr ""
+
+#: ../../source/modules/groovy_handler.rst:31
+msgid "External Groovy Handler"
+msgstr ""
+
+#: ../../source/modules/groovy_handler.rst:42
+msgid "In HelloGroovy.groovy"
+msgstr ""
+
+#: ../../source/modules/groovy_handler.rst:59
+msgid ""
+"More details can be found in `nginx-clojure.github.io <http://nginx-"
+"clojure.github.io>`_."
+msgstr ""

@@ -1,0 +1,62 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/tutorials/basics_linux.rst:3
+msgid "Linux Basics"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/basics_linux.rst:5
+msgid ""
+"There are countless resources on the internet for learning the basics of any"
+" operating system and many of them are universal. Rather than repeating the "
+"same content already available to you in these resources, we're going to "
+"make the assumption that you're already at least a little familiar with "
+"Linux from the command line."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/basics_linux.rst:12
+msgid "Minimum Basics"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/basics_linux.rst:14
+msgid ""
+"In case you're not actually at this level, we've provided some links to "
+"other resources that we feel should get you comfortable with what remains in"
+" this section of the tutorial."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/basics_linux.rst:23
+msgid "Learning the Shell via `LinuxCommand`_"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/basics_linux.rst:33
+msgid "CLI Basics"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/basics_linux.rst:35
+msgid ""
+"Having the `Minimum Basics`_ in place, we should be able to dive in to some "
+"slightly heavier material."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/basics_linux.rst:38
+msgid "Stuff here...."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/basics_linux.rst:41
+msgid "Nginx Basics"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/basics_linux.rst:43
+msgid "Stuff related to working with Nginx on the command line."
+msgstr ""
