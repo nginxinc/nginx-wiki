@@ -1,0 +1,291 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/quick_start.rst:2
+msgid "Quick Start"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:41
+msgid "Pre-canned Configurations"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:43
+msgid ""
+"As you learned in the tutorials, most Nginx configuration files are very "
+"similar. You can apply the same logic to most web applications and achieve "
+"the desired result. There are some applications that have weird little "
+"quirks that tend to throw a wrench in things."
+msgstr ""
+
+#: ../../source/start/quick_start.rst:48
+msgid ""
+"Nginx happens to have a very well rounded community that has worked to first"
+" address these quirks and then share the resulting configurations. This has "
+"resulted in many \"copy and paste\" configurations that are almost "
+"guaranteed to work."
+msgstr ""
+
+#: ../../source/start/quick_start.rst:53
+msgid ""
+"`ActiveColab <https://www.howtoforge.com/running-activecollab-3-on-nginx-"
+"lemp-on-debian-wheezy-ubuntu-12.10>`_"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:54
+msgid ":doc:`topics/recipes/alkaline`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:55
+msgid "`Chive <https://github.com/perusio/chive-nginx>`_"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:56
+msgid ":doc:`topics/recipes/cms_made_simple`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:57
+msgid ":doc:`topics/recipes/codeigniter`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:58
+msgid ""
+"`Contao <https://www.howtoforge.com/running-contao-2.10.2-on-nginx-lemp-on-"
+"debian-squeeze-ubuntu-11.10>`_"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:59
+msgid ""
+"`CS-Cart <https://www.howtoforge.com/running-cs-cart-on-nginx-lemp-on-"
+"debian-wheezy-ubuntu-13.04>`_"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:60
+msgid ":doc:`topics/recipes/dokuwiki`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:61
+msgid ":doc:`topics/recipes/drupal`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:62
+msgid ":doc:`topics/recipes/elgg`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:63
+msgid ""
+"`Feng Office <https://www.howtoforge.com/running-feng-office-community-"
+"edition-on-nginx-lemp-on-debian-squeeze-ubuntu-11.10>`_"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:64
+msgid ""
+"`Icinga <https://www.howtoforge.com/icinga-configuration-for-nginx-on-"
+"debian-wheezy-ubuntu-11.10>`_"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:65
+msgid ":doc:`topics/recipes/iredmail`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:66
+msgid "`Joomla <https://docs.joomla.org/Nginx>`_"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:67
+msgid ":doc:`topics/recipes/mailman`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:68
+msgid ":doc:`topics/recipes/mediawiki`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:69
+msgid ":doc:`topics/recipes/moinmoin`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:70
+msgid ":doc:`topics/recipes/mybb`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:71
+msgid ":doc:`topics/recipes/omeka`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:72
+msgid ":doc:`topics/recipes/oscommerce`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:73
+msgid ":doc:`topics/recipes/osticket`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:74
+msgid ""
+"`ownCloud <https://www.howtoforge.com/running-owncloud-5.0-on-nginx-lemp-on-"
+"debian-wheezy>`_"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:75
+msgid ""
+"`OXID eShop <https://www.howtoforge.com/running-oxid-eshop-community-"
+"edition-version-4.5.9-on-nginx-lemp-on-debian-squeeze-ubuntu-11.10>`_"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:76
+msgid ""
+"`phpBB "
+"<https://raw.githubusercontent.com/phpbb/phpbb3/master/phpBB/docs/nginx.sample.conf>`_"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:77
+msgid ":doc:`topics/recipes/phplist`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:78
+msgid ":doc:`topics/recipes/piwik`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:79
+msgid ":doc:`topics/recipes/pmwiki`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:80
+msgid ""
+"`PrestaShop <https://www.howtoforge.com/running-prestashop-1.5.x-on-nginx-"
+"lemp-on-debian-wheezy-ubuntu-12.10>`_"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:81
+msgid ""
+"`ProcessWire <https://www.howtoforge.com/running-processwire-on-nginx-lemp-"
+"on-debian-wheezy-ubuntu-13.04>`_"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:82
+msgid ":doc:`topics/recipes/pyrocms`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:83
+msgid ":doc:`topics/recipes/qwebirc`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:84
+msgid ""
+"`Redaxo <https://www.howtoforge.com/running-redaxo-4.4.x-on-nginx-lemp-on-"
+"debian-wheezy-ubuntu-12.10>`_"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:85
+msgid ":doc:`topics/recipes/redmine`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:86
+msgid ""
+"`Roundcube <https://www.howtoforge.com/running-roundcube-0.7.1-on-nginx-"
+"lemp-on-debian-squeeze-ubuntu-11.10>`_"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:87
+msgid ""
+"`Shopware 3.5.6 <https://www.howtoforge.com/running-shopware-community-"
+"edition-version-3.5.6-on-nginx-lemp-on-debian-squeeze-ubuntu-12.04>`_"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:88
+msgid ""
+"`Shopware 4.0.x <https://www.howtoforge.com/running-new-shopware-"
+"version-4.0.x-on-nginx-lemp-on-ubuntu-12.04>`_"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:89
+msgid ":doc:`topics/recipes/silverstripe`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:90
+msgid ""
+"`Simple Groupware <https://www.howtoforge.com/running-simple-groupware-on-"
+"nginx-lemp-on-debian-squeeze-ubuntu-11.10>`_"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:91
+msgid ":doc:`topics/recipes/spip`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:92
+msgid ""
+"`SugarCRM <https://www.howtoforge.com/running-sugarcrm-community-edition-on-"
+"nginx-lemp-on-debian-squeeze-ubuntu-11.04>`_"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:93
+msgid ":doc:`topics/recipes/symfony`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:94
+msgid ""
+"`TYPO3 4.6 <https://www.howtoforge.com/running-typo3-4.6-on-nginx-lemp-on-"
+"debian-squeeze-ubuntu-11.10>`_"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:95
+msgid ""
+"`TYPO3 6.3 <https://www.howtoforge.com/running-typo3-6.2-on-nginx-lemp-on-"
+"debian-wheezy-ubuntu-13.10>`_"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:96
+msgid ":doc:`topics/recipes/wordpress`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:97
+msgid ":doc:`topics/recipes/xenforo`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:98
+msgid ":doc:`topics/recipes/yii`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:99
+msgid ":doc:`topics/recipes/zend`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:100
+msgid ":doc:`topics/recipes/zenphoto`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:103
+msgid "Other Examples"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:105
+msgid ""
+"Of course, Nginx can do much more. We're barely scratching the surface. If "
+"you're interested, you can take a look at some other examples that have been"
+" developed."
+msgstr ""
+
+#: ../../source/start/quick_start.rst:109
+msgid ":doc:`topics/examples/full`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:110
+msgid ":doc:`topics/examples/server_blocks`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:111
+msgid ":doc:`topics/examples/dynamic_ssi`"
+msgstr ""
+
+#: ../../source/start/quick_start.rst:112
+msgid ":doc:`topics/examples/phpfcgi`"
+msgstr ""

@@ -1,0 +1,230 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/healthcheck.rst:2
+msgid "HTTP Healthcheck"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:5
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:6
+msgid ""
+"**ngx_http_healthcheck_module** - polls backends and if they respond with "
+"HTTP 200 + an optional request body, they are marked good. Otherwise, they "
+"are marked bad."
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:10
+msgid ""
+"You can get the module from :github:`GitHub "
+"<cep21/healthcheck_nginx_upstreams>`"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:12
+msgid ""
+"This also gives you access to a health status page that lets you seehow well"
+" your healthcheck are doing."
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:15
+msgid ""
+"*This module is not distributed with the Nginx source.* See the "
+"`installation instructions <healthcheck.installation_>`_."
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:18
+msgid ""
+"The docs on this wiki can get out of date. For the authoritative "
+"information, please see the README file inside the plugin's :github:`git "
+"repository <cep21/healthcheck_nginx_upstreams>`"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:25
+msgid "Directives"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:28
+msgid "healthcheck_enabled"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:29
+msgid "*healthcheck_enabled*"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:30
+#: ../../source/modules/healthcheck.rst:114
+msgid "*none*"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:31
+#: ../../source/modules/healthcheck.rst:41
+#: ../../source/modules/healthcheck.rst:51
+#: ../../source/modules/healthcheck.rst:61
+#: ../../source/modules/healthcheck.rst:72
+#: ../../source/modules/healthcheck.rst:93
+#: ../../source/modules/healthcheck.rst:104
+#: ../../source/modules/healthcheck.rst:115
+msgid "*upstream*"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:33
+msgid "Enables health checking of an upstream"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:38
+msgid "healthcheck_delay"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:39
+msgid "*healthcheck_delay <milliseconds>*"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:40
+msgid "*10000*"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:43
+msgid "Delay in msec between healthchecks for a single peer."
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:48
+msgid "healthcheck_timeout"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:49
+msgid "*healthcheck_timeout <milliseconds>*"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:50
+msgid "*2000*"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:53
+msgid "How many milliseconds a healthcheck is allowed to take place"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:58
+msgid "healthcheck_failcount"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:59
+msgid "*healthcheck_failcount <count>*"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:60
+msgid "*2*"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:63
+msgid ""
+"Number of healthchecks good or bad in a row it takes to switch from down to "
+"up and back. Good to prevent flapping"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:69
+msgid "healthcheck_send"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:70
+msgid "*healthcheck_send <content>*"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:71
+msgid "*empty*"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:74
+msgid ""
+"Required directive.  What to send for the healthcheck.  Each argument is "
+"appended by \\r\\n and the entire thing is suffixed with another \\r\\n. For"
+" example,"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:84
+msgid ""
+"You probably want to end your health check with some directive that closes "
+"the connection, like Connection: close."
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:90
+msgid "healthcheck_expected"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:91
+msgid "*healthcheck_expected <content>*"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:92
+msgid "*unset*"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:95
+msgid ""
+"What to expect in the HTTP BODY, (meaning not the headers), in a correct "
+"response.  If unset, just a HTTP 200 status code is required for a peer"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:101
+msgid "healthcheck_buffer"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:102
+msgid "*healthcheck_buffer <size>*"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:103
+msgid "*1000*"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:106
+msgid ""
+"How big a buffer to use for the health check. Remember to include headers "
+"PLUS body, not just body."
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:112
+msgid "healthcheck_status"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:113
+msgid "*healthcheck_status*"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:117
+msgid ""
+"When inside a /location block, replaced the HTTP body with backend health "
+"status. Use similarly to the stub_status module."
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:125
+msgid "Installation"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:126
+msgid ""
+"This module is not distributed with the Nginx source. You can download the "
+"module from :github:`here <cep21/healthcheck_nginx_upstreams>` Read the "
+"installation instructions inside the README file."
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:133
+msgid "Bugs"
+msgstr ""
+
+#: ../../source/modules/healthcheck.rst:134
+msgid ""
+"Please report bugs to :github:`here "
+"<cep21/healthcheck_nginx_upstreams/issues>`"
+msgstr ""

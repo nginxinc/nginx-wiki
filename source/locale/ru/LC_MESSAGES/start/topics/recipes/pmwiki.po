@@ -1,0 +1,39 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/recipes/pmwiki.rst:4
+msgid "PmWiki"
+msgstr ""
+
+#: ../../source/start/topics/recipes/pmwiki.rst:6
+msgid ""
+"PmWiki is a wiki-based system for collaborative creation and maintenance of "
+"websites."
+msgstr ""
+
+#: ../../source/start/topics/recipes/pmwiki.rst:10
+msgid "Requirements"
+msgstr ""
+
+#: ../../source/start/topics/recipes/pmwiki.rst:12
+msgid ":ref:`tutorials-phpfpm`"
+msgstr ""
+
+#: ../../source/start/topics/recipes/pmwiki.rst:15
+msgid "Recipe"
+msgstr ""
+
+#: ../../source/start/topics/recipes/pmwiki.rst:17
+msgid ""
+"The configuration uses a separated, reusable layout. It adds three files."
+msgstr ""

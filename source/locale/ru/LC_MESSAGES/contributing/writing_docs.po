@@ -1,0 +1,385 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/contributing/writing_docs.rst:2
+msgid "Writing Documentation"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:5
+msgid "Adding new documentation"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:7
+msgid ""
+"If any new documentation files are added the need to be added to the "
+"*toctree* for that section. This is usually found in the ``index.rst`` file "
+"for the directory you need to add your documentation to.  For example in the"
+" ``community/`` directory the ``index.rst`` file contains a toctree similar "
+"to this:"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:16
+msgid ""
+"Each one are implied to have a ``.rst`` extension. Each file will compile to"
+" a seperate HTML file when built with Sphinx."
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:19
+msgid "Adding a module document"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:21
+msgid ""
+"In addition to adding to the tocree, modules should be added to the big "
+"table in ``modules/index.rst``. This has three columns, the module language "
+"should use the ``:doc:`` directive to point to a ``.rst`` file for the "
+"documentation. The description should be a summary of a few words. The "
+"repository should use the :rst:role:`github` or :rst:role:`bitbucket` "
+"directive if possible, or should be a link to the repository if something "
+"else was used."
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:27
+msgid ""
+"Please keep the modules in alphabetical order, this makes it easier for "
+"others to find them."
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:30
+msgid "reStructuredText Basics"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:32
+msgid ""
+"These are the basics for writing reStructuredText files. For more "
+"imformation we highly recommend looking at `Sphinx's own documentation <http"
+"://sphinx-doc.org/contents.html>`_ and `Quick reStructuredText "
+"<http://docutils.sourceforge.net/docs/user/rst/quickref.html>`_. For a more "
+"detailed view what is possible, take a look at the `reStructuredText "
+"specification "
+"<http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html>`_."
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:34
+msgid ""
+"Like Python, blocks of content are typically nested using whitespace "
+"indentation. For example:"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:45
+msgid "This is a note! It is multi-line"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:49
+msgid "Inline Markup"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:51
+msgid ""
+"There are various inline markups you can use for basic text formatting. For "
+"example:"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:61
+msgid "*emphasis*"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:62
+msgid "**bold**"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:63
+msgid "``literal``"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:64
+msgid ":sub:`subscript`"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:65
+msgid ":sup:`superscript`"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:68
+msgid "Bullets and Lists"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:70
+msgid "Bullets and ordered lists are very simple."
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:81
+msgid "bullet points are asterisks"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:83
+msgid "and can be nested"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:84
+msgid "but need a blank line between parent and children"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:86
+msgid "and another blank line to continue the parent list"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:99
+msgid "An auto-generated numbered list"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:101
+msgid "It too can be nested"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:103
+msgid "And continue with the parent"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:105
+msgid "Fixed numbered lists"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:106
+msgid "Are also possible"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:109
+msgid "Links"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:111
+msgid "There are internal links as well as external links that are possible."
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:125
+msgid "`Nginx Website <http://nginx.com/>`_"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:127
+msgid "A link to another document: :doc:`index`"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:129
+msgid "And a link to an :ref:`abritrary reference <reference-location>`"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:132
+msgid "Headings"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:134
+msgid ""
+"Headings are signified by using characters on the line below to underline "
+"them. Different styles signify level. Headings are automatically used to "
+"build the table of contents for the wiki:"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:148
+msgid "Tables"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:150
+msgid "There are two ways to create tables, Grid Tables and Simple Tables."
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:152
+msgid ""
+"Grid Tables use ASCII art to design the table. An example is as follows:"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:170
+msgid "Column 1 Multiline"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:170
+#: ../../source/contributing/writing_docs.rst:194
+msgid "Column 2"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:170
+#: ../../source/contributing/writing_docs.rst:194
+msgid "Column 3"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:173
+msgid "item 1"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:173
+msgid "stuff"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:173
+msgid "nonsense"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:175
+msgid "item 2"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:175
+msgid "horizontal span"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:177
+msgid "item 3"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:177
+msgid "vertical span"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:177
+msgid "is possible too."
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:179
+msgid "item 4"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:182
+msgid ""
+"Simple tables on the other hand are less flexible but are easier to create:"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:194
+msgid "Column 1"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:196
+msgid "item a"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:196
+msgid "item b"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:196
+msgid "item c"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:197
+msgid "item d"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:197
+msgid "item e"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:197
+msgid "item f"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:201
+msgid "Syntax Highlighting"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:203
+msgid "Sphinx can highlight the syntax of code blocks. For example:"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:228
+msgid ""
+"There is also syntax highlighting for Nginx configuration files, here is an "
+"example of this with line numbers:"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:268
+msgid ""
+"`Pygments Demo <http://pygments.org/demo/>`_ - A demo of the available "
+"syntax highlighting types."
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:271
+#: ../../source/contributing/writing_docs.rst:285
+msgid "Footnotes"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:273
+msgid ""
+"Footnotes in their most simple form can be generated using ``[1]_`` in the "
+"text and then a section of the bottom of the page as follows [1]_:"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:282
+#: ../../source/contributing/writing_docs.rst:308
+msgid "Which generates:"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:286
+msgid "Like this"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:290
+msgid "Notes, Warnings, Todo and See Also"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:292
+msgid ""
+"Notes, warnings and todos all take similar forms. The wiki is configured to "
+"hide *todo* whilst rendering:"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:311
+msgid "This is a note"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:314
+msgid "This is a warning"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:320
+msgid "This is a See Also"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:324
+msgid "Nginx Wiki specific rols"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:326
+msgid ""
+"A few extra roles have been added to assist with creating documentation for "
+"this wiki."
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:330
+msgid ""
+"The icon role lets you use `Font Awesome <https://fortawesome.github.io"
+"/Font-Awesome/icons/>`_ icons in text. Simply use as described in the Font "
+"Awesome documentation but without the *fa* prefix and the options comma "
+"separated. For example:"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:336
+msgid "A globe example: :icon:`globe`"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:340
+msgid ""
+"This creates a GitHub icon with link based on a GitHub path. For example:"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:346
+msgid ":github:`nginxinc/nginx-wiki`"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:350
+msgid ""
+"This creates a Bitbucket icon with link based on a Bitbucket path. For "
+"example:"
+msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:356
+msgid ":bitbucket:`nginx-goodies/nginx-sticky-module-ng`"
+msgstr ""

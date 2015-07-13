@@ -1,0 +1,103 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/fair_balancer.rst:2
+msgid "Upstream Fair Balancer"
+msgstr ""
+
+#: ../../source/modules/fair_balancer.rst:5
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/fair_balancer.rst:6
+msgid ""
+"**ngx_http_upstream_fair_module** - sends an incoming request to the least-"
+"busy backend server, rather than distributing requests round-robin."
+msgstr ""
+
+#: ../../source/modules/fair_balancer.rst:8
+msgid "Example:"
+msgstr ""
+
+#: ../../source/modules/fair_balancer.rst:18
+msgid ""
+"*This module is not distributed with the Nginx source.* See the "
+"`installation instructions <fair_balancer.installation_>`_."
+msgstr ""
+
+#: ../../source/modules/fair_balancer.rst:23
+msgid "Directives"
+msgstr ""
+
+#: ../../source/modules/fair_balancer.rst:26
+msgid "fair"
+msgstr ""
+
+#: ../../source/modules/fair_balancer.rst:27
+msgid "*fair*"
+msgstr ""
+
+#: ../../source/modules/fair_balancer.rst:28
+msgid "*none*"
+msgstr ""
+
+#: ../../source/modules/fair_balancer.rst:29
+msgid "*upstream*"
+msgstr ""
+
+#: ../../source/modules/fair_balancer.rst:31
+msgid "Enables fairness."
+msgstr ""
+
+#: ../../source/modules/fair_balancer.rst:35
+msgid "upstream_fair_shm_size"
+msgstr ""
+
+#: ../../source/modules/fair_balancer.rst:36
+msgid "*upstream_fair_shm_size size*"
+msgstr ""
+
+#: ../../source/modules/fair_balancer.rst:37
+msgid "*32k*"
+msgstr ""
+
+#: ../../source/modules/fair_balancer.rst:38
+msgid "*main*"
+msgstr ""
+
+#: ../../source/modules/fair_balancer.rst:40
+msgid ""
+"Size of the shared memory for storing information about the busy-ness of "
+"backends. Defaults to 8 pages (so 32k on most systems)."
+msgstr ""
+
+#: ../../source/modules/fair_balancer.rst:48
+msgid "Installation"
+msgstr ""
+
+#: ../../source/modules/fair_balancer.rst:49
+msgid ""
+"This module is not distributed with the Nginx source. You can browse its "
+":github:`git repository <gnosek/nginx-upstream-fair/tree/master>` or "
+":github:`download the tar ball <gnosek/nginx-upstream-fair/tarball/master>`"
+msgstr ""
+
+#: ../../source/modules/fair_balancer.rst:53
+msgid ""
+"After extracting, add the following option to your Nginx ``./configure`` "
+"command:"
+msgstr ""
+
+#: ../../source/modules/fair_balancer.rst:59
+msgid "Then ``make`` and ``make install`` as usual."
+msgstr ""

@@ -1,0 +1,351 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/concat.rst:2
+msgid "Concat"
+msgstr ""
+
+#: ../../source/modules/concat.rst:5
+msgid "Synopsis"
+msgstr ""
+
+#: ../../source/modules/concat.rst:6
+msgid ""
+"This is a module that is distributed with `Tengine "
+"<http://tengine.taobao.org>`_ which is a distribution of Nginx that is used "
+"by the e-commerce/auction site `Taobao.com "
+"<https://en.wikipedia.org/wiki/Taobao>`_. This distribution contains some "
+"modules that are new on the Nginx scene. The *ngx_http_concat* module is one"
+" of them."
+msgstr ""
+
+#: ../../source/modules/concat.rst:10
+msgid ""
+"The module is inspired by Apache's `modconcat "
+"<http://code.google.com/p/modconcat>`_. It follows the same pattern for "
+"enabling the concatenation. It uses two *?*, like this::"
+msgstr ""
+
+#: ../../source/modules/concat.rst:15
+msgid ""
+"If a **third** *?* is present it's treated as **version string**. Like "
+"this::"
+msgstr ""
+
+#: ../../source/modules/concat.rst:19
+msgid "Configuration example:"
+msgstr ""
+
+#: ../../source/modules/concat.rst:34
+msgid "The original description was written by |perusio|_"
+msgstr ""
+
+#: ../../source/modules/concat.rst:46
+msgid "Directives"
+msgstr ""
+
+#: ../../source/modules/concat.rst:49
+msgid "concat"
+msgstr ""
+
+#: ../../source/modules/concat.rst:50
+msgid "*concat [on|off]*"
+msgstr ""
+
+#: ../../source/modules/concat.rst:51 ../../source/modules/concat.rst:120
+msgid "*off*"
+msgstr ""
+
+#: ../../source/modules/concat.rst:52 ../../source/modules/concat.rst:61
+#: ../../source/modules/concat.rst:71 ../../source/modules/concat.rst:92
+#: ../../source/modules/concat.rst:121
+msgid "*http, server, location*"
+msgstr ""
+
+#: ../../source/modules/concat.rst:54
+msgid "It enables the concatenation in a given context."
+msgstr ""
+
+#: ../../source/modules/concat.rst:58
+msgid "concat_types"
+msgstr ""
+
+#: ../../source/modules/concat.rst:59
+msgid "*concat_types MIME types*"
+msgstr ""
+
+#: ../../source/modules/concat.rst:60
+msgid "*text/css application/x-javascript*"
+msgstr ""
+
+#: ../../source/modules/concat.rst:63
+msgid ""
+"Defines the `MIME types <https://en.wikipedia.org/wiki/MIME_type>`_ which "
+"can be concatenated in a given context."
+msgstr ""
+
+#: ../../source/modules/concat.rst:68
+msgid "concat_unique"
+msgstr ""
+
+#: ../../source/modules/concat.rst:69
+msgid "*concat_unique [on|off]*"
+msgstr ""
+
+#: ../../source/modules/concat.rst:70
+msgid "*on*"
+msgstr ""
+
+#: ../../source/modules/concat.rst:73
+msgid ""
+"Defines if only files of a given MIME type can concatenated or if several "
+"MIME types can be concatenated. For example if set to ``off`` then in a "
+"given context you can concatenate Javascript and CSS files."
+msgstr ""
+
+#: ../../source/modules/concat.rst:77
+msgid ""
+"Note that the default value is ``on``, meaning that only files with same "
+"MIME type are concatenated in a given context. So if you have CSS and JS you"
+" cannot do something like this::"
+msgstr ""
+
+#: ../../source/modules/concat.rst:83
+msgid ""
+"In order to do that you **must** set ``concat_unique off``. This applies to "
+"any other type of files that you decide to concatenate by adding the "
+"respective MIME type via ``concat_types``,"
+msgstr ""
+
+#: ../../source/modules/concat.rst:89
+msgid "concat_max_files"
+msgstr ""
+
+#: ../../source/modules/concat.rst:90
+msgid "*concat_max_files number*"
+msgstr ""
+
+#: ../../source/modules/concat.rst:91
+msgid "*10*"
+msgstr ""
+
+#: ../../source/modules/concat.rst:94
+msgid ""
+"Defines the **maximum** number of files that can be concatenated in a given "
+"context. Note that a given URI cannot be bigger than the page size of your "
+"platform. On Linux you can get the page size issuing::"
+msgstr ""
+
+#: ../../source/modules/concat.rst:100
+msgid ""
+"Usually is 4k. So if you try to concatenate a lot of files together in a "
+"given context you might hit this barrier. To overcome that OS defined "
+"limitation you must use the `large_client_header_buffers "
+"<http://wiki.nginx.org/NginxHttpCoreModule#large_client_header_buffers>`_ "
+"directive. Set it to the value you need."
+msgstr ""
+
+#: ../../source/modules/concat.rst:108
+msgid "concat_delimiter"
+msgstr ""
+
+#: ../../source/modules/concat.rst:109
+msgid "*concat_delimiter string*"
+msgstr ""
+
+#: ../../source/modules/concat.rst:110
+msgid "*none*"
+msgstr ""
+
+#: ../../source/modules/concat.rst:111
+msgid "*http, server, locatione*"
+msgstr ""
+
+#: ../../source/modules/concat.rst:113
+msgid ""
+"Defines the **delimiter** between two files. If the config is "
+"``concat_delimiter \"\\n\"``,a ``\"\\n\"`` would be inserted betwen 1.js and"
+" 2.js when visting ``http://example.com/??1.js,2.js``"
+msgstr ""
+
+#: ../../source/modules/concat.rst:118
+msgid "concat_ignore_file_error"
+msgstr ""
+
+#: ../../source/modules/concat.rst:119
+msgid "*concat_ignore_file_error [on|off]*"
+msgstr ""
+
+#: ../../source/modules/concat.rst:123
+msgid "Whether to ignore 404 and 403 or not."
+msgstr ""
+
+#: ../../source/modules/concat.rst:128
+msgid "Installation"
+msgstr ""
+
+#: ../../source/modules/concat.rst:129
+msgid "Clone the git repo."
+msgstr ""
+
+#: ../../source/modules/concat.rst:135
+msgid "Add the module to the build configuration by adding:"
+msgstr ""
+
+#: ../../source/modules/concat.rst:141
+msgid "Build the nginx binary."
+msgstr ""
+
+#: ../../source/modules/concat.rst:142
+msgid "Install the nginx binary."
+msgstr ""
+
+#: ../../source/modules/concat.rst:143
+msgid "Configure contexts where concat is enabled."
+msgstr ""
+
+#: ../../source/modules/concat.rst:144
+msgid ""
+"Build your links such that the above format, i.e., all URIs that have files "
+"that are to be concatenated have a *??* prefix. The HTML produced would have"
+" something like this inside the *<head>* element for concatenating CSS "
+"files."
+msgstr ""
+
+#: ../../source/modules/concat.rst:150
+msgid "Similarly for JavaScript files you should have:"
+msgstr ""
+
+#: ../../source/modules/concat.rst:156
+msgid ""
+"Now if you open up the network tab on firebug or on safari/chrome/chromium "
+"browser inspector you should see a single bar where before here were many. "
+"Congratulations you're now using file concatenation at the server level. No "
+"longer messing around with scripts for aggregating files. Note although that"
+" there's no `minification "
+"<https://en.wikipedia.org/wiki/Minification_(programming)>`_ of files. So "
+"you might want to minify the files before concatenating them."
+msgstr ""
+
+#: ../../source/modules/concat.rst:157
+msgid "Done."
+msgstr ""
+
+#: ../../source/modules/concat.rst:162
+msgid "Tagging releases"
+msgstr ""
+
+#: ../../source/modules/concat.rst:163
+msgid ""
+"I'm tagging each release in synch with the `Tengine "
+"<http://tengine.taobao.org>`_ releases."
+msgstr ""
+
+#: ../../source/modules/concat.rst:169
+msgid "Other tengine modules on Github"
+msgstr ""
+
+#: ../../source/modules/concat.rst:170
+msgid ":github:`footer filter <taobao/nginx-http-footer-filter>`"
+msgstr ""
+
+#: ../../source/modules/concat.rst:171
+msgid ""
+"allows to add some extra data (markup or not) at the end of a request body. "
+"It's pratical for things like adding time stamps or other miscellaneous "
+"stuff without having to tweak your application."
+msgstr ""
+
+#: ../../source/modules/concat.rst:175
+msgid ":github:`http slice <taobao/nginx-http-slice>`"
+msgstr ""
+
+#: ../../source/modules/concat.rst:173
+msgid ""
+"allows to serve a file by slices. A sort of reverse byte-range. Useful for "
+"serving large files while not hogging the network."
+msgstr ""
+
+#: ../../source/modules/concat.rst:178
+msgid "Other builds"
+msgstr ""
+
+#: ../../source/modules/concat.rst:179
+msgid ""
+"As referred at the outset this module is part of the `Tengine "
+"<http://tengine.taobao.org>`_ Nginx distribution. So you might want to save "
+"yourself some work and just build it from scratch using *Tengine* in lieu if"
+" the official Nginx source."
+msgstr ""
+
+#: ../../source/modules/concat.rst:180
+msgid ""
+"If you fancy a bleeding edge Nginx package (from the dev releases) for "
+"Debian made to measure then you might be interested in my `debian "
+"<http://debian.perusio.net/unstable>`_ Nginx package. Instructions for using"
+" the repository and making the package live happily inside a stable "
+"distribution installation are `provided <http://debian.perusio.net>`_."
+msgstr ""
+
+#: ../../source/modules/concat.rst:185
+msgid "Acknowledgments"
+msgstr ""
+
+#: ../../source/modules/concat.rst:186
+msgid ""
+"Thanks to `Joshua Zhu <http://blog.zhuzhaoyuan.com>`_ and the Taobao "
+"platform engineering team for releasing *Tengine*. Also for being kind "
+"enough to clarify things regarding this module on the `Nginx mailing list "
+"<http://mailman.nginx.org/pipermail/nginx/2011-December/030830.html>`_."
+msgstr ""
+
+#: ../../source/modules/concat.rst:192
+msgid "License"
+msgstr ""
+
+#: ../../source/modules/concat.rst:193
+msgid "Copyright (C) 2010-2012 Alibaba Group Holding Limited"
+msgstr ""
+
+#: ../../source/modules/concat.rst:195
+msgid ""
+"Redistribution and use in source and binary forms, with or without "
+"modification, are permitted provided that the following conditions are met:"
+msgstr ""
+
+#: ../../source/modules/concat.rst:199
+msgid ""
+"Redistributions of source code must retain the above copyright notice, this "
+"list of conditions and the following disclaimer."
+msgstr ""
+
+#: ../../source/modules/concat.rst:202
+msgid ""
+"Redistributions in binary form must reproduce the above copyright notice, "
+"this list of conditions and the following disclaimer in the documentation "
+"and/or other materials provided with the distribution."
+msgstr ""
+
+#: ../../source/modules/concat.rst:206
+msgid ""
+"THIS SOFTWARE IS PROVIDED BY AUTHOR AND CONTRIBUTORS \"AS IS\" AND ANY "
+"EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED "
+"WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE ARE "
+"DISCLAIMED.  IN NO EVENT SHALL AUTHOR OR CONTRIBUTORS BE LIABLE FOR ANY "
+"DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR CONSEQUENTIAL DAMAGES "
+"(INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES;"
+" LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND"
+" ON ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT "
+"(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF "
+"THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+msgstr ""

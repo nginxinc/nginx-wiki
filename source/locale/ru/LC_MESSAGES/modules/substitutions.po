@@ -1,0 +1,216 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/substitutions.rst:2
+msgid "Substitutions"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:5
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:6
+msgid ""
+"**nginx_substitutions_filter** - a filter module which can do both regular "
+"expression and fixed string substitutions on response bodies. This module is"
+" quite different from the Nginx's native Substitution Module. It scans the "
+"output chains buffer and matches string line by line, just like Apache's "
+"`mod_substitute "
+"<http://httpd.apache.org/docs/trunk/mod/mod_substitute.html>`_."
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:8
+msgid ""
+"*This module is not distributed with the Nginx source.* See the "
+"`installation instructions <substitutions.installation_>`_."
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:13
+msgid "Example"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:26
+msgid "Directives"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:27
+msgid "subs_filter_types_"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:28
+msgid "subs_filter_"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:32
+msgid "subs_filter_types"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:33
+msgid "*subs_filter_types mime-type [ mime-types ]*"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:34
+msgid "*text/html*"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:35
+#: ../../source/modules/substitutions.rst:52
+msgid "*http, server, location*"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:37
+msgid ""
+"subs_filter_types_ is used to specify which content types should be checked "
+"for subs_filter_."
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:39
+msgid ""
+"This module just works with plain text. If the response is compressed, it "
+"can't uncompress the response and will ignore this response. This module can"
+" be compatible with gzip filter module. But it will not work with proxy "
+"compressed response. You can disable the compressed response like this:"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:49
+msgid "subs_filter"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:50
+msgid "*subs_filter source_str destination_str [gior]*"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:51
+msgid "*g*"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:54
+msgid ""
+"subs_filter_ allows replacing source string (regular expression or fixed) in"
+" the nginx response with destination string. Substitution text may contain "
+"variables. More than one substitution rules per location is supported. The "
+"meaning of the third flags are:"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:58
+msgid "``g``: Replace all the match strings."
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:59
+msgid "``i``: Perform a case-insensitive match."
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:60
+msgid "``o``: Just replace the first one."
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:61
+msgid ""
+"``r``: The pattern is treated as a regular expression, default is fixed "
+"string."
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:68
+msgid "Installation"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:69
+msgid "To install, get the source with subversion:"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:76
+msgid "and then compile nginx with the following option:"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:85
+msgid "Changelog"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:86
+msgid "06/30/2012: Changes with nginx_substitutions_filter 0.6.0"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:88
+msgid "refactored this module"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:90
+msgid "08/11/2010: Changes with nginx_substitutions_filter 0.5.2"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:92
+msgid "optimizations"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:93
+msgid "fixed a bug of buffer overlap"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:94
+msgid "fixed a segment fault bug when output chain return NGX_AGAIN."
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:95
+msgid ""
+"fixed a bug about last buffer with no linefeed. This may cause segment "
+"fault. Thanks for Josef Fröhle"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:97
+msgid "04/15/2010: Changes with nginx_substitutions_filter 0.5"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:99
+msgid "refactored the source structure, create branches of dev"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:100
+msgid "fixed a bug of small chunk of buffers causing lose content"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:101
+msgid "fixed the bug of last_buf and the nginx's compatibility above 0.8.25"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:102
+msgid ""
+"fixed a bug with unwanted capture config error in fix string substitution"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:103
+msgid "added feature of regex captures"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:105
+msgid "12/23/2009: Changes with nginx_substitutions_filter 0.4"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:107
+msgid "fixed many bugs"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:109
+msgid "02/04/2009: Changes with nginx_substitutions_filter 0.3"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:111
+msgid "initial public release"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:116
+msgid "Reporting a bug"
+msgstr ""
+
+#: ../../source/modules/substitutions.rst:117
+msgid "Questions/patches may be directed to Weibin Yao, yaoweibin@gmail.com."
+msgstr ""

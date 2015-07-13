@@ -1,0 +1,86 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/domain_resolve.rst:2
+msgid "Upstream Domain Resolve"
+msgstr ""
+
+#: ../../source/modules/domain_resolve.rst:5
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/domain_resolve.rst:6
+msgid ""
+"**ngx_upstream_jdomain** - a load-balancer that resolves an upstream domain "
+"name asynchronously. It chooses one IP from its buffer according to round-"
+"robin for each request. Its buffer has the latest IPs of the backend domain "
+"name. At every interval (one second by default), it resolves the domain "
+"name. If it fails to resolve the domain name, the buffer retains the last "
+"successfully resolved IPs."
+msgstr ""
+
+#: ../../source/modules/domain_resolve.rst:9
+msgid "Example"
+msgstr ""
+
+#: ../../source/modules/domain_resolve.rst:33
+msgid "Directives"
+msgstr ""
+
+#: ../../source/modules/domain_resolve.rst:36
+msgid "jdomain"
+msgstr ""
+
+#: ../../source/modules/domain_resolve.rst:37
+msgid "*jdomain <domain-name> [port] [interval] [max_ips] [retry_off]*"
+msgstr ""
+
+#: ../../source/modules/domain_resolve.rst:38
+msgid "*none 80 1 20*"
+msgstr ""
+
+#: ../../source/modules/domain_resolve.rst:39
+msgid "*upstream*"
+msgstr ""
+
+#: ../../source/modules/domain_resolve.rst:41
+msgid "Backend's listening port."
+msgstr ""
+
+#: ../../source/modules/domain_resolve.rst:42
+msgid "How many seconds to resolve domain name."
+msgstr ""
+
+#: ../../source/modules/domain_resolve.rst:43
+msgid "IP buffer size."
+msgstr ""
+
+#: ../../source/modules/domain_resolve.rst:44
+msgid "Do not retry if one IP fails."
+msgstr ""
+
+#: ../../source/modules/domain_resolve.rst:49
+msgid "Installtion"
+msgstr ""
+
+#: ../../source/modules/domain_resolve.rst:50
+msgid ":github:`Download <wdaike/ngx_upstream_jdomain>` the module."
+msgstr ""
+
+#: ../../source/modules/domain_resolve.rst:59
+msgid "Authors"
+msgstr ""
+
+#: ../../source/modules/domain_resolve.rst:60
+msgid "Questions/patches to wdaike<wdaike@163.com>, Baidu Inc."
+msgstr ""

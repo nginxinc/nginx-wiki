@@ -1,0 +1,550 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:1
+msgid "Read all of this! ALL OF IT!"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:4
+msgid "Pitfalls and Common Mistakes"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:6
+msgid ""
+"New and old users alike can run into a pitfall. Below we outline issues that"
+" we see frequently as well as explain how to resolve those issues. In the "
+"#nginx IRC channel on Freenode, we see these issues frequently."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:11
+msgid "This Guide Says"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:13
+msgid ""
+"The most frequent issue we see happens when someone attempts to just copy "
+"and paste a configuration snippet from some other guide. Not all guides out "
+"there are wrong, but a scary number of them are. Even the Linode library has"
+" poor quality information that some Nginx community members have futily "
+"attempted to correct."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:19
+msgid ""
+"These docs were created and reviewed by community members that work directly"
+" with all types of Nginx users. This specific document exists only because "
+"of the volume of common and recurring issues that community members see."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:24
+msgid "My Issue Isn't Listed"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:26
+msgid ""
+"You don't see something in here related to your specific issue. Maybe we "
+"didn't point you here because of the exact issue you're experiencing. Don't "
+"skim this page and assume you were sent here for no reason. You were sent "
+"here because something you did wrong is listed here."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:31
+msgid ""
+"When it comes to supporting many users on many issues, community members "
+"don't want to support broken configurations. Fix your configuration before "
+"asking for help. Fix your configuration by reading through this. Don't just "
+"skim it."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:36
+msgid "Chmod 777"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:38
+msgid ""
+"NEVER use 777. I't might be one nifty number, but even in testing it's a "
+"sign of having no clue what you're doing. Look at the permissions in the "
+"whole path and think through what's going on."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:42
+msgid "To easily display all the permissions on a path, you can use"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:49
+msgid "Root inside Location Block"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:51
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:97
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:161
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:207
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:356
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:372
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:400
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:418
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:581
+msgid "BAD:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:71
+msgid ""
+"This works. Putting root inside of a location block will work and it's "
+"perfectly valid. What's wrong is when you start adding location blocks. If "
+"you add a root to every location block then a location block that isn't "
+"matched will have no root. Let's look at a good configuration."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:76
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:127
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:183
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:220
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:350
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:378
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:406
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:440
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:608
+msgid "GOOD:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:95
+msgid "Multiple Index Directives"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:123
+msgid ""
+"Why repeat so many lines when not needed. Simply use the \"index\" directive"
+" one time. It only needs to occur in your http { } block and it will be "
+"inherited below."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:151
+msgid "Using If"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:153
+msgid ""
+"There is a little page about using if statements. It's called IfIsEvil and "
+"you really should check it out. Let's take a look at a few uses of if that "
+"are bad."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:156
+msgid ":doc:`If Is Evil </start/topics/depth/ifisevil>`"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:159
+msgid "Server Name (If)"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:175
+msgid ""
+"There are actually three problems here. The first being the if. That's what "
+"we care about now. Why is this bad? Did you read If is Evil? When nginx "
+"receives a request no matter what is the subdomain being requested, be it "
+"www.example.com or just the plain example.com this if directive is "
+"**always** evaluated. Since you're requesting nginx to check for the Host "
+"header for **every request**. It's extremely inefficient. You should avoid "
+"it. Instead use two server directives like the example below."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:196
+msgid ""
+"Besides making the configuration file easier to read. This approach "
+"decreases nginx processing requirements. We got rid of the spurious if. "
+"We're also using $scheme which doesn't hardcodes the URI scheme you're "
+"using, be it http or https."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:202
+msgid "Check (If) File Exists"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:204
+msgid ""
+"Using if to ensure a file exists is horrible. It's mean. If you have any "
+"recent version of Nginx you should look at try_files which just made life "
+"much easier."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:231
+msgid ""
+"What we changed is that we try to see if $uri exists without requiring an "
+"if. Using try_files mean that you can test a sequence. If $uri doesn't "
+"exist, try $uri/, if that doesn't exist try a fallback location."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:235
+msgid ""
+"In this case it will see if the $uri file exists. If it does then serve it. "
+"If it doesn't then tests if that directory exists. If not, then it will "
+"proceed to serve index.html which you make sure exists. It's loaded but oh "
+"so simple. This is another instance you can completely eliminate If."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:241
+msgid "Front Controller Pattern Web Apps"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:243
+msgid ""
+"\"Front Controller Pattern\" designs are popular and used on the many of the"
+" most popular PHP software packages. A lot of examples are more complex than"
+" they need to be. To get Drupal, Joomla, etc. to work, just use this:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:251
+msgid ""
+"Note - the parameter names are different based on the package you're using. "
+"For example:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:254
+msgid "\"q\" is the parameter used by Drupal, Joomla, WordPress"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:255
+msgid "\"page\" is used by CMS Made Simple"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:257
+msgid ""
+"Some software doesn't even need the query string, and can read from "
+"REQUEST_URI (WordPress supports this, for example):"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:264
+msgid ""
+"Of course, your mileage may vary and you may need more complex things based "
+"on your needs, but for a basic sites, these will work perfectly. You should "
+"always start simple and build from there."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:268
+msgid ""
+"You can also decide to skip the directory check and remove \"$uri/\" from it"
+" as well, if you don't care about checking for the existence of directories."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:272
+msgid "Passing Uncontrolled Requests to PHP"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:274
+msgid ""
+"Many example Nginx configurations for PHP on the web advocate passing every "
+"URI ending in .php to the PHP interpreter. Note that this presents a serious"
+" security issue on most PHP setups as it may allow arbitrary code execution "
+"by third parties."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:279
+msgid "The problem section usually looks like this:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:288
+msgid ""
+"Here, every request ending in .php will be passed to the FastCGI backend. "
+"The issue with this is that the default PHP configuration tries to guess "
+"which file you want to execute if the full path does not lead to an actual "
+"file on the filesystem."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:293
+msgid ""
+"For instance, if a request is made for `/forum/avatar/1232.jpg/file.php` "
+"which does not exist but if `/forum/avatar/1232.jpg` does, the PHP "
+"interpreter will process `/forum/avatar/1232.jpg` instead. If this contains "
+"embedded PHP code, this code will be executed accordingly."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:298
+msgid "Options for avoiding this are:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:300
+msgid ""
+"Set cgi.fix_pathinfo=0 in php.ini. This causes the PHP interpreter to only "
+"try the literal path given and to stop processing if the file is not found."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:302
+msgid "Ensure that Nginx only passes specific PHP files for execution:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:311
+msgid ""
+"Specifically disable the execution of PHP files in any directory containing "
+"user uploads:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:321
+msgid "Use the `try_files` directive to filter out the problem condition:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:331
+msgid "Use a nested location to filter out the problem condition:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:342
+msgid "FastCGI Path in Script Filename"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:344
+msgid ""
+"So many guides out there like to rely on absolute paths to get to your "
+"information. This is commonly seen in PHP blocks. When you install Nginx "
+"from a repository you'll usually wind up being able to toss \"include "
+"fastcgi_params;\" in your config. This is a file located in your Nginx root "
+"directory which is usually around /etc/nginx/."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:362
+msgid ""
+"Where is $document_root set? It's set by the root directive that should be "
+"in your server block. Is your root directive not there? See the first "
+"pitfall."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:366
+msgid "Taxing Rewrites"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:368
+msgid ""
+"Don't feel bad here, it's easy to get confused with regular expressions. In "
+"fact, it's so easy to do that we should make an effort to keep them neat and"
+" clean. Quite simply, don't add cruft."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:384
+msgid "BETTER:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:390
+msgid ""
+"Look at the above. Then back here. Then up, and back here. OK. The first "
+"rewrite captures the full URI minus the first slash. By using the built-in "
+"variable $request_uri we can effectively avoid doing any capturing or "
+"matching at all."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:395
+msgid "Rewrite Missing ``http://``"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:397
+msgid ""
+"Very simply, rewrites are relative unless you tell nginx that they're not. "
+"Making a rewrite absolute is simple. Add a scheme."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:412
+msgid ""
+"In the above you will see that all we did was add ``http://`` to the "
+"rewrite. It's simple, easy, and effective."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:416
+msgid "Proxy Everything"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:432
+msgid ""
+"Yucky. In this instance, you pass EVERYTHING to PHP. Why? Apache might do "
+"this, you don't need to. Let me put it this way... The try_files directive "
+"exists for an amazing reason. It tries files in a specific order. This means"
+" that Nginx can first try to server the static content. If it can't, then it"
+" moves on. This means PHP doesn't get involved at all. MUCH faster. "
+"Especially if you're serving a 1MB image over PHP a few thousand times "
+"versus serving it directly. Let's take a look at how to do that."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:457
+msgid "Also GOOD:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:474
+msgid ""
+"It's easy, right? You see if the requested URI exists and can be served by "
+"Nginx. If not, is it a directory that can be served. If not, then you pass "
+"it to your proxy. Only when Nginx can't serve that requested URI directly "
+"does your proxy overhead get involved."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:479
+msgid ""
+"Now.. consider how much of your requests are static content, such as images,"
+" css, javascript, etc. That's probably a lot of overhead you just saved."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:483
+msgid "Config Changes Not Reflected"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:485
+msgid ""
+"Browser cache. Your configuration may be perfect but you'll sit there and "
+"beat your head against a cement wall for a month. What's wrong is your "
+"browser cache. When you download something, your browser stores it. It also "
+"stores how that file was served. If you are playing with a types{} block "
+"you'll encounter this."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:490
+msgid "The fix:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:492
+msgid ""
+"In Firefox press Ctrl+Shift+Delete, check Cache, click Clear Now. In any "
+"other browser just ask your favorite search engine. Do this after every "
+"change (unless you know it's not needed) and you'll save yourself a lot of "
+"headaches."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:496
+msgid "Use curl."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:499
+msgid "VirtualBox"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:501
+msgid ""
+"If this does not work, and you're running nginx on a virtual machine in "
+"VirtualBox, it may be sendfile() that is causing the trouble. Simply comment"
+" out the sendfile directive or set it to \"off\". The directive is most "
+"likely found in your nginx.conf file.:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:511
+msgid "Missing (disappearing) HTTP Headers"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:513
+msgid ""
+"If you do not explicitly set `underscores_in_headers on`, nginx will "
+"silently drop HTTP headers with underscores (which are perfectly valid "
+"according to the HTTP standard). This is done in order to prevent "
+"ambiguities when mapping headers to CGI variables as both dashes and "
+"underscores are mapped to underscores during that process."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:520
+msgid "Not Using Standard Document Root Locations"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:522
+msgid ""
+"Some directories in any file system should never be used for hosting data "
+"from. Some of these include ``/`` and ``root``. You should never use these "
+"as your document root."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:526
+msgid ""
+"Doing this leaves you open to a request outside of your expected area "
+"returning private data."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:529
+msgid "NEVER DO THIS!!! (yes, we have seen this)"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:545
+msgid ""
+"When a request is made for /foo, the request is passed to php because the "
+"file isn't found. This can appear fine, until a request in made for "
+"/etc/passwd. Yup, you just gave us a list of all users on that server. In "
+"some cases, the Nginx server is even set up run workers as root. Yup, we now"
+" have your user list as well as password hashes and how they've been hashed."
+" We now own your box."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:554
+msgid ""
+"The Filesystem Hierarchy Standard defines where data should exist. You "
+"should definitely read it. The short version is that you want your web "
+"content to exist in either ``/var/www/``, ``/srv``, ``/usr/share/www``."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:559
+msgid "Using the Default Document Root"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:561
+msgid ""
+"Nginx packages that exist in Ubuntu, Debian, or other operating systems, as "
+"an easy-to-install package will often provide a 'default' configuration file"
+" as an example of configuration methods, and will often include a document "
+"root to hold a basic HTML file."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:566
+msgid ""
+"Most of these packaging systems do not check to see if files are modified or"
+" exist within the default document root, which can result in code loss when "
+"the packages are upgraded. Experienced system administrators know that there"
+" is no expectation of the data inside the default document root to remain "
+"untouched during upgrades."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:572
+msgid ""
+"You should not use the default document root for any site-critical files. "
+"There is no expectation that the default document root will be left "
+"untouched by the system and there is an extremely high possibility that your"
+" site-critical data may be lost upon updates and upgrades to the nginx "
+"packages for your operating system."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:579
+msgid "Using a Hostname to Resolve Addresses"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:594
+msgid ""
+"You should never use a hostname in a listen directive. While this may work, "
+"it will come with a large number of issues. One such issue being that the "
+"hostname may not resolve at boot time or during a service restart. This can "
+"cause Nginx to be unable to bind to the desired TCP socket which will "
+"prevent Nginx from starting at all."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:600
+msgid ""
+"A safer practice is to know the IP address that needs to be bound to and use"
+" that address instead of the hostname. This prevents Nginx from needing to "
+"look up the address and removes dependencies on external and internal "
+"resolvers."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:604
+msgid ""
+"This same issue applies to upstream locations. While it may not always be "
+"possible to avoid using a hostname in an upstream block, it is bad practice "
+"and will require careful considerations to prevent issues."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:622
+msgid "Using SSLv3 with HTTPS"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/config_pitfalls.rst:624
+msgid ""
+"Due to the POODLE vulnerability in SSLv3, it is advised to not use SSLv3 in "
+"your SSL-enabled sites. You can very easily disable SSLv3 with this line and"
+" provide only the TLS protocols instead:"
+msgstr ""

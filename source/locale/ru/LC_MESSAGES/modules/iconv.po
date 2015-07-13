@@ -1,0 +1,158 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/iconv.rst:2
+msgid "Iconv"
+msgstr ""
+
+#: ../../source/modules/iconv.rst:5
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/iconv.rst:6
+msgid ""
+"**iconv-nginx-module** - an nginx module that uses libiconv to convert "
+"characters of different encoding. It brings the ``set_iconv`` command to "
+"nginx."
+msgstr ""
+
+#: ../../source/modules/iconv.rst:9
+msgid "This module depends on the ngx_devel_kit (NDK) module."
+msgstr ""
+
+#: ../../source/modules/iconv.rst:14
+msgid "Installation"
+msgstr ""
+
+#: ../../source/modules/iconv.rst:15
+msgid "Get the nginx source code from http://nginx.org."
+msgstr ""
+
+#: ../../source/modules/iconv.rst:16
+msgid "Untar the source code and build nginx with this module."
+msgstr ""
+
+#: ../../source/modules/iconv.rst:34
+msgid "Usage"
+msgstr ""
+
+#: ../../source/modules/iconv.rst:37
+msgid "set_iconv"
+msgstr ""
+
+#: ../../source/modules/iconv.rst:38
+msgid ""
+"*set_iconv <destination_variable> <from_variable> from=<from_encoding> "
+"to=<to_encoding>*"
+msgstr ""
+
+#: ../../source/modules/iconv.rst:39 ../../source/modules/iconv.rst:51
+msgid "*none*"
+msgstr ""
+
+#: ../../source/modules/iconv.rst:43
+msgid "iconv_buffer_size"
+msgstr ""
+
+#: ../../source/modules/iconv.rst:44
+msgid "*iconv_buffer_size <size>*"
+msgstr ""
+
+#: ../../source/modules/iconv.rst:45
+msgid "*ngx_pagesize*"
+msgstr ""
+
+#: ../../source/modules/iconv.rst:49
+msgid "iconv_filter"
+msgstr ""
+
+#: ../../source/modules/iconv.rst:50
+msgid "*iconv_filter from=<from_encoding> to=<to_encoding>*"
+msgstr ""
+
+#: ../../source/modules/iconv.rst:54
+msgid "Here is a basic example:"
+msgstr ""
+
+#: ../../source/modules/iconv.rst:74
+msgid "Copyright & License"
+msgstr ""
+
+#: ../../source/modules/iconv.rst:75
+msgid "This program is licenced under the BSD license."
+msgstr ""
+
+#: ../../source/modules/iconv.rst:77
+msgid ""
+"Copyright (c) 2010, Taobao Inc, Alibaba Group ( "
+"http://www.taobao.com/market/global/index_new.php ). Copyright (c) 2010, "
+"Calio <vipcalio@gmail.com>."
+msgstr ""
+
+#: ../../source/modules/iconv.rst:80
+msgid "All rights reserved."
+msgstr ""
+
+#: ../../source/modules/iconv.rst:82
+msgid ""
+"Redistribution and use in source and binary forms, with or without "
+"modification, are permitted provided that the following conditions are met:"
+msgstr ""
+
+#: ../../source/modules/iconv.rst:86
+msgid ""
+"Redistributions of source code must retain the above copyright notice, this "
+"list of conditions and the following disclaimer."
+msgstr ""
+
+#: ../../source/modules/iconv.rst:89
+msgid ""
+"Redistributions in binary form must reproduce the above copyright notice, "
+"this list of conditions and the following disclaimer in the documentation "
+"and/or other materials provided with the distribution."
+msgstr ""
+
+#: ../../source/modules/iconv.rst:93
+msgid ""
+"Neither the name of the Taobao Inc. nor the names of its contributors may be"
+" used to endorse or promote products derived from this software without "
+"specific prior written permission."
+msgstr ""
+
+#: ../../source/modules/iconv.rst:97
+msgid ""
+"THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS "
+"IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, "
+"THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR "
+"PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR "
+"CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, "
+"EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, "
+"PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; "
+"OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, "
+"WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR "
+"OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF "
+"ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+msgstr ""
+
+#: ../../source/modules/iconv.rst:112
+msgid "Changelog"
+msgstr ""
+
+#: ../../source/modules/iconv.rst:113
+msgid ""
+"**v0.02** - added ``iconv_filter`` and ``iconv_buffer_size`` instructions"
+msgstr ""
+
+#: ../../source/modules/iconv.rst:114
+msgid "**v0.01** - implemented ``set_iconv`` instruction"
+msgstr ""

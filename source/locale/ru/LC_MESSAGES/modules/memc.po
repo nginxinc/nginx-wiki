@@ -1,0 +1,920 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/memc.rst:2
+msgid "Memc"
+msgstr ""
+
+#: ../../source/modules/memc.rst:5
+msgid "Name"
+msgstr ""
+
+#: ../../source/modules/memc.rst:6
+msgid ""
+"**ngx_memc** - An extended version of the standard memcached module that "
+"supports set, add, delete, and many more memcached commands."
+msgstr ""
+
+#: ../../source/modules/memc.rst:8
+msgid ""
+"*This module is not distributed with the Nginx source.* See the "
+"`installation instructions <memc.installation_>`_."
+msgstr ""
+
+#: ../../source/modules/memc.rst:11
+msgid "Version"
+msgstr ""
+
+#: ../../source/modules/memc.rst:12
+msgid ""
+"This document describes ngx_memc :github:`v0.15 <openresty/memc-nginx-"
+"module/tags>` released on 8 July 2014."
+msgstr ""
+
+#: ../../source/modules/memc.rst:17
+msgid "Synopsis"
+msgstr ""
+
+#: ../../source/modules/memc.rst:122
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/memc.rst:123
+msgid ""
+"This module extends the standard `memcached module "
+"<http://nginx.org/en/docs/http/ngx_http_memcached_module.html>`_ to support "
+"almost the whole `memcached ascii protocol "
+"<https://github.com/memcached/memcached/blob/master/doc/protocol.txt>`_."
+msgstr ""
+
+#: ../../source/modules/memc.rst:125
+msgid ""
+"It allows you to define a custom `REST "
+"<https://en.wikipedia.org/wiki/REST>`_ interface to your memcached servers "
+"or access memcached in a very efficient way from within the nginx server by "
+"means of subrequests or `independent fake requests <srlindsay/nginx-"
+"independent-subrequest>`."
+msgstr ""
+
+#: ../../source/modules/memc.rst:127
+msgid ""
+"This module is not supposed to be merged into the Nginx core because I've "
+"used `Ragel <http://www.colm.net/open-source/ragel/>`_ to generate the "
+"memcached response parsers (in C) for joy :)"
+msgstr ""
+
+#: ../../source/modules/memc.rst:129
+msgid ""
+"If you are going to use this module to cache location responses out of the "
+"box, try :doc:`sr_cache` with this module to achieve that."
+msgstr ""
+
+#: ../../source/modules/memc.rst:131
+msgid ""
+"When used in conjunction with :doc:`lua`, it is recommended to use the "
+":github:`lua-resty-memcached <openresty/lua-resty-memcached>` library "
+"instead of this module though, because the former is much more flexible and "
+"memory-efficient."
+msgstr ""
+
+#: ../../source/modules/memc.rst:135
+msgid "Keep-alive connections to memcached servers"
+msgstr ""
+
+#: ../../source/modules/memc.rst:136
+msgid ""
+"You need "
+"http://nginx.org/en/docs/http/ngx_http_upstream_module.html#keepalive "
+"together with this module for keep-alive TCP connections to your backend "
+"memcached servers."
+msgstr ""
+
+#: ../../source/modules/memc.rst:138
+msgid "Here's a sample configuration:"
+msgstr ""
+
+#: ../../source/modules/memc.rst:163
+msgid "How it works"
+msgstr ""
+
+#: ../../source/modules/memc.rst:164
+msgid ""
+"It implements the memcached TCP protocol all by itself, based upon the "
+"``upstream`` mechanism. Everything involving I/O is non-blocking."
+msgstr ""
+
+#: ../../source/modules/memc.rst:166
+msgid ""
+"The module itself does not keep TCP connections to the upstream memcached "
+"servers across requests, just like other upstream modules. For a working "
+"solution, see section `Keep-alive connections to memcached servers`_."
+msgstr ""
+
+#: ../../source/modules/memc.rst:170
+msgid "Memcached commands supported"
+msgstr ""
+
+#: ../../source/modules/memc.rst:171
+msgid ""
+"The memcached storage commands `set command <memc.set_>`_, `add command "
+"<memc.add_>`_, `replace command <memc.replace_>`_, `prepend command "
+"<memc.prepend_>`_, and `append command <memc.append_>`_ uses the "
+"``$memc_key`` as the key, ``$memc_exptime`` as the expiration time (or "
+"delay) (defaults to 0), ``$memc_flags`` as the flags (defaults to 0), to "
+"build the corresponding memcached queries."
+msgstr ""
+
+#: ../../source/modules/memc.rst:173
+msgid ""
+"If ``$memc_value`` is not defined at all, then the request body will be used"
+" as the value of the ``$memc_value`` except for the `incr command "
+"<memc.incr_>`_ and `decr command <memc.decr_>`_ commands. Note that if "
+"``$memc_value`` is defined as an empty string (``\"\"``), that empty string "
+"will still be used as the value as is."
+msgstr ""
+
+#: ../../source/modules/memc.rst:175
+msgid ""
+"The following memcached commands have been implemented and tested (with "
+"their parameters marked by corresponding nginx variables defined by this "
+"module):"
+msgstr ""
+
+#: ../../source/modules/memc.rst:180
+msgid "get $memc_key"
+msgstr ""
+
+#: ../../source/modules/memc.rst:181
+msgid "Retrieves the value using a key."
+msgstr ""
+
+#: ../../source/modules/memc.rst:195
+msgid ""
+"Returns ``200 OK`` with the value put into the response body if the key is "
+"found, or ``404 Not Found`` otherwise. The ``flags`` number will be set into"
+" the ``$memc_flags`` variable so it's often desired to put that info into "
+"the response headers by means of the standard `HttpHeadersModule "
+"<http://nginx.org/en/docs/http/ngx_http_headers_module.html>`_."
+msgstr ""
+
+#: ../../source/modules/memc.rst:197 ../../source/modules/memc.rst:321
+msgid ""
+"It returns ``502`` for ``ERROR``, ``CLIENT_ERROR``, or ``SERVER_ERROR``."
+msgstr ""
+
+#: ../../source/modules/memc.rst:203
+msgid "set $memc_key $memc_flags $memc_exptime $memc_value"
+msgstr ""
+
+#: ../../source/modules/memc.rst:204
+msgid ""
+"To use the request body as the memcached value, just avoid setting the "
+"``$memc_value`` variable:"
+msgstr ""
+
+#: ../../source/modules/memc.rst:220
+msgid "Or let the ``$memc_value`` hold the value:"
+msgstr ""
+
+#: ../../source/modules/memc.rst:235
+msgid ""
+"Returns ``201 Created`` if the upstream memcached server replies ``STORED``,"
+" ``200`` for ``NOT_STORED``, ``404`` for ``NOT_FOUND``, ``502`` for "
+"``ERROR``, ``CLIENT_ERROR``, or ``SERVER_ERROR``."
+msgstr ""
+
+#: ../../source/modules/memc.rst:237 ../../source/modules/memc.rst:287
+msgid ""
+"The original memcached responses are returned as the response body except "
+"for ``404 NOT FOUND``."
+msgstr ""
+
+#: ../../source/modules/memc.rst:243
+msgid "add $memc_key $memc_flags $memc_exptime $memc_value"
+msgstr ""
+
+#: ../../source/modules/memc.rst:244 ../../source/modules/memc.rst:251
+#: ../../source/modules/memc.rst:258
+msgid "Similar to the `set command <memc.set_>`_."
+msgstr ""
+
+#: ../../source/modules/memc.rst:250
+msgid "replace $memc_key $memc_flags $memc_exptime $memc_value"
+msgstr ""
+
+#: ../../source/modules/memc.rst:257
+msgid "append $memc_key $memc_flags $memc_exptime $memc_value"
+msgstr ""
+
+#: ../../source/modules/memc.rst:260
+msgid ""
+"Note that at least memcached version 1.2.2 does not support the \"append\" "
+"and \"prepend\" commands. At least 1.2.4 and later versions seem to supports"
+" these two commands."
+msgstr ""
+
+#: ../../source/modules/memc.rst:266
+msgid "prepend $memc_key $memc_flags $memc_exptime $memc_value"
+msgstr ""
+
+#: ../../source/modules/memc.rst:267
+msgid "Similar to the `append command <memc.append_>`_."
+msgstr ""
+
+#: ../../source/modules/memc.rst:271
+msgid "delete $memc_key"
+msgstr ""
+
+#: ../../source/modules/memc.rst:272
+msgid "Deletes the memcached entry using a key."
+msgstr ""
+
+#: ../../source/modules/memc.rst:284
+msgid ""
+"Returns ``200 OK`` if deleted successfully, ``404 Not Found`` for "
+"``NOT_FOUND``, or ``502`` for ``ERROR``, ``CLIENT_ERROR``, or "
+"``SERVER_ERROR``."
+msgstr ""
+
+#: ../../source/modules/memc.rst:292
+msgid "delete $memc_key $memc_exptime"
+msgstr ""
+
+#: ../../source/modules/memc.rst:293
+msgid ""
+"Similar to the `delete $memc_key`_ command except it accepts an optional "
+"``expiration`` time specified by the ``$memc_exptime`` variable."
+msgstr ""
+
+#: ../../source/modules/memc.rst:296
+msgid ""
+"This command is no longer available in the latest memcached version 1.4.4."
+msgstr ""
+
+#: ../../source/modules/memc.rst:302
+msgid "incr $memc_key $memc_value"
+msgstr ""
+
+#: ../../source/modules/memc.rst:303
+msgid ""
+"Increments the existing value of ``$memc_key`` by the amount specified by "
+"``$memc_value``:"
+msgstr ""
+
+#: ../../source/modules/memc.rst:315
+msgid ""
+"In the preceding example, every time we access ``/foo`` will cause the value"
+" of ``my_key`` increments by ``2``."
+msgstr ""
+
+#: ../../source/modules/memc.rst:318
+msgid ""
+"Returns ``200 OK`` with the new value associated with that key as the "
+"response body if successful, or ``404 Not Found`` if the key is not found."
+msgstr ""
+
+#: ../../source/modules/memc.rst:327
+msgid "decr $memc_key $memc_value"
+msgstr ""
+
+#: ../../source/modules/memc.rst:328
+msgid "Similar to `incr $memc_key $memc_value`_."
+msgstr ""
+
+#: ../../source/modules/memc.rst:332
+msgid "flush_all"
+msgstr ""
+
+#: ../../source/modules/memc.rst:333
+msgid "Mark all the keys on the memcached server as expired:"
+msgstr ""
+
+#: ../../source/modules/memc.rst:344
+msgid "flush_all $memc_exptime"
+msgstr ""
+
+#: ../../source/modules/memc.rst:345
+msgid ""
+"Just like flush_all_ but also accepts an expiration time specified by the "
+"``$memc_exptime`` variable."
+msgstr ""
+
+#: ../../source/modules/memc.rst:350
+msgid "stats"
+msgstr ""
+
+#: ../../source/modules/memc.rst:351
+msgid ""
+"Causes the memcached server to output general-purpose statistics and "
+"settings"
+msgstr ""
+
+#: ../../source/modules/memc.rst:361 ../../source/modules/memc.rst:380
+msgid ""
+"Returns ``200 OK`` if the request succeeds, or 502 for ``ERROR``, "
+"``CLIENT_ERROR``, or ``SERVER_ERROR``."
+msgstr ""
+
+#: ../../source/modules/memc.rst:364
+msgid ""
+"The raw ``stats`` command output from the upstream memcached server will be "
+"put into the response body."
+msgstr ""
+
+#: ../../source/modules/memc.rst:369
+msgid "version"
+msgstr ""
+
+#: ../../source/modules/memc.rst:370
+msgid "Queries the memcached server's version number:"
+msgstr ""
+
+#: ../../source/modules/memc.rst:383
+msgid ""
+"The raw ``version`` command output from the upstream memcached server will "
+"be put into the response body."
+msgstr ""
+
+#: ../../source/modules/memc.rst:388
+msgid "Directives"
+msgstr ""
+
+#: ../../source/modules/memc.rst:389
+msgid ""
+"All the standard `memcached module "
+"<http://nginx.org/en/docs/http/ngx_http_memcached_module.html>`__ directives"
+" in nginx 0.8.28 are directly inherited, with the ``memcached_`` prefixes "
+"replaced by ``memc_``. For example, the ``memcached_pass`` directive is "
+"spelled ``memc_pass``."
+msgstr ""
+
+#: ../../source/modules/memc.rst:395
+msgid ""
+"Here we only document the most important two directives (the latter is a new"
+" directive introduced by this module)."
+msgstr ""
+
+#: ../../source/modules/memc.rst:400
+msgid "memc_pass"
+msgstr ""
+
+#: ../../source/modules/memc.rst:401
+msgid "*memc_pass <memcached server IP address>:<memcached server port>*"
+msgstr ""
+
+#: ../../source/modules/memc.rst:402
+msgid "*memc_pass <memcached server hostname>:<memcached server port>*"
+msgstr ""
+
+#: ../../source/modules/memc.rst:403
+msgid "*memc_pass <upstream_backend_name>*"
+msgstr ""
+
+#: ../../source/modules/memc.rst:404
+msgid "*memc_pass unix:<path_to_unix_domain_socket>*"
+msgstr ""
+
+#: ../../source/modules/memc.rst:405 ../../source/modules/memc.rst:415
+msgid "*none*"
+msgstr ""
+
+#: ../../source/modules/memc.rst:406 ../../source/modules/memc.rst:416
+#: ../../source/modules/memc.rst:439
+msgid "*http, server, location, if*"
+msgstr ""
+
+#: ../../source/modules/memc.rst:407
+msgid "*content*"
+msgstr ""
+
+#: ../../source/modules/memc.rst:409
+msgid "Specify the memcached server backend."
+msgstr ""
+
+#: ../../source/modules/memc.rst:413
+msgid "memc_cmds_allowed"
+msgstr ""
+
+#: ../../source/modules/memc.rst:414
+msgid "*memc_cmds_allowed <cmd>...*"
+msgstr ""
+
+#: ../../source/modules/memc.rst:418
+msgid ""
+"Lists memcached commands that are allowed to access. By default, all the "
+"memcached commands supported by this module are accessible. An example is"
+msgstr ""
+
+#: ../../source/modules/memc.rst:436
+msgid "memc_flags_to_last_modified"
+msgstr ""
+
+#: ../../source/modules/memc.rst:437
+msgid "*memc_flags_to_last_modified on|off*"
+msgstr ""
+
+#: ../../source/modules/memc.rst:438 ../../source/modules/memc.rst:510
+msgid "*off*"
+msgstr ""
+
+#: ../../source/modules/memc.rst:441
+msgid ""
+"Read the memcached flags as epoch seconds and set it as the value of the "
+"``Last-Modified`` header. For conditional GET, it will signal nginx to "
+"return ``304 Not Modified`` response to save bandwidth."
+msgstr ""
+
+#: ../../source/modules/memc.rst:447
+msgid "memc_connect_timeout"
+msgstr ""
+
+#: ../../source/modules/memc.rst:448
+msgid "*memc_connect_timeout <time>*"
+msgstr ""
+
+#: ../../source/modules/memc.rst:449 ../../source/modules/memc.rst:464
+#: ../../source/modules/memc.rst:480
+msgid "*60s*"
+msgstr ""
+
+#: ../../source/modules/memc.rst:450 ../../source/modules/memc.rst:465
+#: ../../source/modules/memc.rst:481 ../../source/modules/memc.rst:497
+msgid "*http, server, location*"
+msgstr ""
+
+#: ../../source/modules/memc.rst:452
+msgid ""
+"The timeout for connecting to the memcached server, in seconds by default."
+msgstr ""
+
+#: ../../source/modules/memc.rst:454 ../../source/modules/memc.rst:470
+#: ../../source/modules/memc.rst:486
+msgid ""
+"It's wise to always explicitly specify the time unit to avoid confusion. "
+"Time units supported are \"s\"(seconds), \"ms\"(milliseconds), \"y\"(years),"
+" \"M\"(months), \"w\"(weeks), \"d\"(days), \"h\"(hours), and \"m\"(minutes)."
+msgstr ""
+
+#: ../../source/modules/memc.rst:458 ../../source/modules/memc.rst:474
+#: ../../source/modules/memc.rst:490
+msgid "This time must be less than 597 hours."
+msgstr ""
+
+#: ../../source/modules/memc.rst:462
+msgid "memc_send_timeout"
+msgstr ""
+
+#: ../../source/modules/memc.rst:463
+msgid "*memc_send_timeout <time>*"
+msgstr ""
+
+#: ../../source/modules/memc.rst:467
+msgid ""
+"The timeout for sending TCP requests to the memcached server, in seconds by "
+"default."
+msgstr ""
+
+#: ../../source/modules/memc.rst:478
+msgid "memc_read_timeout"
+msgstr ""
+
+#: ../../source/modules/memc.rst:479
+msgid "*memc_read_timeout <time>*"
+msgstr ""
+
+#: ../../source/modules/memc.rst:483
+msgid ""
+"The timeout for reading TCP responses from the memcached server, in seconds "
+"by default."
+msgstr ""
+
+#: ../../source/modules/memc.rst:494
+msgid "memc_buffer_size"
+msgstr ""
+
+#: ../../source/modules/memc.rst:495
+msgid "*memc_buffer_size <size>*"
+msgstr ""
+
+#: ../../source/modules/memc.rst:496
+msgid "*4k/8k*"
+msgstr ""
+
+#: ../../source/modules/memc.rst:499
+msgid "This buffer size is used for the memory buffer to hold"
+msgstr ""
+
+#: ../../source/modules/memc.rst:501
+msgid "the complete response for memcached commands other than ``get``,"
+msgstr ""
+
+#: ../../source/modules/memc.rst:502
+msgid ""
+"the complete response header (i.e., the first line of the response) for the "
+"``get`` memcached command."
+msgstr ""
+
+#: ../../source/modules/memc.rst:504
+msgid "This default size is the page size, may be ``4k`` or ``8k``."
+msgstr ""
+
+#: ../../source/modules/memc.rst:508
+msgid "memc_ignore_client_abort"
+msgstr ""
+
+#: ../../source/modules/memc.rst:509
+msgid "*memc_ignore_client_abort on|off*"
+msgstr ""
+
+#: ../../source/modules/memc.rst:511
+msgid "*location*"
+msgstr ""
+
+#: ../../source/modules/memc.rst:513
+msgid ""
+"Determines whether the connection with a memcache server should be closed "
+"when a client closes a connection without waiting for a response."
+msgstr ""
+
+#: ../../source/modules/memc.rst:516
+msgid "This directive was first added in the ``v0.14`` release."
+msgstr ""
+
+#: ../../source/modules/memc.rst:523
+msgid "Installation"
+msgstr ""
+
+#: ../../source/modules/memc.rst:524
+msgid ""
+"You're recommended to install this module (as well as the Nginx core and "
+"many other goodies) via the `ngx_openresty bundle <http://openresty.org>`__."
+" See the `installation steps <http://openresty.org/#Installation>`_ for "
+"``ngx_openresty``."
+msgstr ""
+
+#: ../../source/modules/memc.rst:528
+msgid ""
+"Alternatively, you can compile this module into the standard Nginx source "
+"distribution by hand:"
+msgstr ""
+
+#: ../../source/modules/memc.rst:531
+msgid ""
+"Grab the nginx source code from `nginx.org <http://nginx.org/>`_, for "
+"example, the version 1.7.2 (see `nginx compatibility "
+"<memc.compatibility_>`_), and then build the source with this module:"
+msgstr ""
+
+#: ../../source/modules/memc.rst:548
+msgid ""
+"Download the latest version of the release tarball of this module from "
+":github:`memc-nginx-module file list <openresty/memc-nginx-module/tags>`"
+msgstr ""
+
+#: ../../source/modules/memc.rst:553
+msgid "For Developers"
+msgstr ""
+
+#: ../../source/modules/memc.rst:554
+msgid ""
+"The memached response parsers were generated by `Ragel <http://www.colm.net"
+"/open-source/ragel/>`_. If you want to regenerate the parser's C file, i.e.,"
+" :github:`src/ngx_http_memc_response.c <openresty/memc-nginx-"
+"module/blob/master/src/ngx_http_memc_response.c>` use the following command "
+"from the root of the memc module's source tree:"
+msgstr ""
+
+#: ../../source/modules/memc.rst:568
+msgid "Compatibility"
+msgstr ""
+
+#: ../../source/modules/memc.rst:569
+msgid "The following versions of Nginx should work with this module:"
+msgstr ""
+
+#: ../../source/modules/memc.rst:571
+msgid "**1.7.x**                       (last tested: 1.7.2)"
+msgstr ""
+
+#: ../../source/modules/memc.rst:572
+msgid "**1.5.x**                       (last tested: 1.5.12)"
+msgstr ""
+
+#: ../../source/modules/memc.rst:573
+msgid "**1.4.x**                       (last tested: 1.4.4)"
+msgstr ""
+
+#: ../../source/modules/memc.rst:574
+msgid "**1.2.x**                       (last tested: 1.2.9)"
+msgstr ""
+
+#: ../../source/modules/memc.rst:575
+msgid "**1.1.x**                       (last tested: 1.1.5)"
+msgstr ""
+
+#: ../../source/modules/memc.rst:576
+msgid "**1.0.x**                       (last tested: 1.0.10)"
+msgstr ""
+
+#: ../../source/modules/memc.rst:577
+msgid "**0.9.x**                       (last tested: 0.9.4)"
+msgstr ""
+
+#: ../../source/modules/memc.rst:578
+msgid "**0.8.x**                       (last tested: 0.8.54)"
+msgstr ""
+
+#: ../../source/modules/memc.rst:579
+msgid "**0.7.x >= 0.7.46**             (last tested: 0.7.68)"
+msgstr ""
+
+#: ../../source/modules/memc.rst:581
+msgid ""
+"It's worth mentioning that some 0.7.x versions older than 0.7.46 might also "
+"work, but I can't easily test them because the test suite makes extensive "
+"use of the :doc:`echo`'s echo_location directive, which requires at least "
+"nginx 0.7.46 :)"
+msgstr ""
+
+#: ../../source/modules/memc.rst:583
+msgid "Earlier versions of Nginx like 0.6.x and 0.5.x will *not* work."
+msgstr ""
+
+#: ../../source/modules/memc.rst:585
+msgid ""
+"If you find that any particular version of Nginx above 0.7.46 does not work "
+"with this module, please consider `reporting a bug <memc.report-bugs_>`_."
+msgstr ""
+
+#: ../../source/modules/memc.rst:590
+msgid "Community"
+msgstr ""
+
+#: ../../source/modules/memc.rst:592
+msgid "English Mailing List"
+msgstr ""
+
+#: ../../source/modules/memc.rst:593
+msgid ""
+"The `openresty-en <https://groups.google.com/group/openresty-en>`_ mailing "
+"list is for English speakers."
+msgstr ""
+
+#: ../../source/modules/memc.rst:597
+msgid "Chinese Mailing List"
+msgstr ""
+
+#: ../../source/modules/memc.rst:598
+msgid ""
+"The `openresty <https://groups.google.com/group/openresty>`_ mailing list is"
+" for Chinese speakers."
+msgstr ""
+
+#: ../../source/modules/memc.rst:605
+msgid "Report Bugs"
+msgstr ""
+
+#: ../../source/modules/memc.rst:606
+msgid ""
+"Although a lot of effort has been put into testing and code tuning, there "
+"must be some serious bugs lurking somewhere in this module. So whenever you "
+"are bitten by any quirks, please don't hesitate to"
+msgstr ""
+
+#: ../../source/modules/memc.rst:608
+msgid ""
+"create a ticket on the :github:`issue tracking interface <openresty/memc-"
+"nginx-module/issues>` provided by GitHub,"
+msgstr ""
+
+#: ../../source/modules/memc.rst:609
+msgid ""
+"or send a bug report or even patches to the `nginx mailing list "
+"<http://mailman.nginx.org/mailman/listinfo/nginx>`_."
+msgstr ""
+
+#: ../../source/modules/memc.rst:616
+msgid "Source Repository"
+msgstr ""
+
+#: ../../source/modules/memc.rst:617
+msgid ""
+"Available on github at :github:`openresty/memc-nginx-module <openresty/memc-"
+"nginx-module>`"
+msgstr ""
+
+#: ../../source/modules/memc.rst:623
+msgid "Changes"
+msgstr ""
+
+#: ../../source/modules/memc.rst:624
+msgid ""
+"The changes of every release of this module can be obtained from the "
+"ngx_openresty bundle's change logs:"
+msgstr ""
+
+#: ../../source/modules/memc.rst:627
+msgid "http://openresty.org/#Changes"
+msgstr ""
+
+#: ../../source/modules/memc.rst:632
+msgid "Test Suite"
+msgstr ""
+
+#: ../../source/modules/memc.rst:633
+msgid ""
+"This module comes with a Perl-driven test suite. The :github:`test cases "
+"<openresty/memc-nginx-module/tree/master/t/>` are :github:`declarative "
+"<openresty/memc-nginx-module/blob/master/t/storage.t>` too. Thanks to the "
+"`Test::Base <http://search.cpan.org/perldoc?Test::Base>`_ module in the Perl"
+" world."
+msgstr ""
+
+#: ../../source/modules/memc.rst:639
+msgid "To run it on your side:"
+msgstr ""
+
+#: ../../source/modules/memc.rst:646
+msgid ""
+"You need to terminate any Nginx processes before running the test suite if "
+"you have changed the Nginx server binary."
+msgstr ""
+
+#: ../../source/modules/memc.rst:649
+msgid ""
+"Either `LWP::UserAgent <http://search.cpan.org/perldoc?LWP::UserAgent>`_ or "
+"`IO::Socket <http://search.cpan.org/perldoc?IO::Socket>`_"
+msgstr ""
+
+#: ../../source/modules/memc.rst:657
+msgid ""
+"Because a single nginx server (by default, ``localhost:1984``) is used "
+"across all the test scripts (``.t`` files), it's meaningless to run the test"
+" suite in parallel by specifying ``-jN`` when invoking the ``prove`` "
+"utility."
+msgstr ""
+
+#: ../../source/modules/memc.rst:661
+msgid ""
+"You should also keep a memcached server listening on the ``11211`` port at "
+"localhost before running the test suite."
+msgstr ""
+
+#: ../../source/modules/memc.rst:664
+msgid ""
+"Some parts of the test suite requires modules `rewrite "
+"<http://nginx.org/en/docs/http/ngx_http_rewrite_module.html>`_ and "
+":doc:`echo` to be enabled as well when building Nginx."
+msgstr ""
+
+#: ../../source/modules/memc.rst:672
+msgid "TODO"
+msgstr ""
+
+#: ../../source/modules/memc.rst:673
+msgid ""
+"add support for the memcached commands ``cas``, ``gets`` and ``stats "
+"$memc_value``."
+msgstr ""
+
+#: ../../source/modules/memc.rst:674
+msgid "add support for the ``noreply`` option."
+msgstr ""
+
+#: ../../source/modules/memc.rst:679
+msgid "Getting involved"
+msgstr ""
+
+#: ../../source/modules/memc.rst:680
+msgid ""
+"You'll be very welcomed to submit patches to the `author <memc.author_>`_ or"
+" just ask for a commit bit to the `source repository <memc.source-"
+"repository_>`_ on GitHub."
+msgstr ""
+
+#: ../../source/modules/memc.rst:689
+msgid "Author"
+msgstr ""
+
+#: ../../source/modules/memc.rst:690
+msgid "Yichun \"agentzh\" Zhang (章亦春) *<agentzh@gmail.com>*, CloudFlare Inc."
+msgstr ""
+
+#: ../../source/modules/memc.rst:692
+msgid ""
+"This wiki page is also maintained by the author himself, and everybody is "
+"encouraged to improve this page as well."
+msgstr ""
+
+#: ../../source/modules/memc.rst:698
+msgid "Copyright & License"
+msgstr ""
+
+#: ../../source/modules/memc.rst:699
+msgid ""
+"The code base is borrowed directly from the standard `memcached module "
+"<http://nginx.org/en/docs/http/ngx_http_memcached_module.html>`__ in the "
+"Nginx core. This part of code is copyrighted by Igor Sysoev and Nginx Inc."
+msgstr ""
+
+#: ../../source/modules/memc.rst:703
+msgid ""
+"Copyright (c) 2009-2013, Yichun \"agentzh\" Zhang (章亦春) <agentzh@gmail.com>,"
+" CloudFlare Inc."
+msgstr ""
+
+#: ../../source/modules/memc.rst:706
+msgid "This module is licensed under the terms of the BSD license."
+msgstr ""
+
+#: ../../source/modules/memc.rst:708
+msgid ""
+"Redistribution and use in source and binary forms, with or without "
+"modification, are permitted provided that the following conditions are met:"
+msgstr ""
+
+#: ../../source/modules/memc.rst:712
+msgid ""
+"Redistributions of source code must retain the above copyright notice, this "
+"list of conditions and the following disclaimer."
+msgstr ""
+
+#: ../../source/modules/memc.rst:713
+msgid ""
+"Redistributions in binary form must reproduce the above copyright notice, "
+"this list of conditions and the following disclaimer in the documentation "
+"and/or other materials provided with the distribution."
+msgstr ""
+
+#: ../../source/modules/memc.rst:715
+msgid ""
+"THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS "
+"IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, "
+"THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR "
+"PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR "
+"CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, "
+"EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, "
+"PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; "
+"OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, "
+"WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR "
+"OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF "
+"ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+msgstr ""
+
+#: ../../source/modules/memc.rst:731
+msgid ""
+"The original announcement email on the nginx mailing list: `ngx_memc: \"an "
+"extended version of ngx_memcached that supports set, add, delete, and many "
+"more commands\" <http://forum.nginx.org/read.php?2,28359>`_"
+msgstr ""
+
+#: ../../source/modules/memc.rst:732
+msgid ""
+"My slides demonstrating various ngx_memc usage: "
+"http://agentzh.org/misc/slides/nginx-conf-scripting/nginx-conf-"
+"scripting.html#34 (use the arrow or pageup/pagedown keys on the keyboard to "
+"swith pages)"
+msgstr ""
+
+#: ../../source/modules/memc.rst:733
+msgid ""
+"The latest `memcached TCP protocol "
+"<https://github.com/memcached/memcached/blob/master/doc/protocol.txt>`_."
+msgstr ""
+
+#: ../../source/modules/memc.rst:734
+msgid "The :github:`ngx_srcache <openresty/srcache-nginx-module>` module"
+msgstr ""
+
+#: ../../source/modules/memc.rst:735
+msgid ""
+"The :github:`lua-resty-memcached <openresty/lua-resty-memcached>` library "
+"based on the :doc:`lua` cosocket API."
+msgstr ""
+
+#: ../../source/modules/memc.rst:736
+msgid ""
+"The standard `memcached "
+"<http://nginx.org/en/docs/http/ngx_http_memcached_module.html>`_ module."
+msgstr ""
+
+#: ../../source/modules/memc.rst:737
+msgid "The :doc:`echo` for Nginx module's automated testing."
+msgstr ""
+
+#: ../../source/modules/memc.rst:738
+msgid ""
+"The standard `headers "
+"<http://nginx.org/en/docs/http/ngx_http_headers_module.html>`_ module and "
+"the 3rd-parth :doc:`headers_more` module."
+msgstr ""

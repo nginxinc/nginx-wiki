@@ -1,0 +1,67 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/recipes/symfony.rst:2
+msgid "Symfony"
+msgstr ""
+
+#: ../../source/start/topics/recipes/symfony.rst:5
+msgid "Recipe"
+msgstr ""
+
+#: ../../source/start/topics/recipes/symfony.rst:8
+msgid "Secure Symfony 2.0"
+msgstr ""
+
+#: ../../source/start/topics/recipes/symfony.rst:12
+msgid ""
+"The following configuration makes all PHP scripts except app.php, "
+"app_dev.php and config.php downloadable instead of executing them. This is "
+"probably not desired if you'd like to use a tool like phpMyAdmin in the same"
+" virtual host."
+msgstr ""
+
+#: ../../source/start/topics/recipes/symfony.rst:89
+msgid "Secure Symfony 1.4"
+msgstr ""
+
+#: ../../source/start/topics/recipes/symfony.rst:146
+msgid ""
+"This above config is not vulnerable to file upload attacks on PHP, while "
+"configs that use the following are vulnerable:"
+msgstr ""
+
+#: ../../source/start/topics/recipes/symfony.rst:154
+msgid ""
+"The common workaround to file upload attacks is to set ``fix_pathinfo=0`` in"
+" php.ini. This breaks pathinfo URLs, and symfony relies on them. The "
+"solution used here is to explicitly specify the files that get parsed as "
+"php."
+msgstr ""
+
+#: ../../source/start/topics/recipes/symfony.rst:156
+msgid ""
+"For more information, see the `nginx+php-cgi security alert "
+"<http://www.webhostingtalk.com/showthread.php?p=6807475#post6807475>`_"
+msgstr ""
+
+#: ../../source/start/topics/recipes/symfony.rst:160
+msgid "Another working symfony"
+msgstr ""
+
+#: ../../source/start/topics/recipes/symfony.rst:180
+msgid ""
+"Using Nginx as a development server for symphony, this is a php (cli) script"
+" which configurate and launch Nginx in a directory, the result is similar to"
+" django development server."
+msgstr ""

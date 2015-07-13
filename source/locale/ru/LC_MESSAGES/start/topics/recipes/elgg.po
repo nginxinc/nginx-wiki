@@ -1,0 +1,40 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/recipes/elgg.rst:2
+msgid "Elgg"
+msgstr ""
+
+#: ../../source/start/topics/recipes/elgg.rst:5
+msgid "Requirements"
+msgstr ""
+
+#: ../../source/start/topics/recipes/elgg.rst:7
+msgid ":ref:`tutorials-phpfpm`"
+msgstr ""
+
+#: ../../source/start/topics/recipes/elgg.rst:10
+msgid "Recipe"
+msgstr ""
+
+#: ../../source/start/topics/recipes/elgg.rst:12
+msgid ""
+"A `sample Elgg-1.8 configuration <https://gist.github.com/755617>`_ (Github "
+"Gist.)"
+msgstr ""
+
+#: ../../source/start/topics/recipes/elgg.rst:14
+msgid ""
+"The following was found on the elgg forums. It looks like it could be "
+"improved if someone wants to test it."
+msgstr ""

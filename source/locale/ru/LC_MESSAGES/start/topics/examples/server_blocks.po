@@ -1,0 +1,45 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/examples/server_blocks.rst:2
+msgid "Server Block Examples"
+msgstr ""
+
+#: ../../source/start/topics/examples/server_blocks.rst:4
+msgid ""
+"Note: \"VirtualHost\" is an Apache term. Nginx does not have Virtual hosts, "
+"it has \"Server Blocks\" that use the server_name and listen directives to "
+"bind to tcp sockets."
+msgstr ""
+
+#: ../../source/start/topics/examples/server_blocks.rst:7
+msgid "Two Server Blocks, Serving Static Files"
+msgstr ""
+
+#: ../../source/start/topics/examples/server_blocks.rst:30
+msgid "A Default \"Catch All\" Server Block"
+msgstr ""
+
+#: ../../source/start/topics/examples/server_blocks.rst:49
+msgid "Wildcard Subdomains in a Parent Folder"
+msgstr ""
+
+#: ../../source/start/topics/examples/server_blocks.rst:51
+msgid ""
+"This is just a really easy way to keep adding new subdomains, or to add new "
+"domains automatically when DNS records are pointed at the server. Note that "
+"I have included FCGI here as well. If you want to just serve static files, "
+"strip out the FCGI config and change the default document to index.html. "
+"Rather than creating a new vhost.conf file for every domain, just create one"
+" of these:"
+msgstr ""

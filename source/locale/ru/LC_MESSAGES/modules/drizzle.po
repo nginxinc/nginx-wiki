@@ -1,0 +1,1262 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/drizzle.rst:2
+msgid "Drizzle"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:5
+msgid "Name"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:6
+msgid ""
+"drizzle-nginx-module - Upstream module for talking to MySQL and Drizzle "
+"directly"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:8
+msgid ""
+"*This module is not distributed with the Nginx source.* See the "
+"`installation instructions <drizzle.installation_>`_."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:13
+msgid "Status"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:14
+msgid ""
+"This module is already production ready and is powering `the Taobao LineZing"
+" site <http://lz.taobao.com>`_."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:19
+msgid "Version"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:20
+msgid ""
+"This document describes ngx_drizzle :github:`v0.1.8 <openresty/drizzle-"
+"nginx-module/tags>` released on 21 November 2014."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:25
+msgid "Synopsis"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:73
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:74
+msgid ""
+"This is an nginx upstream module integrating `libdrizzle "
+"<https://launchpad.net/drizzle>`_ into Nginx in a non-blocking and "
+"streamming way."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:76
+msgid ""
+"Essentially it provides a very efficient and flexible way for nginx "
+"internals to access MySQL, Drizzle, as well as other RDBMS's that support "
+"the Drizzle or MySQL wired protocol. Also it can serve as a direct REST "
+"interface to those RDBMS backends."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:78
+msgid ""
+"This module does not generate human-readable outputs, rather, in a binary "
+"format called Resty-DBD-Stream (RDS) designed by ourselves. You usually need"
+" other components, like :github:`HttpRdsJsonModule <openresty/rds-json-"
+"nginx-module>`, :github:`HttpRdsCsvModule <openresty/rds-csv-nginx-module>`,"
+" or :github:`HttpLuaRdsParser <openresty/lua-rds-parser>` to work with this "
+"module. See `Output Format`_ for details."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:81
+msgid "Keepalive connection pool"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:82
+msgid ""
+"This module also provides a builtin per-worker connection pool mechanism for"
+" MySQL or Drizzle TCP connections."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:84
+msgid "Here's a sample configuration:"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:95
+msgid ""
+"For now, the connection pool uses a simple LIFO algorithm to assign idle "
+"connections in the pool. That is, most recently (successfully) used "
+"connections will be reused first the next time. And new idle connections "
+"will always replace the oldest idle connections in the pool even if the pool"
+" is already full."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:97
+msgid "See the `drizzle_keepalive`_ directive for more details."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:101
+msgid "Last Insert ID"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:102
+msgid ""
+"If you want to get LAST_INSERT_ID, then ngx_drizzle already returns that "
+"automatically for you when you're doing a SQL insert query. Consider the "
+"following sample ``nginx.conf`` snippet:"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:124
+msgid "Then request ``GET /test`` gives the following outputs:"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:133
+msgid ""
+"You can see the ``insert_id`` field (as well as the ``affected_rows`` field "
+"in the 3rd JSON response."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:138
+msgid "Directives"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:141
+msgid "drizzle_server"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:142
+msgid "*drizzle_server <host> user=<user> password=<pass> dbname=<database>*"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:143
+msgid ""
+"*drizzle_server <host>:<port> user=<user> password=<pass> dbname=<database> "
+"protocol=<protocol> charset=<charset>*"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:144 ../../source/modules/drizzle.rst:205
+#: ../../source/modules/drizzle.rst:226 ../../source/modules/drizzle.rst:319
+msgid "*none*"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:145 ../../source/modules/drizzle.rst:186
+msgid "*upstream*"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:147
+msgid ""
+"Directive assigns the name and the parameters of server. For the name it is "
+"possible to use a domain name, an address, with an optional port (default: "
+"3306). If domain name resolves to several addresses, then all are used."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:149 ../../source/modules/drizzle.rst:190
+msgid "The following options are supported:"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:152
+msgid "``user=<user>``"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:152
+msgid "MySQL/Drizzle user name ``<user>`` for login."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:160
+msgid "``password=<pass>``"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:155
+msgid ""
+"Specify mysql password ``<pass>`` for login. If you have special characters "
+"like ``#`` or spaces in your password text, then you'll have to quote the "
+"whole key-value pair with either single-quotes or double-quotes, as in"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:163
+msgid "``dbname=<database>``"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:163
+msgid ""
+"Specify default MySQL database ``<database>`` for the connection. Note that "
+"MySQL does allow referencing tables belonging to different databases by "
+"qualifying table names with database names in SQL queries."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:166
+msgid "``protocol=<protocol>``"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:166
+msgid ""
+"Specify which wire protocol to use, ``drizzle`` or ``mysql``. Default to "
+"``drizzle``."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:177
+msgid "``charset=<charset>``"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:169
+msgid ""
+"Explicitly specify the character set for the MySQL connections. Setting this"
+" option to a non-empty value will make this module send out a ``set names "
+"'<charset>'`` query right after the mysql connection is established. If the "
+"default character encoding of the MySQL connection is already what you want,"
+" you needn't set this option because it has extra runtime cost. Here is a "
+"small example:"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:179
+msgid ""
+"For the mysql server, \"utf-8\" is not a valid encoding name while ``utf8`` "
+"is."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:183
+msgid "drizzle_keepalive"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:184
+msgid "*drizzle_keepalive max=<size> mode=<mode>*"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:185
+msgid "*max=0 mode=single*"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:188
+msgid ""
+"Configures the keep-alive connection pool for MySQL/Drizzle connections."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:193
+msgid "``max=<num>``"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:193
+msgid ""
+"Specify the capacity of the connection pool for the current upstream block. "
+"The <num> value *must* be non-zero. If set to ``0``, it effectively disables"
+" the connection pool. This option is default to ``0``."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:196
+msgid "``mode=<mode>``"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:196
+msgid ""
+"This supports two values, ``single`` and ``multi``. The ``single`` mode "
+"means the pool does not distinguish various drizzle servers in the current "
+"upstream block while ``multi`` means the pool will merely reuse connections "
+"which have identical server host names and ports. Note that even under "
+"``multi``, differences between ``dbname`` or ``user`` parameters will be "
+"silently ignored. Default to ``single``."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:200
+msgid "``overflow=<action>``"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:199
+msgid ""
+"This option specifies what to do when the connection pool is already full "
+"while new database connection is required. Either ``reject`` or ``ignore`` "
+"can be specified. In case of ``reject``, it will reject the current request,"
+" and returns the ``503 Service Unavailable`` error page. For ``ignore``, "
+"this module will go on creating a new database connection."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:203
+msgid "drizzle_query"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:204
+msgid "*drizzle_query <sql>*"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:206 ../../source/modules/drizzle.rst:252
+#: ../../source/modules/drizzle.rst:263 ../../source/modules/drizzle.rst:274
+#: ../../source/modules/drizzle.rst:285 ../../source/modules/drizzle.rst:296
+#: ../../source/modules/drizzle.rst:305
+msgid "*http, server, location, location if*"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:208
+msgid "Specify the SQL queries sent to the Drizzle/MySQL backend."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:210
+msgid ""
+"Nginx variable interpolation is supported, but you must be careful with SQL "
+"injection attacks. You can use the ``set_quote_sql_str`` directive, for "
+"example, to quote values for SQL interpolation:"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:224
+msgid "drizzle_pass"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:225
+msgid "*drizzle_pass <remote>*"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:227 ../../source/modules/drizzle.rst:320
+msgid "*location, location if*"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:228 ../../source/modules/drizzle.rst:321
+msgid "*content*"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:230
+msgid ""
+"This directive specifies the Drizzle or MySQL upstream name to be queried in"
+" the current location. The ``<remote>`` argument can be any upstream name "
+"defined with the `drizzle_server`_ directive."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:232
+msgid ""
+"Nginx variables can also be interpolated into the ``<remote>`` argument, so "
+"as to do dynamic backend routing, for example:"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:249
+msgid "drizzle_connect_timeout"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:250
+msgid "*drizzle_connect_time <time>*"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:251 ../../source/modules/drizzle.rst:262
+#: ../../source/modules/drizzle.rst:273 ../../source/modules/drizzle.rst:284
+msgid "*60s*"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:254
+msgid ""
+"Specify the (total) timeout for connecting to a remote Drizzle or MySQL "
+"server."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:256
+msgid ""
+"The ``<time>`` argument can be an integer, with an optional time unit, like "
+"``s`` (second), ``ms`` (millisecond), ``m`` (minute). The default time unit "
+"is ``s``, i.e., \"second\". The default setting is ``60s``."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:260
+msgid "drizzle_send_query_timeout"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:261
+msgid "*drizzle_send_query_timeout <time>*"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:265
+msgid ""
+"Specify the (total) timeout for sending a SQL query to a remote Drizzle or "
+"MySQL server."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:267 ../../source/modules/drizzle.rst:278
+#: ../../source/modules/drizzle.rst:289
+msgid ""
+"The ``<time>`` argument can be an integer, with an optional time unit, like "
+"``s`` (second), ``ms`` (millisecond), ``m`` (minute). The default time unit "
+"is ``s``, ie, \"second\". The default setting is ``60s``."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:271
+msgid "drizzle_recv_cols_timeout"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:272
+msgid "*drizzle_recv_cols_timeout <time>*"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:276
+msgid ""
+"Specify the (total) timeout for receiving the columns metadata of the "
+"result-set to a remote Drizzle or MySQL server."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:282
+msgid "drizzle_recv_rows_timeout"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:283
+msgid "*drizzle_recv_rows_timeout <time>*"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:287
+msgid ""
+"Specify the (total) timeout for receiving the rows data of the result-set "
+"(if any) to a remote Drizzle or MySQL server."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:293
+msgid "drizzle_buffer_size"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:294
+msgid "*drizzle_buffer_size <size>*"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:295
+msgid "*4k/8k*"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:298
+msgid ""
+"Specify the buffer size for drizzle outputs. Default to the page size "
+"(4k/8k). The larger the buffer, the less streammy the outputing process will"
+" be."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:302
+msgid "drizzle_module_header"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:303
+msgid "*drizzle_module_header [on|off]*"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:304
+msgid "*on*"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:307
+msgid ""
+"Controls whether to output the drizzle header in the response. Default on."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:309
+msgid "The drizzle module header looks like this:"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:317
+msgid "drizzle_status"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:318
+msgid "*drizzle_status*"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:323
+msgid ""
+"When specified, the current Nginx location will output a status report for "
+"all the drizzle upstream servers in the virtual server of the current Nginx "
+"worker process."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:325
+msgid "The output looks like this:"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:348
+msgid ""
+"This is *not* the global statistics if you do have multiple Nginx worker "
+"processes configured in your ``nginx.conf``."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:353
+msgid "Variables"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:354
+msgid "This module creates the following Nginx variables:"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:357
+msgid "$drizzle_thread_id"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:358
+msgid ""
+"This variable will be assigned a textual number of the underlying MySQL or "
+"Drizzle query thread ID when the current SQL query times out. This thread ID"
+" can be further used in a SQL kill command to cancel the timed-out query."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:360
+msgid "Here's an example:"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:397
+msgid ""
+"where we make use of :doc:`headers_more`, :doc:`lua`, and `HttpRdsJsonModule"
+" <openresty/rds-json-nginx-module>` too. When the SQL query timed out, we'll"
+" explicitly cancel it immediately. One pitfall here is that you have to add "
+"these modules in this order while building Nginx:"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:399 ../../source/modules/drizzle.rst:764
+msgid ":doc:`lua`"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:400
+msgid ":doc:`headers_more`"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:401
+msgid ":github:`HttpRdsJsonModule <openresty/rds-json-nginx-module>`"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:403
+msgid ""
+"Such that, their output filters will work in the *reversed* order, i.e., "
+"first convert RDS to JSON, and then add our ``X-Mysql-Tid`` custom header, "
+"and finally capture the whole (subrequest) response with the Lua module. "
+"You're recommended to use the `OpenResty bundle <http://openresty.org/>`_ "
+"though, it ensures the module building order automatically for you."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:408
+msgid "Output Format"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:409
+msgid ""
+"This module generates binary query results in a format that is shared among "
+"the various Nginx database driver modules like :github:`ngx_postgres "
+"<FRiCKLE/ngx_postgres/>`. This data format is named ``Resty DBD Stream`` "
+"(RDS)."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:411
+msgid "If you're a web app developer, you may be more interested in"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:413
+msgid ""
+"using :github:`HttpRdsJsonModule <openresty/rds-json-nginx-module>` to "
+"obtain JSON output,"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:414
+msgid ""
+"using :github:`HttpRdsCsvModule <openresty/rds-csv-nginx-module>` to obain "
+"Comma-Separated-Value (CSV) output, or"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:415
+msgid ""
+"using :github:`HttpLuaRdsParser <openresty/lua-rds-parser>` to parse the RDS"
+" data into Lua data structures."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:417
+msgid ""
+"For the HTTP response header part, the ``200 OK`` status code should always "
+"be returned. The ``Content-Type`` header *must* be set to ``application/x"
+"-resty-dbd-stream``. And the driver generating this response also sets a ``X"
+"-Resty-DBD`` header. For instance, this module adds the following output "
+"header:"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:423
+msgid ""
+"where ``0.1.0`` is this module's own version number. This ``X-Resty-DBD-"
+"Module`` header is optional though."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:425
+msgid "Below is the HTTP response body format (version 0.0.3):"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:428
+msgid "RDS Header Part"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:429
+msgid "The RDS Header Part consists of the following fields:"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:432 ../../source/modules/drizzle.rst:438
+#: ../../source/modules/drizzle.rst:497
+msgid "``uint8_t``"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:432
+msgid "endian type (1 means big-endian and little endian otherwise)"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:435 ../../source/modules/drizzle.rst:504
+msgid "``uint32_t``"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:435
+msgid "format version (v1.2.3 is represented as 1002003 in decimal)"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:438
+msgid "result type (0 means normal SQL result type, fixed for now)"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:441 ../../source/modules/drizzle.rst:444
+#: ../../source/modules/drizzle.rst:447 ../../source/modules/drizzle.rst:460
+#: ../../source/modules/drizzle.rst:475 ../../source/modules/drizzle.rst:478
+#: ../../source/modules/drizzle.rst:481
+msgid "``uint16_t``"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:441
+msgid "standard error code"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:444
+msgid "driver-specific error code"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:447
+msgid "driver-specific error string length"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:450 ../../source/modules/drizzle.rst:485
+#: ../../source/modules/drizzle.rst:508
+msgid "``u_char``"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:450
+msgid "driver-specific error string data"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:453 ../../source/modules/drizzle.rst:456
+msgid "``uint64_t``"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:453
+msgid "database rows affected"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:456
+msgid "insert id (if none, 0)"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:459
+msgid "column count"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:463
+msgid "RDS Body Part"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:464
+msgid ""
+"When the ``column count`` field in the `RDS Header Part`_ is zero, then the "
+"whole RDS Body Part is omitted."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:466
+msgid "The RDS Body Part consists of two sections, Columns_ and Rows_."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:469
+msgid "Columns"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:470
+msgid ""
+"The columns part consists of zero or more column data. The number of columns"
+" is determined by ``column count`` field in `RDS Header Part`_."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:472
+msgid "Each column consists of the following fields"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:475
+msgid ""
+"non-zero value for standard column type code and for the column list "
+"terminator and zero otherwise."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:478
+msgid "driver-specific column type code"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:481
+msgid "column name length"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:484
+msgid "column name data"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:488
+msgid "Rows"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:489
+msgid ""
+"The rows part consists of zero or more row data, terminated by a 8-bit zero."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:491
+msgid ""
+"Each row data consists of a `Row Flag`_ and an optional `Fields Data`_ part."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:494
+msgid "Row Flag"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:496
+msgid "valid row (1 means valid, and 0 means the row list terminator)"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:500
+msgid "Fields Data"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:501
+msgid ""
+"The Fields Data consists zero or more fields of data. The field count is "
+"predetermined by the ``column number`` specified in `RDS Header Part`_."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:504
+msgid "field length ((uint32_t) -1 represents NULL)"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:507
+msgid ""
+"field data in textual representation), is empty (0) if field length == "
+"(uint32_t) -1"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:511
+msgid "RDS buffer Limitations"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:512
+msgid ""
+"On the nginx output chain link level, the following components should be put"
+" into a single ``ngx_buf_t`` struct:"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:514
+msgid "the header"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:515
+msgid "each column and the column list terminator"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:516
+msgid "each row's valid flag byte and row list terminator"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:517
+msgid ""
+"each field in each row (if any) but the field data can span multiple bufs."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:522
+msgid "Status Code"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:523
+msgid ""
+"If the MySQL error code in MySQL's query result is not OK, then a 500 error "
+"page is returned by this module, except for the table non-existent error, "
+"which results in the ``410 Gone`` error page."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:528
+msgid "Caveats"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:529
+msgid ""
+"Other usptream modules like ``upstream_hash`` and :doc:`keepalive` *must "
+"not* be used with this module in a single upstream block."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:530
+msgid ""
+"Directives like the `server <|HttpUpstreamModule|#server>` *must not* be "
+"mixed with drizzle_server_ either."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:531
+msgid ""
+"Upstream backends that don't use drizzle_server_ to define server entries "
+"*must not* be used in the drizzle_pass_ directive."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:536
+msgid "Troubleshooting"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:537 ../../source/modules/drizzle.rst:545
+msgid "When you see the following error message in ``error.log``:"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:544
+msgid ""
+"then you may checkout if your MySQL is too old (at least 5.x is required) or"
+" your mysql config file explicitly forces the use of old authentication "
+"method (you should remove the ``old-passwords`` line from your ``my.cnf`` "
+"and add the line ``secure_auth 1``)."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:552
+msgid ""
+"You should check if your MySQL account does have got TCP login access on "
+"your MySQL server side. A quick check is to use MySQL's official client to "
+"connect to your server:"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:558
+msgid ""
+"the ``--protocol=tcp`` option is required here, or your MySQL client may use"
+" Unix Domain Socket to connect to your MySQL server."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:563
+msgid "Known Issues"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:564
+msgid ""
+"Calling mysql procedures are currently not supported because the underlying "
+"libdrizzle library does not support the ``CLIENT_MULTI_RESULTS`` flag yet :("
+" But we'll surely work on it."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:565
+msgid ""
+"Multiple SQL statements in a single query are not supported due to the lack "
+"of ``CLIENT_MULTI_STATEMENTS`` support in the underlying libdrizzle library."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:566
+msgid "This module does not (yet) work with the ``RTSIG`` event model."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:573
+msgid "Installation"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:574
+msgid ""
+"You're recommended to install this module as well as "
+":github:`HttpRdsJsonModule <openresty/rds-json-nginx-module>` via the "
+"ngx_openresty bundle::"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:578
+msgid ""
+"The installation steps are usually as simple as ``./configure --with-"
+"http_drizzle_module && make && make install`` (But you still need to install"
+" the libdrizzle library manually, see "
+"http://openresty.org/#DrizzleNginxModule for detailed instructions."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:580
+msgid ""
+"Alternatively, you can compile this module with Nginx core's source by hand:"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:582
+msgid ""
+"You should first install libdrizzle 1.0 which is now distributed with the "
+"drizzle project and can be obtained from `https://launchpad.net/drizzle "
+"<https://launchpad.net/drizzle>`_. The latest drizzle7 release does not "
+"support building libdrizzle 1.0 separately and requires a lot of external "
+"dependencies like Boost and Protobuf which are painful to install. The last "
+"version supporting building libdrizzle 1.0 separately is ``2011.07.21``. You"
+" can download it from "
+"http://openresty.org/download/drizzle7-2011.07.21.tar.gz . Which this "
+"version of drizzle7, installation of libdrizzle 1.0 is usually as simple as"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:592
+msgid ""
+"Ensure that you have the ``python`` command point to a ``python2`` "
+"interpreter. It's known that on recent : Arch Linux distribution, ``python``"
+" is linked to ``python3`` by default, and while running ``make "
+"libdrizzle-1.0`` will yield the error"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:602
+msgid "You can fix this by pointing ``python`` to ``python2``."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:604
+msgid ""
+"Download the latest version of the release tarball of this module from "
+"drizzle-nginx-module :github:`file list <openresty/drizzle-nginx-"
+"module/tags>`"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:605
+msgid ""
+"Grab the nginx source code from `nginx.org <http://nginx.org/>`_, for "
+"example, the version 1.7.7 (see `nginx compatibility "
+"<drizzle.compatibility_>`_), and then build the source with this module:"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:626
+msgid ""
+"You usually also need :github:`HttpRdsJsonModule <openresty/rds-json-nginx-"
+"module>` to obtain JSON output from the binary RDS output generated by this "
+"upstream module."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:633
+msgid "Compatibility"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:634
+msgid ""
+"If you're using MySQL, then MySQL ``5.0 ~ 5.5`` is required. We're not sure "
+"if MySQL ``5.6+`` work; reports welcome!"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:636
+msgid ""
+"This module has been tested on Linux and Mac OS X. Reports on other POSIX-"
+"compliant systems will be highly appreciated."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:638
+msgid "The following versions of Nginx should work with this module:"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:640
+msgid "1.7.x (last tested: 1.7.7)"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:641
+msgid "1.6.x"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:642
+msgid "1.5.x (last tested: 1.5.8)"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:643
+msgid "1.4.x (last tested: 1.4.4)"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:644
+msgid "1.3.x (last tested: 1.3.7)"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:645
+msgid "1.2.x (last tested: 1.2.9)"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:646
+msgid "1.1.x (last tested: 1.1.5)"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:647
+msgid "1.0.x (last tested: 1.0.8)"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:648
+msgid "0.8.x (last tested: 0.8.55)"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:649
+msgid "0.7.x >= 0.7.44 (last tested version is 0.7.67)"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:651
+msgid ""
+"Earlier versions of Nginx like ``0.6.x`` and ``0.5.x`` will *not* work."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:653
+msgid ""
+"If you find that any particular version of Nginx above ``0.7.44`` does not "
+"work with this module, please consider reporting a bug."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:660
+msgid "Community"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:663
+msgid "English Mailing List"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:664
+msgid ""
+"The `openresty-en <https://groups.google.com/group/openresty-en>`_ mailing "
+"list is for English speakers."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:668
+msgid "Chinese Mailing List"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:669
+msgid ""
+"The `openresty <https://groups.google.com/group/openresty>`_ mailing list is"
+" for Chinese speakers."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:674
+msgid "Report Bugs"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:675
+msgid "Please submit bug reports, wishlists, or patches by"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:677
+msgid ""
+"creating a ticket on the :github:`issue tracking interface <openresty"
+"/drizzle-nginx-module/issues>` provided by GitHub,"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:678
+msgid ""
+"or sending an email to the `OpenResty community <drizzle.community_>`_."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:683
+msgid "Source Repository"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:684
+msgid ""
+"Available on github at :github:`openresty/drizzle-nginx-module <openresty"
+"/drizzle-nginx-module>`"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:689
+msgid "Test Suite"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:690
+msgid ""
+"This module comes with a Perl-driven test suite. The :github:`test cases "
+"<openresty/drizzle-nginx-module/tree/master/t/>` are :github:`declarative "
+"<openresty/drizzle-nginx-module/blob/master/t/sanity.t>` too. Thanks to the "
+"`Test::Nginx <http://search.cpan.org/perldoc?Test::Nginx>` module in the "
+"Perl world."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:693
+msgid "To run it on your side:"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:699
+msgid ""
+"Because a single nginx server (by default, ``localhost:1984``) is used "
+"across all the test scripts (``.t`` files), it's meaningless to run the test"
+" suite in parallel by specifying ``-jN`` when invoking the ``prove`` "
+"utility."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:704
+msgid "TODO"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:705
+msgid "add the MySQL transaction support."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:706
+msgid "add multi-statement MySQL query support."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:707
+msgid ""
+"implement the **drizzle_max_output_size** directive. When the RDS data is "
+"larger then the size specified, the module will try to terminate the output "
+"as quickly as possible but will still ensure the resulting response body is "
+"still in valid RDS format."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:708
+msgid ""
+"implement the **drizzle_upstream_next** mechanism for failover support."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:709
+msgid ""
+"add support for multiple drizzle_query_ directives in a single location."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:710
+msgid ""
+"implement *weighted* round-robin algorithm for the upstream server clusters."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:711
+msgid ""
+"add the ``max_idle_time`` option to the drizzle_server_ directive, so that "
+"the connection pool will automatically release idle connections for the "
+"timeout you specify."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:712
+msgid ""
+"add the ``min`` option to the drizzle_server_ directive so that the "
+"connection pool will automatically create that number of connections and put"
+" them into the pool."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:713
+msgid "add Unix domain socket support in the drizzle_server_ directive."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:714
+msgid ""
+"make the drizzle_query_ directive reject variables that have not been "
+"processed by a **drizzle_process** directive. This will pretect us from SQL "
+"injections. There will also be an option (\"strict=no\") to disable such "
+"checks."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:719
+msgid "Changes"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:720
+msgid ""
+"The changes of every release of this module can be obtained from the "
+"ngx_openresty bundle's change logs:"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:722
+msgid "http://openresty.org/#Changes"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:727
+msgid "Authors"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:728
+msgid "chaoslawful (王晓哲) <chaoslawful at gmail dot com>"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:729
+msgid "Yichun \"agentzh\" Zhang (章亦春) <agentzh at gmail dot com>, CloudFlare Inc."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:730
+msgid "Piotr Sikora <piotr.sikora at frickle dot com>, CloudFlare Inc."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:735
+msgid "Copyright & License"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:736
+msgid "This module is licenced under the BSD license."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:738
+msgid ""
+"Copyright (C) 2009-2014, by Xiaozhe Wang (chaoslawful) "
+"<chaoslawful@gmail.com>."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:740
+msgid ""
+"Copyright (C) 2009-2014, by Yichun \"agentzh\" Zhang (章亦春) "
+"<agentzh@gmail.com>, CloudFlare Inc."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:742
+msgid ""
+"Copyright (C) 2010-2014, by FRiCKLE Piotr Sikora <info@frickle.com>, "
+"CloudFlare Inc."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:744
+msgid "All rights reserved."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:746
+msgid ""
+"Redistribution and use in source and binary forms, with or without "
+"modification, are permitted provided that the following conditions are met:"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:748
+msgid ""
+"Redistributions of source code must retain the above copyright notice, this "
+"list of conditions and the following disclaimer."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:750
+msgid ""
+"Redistributions in binary form must reproduce the above copyright notice, "
+"this list of conditions and the following disclaimer in the documentation "
+"and/or other materials provided with the distribution."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:752
+msgid ""
+"THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS "
+"IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, "
+"THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR "
+"PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR "
+"CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, "
+"EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, "
+"PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR PROFITS; "
+"OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF LIABILITY, "
+"WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING NEGLIGENCE OR "
+"OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF "
+"ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:758
+msgid ":github:`rds-json-nginx-module <openresty/rds-json-nginx-module>`"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:759
+msgid ":github:`rds-csv-nginx-module <openresty/rds-csv-nginx-module>`"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:760
+msgid ":github:`lua-rds-parser <openresty/lua-rds-parser>`"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:761
+msgid "`The ngx_openresty bundle <http://openresty.org>`_"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:762
+msgid "drizzle-nginx-module (i.e., this module)"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:763
+msgid ":github:`postgres-nginx-module <FRiCKLE/ngx_postgres>`"
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:765
+msgid ""
+"The :github:`lua-resty-mysql <openresty/lua-resty-mysql>` library based on "
+"the :doc:`lua` cosocket API."
+msgstr ""

@@ -1,0 +1,44 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/recipes/redmine.rst:2
+msgid "Redmine"
+msgstr ""
+
+#: ../../source/start/topics/recipes/redmine.rst:4
+msgid ""
+"Redmine is seemingly complex. It is. However, when it comes to Nginx, it "
+"isn't."
+msgstr ""
+
+#: ../../source/start/topics/recipes/redmine.rst:7
+msgid "Recipe"
+msgstr ""
+
+#: ../../source/start/topics/recipes/redmine.rst:9
+msgid ""
+"This is very nearly a drop in configuration. The only thing you should need "
+"to change will be the root location, upstream servers, and the server name."
+msgstr ""
+
+#: ../../source/start/topics/recipes/redmine.rst:34
+msgid "Ruby"
+msgstr ""
+
+#: ../../source/start/topics/recipes/redmine.rst:36
+msgid ""
+"In the above configuration I used upstream connections to ruby processes. "
+"They were bound to ports 8000-8002. Explaining how to set this up is "
+"explained on the redmine website and is probably best left for there. If "
+"there's enough request I'll try to compile something."
+msgstr ""

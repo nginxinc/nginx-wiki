@@ -1,0 +1,718 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/push_stream.rst:2
+msgid "HTTP Push Stream"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:5
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:6
+msgid ""
+"**nginx-push-stream-module** - A pure stream http push technology for your "
+"Nginx setup."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:8
+msgid "Comet made easy and **really scalable**."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:10
+msgid ""
+"Available on github at :github:`nginx-push-stream-module <wandenberg/nginx-"
+"push-stream-module>`"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:12
+msgid ""
+"*This module is not distributed with the Nginx source.* See the "
+"`installation instructions <push_stream.installation_>`_."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:17
+msgid "Changelog"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:18
+msgid ""
+"Always take a look at :github:`CHANGELOG.textile <wandenberg/nginx-push-"
+"stream-module/blob/master/CHANGELOG.textile>` to see what’s new."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:23
+msgid "Contribute"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:24
+msgid ""
+"After you try this module and like it, feel free to `give something back "
+"<https://www.paypal.com/us/cgi-bin/webscr?cmd=_flow&SESSION"
+"=j6q7Fyp4cLjVJZpbBKHSQvJNNKC0BJ-"
+"e_KIinYxZwQlqESvriMdPT6HT0_q&dispatch=5885d80a13c0db1f8e263663d3faee8de6030e9239419d79c3f52f70a3ed57ec>`_,"
+" and help in the maintenance of the project ;)"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:31
+msgid "Status"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:32
+msgid "This module is considered production ready."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:39
+msgid "Installation"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:40
+msgid "You may use ``build.sh`` script inside the project:"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:69
+msgid "Or you may do by yourself:"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:104
+msgid "Basic Configuration"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:135
+msgid "Basic Usage"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:136
+msgid ""
+"You can feel the flavor right now at the command line. Try using more than "
+"one terminal and start playing http pubsub:"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:172
+msgid "Variables"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:175
+msgid "push_stream_channel_id"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:176
+msgid "*channel id*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:177
+msgid "push_stream_publisher_, push_stream_channels_statistics_"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:179
+msgid ""
+"A string to uniquely identify a communication channel. Must be present on "
+"location of the push_stream_publisher_ and push_stream_channels_statistics_."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:192
+msgid "push_stream_channels_path"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:193
+msgid "*set of channels id and backtrack desired messages*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:194
+msgid "push_stream_subscriber_"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:196
+msgid ""
+"A string representing a set of channels id and backtrack desired messages "
+"separated by slash, example */channel1.b3/channel2.b5/channel3.b2*. The "
+"backtrack means the amount of old messages from each of the channels that "
+"will be delivered to the subscriber. On the example will be 3 messages from "
+"channel1, 5 from channel2 and 2 from channel3. Backtrack isn’t needed, you "
+"can only sign channels without get old messages, or you can mix things. More"
+" accepted examples: */channel1* , */channel1/channel2* , "
+"*/channel1.b5/channel2* , */channel1/channel2.b6* , … Must be present on "
+"location of the push_stream_subscriber_."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:218
+msgid "Directives"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:221
+msgid "push_stream_channels_statistics"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:222
+msgid "*push_stream_channels_statistics*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:223
+#: ../../source/modules/push_stream.rst:262
+#: ../../source/modules/push_stream.rst:299
+msgid "*location*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:225
+msgid "**release version:** *0.2.0*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:227
+msgid ""
+"Defines a location as a source of statistics. You can use this location to "
+"get statistics about a specific, group or all channels, in a resumed ou "
+"summarized way. To get statistics about all channels in a summarized way you"
+" have to make a GET in this location without specify a name in the "
+"push_stream_channel_id variable. To get statistics about all channels in a "
+"detailed way you have to specify “ALL” in the push_stream_channel_id. To get"
+" statistics about prefixed channels in a detailed way you have to specify "
+"“_prefix_*” in the push_stream_channel_id_. To get statistics about a "
+"channel you have to specify the name in the push_stream_channel_id_."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:239
+msgid ""
+"You can get statistics in the formats plain, xml, yaml and json. The default"
+" is json, to change this behavior you can use **Accept** header parameter "
+"passing values like “text/plain”, “application/xml”, “application/yaml” and "
+"“application/json” respectivelly."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:259
+msgid "push_stream_publisher"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:260
+msgid "*push_stream_publisher [ normal | admin ]*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:261
+msgid "*normal*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:264
+msgid ""
+"Defines a location as a message publisher. Requests to a publisher location "
+"are treated as messages to be sent to subscribers. This location supports "
+"three http methods:GET, make possible to get statistics about the "
+"channelPOST, publish a message to the channelDELETE, remove any existent "
+"stored messages, disconnect any subscriber, and delete the channel. "
+"Available only if *admin* value is used in this directive."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:295
+msgid "push_stream_subscriber"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:296
+msgid "*push_stream_subscriber [ streaming | polling |* *long-polling* ``]``"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:298
+msgid "*streaming*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:301
+msgid ""
+"Defines a location as a subscriber. This location represents a subscriber’s "
+"interface to a channel’s message queue. This location only supports GET http"
+" method to receive published messages. And has three possible values to set "
+"push mode: streaming, polling, long-polling. The default values is "
+"streaming. The polling and long-polling modes could be set by the request "
+"header **X-Nginx-PushStream-Mode** overriding push_stream_subscriber_ "
+"directive value."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:344
+msgid "push_stream_shared_memory_size"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:345
+msgid "*push_stream_shared_memory_size size*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:346
+msgid "*32M*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:347
+#: ../../source/modules/push_stream.rst:360
+#: ../../source/modules/push_stream.rst:374
+#: ../../source/modules/push_stream.rst:387
+#: ../../source/modules/push_stream.rst:399
+#: ../../source/modules/push_stream.rst:410
+#: ../../source/modules/push_stream.rst:421
+#: ../../source/modules/push_stream.rst:433
+#: ../../source/modules/push_stream.rst:445
+#: ../../source/modules/push_stream.rst:456
+#: ../../source/modules/push_stream.rst:470
+#: ../../source/modules/push_stream.rst:481
+#: ../../source/modules/push_stream.rst:493
+msgid "*http*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:349
+msgid ""
+"The size of the memory chunk this module will use to store published "
+"messages, channels and other shared structures. When this memory is full any"
+" new request for publish a message or subscribe a channel will receive an "
+"500 Internal Server Error response."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:357
+msgid "push_stream_shared_memory_cleanup_objects_ttl"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:358
+msgid "*push_stream_shared_memory_cleanup_objects_ttl time*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:359
+msgid "*30 seconds*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:362
+msgid ""
+"The length of time a message or a channel will stay on garbage collection "
+"area before it is completly discarded, freeing the shared memory. The "
+"minimum length is 30 seconds to ensure that no one is using these elements. "
+"This operation is very important to help Nginx recycle memory consumed to "
+"create messages and channels, so do not use a large time."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:371
+msgid "push_stream_channel_deleted_message_text"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:372
+msgid "*push_stream_channel_deleted_message_text string*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:373
+msgid "*\"Channel deleted\"*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:376
+#: ../../source/modules/push_stream.rst:389
+msgid "**release version:** *0.2.5*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:378
+msgid ""
+"The string used on channel deleted message sent to subscribers when the "
+"channel is deleted by a publisher."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:384
+msgid "push_stream_ping_message_text"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:385
+msgid "*push_stream_ping_message_text string*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:386
+#: ../../source/modules/push_stream.rst:398
+#: ../../source/modules/push_stream.rst:409
+#: ../../source/modules/push_stream.rst:420
+#: ../../source/modules/push_stream.rst:432
+#: ../../source/modules/push_stream.rst:444
+#: ../../source/modules/push_stream.rst:455
+#: ../../source/modules/push_stream.rst:469
+#: ../../source/modules/push_stream.rst:480
+#: ../../source/modules/push_stream.rst:492
+#: ../../source/modules/push_stream.rst:533
+#: ../../source/modules/push_stream.rst:556
+#: ../../source/modules/push_stream.rst:581
+msgid "*none*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:391
+msgid "The string used on ping message sent to subscribers."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:396
+msgid "push_stream_message_ttl"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:397
+msgid "*push_stream_message_ttl time*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:401
+msgid ""
+"The length of time a message may be queued before it is considered expired. "
+"If you do not want messages to expire, just not set this directive."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:407
+msgid "push_stream_max_subscribers_per_channel"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:408
+msgid "*push_stream_max_subscribers_per_channel number*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:412
+msgid ""
+"The maximum number of subscribers accepted per channel. If you do not want "
+"to limit number of subscribers access to channels, just not set this "
+"directive."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:418
+msgid "push_stream_max_messages_stored_per_channel"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:419
+msgid "*push_stream_max_messages_stored_per_channel number*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:423
+msgid ""
+"The maximum number of messages to store per channel. A channel’s message "
+"buffer will retain at most this many most recent messages. If you do not "
+"want messages to be discarded by length, just not set this directive."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:430
+msgid "push_stream_max_channel_id_length"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:431
+msgid "*push_stream_max_channel_id_length number*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:435
+msgid ""
+"Maximum permissible channel id length (number of characters). Longer ids "
+"will receive an 400 Bad Request response. If you do not want to limit "
+"channel id length, just not set this directive."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:442
+msgid "push_stream_ping_message_interval"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:443
+msgid "*push_stream_ping_message_interval time*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:447
+msgid ""
+"The time interval in which a keepalive message is sent to subscribers. If "
+"you do not want to send ping messages, just not set this directive."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:453
+msgid "push_stream_subscriber_connection_ttl"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:454
+msgid "*push_stream_subscriber_connection_ttl time*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:458
+msgid ""
+"The length of time a subscriber will stay connected before it is considered "
+"expired and disconnected. If you do not want subscribers to be automatically"
+" disconnected, just not set this directive. But, this operation is very "
+"important to help Nginx recycle memory consumed to send messages to "
+"susbscriber, allocated at pool request."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:467
+msgid "push_stream_max_number_of_channels"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:468
+msgid "*push_stream_max_number_of_channels number*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:472
+msgid ""
+"The maximum number of concurrent channels on the server. If you do not want "
+"to limit the number of channels, just not set this directive."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:478
+msgid "push_stream_max_number_of_broadcast_channels"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:479
+msgid "*push_stream_max_number_of_broadcast_channels number*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:483
+msgid ""
+"The maximum number of concurrent broadcats channels on the server. If you do"
+" not want to limit the number of broadcast channels, just not set this "
+"directive."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:490
+msgid "push_stream_broadcast_channel_prefix"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:491
+msgid "*push_stream_broadcast_channel_prefix string*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:495
+msgid ""
+"The string prefix used to identify when a channel is a normal or broadcast "
+"channel, example: when you set this directive as ``bd_``, ``bd_ch1`` will be"
+" a broadcast channel"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:502
+msgid "push_stream_store_messages"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:503
+msgid "*push_stream_store_messages [ on | off ]*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:504
+#: ../../source/modules/push_stream.rst:516
+#: ../../source/modules/push_stream.rst:595
+#: ../../source/modules/push_stream.rst:607
+msgid "*off*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:505
+msgid "*location (push_stream_publisher)*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:507
+msgid ""
+"Whether or not message queuing is enabled. If store messages is “on” is "
+"needed to set at least one of these two directives push_stream_message_ttl_ "
+"or push_stream_max_messages_stored_per_channel_."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:514
+msgid "push_stream_authorized_channels_only"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:515
+msgid "*push_stream_authorized_channels_only [ on | off ]*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:517
+#: ../../source/modules/push_stream.rst:534
+#: ../../source/modules/push_stream.rst:544
+#: ../../source/modules/push_stream.rst:557
+#: ../../source/modules/push_stream.rst:570
+#: ../../source/modules/push_stream.rst:582
+#: ../../source/modules/push_stream.rst:608
+msgid "*location (push_stream_subscriber)*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:519
+msgid ""
+"Whether or not a subscriber may create a channel by making a request to a "
+"push_stream_subscriber_ location. If set to on, a publisher must send a POST"
+" request before a subscriber can request messages on the channel. Otherwise,"
+" all subscriber requests to nonexistent channels will get a 403 Forbidden "
+"response. This restriction is not applied to broadcast channels, but to "
+"subscribe to a broadcast channel is necessary to subscribe at least to one "
+"normal channel, and if this directive is set to on this channel has to be "
+"created before."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:531
+msgid "push_stream_header_template"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:532
+msgid "*push_stream_header_template string*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:536
+msgid "The text that will be sended to subscribers when they arrive."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:541
+msgid "push_stream_message_template"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:542
+msgid "*push_stream_message_template string*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:543
+msgid "*~text~*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:546
+msgid ""
+"The text template that will be used to format the message before be sended "
+"to subscribers. The template can contain any number of the reserved words: "
+"~id~, ~text~, ~channel~ and ~event-id~, example: "
+"\"<script>p(~id~,'~channel~','~text~');</script>\""
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:554
+msgid "push_stream_footer_template"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:555
+msgid "*push_stream_footer_template string*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:559
+msgid "**release version:** *0.2.6*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:561
+msgid ""
+"The text that will be sended to subscribers before connection is closed "
+"(channel deleted ou subscriber timeout)."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:567
+msgid "push_stream_content_type"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:568
+msgid "*push_stream_content_type string*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:569
+msgid "*text/plain*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:572
+msgid ""
+"The content type used on responses to subscribers. Must be complient with "
+"push_stream_header_template_, push_stream_message_template_ and "
+"push_stream_footer_template_."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:579
+msgid "push_stream_broadcast_channel_max_qtd"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:580
+msgid "*push_stream_broadcast_channel_max_qtd number*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:584
+msgid ""
+"The maximum number of broadcast channels that a subscriber may sign on the "
+"request. This directive works in conjunction with "
+"push_stream_authorized_channels_only_ to preserve the server from a kind of "
+"attack where a subscriber sign one normal channel and many nonexistent "
+"broadcast channels."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:593
+msgid "push_stream_keepalive"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:594
+msgid "*push_stream_keepalive [ on | off ]*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:596
+msgid "*location (push_stream_publisher, push_stream_channels_statistics)*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:598
+msgid "**release version:** *0.2.4*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:600
+msgid ""
+"Enable keepalive connections, on publisher or channels statistics locations."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:605
+msgid "push_stream_eventsource_support"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:606
+msgid "*push_stream_eventsource_support [ on | off ]*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:610
+msgid "**release version:** *0.3.0*"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:612
+msgid ""
+"Enable `Event Source <https://w3c.github.io/eventsource/>`_ support for "
+"subscribers."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:618
+msgid "Attention"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:619
+msgid ""
+"This module controls everything needed to send the messages to subscribers. "
+"So it disable Nginx’s chuncked filter to reduce memory consumption in "
+"streaming connections."
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:626
+msgid "Tests"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:627
+msgid ""
+"The tests for this module are written in Ruby, and are acceptance tests. To "
+"run them is needed to have an environment with::"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:642
+msgid ""
+"You can install these gems with bundler (bundler is required to be installed"
+" before, *gem install bundler*)"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:651
+msgid "or individually"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:663
+msgid ""
+"Then issue ``rake tests``. This command run the tests using nginx "
+"**executable** located at */usr/local/nginx/sbin/nginx* with *1* **worker** "
+"responding at **host** *localhost* and **port** *9990*. To change this "
+"behavior use the commands bellow"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:677
+msgid "and can combine any of these parameters, like:"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:686
+msgid "Discussion"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:687
+msgid ""
+"Nginx Push Stream Module `Discussion Group "
+"<https://groups.google.com/forum/#!forum/nginxpushstream>`_"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:693
+msgid "Contributors"
+msgstr ""
+
+#: ../../source/modules/push_stream.rst:694
+msgid ":github:`People <wandenberg/nginx-push-stream-module/contributors>`"
+msgstr ""

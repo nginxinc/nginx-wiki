@@ -1,0 +1,26 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/tutorial2.rst:2
+msgid "Tutorial 2: Get Configured"
+msgstr ""
+
+#: ../../source/start/tutorial2.rst:9
+msgid ""
+"Now that you know what's going on, you're ready to put a configuration "
+"together and get rocking with Nginx. Are you excited yet?"
+msgstr ""
+
+#: ../../source/start/tutorial2.rst:18
+msgid ":doc:`Things to Avoid at all Costs<topics/tutorials/config_pitfalls>`"
+msgstr ""

@@ -1,0 +1,37 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/examples/dynamic_ssi.rst:2
+msgid "Dynamic SSI Example"
+msgstr ""
+
+#: ../../source/start/topics/examples/dynamic_ssi.rst:4
+msgid ""
+"It took a little while to figure this out and it's handy for creating one-"
+"off sites with \"dynamic\" content without a web framework."
+msgstr ""
+
+#: ../../source/start/topics/examples/dynamic_ssi.rst:48
+msgid "Then if you have an index.html file similar to this:"
+msgstr ""
+
+#: ../../source/start/topics/examples/dynamic_ssi.rst:58
+msgid ""
+"it will now include (via SSI) whatever page is requested.   So for example "
+"/home would include home.html into index.html.  This makes it easy to have a"
+" common style (headers and footers) without resorting to PHP or a framework."
+msgstr ""
+
+#: ../../source/start/topics/examples/dynamic_ssi.rst:61
+msgid "It assumes home.html exists."
+msgstr ""

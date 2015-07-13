@@ -1,0 +1,137 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/examples/phpfcgi.rst:2
+msgid "PHP FastCGI Example"
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfcgi.rst:4
+msgid ""
+"This example is for newer PHP (>= 5.3.3) using the included PHP FPM (FastCGI"
+" Process Manager)."
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfcgi.rst:6
+msgid ""
+"This guide assume PHP FPM already installed and configured either using tcp "
+"port (``127.0.0.1:9000``) or unix socket (``/var/run/php-fpm.sock``)."
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfcgi.rst:8
+msgid ""
+"There are many guide about configuring nginx with PHP FPM, but many of them "
+"are incomplete (*doesn't handle PATH_INFO correctly*) or contain security "
+"issues (*doesn't check whether the script is indeed php file*)."
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfcgi.rst:13
+msgid "FastCGI Params"
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfcgi.rst:15
+msgid ""
+"First thing, I recommend keeping all your typical FCGI settings in a single "
+"file and importing them."
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfcgi.rst:17
+msgid ""
+"For example on debian and ubuntu by default there is "
+"``/etc/nginx/fastcgi_params`` file that should looks like this:"
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfcgi.rst:49
+msgid ""
+"Please note if you're using Ubuntu Precise (12.04), I change "
+"``SCRIPT_FILENAME`` and add ``PATH_INFO`` params."
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfcgi.rst:52
+msgid "Connecting nginx to PHP FPM"
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfcgi.rst:54
+msgid ""
+"Now we must tell Nginx to proxy requests to PHP FPM via the FCGI protocol:"
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfcgi.rst:69
+msgid "If you're using unix socket change ``fastcgi_pass`` to:"
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfcgi.rst:75
+msgid "Restart nginx."
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfcgi.rst:78
+msgid "Testing"
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfcgi.rst:80
+msgid "Create ``test.php`` on nginx document root containing just:"
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfcgi.rst:86
+msgid ""
+"In the browser try to request: # /test.php # /test.php/ # /test.php/foo # "
+"/test.php/foo/bar.php # /test.php/foo/bar.php?v=1"
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfcgi.rst:93
+msgid ""
+"Pay attention to the value of REQUEST_URI, SCRIPT_NAME, PATH_INFO and "
+"PHP_SELF."
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfcgi.rst:95
+msgid ""
+"Here's the correct output for http://lemp.test/test.php/foo/bar.php?v=1 ::"
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfcgi.rst:132
+msgid "Notes"
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfcgi.rst:134
+msgid ""
+"The location regex capable to handle ``PATH_INFO`` and properly check that "
+"the extension indeed .php (not .phps) whether there is PATH_INFO or not."
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfcgi.rst:135
+msgid ""
+"The ``fastcgi_split_path_info`` regex capable to correctly handle request "
+"like ``/test.php/foo/blah.php`` or ``/test.php/``."
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfcgi.rst:136
+msgid ""
+"The ``if`` lets nginx check whether the ``*.php`` does indeed exist to "
+"prevent nginx to feeding PHP FPM non php script file (like uploaded image)."
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfcgi.rst:138
+msgid ""
+"Some guides recommend to use ``try_files`` instead of ``if``, if you do "
+"that, beware of nginx `bug #321 <http://trac.nginx.org/nginx/ticket/321>`_. "
+"I personally think ``if`` is more appropriate for this, even "
+":doc:`../depth/ifisevil` agree this is one of the 100% safe thing to use "
+"``if`` with."
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfcgi.rst:142
+msgid ""
+"This guide run fine on php.ini ``cgi.fix_pathinfo = 1`` (the default). Some "
+"guide insist to change it to ``cgi.fix_pathinfo = 0`` but doing that make "
+"``PHP_SELF`` variable broken (not equal to ``DOCUMENT_URI``)."
+msgstr ""

@@ -1,0 +1,279 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/auth_digest.rst:2
+msgid "HTTP Digest Authentication"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:5
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:6
+msgid ""
+"**ngx_http_auth_digest** - HTTP Digest Authentication support for Nginx."
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:8
+msgid ""
+"*This module is not distributed with the Nginx source.* See the "
+":github:`installation instructions <samizdatco/nginx-http-auth-"
+"digest/blob/master/readme.rst>`"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:13
+msgid "Status"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:14
+msgid ""
+"The module is feature-complete with respect to the RFC but is in need of "
+"broader testing before it can be considered secure enough for use in "
+"production. See the :github:`bugs.txt <samizdatco/nginx-http-auth-"
+"digest/blob/master/bugs.txt>` file and the github :github:`issue tracker "
+"<samizdatco/nginx-http-auth-digest/issues>` for the current set of caveats."
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:19
+msgid "Synopsis"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:20
+msgid ""
+"You can limit access to a directory tree by adding the following lines into "
+"a *server* section in your Nginx configuration file:"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:30
+msgid ""
+"The other directives control the lifespan defaults for the authentication "
+"session. The following is equivalent to the previous example but "
+"demonstrates all the directives:"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:49
+msgid ""
+"Adding digest authentication to a location will affect any uris that match "
+"that block. To disable authentication for specific sub-branches off a uri, "
+"set ``auth_digest`` to ``off``:"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:64
+msgid "Directives"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:67
+msgid "auth_digest"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:68
+msgid "*auth_digest [ realm-name | off ]*"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:69
+msgid "*off*"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:70
+#: ../../source/modules/auth_digest.rst:84
+#: ../../source/modules/auth_digest.rst:99
+#: ../../source/modules/auth_digest.rst:114
+#: ../../source/modules/auth_digest.rst:126
+msgid "*server, location*"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:72
+msgid ""
+"Enable or disable digest authentication for a server or location block. The "
+"realm name should correspond to a realm used in the user file. Any user "
+"within that realm will be able to access files after authenticating."
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:76
+msgid ""
+"To selectively disable authentication within a protected uri hierarchy, set "
+"``auth_digest`` to “``off``” within a more-specific location block (see "
+"example)."
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:81
+msgid "auth_digest_user_file"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:82
+msgid "*auth_digest_user_file /path/to/passwd/file*"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:83
+msgid "*none*"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:86
+msgid ""
+"The password file should be of the form created by the apache ``htdigest`` "
+"command (or the included :github:`htdigest.py <samizdatco/nginx-http-auth-"
+"digest/blob/master/htdigest.py>` script). Each line of the file is a colon-"
+"separated list composed of a username, realm, and md5 hash combining name, "
+"realm, and password. For example:"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:96
+msgid "auth_digest_timeout"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:97
+msgid "*auth_digest_timeout delay-time*"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:98
+msgid "*60s*"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:101
+msgid ""
+"When a client first requests a protected page, the server returns a 401 "
+"status code along with a challenge in the ``WWW-Authenticate`` header."
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:104
+msgid ""
+"At this point most browsers will present a dialog box to the user prompting "
+"them to log in. This directive defines how long challenges will remain "
+"valid. If the user waits longer than this time before submitting their name "
+"and password, the challenge will be considered ‘stale’ and they will be "
+"prompted to log in again."
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:111
+msgid "auth_digest_expires"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:112
+msgid "*auth_digest_expires lifetime-in-seconds*"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:113
+msgid "*10s*"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:116
+msgid ""
+"Once a digest challenge has been successfully answered by the client, "
+"subsequent requests will attempt to re-use the ‘nonce’ value from the "
+"original challenge. To complicate MitM attacks, it's best to limit the "
+"number of times a cached nonce will be accepted. This directive sets the "
+"duration for this re-use period after the first successful authentication."
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:123
+msgid "auth_digest_replays"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:124
+msgid "*auth_digest_replays number-of-uses*"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:125
+msgid "*20*"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:128
+msgid ""
+"Nonce re-use should also be limited to a fixed number of requests. Note that"
+" increasing this value will cause a proportional increase in memory usage "
+"and the shm_size may have to be adjusted to keep up with heavy traffic "
+"within the digest-protected location blocks."
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:134
+msgid "auth_digest_shm_size"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:135
+msgid "*auth_digest_shm_size size-in-bytes*"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:136
+msgid "*4096k*"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:137
+msgid "*server*"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:139
+msgid ""
+"The module maintains a fixed-size cache of active digest sessions to save "
+"state between authenticated requests. Once this cache is full, no further "
+"authentication will be possible until active sessions expire."
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:143
+msgid ""
+"As a result, choosing the proper size is a little tricky since it depends "
+"upon the values set in the expiration-related directives. Each stored "
+"challenge takes up ``48 + ceil(auth_digest_replays/8)`` bytes and will live "
+"for up to ``auth_digest_timeout + auth_digest_expires`` seconds. When using "
+"the default module settings this translates into allowing around 82k non-"
+"replay requests every 70 seconds."
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:152
+msgid "Source Repository"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:153
+msgid "Available on github at :github:`samizdatco/nginx-http-auth-digest`."
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:158
+msgid "Author"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:159
+msgid "Christian Swinehart / `Samizdat Drafting Co. <http://samizdat.cc>`_"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:164
+msgid "Copyright & License"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:165
+msgid ""
+"The basic request-handling and password-file-parsing is based on the "
+"``ngx_http_auth_basic`` module in the Nginx 1.0.8 sources. The original code"
+" is copyright Igor Sysoev."
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:167
+msgid "Copyright (c) 2011, Christian Swinehart"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:169
+msgid ""
+"This module is licensed under the terms of the :github:`BSD license "
+"<samizdatco/nginx-http-auth-digest/blob/master/LICENSE>`"
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:175
+msgid ""
+"The `RFC 2617 <http://www.ietf.org/rfc/rfc2617.txt>`_ definition of basic "
+"and digest authentication."
+msgstr ""
+
+#: ../../source/modules/auth_digest.rst:176
+msgid ""
+"Shane Holloway's werkzeug `module "
+"<https://github.com/shanewholloway/werkzeug/blob/master/werkzeug/contrib/authdigest.py>`_"
+" which was used as a reference implementation."
+msgstr ""

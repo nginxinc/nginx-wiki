@@ -15,5 +15,6 @@ Contributing to the Wiki
 
    writing_docs
    github
+   translating_docs
 
 .. todo: contributing to Nginx codebase

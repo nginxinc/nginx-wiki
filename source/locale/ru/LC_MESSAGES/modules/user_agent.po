@@ -1,0 +1,76 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/user_agent.rst:2
+msgid "User Agent"
+msgstr ""
+
+#: ../../source/modules/user_agent.rst:5
+msgid "Syntax"
+msgstr ""
+
+#: ../../source/modules/user_agent.rst:21
+msgid "Directives"
+msgstr ""
+
+#: ../../source/modules/user_agent.rst:24
+msgid "greedy"
+msgstr ""
+
+#: ../../source/modules/user_agent.rst:26
+msgid ""
+"We specify the keyword in the *user_agent* string from right to left, and "
+"this is more efficient. As usual, we use the greedy algorithm. It will "
+"return immediately after the keyword being found."
+msgstr ""
+
+#: ../../source/modules/user_agent.rst:28
+msgid ""
+"E.g 1. \"Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.1; WOW64; "
+"Trident/6.0)\", this string is MSIE's user_agent string, we will return when"
+" we find the keyword \"MSIE\". But the truth is not alway like this: E.g 2. "
+"\"Mozilla/5.0 (Macintosh; Intel Mac OS X 10_7_3) AppleWebKit/535.20 (KHTML, "
+"like Gecko) Chrome/19.0.1036.7 Safari/535.20\", This is Chrome's user_agent."
+" We will match Safari frist. If we define safari is greedy, it scans the "
+"string in a reverse order. If a keyword is greedy, it will not return "
+"immediately when the keyword is matched for the first time, but rather "
+"continue to scan the string."
+msgstr ""
+
+#: ../../source/modules/user_agent.rst:32
+msgid "default"
+msgstr ""
+
+#: ../../source/modules/user_agent.rst:34
+msgid "set the default value of this variable;"
+msgstr ""
+
+#: ../../source/modules/user_agent.rst:36
+msgid "The directive format is like this in the block::"
+msgstr ""
+
+#: ../../source/modules/user_agent.rst:40
+msgid "*name* - The name of operating_system, browser, crawler and so on."
+msgstr ""
+
+#: ../../source/modules/user_agent.rst:41
+msgid "*version* - It can be omitted, and it supports multiple formats."
+msgstr ""
+
+#: ../../source/modules/user_agent.rst:42
+msgid "*value* - It is the value filled to the variable."
+msgstr ""
+
+#: ../../source/modules/user_agent.rst:44
+msgid "For example:"
+msgstr ""

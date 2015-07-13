@@ -1,0 +1,68 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/recipes/mediawiki.rst:2
+msgid "MediaWiki"
+msgstr ""
+
+#: ../../source/start/topics/recipes/mediawiki.rst:5
+msgid "Requirements"
+msgstr ""
+
+#: ../../source/start/topics/recipes/mediawiki.rst:7
+msgid ":ref:`tutorials-phpfpm`"
+msgstr ""
+
+#: ../../source/start/topics/recipes/mediawiki.rst:10
+msgid "Recipe"
+msgstr ""
+
+#: ../../source/start/topics/recipes/mediawiki.rst:12
+msgid "Here's the basic configuration used for the Nginx wiki."
+msgstr ""
+
+#: ../../source/start/topics/recipes/mediawiki.rst:63
+msgid ""
+"In order for this configuration to work, you will need to set "
+"\"$wgUsePathInfo = TRUE;\" in your LocalSettings.php file."
+msgstr ""
+
+#: ../../source/start/topics/recipes/mediawiki.rst:66
+msgid "Troubleshooting math markup"
+msgstr ""
+
+#: ../../source/start/topics/recipes/mediawiki.rst:68
+msgid ""
+"After installing the `Math extension "
+"<https://www.mediawiki.org/wiki/Extension:Math>`_ and `enabling TeX "
+"<https://www.mediawiki.org/wiki/Manual:Enable_TeX>`_ you may find that the "
+"*texvc* binary doesn't produce any PNG file, and instead produces the "
+"infamous `Failed to parse (PNG conversion failed; check for correct "
+"installation of latex, dvips, gs, and convert) "
+"<https://www.mediawiki.org/wiki/Manual:Troubleshooting_math_display_errors#.22Failed_to_parse_.28PNG_conversion_failed.3B_check_for_correct_installation_of_latex.2C_dvips.2C_gs.2C_and_convert.29.22>`_"
+" error."
+msgstr ""
+
+#: ../../source/start/topics/recipes/mediawiki.rst:70
+msgid ""
+"If nothing obvious can be found such as permissions issues in showing up in "
+"the error log, then try running the *texvc* as root using *sudo* by changing"
+" *shell_exec* line (around line 123) of ``extensions/Math/MathTexvc.php`` to"
+" the following:"
+msgstr ""
+
+#: ../../source/start/topics/recipes/mediawiki.rst:76
+msgid ""
+"To allow the web-server to have *sudo* access without compromising security "
+"the following line can be added to */etc/sudoers*::"
+msgstr ""

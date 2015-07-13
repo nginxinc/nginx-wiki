@@ -1,0 +1,44 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/recipes/codeigniter.rst:2
+msgid "Codeigniter"
+msgstr ""
+
+#: ../../source/start/topics/recipes/codeigniter.rst:4
+msgid "A powerful PHP framework with a very small footprint."
+msgstr ""
+
+#: ../../source/start/topics/recipes/codeigniter.rst:7
+msgid "Requirements"
+msgstr ""
+
+#: ../../source/start/topics/recipes/codeigniter.rst:9
+msgid ":ref:`tutorials-phpfpm`"
+msgstr ""
+
+#: ../../source/start/topics/recipes/codeigniter.rst:12
+msgid "Recipe"
+msgstr ""
+
+#: ../../source/start/topics/recipes/codeigniter.rst:39
+msgid ""
+"After this, make sure that your codeIgniter config.php contains the "
+"following information:"
+msgstr ""
+
+#: ../../source/start/topics/recipes/codeigniter.rst:47
+msgid ""
+"An alternative configuration, production ready. You don't need to modify "
+"\"config.php\", except for removing \"index.php\""
+msgstr ""

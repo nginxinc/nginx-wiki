@@ -1,0 +1,33 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/recipes/alkaline.rst:4
+msgid "Alkaline"
+msgstr ""
+
+#: ../../source/start/topics/recipes/alkaline.rst:6
+msgid ""
+"This configuration can be used with a default installation of Alkaline v1.1."
+msgstr ""
+
+#: ../../source/start/topics/recipes/alkaline.rst:9
+msgid "Requirements"
+msgstr ""
+
+#: ../../source/start/topics/recipes/alkaline.rst:11
+msgid ":ref:`tutorials-phpfpm`"
+msgstr ""
+
+#: ../../source/start/topics/recipes/alkaline.rst:14
+msgid "Recipe"
+msgstr ""

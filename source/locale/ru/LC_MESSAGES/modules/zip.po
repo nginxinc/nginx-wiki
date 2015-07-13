@@ -1,0 +1,229 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/zip.rst:2
+msgid "Zip"
+msgstr ""
+
+#: ../../source/modules/zip.rst:5
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/zip.rst:7
+msgid ""
+"**mod_zip** - an HTTP module for nginx that assembles ZIP archives "
+"dynamically. In simple configurations, mod_zip will take a list of files on "
+"the local file system and serve them as a single ZIP archive. In more "
+"complex setups, mod_zip can stream component files from upstream servers "
+"with nginx's native proxying code. Unlike many ZIP creation scripts, the "
+"process never takes up more than a few KB of RAM at time, even while "
+"assembling archives that are (potentially) hundreds of megabytes."
+msgstr ""
+
+#: ../../source/modules/zip.rst:10
+msgid "Installation"
+msgstr ""
+
+#: ../../source/modules/zip.rst:12
+msgid ""
+"To install, download the source tarball, expand it, and then compile nginx "
+"with the following option:"
+msgstr ""
+
+#: ../../source/modules/zip.rst:18
+msgid "nginx 0.7.25 or greater is required."
+msgstr ""
+
+#: ../../source/modules/zip.rst:21
+msgid "Usage"
+msgstr ""
+
+#: ../../source/modules/zip.rst:23
+msgid ""
+"The module has no configuration directives. It is activated when the "
+"original response (presumably from an upstream) includes the following HTTP "
+"header:"
+msgstr ""
+
+#: ../../source/modules/zip.rst:29
+msgid ""
+"It then scans the response body for a list of files. The syntax is a space-"
+"separated list of the file checksum (CRC-32), size (in bytes), location "
+"(properly URL-encoded), and file name. One file per line.  The file location"
+" corresponds to a location in your nginx.conf; the file can be on disk, from"
+" an upstream, or from another module.  The file name can include a directory"
+" path, and is what will be extracted from the ZIP file. Example:"
+msgstr ""
+
+#: ../../source/modules/zip.rst:36
+msgid ""
+"Files are retrieved and encoded in order. If a file cannot be found or the "
+"file request returns any sort of error, the download is aborted."
+msgstr ""
+
+#: ../../source/modules/zip.rst:38
+msgid ""
+"If all files in the list have a CRC-32 value, mod_zip will support the "
+"\"Range\" header for the download. Unknown CRC-32's should be indicated with"
+" a dash (\"-\"), e.g."
+msgstr ""
+
+#: ../../source/modules/zip.rst:46
+msgid "Remote Upstreams"
+msgstr ""
+
+#: ../../source/modules/zip.rst:48
+msgid ""
+"You can use the following setup to compose archives from multiple remote "
+"servers:"
+msgstr ""
+
+#: ../../source/modules/zip.rst:60
+msgid "Tips"
+msgstr ""
+
+#: ../../source/modules/zip.rst:62
+msgid ""
+"add a header \"Content-Disposition: attachment; filename=foobar.zip\" in the"
+" upstream response if you would like the client to name the file "
+"\"foobar.zip\""
+msgstr ""
+
+#: ../../source/modules/zip.rst:63
+msgid ""
+"provide the CRC-32 value for files if you'd like to have maximum "
+"compatibility with BOMArchiveHelper ('Archiver Utility') and Stuffit "
+"Expander."
+msgstr ""
+
+#: ../../source/modules/zip.rst:64
+msgid ""
+"Each line should have no whitespace before the CRC-32 field. At the end of "
+"the line, \\r\\n. No empty or extra lines."
+msgstr ""
+
+#: ../../source/modules/zip.rst:65
+msgid ""
+"To save bandwidth, add a \"Last-Modified\" header in the upstream response; "
+"mod_zip will then honor the \"If-Range\" header from clients."
+msgstr ""
+
+#: ../../source/modules/zip.rst:66
+msgid ""
+"Make sure the upstream file list is not gzip compressed (e.g. by Apache)."
+msgstr ""
+
+#: ../../source/modules/zip.rst:67
+msgid "Make sure the upstream file list has a final newline."
+msgstr ""
+
+#: ../../source/modules/zip.rst:71
+msgid "Changelog"
+msgstr ""
+
+#: ../../source/modules/zip.rst:74
+msgid "1.1"
+msgstr ""
+
+#: ../../source/modules/zip.rst:76
+msgid ""
+"1.1.6: Features: Zip64 for large archives, serial subrequests, UTF-8 "
+"filenames. Bugfix: Allow spaces in URLs."
+msgstr ""
+
+#: ../../source/modules/zip.rst:77
+msgid ""
+"1.1.5: Features: \"If-Range\" support, Range support with local files. "
+"Bugfix: nginx 0.7.25 compatibility."
+msgstr ""
+
+#: ../../source/modules/zip.rst:78
+msgid ""
+"1.1.4: Feature: Range end is optional (e.g. \"bytes=0-\"). Bugfix: "
+"compilation error on FreeBSD."
+msgstr ""
+
+#: ../../source/modules/zip.rst:79
+msgid ""
+"1.1.3: Feature: optional CRC-32's. Bugfix: support BOMArchiveHelper.app on "
+"Mac OS X. Bugfix: occasional crash when file returned 404."
+msgstr ""
+
+#: ../../source/modules/zip.rst:80
+msgid "1.1.2: Bugfix: Compilation error with nginx 0.6 series."
+msgstr ""
+
+#: ../../source/modules/zip.rst:81
+msgid "1.1.1: Bugfix: Compilation error on certain platforms."
+msgstr ""
+
+#: ../../source/modules/zip.rst:82
+msgid "1.1.0: Feature: Full byte-range support. Change: New file list syntax."
+msgstr ""
+
+#: ../../source/modules/zip.rst:85
+msgid "1.0"
+msgstr ""
+
+#: ../../source/modules/zip.rst:87
+msgid "1.0.1: Initial public release"
+msgstr ""
+
+#: ../../source/modules/zip.rst:88
+msgid "1.0.2: Bugfix: Fixed compilation with no ``--with-http-debug flag``"
+msgstr ""
+
+#: ../../source/modules/zip.rst:89
+msgid ""
+"1.0.3: Feature: support for Content-Length when X-Archive-Files-* headers "
+"are provided"
+msgstr ""
+
+#: ../../source/modules/zip.rst:90
+msgid "1.0.4: Bugfix: support empty files in an archive"
+msgstr ""
+
+#: ../../source/modules/zip.rst:91
+msgid "1.0.5: Bugfix: support archives larger than 2GB"
+msgstr ""
+
+#: ../../source/modules/zip.rst:92
+msgid "1.0.7: Bugfix: clear outgoing \"Accept-Ranges\" header"
+msgstr ""
+
+#: ../../source/modules/zip.rst:93
+msgid "1.0.8: Bugfix: strip \"Range\" header from subrequests"
+msgstr ""
+
+#: ../../source/modules/zip.rst:96
+msgid "Bugs"
+msgstr ""
+
+#: ../../source/modules/zip.rst:98
+msgid "Send bug reports to `Evan Miller <http://www.evanmiller.org/>`_."
+msgstr ""
+
+#: ../../source/modules/zip.rst:100
+msgid "`mod_zip <http://code.google.com/p/mod-zip/>`_ at Google Code."
+msgstr ""
+
+#: ../../source/modules/zip.rst:103
+msgid "Thanks"
+msgstr ""
+
+#: ../../source/modules/zip.rst:105
+msgid ""
+"Thanks to `box.com <https://www.box.com/>`_  for sponsoring the initial "
+"development of mod_zip and to `vtunnel.com <http://vtunnel.com/>`_  for "
+"sponsoring byte-range support."
+msgstr ""

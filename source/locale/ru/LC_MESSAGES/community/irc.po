@@ -1,0 +1,151 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/community/irc.rst:4
+msgid "IRC Channel"
+msgstr ""
+
+#: ../../source/community/irc.rst:6
+msgid ""
+"In an effort to keep our community clean and organized, we have created a "
+"set of guidelines for how we expect users and operators to behave on IRC."
+msgstr ""
+
+#: ../../source/community/irc.rst:12
+msgid "Code of Conduct"
+msgstr ""
+
+#: ../../source/community/irc.rst:14
+msgid ""
+"Nginx is a piece of software that has been growing and has found the need to"
+" have a general set of guidelines. As a growing community, we need to be "
+"able to work together effectively."
+msgstr ""
+
+#: ../../source/community/irc.rst:18
+msgid ""
+"In the free software world, we collaborate freely on a volunteer basis to "
+"build software for everyone's benefit. We improve on the work of others, "
+"which we have been given freely, and then share our improvements on the same"
+" basis. We additionally help others learn about the software and help them "
+"use it effectively. That collaboration depends on good relationships between"
+" developers and users. Our team has agreed on the following code of conduct "
+"to help define the ways that we expect all users and operators to adhere to."
+msgstr ""
+
+#: ../../source/community/irc.rst:26
+msgid ""
+"*Be Considerate*: Everyone is around to either help or be helped. We're all "
+"around to learn. All the work we do affects someone else and we need to "
+"consider this when we make any changes."
+msgstr ""
+
+#: ../../source/community/irc.rst:29
+msgid ""
+"*Be Respectful*: The Nginx community treats one another with respect. "
+"Everyone can make valuable contributions to Nginx. We may not always agree, "
+"but disagreement is no excuse for poor behavior and/or poor manners. We "
+"might all experience some frustration now and then, but we cannot allow that"
+" frustration to turn into a personal attack. It's important to remember that"
+" a community where people feel uncomfortable or threatened is not a "
+"productive one. We expect members of the Nginx community to be respectful "
+"when dealing with all others. Nobody knows everything, and nobody is "
+"expected to be perfect. Asking questions is how we learn. Those who are "
+"asked questions should be responsive and helpful. However, when asking a "
+"question, care must be taken to do so in an appropriate forum."
+msgstr ""
+
+#: ../../source/community/irc.rst:40
+msgid ""
+"*Be Constructive*: Avoid flame wars, trolling, personal attacks, and "
+"repetitive arguments."
+msgstr ""
+
+#: ../../source/community/irc.rst:42
+msgid ""
+"*Be Family Friendly*: We are not sailors and have no need to act like it. "
+"Topics such as sex, drugs, violence, etc. as well as swearing will not be "
+"permitted."
+msgstr ""
+
+#: ../../source/community/irc.rst:45
+msgid ""
+"*Stay On Topic*: The Nginx IRC channel is meant to be a means of support. "
+"When other users are asking for support, they should not have to read your "
+"random chatter about what you had for dinner. Chatter like this is unwelcome"
+" when other users are seeking support. If the conversation is going to "
+"become excessive or interfere with users seeking support, the conversation "
+"is expected to find its way to #nginx-social or another off topic channel."
+msgstr ""
+
+#: ../../source/community/irc.rst:51
+msgid ""
+"*Don't Spam*: Things such as frequent nick changes, away nicks, pasting "
+"multiple lines of text, displaying away messages, repeating questions "
+"frequently, spamming the enter key, etc. are all forms of spam and are "
+"unwelcome. There is little tolerance for spam in the Nginx community. Just "
+"don't do it."
+msgstr ""
+
+#: ../../source/community/irc.rst:56
+msgid ""
+"*Use Common Sense*: Common sense is in short supply these days, but it's "
+"still expected that our users have and use it. As a general rule, treat "
+"everyone the way you would want to be treated."
+msgstr ""
+
+#: ../../source/community/irc.rst:60
+msgid ""
+"This list is not inclusive. We will uphold the `Freenode Network "
+"Guidelines`_ as well as the `Freenode Channel Guidelines`_. Any and all "
+"users should both follow and enforce these guidelines where they see fit."
+msgstr ""
+
+#: ../../source/community/irc.rst:68
+msgid "Appeals Process"
+msgstr ""
+
+#: ../../source/community/irc.rst:70
+msgid ""
+"Nobody is perfect, not even the operators. In case of problems between users"
+" or between users and operators, the other operators can mediate. If you "
+"think you have been treated wrongly, please follow these steps to reach a "
+"resolution."
+msgstr ""
+
+#: ../../source/community/irc.rst:74
+msgid ""
+"Be calm, no caps or swearing. Seriously. If you feel the need to shout at "
+"someone or to swear, please take 5 minutes out before doing anything. Nobody"
+" will feel like helping you if you are swearing, shouting, or otherwise "
+"maintaining a disruptive behavior."
+msgstr ""
+
+#: ../../source/community/irc.rst:78
+msgid ""
+"PM the operator who took action, mistakes can be made by both sides. Short, "
+"calm, and polite conversations can quickly solve problems and clear the air."
+msgstr ""
+
+#: ../../source/community/irc.rst:80
+msgid ""
+"If the previous step has failed then feel free to join #nginx-master. "
+"Another operator might be able to resolve the problem."
+msgstr ""
+
+#: ../../source/community/irc.rst:83
+msgid ""
+"Before any of this, make sure you have read the :ref:`community-irc-coc`. It"
+" may also be helpful to take a look at our :ref:`community-irc_ops` "
+"document."
+msgstr ""

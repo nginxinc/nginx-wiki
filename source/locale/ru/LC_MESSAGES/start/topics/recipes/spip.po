@@ -1,0 +1,54 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/recipes/spip.rst:2
+msgid "SPIP"
+msgstr ""
+
+#: ../../source/start/topics/recipes/spip.rst:5
+msgid "Recipe"
+msgstr ""
+
+#: ../../source/start/topics/recipes/spip.rst:35
+msgid "deny access to /tmp and /local"
+msgstr ""
+
+#: ../../source/start/topics/recipes/spip.rst:37
+msgid ""
+"SPIP was made to be used with Apache. So when you deploy a SPIP on a web "
+"server that don't use htaccess you must not permit visitors to access to tmp"
+" nor config (the database dumps are stored in /tmp so a visitor can discover"
+" admin password by a brut force attack)."
+msgstr ""
+
+#: ../../source/start/topics/recipes/spip.rst:39
+msgid "Another way to prevent this kind of attack is:"
+msgstr ""
+
+#: ../../source/start/topics/recipes/spip.rst:41
+msgid "put these dir outside the spip root path"
+msgstr ""
+
+#: ../../source/start/topics/recipes/spip.rst:42
+msgid "redefine ``_DIR_TMP`` & ``_DIR_CONNECT`` constants in mes_options.php"
+msgstr ""
+
+#: ../../source/start/topics/recipes/spip.rst:45
+msgid "fastcgi buffer"
+msgstr ""
+
+#: ../../source/start/topics/recipes/spip.rst:47
+msgid ""
+"fastcgi_buffers and fastcgi_buffers_size is to prevent \"upstream sent too "
+"big header while reading response header from upstream\" error"
+msgstr ""

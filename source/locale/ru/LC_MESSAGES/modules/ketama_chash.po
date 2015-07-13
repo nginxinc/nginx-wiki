@@ -1,0 +1,82 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/modules/ketama_chash.rst:2
+msgid "Upstream Ketama CHash"
+msgstr ""
+
+#: ../../source/modules/ketama_chash.rst:5
+msgid "Description"
+msgstr ""
+
+#: ../../source/modules/ketama_chash.rst:6
+msgid ""
+"**usptream_ketama_chash module** - a load balancer which provides upstream "
+"load distribution by hashing a configurable variable using ketama consistent"
+" hashing algorithm."
+msgstr ""
+
+#: ../../source/modules/ketama_chash.rst:8
+msgid ""
+"*This module is not distributed with the Nginx source.* See the "
+"`installation instructions <ketama_chash.installation_>`_."
+msgstr ""
+
+#: ../../source/modules/ketama_chash.rst:13
+msgid "Directives"
+msgstr ""
+
+#: ../../source/modules/ketama_chash.rst:16
+msgid "hash"
+msgstr ""
+
+#: ../../source/modules/ketama_chash.rst:17
+msgid "*ketama_chash $variable*"
+msgstr ""
+
+#: ../../source/modules/ketama_chash.rst:18
+msgid "*none*"
+msgstr ""
+
+#: ../../source/modules/ketama_chash.rst:19
+msgid "*upstream*"
+msgstr ""
+
+#: ../../source/modules/ketama_chash.rst:21
+msgid "Enables upstream ketama consistent hashing of *$variable*."
+msgstr ""
+
+#: ../../source/modules/ketama_chash.rst:26
+msgid "Synopsis"
+msgstr ""
+
+#: ../../source/modules/ketama_chash.rst:40
+msgid "Installation"
+msgstr ""
+
+#: ../../source/modules/ketama_chash.rst:41
+msgid ""
+"This module is not distributed with the Nginx source. You can download the "
+"request_hash module from :github:`Github "
+"<flygoast/ngx_http_upstream_ketama_chash>`"
+msgstr ""
+
+#: ../../source/modules/ketama_chash.rst:53
+msgid "Bugs"
+msgstr ""
+
+#: ../../source/modules/ketama_chash.rst:54
+msgid ""
+"Send bug reports to :github:`FengGu "
+"<flygoast/ngx_http_upstream_ketama_chash>`"
+msgstr ""

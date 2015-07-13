@@ -1,0 +1,49 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-07-13 11:11+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/community/get_involved.rst:4
+msgid "Getting Involved"
+msgstr ""
+
+#: ../../source/community/get_involved.rst:6
+msgid ""
+"We do our best to make contributing to the Nginx community very easy. If you"
+" don't feel that something is easy, then the easiest thing you can do is "
+"bring it up so we're able to take action."
+msgstr ""
+
+#: ../../source/community/get_involved.rst:10
+msgid "A short list of ways to get involved:"
+msgstr ""
+
+#: ../../source/community/get_involved.rst:12
+msgid ""
+"If your blog has good quality Nginx topics, add it to :ref:`community-"
+"planet`."
+msgstr ""
+
+#: ../../source/community/get_involved.rst:13
+msgid "Jump into the :ref:`community-irc` and help answer questions."
+msgstr ""
+
+#: ../../source/community/get_involved.rst:14
+msgid ""
+"You can also :doc:`contribute <../contributing/index>` to Nginx and this "
+"wiki"
+msgstr ""
+
+#: ../../source/community/get_involved.rst:17
+msgid ""
+"There are other ways to contribute, but this is a list of our \"big ticket\""
+" items."
+msgstr ""
