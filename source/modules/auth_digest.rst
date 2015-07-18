@@ -172,6 +172,9 @@ This module is licensed under the terms of the :github:`BSD license <samizdatco/
 
 .. seealso::
 
-  * The `RFC 2617 <http://www.ietf.org/rfc/rfc2617.txt>`_ definition of basic and digest authentication.
+  * The RFC 2617 definition of basic and digest authentication.
   * Shane Holloway's werkzeug `module <https://github.com/shanewholloway/werkzeug/blob/master/werkzeug/contrib/authdigest.py>`_ which was used as a reference implementation.
-
+  
+  ..
+    [Errno 116] Connection timed out
+    `RFC 2617 <http://www.ietf.org/rfc/rfc2617.txt>`_
