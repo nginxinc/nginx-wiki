@@ -1,19 +1,28 @@
 SilverStripe
 ============
 
-`SilverStripe <http://www.silverstripe.org/>`_ is a modern PHP based CMS Framework that runs happily on nginx.  There are several built in failsafes that will attempt to rectify any errors in rewrite rules.  First, SS relies on an .htaccess file to define how to handle URLs.  Second, in the event that rewriting has failed the index.php file will attempt to set internal variables and include the core /sapphire/main.php file for processing.
+SilverStripe is a modern PHP based CMS Framework that runs happily on nginx.  
+
+..
+  [Error 503] Service Unavailable: Back-end server is at capacity
+  `SilverStripe <http://www.silverstripe.org/>`_
+  
+There are several built in failsafes that will attempt to rectify any errors in rewrite rules.  
+First, SS relies on an ``.htaccess`` file to define how to handle URLs.  
+Second, in the event that rewriting has failed the ``index.php`` file will attempt to set internal variables and include the core ``/sapphire/main.php`` file for processing.
 
 .. note::
 
-   These instructions assume you are using PHP configured as :doc:`../examples/phpfcgi` or PHP-FPM listening on 127.0.0.1:9000.  Make any appropriate changes fastcgi_params as needed for your environment.
+   These instructions assume you are using PHP configured as :doc:`../examples/phpfcgi` or PHP-FPM listening on 127.0.0.1:9000.  
+   Make any appropriate changes `fastcgi_params <|HttpFastCGIModule|#fastcgi_params>`_ as needed for your environment.
 
 Recipe
 ------
 
 The basic rewrite that controls all SilverStripe calls involve passing the URI and any GET vars to ``$document_root/framework/main.php``.
 
-# Remove the .htaccess file and index.php in the root of your SilverStripe installation (Just to be sure)
-# Apply a config similar to the following:
+#. Remove the ``.htaccess`` file and ``index.php`` in the root of your SilverStripe installation (Just to be sure)
+#. Apply a config similar to the following:
 
 .. code-block:: nginx
 
