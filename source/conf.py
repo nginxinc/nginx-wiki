@@ -45,45 +45,65 @@ rst_epilog = """
 
 .. _HttpRewriteModule: http://nginx.org/en/docs/http/ngx_http_rewrite_module.html
 
+
 .. |HttpAccessModule| replace:: HttpAccessModule
 
 .. _HttpAccessModule: http://nginx.org/en/docs/http/ngx_http_access_module.html
+
 
 .. |HttpLogModule| replace:: HttpLogModule
 
 .. _HttpLogModule: http://nginx.org/en/docs/http/ngx_http_log_module.html
 
+
 .. |HttpCoreModule| replace:: HttpCoreModule
 
 .. _HttpCoreModule: http://nginx.org/en/docs/http/ngx_http_core_module.html
+
 
 .. |HttpEchoModule| replace:: HttpEchoModule
 
 .. _HttpEchoModule: http://nginx.org/en/docs/http/ngx_http_echo_module.html
 
+
 .. |HttpUpstreamModule| replace:: HttpUpstreamModule
 
 .. _HttpUpstreamModule: http://nginx.org/en/docs/http/ngx_http_upstream_module.html
+
 
 .. |HttpProxyModule| replace:: HttpProxyModule
 
 .. _HttpProxyModule: http://nginx.org/en/docs/http/ngx_http_proxy_module.html
 
+
 .. |HttpFastCGIModule| replace:: HttpFastCGIModule
 
 .. _HttpFastCGIModule: http://nginx.org/en/docs/http/ngx_http_fastcgi_module.html
+
 
 .. |HttpSsiModule| replace:: HttpSsiModule
 
 .. _HttpSsiModule: http://nginx.org/en/docs/http/ngx_http_ssi_module.html
 
+
 .. |HttpMapModule| replace:: HttpMapModule
 
 .. _HttpMapModule: http://nginx.org/en/docs/http/ngx_http_map_module.html
 
+
 .. |HttpGZipModule| replace:: HttpGZipModule
 
 .. _HttpGZipModule: http://nginx.org/en/docs/http/ngx_http_gzip_module.html
+
+
+.. |ngx_mail_core_module| replace:: ngx_mail_core_module
+
+.. ngx_mail_core_module: http://nginx.org/en/docs/mail/ngx_mail_core_module.html
+
+
+.. |EventsModule| replace:: EventsModule
+
+.. EventsModule: http://wiki.nginx.org/EventsModule.html
 
 """
 

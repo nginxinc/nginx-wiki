@@ -37,6 +37,7 @@ Zappos, Media Temple, Heroku, RightScale, Engine Yard, and many others.
    modules/index
    contributing/index
    start/index
+   temp/index
 
 .. |moduleicon| replace:: :icon:`puzzle-piece`
 .. _moduleicon: modules/index.html
