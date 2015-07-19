@@ -37,11 +37,14 @@ Platform-specific Notes and Builds
 #. `Installing Nginx on Fedora, RHEL or CentOS <http://wiki.nginx.org/NginxPlatformFedora>`_
 #. `How to get the latest Nginx on Gentoo <http://wiki.nginx.org/NginxPlatformGentoo>`_
 #. `x86/64 build for Solaris <http://joyeur.com/2007/04/25/ok-nginx-is-cool>`_
-#. `Nginx building script for Slackware <http://dotimes.com/slackbuilds/nginx/>`_
 #. `Nginx for Windows (32-bit); development, stable, and legacy binaries available <http://www.kevinworthington.com/nginx-for-windows/>`_
 
 ..
-  => "<urlopen error [Errno 2] Temporary failure in name resolution>" ?
+  [Error 104] connection reset by peer
+  #. `Nginx building script for Slackware <http://dotimes.com/slackbuilds/nginx/>`_
+
+..
+  [Errno 2] Temporary failure in name resolution
   #. `How to Compile nginx on MacOSX <http://nginx.darwinports.com/>`_
 
 
