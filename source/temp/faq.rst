@@ -73,8 +73,12 @@ How do I generate an .htpasswd file without having Apache tools installed?
       close $fh or die $!;
     }
 
-* Or, you may use the `htpasswd.py <http://trac.edgewall.org/browser/trunk/contrib/htpasswd.py>`_ python script.
+* Or, you may use the htpasswd.py python script.
 
+  ..
+    [Errno 8] Name or service not known
+    `htpasswd.py <http://trac.edgewall.org/browser/trunk/contrib/htpasswd.py>`_
+    
 
 Why isn't my $foo (e.g. rewrite, proxy, location, unix:/$PATH, etc.) configuration working for me?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -152,7 +156,6 @@ Can I disable the buffering for upload progress? / How can I display upload prog
 These are both very frequently asked questions.  Currently the only solution is the third-party module 
 
 ..
-
    `upload_progress`.
    
 (This functionality is planned for a future release of Nginx.)
@@ -167,16 +170,14 @@ Could someone explain how to configure and test the IMAP module (with a complete
 Start with the configuration from the 
 
 .. 
-
-   `imapproxyexample`.
+  `imapproxyexample`.
    
 For detailed information about different configuration parameters, see the `Mail Core Module <http://wiki.nginx.org/NginxMailCoreModule>`_ page.
 
 Related resources:
 
 ..
-
-   * `imapauthenticatewithapachephpscript`
+  * `imapauthenticatewithapachephpscript`
   
 * `Using Nginx embedded Perl module on the same server as the POP/IMAP proxy as the auth backend <http://wiki.nginx.org/NginxImapAuthenticateWithEmbeddedPerlScript>`_
 
