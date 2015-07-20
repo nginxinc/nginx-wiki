@@ -114,7 +114,7 @@ There are internal links as well as external links that are possible.
 
    .. _reference-location:
 
-   `Nginx Website <http://nginx.com/>`_
+   `Nginx Website <https://www.nginx.com/>`_
 
    A link to another document: :doc:`index`
 
@@ -122,7 +122,7 @@ There are internal links as well as external links that are possible.
 
 .. _reference-location:
 
-`Nginx Website <http://nginx.com/>`_
+`Nginx Website <https://www.nginx.com/>`_
 
 A link to another document: :doc:`index`
 

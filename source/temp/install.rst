@@ -75,7 +75,7 @@ Ubuntu PPA
 ^^^^^^^^^^
 This PPA is maintained by volunteers and is not distributed by nginx.org.  It has some additional compiled-in modules and may be more fitting for your environment.
 
-You can get the latest stable version of Nginx from the `Nginx PPA <https://launchpad.net/~nginx/+archive/development>`_ on Launchpad:
+You can get the latest stable version of Nginx from the `Nginx PPA <https://launchpad.net/~nginx/+archive/ubuntu/development>`_ on Launchpad:
 You will need to have root privileges to perform the following commands.
 
 For Ubuntu 10.04 and newer:
@@ -106,7 +106,7 @@ For other Debian/Ubuntu based distributions, you can try the lucid variant of th
 
 Official Win32 Binaries
 -----------------------
-As of nginx 0.8.50, nginx is now available as an `official Windows binary <http://www.nginx.org/en/download.html>`_.
+As of nginx 0.8.50, nginx is now available as an `official Windows binary <http://nginx.org/en/download.html>`_.
 
 Installation:
 
@@ -127,7 +127,7 @@ Control:
 
 For problems look in c:\nginx\logs\error.log or in EventLog.
 
-In addition, Kevin Worthington maintains earlier `Windows <http://www.kevinworthington.com/nginx-for-windows/>`_ builds of the development branch.
+In addition, Kevin Worthington maintains earlier `Windows <http://kevinworthington.com/nginx-for-windows/>`_ builds of the development branch.
 
 
 
