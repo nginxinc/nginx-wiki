@@ -41,49 +41,69 @@ templates_path = ['_templates']
 source_suffix = '.rst'
 
 rst_epilog = """
-.. |HttpRewriteModule| replace:: HttpRewriteModule
+.. |HttpRewriteModule| replace:: ngx_http_rewrite_module
 
 .. _HttpRewriteModule: http://nginx.org/en/docs/http/ngx_http_rewrite_module.html
 
-.. |HttpAccessModule| replace:: HttpAccessModule
+
+.. |HttpAccessModule| replace:: ngx_http_access_module
 
 .. _HttpAccessModule: http://nginx.org/en/docs/http/ngx_http_access_module.html
 
-.. |HttpLogModule| replace:: HttpLogModule
+
+.. |HttpLogModule| replace:: ngx_http_log_module
 
 .. _HttpLogModule: http://nginx.org/en/docs/http/ngx_http_log_module.html
 
-.. |HttpCoreModule| replace:: HttpCoreModule
+
+.. |HttpCoreModule| replace:: ngx_http_core_module
 
 .. _HttpCoreModule: http://nginx.org/en/docs/http/ngx_http_core_module.html
 
-.. |HttpEchoModule| replace:: HttpEchoModule
+
+.. |HttpEchoModule| replace:: ngx_http_echo_module
 
 .. _HttpEchoModule: http://nginx.org/en/docs/http/ngx_http_echo_module.html
 
-.. |HttpUpstreamModule| replace:: HttpUpstreamModule
+
+.. |HttpUpstreamModule| replace:: /ngx_http_upstream_module
 
 .. _HttpUpstreamModule: http://nginx.org/en/docs/http/ngx_http_upstream_module.html
 
-.. |HttpProxyModule| replace:: HttpProxyModule
+
+.. |HttpProxyModule| replace:: ngx_http_proxy_module
 
 .. _HttpProxyModule: http://nginx.org/en/docs/http/ngx_http_proxy_module.html
 
-.. |HttpFastCGIModule| replace:: HttpFastCGIModule
+
+.. |HttpFastCGIModule| replace:: ngx_http_fastcgi_module
 
 .. _HttpFastCGIModule: http://nginx.org/en/docs/http/ngx_http_fastcgi_module.html
 
-.. |HttpSsiModule| replace:: HttpSsiModule
+
+.. |HttpSsiModule| replace:: ngx_http_ssi_module
 
 .. _HttpSsiModule: http://nginx.org/en/docs/http/ngx_http_ssi_module.html
 
-.. |HttpMapModule| replace:: HttpMapModule
+
+.. |HttpMapModule| replace:: ngx_http_map_module
 
 .. _HttpMapModule: http://nginx.org/en/docs/http/ngx_http_map_module.html
 
-.. |HttpGZipModule| replace:: HttpGZipModule
+
+.. |HttpGZipModule| replace:: ngx_http_gzip_module
 
 .. _HttpGZipModule: http://nginx.org/en/docs/http/ngx_http_gzip_module.html
+
+
+.. |MailCoreModule| replace:: ngx_mail_core_module
+
+.. ngx_mail_core_module: http://nginx.org/en/docs/mail/ngx_mail_core_module.html
+
+
+.. |EventsModule| replace:: ngx_http_core_module
+
+.. EventsModule: http://nginx.org/en/docs/http/ngx_http_core_module.html
 
 """
 
