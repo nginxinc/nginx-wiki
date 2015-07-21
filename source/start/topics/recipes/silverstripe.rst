@@ -1,11 +1,7 @@
 SilverStripe
 ============
 
-SilverStripe is a modern PHP based CMS Framework that runs happily on nginx.  
-
-..
-  [Error 503] Service Unavailable: Back-end server is at capacity
-  `SilverStripe <http://www.silverstripe.org/>`_
+`SilverStripe <http://www.silverstripe.org/>`_ is a modern PHP based CMS Framework that runs happily on nginx.  
   
 There are several built in failsafes that will attempt to rectify any errors in rewrite rules.  
 First, SS relies on an ``.htaccess`` file to define how to handle URLs.  
@@ -73,7 +69,7 @@ The basic rewrite that controls all SilverStripe calls involve passing the URI a
         location ~ \.ya?ml$ {
             deny all;
         }
-
+        
         location ^~ /vendor/ {
             deny all;
         }

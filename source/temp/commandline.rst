@@ -47,7 +47,7 @@ Options
 +-------------------+-----------------------------------------------------------------------------------------------------+
 | ``-c filename``   | Specify which configuration file Nginx should use instead of the default.                           |
 +-------------------+-----------------------------------------------------------------------------------------------------+
-| ``-g directives`` | Set :doc:`global <index>` directives. (version >= 0.7.4)                                            |
+| ``-g directives`` | Set `global <|HttpCoreModule|>`_ directives. (version >= 0.7.4)                                     |
 +-------------------+-----------------------------------------------------------------------------------------------------+
 
 .. note:: Nginx has only a few command-line parameters. Unlike many other software systems, the configuration is done entirely via the configuration file (imagine that).

@@ -4,9 +4,8 @@ Install
 After Installing
 ----------------
 ..
- 
-   The `configuration` page will give you some help getting things going after you get Nginx installed and 
-   the `pitfalls` page will help keep you from making mistakes that so many users before you did. 
+   Temporarily omitted
+   The :doc:`configuration` page will give you some help getting things going after you get Nginx installed and the :doc:`pitfalls` page will help keep you from making mistakes that so many users before you did. 
 
 These two pages give you the chance to learn from others mistakes and hard work.
 
@@ -138,7 +137,7 @@ The mainline branch gets new features and bugfixes sooner but might introduce ne
 Critical bugfixes are backported to the stable branch.
 
 In general, the stable release is recommended, but the mainline release is typically quite stable as well.
-See the `FAQ <faq_is_it_safe_>`.
+See the `FAQ <faq.is_it_safe_>`.
 
 <br style="clear: both;" />
 
@@ -189,13 +188,16 @@ After extracting the source, run these commands from a terminal:
 
 By default, Nginx will be installed in ``/usr/local/nginx``. You may change this and other options with the :doc:`installoptions`.
 
-You might also want to peruse the :doc:`/modules/index`, since these must be built at compile-time.
+You might also want to peruse the :doc:`3rd party modules <../modules/index>`, since these must be built at compile-time.
 
 
 Other Systems
 ^^^^^^^^^^^^^
-* `Solaris 10u5 <http://wiki.nginx.org/Installing_on_Solaris_10_u5>`_
-* `Solaris 11 <http://wiki.nginx.org/Installing_on_Solaris_11>`_
+
+..
+   Temporarily omitted
+   * :doc:`installing_on_solaris_10_u5`
+   * :doc:`installing_on_solaris_11`
 
 .. warning:: These pages are not thoroughly, if at all, reviewed for accuracy as they are on this page.
 

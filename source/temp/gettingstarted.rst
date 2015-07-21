@@ -33,19 +33,20 @@ By default, Nginx will be installed in ``/usr/local/nginx``. You may change this
 
 Platform-specific Notes and Builds
 ----------------------------------
-#. `Notes on building Nginx on Ubuntu <http://wiki.nginx.org/NginxPlatformUbuntu>`_
-#. `Installing Nginx on Fedora, RHEL or CentOS <http://wiki.nginx.org/NginxPlatformFedora>`_
-#. `How to get the latest Nginx on Gentoo <http://wiki.nginx.org/NginxPlatformGentoo>`_
+
+..
+   Temporarily omitted
+   #. :doc:`platformubuntu`
+   #. :doc:`platformfedora`
+   #. :doc:`platformgentoo`
+
 #. `x86/64 build for Solaris <https://www.joyent.com/blog/ok-nginx-is-cool>`_
 #. `Nginx for Windows (32-bit); development, stable, and legacy binaries available <http://kevinworthington.com/nginx-for-windows/>`_
 
 ..
-  [Error 104] connection reset by peer
-  #. `Nginx building script for Slackware <http://dotimes.com/slackbuilds/nginx/>`_
-
-..
-  [Errno 2] Temporary failure in name resolution
-  #. `How to Compile nginx on MacOSX <http://nginx.darwinports.com/>`_
+   Dead links
+   #. `Nginx building script for Slackware <http://dotimes.com/slackbuilds/nginx/>`_
+   #. `How to Compile nginx on MacOSX <http://nginx.darwinports.com/>`_
 
 
 Running Nginx
@@ -62,17 +63,20 @@ For Ubuntu, it is located at ``/var/run/nginx.pid``
 
 .. seealso::
 
-  * :doc:`commandline` for more command-line options and process signals
-  * :doc:`faq` for solutions to common problems
-   
-  ..
-    Temporarily omitted
-    * `modules` for learning more about nginx modules
-    * `configuration` for a configuration reference
-    * `community` if you still can't find the answers to your questions
+   * :doc:`commandline` for more command-line options and process signals
+   * :doc:`faq` for solutions to common problems
+
+..
+   Temporarily omitted
+   * :doc:`modules` for learning more about nginx modules
+   * :doc:`configuration` for a configuration reference
+   * :doc:`community` if you still can't find the answers to your questions
 
 
 Advanced topics
 ---------------
-* `Optimizing Nginx <http://wiki.nginx.org/NginxOptimizations>`_
 * :doc:`debugging`
+
+..
+   Temporarily omitted
+   * :doc:`optimizations`

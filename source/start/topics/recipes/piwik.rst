@@ -4,13 +4,12 @@ Piwik
 Recipe
 ------
 
-This configuration file was provided by Seph. You can see the complete information [https://github.com/perusio/piwik-nginx here].
+This configuration file was provided by Seph. You can see the complete information :github:`here <perusio/piwik-nginx>`.
 
 .. code-block:: nginx
 
     server {
-       ## This is to avoid the spurious if for sub-domain name
-       ## rewriting. See http://wiki.nginx.org/Pitfalls#Server_Name.
+       ## This is to avoid the spurious if for sub-domain name rewriting.
        listen [::]:80;
        server_name www.stats.example.com;
        rewrite ^ $scheme://stats.example.com$request_uri? permanent;
@@ -22,7 +21,7 @@ This configuration file was provided by Seph. You can see the complete informati
         server_name stats.example.com;
 
         # Parameterization using hostname of access and log filenames.
-	access_log  /var/log/nginx/stats.example.com_access.log;
+        access_log  /var/log/nginx/stats.example.com_access.log;
         error_log   /var/log/nginx/stats.example.com_error.log;
 
         # Disable all methods besides HEAD, GET and POST.

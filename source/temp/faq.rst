@@ -19,7 +19,7 @@ How do you pronounce "Nginx"?
 The correct pronunciation sounds like: "engine-ex".  (Next question: "What does that mean?" - We don't know, exactly.)
 
 
-.. _faq_is_it_safe:
+.. _faq.is_it_safe:
 
 Is it safe to use the development branch in production?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -73,11 +73,8 @@ How do I generate an .htpasswd file without having Apache tools installed?
       close $fh or die $!;
     }
 
-* Or, you may use the htpasswd.py python script.
-
-  ..
-    [Errno 8] Name or service not known
-    `htpasswd.py <http://trac.edgewall.org/browser/trunk/contrib/htpasswd.py>`_
+* Or, you may use the `htpasswd.py <http://trac.edgewall.org/browser/trunk/contrib/htpasswd.py>`_ python script.
+    
     
 
 Why isn't my $foo (e.g. rewrite, proxy, location, unix:/$PATH, etc.) configuration working for me?
@@ -153,10 +150,11 @@ The |HttpProxyModule| offers configurations for caching upstream servers.
 
 Can I disable the buffering for upload progress? / How can I display upload progress on the client side?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-These are both very frequently asked questions.  Currently the only solution is the third-party module 
+These are both very frequently asked questions.  
 
 ..
-   `upload_progress`.
+  Temporarily omitted
+  Currently the only solution is the third-party module :doc:`../modules/upload_progress`.
    
 (This functionality is planned for a future release of Nginx.)
 
@@ -167,19 +165,19 @@ Mail Proxying
 
 Could someone explain how to configure and test the IMAP module (with a complete .conf example)?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Start with the configuration from the 
 
-.. 
-  `imapproxyexample`.
+..
+   Temporarily omitted
+   Start with the configuration from the :doc:`imapproxyexample`.
    
-For detailed information about different configuration parameters, see the `Mail Core Module <http://wiki.nginx.org/NginxMailCoreModule>`_ page.
+For detailed information about different configuration parameters, see the |MailCoreModule| page.
 
 Related resources:
 
 ..
-  * `imapauthenticatewithapachephpscript`
-  
-* `Using Nginx embedded Perl module on the same server as the POP/IMAP proxy as the auth backend <http://wiki.nginx.org/NginxImapAuthenticateWithEmbeddedPerlScript>`_
+   Temporarily omitted
+   * :doc:`imapauthenticatewithapachephpscript`
+   * :doc:`imapauthenticatewithembeddedperlscript`
 
 
 How can Nginx be deployed as an SMTP proxy, with a Postfix backend?
@@ -204,7 +202,7 @@ First, declare the mail part as follows:
   }
 
 
-The example is for unauthenticated e-mail as you can see, but if you need authentication just check out the |ngx_mail_core_module| information on how to achieve it.
+The example is for unauthenticated e-mail as you can see, but if you need authentication just check out the |MailCoreModule| information on how to achieve it.
 Postfix by default doesn't support XCLIENT, so it got turned off in the example as well.
 
 Next, you need to configure the authentication backend. If you just need to have some sort of pass-through mode towards a single address, you can do so with the following code:

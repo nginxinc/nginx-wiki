@@ -96,7 +96,7 @@ Rewrite rules for Multisite
 
 `WordPress Multisite <http://codex.wordpress.org/Create_A_Network>`_ can be used in multiple ways. Most notably "subdirectories" mode and "subdomains" mode. 
 
-Nginx provides 2 special directive: `X-Accel-Redirect <http://wiki.nginx.org/XSendfile>`_ and `map <http://nginx.org/en/docs/http/ngx_http_map_module.html#map>`_. Using these 2 directives, one can eliminate performance hit for static-file serving on WordPress multisite network.
+Nginx provides 2 special directive: `X-Accel-Redirect <x-accel.redirect_>` and `map <http://nginx.org/en/docs/http/ngx_http_map_module.html#map>`_. Using these 2 directives, one can eliminate performance hit for static-file serving on WordPress multisite network.
 
 Rewrite rules for Multisite using subdirectories
 """"""""""""""""""""""""""""""""""""""""""""""""
