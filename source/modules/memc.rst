@@ -590,12 +590,12 @@ Community
 ---------
 English Mailing List
 ^^^^^^^^^^^^^^^^^^^^
-The `openresty-en <https://groups.google.com/group/openresty-en>`_ mailing list is for English speakers.
+The `openresty-en <https://groups.google.com/forum/#!forum/openresty-en>`_ mailing list is for English speakers.
 
 
 Chinese Mailing List
 ^^^^^^^^^^^^^^^^^^^^
-The `openresty <https://groups.google.com/group/openresty>`_ mailing list is for Chinese speakers.
+The `openresty <https://groups.google.com/forum/#!forum/openresty>`_ mailing list is for Chinese speakers.
 
 
 

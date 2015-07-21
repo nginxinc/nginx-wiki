@@ -1077,7 +1077,7 @@ Although a lot of effort has been put into testing and code tuning, there must
 be some serious bugs lurking somewhere in this module. So whenever you are 
 bitten by any quirks, please don't hesitate to
 
-#. send a bug report or even patches to the `openresty-en mailing list <https://groups.google.com/group/openresty-en>`_,
+#. send a bug report or even patches to the `openresty-en mailing list <https://groups.google.com/forum/#!forum/openresty-en>`_,
 #. or create a ticket on the :github:`issue tracking interface <openresty/set-misc-nginx-module/issues>` provided by GitHub.
 
 

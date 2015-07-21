@@ -616,14 +616,14 @@ Community
 
 English Mailing List
 ^^^^^^^^^^^^^^^^^^^^
-The `openresty-en <https://groups.google.com/group/openresty-en>`_ mailing list 
+The `openresty-en <https://groups.google.com/forum/#!forum/openresty-en>`_ mailing list 
 is for English speakers.
 
 
 
 Chinese Mailing List
 ^^^^^^^^^^^^^^^^^^^^
-The `openresty <https://groups.google.com/group/openresty>`_ mailing list is for
+The `openresty <https://groups.google.com/forum/#!forum/openresty>`_ mailing list is for
 Chinese speakers.
 
 
