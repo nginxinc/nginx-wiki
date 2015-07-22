@@ -34,12 +34,12 @@ By default, Nginx will be installed in ``/usr/local/nginx``. You may change this
 Platform-specific Notes and Builds
 ----------------------------------
 
-..
-   Temporarily omitted
-   #. :doc:`platformubuntu`
-   #. :doc:`platformfedora`
-   #. :doc:`platformgentoo`
-
+.. todo::
+   ..
+      #. :doc:`platformubuntu`
+      #. :doc:`platformfedora`
+      #. :doc:`platformgentoo`
+   
 #. `x86/64 build for Solaris <https://www.joyent.com/blog/ok-nginx-is-cool>`_
 #. `Nginx for Windows (32-bit); development, stable, and legacy binaries available <http://kevinworthington.com/nginx-for-windows/>`_
 
@@ -66,17 +66,17 @@ For Ubuntu, it is located at ``/var/run/nginx.pid``
    * :doc:`commandline` for more command-line options and process signals
    * :doc:`faq` for solutions to common problems
 
-..
-   Temporarily omitted
-   * :doc:`modules` for learning more about nginx modules
-   * :doc:`configuration` for a configuration reference
-   * :doc:`community` if you still can't find the answers to your questions
+.. todo::
+   ..
+      * :doc:`modules` for learning more about nginx modules
+      * :doc:`configuration` for a configuration reference
+      * :doc:`community` if you still can't find the answers to your questions
 
 
 Advanced topics
 ---------------
 * :doc:`debugging`
 
-..
-   Temporarily omitted
-   * :doc:`optimizations`
+.. todo::
+   ..
+      * :doc:`optimizations`

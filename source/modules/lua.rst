@@ -361,12 +361,12 @@ Community
 
 English Mailing List
 ^^^^^^^^^^^^^^^^^^^^
-The `openresty-en <https://groups.google.com/group/openresty-en>`_ mailing list is for English speakers.
+The `openresty-en <https://groups.google.com/forum/#!forum/openresty-en>`_ mailing list is for English speakers.
 
 
 Chinese Mailing List
 ^^^^^^^^^^^^^^^^^^^^
-The `openresty <https://groups.google.com/group/openresty>`_ mailing list is for Chinese speakers.
+The `openresty <https://groups.google.com/forum/#!forum/openresty>`_ mailing list is for Chinese speakers.
 
 
 
@@ -5936,22 +5936,22 @@ This mechanism allows calling other nginx C modules' directives that are impleme
 
 For example, the following :doc:`set_misc` directives can be invoked this way:
 
-.. todo:: fix these links
 
-..
-  * `set_quote_sql_str`_
-  * `set_quote_pgsql_str`_
-  * `set_quote_json_str`_
-  * `set_unescape_uri`_
-  * `set_escape_uri`_
-  * `set_encode_base32`_
-  * `set_decode_base32`_
-  * `set_encode_base64`_
-  * `set_decode_base64`_
-  * `set_encode_hex`_
-  * `set_decode_hex`_
-  * `set_sha1`_
-  * `set_md5`_
+.. todo::
+   ..
+      * `set_quote_sql_str`_
+      * `set_quote_pgsql_str`_
+      * `set_quote_json_str`_
+      * `set_unescape_uri`_
+      * `set_escape_uri`_
+      * `set_encode_base32`_
+      * `set_decode_base32`_
+      * `set_encode_base64`_
+      * `set_decode_base64`_
+      * `set_encode_hex`_
+      * `set_decode_hex`_
+      * `set_sha1`_
+      * `set_md5`_
 
 For instance,
 

@@ -119,9 +119,9 @@ Installation
 ------------
 Get source code from :github:`GitHub <flant/nginx-http-rdns>`
 
-..
-  commenting out until we have 3rd party module instructions page
-  and follow common [[3rd party modules instructions]]
+.. todo::
+   ..
+      and follow common :doc:`3rd party modules instructions <3rdpartymodules>`
 
 
 

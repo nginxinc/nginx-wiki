@@ -590,12 +590,12 @@ Community
 ---------
 English Mailing List
 ^^^^^^^^^^^^^^^^^^^^
-The `openresty-en <https://groups.google.com/group/openresty-en>`_ mailing list is for English speakers.
+The `openresty-en <https://groups.google.com/forum/#!forum/openresty-en>`_ mailing list is for English speakers.
 
 
 Chinese Mailing List
 ^^^^^^^^^^^^^^^^^^^^
-The `openresty <https://groups.google.com/group/openresty>`_ mailing list is for Chinese speakers.
+The `openresty <https://groups.google.com/forum/#!forum/openresty>`_ mailing list is for Chinese speakers.
 
 
 
@@ -651,8 +651,7 @@ Either `LWP::UserAgent <http://search.cpan.org/perldoc?LWP::UserAgent>`_ or
 
 ..
   Commented out the following, dead GitHub link
-  is used by the 
-  `test scaffold <openresty/memc-nginx-module/blob/master/test/lib/Test/Nginx/LWP.pm>`
+  is used by the `test scaffold <openresty/memc-nginx-module/blob/master/test/lib/Test/Nginx/LWP.pm>`
 
 Because a single nginx server (by default, ``localhost:1984``) is used across 
 all the test scripts (``.t`` files), it's meaningless to run the test suite in 

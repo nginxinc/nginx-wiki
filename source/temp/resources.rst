@@ -7,10 +7,10 @@ Developer Resources
 * :doc:`gettingstarted`
 * :doc:`faq`
 
-..
-   Temporarily omitted
-   * :doc:`codingstyle`
-   * :doc:`sourcetricks`
+.. todo::
+   ..
+      * :doc:`codingstyle`
+      * :doc:`sourcetricks`
 
 
 
@@ -26,9 +26,9 @@ English Guides
 * `Chapter about nginx in The Architecture of Open Source Applications Volume II <http://www.aosabook.org/en/nginx.html>`_
 * `nginx how-to at calomel.org <https://calomel.org/nginx.html>`_
 
-..
-   Temporarily omitted
-   * Notes about :doc:`headersmanagement`
+.. todo::
+   ..
+      * Notes about :doc:`headersmanagement`
 
 
 Russian Guides
@@ -67,9 +67,9 @@ Other Resources
 * `Parsing PHP sessions in Nginx <http://mauro-stettler.blogspot.com/2011/06/php-session-parser-in-production.html>`_
 * `PyMunin - Multigraph Munin Plugins in Python <http://aouyar.github.io/PyMunin/>`_ - PyMunin includes a Multigraph Munin Plugin for monitoring Nginx using http_stub_status module. Graphs active connections, connection rate, request rate and average requests per connection.
 
-..
-   Temporarily omitted
-   * :doc:`whyuseit`
+.. todo::
+   ..
+      * :doc:`whyuseit`
    
    Dead links now
    * `nWeb Script - Easy installer script for Debian / Ubuntu <http://thehook.eu/tools/nweb/>`_ (Installs nginx, with PHP support and MySQL)

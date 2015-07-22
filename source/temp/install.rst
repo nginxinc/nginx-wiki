@@ -3,9 +3,10 @@ Install
 
 After Installing
 ----------------
-..
-   Temporarily omitted
-   The :doc:`configuration` page will give you some help getting things going after you get Nginx installed and the :doc:`pitfalls` page will help keep you from making mistakes that so many users before you did. 
+
+.. todo::
+   ..
+      The :doc:`configuration` page will give you some help getting things going after you get Nginx installed and the :doc:`pitfalls` page will help keep you from making mistakes that so many users before you did. 
 
 These two pages give you the chance to learn from others mistakes and hard work.
 
@@ -194,10 +195,10 @@ You might also want to peruse the :doc:`3rd party modules <../modules/index>`, s
 Other Systems
 ^^^^^^^^^^^^^
 
-..
-   Temporarily omitted
-   * :doc:`installing_on_solaris_10_u5`
-   * :doc:`installing_on_solaris_11`
+.. todo::
+   ..
+      * :doc:`installing_on_solaris_10_u5`
+      * :doc:`installing_on_solaris_11`
 
 .. warning:: These pages are not thoroughly, if at all, reviewed for accuracy as they are on this page.
 

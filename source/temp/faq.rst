@@ -152,9 +152,9 @@ Can I disable the buffering for upload progress? / How can I display upload prog
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 These are both very frequently asked questions.  
 
-..
-  Temporarily omitted
-  Currently the only solution is the third-party module :doc:`../modules/upload_progress`.
+.. todo::
+   ..
+      Currently the only solution is the third-party module :doc:`../modules/upload_progress`.
    
 (This functionality is planned for a future release of Nginx.)
 
@@ -166,18 +166,18 @@ Mail Proxying
 Could someone explain how to configure and test the IMAP module (with a complete .conf example)?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-..
-   Temporarily omitted
-   Start with the configuration from the :doc:`imapproxyexample`.
+.. todo::
+   ..
+      Start with the configuration from the :doc:`imapproxyexample`.
    
 For detailed information about different configuration parameters, see the |MailCoreModule| page.
 
 Related resources:
 
-..
-   Temporarily omitted
-   * :doc:`imapauthenticatewithapachephpscript`
-   * :doc:`imapauthenticatewithembeddedperlscript`
+.. todo::
+   ..
+      * :doc:`imapauthenticatewithapachephpscript`
+      * :doc:`imapauthenticatewithembeddedperlscript`
 
 
 How can Nginx be deployed as an SMTP proxy, with a Postfix backend?

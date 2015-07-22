@@ -313,6 +313,7 @@ Nginx 3\ :sup:`rd` Party Modules
    * Video Thumb Extractor
    * VTS
    * XSS
+
 ..
    This is a list of modules we haven't added and why:
    * Access Key - no revision tree, was locally hosted
@@ -320,7 +321,6 @@ Nginx 3\ :sup:`rd` Party Modules
    * Expressz - project deffered, never made a release
    * Strip Whitespace - no revision tree, was locally hosted
    * Upstream Request Hash - obsolete as of Nginx 1.7.2
-   * Upload Progress - incompatible with Nginx 0.9.0+
    * WSGI - most recent patch was for Nginx 0.8.x, links broken
 
 ..
