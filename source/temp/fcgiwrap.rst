@@ -39,9 +39,9 @@ and add it to the the site's configuration in the "server" section with
   # fast cgi support
   include /etc/nginx/fcgiwrap.conf;
 
-..
-   Temporarily omitted
-   The deb package contains an improved init script, which is mirrored :doc:`here <fcgiwrapdebianinitscript>` for completeness.
+.. todo::
+   ..
+      The deb package contains an improved init script, which is mirrored :doc:`here <fcgiwrapdebianinitscript>` for completeness.
    
 After installing the package, also have a look at the |HttpFastCGIModule| documentation or the :doc:`fastcgiexample`.
 
@@ -82,9 +82,9 @@ Setup Scripts
 -------------
 
 * /etc/init.d/fcgiwrap
-    ..
-       Temporarily omitted
-       Also see the Debian init script :doc:`here <fcgiwrapdebianinitscript>`.
+    .. todo::
+       ..
+          Also see the Debian init script :doc:`here <fcgiwrapdebianinitscript>`.
 
     .. code-block:: perl
 

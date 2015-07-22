@@ -651,8 +651,7 @@ Either `LWP::UserAgent <http://search.cpan.org/perldoc?LWP::UserAgent>`_ or
 
 ..
   Commented out the following, dead GitHub link
-  is used by the 
-  `test scaffold <openresty/memc-nginx-module/blob/master/test/lib/Test/Nginx/LWP.pm>`
+  is used by the `test scaffold <openresty/memc-nginx-module/blob/master/test/lib/Test/Nginx/LWP.pm>`
 
 Because a single nginx server (by default, ``localhost:1984``) is used across 
 all the test scripts (``.t`` files), it's meaningless to run the test suite in 
