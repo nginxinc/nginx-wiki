@@ -117,11 +117,7 @@ Being in a named location and restarting request handling pipeline, nginx contin
 
 Installation
 ------------
-Get source code from :github:`GitHub <flant/nginx-http-rdns>`
-
-.. todo::
-   ..
-      and follow common :doc:`3rd party modules instructions <3rdpartymodules>`
+Get source code from :github:`GitHub <flant/nginx-http-rdns>` and follow common :doc:`3rd party modules instructions <index>`.
 
 
 

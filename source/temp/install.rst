@@ -6,7 +6,7 @@ After Installing
 
 .. todo::
    ..
-      The :doc:`configuration` page will give you some help getting things going after you get Nginx installed and the :doc:`pitfalls` page will help keep you from making mistakes that so many users before you did. 
+      The :doc:`configuration` page will give you some help getting things going after you get Nginx installed and the :doc:`../start/topics/tutorials/config_pitfalls.html` page will help keep you from making mistakes that so many users before you did. 
 
 These two pages give you the chance to learn from others mistakes and hard work.
 

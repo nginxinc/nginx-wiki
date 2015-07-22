@@ -4,7 +4,6 @@
 
    * How to compile modules (a separate doc)
    * Information about writing modules (a separate doc)
-   * Move more modules over (LinuxJedi got up to the end of 'B')
 
 
 Nginx 3\ :sup:`rd` Party Modules

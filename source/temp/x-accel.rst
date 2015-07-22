@@ -9,7 +9,7 @@ This allows you to handle authentication, logging or whatever else you please in
 This feature is commonly known as X-Sendfile.
 
 This feature differs a bit from standard Nginx modules as it does not rely on directives but rather handles headers from upstream in a special way.
-The way it works is that you send the header x-accel-redirect with a URI.
+The way it works is that you send the header `x-accel.redirect`_ with a URI.
 Nginx will match this URI against its locations as if it was a normal request.
 It will then serve the location that matches the defined root + URI passed in the header.
 

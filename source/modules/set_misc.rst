@@ -186,6 +186,8 @@ the variable ``$dst`` will take the value 32 at last. But in the sample
 ``$a`` will take the value ``"hello, world"`` at last.
 
 
+.. _set_misc.set_quote_sql_str:
+
 set_quote_sql_str
 ^^^^^^^^^^^^^^^^^
 :Syntax: *set_quote_sql_str $dst <src>*
@@ -239,6 +241,8 @@ This directive is usually used to prevent SQL injection.
 This directive can be invoked by :doc:`ngx_lua's <lua>` ``ndk.set_var.DIRECTIVE`` interface and :github:`HttpArrayVarModule <openresty/array-var-nginx-module>`'s :github:`array_map_op <openresty/array-var-nginx-module#array_map_op>` directive.
 
 
+.. _set_misc.set_quote_pgsql_str:
+
 set_quote_pgsql_str
 ^^^^^^^^^^^^^^^^^^^
 :Syntax: *set_quote_pgsql_str $dst <src>*
@@ -250,6 +254,8 @@ set_quote_pgsql_str
 
 Very much like `set_quote_sql_str`_, but with PostgreSQL quoting rules for SQL string literals.
 
+
+.. _set_misc.set_quote_json_str:
 
 set_quote_json_str
 ^^^^^^^^^^^^^^^^^^
@@ -297,6 +303,8 @@ then request ``GET /test`` will give exactly the same output as the previous exa
 
 This directive can be invoked by :doc:`ngx_lua's <lua>` ``ndk.set_var.DIRECTIVE`` interface and :github:`HttpArrayVarModule <openresty/array-var-nginx-module>`'s :github:`array_map_op <openresty/array-var-nginx-module#array_map_op>` directive.
 
+
+.. _set_misc.set_unescape_uri:
 
 set_unescape_uri
 ^^^^^^^^^^^^^^^^
@@ -347,6 +355,8 @@ then request ``GET /test?key=hello+world%21`` will give exactly the same output 
 This directive can be invoked by :doc:`ngx_lua's <lua>` ``ndk.set_var.DIRECTIVE`` interface and :github:`HttpArrayVarModule <openresty/array-var-nginx-module>`'s :github:`array_map_op <openresty/array-var-nginx-module#array_map_op>` directive.
 
 
+.. _set_misc.set_escape_uri:
+
 set_escape_uri
 ^^^^^^^^^^^^^^
 :Syntax: *set_escape_uri $dst <src>*
@@ -391,6 +401,8 @@ Then ``GET /test?key=blah`` will output either "moon", "sun", or "earth", depend
 
 This directive is usually used to compute an nginx variable to be passed to :doc:`memc`'s ``memc_pass`` directive, :doc:`redis2`'s ``redis2_pass`` directive, and |HttpProxyModule|'s `proxy_pass <|HttpProxyModule|#proxy_pass>`_ directive, among others.
 
+
+.. _set_misc.set_encode_base32:
 
 set_encode_base32
 ^^^^^^^^^^^^^^^^^
@@ -492,6 +504,8 @@ Extended (base32hex) alphabet is used by default.
 This directive was first introduced in ``v0.28``.
 
 
+.. _set_misc.set_decode_base32:
+
 set_decode_base32
 ^^^^^^^^^^^^^^^^^
 :Syntax: *set_decode_base32 $dst <src>*
@@ -503,6 +517,8 @@ set_decode_base32
 
 Similar to the `set_encode_base32`_ directive, but does exactly the the opposite operation, .i.e, decoding a base32(hex) digest into its original form.
 
+
+.. _set_misc.set_encode_base64:
 
 set_encode_base64
 ^^^^^^^^^^^^^^^^^
@@ -552,6 +568,8 @@ then request ``GET /test`` will give exactly the same output as the previous exa
 This directive can be invoked by :doc:`ngx_lua's <lua>` ``ndk.set_var.DIRECTIVE`` interface and :github:`HttpArrayVarModule <openresty/array-var-nginx-module>`'s :github:`array_map_op <openresty/array-var-nginx-module#array_map_op>` directive.
 
 
+.. _set_misc.set_decode_base64:
+
 set_decode_base64
 ^^^^^^^^^^^^^^^^^
 :Syntax: *set_decode_base64 $dst <src>*
@@ -563,6 +581,8 @@ set_decode_base64
 
 Similar to the `set_encode_base64`_ directive, but does exactly the the opposite operation, .i.e, decoding a base64 digest into its original form.
 
+
+.. _set_misc.set_encode_hex:
 
 set_encode_hex
 ^^^^^^^^^^^^^^
@@ -614,6 +634,8 @@ example.
 This directive can be invoked by :doc:`ngx_lua's <lua>` ``ndk.set_var.DIRECTIVE`` interface and :github:`HttpArrayVarModule <openresty/array-var-nginx-module>`'s :github:`array_map_op <openresty/array-var-nginx-module#array_map_op>` directive.
 
 
+.. _set_misc.set_decode_hex:
+
 set_decode_hex
 ^^^^^^^^^^^^^^
 :Syntax: *set_decode_hex $dst <src>*
@@ -625,6 +647,8 @@ set_decode_hex
 
 Similar to the `set_encode_hex`_ directive, but does exactly the the opposite operation, .i.e, decoding a hexadecimal digest into its original form.
 
+
+.. _set_misc.set_sha1:
 
 set_sha1
 ^^^^^^^^
@@ -675,6 +699,8 @@ then request ``GET /test`` will give exactly the same output as the previous exa
 
 This directive can be invoked by :doc:`ngx_lua's <lua>` ``ndk.set_var.DIRECTIVE`` interface and :github:`HttpArrayVarModule <openresty/array-var-nginx-module>`'s :github:`array_map_op <openresty/array-var-nginx-module#array_map_op>` directive.
 
+
+.. _set_misc.set_md5:
 
 set_md5
 ^^^^^^^

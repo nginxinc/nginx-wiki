@@ -984,9 +984,6 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 Directives
 ----------
 
-.. todo:: add lua.directive_toctree
-
-
 lua_use_default_type
 ^^^^^^^^^^^^^^^^^^^^
 :Syntax: *lua_use_default_type on | off*
@@ -5936,22 +5933,19 @@ This mechanism allows calling other nginx C modules' directives that are impleme
 
 For example, the following :doc:`set_misc` directives can be invoked this way:
 
-
-.. todo::
-   ..
-      * `set_quote_sql_str`_
-      * `set_quote_pgsql_str`_
-      * `set_quote_json_str`_
-      * `set_unescape_uri`_
-      * `set_escape_uri`_
-      * `set_encode_base32`_
-      * `set_decode_base32`_
-      * `set_encode_base64`_
-      * `set_decode_base64`_
-      * `set_encode_hex`_
-      * `set_decode_hex`_
-      * `set_sha1`_
-      * `set_md5`_
+* `set_quote_sql_str <set_misc.set_quote_sql_str_>`
+* `set_quote_pgsql_str <set_misc.set_quote_pgsql_str_>`
+* `set_quote_json_str <set_misc.set_quote_json_str_>`
+* `set_unescape_uri <set_misc.set_unescape_uri_>`
+* `set_escape_uri <set_misc.set_escape_uri_>`
+* `set_encode_base32 <set_misc.set_encode_base32_>`
+* `set_decode_base32 <set_misc.set_decode_base32_>`
+* `set_encode_base64 <set_misc.set_encode_base64_>`
+* `set_decode_base64 <set_misc.set_decode_base64_>`
+* `set_encode_hex <set_misc.set_encode_hex_>`
+* `set_decode_hex <set_misc.set_decode_hex_>`
+* `set_sha1 <set_misc.set_sha1_>`
+* `set_md5 <set_misc.set_md5_>`
 
 For instance,
 
