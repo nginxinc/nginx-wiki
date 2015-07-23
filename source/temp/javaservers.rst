@@ -137,7 +137,9 @@ On the same server, protect the Java server from external access
 ----------------------------------------------------------------
 
 If you are running Nginx on the same server of the Java, the best practice is to deny access to port 8080 so only Nginx can access it. 
-On Linux do::
+On Linux do
+
+.. code-block:: bash
   
   /sbin/iptables -A INPUT -p tcp -i eth0 --dport 8080 -j REJECT --reject-with tcp-reset
 
@@ -145,7 +147,9 @@ If you have only 1 web application with Jetty, you can bind your host to localho
 
 So you don't need to configure iptables to protect external access.
 
-On ``conf/jetty.xml`` ::
+On ``conf/jetty.xml``
+
+.. code-block:: xml
 
   <Set name="host"><SystemProperty name="jetty.host" default="localhost"/></Set>
 

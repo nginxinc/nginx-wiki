@@ -106,7 +106,7 @@ Network Settings
 I put the network settings into the file ``/etc/sysctl.d/10-network-security.conf``.
 Some of the setting were allready in the original configuration.
 
-::
+.. code-block:: ini
 
   ### http://www.cyberciti.biz/tips/linux-unix-bsd-nginx-webserver-security.html
 
