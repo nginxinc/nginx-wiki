@@ -165,18 +165,16 @@ Mail Proxying
 
 Could someone explain how to configure and test the IMAP module (with a complete .conf example)?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-
-.. todo::
-   ..
-      Start with the configuration from the :doc:`imapproxyexample`.
+Start with the configuration from the :doc:`imapproxyexample`.
    
 For detailed information about different configuration parameters, see the |MailCoreModule| page.
 
 Related resources:
 
+* :doc:`imapauthenticatewithapachephpscript`
+
 .. todo::
    ..
-      * :doc:`imapauthenticatewithapachephpscript`
       * :doc:`imapauthenticatewithembeddedperlscript`
 
 

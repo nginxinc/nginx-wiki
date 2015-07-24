@@ -12,6 +12,7 @@
    imapproxyexample
    install
    installoptions
+   javaservers
    likeapache
    likeapache-htaccess
    loadbalanceexample
@@ -21,5 +22,7 @@
    resources
    reverseproxycachingexample
    separateerrorloggingpervirtualhost
+   simplecgi
    simplepythonfcgi
+   SSL-Offloader
    x-accel
