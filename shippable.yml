@@ -10,7 +10,8 @@ before_install:
 script:
     - ".ci/${CI_TARGET}.sh"
 
-matrix:
-    - env: CI_TARGET=html
-    allow_failures:
-        - env: CI_TARGET=linkcheck
+env:
+    - CI_TARGET=html
+    matrix:
+        allow_failures:
+            - CI_TARGET=linkcheck
