@@ -1,0 +1,109 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-03 16:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/examples/fcgiwrap.rst:2
+msgid "FCGI Wrap"
+msgstr ""
+
+#: ../../source/start/topics/examples/fcgiwrap.rst:4
+msgid ""
+"So, you want to use CGI. OK! Let's make this as simple as possible for you."
+msgstr ""
+
+#: ../../source/start/topics/examples/fcgiwrap.rst:18
+msgid "Install on Debian or Ubuntu"
+msgstr ""
+
+#: ../../source/start/topics/examples/fcgiwrap.rst:20
+msgid ""
+"There are packages for `Debian "
+"<http://packages.debian.org/squeeze/fcgiwrap>`_ and `Ubuntu "
+"<http://packages.ubuntu.com/maverick/fcgiwrap>`_ now. Simply type"
+msgstr ""
+
+#: ../../source/start/topics/examples/fcgiwrap.rst:26
+msgid ""
+"Then, have a look at /usr/share/doc/fcgiwrap/README.Debian. There's an "
+"example configuration at /usr/share/doc/fcgiwrap/examples/nginx.conf."
+msgstr ""
+
+#: ../../source/start/topics/examples/fcgiwrap.rst:29
+msgid ""
+"What I did was creating a local copy of the example configuration (so it "
+"does not get overwritten upon updates)"
+msgstr ""
+
+#: ../../source/start/topics/examples/fcgiwrap.rst:35
+msgid "and add it to the the site's configuration in the \"server\" section with"
+msgstr ""
+
+#: ../../source/start/topics/examples/fcgiwrap.rst:46
+msgid ""
+"After installing the package, also have a look at the |HttpFastCGIModule| "
+"documentation or the :doc:`fastcgiexample`."
+msgstr ""
+
+#: ../../source/start/topics/examples/fcgiwrap.rst:51
+msgid "Manual Install"
+msgstr ""
+
+#: ../../source/start/topics/examples/fcgiwrap.rst:52
+msgid "The first step here is to install this stuff."
+msgstr ""
+
+#: ../../source/start/topics/examples/fcgiwrap.rst:54
+msgid "If you're on an apt based system:"
+msgstr ""
+
+#: ../../source/start/topics/examples/fcgiwrap.rst:61
+msgid "Get the source:"
+msgstr ""
+
+#: ../../source/start/topics/examples/fcgiwrap.rst:69
+msgid "Compile this:"
+msgstr ""
+
+#: ../../source/start/topics/examples/fcgiwrap.rst:82
+msgid "Setup Scripts"
+msgstr ""
+
+#: ../../source/start/topics/examples/fcgiwrap.rst:121
+msgid "/etc/init.d/fcgiwrap"
+msgstr ""
+
+#: ../../source/start/topics/examples/fcgiwrap.rst:121
+msgid "Don't forget ``chmod +x /etc/init.d/fcgiwrap``."
+msgstr ""
+
+#: ../../source/start/topics/examples/fcgiwrap.rst:127
+msgid "/etc/rc.local"
+msgstr ""
+
+#: ../../source/start/topics/examples/fcgiwrap.rst:124
+msgid ""
+"I decided not to try to make an overly complicated init script and sit with "
+"the simple one. I just added ``sudo -u www-data /etc/init.d/fcgiwrap`` to "
+"``/etc/rc.local`` before the exit 0 line."
+msgstr ""
+
+#: ../../source/start/topics/examples/fcgiwrap.rst:130
+msgid "What Happens"
+msgstr ""
+
+#: ../../source/start/topics/examples/fcgiwrap.rst:131
+msgid ""
+"The sudo command will launch the fcgiwrapper init script as the www-data "
+"user. The script bings a listener thread to ``/tmp/cgi.sock``. This is what "
+"you need to use in `fastcgi_pass <|HttpFastCGIModule|#fastcgi_pass>`_: "
+"``fastcgi_pass unix:/tmp/cgi.sock;``"
+msgstr ""

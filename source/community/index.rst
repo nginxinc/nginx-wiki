@@ -10,3 +10,5 @@ Community
    irc
    irc_ops
    planet
+   resources
+   faq

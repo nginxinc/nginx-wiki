@@ -1574,20 +1574,8 @@ msgstr ""
 msgid "English Mailing List"
 msgstr ""
 
-#: ../../source/modules/echo.rst:1484
-msgid ""
-"The `openresty-en <https://groups.google.com/group/openresty-en>`_ mailing "
-"list is for English speakers."
-msgstr ""
-
 #: ../../source/modules/echo.rst:1488
 msgid "Chinese Mailing List"
-msgstr ""
-
-#: ../../source/modules/echo.rst:1489
-msgid ""
-"The `openresty <https://groups.google.com/group/openresty>`_ mailing list is"
-" for Chinese speakers."
 msgstr ""
 
 #: ../../source/modules/echo.rst:1496
@@ -1843,3 +1831,25 @@ msgstr ""
 #: ../../source/modules/echo.rst:1661
 msgid "The `ngx_openresty <http://openresty.org>`_ bundle."
 msgstr ""
+
+#: ../../source/modules/echo.rst:1484
+msgid ""
+"The `openresty-en <https://groups.google.com/forum/#!forum/openresty-en>`_ "
+"mailing list is for English speakers."
+msgstr ""
+
+#: ../../source/modules/echo.rst:1489
+msgid ""
+"The `openresty <https://groups.google.com/forum/#!forum/openresty>`_ mailing"
+" list is for Chinese speakers."
+msgstr ""
+
+#~ msgid ""
+#~ "The `openresty-en <https://groups.google.com/group/openresty-en>`_ mailing "
+#~ "list is for English speakers."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The `openresty <https://groups.google.com/group/openresty>`_ mailing list is"
+#~ " for Chinese speakers."
+#~ msgstr ""

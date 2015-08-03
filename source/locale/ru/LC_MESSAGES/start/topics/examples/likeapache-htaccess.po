@@ -1,0 +1,271 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-03 16:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:2
+msgid "Like Apache: .htaccess"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:4
+msgid ""
+"You can't do this. You shouldn't. If you need .htaccess, you're probably "
+"doing it wrong."
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:11
+msgid "Why?"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:12
+msgid ""
+"This is a great question. For starters, for .htaccess to work Apache needs "
+"to check EVERY directory in the requested path for the existence of a "
+".htaccess file and if it exists it reads EVERY one of them and parses it. "
+"This happens for EVERY request. Remember that the second you change that "
+"file, it's effective. This is because Apache reads it every time."
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:21
+msgid "Numbers"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:22
+msgid "``http://example.com/site/files/images/layout/header.png``"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:24
+msgid ""
+"Let's say we're not doing any funky aliasing and the file system looks like "
+"the path. This covers most of the sites out there. There is the / directory,"
+" then site/, files/, images/, and layout/. This amounts to 5 directories "
+"that could have a .htaccess file. Let's say you added a .htaccess in /, "
+"files/ and images/. That's three .htaccess files. That's pretty typical."
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:32
+msgid ""
+"Now the numbers, that's 6 file system stats and 4 file system reads. "
+"Including one for the requested file. This happens for every read. We'll "
+"ignore parsing time because both Nginx and Apache need to do this and we'll "
+"consider the difference in time for this negligible."
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:37
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:69
+msgid "Requests / Hour"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:37
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:69
+msgid "Nginx FS Stats"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:37
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:69
+msgid "Nginx FS Reads"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:37
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:69
+msgid "Apache FD Stats"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:37
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:69
+msgid "Apache FS Reads"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:37
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:69
+msgid "Comment"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:39
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:39
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:39
+msgid "1"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:39
+msgid "6"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:39
+msgid "4"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:39
+msgid "Single Request&nbsp;&nbsp;[Pretty much no load]"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:41
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:41
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:41
+msgid "10"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:41
+msgid "60"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:41
+msgid "40"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:41
+msgid "Ten Requests&nbsp;&nbsp;&nbsp;&nbsp;[Pretty much no load]"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:43
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:43
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:43
+msgid "3,600"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:43
+msgid "21,600"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:43
+msgid "14,400"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:43
+msgid ""
+"1 "
+"req/sec&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Very"
+" low load]"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:45
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:45
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:45
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:71
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:71
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:71
+msgid "144,000"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:45
+msgid "864,000"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:45
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:49
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:49
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:49
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:71
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:75
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:75
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:75
+msgid "576,000"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:45
+msgid ""
+"40 req/sec&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Moderate "
+"traffic - nothing very large]"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:47
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:47
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:47
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:73
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:73
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:73
+msgid "324,000"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:47
+msgid "1,944,00"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:47
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:71
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:73
+msgid "1,296,000"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:47
+msgid ""
+"90 req/sec&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Higher "
+"traffic site - not massive]"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:49
+msgid "3,456,000"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:49
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:75
+msgid "2,304,000"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:49
+msgid ""
+"160 req/sec&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;[Pretty high traffic - "
+"still not massive though]"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:55
+msgid "More Numbers"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:56
+msgid ""
+"The default for Apache is to use AllowOverride All. Let's look at this for a"
+" Drupal website. One image for the theme. If you're website DocRoot is at "
+"``/var/www/drupal6/`` then we just added more file system stats. This adds 3"
+" stats per request. This is an incredibly common Apache/Drupal setup. It's "
+"the end result of countless guides out there."
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:63
+msgid ""
+"``/var/www/drupal6/sites/example.com/themes/yourtheme/images/layout/header.png``"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:65
+msgid ""
+"Two .htaccess files will be in this path unless you create your own. I'll be"
+" assuming you added one in /var/www/ because this is common."
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:71
+msgid "40 req/sec"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:73
+msgid "2,916,000"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:73
+msgid "90 req/sec"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:75
+msgid "51,840,000"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:75
+msgid "160 req/sec"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:81
+msgid "Conclusion"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache-htaccess.rst:82
+msgid ""
+"Stop using .htaccess. It's horrible for performance. Nginx is designed to be"
+" efficient. Adding something like this destroys that."
+msgstr ""

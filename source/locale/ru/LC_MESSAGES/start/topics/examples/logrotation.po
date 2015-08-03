@@ -1,0 +1,46 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-03 16:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/examples/logrotation.rst:2
+msgid "Log Rotation"
+msgstr ""
+
+#: ../../source/start/topics/examples/logrotation.rst:4
+msgid "Nginx will re-open its logs in response to the ``USR1`` signal."
+msgstr ""
+
+#: ../../source/start/topics/examples/logrotation.rst:15
+msgid "References"
+msgstr ""
+
+#: ../../source/start/topics/examples/logrotation.rst:17
+msgid ""
+"`Quick Answer <http://article.gmane.org/gmane.comp.web.nginx.english/2495>`_"
+msgstr ""
+
+#: ../../source/start/topics/examples/logrotation.rst:18
+msgid ""
+"`How it works <http://article.gmane.org/gmane.comp.web.nginx.english/583>`_"
+msgstr ""
+
+#: ../../source/start/topics/examples/logrotation.rst:19
+msgid ""
+"`Another explanation "
+"<http://article.gmane.org/gmane.comp.web.nginx.english/181>`_"
+msgstr ""
+
+#: ../../source/start/topics/examples/logrotation.rst:20
+msgid ""
+"`Debian's logrotate script "
+"<http://article.gmane.org/gmane.comp.web.nginx.english/586>`_"
+msgstr ""

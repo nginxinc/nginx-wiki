@@ -162,10 +162,6 @@ msgstr ""
 msgid "There are internal links as well as external links that are possible."
 msgstr ""
 
-#: ../../source/contributing/writing_docs.rst:125
-msgid "`Nginx Website <http://nginx.com/>`_"
-msgstr ""
-
 #: ../../source/contributing/writing_docs.rst:127
 msgid "A link to another document: :doc:`index`"
 msgstr ""
@@ -383,3 +379,10 @@ msgstr ""
 #: ../../source/contributing/writing_docs.rst:356
 msgid ":bitbucket:`nginx-goodies/nginx-sticky-module-ng`"
 msgstr ""
+
+#: ../../source/contributing/writing_docs.rst:125
+msgid "`Nginx Website <https://www.nginx.com/>`_"
+msgstr ""
+
+#~ msgid "`Nginx Website <http://nginx.com/>`_"
+#~ msgstr ""

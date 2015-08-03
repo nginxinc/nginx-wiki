@@ -11,1356 +11,1356 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 
-#: ../../source/modules/index.rst:11
+#: ../../source/modules/index.rst:10
 msgid "Nginx 3\\ :sup:`rd` Party Modules"
 msgstr ""
 
-#: ../../source/modules/index.rst:14
+#: ../../source/modules/index.rst:13
 msgid "Module"
 msgstr ""
 
-#: ../../source/modules/index.rst:14
+#: ../../source/modules/index.rst:13
 msgid "Description"
 msgstr ""
 
-#: ../../source/modules/index.rst:14
+#: ../../source/modules/index.rst:13
 msgid "Repository"
 msgstr ""
 
-#: ../../source/modules/index.rst:16
+#: ../../source/modules/index.rst:15
 msgid ":doc:`accept_language`"
 msgstr ""
 
-#: ../../source/modules/index.rst:16
+#: ../../source/modules/index.rst:15
 msgid "Accept-Language header parser"
 msgstr ""
 
-#: ../../source/modules/index.rst:16
+#: ../../source/modules/index.rst:15
 msgid ":github:`giom/nginx_accept_language_module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:18
+#: ../../source/modules/index.rst:17
 msgid "AFCGI"
 msgstr ""
 
-#: ../../source/modules/index.rst:18
+#: ../../source/modules/index.rst:17
 msgid "Asynchronous/multiplexing FastCGI for nginx"
 msgstr ""
 
-#: ../../source/modules/index.rst:18
+#: ../../source/modules/index.rst:17
 msgid ":github:`rsms/afcgi`"
 msgstr ""
 
-#: ../../source/modules/index.rst:20
+#: ../../source/modules/index.rst:19
 msgid "Akamai G2O"
 msgstr ""
 
-#: ../../source/modules/index.rst:20
+#: ../../source/modules/index.rst:19
 msgid "Restricts access to content to Akamai edge servers using G2O headers"
 msgstr ""
 
-#: ../../source/modules/index.rst:20
+#: ../../source/modules/index.rst:19
 msgid ":github:`refractalize/nginx_mod_akamai_g2o`"
 msgstr ""
 
-#: ../../source/modules/index.rst:22
+#: ../../source/modules/index.rst:21
 msgid "Array Var"
 msgstr ""
 
-#: ../../source/modules/index.rst:22
+#: ../../source/modules/index.rst:21
 msgid "Add support for array variables to nginx config files"
 msgstr ""
 
-#: ../../source/modules/index.rst:22
+#: ../../source/modules/index.rst:21
 msgid ":github:`openresty/array-var-nginx-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:24
+#: ../../source/modules/index.rst:23
 msgid ":doc:`audio_track`"
 msgstr ""
 
-#: ../../source/modules/index.rst:24
+#: ../../source/modules/index.rst:23
 msgid "Generate audio track for HTTP Live Streaming (HLS) streams on the fly"
 msgstr ""
 
-#: ../../source/modules/index.rst:24
+#: ../../source/modules/index.rst:23
 msgid ":github:`flavioribeiro/nginx-audio-track-for-hls-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:26
+#: ../../source/modules/index.rst:25
 msgid ":doc:`auth_digest`"
 msgstr ""
 
-#: ../../source/modules/index.rst:26
+#: ../../source/modules/index.rst:25
 msgid "HTTP Digest Authentication"
 msgstr ""
 
-#: ../../source/modules/index.rst:26
+#: ../../source/modules/index.rst:25
 msgid ":github:`samizdatco/nginx-http-auth-digest`"
 msgstr ""
 
-#: ../../source/modules/index.rst:28
+#: ../../source/modules/index.rst:27
 msgid "PAM Authentication"
 msgstr ""
 
-#: ../../source/modules/index.rst:28
+#: ../../source/modules/index.rst:27
 msgid "HTTP Basic Authentication using PAM"
 msgstr ""
 
-#: ../../source/modules/index.rst:28
+#: ../../source/modules/index.rst:27
 msgid ":github:`stogh/ngx_http_auth_pam_module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:30
+#: ../../source/modules/index.rst:29
 msgid "Request Authentication"
 msgstr ""
 
-#: ../../source/modules/index.rst:30
+#: ../../source/modules/index.rst:29
 msgid "Allows authorization based on subrequest result"
 msgstr ""
 
-#: ../../source/modules/index.rst:30
+#: ../../source/modules/index.rst:29
 msgid ""
 "`ngx_http_auth_request_module "
 "<http://mdounin.ru/hg/ngx_http_auth_request_module/>`_"
 msgstr ""
 
-#: ../../source/modules/index.rst:32
+#: ../../source/modules/index.rst:31
 msgid "Auto Lib"
 msgstr ""
 
-#: ../../source/modules/index.rst:32
+#: ../../source/modules/index.rst:31
 msgid "Reuse pre-compiled/installed versions of OpenSSL, PCRE and Zlib"
 msgstr ""
 
-#: ../../source/modules/index.rst:32
+#: ../../source/modules/index.rst:31
 msgid ":github:`simpl/ngx_auto_lib`"
 msgstr ""
 
-#: ../../source/modules/index.rst:34
+#: ../../source/modules/index.rst:33
 msgid "AWS Auth"
 msgstr ""
 
-#: ../../source/modules/index.rst:34
+#: ../../source/modules/index.rst:33
 msgid "Generate security headers for GET requests to Amazon S3"
 msgstr ""
 
-#: ../../source/modules/index.rst:34
+#: ../../source/modules/index.rst:33
 msgid ":github:`anomalizer/ngx_aws_auth`"
 msgstr ""
 
-#: ../../source/modules/index.rst:36
+#: ../../source/modules/index.rst:35
 msgid "Backtrace"
 msgstr ""
 
-#: ../../source/modules/index.rst:36
+#: ../../source/modules/index.rst:35
 msgid ""
 "A nginx module to dump backtrace case a worker process exits abnormally"
 msgstr ""
 
-#: ../../source/modules/index.rst:36
+#: ../../source/modules/index.rst:35
 msgid ":github:`alibaba/nginx-backtrace`"
 msgstr ""
 
-#: ../../source/modules/index.rst:38
+#: ../../source/modules/index.rst:37
 msgid "Cache Purge"
 msgstr ""
 
-#: ../../source/modules/index.rst:38
+#: ../../source/modules/index.rst:37
 msgid "Adds ability to purge content from FastCGI, proxy, and uWSGI caches"
 msgstr ""
 
-#: ../../source/modules/index.rst:38
+#: ../../source/modules/index.rst:37
 msgid ":github:`FRiCKLE/ngx_cache_purge`"
 msgstr ""
 
-#: ../../source/modules/index.rst:40
+#: ../../source/modules/index.rst:39
 msgid ":doc:`circle_gif`"
 msgstr ""
 
-#: ../../source/modules/index.rst:40
+#: ../../source/modules/index.rst:39
 msgid "Generates simple circle images with colors/size specified in the URL"
 msgstr ""
 
-#: ../../source/modules/index.rst:40
+#: ../../source/modules/index.rst:39
 msgid ":github:`evanmiller/nginx_circle_gif`"
 msgstr ""
 
-#: ../../source/modules/index.rst:42
+#: ../../source/modules/index.rst:41
 msgid ":doc:`clojure`"
 msgstr ""
 
-#: ../../source/modules/index.rst:42 ../../source/modules/index.rst:86
-#: ../../source/modules/index.rst:102
+#: ../../source/modules/index.rst:41 ../../source/modules/index.rst:85
+#: ../../source/modules/index.rst:101
 msgid "A module for embedding Clojure, Java, and Groovy programs"
 msgstr ""
 
-#: ../../source/modules/index.rst:42 ../../source/modules/index.rst:86
-#: ../../source/modules/index.rst:102
+#: ../../source/modules/index.rst:41 ../../source/modules/index.rst:85
+#: ../../source/modules/index.rst:101
 msgid ":github:`nginx-clojure/nginx-clojure`"
 msgstr ""
 
-#: ../../source/modules/index.rst:44
+#: ../../source/modules/index.rst:43
 msgid ":doc:`concat`"
 msgstr ""
 
-#: ../../source/modules/index.rst:44
+#: ../../source/modules/index.rst:43
 msgid "Concatenates files in a given context"
 msgstr ""
 
-#: ../../source/modules/index.rst:44
+#: ../../source/modules/index.rst:43
 msgid ":github:`alibaba/nginx-http-concat`"
 msgstr ""
 
-#: ../../source/modules/index.rst:46
+#: ../../source/modules/index.rst:45
 msgid ":doc:`consistent_hash`"
 msgstr ""
 
-#: ../../source/modules/index.rst:46
+#: ../../source/modules/index.rst:45
 msgid "Select backend based on Consistent hash ring"
 msgstr ""
 
-#: ../../source/modules/index.rst:46
+#: ../../source/modules/index.rst:45
 msgid ":github:`replay/ngx_http_consistent_hash`"
 msgstr ""
 
-#: ../../source/modules/index.rst:48
+#: ../../source/modules/index.rst:47
 msgid "Development Kit"
 msgstr ""
 
-#: ../../source/modules/index.rst:48
+#: ../../source/modules/index.rst:47
 msgid "An extension to the core functionality of Nginx"
 msgstr ""
 
-#: ../../source/modules/index.rst:48
+#: ../../source/modules/index.rst:47
 msgid ":github:`simpl/ngx_devel_kit`"
 msgstr ""
 
-#: ../../source/modules/index.rst:50
+#: ../../source/modules/index.rst:49
 msgid ":doc:`domain_resolve`"
 msgstr ""
 
-#: ../../source/modules/index.rst:50
+#: ../../source/modules/index.rst:49
 msgid "An asynchronous domain name resolve module for nginx upstream"
 msgstr ""
 
-#: ../../source/modules/index.rst:50
+#: ../../source/modules/index.rst:49
 msgid ":github:`wdaike/ngx_upstream_jdomain/`"
 msgstr ""
 
-#: ../../source/modules/index.rst:52
+#: ../../source/modules/index.rst:51
 msgid ":doc:`drizzle`"
 msgstr ""
 
-#: ../../source/modules/index.rst:52
+#: ../../source/modules/index.rst:51
 msgid "Make nginx talk directly to mysql and drizzle"
 msgstr ""
 
-#: ../../source/modules/index.rst:52
+#: ../../source/modules/index.rst:51
 msgid ":github:`openresty/drizzle-nginx-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:54
+#: ../../source/modules/index.rst:53
 msgid "Dynamic etags"
 msgstr ""
 
-#: ../../source/modules/index.rst:54
+#: ../../source/modules/index.rst:53
 msgid "Nginx module for etags on dynamic content"
 msgstr ""
 
-#: ../../source/modules/index.rst:54
+#: ../../source/modules/index.rst:53
 msgid ":github:`kali/nginx-dynamic-etags`"
 msgstr ""
 
-#: ../../source/modules/index.rst:56
+#: ../../source/modules/index.rst:55
 msgid "Dynamic Upstream"
 msgstr ""
 
-#: ../../source/modules/index.rst:56
+#: ../../source/modules/index.rst:55
 msgid "Update upstreams' config by restful interface"
 msgstr ""
 
-#: ../../source/modules/index.rst:56
+#: ../../source/modules/index.rst:55
 msgid ":github:`yzprofile/ngx_http_dyups_module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:58
+#: ../../source/modules/index.rst:57
 msgid ":doc:`echo`"
 msgstr ""
 
-#: ../../source/modules/index.rst:58
+#: ../../source/modules/index.rst:57
 msgid "Provides familiar shell commands to nginx config files"
 msgstr ""
 
-#: ../../source/modules/index.rst:58
+#: ../../source/modules/index.rst:57
 msgid ":github:`openresty/echo-nginx-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:60
+#: ../../source/modules/index.rst:59
 msgid "Encrypted Session"
 msgstr ""
 
-#: ../../source/modules/index.rst:60
+#: ../../source/modules/index.rst:59
 msgid "Encrypt nginx variables for light-weight session-based authentication"
 msgstr ""
 
-#: ../../source/modules/index.rst:60
+#: ../../source/modules/index.rst:59
 msgid ":github:`openresty/encrypted-session-nginx-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:62
+#: ../../source/modules/index.rst:61
 msgid "Enhanced Memcached"
 msgstr ""
 
-#: ../../source/modules/index.rst:62
+#: ../../source/modules/index.rst:61
 msgid "Repackaging of the standard memcached module to add features"
 msgstr ""
 
-#: ../../source/modules/index.rst:62
+#: ../../source/modules/index.rst:61
 msgid ":github:`bpaquet/ngx_http_enhanced_memcached_module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:64
+#: ../../source/modules/index.rst:63
 msgid "Eval"
 msgstr ""
 
-#: ../../source/modules/index.rst:64
+#: ../../source/modules/index.rst:63
 msgid "A module for evaluating memcached or proxy response into variable"
 msgstr ""
 
-#: ../../source/modules/index.rst:64
+#: ../../source/modules/index.rst:63
 msgid ":github:`vkholodkov/nginx-eval-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:66
+#: ../../source/modules/index.rst:65
 msgid "Eval (agentzh's fork)"
 msgstr ""
 
-#: ../../source/modules/index.rst:66
+#: ../../source/modules/index.rst:65
 msgid "Captures arbitrary subrequest's responses into nginx variables"
 msgstr ""
 
-#: ../../source/modules/index.rst:66
+#: ../../source/modules/index.rst:65
 msgid ":github:`openresty/nginx-eval-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:68
+#: ../../source/modules/index.rst:67
 msgid ":doc:`extended_status`"
 msgstr ""
 
-#: ../../source/modules/index.rst:68
+#: ../../source/modules/index.rst:67
 msgid "Extended status module for nginx"
 msgstr ""
 
-#: ../../source/modules/index.rst:68
+#: ../../source/modules/index.rst:67
 msgid ":github:`zealot83/ngx_http_extended_status_module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:70
+#: ../../source/modules/index.rst:69
 msgid "EY Balancer"
 msgstr ""
 
-#: ../../source/modules/index.rst:70
+#: ../../source/modules/index.rst:69
 msgid "Provides a request queue for limiting concurrent requests"
 msgstr ""
 
-#: ../../source/modules/index.rst:70
+#: ../../source/modules/index.rst:69
 msgid ":github:`ezmobius/nginx-ey-balancer`"
 msgstr ""
 
-#: ../../source/modules/index.rst:72
+#: ../../source/modules/index.rst:71
 msgid ":doc:`fair_balancer`"
 msgstr ""
 
-#: ../../source/modules/index.rst:72
+#: ../../source/modules/index.rst:71
 msgid "Distributes incoming requests to least-busy servers"
 msgstr ""
 
-#: ../../source/modules/index.rst:72
+#: ../../source/modules/index.rst:71
 msgid ":github:`gnosek/nginx-upstream-fair`"
 msgstr ""
 
-#: ../../source/modules/index.rst:74
+#: ../../source/modules/index.rst:73
 msgid ":doc:`fancy_index`"
 msgstr ""
 
-#: ../../source/modules/index.rst:74
+#: ../../source/modules/index.rst:73
 msgid "Like the built-in autoindex module, but fancier"
 msgstr ""
 
-#: ../../source/modules/index.rst:74
+#: ../../source/modules/index.rst:73
 msgid ":github:`aperezdc/ngx-fancyindex`"
 msgstr ""
 
-#: ../../source/modules/index.rst:76
+#: ../../source/modules/index.rst:75
 msgid ":doc:`foot_filter`"
 msgstr ""
 
-#: ../../source/modules/index.rst:76
+#: ../../source/modules/index.rst:75
 msgid "Implements a body filter that adds a given string to the page footer"
 msgstr ""
 
-#: ../../source/modules/index.rst:76
+#: ../../source/modules/index.rst:75
 msgid ":github:`alibaba/nginx-http-footer-filter`"
 msgstr ""
 
-#: ../../source/modules/index.rst:78
+#: ../../source/modules/index.rst:77
 msgid "Footer If Filter"
 msgstr ""
 
-#: ../../source/modules/index.rst:78
+#: ../../source/modules/index.rst:77
 msgid "Applies a footer if a response meets a specified condition"
 msgstr ""
 
-#: ../../source/modules/index.rst:78
+#: ../../source/modules/index.rst:77
 msgid ":github:`flygoast/ngx_http_footer_if_filter/`"
 msgstr ""
 
-#: ../../source/modules/index.rst:80
+#: ../../source/modules/index.rst:79
 msgid ":doc:`form_input`"
 msgstr ""
 
-#: ../../source/modules/index.rst:80
+#: ../../source/modules/index.rst:79
 msgid "Parses HTTP POST request bodies and saves results to nginx variables"
 msgstr ""
 
-#: ../../source/modules/index.rst:80
+#: ../../source/modules/index.rst:79
 msgid ":github:`calio/form-input-nginx-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:82
+#: ../../source/modules/index.rst:81
 msgid "GeoIP2"
 msgstr ""
 
-#: ../../source/modules/index.rst:82
+#: ../../source/modules/index.rst:81
 msgid "City and country code lookups via the MaxMind GeoIP2 API"
 msgstr ""
 
-#: ../../source/modules/index.rst:82
+#: ../../source/modules/index.rst:81
 msgid ":github:`leev/ngx_http_geoip2_module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:84
+#: ../../source/modules/index.rst:83
 msgid "GridFS"
 msgstr ""
 
-#: ../../source/modules/index.rst:84
+#: ../../source/modules/index.rst:83
 msgid "Nginx module for serving files from MongoDB's GridFS"
 msgstr ""
 
-#: ../../source/modules/index.rst:84
+#: ../../source/modules/index.rst:83
 msgid ":github:`mdirolf/nginx-gridfs`"
 msgstr ""
 
-#: ../../source/modules/index.rst:86
+#: ../../source/modules/index.rst:85
 msgid ":doc:`groovy_handler`"
 msgstr ""
 
-#: ../../source/modules/index.rst:88
+#: ../../source/modules/index.rst:87
 msgid ":doc:`headers_more`"
 msgstr ""
 
-#: ../../source/modules/index.rst:88
+#: ../../source/modules/index.rst:87
 msgid "Set and clear input and output headers... more than \"add\"!"
 msgstr ""
 
-#: ../../source/modules/index.rst:88
+#: ../../source/modules/index.rst:87
 msgid ":github:`openresty/headers-more-nginx-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:90
+#: ../../source/modules/index.rst:89
 msgid ":doc:`healthcheck`"
 msgstr ""
 
-#: ../../source/modules/index.rst:90
+#: ../../source/modules/index.rst:89
 msgid "Health check HTTP servers inside an upstream"
 msgstr ""
 
-#: ../../source/modules/index.rst:90
+#: ../../source/modules/index.rst:89
 msgid ":github:`cep21/healthcheck_nginx_upstreams`"
 msgstr ""
 
-#: ../../source/modules/index.rst:92
+#: ../../source/modules/index.rst:91
 msgid "HTTP Accounting"
 msgstr ""
 
-#: ../../source/modules/index.rst:92
+#: ../../source/modules/index.rst:91
 msgid "Realtime netflow and status code monitoring"
 msgstr ""
 
-#: ../../source/modules/index.rst:92
+#: ../../source/modules/index.rst:91
 msgid ":github:`Lax/ngx_http_accounting_module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:94
+#: ../../source/modules/index.rst:93
 msgid "HTTP Push"
 msgstr ""
 
-#: ../../source/modules/index.rst:94
+#: ../../source/modules/index.rst:93
 msgid "Turns nginx into an adept long-polling HTTP Push server"
 msgstr ""
 
-#: ../../source/modules/index.rst:94
+#: ../../source/modules/index.rst:93
 msgid ":github:`slact/nginx_http_push_module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:96
+#: ../../source/modules/index.rst:95
 msgid ":doc:`iconv`"
 msgstr ""
 
-#: ../../source/modules/index.rst:96
+#: ../../source/modules/index.rst:95
 msgid "Converts character encodings"
 msgstr ""
 
-#: ../../source/modules/index.rst:96
+#: ../../source/modules/index.rst:95
 msgid ":github:`calio/iconv-nginx-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:98
+#: ../../source/modules/index.rst:97
 msgid "Internal Redirect"
 msgstr ""
 
-#: ../../source/modules/index.rst:98
+#: ../../source/modules/index.rst:97
 msgid "A nginx module for internal redirection"
 msgstr ""
 
-#: ../../source/modules/index.rst:98
+#: ../../source/modules/index.rst:97
 msgid ":github:`flygoast/ngx_http_internal_redirect/`"
 msgstr ""
 
-#: ../../source/modules/index.rst:100
+#: ../../source/modules/index.rst:99
 msgid "IP2Location"
 msgstr ""
 
-#: ../../source/modules/index.rst:100
+#: ../../source/modules/index.rst:99
 msgid "Identifies the country name/code of an IP address"
 msgstr ""
 
-#: ../../source/modules/index.rst:100
+#: ../../source/modules/index.rst:99
 msgid ":github:`chrislim2888/ip2location-nginx`"
 msgstr ""
 
-#: ../../source/modules/index.rst:102
+#: ../../source/modules/index.rst:101
 msgid ":doc:`java_handler`"
 msgstr ""
 
-#: ../../source/modules/index.rst:104
+#: ../../source/modules/index.rst:103
 msgid "JavaScript"
 msgstr ""
 
-#: ../../source/modules/index.rst:104
+#: ../../source/modules/index.rst:103
 msgid "Embedding SpiderMonkey, a full port of Perl module, and more"
 msgstr ""
 
-#: ../../source/modules/index.rst:104
+#: ../../source/modules/index.rst:103
 msgid ":github:`kung-fu-tzu/ngx_http_js_module#readme`"
 msgstr ""
 
-#: ../../source/modules/index.rst:106
+#: ../../source/modules/index.rst:105
 msgid ":doc:`keepalive`"
 msgstr ""
 
-#: ../../source/modules/index.rst:106
+#: ../../source/modules/index.rst:105
 msgid "Provides keep-alive connections to memcached upstreams"
 msgstr ""
 
-#: ../../source/modules/index.rst:106
+#: ../../source/modules/index.rst:105
 msgid "`Download <http://mdounin.ru/hg/ngx_http_upstream_keepalive>`__"
 msgstr ""
 
-#: ../../source/modules/index.rst:108
+#: ../../source/modules/index.rst:107
 msgid ":doc:`ketama_chash`"
 msgstr ""
 
-#: ../../source/modules/index.rst:108
+#: ../../source/modules/index.rst:107
 msgid "Provides upstream load distribution by hashing a configurable variable"
 msgstr ""
 
-#: ../../source/modules/index.rst:108
+#: ../../source/modules/index.rst:107
 msgid ":github:`flygoast/ngx_http_upstream_ketama_chash/releases/`"
 msgstr ""
 
-#: ../../source/modules/index.rst:110
+#: ../../source/modules/index.rst:109
 msgid "Limit Upload Rate"
 msgstr ""
 
-#: ../../source/modules/index.rst:110
+#: ../../source/modules/index.rst:109
 msgid "Limit the transmission rate of request body from a client"
 msgstr ""
 
-#: ../../source/modules/index.rst:110
+#: ../../source/modules/index.rst:109
 msgid ":github:`cfsego/limit_upload_rate`"
 msgstr ""
 
-#: ../../source/modules/index.rst:112
+#: ../../source/modules/index.rst:111
 msgid "Limit Upstream Connection"
 msgstr ""
 
-#: ../../source/modules/index.rst:112
+#: ../../source/modules/index.rst:111
 msgid "Limits the maximum connections to each server in a upstream"
 msgstr ""
 
-#: ../../source/modules/index.rst:112
+#: ../../source/modules/index.rst:111
 msgid ":github:`cfsego/nginx-limit-upstream/`"
 msgstr ""
 
-#: ../../source/modules/index.rst:114
+#: ../../source/modules/index.rst:113
 msgid "Log If"
 msgstr ""
 
-#: ../../source/modules/index.rst:114
+#: ../../source/modules/index.rst:113
 msgid "Log the requests only when given conditions are met"
 msgstr ""
 
-#: ../../source/modules/index.rst:114
+#: ../../source/modules/index.rst:113
 msgid ":github:`cfsego/ngx_log_if/`"
 msgstr ""
 
-#: ../../source/modules/index.rst:116
+#: ../../source/modules/index.rst:115
 msgid "Lower Upper Case"
 msgstr ""
 
-#: ../../source/modules/index.rst:116
+#: ../../source/modules/index.rst:115
 msgid "Provides upper/lowercase string functions in nginx config files"
 msgstr ""
 
-#: ../../source/modules/index.rst:116
+#: ../../source/modules/index.rst:115
 msgid ":github:`replay/ngx_http_lower_upper_case`"
 msgstr ""
 
-#: ../../source/modules/index.rst:118
+#: ../../source/modules/index.rst:117
 msgid ":doc:`lua`"
 msgstr ""
 
-#: ../../source/modules/index.rst:118 ../../source/modules/index.rst:120
+#: ../../source/modules/index.rst:117 ../../source/modules/index.rst:119
 msgid "Embed the power of Lua into nginx"
 msgstr ""
 
-#: ../../source/modules/index.rst:118
+#: ../../source/modules/index.rst:117
 msgid ":github:`openresty/lua-nginx-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:120
+#: ../../source/modules/index.rst:119
 msgid "Luafile"
 msgstr ""
 
-#: ../../source/modules/index.rst:120
+#: ../../source/modules/index.rst:119
 msgid ":github:`alacner/nginx_lua_module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:122
+#: ../../source/modules/index.rst:121
 msgid "MD5 Filter"
 msgstr ""
 
-#: ../../source/modules/index.rst:122
+#: ../../source/modules/index.rst:121
 msgid "Returns the MD5 sum of content that would've otherwise been served"
 msgstr ""
 
-#: ../../source/modules/index.rst:122
+#: ../../source/modules/index.rst:121
 msgid ":github:`kainswor/nginx_md5_filter`"
 msgstr ""
 
-#: ../../source/modules/index.rst:124
+#: ../../source/modules/index.rst:123
 msgid ":doc:`memc`"
 msgstr ""
 
-#: ../../source/modules/index.rst:124
+#: ../../source/modules/index.rst:123
 msgid "Extension of the standard memcached module"
 msgstr ""
 
-#: ../../source/modules/index.rst:124
+#: ../../source/modules/index.rst:123
 msgid ":github:`openresty/memc-nginx-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:126
+#: ../../source/modules/index.rst:125
 msgid "ModSecurity"
 msgstr ""
 
-#: ../../source/modules/index.rst:126
+#: ../../source/modules/index.rst:125
 msgid "Web application firewall"
 msgstr ""
 
-#: ../../source/modules/index.rst:126
+#: ../../source/modules/index.rst:125
 msgid ":github:`spiderlabs/modsecurity/`"
 msgstr ""
 
-#: ../../source/modules/index.rst:128
+#: ../../source/modules/index.rst:127
 msgid "Mogilefs"
 msgstr ""
 
-#: ../../source/modules/index.rst:128
+#: ../../source/modules/index.rst:127
 msgid "Implements a MogileFS client"
 msgstr ""
 
-#: ../../source/modules/index.rst:128
+#: ../../source/modules/index.rst:127
 msgid ""
 "`Download "
 "<http://www.grid.net.ru/nginx/download/nginx_mogilefs_module-1.0.2.tar.gz>`__"
 msgstr ""
 
-#: ../../source/modules/index.rst:130
+#: ../../source/modules/index.rst:129
 msgid "Mongo"
 msgstr ""
 
-#: ../../source/modules/index.rst:130
+#: ../../source/modules/index.rst:129
 msgid "Upstream module for direct communication with MongoDB"
 msgstr ""
 
-#: ../../source/modules/index.rst:130
+#: ../../source/modules/index.rst:129
 msgid ":github:`simpl/ngx_mongo`"
 msgstr ""
 
-#: ../../source/modules/index.rst:132
+#: ../../source/modules/index.rst:131
 msgid ":doc:`mp4_streaming`"
 msgstr ""
 
-#: ../../source/modules/index.rst:132
+#: ../../source/modules/index.rst:131
 msgid "Seeks time within H.264/MP4 files if a \"start\" parameter is in the URL"
 msgstr ""
 
-#: ../../source/modules/index.rst:132
+#: ../../source/modules/index.rst:131
 msgid ""
 "`Download <http://i.6.cn/nginx_mp4_streaming_public_20081229.tar.bz2>`__"
 msgstr ""
 
-#: ../../source/modules/index.rst:134
+#: ../../source/modules/index.rst:133
 msgid "Naxsi"
 msgstr ""
 
-#: ../../source/modules/index.rst:134
+#: ../../source/modules/index.rst:133
 msgid "Web Application Firewall for nginx"
 msgstr ""
 
-#: ../../source/modules/index.rst:134
+#: ../../source/modules/index.rst:133
 msgid ":github:`nbs-system/naxsi`"
 msgstr ""
 
-#: ../../source/modules/index.rst:136
+#: ../../source/modules/index.rst:135
 msgid "Notice"
 msgstr ""
 
-#: ../../source/modules/index.rst:136
+#: ../../source/modules/index.rst:135
 msgid "Serve static file to POST requests"
 msgstr ""
 
-#: ../../source/modules/index.rst:136
+#: ../../source/modules/index.rst:135
 msgid ":github:`kr/nginx-notice`"
 msgstr ""
 
-#: ../../source/modules/index.rst:138
+#: ../../source/modules/index.rst:137
 msgid "OCSP proxy"
 msgstr ""
 
-#: ../../source/modules/index.rst:138
+#: ../../source/modules/index.rst:137
 msgid "OCSP processing module designed for response caching"
 msgstr ""
 
-#: ../../source/modules/index.rst:138
+#: ../../source/modules/index.rst:137
 msgid ":github:`kyprizel/nginx_ocsp_proxy-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:140
+#: ../../source/modules/index.rst:139
 msgid "OpenSSL Version"
 msgstr ""
 
-#: ../../source/modules/index.rst:140
+#: ../../source/modules/index.rst:139
 msgid "OpenSSL minimum version constraints in configuration"
 msgstr ""
 
-#: ../../source/modules/index.rst:140
+#: ../../source/modules/index.rst:139
 msgid ":github:`apcera/nginx-openssl-version`"
 msgstr ""
 
-#: ../../source/modules/index.rst:142
+#: ../../source/modules/index.rst:141
 msgid ":doc:`owner_match`"
 msgstr ""
 
-#: ../../source/modules/index.rst:142
+#: ../../source/modules/index.rst:141
 msgid "Provides a simple file owner-based access control"
 msgstr ""
 
-#: ../../source/modules/index.rst:142
+#: ../../source/modules/index.rst:141
 msgid "`Download <https://heiher.info/1755.html>`_"
 msgstr ""
 
-#: ../../source/modules/index.rst:144
+#: ../../source/modules/index.rst:143
 msgid "PageSpeed"
 msgstr ""
 
-#: ../../source/modules/index.rst:144
+#: ../../source/modules/index.rst:143
 msgid ""
 "Rewrites webpages and associated assets to reduce latency and bandwidth"
 msgstr ""
 
-#: ../../source/modules/index.rst:144
+#: ../../source/modules/index.rst:143
 msgid ":github:`pagespeed/ngx_pagespeed`"
 msgstr ""
 
-#: ../../source/modules/index.rst:146
+#: ../../source/modules/index.rst:145
 msgid "PHP Session Parser"
 msgstr ""
 
-#: ../../source/modules/index.rst:146
+#: ../../source/modules/index.rst:145
 msgid "Extract values that are stored in a serialized PHP session"
 msgstr ""
 
-#: ../../source/modules/index.rst:146
+#: ../../source/modules/index.rst:145
 msgid ":github:`replay/ngx_http_php_session`"
 msgstr ""
 
-#: ../../source/modules/index.rst:148
+#: ../../source/modules/index.rst:147
 msgid "PHP-Memache Standard Hash"
 msgstr ""
 
-#: ../../source/modules/index.rst:148
+#: ../../source/modules/index.rst:147
 msgid "Load balancer that imitates the PHP-Memcache standard hash's behaviour"
 msgstr ""
 
-#: ../../source/modules/index.rst:148
+#: ../../source/modules/index.rst:147
 msgid ":github:`replay/ngx_http_php_memcache_standard_balancer`"
 msgstr ""
 
-#: ../../source/modules/index.rst:150
+#: ../../source/modules/index.rst:149
 msgid "Postgres"
 msgstr ""
 
-#: ../../source/modules/index.rst:150
+#: ../../source/modules/index.rst:149
 msgid "Allows nginx to communicate directly with PostgreSQL database"
 msgstr ""
 
-#: ../../source/modules/index.rst:150
+#: ../../source/modules/index.rst:149
 msgid "`Download <http://labs.frickle.com/nginx_ngx_postgres>`__"
 msgstr ""
 
-#: ../../source/modules/index.rst:152
+#: ../../source/modules/index.rst:151
 msgid "Pubcookie"
 msgstr ""
 
-#: ../../source/modules/index.rst:152
+#: ../../source/modules/index.rst:151
 msgid "Adds Pubcookie-based cross-site authentication method to nginx"
 msgstr ""
 
-#: ../../source/modules/index.rst:152
+#: ../../source/modules/index.rst:151
 msgid "`Download <http://www.vanko.me/book/page/pubcookie-module-nginx>`__"
 msgstr ""
 
-#: ../../source/modules/index.rst:154
+#: ../../source/modules/index.rst:153
 msgid ":doc:`push_stream`"
 msgstr ""
 
-#: ../../source/modules/index.rst:154
+#: ../../source/modules/index.rst:153
 msgid "Turns nginx into an adept stream HTTP Push server"
 msgstr ""
 
-#: ../../source/modules/index.rst:154
+#: ../../source/modules/index.rst:153
 msgid ":github:`wandenberg/nginx-push-stream-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:156
+#: ../../source/modules/index.rst:155
 msgid ":doc:`rdns`"
 msgstr ""
 
-#: ../../source/modules/index.rst:156
+#: ../../source/modules/index.rst:155
 msgid "Makes a reverse DNS lookup and provides control of incoming hostname"
 msgstr ""
 
-#: ../../source/modules/index.rst:156
+#: ../../source/modules/index.rst:155
 msgid ":github:`flant/nginx-http-rdns`"
 msgstr ""
 
-#: ../../source/modules/index.rst:158
+#: ../../source/modules/index.rst:157
 msgid "RDS CSV"
 msgstr ""
 
-#: ../../source/modules/index.rst:158
+#: ../../source/modules/index.rst:157
 msgid ""
 "Helps ngx_drizzle, ngx_postgres, and others emit Comma-Separated Values"
 msgstr ""
 
-#: ../../source/modules/index.rst:158
+#: ../../source/modules/index.rst:157
 msgid ":github:`openresty/rds-csv-nginx-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:160
+#: ../../source/modules/index.rst:159
 msgid "RDS JSON"
 msgstr ""
 
-#: ../../source/modules/index.rst:160
+#: ../../source/modules/index.rst:159
 msgid "Helps ngx_drizzle, ngx_postgres, and others emit JSON data"
 msgstr ""
 
-#: ../../source/modules/index.rst:160
+#: ../../source/modules/index.rst:159
 msgid ":github:`openresty/rds-json-nginx-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:162
+#: ../../source/modules/index.rst:161
 msgid ":doc:`redis`"
 msgstr ""
 
-#: ../../source/modules/index.rst:162
+#: ../../source/modules/index.rst:161
 msgid "Redis support module"
 msgstr ""
 
-#: ../../source/modules/index.rst:162
+#: ../../source/modules/index.rst:161
 msgid ""
 "`Download <http://people.FreeBSD.ORG/~osa/ngx_http_redis-0.3.5.tar.gz>`__"
 msgstr ""
 
-#: ../../source/modules/index.rst:164
+#: ../../source/modules/index.rst:163
 msgid ":doc:`redis2`"
 msgstr ""
 
-#: ../../source/modules/index.rst:164
+#: ../../source/modules/index.rst:163
 msgid "Upstream module for the full Redis 2.0 protocol"
 msgstr ""
 
-#: ../../source/modules/index.rst:164
+#: ../../source/modules/index.rst:163
 msgid ":github:`openresty/redis2-nginx-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:166
+#: ../../source/modules/index.rst:165
 msgid "Replace Filter"
 msgstr ""
 
-#: ../../source/modules/index.rst:166
+#: ../../source/modules/index.rst:165
 msgid "Performs regular expression substitutions on response bodies"
 msgstr ""
 
-#: ../../source/modules/index.rst:166
+#: ../../source/modules/index.rst:165
 msgid ":github:`openresty/replace-filter-nginx-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:168
+#: ../../source/modules/index.rst:167
 msgid "Roboo"
 msgstr ""
 
-#: ../../source/modules/index.rst:168
+#: ../../source/modules/index.rst:167
 msgid "HTTP Robot Mitigator that integrates easily with Nginx"
 msgstr ""
 
-#: ../../source/modules/index.rst:168
+#: ../../source/modules/index.rst:167
 msgid ":github:`yuri-gushin/Roboo/downloads`"
 msgstr ""
 
-#: ../../source/modules/index.rst:170
+#: ../../source/modules/index.rst:169
 msgid ":doc:`rrd_graph`"
 msgstr ""
 
-#: ../../source/modules/index.rst:170
+#: ../../source/modules/index.rst:169
 msgid ""
 "This module provides an HTTP interface to RRDtool's graphing facilities"
 msgstr ""
 
-#: ../../source/modules/index.rst:170
+#: ../../source/modules/index.rst:169
 msgid ":github:`evanmiller/mod_rrd_graph`"
 msgstr ""
 
-#: ../../source/modules/index.rst:172
+#: ../../source/modules/index.rst:171
 msgid "RTMP"
 msgstr ""
 
-#: ../../source/modules/index.rst:172
+#: ../../source/modules/index.rst:171
 msgid "RTMP protocol support. Live streaming and video on demand"
 msgstr ""
 
-#: ../../source/modules/index.rst:172
+#: ../../source/modules/index.rst:171
 msgid ":github:`arut/nginx-rtmp-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:174
+#: ../../source/modules/index.rst:173
 msgid "Sass"
 msgstr ""
 
-#: ../../source/modules/index.rst:174
+#: ../../source/modules/index.rst:173
 msgid "Compiles SASS files in nginx before sending the response"
 msgstr ""
 
-#: ../../source/modules/index.rst:174
+#: ../../source/modules/index.rst:173
 msgid ":github:`mneudert/sass-nginx-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:176
+#: ../../source/modules/index.rst:175
 msgid ":doc:`secure_download`"
 msgstr ""
 
-#: ../../source/modules/index.rst:176
+#: ../../source/modules/index.rst:175
 msgid "Create expiring links"
 msgstr ""
 
-#: ../../source/modules/index.rst:176
+#: ../../source/modules/index.rst:175
 msgid ":github:`replay/ngx_http_secure_download`"
 msgstr ""
 
-#: ../../source/modules/index.rst:178
+#: ../../source/modules/index.rst:177
 msgid "Selective Cache Purge"
 msgstr ""
 
-#: ../../source/modules/index.rst:178
+#: ../../source/modules/index.rst:177
 msgid "A cache purge module that allows GLOB expressions like *.jpg or /test*"
 msgstr ""
 
-#: ../../source/modules/index.rst:178
+#: ../../source/modules/index.rst:177
 msgid ":github:`wandenberg/nginx-selective-cache-purge-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:180
+#: ../../source/modules/index.rst:179
 msgid "Set CConv"
 msgstr ""
 
-#: ../../source/modules/index.rst:180
+#: ../../source/modules/index.rst:179
 msgid "Conversion between Simplified and Traditional Chinese at rewrite phase"
 msgstr ""
 
-#: ../../source/modules/index.rst:180
+#: ../../source/modules/index.rst:179
 msgid ":github:`liseen/set-cconv-nginx-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:182
+#: ../../source/modules/index.rst:181
 msgid "Set Hash"
 msgstr ""
 
-#: ../../source/modules/index.rst:182
+#: ../../source/modules/index.rst:181
 msgid "Set a variable to hash functions, including MD5, SHA1 and Murmurhash 2"
 msgstr ""
 
-#: ../../source/modules/index.rst:182
+#: ../../source/modules/index.rst:181
 msgid ":github:`simpl/ngx_http_set_hash`"
 msgstr ""
 
-#: ../../source/modules/index.rst:184
+#: ../../source/modules/index.rst:183
 msgid "Set Lang"
 msgstr ""
 
-#: ../../source/modules/index.rst:184
+#: ../../source/modules/index.rst:183
 msgid "Set a variable to indicate the language based on a variety of sources"
 msgstr ""
 
-#: ../../source/modules/index.rst:184
+#: ../../source/modules/index.rst:183
 msgid ":github:`simpl/ngx_http_set_lang/downloads`"
 msgstr ""
 
-#: ../../source/modules/index.rst:186
+#: ../../source/modules/index.rst:185
 msgid ":doc:`set_misc`"
 msgstr ""
 
-#: ../../source/modules/index.rst:186
+#: ../../source/modules/index.rst:185
 msgid "Various set_xxx directives added to nginx's rewrite module"
 msgstr ""
 
-#: ../../source/modules/index.rst:186
+#: ../../source/modules/index.rst:185
 msgid ":github:`openresty/set-misc-nginx-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:188
+#: ../../source/modules/index.rst:187
 msgid "sFlow"
 msgstr ""
 
-#: ../../source/modules/index.rst:188
+#: ../../source/modules/index.rst:187
 msgid "Operational performance monitoring with standard sFlow protocol"
 msgstr ""
 
-#: ../../source/modules/index.rst:188
+#: ../../source/modules/index.rst:187
 msgid ""
 "`Download <http://code.google.com/p/nginx-sflow-module/downloads/list>`__"
 msgstr ""
 
-#: ../../source/modules/index.rst:190
+#: ../../source/modules/index.rst:189
 msgid ":doc:`slice`"
 msgstr ""
 
-#: ../../source/modules/index.rst:190
+#: ../../source/modules/index.rst:189
 msgid "Nginx module for serving a file in slices (reverse byte-range)"
 msgstr ""
 
-#: ../../source/modules/index.rst:190
+#: ../../source/modules/index.rst:189
 msgid ":github:`alibaba/nginx-http-slice`"
 msgstr ""
 
-#: ../../source/modules/index.rst:192
+#: ../../source/modules/index.rst:191
 msgid "SlowFS Cache"
 msgstr ""
 
-#: ../../source/modules/index.rst:192
+#: ../../source/modules/index.rst:191
 msgid "Adds ability to cache static files"
 msgstr ""
 
-#: ../../source/modules/index.rst:192
+#: ../../source/modules/index.rst:191
 msgid "`Download <http://labs.frickle.com/nginx_ngx_slowfs_cache>`__"
 msgstr ""
 
-#: ../../source/modules/index.rst:194
+#: ../../source/modules/index.rst:193
 msgid "SmallLight"
 msgstr ""
 
-#: ../../source/modules/index.rst:194
+#: ../../source/modules/index.rst:193
 msgid "Dynamic Image Transformation Module For nginx"
 msgstr ""
 
-#: ../../source/modules/index.rst:194
+#: ../../source/modules/index.rst:193
 msgid ":github:`cubicdaiya/ngx_small_light`"
 msgstr ""
 
-#: ../../source/modules/index.rst:196
+#: ../../source/modules/index.rst:195
 msgid "Sphinx"
 msgstr ""
 
-#: ../../source/modules/index.rst:196
+#: ../../source/modules/index.rst:195
 msgid "Nginx upstream module for Sphinx 2.x"
 msgstr ""
 
-#: ../../source/modules/index.rst:196
+#: ../../source/modules/index.rst:195
 msgid ":github:`reeteshranjan/sphinx2-nginx-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:198
+#: ../../source/modules/index.rst:197
 msgid "SPNEGO"
 msgstr ""
 
-#: ../../source/modules/index.rst:198
+#: ../../source/modules/index.rst:197
 msgid "Support for SPNEGO/gssapi in nginx"
 msgstr ""
 
-#: ../../source/modules/index.rst:198
+#: ../../source/modules/index.rst:197
 msgid ":github:`stnoonan/spnego-http-auth-nginx-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:200
+#: ../../source/modules/index.rst:199
 msgid ":doc:`sr_cache`"
 msgstr ""
 
-#: ../../source/modules/index.rst:200
+#: ../../source/modules/index.rst:199
 msgid "Transparent subrequest-based caching layout for nginx locations"
 msgstr ""
 
-#: ../../source/modules/index.rst:200
+#: ../../source/modules/index.rst:199
 msgid ":github:`openresty/srcache-nginx-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:202
+#: ../../source/modules/index.rst:201
 msgid "Static etags"
 msgstr ""
 
-#: ../../source/modules/index.rst:202
+#: ../../source/modules/index.rst:201
 msgid "Generates etags for static content"
 msgstr ""
 
-#: ../../source/modules/index.rst:202
+#: ../../source/modules/index.rst:201
 msgid ":github:`mikewest/nginx-static-etags`"
 msgstr ""
 
-#: ../../source/modules/index.rst:204
+#: ../../source/modules/index.rst:203
 msgid "Statsd"
 msgstr ""
 
-#: ../../source/modules/index.rst:204
+#: ../../source/modules/index.rst:203
 msgid "Adds the ability for Nginx to interacting with Statsd"
 msgstr ""
 
-#: ../../source/modules/index.rst:204
+#: ../../source/modules/index.rst:203
 msgid ":github:`zebrafishlabs/nginx-statsd`"
 msgstr ""
 
-#: ../../source/modules/index.rst:206
+#: ../../source/modules/index.rst:205
 msgid "Sticky upstream"
 msgstr ""
 
-#: ../../source/modules/index.rst:206
+#: ../../source/modules/index.rst:205
 msgid "Adds an upstream server persistance using cookies"
 msgstr ""
 
-#: ../../source/modules/index.rst:206
+#: ../../source/modules/index.rst:205
 msgid ":bitbucket:`nginx-goodies/nginx-sticky-module-ng/get/master.tar.gz`"
 msgstr ""
 
-#: ../../source/modules/index.rst:208
+#: ../../source/modules/index.rst:207
 msgid "Subrange"
 msgstr ""
 
-#: ../../source/modules/index.rst:208
+#: ../../source/modules/index.rst:207
 msgid "Split one big HTTP/Range request to multiple subrange requesets"
 msgstr ""
 
-#: ../../source/modules/index.rst:208
+#: ../../source/modules/index.rst:207
 msgid ":github:`Qihoo360/ngx_http_subrange_module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:210
+#: ../../source/modules/index.rst:209
 msgid ":doc:`substitutions`"
 msgstr ""
 
-#: ../../source/modules/index.rst:210
+#: ../../source/modules/index.rst:209
 msgid ""
 "Performs regular expression and string substitutions on response bodies"
 msgstr ""
 
-#: ../../source/modules/index.rst:210
+#: ../../source/modules/index.rst:209
 msgid ":github:`yaoweibin/ngx_http_substitutions_filter_module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:212
+#: ../../source/modules/index.rst:211
 msgid "Summarizer"
 msgstr ""
 
-#: ../../source/modules/index.rst:212
+#: ../../source/modules/index.rst:211
 msgid "An upstream module for Summarizer 1.0"
 msgstr ""
 
-#: ../../source/modules/index.rst:212
+#: ../../source/modules/index.rst:211
 msgid ":github:`reeteshranjan/summarizer-nginx-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:214
+#: ../../source/modules/index.rst:213
 msgid "Supervisord"
 msgstr ""
 
-#: ../../source/modules/index.rst:214
+#: ../../source/modules/index.rst:213
 msgid "Communicate with supervisord and manage backends on-demand"
 msgstr ""
 
-#: ../../source/modules/index.rst:214
+#: ../../source/modules/index.rst:213
 msgid "`Download <http://labs.frickle.com/nginx_ngx_supervisord>`__"
 msgstr ""
 
-#: ../../source/modules/index.rst:216
+#: ../../source/modules/index.rst:215
 msgid "SysGuard"
 msgstr ""
 
-#: ../../source/modules/index.rst:216
+#: ../../source/modules/index.rst:215
 msgid "Protects servers when system load or memory use goes too high"
 msgstr ""
 
-#: ../../source/modules/index.rst:216
+#: ../../source/modules/index.rst:215
 msgid ":github:`alibaba/nginx-http-sysguard`"
 msgstr ""
 
-#: ../../source/modules/index.rst:218
+#: ../../source/modules/index.rst:217
 msgid "TCP Proxy"
 msgstr ""
 
-#: ../../source/modules/index.rst:218
+#: ../../source/modules/index.rst:217
 msgid "TCP proxy with nginx, includes health check and status monitor"
 msgstr ""
 
-#: ../../source/modules/index.rst:218
+#: ../../source/modules/index.rst:217
 msgid ":github:`yaoweibin/nginx_tcp_proxy_module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:220
+#: ../../source/modules/index.rst:219
 msgid "TestCookie module"
 msgstr ""
 
-#: ../../source/modules/index.rst:220
+#: ../../source/modules/index.rst:219
 msgid "Simple robot (DDoS) mitigation module"
 msgstr ""
 
-#: ../../source/modules/index.rst:220
+#: ../../source/modules/index.rst:219
 msgid ":github:`kyprizel/testcookie-nginx-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:222
+#: ../../source/modules/index.rst:221
 msgid "Types Filter"
 msgstr ""
 
-#: ../../source/modules/index.rst:222
+#: ../../source/modules/index.rst:221
 msgid "Changes the *Content-Type* output header on specified conditions"
 msgstr ""
 
-#: ../../source/modules/index.rst:222
+#: ../../source/modules/index.rst:221
 msgid ":github:`flygoast/ngx_http_types_filter`"
 msgstr ""
 
-#: ../../source/modules/index.rst:224
+#: ../../source/modules/index.rst:223
 msgid "UnZip"
 msgstr ""
 
-#: ../../source/modules/index.rst:224
+#: ../../source/modules/index.rst:223
 msgid "serve file directly from the archives"
 msgstr ""
 
-#: ../../source/modules/index.rst:224
+#: ../../source/modules/index.rst:223
 msgid ":github:`youzee/nginx-unzip-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:226
+#: ../../source/modules/index.rst:225
 msgid ":doc:`upload`"
 msgstr ""
 
-#: ../../source/modules/index.rst:226
+#: ../../source/modules/index.rst:225
 msgid "Handles file uploads using multipart/form-data encoding (RFC 1867)"
 msgstr ""
 
-#: ../../source/modules/index.rst:226
+#: ../../source/modules/index.rst:225
 msgid ":github:`vkholodkov/nginx-upload-module/tree/2.2`"
 msgstr ""
 
-#: ../../source/modules/index.rst:228
+#: ../../source/modules/index.rst:227
 msgid "Url"
 msgstr ""
 
-#: ../../source/modules/index.rst:228
+#: ../../source/modules/index.rst:227
 msgid "A module to convert uri to user-defined encoding"
 msgstr ""
 
-#: ../../source/modules/index.rst:228
+#: ../../source/modules/index.rst:227
 msgid ":github:`vozlt/nginx-module-url`"
 msgstr ""
 
-#: ../../source/modules/index.rst:230
+#: ../../source/modules/index.rst:229
 msgid ":doc:`user_agent`"
 msgstr ""
 
-#: ../../source/modules/index.rst:230
+#: ../../source/modules/index.rst:229
 msgid "A more powerful module than the native BrowserModule"
 msgstr ""
 
-#: ../../source/modules/index.rst:230
+#: ../../source/modules/index.rst:229
 msgid ":github:`alibaba/nginx-http-user-agent`"
 msgstr ""
 
-#: ../../source/modules/index.rst:232
+#: ../../source/modules/index.rst:231
 msgid "Video Thumb Extractor"
 msgstr ""
 
-#: ../../source/modules/index.rst:232
+#: ../../source/modules/index.rst:231
 msgid "Nginx module to extract thumbs from a video file"
 msgstr ""
 
-#: ../../source/modules/index.rst:232
+#: ../../source/modules/index.rst:231
 msgid ":github:`wandenberg/nginx-video-thumbextractor-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:234
+#: ../../source/modules/index.rst:233
 msgid "VTS"
 msgstr ""
 
-#: ../../source/modules/index.rst:234
+#: ../../source/modules/index.rst:233
 msgid "A virtual host and upstream traffic status module"
 msgstr ""
 
-#: ../../source/modules/index.rst:234
+#: ../../source/modules/index.rst:233
 msgid ":github:`vozlt/nginx-module-vts`"
 msgstr ""
 
-#: ../../source/modules/index.rst:236
+#: ../../source/modules/index.rst:235
 msgid "XSS"
 msgstr ""
 
-#: ../../source/modules/index.rst:236
+#: ../../source/modules/index.rst:235
 msgid "Native support for cross-site scripting (XSS)"
 msgstr ""
 
-#: ../../source/modules/index.rst:236
+#: ../../source/modules/index.rst:235
 msgid ":github:`openresty/xss-nginx-module`"
 msgstr ""
 
-#: ../../source/modules/index.rst:238
+#: ../../source/modules/index.rst:237
 msgid ":doc:`zip`"
 msgstr ""
 
-#: ../../source/modules/index.rst:238
+#: ../../source/modules/index.rst:237
 msgid "Assemble ZIP archives on the fly"
 msgstr ""
 
-#: ../../source/modules/index.rst:238
+#: ../../source/modules/index.rst:237
 msgid ":github:`evanmiller/mod_zip/`"
 msgstr ""

@@ -1,0 +1,363 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-03 16:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/tutorials/commandline.rst:2
+msgid "CommandLine"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:5
+msgid "Starting, Stopping, and Restarting Nginx"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:6
+msgid ""
+"This page shows you how to start Nginx, and once it's running, how to "
+"control it so that it will stop or restart."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:10
+msgid "Starting Nginx"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:11
+msgid ""
+"Nginx is invoked from the command line, usually from ``/usr/bin/nginx``."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:14
+msgid "Basic Example of Starting Nginx"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:22
+msgid "Advanced Example of Starting Nginx"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:30
+msgid "Options"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:33
+msgid "``-?, -h``"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:33
+msgid "Print help."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:35
+msgid "``-v``"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:35
+msgid "Print version."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:37
+msgid "``-V``"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:37
+msgid "Print nginx version, compiler version and configure parameters."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:39
+msgid "``-t``"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:39
+msgid ""
+"Don't run, just test the configuration file. Nginx checks configuration for "
+"correct syntax and then try to open files referred in configuration."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:42
+msgid "``-q``"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:42
+msgid "Suppress non-error messages during configuration testing."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:44
+msgid "``-s signal``"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:44
+msgid ""
+"Send signal to a master process: stop, quit, reopen, reload. (version >= "
+"0.7.53)"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:46
+msgid "``-p prefix``"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:46
+msgid "Set prefix path (default: ``/usr/local/nginx/``). (version >= 0.7.53)"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:48
+msgid "``-c filename``"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:48
+msgid ""
+"Specify which configuration file Nginx should use instead of the default."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:50
+msgid "``-g directives``"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:50
+msgid "Set `global <|HttpCoreModule|>`_ directives. (version >= 0.7.4)"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:53
+msgid ""
+"Nginx has only a few command-line parameters. Unlike many other software "
+"systems, the configuration is done entirely via the configuration file "
+"(imagine that)."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:57
+msgid "Stopping or Restarting Nginx"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:58
+msgid ""
+"There are two ways to control Nginx once it's already running. The first is "
+"to call Nginx again with the ``-s`` command line parameter. For example, "
+"``/usr/bin/nginx -s stop`` will stop the Nginx server. (other ``-s`` options"
+" are given in the previous section)"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:63
+msgid ""
+"The second way to control Nginx is to send a signal to the Nginx master "
+"process... By default nginx writes its master process id to "
+"``/usr/local/nginx/logs/nginx.pid``. You can change this by passing "
+"parameter with ``./configure`` at compile-time or by using ``pid`` directive"
+" in the configuration file."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:67
+msgid ""
+"Here's how to send the ``QUIT`` (Graceful Shutdown) signal to the Nginx "
+"master process:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:73
+msgid "The master process can handle the following signals:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:76
+#: ../../source/start/topics/tutorials/commandline.rst:99
+msgid "TERM, INT"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:76
+#: ../../source/start/topics/tutorials/commandline.rst:99
+msgid "Quick shutdown"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:78
+#: ../../source/start/topics/tutorials/commandline.rst:101
+msgid "QUIT"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:78
+#: ../../source/start/topics/tutorials/commandline.rst:101
+msgid "Graceful shutdown"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:80
+msgid "KILL"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:80
+msgid "Halts a stubborn process"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:84
+msgid "HUP"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:82
+msgid "Configuration reload"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:84
+msgid "Start the new worker processes with a new configuration"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:86
+msgid "Gracefully shutdown the old worker processes"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:88
+#: ../../source/start/topics/tutorials/commandline.rst:103
+msgid "USR1"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:88
+#: ../../source/start/topics/tutorials/commandline.rst:103
+msgid "Reopen the log files"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:90
+msgid "USR2"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:90
+msgid "Upgrade Executable on the fly"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:92
+msgid "WINCH"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:92
+msgid "Gracefully shutdown the worker processes"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:95
+msgid ""
+"There's no need to control the worker processes yourself. However, they "
+"support some signals, too:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:108
+msgid "Loading a New Configuration Using Signals"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:109
+msgid ""
+"Nginx supports a few signals that you can use to control it's operation "
+"while it's running."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:111
+msgid "The most common of these is 15, which just stops the running process:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:119
+msgid ""
+"The more interesting option however, is being able to change the nginx "
+"configuration on the fly (notice that we test the configuration prior to "
+"reloading it):"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:129
+msgid ""
+"What happens is that when nginx receives the ``HUP`` signal, it tries to "
+"parse the configuration file (the specified one, if present, otherwise the "
+"default), and if successful, tries to apply a new configuration (i.e. re-"
+"open the log files and listen sockets). If successful, nginx runs new worker"
+" processes and signals graceful shutdown to old workers. Notified workers "
+"close listen sockets but continue to serve current clients. After serving "
+"all clients old workers shutdown. If nginx couldn't successfully apply the "
+"new configuration, it continues to work with an old configuration."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:135
+msgid ""
+"RequestForReviewCategory -- (Request For Review: Just What Happens With The "
+"Worker Processes at a HUP? -Olle)"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:139
+msgid "Upgrading To a New Binary On The Fly"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:140
+msgid ""
+"If you need to replace nginx binary with a new one (when upgrading to a new "
+"version or adding/removing server modules), you can do it without any "
+"service downtime - no incoming requests will be lost."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:142
+msgid ""
+"First, replace old binary with a new one, then send USR2 signal to the "
+"master process. It renames its ``.pid`` file to ``.oldbin`` (e.g. "
+"``/usr/local/nginx/logs/nginx.pid.oldbin``), then executes a new binary, "
+"which in turn starts a new master process and the new worker processes:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:157
+msgid ""
+"At this point, two instances of nginx are running, handling the incoming "
+"requests together. To phase the old instance out, you have to send ``WINCH``"
+" signal to the old master process, and its worker processes will start to "
+"gracefully shut down:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:171
+msgid ""
+"After some time, old worker processes all quit and only new worker processes"
+" are handling the incoming requests:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:183
+msgid ""
+"At this point you can still revert to the old server because it hasn't "
+"closed its listen sockets yet, by following these steps:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:185
+msgid ""
+"Send ``HUP`` signal to the old master process - it will start the worker "
+"processes without reloading a configuration file"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:186
+msgid ""
+"Send ``QUIT`` signal to the new master process to gracefully shut down its "
+"worker processes"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:187
+msgid "Send ``TERM`` signal to the new master process to force it quit"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:188
+msgid ""
+"If for some reason new worker processes do not quit, send ``KILL`` signal to"
+" them"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:190
+msgid ""
+"After new master process quits, the old master process removes ``.oldbin`` "
+"suffix from its ``.pid`` file, and everything is exactly as before the "
+"upgrade attempt."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:192
+msgid ""
+"If an update is successful and you want to keep the new server, send QUIT "
+"signal to the old master process to leave only new server running:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:204
+msgid "References"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:205
+msgid "`Command Line Options <http://sysoev.ru/nginx/docs/switches.html>`_"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/commandline.rst:206
+msgid "`Signals <http://sysoev.ru/nginx/docs/control.html>`_"
+msgstr ""

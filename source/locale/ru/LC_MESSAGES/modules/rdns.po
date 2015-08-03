@@ -204,38 +204,43 @@ msgstr ""
 msgid "Installation"
 msgstr ""
 
-#: ../../source/modules/rdns.rst:120
-msgid "Get source code from :github:`GitHub <flant/nginx-http-rdns>`"
-msgstr ""
-
-#: ../../source/modules/rdns.rst:129
+#: ../../source/modules/rdns.rst:125
 msgid "Bugs / patches"
 msgstr ""
 
-#: ../../source/modules/rdns.rst:130
+#: ../../source/modules/rdns.rst:126
 msgid ""
 "Please, report bugs & propose your patches at :github:`GitHub <flant/nginx-"
 "http-rdns>`"
 msgstr ""
 
-#: ../../source/modules/rdns.rst:135
+#: ../../source/modules/rdns.rst:131
 msgid "Credits"
 msgstr ""
 
-#: ../../source/modules/rdns.rst:136
+#: ../../source/modules/rdns.rst:132
 msgid ""
 "The original version of this module has been designed by Dmitry Stolyarov, "
 "written by Timofey Kirillov, `CJSC Flant <http://flant.com/>`_."
 msgstr ""
 
-#: ../../source/modules/rdns.rst:141
+#: ../../source/modules/rdns.rst:137
 msgid "Links"
 msgstr ""
 
-#: ../../source/modules/rdns.rst:142
+#: ../../source/modules/rdns.rst:138
 msgid "Source code on GitHub: https://github.com/flant/nginx-http-rdns"
 msgstr ""
 
-#: ../../source/modules/rdns.rst:143
+#: ../../source/modules/rdns.rst:139
 msgid "Module homepage (in Russian): http://flant.ru/projects/nginx-http-rdns"
 msgstr ""
+
+#: ../../source/modules/rdns.rst:120
+msgid ""
+"Get source code from :github:`GitHub <flant/nginx-http-rdns>` and follow "
+"common :doc:`3rd party modules instructions <index>`."
+msgstr ""
+
+#~ msgid "Get source code from :github:`GitHub <flant/nginx-http-rdns>`"
+#~ msgstr ""

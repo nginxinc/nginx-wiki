@@ -1,0 +1,95 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-03 16:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/examples/simplecgi.rst:2
+msgid "Simple CGI"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplecgi.rst:4
+msgid ""
+"For the most part, lack of CGI support in Nginx is not an issue and actually"
+" has an important side-benefit: because Nginx cannot directly execute "
+"external programs (CGI), a malicious person can't trick your system into "
+"uploading and executing an arbitrary script. There are still ways, of course"
+" (uploading a PHP script into a directory where you've got a directive to "
+"execute PHP FastCGI scripts for example), but it does in fact make it a bit "
+"more difficult (or conversely, easier to secure). Still, sometimes you have "
+"a one-off simple CGI program you need to support and here's a recipe for "
+"exposing your CGI to Nginx as a FastCGI instead:"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplecgi.rst:8
+msgid "Let's say this is our CGI program, written in Perl:"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplecgi.rst:17
+msgid ""
+"Make sure that the web server can read the file and it is marked as "
+"executable."
+msgstr ""
+
+#: ../../source/start/topics/examples/simplecgi.rst:19
+msgid ""
+"Next, we need a Perl wrapper that will run as a FastCGI and run this for us:"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplecgi.rst:21
+msgid ""
+"\"This one is still pretty ugly, but forwards stdio around correctly (not "
+"necessarily efficiently or prettily), and also reads and spits back out "
+"STDERR into fcgi STDERR. I am not entirely confident there is no race "
+"condition in the event that an app STDERRS out without any output data, but "
+"it works for my purposes. This is for the most part, not my own work; 99.9% "
+"of this came from the various improvements on the spawner script worked on "
+"in the mailing list and wiki here.. I just added some more pipe handling to "
+"enable communicating through STDERR, and a select loop to properly recieve "
+"both data streams.\" -- bryon@spideroak.com"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplecgi.rst:183
+msgid "Save the above script as ``/usr/local/bin/cgiwrap-fcgi.pl``."
+msgstr ""
+
+#: ../../source/start/topics/examples/simplecgi.rst:185
+msgid ""
+"Just running the program as above will bind it to a unix socket at "
+"``/var/run/nginx/cgiwrap-dispatch.sock``. Be sure your nginx worker process "
+"user has read/write access to this file. The script does not fork itself, so"
+" you will need to background it somehow (with Bash add an ampersand \"&\" at"
+" the end of your command to execute it)."
+msgstr ""
+
+#: ../../source/start/topics/examples/simplecgi.rst:189
+msgid "If this all works, then the next part is to setup Nginx:"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplecgi.rst:220
+msgid ""
+"Restart Nginx and point your browser at your CGI program. The above sample "
+"config will execute any .cgi file in ``cgi-bin`` with the ``cgiwrap-"
+"fcgi.pl`` wrapper, tweak this to your heart's content."
+msgstr ""
+
+#: ../../source/start/topics/examples/simplecgi.rst:223
+msgid ""
+"I've been able to run Python, Perl, and C++ cgi apps with this - apps that "
+"use GET or POST."
+msgstr ""
+
+#: ../../source/start/topics/examples/simplecgi.rst:225
+msgid ""
+"You may find that ``$document_root`` does not point to your actual document "
+"root (hardcoded upon build), so you can replace the fastcgi param "
+"DOCUMENT_ROOT with \"/the/real/path\". Also replace the SCRIPT_FILENAME "
+"param if that is used by your CGI wrapper (the one above does)"
+msgstr ""

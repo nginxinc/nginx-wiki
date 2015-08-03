@@ -664,20 +664,8 @@ msgstr ""
 msgid "English Mailing List"
 msgstr ""
 
-#: ../../source/modules/memc.rst:593
-msgid ""
-"The `openresty-en <https://groups.google.com/group/openresty-en>`_ mailing "
-"list is for English speakers."
-msgstr ""
-
 #: ../../source/modules/memc.rst:597
 msgid "Chinese Mailing List"
-msgstr ""
-
-#: ../../source/modules/memc.rst:598
-msgid ""
-"The `openresty <https://groups.google.com/group/openresty>`_ mailing list is"
-" for Chinese speakers."
 msgstr ""
 
 #: ../../source/modules/memc.rst:605
@@ -756,7 +744,7 @@ msgid ""
 "`IO::Socket <http://search.cpan.org/perldoc?IO::Socket>`_"
 msgstr ""
 
-#: ../../source/modules/memc.rst:657
+#: ../../source/modules/memc.rst:656
 msgid ""
 "Because a single nginx server (by default, ``localhost:1984``) is used "
 "across all the test scripts (``.t`` files), it's meaningless to run the test"
@@ -764,99 +752,99 @@ msgid ""
 "utility."
 msgstr ""
 
-#: ../../source/modules/memc.rst:661
+#: ../../source/modules/memc.rst:660
 msgid ""
 "You should also keep a memcached server listening on the ``11211`` port at "
 "localhost before running the test suite."
 msgstr ""
 
-#: ../../source/modules/memc.rst:664
+#: ../../source/modules/memc.rst:663
 msgid ""
 "Some parts of the test suite requires modules `rewrite "
 "<http://nginx.org/en/docs/http/ngx_http_rewrite_module.html>`_ and "
 ":doc:`echo` to be enabled as well when building Nginx."
 msgstr ""
 
-#: ../../source/modules/memc.rst:672
+#: ../../source/modules/memc.rst:671
 msgid "TODO"
 msgstr ""
 
-#: ../../source/modules/memc.rst:673
+#: ../../source/modules/memc.rst:672
 msgid ""
 "add support for the memcached commands ``cas``, ``gets`` and ``stats "
 "$memc_value``."
 msgstr ""
 
-#: ../../source/modules/memc.rst:674
+#: ../../source/modules/memc.rst:673
 msgid "add support for the ``noreply`` option."
 msgstr ""
 
-#: ../../source/modules/memc.rst:679
+#: ../../source/modules/memc.rst:678
 msgid "Getting involved"
 msgstr ""
 
-#: ../../source/modules/memc.rst:680
+#: ../../source/modules/memc.rst:679
 msgid ""
 "You'll be very welcomed to submit patches to the `author <memc.author_>`_ or"
 " just ask for a commit bit to the `source repository <memc.source-"
 "repository_>`_ on GitHub."
 msgstr ""
 
-#: ../../source/modules/memc.rst:689
+#: ../../source/modules/memc.rst:688
 msgid "Author"
 msgstr ""
 
-#: ../../source/modules/memc.rst:690
+#: ../../source/modules/memc.rst:689
 msgid "Yichun \"agentzh\" Zhang (章亦春) *<agentzh@gmail.com>*, CloudFlare Inc."
 msgstr ""
 
-#: ../../source/modules/memc.rst:692
+#: ../../source/modules/memc.rst:691
 msgid ""
 "This wiki page is also maintained by the author himself, and everybody is "
 "encouraged to improve this page as well."
 msgstr ""
 
-#: ../../source/modules/memc.rst:698
+#: ../../source/modules/memc.rst:697
 msgid "Copyright & License"
 msgstr ""
 
-#: ../../source/modules/memc.rst:699
+#: ../../source/modules/memc.rst:698
 msgid ""
 "The code base is borrowed directly from the standard `memcached module "
 "<http://nginx.org/en/docs/http/ngx_http_memcached_module.html>`__ in the "
 "Nginx core. This part of code is copyrighted by Igor Sysoev and Nginx Inc."
 msgstr ""
 
-#: ../../source/modules/memc.rst:703
+#: ../../source/modules/memc.rst:702
 msgid ""
 "Copyright (c) 2009-2013, Yichun \"agentzh\" Zhang (章亦春) <agentzh@gmail.com>,"
 " CloudFlare Inc."
 msgstr ""
 
-#: ../../source/modules/memc.rst:706
+#: ../../source/modules/memc.rst:705
 msgid "This module is licensed under the terms of the BSD license."
 msgstr ""
 
-#: ../../source/modules/memc.rst:708
+#: ../../source/modules/memc.rst:707
 msgid ""
 "Redistribution and use in source and binary forms, with or without "
 "modification, are permitted provided that the following conditions are met:"
 msgstr ""
 
-#: ../../source/modules/memc.rst:712
+#: ../../source/modules/memc.rst:711
 msgid ""
 "Redistributions of source code must retain the above copyright notice, this "
 "list of conditions and the following disclaimer."
 msgstr ""
 
-#: ../../source/modules/memc.rst:713
+#: ../../source/modules/memc.rst:712
 msgid ""
 "Redistributions in binary form must reproduce the above copyright notice, "
 "this list of conditions and the following disclaimer in the documentation "
 "and/or other materials provided with the distribution."
 msgstr ""
 
-#: ../../source/modules/memc.rst:715
+#: ../../source/modules/memc.rst:714
 msgid ""
 "THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS \"AS "
 "IS\" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED TO, "
@@ -871,14 +859,14 @@ msgid ""
 "ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
 msgstr ""
 
-#: ../../source/modules/memc.rst:731
+#: ../../source/modules/memc.rst:730
 msgid ""
 "The original announcement email on the nginx mailing list: `ngx_memc: \"an "
 "extended version of ngx_memcached that supports set, add, delete, and many "
 "more commands\" <http://forum.nginx.org/read.php?2,28359>`_"
 msgstr ""
 
-#: ../../source/modules/memc.rst:732
+#: ../../source/modules/memc.rst:731
 msgid ""
 "My slides demonstrating various ngx_memc usage: "
 "http://agentzh.org/misc/slides/nginx-conf-scripting/nginx-conf-"
@@ -886,35 +874,57 @@ msgid ""
 "swith pages)"
 msgstr ""
 
-#: ../../source/modules/memc.rst:733
+#: ../../source/modules/memc.rst:732
 msgid ""
 "The latest `memcached TCP protocol "
 "<https://github.com/memcached/memcached/blob/master/doc/protocol.txt>`_."
 msgstr ""
 
-#: ../../source/modules/memc.rst:734
+#: ../../source/modules/memc.rst:733
 msgid "The :github:`ngx_srcache <openresty/srcache-nginx-module>` module"
 msgstr ""
 
-#: ../../source/modules/memc.rst:735
+#: ../../source/modules/memc.rst:734
 msgid ""
 "The :github:`lua-resty-memcached <openresty/lua-resty-memcached>` library "
 "based on the :doc:`lua` cosocket API."
 msgstr ""
 
-#: ../../source/modules/memc.rst:736
+#: ../../source/modules/memc.rst:735
 msgid ""
 "The standard `memcached "
 "<http://nginx.org/en/docs/http/ngx_http_memcached_module.html>`_ module."
 msgstr ""
 
-#: ../../source/modules/memc.rst:737
+#: ../../source/modules/memc.rst:736
 msgid "The :doc:`echo` for Nginx module's automated testing."
 msgstr ""
 
-#: ../../source/modules/memc.rst:738
+#: ../../source/modules/memc.rst:737
 msgid ""
 "The standard `headers "
 "<http://nginx.org/en/docs/http/ngx_http_headers_module.html>`_ module and "
 "the 3rd-parth :doc:`headers_more` module."
 msgstr ""
+
+#: ../../source/modules/memc.rst:593
+msgid ""
+"The `openresty-en <https://groups.google.com/forum/#!forum/openresty-en>`_ "
+"mailing list is for English speakers."
+msgstr ""
+
+#: ../../source/modules/memc.rst:598
+msgid ""
+"The `openresty <https://groups.google.com/forum/#!forum/openresty>`_ mailing"
+" list is for Chinese speakers."
+msgstr ""
+
+#~ msgid ""
+#~ "The `openresty-en <https://groups.google.com/group/openresty-en>`_ mailing "
+#~ "list is for English speakers."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The `openresty <https://groups.google.com/group/openresty>`_ mailing list is"
+#~ " for Chinese speakers."
+#~ msgstr ""

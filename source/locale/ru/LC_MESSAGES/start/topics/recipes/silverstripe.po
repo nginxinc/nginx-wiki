@@ -15,35 +15,65 @@ msgstr ""
 msgid "SilverStripe"
 msgstr ""
 
-#: ../../source/start/topics/recipes/silverstripe.rst:4
-msgid ""
-"`SilverStripe <http://www.silverstripe.org/>`_ is a modern PHP based CMS "
-"Framework that runs happily on nginx.  There are several built in failsafes "
-"that will attempt to rectify any errors in rewrite rules.  First, SS relies "
-"on an .htaccess file to define how to handle URLs.  Second, in the event "
-"that rewriting has failed the index.php file will attempt to set internal "
-"variables and include the core /sapphire/main.php file for processing."
-msgstr ""
-
-#: ../../source/start/topics/recipes/silverstripe.rst:8
-msgid ""
-"These instructions assume you are using PHP configured as "
-":doc:`../examples/phpfcgi` or PHP-FPM listening on 127.0.0.1:9000.  Make any"
-" appropriate changes fastcgi_params as needed for your environment."
-msgstr ""
-
-#: ../../source/start/topics/recipes/silverstripe.rst:11
+#: ../../source/start/topics/recipes/silverstripe.rst:16
 msgid "Recipe"
 msgstr ""
 
-#: ../../source/start/topics/recipes/silverstripe.rst:13
+#: ../../source/start/topics/recipes/silverstripe.rst:18
 msgid ""
 "The basic rewrite that controls all SilverStripe calls involve passing the "
 "URI and any GET vars to ``$document_root/framework/main.php``."
 msgstr ""
 
-#: ../../source/start/topics/recipes/silverstripe.rst:15
+#: ../../source/start/topics/recipes/silverstripe.rst:4
 msgid ""
-"# Remove the .htaccess file and index.php in the root of your SilverStripe "
-"installation (Just to be sure) # Apply a config similar to the following:"
+"`SilverStripe <http://www.silverstripe.org/>`_ is a modern PHP based CMS "
+"Framework that runs happily on nginx."
 msgstr ""
+
+#: ../../source/start/topics/recipes/silverstripe.rst:6
+msgid ""
+"There are several built in failsafes that will attempt to rectify any errors"
+" in rewrite rules. First, SS relies on an ``.htaccess`` file to define how "
+"to handle URLs. Second, in the event that rewriting has failed the "
+"``index.php`` file will attempt to set internal variables and include the "
+"core ``/sapphire/main.php`` file for processing."
+msgstr ""
+
+#: ../../source/start/topics/recipes/silverstripe.rst:12
+msgid ""
+"These instructions assume you are using PHP configured as "
+":doc:`../examples/phpfcgi` or PHP-FPM listening on 127.0.0.1:9000. Make any "
+"appropriate changes `fastcgi_params <|HttpFastCGIModule|#fastcgi_params>`_ "
+"as needed for your environment."
+msgstr ""
+
+#: ../../source/start/topics/recipes/silverstripe.rst:20
+msgid ""
+"Remove the ``.htaccess`` file and ``index.php`` in the root of your "
+"SilverStripe installation (Just to be sure)"
+msgstr ""
+
+#: ../../source/start/topics/recipes/silverstripe.rst:21
+msgid "Apply a config similar to the following:"
+msgstr ""
+
+#~ msgid ""
+#~ "`SilverStripe <http://www.silverstripe.org/>`_ is a modern PHP based CMS "
+#~ "Framework that runs happily on nginx.  There are several built in failsafes "
+#~ "that will attempt to rectify any errors in rewrite rules.  First, SS relies "
+#~ "on an .htaccess file to define how to handle URLs.  Second, in the event "
+#~ "that rewriting has failed the index.php file will attempt to set internal "
+#~ "variables and include the core /sapphire/main.php file for processing."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "These instructions assume you are using PHP configured as "
+#~ ":doc:`../examples/phpfcgi` or PHP-FPM listening on 127.0.0.1:9000.  Make any"
+#~ " appropriate changes fastcgi_params as needed for your environment."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "# Remove the .htaccess file and index.php in the root of your SilverStripe "
+#~ "installation (Just to be sure) # Apply a config similar to the following:"
+#~ msgstr ""

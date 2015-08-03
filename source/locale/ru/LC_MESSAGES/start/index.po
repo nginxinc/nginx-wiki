@@ -14,3 +14,390 @@ msgstr ""
 #: ../../source/start/index.rst:2
 msgid "Getting Started"
 msgstr ""
+
+#: ../../source/start/index.rst:65
+msgid ""
+"We have this handy :doc:`getting started<topics/tutorials/gettingstarted>` "
+"document to get you going. Additionally there are examples and tutorials "
+"below to help you get up to speed with configuring NGINX the way you want "
+"it."
+msgstr ""
+
+#: ../../source/start/index.rst:68
+msgid "Installing & Configuring NGINX"
+msgstr ""
+
+#: ../../source/start/index.rst:70
+msgid ":doc:`Installing NGINX<topics/tutorials/install>`"
+msgstr ""
+
+#: ../../source/start/index.rst:71
+msgid ":doc:`topics/tutorials/installoptions`"
+msgstr ""
+
+#: ../../source/start/index.rst:72
+msgid ":doc:`NGINX command line<topics/tutorials/commandline>`"
+msgstr ""
+
+#: ../../source/start/index.rst:73
+msgid ":doc:`Things to Avoid at all Costs<topics/tutorials/config_pitfalls>`"
+msgstr ""
+
+#: ../../source/start/index.rst:74
+msgid ":doc:`Why IF Really is Evil<topics/depth/ifisevil>`"
+msgstr ""
+
+#: ../../source/start/index.rst:75
+msgid ":doc:`Serving PHP<topics/tutorials/dynamic_php>`"
+msgstr ""
+
+#: ../../source/start/index.rst:78
+msgid "Pre-canned Configurations"
+msgstr ""
+
+#: ../../source/start/index.rst:80
+msgid ""
+"As you learned in the tutorials, most Nginx configuration files are very "
+"similar. You can apply the same logic to most web applications and achieve "
+"the desired result. There are some applications that have weird little "
+"quirks that tend to throw a wrench in things."
+msgstr ""
+
+#: ../../source/start/index.rst:85
+msgid ""
+"Nginx happens to have a very well rounded community that has worked to first"
+" address these quirks and then share the resulting configurations. This has "
+"resulted in many \"copy and paste\" configurations that are almost "
+"guaranteed to work."
+msgstr ""
+
+#: ../../source/start/index.rst:90
+msgid ""
+"`ActiveColab <https://www.howtoforge.com/running-activecollab-3-on-nginx-"
+"lemp-on-debian-wheezy-ubuntu-12.10>`_"
+msgstr ""
+
+#: ../../source/start/index.rst:91
+msgid ":doc:`topics/recipes/alkaline`"
+msgstr ""
+
+#: ../../source/start/index.rst:92
+msgid "`Chive <https://github.com/perusio/chive-nginx>`_"
+msgstr ""
+
+#: ../../source/start/index.rst:93
+msgid ":doc:`topics/recipes/cms_made_simple`"
+msgstr ""
+
+#: ../../source/start/index.rst:94
+msgid ":doc:`topics/recipes/codeigniter`"
+msgstr ""
+
+#: ../../source/start/index.rst:95
+msgid ""
+"`Contao <https://www.howtoforge.com/running-contao-2.10.2-on-nginx-lemp-on-"
+"debian-squeeze-ubuntu-11.10>`_"
+msgstr ""
+
+#: ../../source/start/index.rst:96
+msgid ""
+"`CS-Cart <https://www.howtoforge.com/running-cs-cart-on-nginx-lemp-on-"
+"debian-wheezy-ubuntu-13.04>`_"
+msgstr ""
+
+#: ../../source/start/index.rst:97
+msgid ":doc:`topics/recipes/dokuwiki`"
+msgstr ""
+
+#: ../../source/start/index.rst:98
+msgid ":doc:`topics/recipes/drupal`"
+msgstr ""
+
+#: ../../source/start/index.rst:99
+msgid ":doc:`topics/recipes/elgg`"
+msgstr ""
+
+#: ../../source/start/index.rst:100
+msgid ""
+"`Feng Office <https://www.howtoforge.com/running-feng-office-community-"
+"edition-on-nginx-lemp-on-debian-squeeze-ubuntu-11.10>`_"
+msgstr ""
+
+#: ../../source/start/index.rst:101
+msgid ""
+"`Icinga <https://www.howtoforge.com/icinga-configuration-for-nginx-on-"
+"debian-wheezy-ubuntu-11.10>`_"
+msgstr ""
+
+#: ../../source/start/index.rst:102
+msgid ":doc:`topics/recipes/iredmail`"
+msgstr ""
+
+#: ../../source/start/index.rst:103
+msgid "`Joomla <https://docs.joomla.org/Nginx>`_"
+msgstr ""
+
+#: ../../source/start/index.rst:104
+msgid ":doc:`topics/recipes/mailman`"
+msgstr ""
+
+#: ../../source/start/index.rst:105
+msgid ":doc:`topics/recipes/mediawiki`"
+msgstr ""
+
+#: ../../source/start/index.rst:106
+msgid ":doc:`topics/recipes/moinmoin`"
+msgstr ""
+
+#: ../../source/start/index.rst:107
+msgid ":doc:`topics/recipes/mybb`"
+msgstr ""
+
+#: ../../source/start/index.rst:108
+msgid ":doc:`topics/recipes/omeka`"
+msgstr ""
+
+#: ../../source/start/index.rst:109
+msgid ":doc:`topics/recipes/oscommerce`"
+msgstr ""
+
+#: ../../source/start/index.rst:110
+msgid ":doc:`topics/recipes/osticket`"
+msgstr ""
+
+#: ../../source/start/index.rst:111
+msgid ""
+"`ownCloud <https://www.howtoforge.com/running-owncloud-5.0-on-nginx-lemp-on-"
+"debian-wheezy>`_"
+msgstr ""
+
+#: ../../source/start/index.rst:112
+msgid ""
+"`OXID eShop <https://www.howtoforge.com/running-oxid-eshop-community-"
+"edition-version-4.5.9-on-nginx-lemp-on-debian-squeeze-ubuntu-11.10>`_"
+msgstr ""
+
+#: ../../source/start/index.rst:113
+msgid ""
+"`phpBB "
+"<https://raw.githubusercontent.com/phpbb/phpbb3/master/phpBB/docs/nginx.sample.conf>`_"
+msgstr ""
+
+#: ../../source/start/index.rst:114
+msgid ":doc:`topics/recipes/phplist`"
+msgstr ""
+
+#: ../../source/start/index.rst:115
+msgid ":doc:`topics/recipes/piwik`"
+msgstr ""
+
+#: ../../source/start/index.rst:116
+msgid ":doc:`topics/recipes/pmwiki`"
+msgstr ""
+
+#: ../../source/start/index.rst:117
+msgid ""
+"`PrestaShop <https://www.howtoforge.com/running-prestashop-1.5.x-on-nginx-"
+"lemp-on-debian-wheezy-ubuntu-12.10>`_"
+msgstr ""
+
+#: ../../source/start/index.rst:118
+msgid ""
+"`ProcessWire <https://www.howtoforge.com/running-processwire-on-nginx-lemp-"
+"on-debian-wheezy-ubuntu-13.04>`_"
+msgstr ""
+
+#: ../../source/start/index.rst:119
+msgid ":doc:`topics/recipes/pyrocms`"
+msgstr ""
+
+#: ../../source/start/index.rst:120
+msgid ":doc:`topics/recipes/qwebirc`"
+msgstr ""
+
+#: ../../source/start/index.rst:121
+msgid ""
+"`Redaxo <https://www.howtoforge.com/running-redaxo-4.4.x-on-nginx-lemp-on-"
+"debian-wheezy-ubuntu-12.10>`_"
+msgstr ""
+
+#: ../../source/start/index.rst:122
+msgid ":doc:`topics/recipes/redmine`"
+msgstr ""
+
+#: ../../source/start/index.rst:123
+msgid ""
+"`Roundcube <https://www.howtoforge.com/running-roundcube-0.7.1-on-nginx-"
+"lemp-on-debian-squeeze-ubuntu-11.10>`_"
+msgstr ""
+
+#: ../../source/start/index.rst:124
+msgid ""
+"`Shopware 3.5.6 <https://www.howtoforge.com/running-shopware-community-"
+"edition-version-3.5.6-on-nginx-lemp-on-debian-squeeze-ubuntu-12.04>`_"
+msgstr ""
+
+#: ../../source/start/index.rst:125
+msgid ""
+"`Shopware 4.0.x <https://www.howtoforge.com/running-new-shopware-"
+"version-4.0.x-on-nginx-lemp-on-ubuntu-12.04>`_"
+msgstr ""
+
+#: ../../source/start/index.rst:126
+msgid ":doc:`topics/recipes/silverstripe`"
+msgstr ""
+
+#: ../../source/start/index.rst:127
+msgid ""
+"`Simple Groupware <https://www.howtoforge.com/running-simple-groupware-on-"
+"nginx-lemp-on-debian-squeeze-ubuntu-11.10>`_"
+msgstr ""
+
+#: ../../source/start/index.rst:128
+msgid ":doc:`topics/recipes/spip`"
+msgstr ""
+
+#: ../../source/start/index.rst:129
+msgid ""
+"`SugarCRM <https://www.howtoforge.com/running-sugarcrm-community-edition-on-"
+"nginx-lemp-on-debian-squeeze-ubuntu-11.04>`_"
+msgstr ""
+
+#: ../../source/start/index.rst:130
+msgid ":doc:`topics/recipes/symfony`"
+msgstr ""
+
+#: ../../source/start/index.rst:131
+msgid ""
+"`TYPO3 4.6 <https://www.howtoforge.com/running-typo3-4.6-on-nginx-lemp-on-"
+"debian-squeeze-ubuntu-11.10>`_"
+msgstr ""
+
+#: ../../source/start/index.rst:132
+msgid ""
+"`TYPO3 6.3 <https://www.howtoforge.com/running-typo3-6.2-on-nginx-lemp-on-"
+"debian-wheezy-ubuntu-13.10>`_"
+msgstr ""
+
+#: ../../source/start/index.rst:133
+msgid ":doc:`topics/recipes/wordpress`"
+msgstr ""
+
+#: ../../source/start/index.rst:134
+msgid ":doc:`topics/recipes/xenforo`"
+msgstr ""
+
+#: ../../source/start/index.rst:135
+msgid ":doc:`topics/recipes/yii`"
+msgstr ""
+
+#: ../../source/start/index.rst:136
+msgid ":doc:`topics/recipes/zend`"
+msgstr ""
+
+#: ../../source/start/index.rst:137
+msgid ":doc:`topics/recipes/zenphoto`"
+msgstr ""
+
+#: ../../source/start/index.rst:140
+msgid "Other Examples"
+msgstr ""
+
+#: ../../source/start/index.rst:142
+msgid ""
+"Of course, Nginx can do much more. We're barely scratching the surface. If "
+"you're interested, you can take a look at some other examples that have been"
+" developed."
+msgstr ""
+
+#: ../../source/start/index.rst:146
+msgid ":doc:`topics/examples/full`"
+msgstr ""
+
+#: ../../source/start/index.rst:147
+msgid ":doc:`topics/examples/fullexample2`"
+msgstr ""
+
+#: ../../source/start/index.rst:148
+msgid ":doc:`topics/examples/loadbalanceexample`"
+msgstr ""
+
+#: ../../source/start/index.rst:149
+msgid ":doc:`topics/examples/reverseproxycachingexample`"
+msgstr ""
+
+#: ../../source/start/index.rst:150
+msgid ":doc:`topics/examples/SSL-Offloader`"
+msgstr ""
+
+#: ../../source/start/index.rst:151
+msgid ":doc:`topics/examples/logrotation`"
+msgstr ""
+
+#: ../../source/start/index.rst:152
+msgid ":doc:`topics/examples/server_blocks`"
+msgstr ""
+
+#: ../../source/start/index.rst:153
+msgid ":doc:`topics/examples/dynamic_ssi`"
+msgstr ""
+
+#: ../../source/start/index.rst:154
+msgid ":doc:`topics/examples/phpfcgi`"
+msgstr ""
+
+#: ../../source/start/index.rst:155
+msgid ":doc:`topics/examples/phpfastcgionwindows`"
+msgstr ""
+
+#: ../../source/start/index.rst:156
+msgid ":doc:`topics/examples/simplecgi`"
+msgstr ""
+
+#: ../../source/start/index.rst:157
+msgid ":doc:`topics/examples/simplepythonfcgi`"
+msgstr ""
+
+#: ../../source/start/index.rst:158
+msgid ":doc:`topics/examples/fastcgiexample`"
+msgstr ""
+
+#: ../../source/start/index.rst:159
+msgid ":doc:`topics/examples/fcgiwrap`"
+msgstr ""
+
+#: ../../source/start/index.rst:160
+msgid ":doc:`topics/examples/javaservers`"
+msgstr ""
+
+#: ../../source/start/index.rst:161
+msgid ":doc:`topics/examples/x-accel`"
+msgstr ""
+
+#: ../../source/start/index.rst:162
+msgid ":doc:`topics/examples/likeapache`"
+msgstr ""
+
+#: ../../source/start/index.rst:163
+msgid ":doc:`topics/examples/likeapache-htaccess`"
+msgstr ""
+
+#: ../../source/start/index.rst:164
+msgid ":doc:`topics/examples/separateerrorloggingpervirtualhost`"
+msgstr ""
+
+#: ../../source/start/index.rst:165
+msgid ":doc:`topics/examples/imapproxyexample`"
+msgstr ""
+
+#: ../../source/start/index.rst:166
+msgid ":doc:`topics/examples/imapauthenticatewithapachephpscript`"
+msgstr ""
+
+#: ../../source/start/index.rst:169
+msgid "Advanced Topics"
+msgstr ""
+
+#: ../../source/start/index.rst:171
+msgid ":doc:`topics/tutorials/debugging`"
+msgstr ""

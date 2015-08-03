@@ -1,0 +1,49 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-03 16:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/examples/imapauthenticatewithapachephpscript.rst:2
+msgid "Using a PHP Script on an Apache Server as the Auth Backend"
+msgstr ""
+
+#: ../../source/start/topics/examples/imapauthenticatewithapachephpscript.rst:4
+msgid ""
+"Start with the configuration from :doc:`imapproxyexample`. For detailed "
+"information about different configuration parameters, see the "
+"NginxMailCoreModule page."
+msgstr ""
+
+#: ../../source/start/topics/examples/imapauthenticatewithapachephpscript.rst:7
+msgid "Your Proxy server for pop/imap is running on 192.168.1.1"
+msgstr ""
+
+#: ../../source/start/topics/examples/imapauthenticatewithapachephpscript.rst:8
+msgid "You have 2 backend pop/imap servers: 192.168.1.22 and 192.168.1.33"
+msgstr ""
+
+#: ../../source/start/topics/examples/imapauthenticatewithapachephpscript.rst:9
+msgid ""
+"You have a webserver that you will use for the authentication and "
+"redirection logic 192.168.1.44."
+msgstr ""
+
+#: ../../source/start/topics/examples/imapauthenticatewithapachephpscript.rst:10
+msgid "The authentication script is ``/mail/auth.php``"
+msgstr ""
+
+#: ../../source/start/topics/examples/imapauthenticatewithapachephpscript.rst:15
+msgid "nginx.conf"
+msgstr ""
+
+#: ../../source/start/topics/examples/imapauthenticatewithapachephpscript.rst:50
+msgid "/mail/auth.php"
+msgstr ""

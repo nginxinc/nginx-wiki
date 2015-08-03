@@ -1,0 +1,93 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-03 16:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/examples/fastcgiexample.rst:2
+msgid "FastCGI Example"
+msgstr ""
+
+#: ../../source/start/topics/examples/fastcgiexample.rst:4
+msgid ""
+"First thing, I recommend keeping all your typical FCGI settings in a single "
+"file and importing them."
+msgstr ""
+
+#: ../../source/start/topics/examples/fastcgiexample.rst:6
+msgid ""
+"For example you might have an ``/etc/nginx/fastcgi.conf`` (or "
+"``/etc/nginx/fastcgi_params`` that's installed by default on debian) file "
+"that looks like this:"
+msgstr ""
+
+#: ../../source/start/topics/examples/fastcgiexample.rst:29
+msgid ""
+"This allows you to keep your individual FCGI configurations as simple as "
+"possible. You may also want to replace ``$document_root`` in "
+"``SCRIPT_FILENAME`` and ``DOCUMENT_ROOT`` with an actual path, the "
+"``$document_root`` variable is hardcoded and may not reflect your install "
+"(will cause variations on 'script not found' errors, usually). To use Nginx "
+"+ Virtual Host + PHP you should ommit the ``SCRIPT_NAME`` variable in order "
+"for PHP to choose the correct ``DOCUMENT_ROOT``."
+msgstr ""
+
+#: ../../source/start/topics/examples/fastcgiexample.rst:36
+msgid "Spawning a FastCGI Process"
+msgstr ""
+
+#: ../../source/start/topics/examples/fastcgiexample.rst:37
+msgid ""
+"Unlike Apache or Lighttpd, Nginx does not automatically spawn FCGI "
+"processes. You must start them separately. In fact, FCGI is a lot like "
+"proxying. There's a few ways to start FCGI programs, but luckily PHP5 will "
+"auto-spawn as many as you set in the ``PHP_FCGI_CHILDREN`` environment "
+"variable. So we simply run ``php -b 127.0.0.1:9000`` manually, or create an "
+"init script like so:"
+msgstr ""
+
+#: ../../source/start/topics/examples/fastcgiexample.rst:88
+msgid ""
+"Save this to ``/etc/init.d/`` (or wherever your init scripts are) as ``php-"
+"fcgi`` Install the usual way (for this debian init script, it's ``update-"
+"rc.d`` ``php-fcgi`` defaults) and start it."
+msgstr ""
+
+#: ../../source/start/topics/examples/fastcgiexample.rst:94
+msgid "Connecting Nginx to the running FastCGI Process"
+msgstr ""
+
+#: ../../source/start/topics/examples/fastcgiexample.rst:95
+msgid ""
+"Now that the FCGI process is running, we must tell Nginx to proxy requests "
+"to it via the FCGI protocol:"
+msgstr ""
+
+#: ../../source/start/topics/examples/fastcgiexample.rst:104
+msgid "Restart Nginx."
+msgstr ""
+
+#: ../../source/start/topics/examples/fastcgiexample.rst:109
+msgid "Secure your upload directory!!"
+msgstr ""
+
+#: ../../source/start/topics/examples/fastcgiexample.rst:110
+msgid ""
+"Too many example configs fail to secure the \"uploads\" directory of the "
+"application. Remember that if someone can upload a file named ``xyz.php`` "
+"and the uploads dir is publically accessible then you have given the "
+"attacker an easy way to insert PHP onto your site..."
+msgstr ""
+
+#: ../../source/start/topics/examples/fastcgiexample.rst:113
+msgid ""
+"So if your app has an upload dir ``\"/images/\"`` then insert ``if ($uri !~ "
+"\"^/images/\")`` before ``fastcgi_pass``, as so:"
+msgstr ""
