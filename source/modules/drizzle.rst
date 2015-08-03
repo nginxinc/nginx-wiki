@@ -8,10 +8,12 @@ drizzle-nginx-module - Upstream module for talking to MySQL and Drizzle directly
 .. note:: *This module is not distributed with the Nginx source.* See the `installation instructions <drizzle.installation_>`_.
 
 
+..
+  Link is bad, invalidating the content
 
-Status
-------
-This module is already production ready and is powering `the Taobao LineZing site <http://lz.taobao.com>`_.
+  Status
+  ------
+  This module is already production ready and is powering `the Taobao LineZing site <http://lz.taobao.com>`_.
 
 
 
