@@ -64,8 +64,8 @@ For Ubuntu, it is located at ``/var/run/nginx.pid``
 .. seealso::
 
    * :doc:`commandline` for more command-line options and process signals
-   * :doc:`faq` for solutions to common problems
-   * :doc:`../community/index` if you still can't find the answers to your questions
+   * :doc:`../../../community/faq` for solutions to common problems
+   * :doc:`../../../community/index` if you still can't find the answers to your questions
 
 .. todo::
    ..

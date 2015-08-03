@@ -1,0 +1,162 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-03 16:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:2
+msgid "Dispatching TurboGears Python via FCGI"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:4
+msgid ""
+"This confirmed to run on Mac OS X 10.4.7 under Turbogears 0.9.9 and 1.1a "
+"(so, no reason not to run under the 1.0b release)."
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:7
+msgid ""
+"Information was drawn from the Turbogears trac wiki which shows how to use "
+"Nginx to proxy to TG, and the nearby :doc:`fastcgiexample`  page, the latter"
+" detailing the PHP/FCGI process."
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:13
+msgid "This is for Nginx/FCGI/Turbogears"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:18
+msgid "Conventions"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:19
+msgid "Substitute thoughout with the values relevant to your own set-up:"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:21
+msgid "``${HOST} = localhost`` - (or whatever you choose)"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:22
+msgid "``${PORT} = 8080`` - (or whatever you choose)"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:23
+msgid "``${NGINX} = /usr/local/nginx`` - location of nginx installation"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:24
+msgid ""
+"``${PROJECTBASE} /opt/projects/wiki20`` - location of Turbogears project"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:25
+msgid "``${PROJECTNAME} wiki20``"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:30
+msgid "Getting the required files"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:31
+msgid ""
+"Two files are required to be created: ``${NGINX}/scripts/fcgi.py`` and "
+"``${NGINX}/scripts/${PROJECTNAME}.fcgi``."
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:33
+msgid "To create ``${NGINX}/scripts/fcgi.py``:"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:41
+msgid "To create ``${NGINX}/scripts/${PROJECTNAME}.fcgi`` ..."
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:43
+msgid ""
+"Copy and paste the following to ``${NGINX}/scripts/${PROJECTNAME}.fcgi``. "
+"Edit the file, navigate to the ``\"USER EDIT SECTION\"`` and replace each "
+"instance of ``${PROJECTBASE}`` and ``${PROJECTNAME}`` with the corresponding"
+" values for your project."
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:175
+msgid "Adjust the TurboGears configuration"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:176
+msgid ""
+"Edit the ``${PROJECTBASE}/dev.cfg`` or ``${PROJECTBASE}/prod.cfg`` file "
+"(whichever you are using), uncomment the ``server.socket_port`` assignment "
+"and change ``${PORT}`` to a value of your choice (make sure nothing else is "
+"running on that port, Tomcat defaults to 8080, as does Jetty. Save yourself "
+"some time and check first with a ``telnet localhost 8080``, you should see "
+"*Connection refused*)."
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:179
+msgid "The relevant lines in prod/dev.cfg are::"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:186
+msgid "Spawning a FastCGI TurboGears process"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:187
+msgid ""
+"The lighttpd \"spawn-fcgi\" script is useful: download, compile and install "
+"lighttpd. Then (replacing ``${HOST}`` and ``${PORT}`` values appropriately),"
+" execute the following::"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:195
+msgid "Nginx configuration"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:196
+msgid "Save the following into ``${NGINX}/conf/fastcgi_params``"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:221
+msgid ""
+"Add the following to the server section of the ``${NGINX}/conf/nginx.conf`` "
+"configuration file, changing ``${HOST}`` and ``${PORT}`` as appropriate:"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:246
+msgid "Starting Nginx"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:247
+msgid ""
+"Start nginx with ``${NGINX}/sbin/nginx``. Point your browser to "
+"``http://${HOST}:${PORT}/``, your Turboears project should be serving via "
+"FastCGI. If so... congratulations."
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:254
+msgid "Performance test software"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:255
+msgid "Basic but usefully free http://www.hpl.hp.com/research/linux/httperf/"
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:257
+msgid "Good luck."
+msgstr ""
+
+#: ../../source/start/topics/examples/simplepythonfcgi.rst:259
+msgid ""
+"I left the IP address as ``0.0.0.0`` because it worked for me, whereas "
+"``127.0.0.1`` did not. If you're experiencing difficulties connecting to "
+"``0.0.0.0:8080``, these are both alternative options: ``localhost:8080``, "
+"``127.0.0.1:8080``."
+msgstr ""

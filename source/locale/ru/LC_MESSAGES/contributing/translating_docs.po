@@ -1,0 +1,74 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-03 16:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/contributing/translating_docs.rst:2
+msgid "Translating Docs"
+msgstr ""
+
+#: ../../source/contributing/translating_docs.rst:4
+msgid ""
+"For the purposes of this document we are assuming you are translating into "
+"Russian. For other languages please replace ``ru`` with the language code "
+"for your language."
+msgstr ""
+
+#: ../../source/contributing/translating_docs.rst:7
+msgid "Setting up environment"
+msgstr ""
+
+#: ../../source/contributing/translating_docs.rst:9
+msgid ""
+"In addition to the standard python-sphinx you need a tool called ``sphinx-"
+"intl`` to help build the files required for translations. This can be "
+"instlaled as follows:"
+msgstr ""
+
+#: ../../source/contributing/translating_docs.rst:15
+msgid "The translateable messages are then extracted using gettext:"
+msgstr ""
+
+#: ../../source/contributing/translating_docs.rst:21
+msgid "These should be used to update the locale files:"
+msgstr ""
+
+#: ../../source/contributing/translating_docs.rst:28
+msgid "Translation Files"
+msgstr ""
+
+#: ../../source/contributing/translating_docs.rst:30
+msgid ""
+"Once you have updated them as above tou can find the translation source "
+"files in ``source/locale/ru/LC_MESSAGES``. In each file with a ``.po`` "
+"extension you will find entries of ``msgid`` and ``msgstr``. ``msgid`` "
+"contains the English and ``msgstr`` is where the translation should go. If "
+"more context is needed each entry will state which source file and line it "
+"came from."
+msgstr ""
+
+#: ../../source/contributing/translating_docs.rst:32
+msgid ""
+"These .po files should be added to GitHub when committing so the "
+"translations are stored with the source."
+msgstr ""
+
+#: ../../source/contributing/translating_docs.rst:35
+msgid "Testing Translations"
+msgstr ""
+
+#: ../../source/contributing/translating_docs.rst:37
+msgid "Translatated versions of the wiki are built using:"
+msgstr ""
+
+#: ../../source/contributing/translating_docs.rst:44
+msgid "The output in the ``build/html`` will now be the translated version."
+msgstr ""

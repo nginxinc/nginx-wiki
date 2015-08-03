@@ -641,20 +641,8 @@ msgstr ""
 msgid "English Mailing List"
 msgstr ""
 
-#: ../../source/modules/redis2.rst:619
-msgid ""
-"The `openresty-en <https://groups.google.com/group/openresty-en>`_ mailing "
-"list is for English speakers."
-msgstr ""
-
 #: ../../source/modules/redis2.rst:625
 msgid "Chinese Mailing List"
-msgstr ""
-
-#: ../../source/modules/redis2.rst:626
-msgid ""
-"The `openresty <https://groups.google.com/group/openresty>`_ mailing list is"
-" for Chinese speakers."
 msgstr ""
 
 #: ../../source/modules/redis2.rst:632
@@ -794,3 +782,25 @@ msgid ""
 "The :github:`lua-resty-redis <openresty/lua-resty-redis>` library based on "
 "the :doc:`lua` cosocket API."
 msgstr ""
+
+#: ../../source/modules/redis2.rst:619
+msgid ""
+"The `openresty-en <https://groups.google.com/forum/#!forum/openresty-en>`_ "
+"mailing list is for English speakers."
+msgstr ""
+
+#: ../../source/modules/redis2.rst:626
+msgid ""
+"The `openresty <https://groups.google.com/forum/#!forum/openresty>`_ mailing"
+" list is for Chinese speakers."
+msgstr ""
+
+#~ msgid ""
+#~ "The `openresty-en <https://groups.google.com/group/openresty-en>`_ mailing "
+#~ "list is for English speakers."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The `openresty <https://groups.google.com/group/openresty>`_ mailing list is"
+#~ " for Chinese speakers."
+#~ msgstr ""

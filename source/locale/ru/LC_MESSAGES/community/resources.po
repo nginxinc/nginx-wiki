@@ -1,0 +1,172 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-03 16:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/community/resources.rst:2
+msgid "Resources"
+msgstr ""
+
+#: ../../source/community/resources.rst:5
+msgid "Developer Resources"
+msgstr ""
+
+#: ../../source/community/resources.rst:6
+msgid ""
+"`Contributing Changes (official guide) "
+"<http://nginx.org/en/docs/contributing_changes.html>`_"
+msgstr ""
+
+#: ../../source/community/resources.rst:7
+msgid ":doc:`../start/topics/tutorials/gettingstarted`"
+msgstr ""
+
+#: ../../source/community/resources.rst:8
+msgid ":doc:`faq`"
+msgstr ""
+
+#: ../../source/community/resources.rst:18
+msgid "English Guides"
+msgstr ""
+
+#: ../../source/community/resources.rst:19
+msgid ""
+"`Evan Miller's Guide to Nginx Module Development <http://www.evanmiller.org"
+"/nginx-modules-guide.html>`_"
+msgstr ""
+
+#: ../../source/community/resources.rst:20
+msgid ""
+"`Evan Miller's Advanced Topics In Nginx Module Development "
+"<http://www.evanmiller.org/nginx-modules-guide-advanced.html>`_"
+msgstr ""
+
+#: ../../source/community/resources.rst:21
+msgid ""
+"Slides of agentzh's `Introduction to nginx.conf scripting "
+"<http://agentzh.org/misc/slides/nginx-conf-scripting/>`_ talk in Beijing "
+"(use arrow keys to navigate)"
+msgstr ""
+
+#: ../../source/community/resources.rst:22
+msgid ""
+"Slides of agentzh's `Recent developments in nginx.conf scripting "
+"<http://agentzh.org/misc/slides/recent-dev-nginx-conf/>`_ talk in Beijing "
+"(use arrow keys to navigate)"
+msgstr ""
+
+#: ../../source/community/resources.rst:23
+msgid ""
+"Slides of Joshua Zhu's `Nginx Internals <http://www.slideshare.net/joshzhu"
+"/nginx-internals>`_ talk in Guangzhou"
+msgstr ""
+
+#: ../../source/community/resources.rst:24
+msgid ""
+"`Nginx source code cross-reference "
+"<http://lxr.evanmiller.org/http/source/>`_"
+msgstr ""
+
+#: ../../source/community/resources.rst:25
+msgid ""
+"`nginx-devel mailing list archive <http://mailman.nginx.org/pipermail/nginx-"
+"devel/>`_"
+msgstr ""
+
+#: ../../source/community/resources.rst:26
+msgid ""
+"`Chapter about nginx in The Architecture of Open Source Applications Volume "
+"II <http://www.aosabook.org/en/nginx.html>`_"
+msgstr ""
+
+#: ../../source/community/resources.rst:27
+msgid "`nginx how-to at calomel.org <https://calomel.org/nginx.html>`_"
+msgstr ""
+
+#: ../../source/community/resources.rst:35
+msgid "Russian Guides"
+msgstr ""
+
+#: ../../source/community/resources.rst:36
+msgid "`Guide <http://www.grid.net.ru/nginx/nginx-modules.html>`_"
+msgstr ""
+
+#: ../../source/community/resources.rst:37
+msgid "`Blog <http://catap.ru/blog/tag/nginx%20programming%20guide/>`_"
+msgstr ""
+
+#: ../../source/community/resources.rst:43
+msgid "Translate with Google Translate or Babelfish."
+msgstr ""
+
+#: ../../source/community/resources.rst:48
+msgid "Chinese Guides"
+msgstr ""
+
+#: ../../source/community/resources.rst:49
+msgid ""
+"`Nginx Variable Tutorials <http://blog.sina.com.cn/openresty>`_ by `agentzh "
+"<http://agentzh.org>`_"
+msgstr ""
+
+#: ../../source/community/resources.rst:50
+msgid ""
+"`Nginx Code Review by chaoslawful and rainx "
+"<http://code.google.com/p/nginxsrp/wiki/NginxCodeReview>`_"
+msgstr ""
+
+#: ../../source/community/resources.rst:51
+msgid ""
+"`Chinese Version of Emiller's Guide <http://code.google.com/p/emillers-"
+"guide-to-nginx-module-chn/>`_"
+msgstr ""
+
+#: ../../source/community/resources.rst:62
+msgid "Other Resources"
+msgstr ""
+
+#: ../../source/community/resources.rst:63
+msgid ""
+"`Nginx mailing list archive <http://markmail.org/browse/ru.sysoev.nginx>`_"
+msgstr ""
+
+#: ../../source/community/resources.rst:64
+msgid ""
+"`Geolocation database for Nginx in CIDR format (countries by IP) "
+"<http://www.wipmania.com/en/base/>`_"
+msgstr ""
+
+#: ../../source/community/resources.rst:65
+msgid ""
+"`Experiment to automatically convert Apache rewrites to Nginx rewrites "
+"<http://www.anilcetin.com/convert-apache-htaccess-to-nginx/>`_"
+msgstr ""
+
+#: ../../source/community/resources.rst:66
+msgid ""
+"`Nginx and Memcached, a 400% boost! <https://www.igvita.com/2008/02/11"
+"/nginx-and-memcached-a-400-boost/>`_"
+msgstr ""
+
+#: ../../source/community/resources.rst:67
+msgid ""
+"`Parsing PHP sessions in Nginx <http://mauro-stettler.blogspot.com/2011/06"
+"/php-session-parser-in-production.html>`_"
+msgstr ""
+
+#: ../../source/community/resources.rst:68
+msgid ""
+"`PyMunin - Multigraph Munin Plugins in Python "
+"<http://aouyar.github.io/PyMunin/>`_ - PyMunin includes a Multigraph Munin "
+"Plugin for monitoring Nginx using http_stub_status module. Graphs active "
+"connections, connection rate, request rate and average requests per "
+"connection."
+msgstr ""

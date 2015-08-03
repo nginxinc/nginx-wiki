@@ -1,0 +1,83 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-03 16:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/examples/phpfastcgionwindows.rst:2
+msgid "PHP-FastCGI on Windows"
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfastcgionwindows.rst:5
+msgid "Overview"
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfastcgionwindows.rst:6
+msgid ""
+"Nginx can interface with PHP on Windows via a FastCGI daemon, which ships "
+"with PHP: php-cgi.exe. You need to run ``php-cgi.exe -b 127.0.0.1:<port>`` "
+"and use ``fastcgi_fastcgi_pass_ 127.0.0.1:<port>;`` in the nginx "
+"configuration file. After being launched, ``php-cgi.exe`` will keep "
+"listening for connections in a command prompt window. To hide that window, "
+"use the tiny utility `RunHiddenConsole "
+"<http://redmine.lighttpd.net/attachments/660/RunHiddenConsole.zip>`_"
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfastcgionwindows.rst:18
+msgid "Steps"
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfastcgionwindows.rst:19
+msgid "Install `Nginx for Win32 <install_win32_binaries_>_`."
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfastcgionwindows.rst:20
+msgid ""
+"Install the `Windows binaries of PHP <http://windows.php.net/>`_, making "
+"sure that ``php-cgi.exe`` is installed in the same directory as ``php.exe``."
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfastcgionwindows.rst:21
+msgid ""
+"Create somewhere (e.g. in ``c:\\nginx\\``) a batch file ``start-php-"
+"fcgi.bat`` similar to this one:"
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfastcgionwindows.rst:23
+msgid "start-php-fcgi.bat"
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfastcgionwindows.rst:32
+msgid "nginx.conf"
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfastcgionwindows.rst:48
+msgid "Autostarting PHP and Nginx"
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfastcgionwindows.rst:49
+msgid ""
+"Schedule a basic (on Windows Vista) task to run the batch file above at "
+"system start up under the SYSTEM account."
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfastcgionwindows.rst:50
+msgid ""
+"If using Windows Nginx from http://kevinworthington.com/nginx-for-windows/, "
+"schedule a basic (on Windows Vista) task to run ``C:\\nginx\\conf\\start-"
+"nginx.bat`` file at system start up under the SYSTEM account in starting "
+"directory ``C:\\nginx``."
+msgstr ""
+
+#: ../../source/start/topics/examples/phpfastcgionwindows.rst:51
+msgid ""
+"A home made Cygwin build of Nginx can be scheduled using a batch file "
+"similar to this:"
+msgstr ""

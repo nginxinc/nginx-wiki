@@ -1,0 +1,398 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-03 16:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/community/faq.rst:2
+msgid "Frequently Asked Questions"
+msgstr ""
+
+#: ../../source/community/faq.rst:4
+msgid ""
+"Please review this entire FAQ before querying IRC or sending questions to "
+"the mailing list."
+msgstr ""
+
+#: ../../source/community/faq.rst:6
+msgid ""
+"HI I have a question about the nginx webserver whenever I start nginx by "
+"``sudo ./nginx start`` and then type the ``ps -ef | grep nginx`` command I "
+"get the following output. (when I am in my ``/etc/init.d`` directory)"
+msgstr ""
+
+#: ../../source/community/faq.rst:15
+msgid "General Questions"
+msgstr ""
+
+#: ../../source/community/faq.rst:18
+msgid "How do you pronounce \"Nginx\"?"
+msgstr ""
+
+#: ../../source/community/faq.rst:19
+msgid ""
+"There seems to be some confusion surrounding the pronunciation of Nginx."
+msgstr ""
+
+#: ../../source/community/faq.rst:21
+msgid ""
+"`Pronunciation Key "
+"<http://dictionary.reference.com/help/luna/Spell_pron_key.html>`_"
+msgstr ""
+
+#: ../../source/community/faq.rst:23
+msgid "**Correct**"
+msgstr ""
+
+#: ../../source/community/faq.rst:25
+msgid "**en**-juhn-**eks***"
+msgstr ""
+
+#: ../../source/community/faq.rst:26
+msgid "Engine-X"
+msgstr ""
+
+#: ../../source/community/faq.rst:28
+msgid "**Incorrect**"
+msgstr ""
+
+#: ../../source/community/faq.rst:30
+msgid "**en**-jingks"
+msgstr ""
+
+#: ../../source/community/faq.rst:35
+msgid "Is it safe to use the development branch in production?"
+msgstr ""
+
+#: ../../source/community/faq.rst:36
+msgid ""
+"In general, all releases (development or otherwise) are quite stable. This "
+"site runs the latest development version at all times. Many nginx users tend"
+" to represent an \"early adopter\" crowd, so a large segment is using the "
+"bleeding edge version at any given point. The major and most important point"
+" about development version is that it can occasionally break APIs for 3rd "
+"party modules (APIs are sometimes changed in the development branch). Other "
+"than that, it gets all non-emergency bugfixes first."
+msgstr ""
+
+#: ../../source/community/faq.rst:42
+msgid ""
+"That said, if stability is crucial it is best to briefly hold off on "
+"deployment after a development release; critical bugs tend to show up within"
+" the first couple days (which often results in another release immediately "
+"afterwards). If no new release shows up in two or three days, then it's "
+"likely no one has found any critical bugs. In the event that you discover a "
+"bug, capture a debug log and submit a descriptive bug report!"
+msgstr ""
+
+#: ../../source/community/faq.rst:48
+msgid ""
+"How do I generate an .htpasswd file without having Apache tools installed?"
+msgstr ""
+
+#: ../../source/community/faq.rst:49
+msgid ""
+"In Linux (and other Posix):  given users John, Mary, Jane and Jim and "
+"passwords V3Ry, SEcRe7, V3RySEcRe7 and SEcRe7PwD, in order to generate a "
+"password file named .htpasswd, you would issue:"
+msgstr ""
+
+#: ../../source/community/faq.rst:67
+msgid ""
+"Or, you may use the following `crypt.pl <https://gist.github.com/3349662>`_ "
+"Perl script. Simply save it as e.g. ``crypt.pl`` and ``chmod 700 crypt.pl`` "
+"in order to be able to execute it."
+msgstr ""
+
+#: ../../source/community/faq.rst:86
+msgid ""
+"Or, you may use the `htpasswd.py "
+"<http://trac.edgewall.org/browser/trunk/contrib/htpasswd.py>`_ python "
+"script."
+msgstr ""
+
+#: ../../source/community/faq.rst:91
+msgid ""
+"Why isn't my $foo (e.g. rewrite, proxy, location, unix:/$PATH, etc.) "
+"configuration working for me?"
+msgstr ""
+
+#: ../../source/community/faq.rst:92
+msgid ""
+"Start by investigating possible problem causes. Review "
+":doc:`../start/topics/tutorials/debugging` and carefully look **LINE BY "
+"LINE** through the error log."
+msgstr ""
+
+#: ../../source/community/faq.rst:94
+msgid ""
+"If you can't determine the problem cause through testing, experimentation, "
+"searches on the 'net, etc., then **gather all relevant details** and clearly"
+" explain your problem on IRC or in a note to the mailing list. (If you are "
+"new to interacting with FOSS support communities, please read: `How To Ask "
+"Questions The Smart Way <http://catb.org/~esr/faqs/smart-questions.html>`_.)"
+msgstr ""
+
+#: ../../source/community/faq.rst:99
+msgid "Are there other, similar web servers?"
+msgstr ""
+
+#: ../../source/community/faq.rst:101
+msgid "`Cherokee <http://www.0x50.org/>`_"
+msgstr ""
+
+#: ../../source/community/faq.rst:102
+msgid "`Lighttpd (Lighty) <http://www.lighttpd.net/>`_"
+msgstr ""
+
+#: ../../source/community/faq.rst:103
+msgid "`thttpd <http://www.acme.com/software/thttpd/>`_"
+msgstr ""
+
+#: ../../source/community/faq.rst:105
+msgid ""
+"What most people mean by \"similar\" in this context is: \"lightweight\" or "
+"\"not Apache\". You can find many comparisons using Google, but most web "
+"servers fall into two categories: process-based (forking or threaded) and "
+"asynchronous. Nginx and Lighttpd are probably the two best-known "
+"asynchronous servers and Apache is undoubtedly the best known process-based "
+"server. Cherokee is a lesser-known process-based server (but with very high "
+"performance)."
+msgstr ""
+
+#: ../../source/community/faq.rst:110
+msgid ""
+"The main advantage of the asynchronous approach is *scalability*. In a "
+"process-based server, each simultaneous connection requires a thread which "
+"incurs significant overhead. An asynchronous server, on the other hand, is "
+"event-driven and handles requests in a single (or at least, very few) "
+"threads."
+msgstr ""
+
+#: ../../source/community/faq.rst:114
+msgid ""
+"While a process-based server can often perform on par with an asynchronous "
+"server under light loads, under heavier loads they usually consume far too "
+"much RAM, which significantly degrades performance. Also, they degrade much "
+"faster on less powerful hardware or in a resource-restricted environment "
+"such as a VPS."
+msgstr ""
+
+#: ../../source/community/faq.rst:117
+msgid ""
+"Pulling numbers from thin air for illustrative purposes: serving 10,000 "
+"simultaneous connections would probably only cause Nginx to use a few "
+"megabytes of RAM, while Apache would likely consume hundreds of megabytes "
+"(if it could do it at all)."
+msgstr ""
+
+#: ../../source/community/faq.rst:121
+msgid "Is support for chroot planned?"
+msgstr ""
+
+#: ../../source/community/faq.rst:122
+msgid ""
+"Unknown at this time.  Unless/until that changes, you can achieve a similar "
+"- or better - effect by using OS-level features (e.g. ``BSD Jails``, "
+"``OpenVZ`` with ``proxyarp`` on Linux, etc.)."
+msgstr ""
+
+#: ../../source/community/faq.rst:126
+msgid "What about support for something like mod_suexec?"
+msgstr ""
+
+#: ../../source/community/faq.rst:127
+msgid ""
+"mod_suexec is a solution to a problem that Nginx does not have. When running"
+" servers such as Apache, each instance consumes a significant amount of RAM,"
+" so it becomes important to only have a monolithic instance that handles all"
+" one's needs. With Nginx, the memory and CPU utilization is so low that "
+"running dozens of instances of it is not an issue."
+msgstr ""
+
+#: ../../source/community/faq.rst:131
+msgid ""
+"A comparable Nginx setup to Apache + ``mod_suexec`` is to run a separate "
+"instance of Nginx as the CGI script user (i.e. *the user that would have "
+"been specified as suexec user under Apache*), and then proxy to that from "
+"the main Nginx instance."
+msgstr ""
+
+#: ../../source/community/faq.rst:133
+msgid ""
+"Alternatively, PHP could simply be executed through FastCGI, which itself "
+"would be running under a CGI script user account."
+msgstr ""
+
+#: ../../source/community/faq.rst:135
+msgid ""
+"``mod_php`` (the module suexec is normally utilized to defend against) does "
+"not exist with Nginx."
+msgstr ""
+
+#: ../../source/community/faq.rst:140
+msgid "HTTP"
+msgstr ""
+
+#: ../../source/community/faq.rst:143
+msgid "What's this @ thing mean?"
+msgstr ""
+
+#: ../../source/community/faq.rst:144
+msgid ""
+"@location is a named location.  Named locations preserve $uri as it was "
+"before entering such location. They were introduced in 0.6.6 and can be "
+"reached only via `error_page <|HttpCoreModule|#error_page>`_, `post_action "
+"<|HttpCoreModule|#post_action>`_ (since 0.6.26) and `try_files "
+"<|HttpCoreModule|#try_files>`_ (since 0.7.27, backported to 0.6.36)."
+msgstr ""
+
+#: ../../source/community/faq.rst:150
+msgid "HTTP Proxying"
+msgstr ""
+
+#: ../../source/community/faq.rst:153
+msgid ""
+"For which general use cases is Nginx more appropriate than Squid? (And vice "
+"versa...)"
+msgstr ""
+
+#: ../../source/community/faq.rst:154
+msgid ""
+"Nginx is generally deployed as a reverse proxy, not as a caching proxy (like"
+" Squid). The key advantage with Nginx is its nominal RAM and CPU usage under"
+" heavy load. Squid is best applied to cache dynamic content for applications"
+" that cannot do it themselves."
+msgstr ""
+
+#: ../../source/community/faq.rst:158
+msgid ""
+"The |HttpProxyModule| offers configurations for caching upstream servers."
+msgstr ""
+
+#: ../../source/community/faq.rst:162
+msgid ""
+"Can I disable the buffering for upload progress? / How can I display upload "
+"progress on the client side?"
+msgstr ""
+
+#: ../../source/community/faq.rst:163
+msgid "These are both very frequently asked questions."
+msgstr ""
+
+#: ../../source/community/faq.rst:169
+msgid "(This functionality is planned for a future release of Nginx.)"
+msgstr ""
+
+#: ../../source/community/faq.rst:174
+msgid "Mail Proxying"
+msgstr ""
+
+#: ../../source/community/faq.rst:177
+msgid ""
+"Could someone explain how to configure and test the IMAP module (with a "
+"complete .conf example)?"
+msgstr ""
+
+#: ../../source/community/faq.rst:178
+msgid ""
+"Start with the configuration from the "
+":doc:`../start/topics/examples/imapproxyexample`."
+msgstr ""
+
+#: ../../source/community/faq.rst:180
+msgid ""
+"For detailed information about different configuration parameters, see the "
+"|MailCoreModule| page."
+msgstr ""
+
+#: ../../source/community/faq.rst:182
+msgid "Related resources:"
+msgstr ""
+
+#: ../../source/community/faq.rst:184
+msgid ":doc:`../start/topics/examples/imapauthenticatewithapachephpscript`"
+msgstr ""
+
+#: ../../source/community/faq.rst:192
+msgid "How can Nginx be deployed as an SMTP proxy, with a Postfix backend?"
+msgstr ""
+
+#: ../../source/community/faq.rst:193
+msgid "First, declare the mail part as follows:"
+msgstr ""
+
+#: ../../source/community/faq.rst:213
+msgid ""
+"The example is for unauthenticated e-mail as you can see, but if you need "
+"authentication just check out the |MailCoreModule| information on how to "
+"achieve it. Postfix by default doesn't support XCLIENT, so it got turned off"
+" in the example as well."
+msgstr ""
+
+#: ../../source/community/faq.rst:216
+msgid ""
+"Next, you need to configure the authentication backend. If you just need to "
+"have some sort of pass-through mode towards a single address, you can do so "
+"with the following code:"
+msgstr ""
+
+#: ../../source/community/faq.rst:244
+msgid ""
+"Basically, it accepts connections and for a request towards a .php file, it "
+"will return with code 200 and with the address of the (in this case) Postfix"
+" backend (on 127.0.0.1:25 here)."
+msgstr ""
+
+#: ../../source/community/faq.rst:249
+msgid "Load Balancing"
+msgstr ""
+
+#: ../../source/community/faq.rst:252
+msgid ""
+"What algorithm does Nginx use to load balance?  Can it balance based on "
+"connection load?"
+msgstr ""
+
+#: ../../source/community/faq.rst:253
+msgid ""
+"Currently, Nginx has round-robin, least connections and ip-hash algorithms "
+"(all come with weights)."
+msgstr ""
+
+#: ../../source/community/faq.rst:255
+msgid "There are also a number of third-party modules for load balancing."
+msgstr ""
+
+#: ../../source/community/faq.rst:257
+msgid ""
+"Many users have requested that Nginx implement a feature in the load "
+"balancer to limit the number of requests per backend (usually to one).  "
+"While support for this is planned, it's worth mentioning that demand for "
+"this feature is rooted in misbehaviour on the part of the application being "
+"proxied ''to'' (Ruby on Rails seems to be one example). This is not an Nginx"
+" issue. In an ideal world, this particular problem fix request would be "
+"directed toward the backend application and its ability handle simultaneous "
+"requests."
+msgstr ""
+
+#: ../../source/community/faq.rst:262
+msgid "Miscellaneous"
+msgstr ""
+
+#: ../../source/community/faq.rst:265
+msgid ""
+"Why do I see \"Welcome to nginx!\" when I'm trying to access Facebook, "
+"Yahoo!, Google or some other well-known website? Is nginx a virus?"
+msgstr ""
+
+#: ../../source/community/faq.rst:266
+msgid "Nginx is not a virus. Please check a detailed description here::"
+msgstr ""

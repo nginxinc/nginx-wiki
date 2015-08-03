@@ -1,0 +1,143 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-03 16:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/tutorials/debugging.rst:3
+msgid "Debugging"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/debugging.rst:6
+msgid "Introduction"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/debugging.rst:7
+msgid ""
+"Nginx has wide range of debugging features, including detailed debug log."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/debugging.rst:9
+msgid ""
+"Most debugging nits are only activated when nginx compiled with *--with-"
+"debug* configure argument."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/debugging.rst:14
+msgid "Debugging log"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/debugging.rst:15
+msgid ""
+"See `a debugging log <http://nginx.org/en/docs/debugging_log.html>`_ in "
+"documentation for details."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/debugging.rst:17
+msgid ""
+"To activate debugging log you have to compile nginx with *--with-debug* "
+"configure option and set debug level in `error_log "
+"<|HttpCoreModule|#error_log>`_ directive."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/debugging.rst:19
+msgid ""
+"It's possible to debug only connections from specified addresses via "
+"`debug_connection <|EventModule|#debug_connection>`_ directive."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/debugging.rst:21
+msgid ""
+"In hard cases (e.g. debugging event method related problems) it's good idea "
+"to obtain full debugging log by setting debug level in global *error_log*."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/debugging.rst:26
+msgid "Core dump"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/debugging.rst:27
+msgid ""
+"To obtain core dump you usually have to tune your OS. Though nginx "
+"simplifies some typical cases and usually adding"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/debugging.rst:34
+msgid ""
+"to nginx.conf is enough. Then run gdb to obtain backtrace as usual, e.g."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/debugging.rst:41
+msgid ""
+"If your gdb backtrace warns that No symbol table info available. then you "
+"will need to recompile Nginx with the appropriate compiler flags for "
+"debugging symbols."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/debugging.rst:43
+msgid ""
+"The exact flags required depend on the compiler used. If you use GCC, the "
+"flag ``-g`` enables the inclusion of debugging symbols. Additionally "
+"disabling compiler optimization using ``-O0`` will make the debugger output "
+"easier to understand."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/debugging.rst:53
+msgid "Socket leaks"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/debugging.rst:54
+msgid ""
+"Sometimes socket leaks happen. This usually results in ``[alert] 15248#0: "
+"open socket #123 left in connection 456`` messages in error log on nginx "
+"reload/restart/shutdown. To debug add"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/debugging.rst:62
+msgid ""
+"to ``nginx.conf`` and configure core dumps (see above). This will result in "
+"``abort()`` call once nginx detects leak and core dump."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/debugging.rst:65
+msgid ""
+"Something like this in gdb should be usefull (assuming 456 is connection "
+"number from error message from the process which dumped core):"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/debugging.rst:75
+msgid ""
+"In particular, ``p $c->log->connection`` will print connection number as "
+"used in logs. It will be possible to grep debug log for relevant lines, e.g."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/debugging.rst:85
+msgid "Asking for help"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/debugging.rst:86
+msgid "When asking for help with debugging please provide:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/debugging.rst:88
+msgid "``nginx -V`` output"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/debugging.rst:89
+msgid "full config"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/debugging.rst:90
+msgid "debug log"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/debugging.rst:91
+msgid "backtrace (if nginx exits on signal)"
+msgstr ""

@@ -1,0 +1,103 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-03 16:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/examples/javaservers.rst:2
+msgid "Java servers like Jetty, GlassFish and Tomcat"
+msgstr ""
+
+#: ../../source/start/topics/examples/javaservers.rst:4
+msgid ""
+"You cannot deploy using .war files. The application files need to be "
+"deployed into a folder, because the Java web application folder must be "
+"specified for Nginx so that it can find and directly send static files like "
+"images (.jpg, .png, .gif), stylesheets (.css) and JavaScript (.js) directly."
+" These files don't need to be processed by the Java server - just let Nginx "
+"do this job."
+msgstr ""
+
+#: ../../source/start/topics/examples/javaservers.rst:8
+msgid "For this sample we use Jetty, because it has the best performance."
+msgstr ""
+
+#: ../../source/start/topics/examples/javaservers.rst:10
+msgid ""
+"In the below example nginx works as a reverse proxy in the front of Java "
+"Servers."
+msgstr ""
+
+#: ../../source/start/topics/examples/javaservers.rst:15
+msgid "Context of the web application on Jetty"
+msgstr ""
+
+#: ../../source/start/topics/examples/javaservers.rst:17
+msgid ""
+"Configure the context of your web application by editing "
+"``jetty/contexts/YOUR_WEB_APPLICATION_FOLDER.xml``"
+msgstr ""
+
+#: ../../source/start/topics/examples/javaservers.rst:19
+msgid ""
+"Be careful to set the resourceBase (YOUR_WEB_APPLICATION_FOLDER) and "
+"virtualHosts (YOUR_DOMAIN) correctly."
+msgstr ""
+
+#: ../../source/start/topics/examples/javaservers.rst:59
+msgid "Configure the path to the Java web application"
+msgstr ""
+
+#: ../../source/start/topics/examples/javaservers.rst:68
+msgid "Configure the address of the Java server"
+msgstr ""
+
+#: ../../source/start/topics/examples/javaservers.rst:77
+msgid ""
+"Configure the extensions and the servlet path to be processed by the Java "
+"server"
+msgstr ""
+
+#: ../../source/start/topics/examples/javaservers.rst:103
+msgid "Server section configuration"
+msgstr ""
+
+#: ../../source/start/topics/examples/javaservers.rst:137
+msgid "On the same server, protect the Java server from external access"
+msgstr ""
+
+#: ../../source/start/topics/examples/javaservers.rst:139
+msgid ""
+"If you are running Nginx on the same server of the Java, the best practice "
+"is to deny access to port 8080 so only Nginx can access it. On Linux do"
+msgstr ""
+
+#: ../../source/start/topics/examples/javaservers.rst:146
+msgid ""
+"If you have only 1 web application with Jetty, you can bind your host to "
+"localhost so that Jetty would run only from localhost."
+msgstr ""
+
+#: ../../source/start/topics/examples/javaservers.rst:148
+msgid "So you don't need to configure iptables to protect external access."
+msgstr ""
+
+#: ../../source/start/topics/examples/javaservers.rst:150
+msgid "On ``conf/jetty.xml``"
+msgstr ""
+
+#: ../../source/start/topics/examples/javaservers.rst:156
+msgid "Or on embedded Jetty server code:"
+msgstr ""
+
+#: ../../source/start/topics/examples/javaservers.rst:168
+msgid ""
+"To embed a java handler in nginx, check out :doc:`../../../modules/clojure`."
+msgstr ""

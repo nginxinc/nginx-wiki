@@ -146,15 +146,6 @@ msgid ""
 "platform. On Linux you can get the page size issuing::"
 msgstr ""
 
-#: ../../source/modules/concat.rst:100
-msgid ""
-"Usually is 4k. So if you try to concatenate a lot of files together in a "
-"given context you might hit this barrier. To overcome that OS defined "
-"limitation you must use the `large_client_header_buffers "
-"<http://wiki.nginx.org/NginxHttpCoreModule#large_client_header_buffers>`_ "
-"directive. Set it to the value you need."
-msgstr ""
-
 #: ../../source/modules/concat.rst:108
 msgid "concat_delimiter"
 msgstr ""
@@ -349,3 +340,20 @@ msgid ""
 "(INCLUDING NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF "
 "THIS SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE."
 msgstr ""
+
+#: ../../source/modules/concat.rst:100
+msgid ""
+"Usually is 4k. So if you try to concatenate a lot of files together in a "
+"given context you might hit this barrier. To overcome that OS defined "
+"limitation you must use the `large_client_header_buffers "
+"<|HttpCoreModule|#large_client_header_buffers>`_ directive. Set it to the "
+"value you need."
+msgstr ""
+
+#~ msgid ""
+#~ "Usually is 4k. So if you try to concatenate a lot of files together in a "
+#~ "given context you might hit this barrier. To overcome that OS defined "
+#~ "limitation you must use the `large_client_header_buffers "
+#~ "<http://wiki.nginx.org/NginxHttpCoreModule#large_client_header_buffers>`_ "
+#~ "directive. Set it to the value you need."
+#~ msgstr ""

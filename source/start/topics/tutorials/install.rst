@@ -189,7 +189,7 @@ After extracting the source, run these commands from a terminal:
 
 By default, Nginx will be installed in ``/usr/local/nginx``. You may change this and other options with the :doc:`installoptions`.
 
-You might also want to peruse the :doc:`3rd party modules <../modules/index>`, since these must be built at compile-time.
+You might also want to peruse the :doc:`3rd party modules <../../../modules/index>`, since these must be built at compile-time.
 
 
 Other Systems

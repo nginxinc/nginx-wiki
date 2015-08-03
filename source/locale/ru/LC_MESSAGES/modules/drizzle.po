@@ -1006,20 +1006,8 @@ msgstr ""
 msgid "English Mailing List"
 msgstr ""
 
-#: ../../source/modules/drizzle.rst:664
-msgid ""
-"The `openresty-en <https://groups.google.com/group/openresty-en>`_ mailing "
-"list is for English speakers."
-msgstr ""
-
 #: ../../source/modules/drizzle.rst:668
 msgid "Chinese Mailing List"
-msgstr ""
-
-#: ../../source/modules/drizzle.rst:669
-msgid ""
-"The `openresty <https://groups.google.com/group/openresty>`_ mailing list is"
-" for Chinese speakers."
 msgstr ""
 
 #: ../../source/modules/drizzle.rst:674
@@ -1260,3 +1248,25 @@ msgid ""
 "The :github:`lua-resty-mysql <openresty/lua-resty-mysql>` library based on "
 "the :doc:`lua` cosocket API."
 msgstr ""
+
+#: ../../source/modules/drizzle.rst:664
+msgid ""
+"The `openresty-en <https://groups.google.com/forum/#!forum/openresty-en>`_ "
+"mailing list is for English speakers."
+msgstr ""
+
+#: ../../source/modules/drizzle.rst:669
+msgid ""
+"The `openresty <https://groups.google.com/forum/#!forum/openresty>`_ mailing"
+" list is for Chinese speakers."
+msgstr ""
+
+#~ msgid ""
+#~ "The `openresty-en <https://groups.google.com/group/openresty-en>`_ mailing "
+#~ "list is for English speakers."
+#~ msgstr ""
+
+#~ msgid ""
+#~ "The `openresty <https://groups.google.com/group/openresty>`_ mailing list is"
+#~ " for Chinese speakers."
+#~ msgstr ""

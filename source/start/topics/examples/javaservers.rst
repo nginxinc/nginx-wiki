@@ -165,7 +165,7 @@ Or on embedded Jetty server code:
   server.start();
   server.join();
 
-.. seealso:: To embed a java handler in nginx, check out :doc:`../modules/clojure`.
+.. seealso:: To embed a java handler in nginx, check out :doc:`../../../modules/clojure`.
 
 .. todo::
    ..

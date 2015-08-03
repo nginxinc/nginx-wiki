@@ -1,0 +1,46 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-03 16:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/examples/separateerrorloggingpervirtualhost.rst:2
+msgid "Separating Error Logs per Virtual Host"
+msgstr ""
+
+#: ../../source/start/topics/examples/separateerrorloggingpervirtualhost.rst:4
+msgid ""
+"When you have multiple virtual hosts, it makes sense to keep a separate "
+"error logs for each one. Virtual hosts can be completely independent, and "
+"even managed by different admins. Therefore, each should have its own access"
+" and error log. (However, `lighttpd's author refuses to implement this "
+"feature "
+"<http://www.wikivs.com/wiki/Lighttpd_vs_nginx#Separated_error_logging_per_virtual_server>`_"
+" )."
+msgstr ""
+
+#: ../../source/start/topics/examples/separateerrorloggingpervirtualhost.rst:8
+msgid ""
+"Here is a configuration example for separate error logging per virtual host:"
+msgstr ""
+
+#: ../../source/start/topics/examples/separateerrorloggingpervirtualhost.rst:33
+msgid ""
+"This way, a request for ``one.org/nonexistent.html`` file will output the "
+"following error in ``logs/one.error``::"
+msgstr ""
+
+#: ../../source/start/topics/examples/separateerrorloggingpervirtualhost.rst:37
+msgid ""
+"The `error_log <|HttpCoreModule|#error_log>`_ directive has different "
+"default values depending on the section it appears in. This means that you "
+"have to explicitly set the error logging level in the `server {...} "
+"<|HttpCoreModule|#server>`_ block."
+msgstr ""

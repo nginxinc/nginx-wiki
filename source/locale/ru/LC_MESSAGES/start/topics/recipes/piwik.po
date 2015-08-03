@@ -22,5 +22,10 @@ msgstr ""
 #: ../../source/start/topics/recipes/piwik.rst:7
 msgid ""
 "This configuration file was provided by Seph. You can see the complete "
-"information [https://github.com/perusio/piwik-nginx here]."
+"information :github:`here <perusio/piwik-nginx>`."
 msgstr ""
+
+#~ msgid ""
+#~ "This configuration file was provided by Seph. You can see the complete "
+#~ "information [https://github.com/perusio/piwik-nginx here]."
+#~ msgstr ""

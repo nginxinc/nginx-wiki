@@ -1,0 +1,43 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-03 16:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/examples/likeapache.rst:2
+msgid "Nginx Solution for Apache ProxyPassReverse"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache.rst:5
+msgid "Apache"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache.rst:6
+msgid ""
+"Let's say we want to establish simple proxy between myhost:80 and "
+"myapp:8080. The Apache rule is simple:"
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache.rst:18
+msgid ""
+"But Nginx does not have ProxyPassReverse... The solution is adding a few "
+"missing HTTP headers."
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache.rst:20
+msgid ""
+"`proxy_redirect <|HttpProxyModule|#proxy_redirect>`_. This wiki is partly "
+"incorrect. If you need to do location header rewriting, then you will need "
+"to use `proxy_redirect <|HttpProxyModule|#proxy_redirect>`_ as well."
+msgstr ""
+
+#: ../../source/start/topics/examples/likeapache.rst:25
+msgid "Nginx"
+msgstr ""

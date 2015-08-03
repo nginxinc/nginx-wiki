@@ -16,8 +16,18 @@ General Questions
 
 How do you pronounce "Nginx"?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The correct pronunciation sounds like: "engine-ex".  (Next question: "What does that mean?" - We don't know, exactly.)
+There seems to be some confusion surrounding the pronunciation of Nginx.
 
+`Pronunciation Key <http://dictionary.reference.com/help/luna/Spell_pron_key.html>`_
+
+**Correct**
+
+* **en**-juhn-**eks***
+* Engine-X
+
+**Incorrect**
+
+* **en**-jingks
 
 .. _faq.is_it_safe:
 
@@ -79,7 +89,7 @@ How do I generate an .htpasswd file without having Apache tools installed?
 
 Why isn't my $foo (e.g. rewrite, proxy, location, unix:/$PATH, etc.) configuration working for me?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Start by investigating possible problem causes. Review :doc:`debugging` and carefully look **LINE BY LINE** through the error log.
+Start by investigating possible problem causes. Review :doc:`../start/topics/tutorials/debugging` and carefully look **LINE BY LINE** through the error log.
 
 If you can't determine the problem cause through testing, experimentation, searches on the 'net, etc., then **gather all relevant details** and clearly explain your problem on IRC or in a note to the mailing list.
 (If you are new to interacting with FOSS support communities, please read: `How To Ask Questions The Smart Way <http://catb.org/~esr/faqs/smart-questions.html>`_.)
@@ -165,13 +175,13 @@ Mail Proxying
 
 Could someone explain how to configure and test the IMAP module (with a complete .conf example)?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Start with the configuration from the :doc:`imapproxyexample`.
+Start with the configuration from the :doc:`../start/topics/examples/imapproxyexample`.
    
 For detailed information about different configuration parameters, see the |MailCoreModule| page.
 
 Related resources:
 
-* :doc:`imapauthenticatewithapachephpscript`
+* :doc:`../start/topics/examples/imapauthenticatewithapachephpscript`
 
 .. todo::
    ..

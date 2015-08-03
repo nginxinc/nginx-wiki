@@ -1,0 +1,257 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-03 16:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/tutorials/install.rst:2
+msgid "Install"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:5
+msgid "After Installing"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:11
+msgid ""
+"These two pages give you the chance to learn from others mistakes and hard "
+"work."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:16
+msgid "Binary Releases"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:19
+msgid "Prebuilt Packages for Linux and BSD"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:20
+msgid ""
+"Most Linux distributions and BSD variants have Nginx in the usual package "
+"repositories and they can be installed via whatever method is normally used "
+"to install software (``apt-get`` on Debian, ``emerge`` on Gentoo, ``ports`` "
+"on FreeBSD, etc)."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:22
+msgid ""
+"Be aware that these packages are often somewhat out-of-date. If you want the"
+" latest features and bugfixes, it's recommended to build from source or use "
+"packages directly from nginx.org."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:28
+msgid "Official Red Hat/CentOS packages"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:29
+msgid ""
+"To add nginx yum repository, create a file named "
+"``/etc/yum.repos.d/nginx.repo`` and paste one of the configurations below:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:31
+msgid "CentOS::"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:40
+msgid "RHEL::"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:49
+msgid ""
+"Due to differences between how CentOS, RHEL, and Scientific Linux populate "
+"the ``$releasever`` variable, it is necessary to manually replace "
+"``$releasever`` with either ``5`` (for 5.x) or ``6`` (for 6.x), depending "
+"upon your OS version."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:54
+msgid "Official Debian/Ubuntu packages"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:55
+msgid ""
+"Append the appropriate stanza to ``/etc/apt/sources.list``. The Pgp page "
+"explains the signing of the nginx.org released packaging."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:57
+msgid "Ubuntu 10.04:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:66
+msgid "Debian 6:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:75
+msgid "Ubuntu PPA"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:76
+msgid ""
+"This PPA is maintained by volunteers and is not distributed by nginx.org.  "
+"It has some additional compiled-in modules and may be more fitting for your "
+"environment."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:78
+msgid ""
+"You can get the latest stable version of Nginx from the `Nginx PPA "
+"<https://launchpad.net/~nginx/+archive/ubuntu/development>`_ on Launchpad: "
+"You will need to have root privileges to perform the following commands."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:81
+msgid "For Ubuntu 10.04 and newer:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:91
+msgid ""
+"If you get an error about add-apt-repository not existing, you will want to "
+"install ``python-software-properties``. For other Debian/Ubuntu based "
+"distributions, you can try the lucid variant of the PPA which is the most "
+"likely to work on older package sets:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:108
+msgid "Official Win32 Binaries"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:109
+msgid ""
+"As of nginx 0.8.50, nginx is now available as an `official Windows binary "
+"<http://nginx.org/en/download.html>`_."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:111
+msgid "Installation:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:121
+msgid "Control:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:128
+msgid "For problems look in c:\\nginx\\logs\\error.log or in EventLog."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:130
+msgid ""
+"In addition, Kevin Worthington maintains earlier `Windows "
+"<http://kevinworthington.com/nginx-for-windows/>`_ builds of the development"
+" branch."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:135
+msgid "Source Releases"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:136
+msgid ""
+"There are currently two versions of Nginx available: ``stable (1.8.x)``, "
+"``mainline (1.9.x)``. The mainline branch gets new features and bugfixes "
+"sooner but might introduce new bugs as well. Critical bugfixes are "
+"backported to the stable branch."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:140
+msgid ""
+"In general, the stable release is recommended, but the mainline release is "
+"typically quite stable as well. See the `FAQ <faq.is_it_safe_>`."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:143
+#: ../../source/start/topics/tutorials/install.rst:173
+msgid "<br style=\"clear: both;\" />"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:145
+msgid "<ul class=\"content-download-container\">"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:147
+#: ../../source/start/topics/tutorials/install.rst:159
+msgid "<li class=\"content-download-item\"> <div class=\"content-download-link\">"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:152
+msgid "Stable"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:153
+msgid ""
+"`nginx 1.8.0 <http://nginx.org/download/nginx-1.8.0.tar.gz>`_<br /> 21 Apr "
+"2015<br /> `changelog <http://nginx.org/en/CHANGES-1.8>`_ </div> </li>"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:164
+msgid "Mainline"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:165
+msgid ""
+"`nginx 1.9.2 <http://nginx.org/download/nginx-1.9.2.tar.gz>`_<br /> 16 Jun "
+"2015<br /> `changelog <http://nginx.org/en/CHANGES>`_ </div> </li>"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:171
+msgid "</ul>"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:175
+msgid ""
+"Source code repository is at `hg.nginx.org/nginx "
+"<http://hg.nginx.org/nginx>`_."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:177
+msgid ""
+"Older versions can be found `here <http://nginx.org/en/download.html>`_."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:181
+msgid "Building Nginx From Source"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:182
+msgid "After extracting the source, run these commands from a terminal:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:190
+msgid ""
+"By default, Nginx will be installed in ``/usr/local/nginx``. You may change "
+"this and other options with the :doc:`installoptions`."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:192
+msgid ""
+"You might also want to peruse the :doc:`3rd party modules "
+"<../../../modules/index>`, since these must be built at compile-time."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:196
+msgid "Other Systems"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:203
+msgid ""
+"These pages are not thoroughly, if at all, reviewed for accuracy as they are"
+" on this page."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:208
+msgid "References"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/install.rst:209
+msgid "`Original Documentation <http://sysoev.ru/nginx/docs/install.html>`_"
+msgstr ""

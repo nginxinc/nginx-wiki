@@ -1,0 +1,150 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-03 16:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/examples/x-accel.rst:2
+msgid "X-Accel"
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:5
+msgid "Synopsis"
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:6
+msgid ""
+"X-accel allows for internal redirection to a location determined by a header"
+" returned from a backend."
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:8
+msgid ""
+"This allows you to handle authentication, logging or whatever else you "
+"please in your backend and then have Nginx handle serving the contents from "
+"redirected location to the end user, thus freeing up the backend to handle "
+"other requests. This feature is commonly known as X-Sendfile."
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:11
+msgid ""
+"This feature differs a bit from standard Nginx modules as it does not rely "
+"on directives but rather handles headers from upstream in a special way. The"
+" way it works is that you send the header `x-accel.redirect`_ with a URI. "
+"Nginx will match this URI against its locations as if it was a normal "
+"request. It will then serve the location that matches the defined root + URI"
+" passed in the header."
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:16
+msgid "Example configuration, notice the difference between alias and root."
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:34
+msgid "You can also proxy to another server."
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:46
+msgid "Special Headers"
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:51
+msgid "X-Accel-Redirect"
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:52
+msgid "*X-Accel-Redirect uri*"
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:53
+msgid "*X-Accel-Redirect void*"
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:55
+msgid "Sets the URI for Nginx to serve."
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:59
+msgid "X-Accel-Buffering"
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:60
+msgid "*X-Accel-Buffering [yes|no]*"
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:61
+msgid "*X-Accel-Buffering yes*"
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:63
+msgid ""
+"Sets the proxy buffering for this connection. Setting this to \"no\" will "
+"allow unbuffered responses suitable for Comet and HTTP streaming "
+"applications. Setting this to \"yes\" will allow the response to be cached."
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:69
+msgid "X-Accel-Charset"
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:70
+msgid "*X-Accel-Charset charset*"
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:71
+msgid "*X-Accel-Charset utf-8*"
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:73
+msgid "Sets the charset of the file."
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:77
+msgid "X-Accel-Expires"
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:78
+msgid "*X-Accel-Expires [off|seconds]*"
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:79
+msgid "*X-Accel-Expires off*"
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:81
+msgid ""
+"Sets when to expire the file in the internal Nginx cache, if one is used."
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:85
+msgid "X-Accel-Limit-Rate"
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:86
+msgid "*X-Accel-Limit-Rate bytes [bytes|off]*"
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:87
+msgid "*X-Accel-Limit-Rate off*"
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:89
+msgid "Sets the rate limit for this single request. Off means unlimited."
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:95
+msgid "References"
+msgstr ""
+
+#: ../../source/start/topics/examples/x-accel.rst:96
+msgid ""
+"`Original Documentation "
+"<http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_ignore_headers>`_"
+msgstr ""

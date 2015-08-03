@@ -1,0 +1,699 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-03 16:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:2
+msgid "SSL-Offloader"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:5
+msgid "Preface"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:6
+msgid ""
+"I want to thank Igor Sysoev for this nice piece of software. For me, this is"
+" the only way to contribute something to this great project. I've tried to "
+"document the whole picture of building what we simply call our \"SSL-Proxy\""
+" (aka. SSL/TLS/HTTPS-Offloader/-Accelerator/-Terminator/-Dispatcher/Reverse-"
+"Proxy/Loadbalancer etc.)."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:10
+msgid ""
+"In our company we use Nginx as a reverse proxy, serving HTTPS to the client "
+"while getting the content via HTTP from the multiple backends. We have two "
+"virtual machines \"connected\" with VRRP to one cluster, acting as a "
+"frontend for about 80 Tomcat servers (and some IIS, Apache/PHP ...), each "
+"with one or more applications. There were many reasons for this structure: "
+"One CI (ITIL: change item) for SSL certificates, customer demands (one URL "
+"xyz with multiple services), simple but effective failover mechanism for "
+"changes and so on."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:19
+msgid "**Update 2014, success story:**"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:15
+msgid ""
+"This Nginx setup as a reverse ssl-proxy with our \"super-url's\" works "
+"perfectly for over 7 years (in this time we changed the ubuntu versions "
+"several times - from hardy to precise). Today only two applications left and"
+" couldn't be included in this scheme. The configuration without comments has"
+" about 7000 lines. We have about 10 changes in the setup per week and we can"
+" do all of them on fly (using reload). The security audits of these "
+"applications never showed topics like \"unpatched ssl versions\" again, the "
+"web-services team can concentrate on deploying applications with no need to "
+"touch an apache configuration ever again and we (the networking team) can "
+"solve every access issue by ourself."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:21
+msgid "**And a little warning at the beginning**"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:23
+msgid ""
+"Everything I try to describe here are finally some sorts of \"reverse "
+"proxy\" configurations. If your backend application only uses relative "
+"paths, everything will be fine. If they use absolute path, it could became "
+"complicated. If you could deploy it with the right path-prefix, everything "
+"is okay again. If the applications insists in the root path, it could be "
+"impossible - even if you could parse the returning code (html, css, js "
+"etc.)."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:28
+msgid ""
+"Somebody maybe wants \"simpler\" solutions, some kind of an appliance "
+"working \"out-of-the\" box. My experience with this matter is: The operation"
+" of a central entry point for many applications with all their unique "
+"characteristics is unfortunatly this complex. Don't expect from an appliance"
+" more than save buttons and a fancy web-gui for similar settings as "
+"described here. At this point you are entering the twilight zone between "
+"configuration and programming, because your proxy is mostly an integral part"
+" of a bigger \"web-program\"."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:36
+msgid "Technical Data"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:37
+msgid "The server works very efficient:"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:39
+msgid "Hypervisor: VMware ESXi"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:40
+msgid "VM: 4x CPU (load: ~0.15), 768 MByte RAM (used: ~12%), 4 GByte HD"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:41
+msgid "Base system: Ubuntu 12.04.5/precise"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:42
+msgid ""
+"Working horse: Nginx 1.6.2-5+precise0 (`ppa:nginx/stable "
+"<https://launchpad.net/~nginx/+archive/ubuntu/stable>`_)"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:43
+msgid "SSL-Library: LibSSL 1.0.1-4ubuntu5.21"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:44
+msgid "Entropy-Daemon: haveged 1.1-2"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:45
+msgid "VRRP daemon: Keepalived 1:1.2.2-3ubuntu1.1"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:46
+msgid "Software watchdog: Monit 1:5.3.2-1"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:47
+msgid "NTP alternative: Chrony 1.24-3.1ubuntu1 (one socket)"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:52
+msgid "Considerations"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:55
+msgid "Configuration"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:56
+msgid "Some kind of a policy ..."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:58
+msgid ""
+"To avoid problems when updating, the layout of the configuration files and "
+"directories should be an addition to the existing ones of the installation."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:59
+msgid ""
+"Each setting has to be unique. This leads on the other hand to some "
+"additional references of small ``include``-files and a complex layout."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:60
+msgid ""
+"``if``-statement couldn't be nested, Therefore avoid using "
+"``include``-statements inside them."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:61
+msgid "When including whole directories use file extentions as a switch."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:63
+msgid "New generated directories in ``/etc/nginx``:"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:65
+msgid "conf.d"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:66
+msgid "mapping/<segment>/<application>"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:67
+msgid "sslcerts/<domain of the channel>/[<app-group>|wildcard].[crt|key]"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:68
+msgid "sites-enabled/<ip-slot>_<app-group>.<customer>.any.<segment>"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:69
+msgid "scripts"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:73
+msgid "Naming Convention"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:74
+msgid ""
+"We had one internal (ADS) domain, some official ones and a complex "
+"situation:"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:76
+msgid ""
+"entry point/channel: LAN users (lan), Internet (ext), some kind of a VPN/WAN"
+" (vn2) and a old VPN without DNS (vn1)"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:77
+msgid ""
+"customers: Our company, several workgroups, lables, subsidiaries and "
+"externel customers"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:78
+msgid ""
+"life cycle/segment: development (dev), integration-1 and -2 (ig1/ig2), "
+"approval (apv), demonstration (dem) and production (prd)"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:79
+msgid "environments: real (local) and labor"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:81
+msgid ""
+"Our solution was to start two whole new DNS-Trees and move the application "
+"name from DNS to the path::"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:85
+msgid ""
+"In the case of production systems, these were mapped to official domains."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:88
+msgid "Use ``pdnsd`` as a DNS dispatcher on your proxy."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:89
+msgid ""
+"Maybe you shouldn't use the ``*.local`` domain as we did, if you want to use"
+" services like **avahi** ..."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:93
+msgid "Application Server"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:94
+msgid "Most important ..."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:96
+msgid ""
+"You can reduce your work, if you have one \"intelligent\" application with "
+"different themes for diffenrent customers"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:97
+msgid ""
+"For Java applications we use the ``Remote IP Valve`` to betray the Tomcat "
+"about his URL (like apache+ajp does)"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:102
+msgid "Preparation"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:105
+msgid "Network Settings"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:106
+msgid ""
+"I put the network settings into the file ``/etc/sysctl.d/10-network-"
+"security.conf``. Some of the setting were allready in the original "
+"configuration."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:184
+msgid "Virtual Addresses"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:185
+msgid ""
+"This is the VRRP configuration ``/etc/keepalived/keepalived.conf`` of one "
+"system. There are two instances configured. In the case of a failure both "
+"VRRP addresses belong to the remaining system. For the second system change "
+"the values of \"state\" and \"priority\"."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:190
+msgid ""
+"You have to restart the ``keepalived`` after you set an interface in "
+"promiscuous mode (eg. if you use tcpdump for debugging)."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:228
+msgid "HTTPS Addresses"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:229
+msgid ""
+"One possible solution is to use direct routing and not a NAT (network "
+"address translation). In this case you need local ip addresses with fit to "
+"the server of the nginx configuration. In the file "
+"``/etc/network/interfaces`` you can add a ``post-up`` command for the dummy "
+"(or loopback) interface like this. Don't forget to add the modules ``dummy``"
+" to ``/etc/modules``."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:253
+msgid ""
+"The referenced script should correct some arp issues, do a blackhole routing"
+" to avoid ping-pong packets of the routed networks and of course add the "
+"network addresses."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:277
+msgid ""
+"Maybe you need a second file for all settings with requires a working "
+"network interface (e.g. if you have to fix some MTU/MSS values, you have to "
+"route to real ips on a real interfaces)."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:294
+msgid "Core Configuration"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:297
+msgid "nginx.conf"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:298
+msgid ""
+"I decided to change not too much in the default config file "
+"``/etc/nginx/nginx.conf``. The VM has four cores, each core get one fixed "
+"worker, and I wanted nginx to get an better priority than other processes. "
+"All other setting were included (the included file ``mime.types`` is taken "
+"from the project `HTML5-Boilerplate <https://github.com/h5bp/server-configs-"
+"nginx/blob/master/mime.types>`_)."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:328
+msgid "sslproxy.conf"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:329
+msgid ""
+"The file ``/etc/nginx/conf.d/sslproxy.conf`` holds all important global "
+"settings, espacially:"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:331
+msgid "**error_page 404 =410 /40x.html;**"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:332
+msgid ""
+"The 404 error page will be cloaked as 410 to avoid the internal page from "
+"ie."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:333
+msgid "**proxy_intercept_errors on;**"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:334
+msgid ""
+"All errors from the application server will be hidden behind the "
+"correspondending local error pages."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:335
+msgid "**proxy_redirect http:// $scheme://;**"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:336
+msgid ""
+"Every HTTP redirect from an application server will be rewritten to HTTPS."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:338
+msgid "**proxy_set_header Accept-Encoding \"\";**"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:338
+msgid ""
+"The proxy interface to the backend should not compress the data (lan "
+"connection)."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:453
+msgid "logging.conf"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:454
+msgid ""
+"This configuration file ``/etc/nginx/conf.d/logging.conf`` should trigger "
+"the logging if we need some additional information. We defined the SSL-Proxy"
+" as a network device and therefore the application is responsible for "
+"logging user access."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:489
+msgid "backend.conf"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:490
+msgid ""
+"We use this file to define the relation of two backend servers with an ID. "
+"The syntax of nginx only let you define these definitions global. This means"
+" you have to touch two files if you define one new backend/upstream."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:510
+msgid ""
+"In our recent version of the ssl-proxy the file is automaticly created from "
+"the application definitions with the script ``/etc/nginx/scripts/gen-"
+"upstream.conf``. So now we can add an new service by one ``path_<context>`` "
+"file."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:529
+msgid "Server and Applications"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:532
+msgid "Simple Applications"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:533
+msgid ""
+"This is the example of a default application in "
+"``/etc/nginx/mapping/<segment>/<application>``, which should fit in most of "
+"the cases. The first part is a comment used for the automatic generation of "
+"the backend configuration."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:547
+msgid "Root Applications"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:548
+msgid ""
+"Some web applications don't allow changing the root path to a subdirectory. "
+"You can use of course one of them in combination with applications with "
+"subdirectories in a server configuration. But you have to add an "
+"``if``-statement if you want to use the feature ``proxy_intercept_errors``."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:561
+msgid "Uploader App"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:562
+msgid ""
+"Some applications like editorial pages of CMS systems often have additional "
+"needs. There you want to upload for example movies or some bigger PDF's. "
+"Then you have to adjust the maximal size of uploads."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:574
+msgid "Long Running App"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:575
+msgid ""
+"If the response of an application takes a long time (e.g. to generate a "
+"report) and there is no keppalive machanism available (in our case it was "
+"the \"BIRT\" framework), overload the default settings of the timeouts - for"
+" the client and the server side."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:587
+msgid "Soap Web-Service"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:588
+msgid ""
+"SOAP needs unchanged errors of the type 500, because this is the default way"
+" to exchange information with the client."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:599
+msgid "Simple Server"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:600
+msgid ""
+"This example shows an internet (allow all) server with one simple "
+"application. The rewrite rule does the initial redirect into the application"
+" directory. The following index page is in the responsibility of the "
+"application."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:619
+msgid "The Redirector"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:620
+msgid ""
+"This is one of more complicated part in our setup. Only implement this if "
+"you need smooth changes of old/legacy URL's."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:623
+msgid "Motivation / Goal:"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:625
+msgid "redirect, refresh or send an error-page with the new link"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:626
+msgid "work for for DNS names or DNS plus context (= first part of the path)"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:627
+msgid "implicit matching of a ``www.`` prefix"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:628
+msgid "works for URL's and arguments of requests"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:629
+msgid "can parse %-codes in the argument"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:632
+msgid "redir-map.conf"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:643
+msgid "redir.action"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:655
+msgid "Redirector Server"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:690
+msgid "Redirector App"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:691
+msgid ""
+"This part is very special: Most of our customers bookmark the signon page "
+"(of our SSO system) so we have to take care of rewriting this as well."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:705
+msgid "Active-Sync Gateway"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:706
+msgid ""
+"This is only a simple gateway (no certificates!) for several different "
+"Exchange servers. It validates some kind of a \"fingerprint\" of the device "
+"against a dns entry. The code can be \"plugged\" into the context files "
+"above as a service."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:740
+msgid ""
+"The failed requests are shown in the ``error.log`` as an resolver error. The"
+" ``error.log`` is monitored by rsyslog and transfered to a syslog server. "
+"The syslog server checks for the internal domain and send an email to the "
+"support."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:757
+msgid "Remote Logging"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:760
+msgid "The Problem"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:761
+msgid ""
+"In few words: **Nginx doesn't support Syslog.** Therefore you have some "
+"possibilities, if you want Syslog support:"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:764
+msgid "Compile Nginx with the **syslog patch**:"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:765
+msgid "I prefer to use the original packages ..."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:768
+msgid ""
+"Use a **syslog implementation with file support** (e.g. rsyslog with "
+"\"imfile\"):"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:767
+msgid ""
+"That's okay for the ``error.log``, but it is a bad idea for the space "
+"consuming ``access.log``, because you don't want to store these data a "
+"second time local."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:771
+msgid "Simple Solution"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:772
+msgid ""
+"Create a file **/etc/rsyslog.d/remote.conf** for all (already) syslog "
+"messages:"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:780
+msgid ""
+"Create a file **/etc/rsyslog.d/nginx.conf** for file monitoring. Repeat the "
+"part in the middle for every file you want to see in the syslog. The last "
+"line is important, otherwise you will log these messages three times (nginx "
+"log, udp syslog and local syslog):"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:801
+msgid ""
+"Create a script **/etc/cron.daily/logfile-actions**, which will be executed "
+"every day and place there the cleanup commands (eg. 1 day for the access "
+"logs and 6 month for all other). Don't forget to do the ``chmod +x``. This "
+"this at least process all files, which you don't want to store local a "
+"second time. But as I sad before, this works only if the amount of access-"
+"log of one day isn't to much ... and it's not very smart."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:815
+msgid "Appendix: Scripts"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:818
+msgid "sync-config.sh"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:819
+msgid ""
+"Its our most important script for the daily use, but it is - for years overs"
+" years - a very ugly one."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:892
+msgid "dump-config.sh"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:893
+msgid ""
+"Creates a \"normalized\" configuration file. Basically it's a recursive "
+"script that evaluates include-statements, remove spaces and comments. This "
+"is the base for the most of my scripts doing backup/restore, ssl validations"
+" on so on. Maybe it's not beautiful nor perfect, but it works for me."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:945
+msgid "clean-restart.sh"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:946
+msgid ""
+"This script restart some services, remove logfiles and reactivates the "
+"loopback addresses in case of bigger changes. I use it especially at the "
+"development systems. On the production machines I do the changes and then a "
+"reboot instead, to ensure every thing starts up correctly in case of an "
+"unexpected reboot."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:976
+msgid "Know Bugs / Wishlist"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:978
+msgid "**inline includes**"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:979
+msgid ""
+"With an statement like ``include @<identifier>`` and a block like ``include "
+"{ include_name <identifier>; ... }`` a seperate file for every include could"
+" be avoided."
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:983
+msgid "**global rewrite rules** and **log option for rewrite**"
+msgstr ""
+
+#: ../../source/start/topics/examples/SSL-Offloader.rst:981
+msgid ""
+"If you have a inverse proxy it would be the perfect place to enforce a bunch"
+" o rewrite rules globaly. Because this is an security feature, each firing "
+"of one rule should be logged in a (separate?) log."
+msgstr ""

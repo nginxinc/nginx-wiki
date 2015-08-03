@@ -1,0 +1,112 @@
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Nginx Wiki 1.0\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-08-03 16:07+0100\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: ../../source/start/topics/tutorials/gettingstarted.rst:2
+msgid "Getting Started"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/gettingstarted.rst:5
+msgid "Requirements"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/gettingstarted.rst:7
+msgid "gzip module requires `zlib <http://www.zlib.net/>`_ library"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/gettingstarted.rst:8
+msgid "rewrite module requires `pcre <http://www.pcre.org/>`_ library"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/gettingstarted.rst:9
+msgid "ssl support requires openssl library"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/gettingstarted.rst:14
+msgid "Download"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/gettingstarted.rst:15
+msgid ""
+"Go to the :doc:`install` Page of this wiki to download Nginx. Alternatively,"
+" here is a link to the `English download page "
+"<http://nginx.org/en/download.html>`_ and the original `Russian download "
+"page <http://sysoev.ru/nginx/download.html>`_."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/gettingstarted.rst:21
+msgid "Installation"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/gettingstarted.rst:22
+msgid "After extracting the source, run these commands from a terminal:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/gettingstarted.rst:30
+msgid ""
+"By default, Nginx will be installed in ``/usr/local/nginx``. You may change "
+"this and other options with the :doc:`installoptions`."
+msgstr ""
+
+#: ../../source/start/topics/tutorials/gettingstarted.rst:35
+msgid "Platform-specific Notes and Builds"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/gettingstarted.rst:43
+msgid ""
+"`x86/64 build for Solaris <https://www.joyent.com/blog/ok-nginx-is-cool>`_"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/gettingstarted.rst:44
+msgid ""
+"`Nginx for Windows (32-bit); development, stable, and legacy binaries "
+"available <http://kevinworthington.com/nginx-for-windows/>`_"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/gettingstarted.rst:53
+msgid "Running Nginx"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/gettingstarted.rst:54
+msgid ""
+"Start the server by running ``/usr/local/nginx/sbin/nginx`` as root. After "
+"editing the configuration file at ``/usr/local/nginx/conf/nginx.conf`` to "
+"your liking, you can reload the configuration with:"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/gettingstarted.rst:61
+msgid ""
+"The location of nginx.pid might be different on your machine. For Ubuntu, it"
+" is located at ``/var/run/nginx.pid``"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/gettingstarted.rst:66
+msgid ":doc:`commandline` for more command-line options and process signals"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/gettingstarted.rst:67
+msgid ":doc:`../../../community/faq` for solutions to common problems"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/gettingstarted.rst:68
+msgid ""
+":doc:`../../../community/index` if you still can't find the answers to your "
+"questions"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/gettingstarted.rst:77
+msgid "Advanced topics"
+msgstr ""
+
+#: ../../source/start/topics/tutorials/gettingstarted.rst:78
+msgid ":doc:`debugging`"
+msgstr ""
