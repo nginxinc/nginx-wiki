@@ -12,6 +12,4 @@ script:
 
 env:
     - CI_TARGET=html
-    matrix:
-        allow_failures:
-            - CI_TARGET=linkcheck
+    - CI_TARGET=linkcheck
