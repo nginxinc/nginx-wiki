@@ -222,7 +222,9 @@ Nginx 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | UnZip                     | serve file directly from the archives                                   | :github:`youzee/nginx-unzip-module`                                                     |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| :doc:`upload`             | Handles file uploads using multipart/form-data encoding (RFC 1867)      | :github:`vkholodkov/nginx-upload-module/tree/2.2`                                       |
+| :doc:`upload`             | Handles file uploads using multipart/form-data encoding (RFC 1867)      | :github:`vkholodkov/nginx-upload-module`                                                |
++---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :doc:`upload_progress`    | Tracks and reports upload progress                                      | :github:`masterzen/nginx-upload-progress-module`                                        |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Url                       | A module to convert uri to user-defined encoding                        | :github:`vozlt/nginx-module-url`                                                        |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -234,7 +236,7 @@ Nginx 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | XSS                       | Native support for cross-site scripting (XSS)                           | :github:`openresty/xss-nginx-module`                                                    |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| :doc:`zip`                | Assemble ZIP archives on the fly                                        | :github:`evanmiller/mod_zip/`                                                           |
+| :doc:`zip`                | Assemble ZIP archives on the fly                                        | :github:`evanmiller/mod_zip`                                                            |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 
 ..
@@ -242,7 +244,7 @@ Nginx 3\ :sup:`rd` Party Modules
    * AFCGI
    * Akamai G2O
    * Array Var
-   * Auth PAM 
+   * Auth PAM
    * Auth Request
    * Auto Lib
    * AWS Auth
@@ -366,7 +368,8 @@ Nginx 3\ :sup:`rd` Party Modules
    sr_cache
    substitutions
    upload
+   upload_progress
    user_agent
    zip
-   
-   
+
+
