@@ -34,10 +34,10 @@ Now refresh your shell so it sees the modified PATH variable:
 The last thing for preparing our environment is installing Sun Studio 12
 Compiler which you can get from the following link:
 
-   http://developers.sun.com/sunstudio/downloads/
+   http://www.oracle.com/technetwork/java/index.html
 
-Although it's freely available to download , but you must be registered
-also at sun to access the download link. There are two options to
+Although it's freely available to download, you must be registered
+at sun to access the download link. There are two options to
 download the package:
 
 #. `Download Package
@@ -46,8 +46,8 @@ download the package:
    Tarfile <https://cds.sun.com/is-bin/INTERSHOP.enfinity/WFS/CDS-CDS_Developer-Site/en_US/-/USD/ViewProductDetail-Start?ProductRef=SSST9-120-T99M@CDS-CDS_Developer>`__
 
 We will use the second option, as it has the necessary file, plus some
-additional packages , which we won't need in our procedure.After you
-have downloaded the SunStudio12ml­-solaris­-x86­-200709­-ii.tar.bz2 , we
+additional packages, which we won't need in our procedure. After you
+have downloaded the SunStudio12ml­-solaris­-x86­-200709­-ii.tar.bz2, we
 will extract it as follows :
 
 .. code-block:: bash
@@ -162,7 +162,7 @@ everything is fine as follows:
    ./nginx
 
 Nginx now should be running on your machine. If you open
-http://127.0.0.1/ in your browser, you should see a page with “Welcome
+\http://127.0.0.1/ in your browser, you should see a page with “Welcome
 to nginx!”.
 
 Running Nginx as SMF service
@@ -233,35 +233,35 @@ Inside the file, put the following:
 
 .. code-block:: xml
 
-   <?xml version="1.0"?> 
-   
-   <!DOCTYPE service_bundle SYSTEM "/usr/share/lib/xml/dtd/service_bundle.dtd.1"> 
-   
-   <!--author: alex harvey based on the Sun ssh.xml manifest -->  
-   
-   <service_bundle type='manifest' name='nginx'> 
+   <?xml version="1.0"?>
+
+   <!DOCTYPE service_bundle SYSTEM "/usr/share/lib/xml/dtd/service_bundle.dtd.1">
+
+   <!--author: alex harvey based on the Sun ssh.xml manifest -->
+
+   <service_bundle type='manifest' name='nginx'>
    <service name='network/nginx' type='service' version='1'>
-   <create_default_instance enabled='false' /> 
+   <create_default_instance enabled='false' />
    <single_instance />
-   
+
    <exec_method type='method' name='start' exec='/lib/svc/method/svc-nginx start' timeout_seconds='60'/>
-   
+
    <exec_method type='method' name='stop' exec='/lib/svc/method/svc-nginx stop' timeout_seconds='60' />
-   
-   <exec_method type='method' name='restart' exec='/lib/svc/method/svc-nginx restart' timeout_seconds='60' /> 
-   
-   <stability value='stable' /> 
-   
-   <template> 
-   
+
+   <exec_method type='method' name='restart' exec='/lib/svc/method/svc-nginx restart' timeout_seconds='60' />
+
+   <stability value='stable' />
+
+   <template>
+
    <common_name>
-   
-   <loctext xml:lang='C'> Nginx 0.7.64 </loctext> 
-   
-   </common_name> <documentation> 
-   
-   <manpage title='nginx' section='8' manpath='/usr/share/man' /> 
-   
+
+   <loctext xml:lang='C'> Nginx 0.7.64 </loctext>
+
+   </common_name> <documentation>
+
+   <manpage title='nginx' section='8' manpath='/usr/share/man' />
+
    </documentation> </template> </service> </service_bundle>
 
 Fix the permissions as previously done with svc-nginx:

@@ -58,10 +58,13 @@ can be assigned by the ``use`` directive:
    connections using the ``poll`` method until the situation normalizes.
 -  **/dev/poll** - the effective method, used on Solaris 7 11/99+, HP/UX
    11.22+ (eventport), IRIX 6.5.15+ and Tru64 UNIX 5.1A+.
--  **eventport** - the effective method, utilized in Solaris 10. To
-   avoid kernel panic, it is necessary to install
-   `this <http://sunsolve.sun.com/search/document.do?assetkey=1-26-102485-1>`__
-   security patch.
+
+..
+   Dead link now
+   -  **eventport** - the effective method, utilized in Solaris 10. To
+      avoid kernel panic, it is necessary to install
+      `this <http://sunsolve.sun.com/search/document.do?assetkey=1-26-102485-1>`__
+      security patch.
 
 References
 ----------
