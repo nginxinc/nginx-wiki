@@ -12,3 +12,4 @@ Community
    planet
    resources
    faq
+   why_use_it
