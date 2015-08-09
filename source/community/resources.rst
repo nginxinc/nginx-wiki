@@ -6,11 +6,8 @@ Developer Resources
 * `Contributing Changes (official guide) <http://nginx.org/en/docs/contributing_changes.html>`_
 * :doc:`../start/topics/tutorials/gettingstarted`
 * :doc:`faq`
-
-.. todo::
-   ..
-      * :doc:`codingstyle`
-      * :doc:`sourcetricks`
+* :doc:`../start/topics/examples/coding_style`
+* :doc:`../start/topics/examples/source_tricks`
 
 
 
@@ -25,10 +22,7 @@ English Guides
 * `nginx-devel mailing list archive <http://mailman.nginx.org/pipermail/nginx-devel/>`_
 * `Chapter about nginx in The Architecture of Open Source Applications Volume II <http://www.aosabook.org/en/nginx.html>`_
 * `nginx how-to at calomel.org <https://calomel.org/nginx.html>`_
-
-.. todo::
-   ..
-      * Notes about :doc:`headersmanagement`
+* Notes about :doc:`../start/topics/examples/headers_management`
 
 
 Russian Guides
@@ -66,11 +60,9 @@ Other Resources
 * `Nginx and Memcached, a 400% boost! <https://www.igvita.com/2008/02/11/nginx-and-memcached-a-400-boost/>`_
 * `Parsing PHP sessions in Nginx <http://mauro-stettler.blogspot.com/2011/06/php-session-parser-in-production.html>`_
 * `PyMunin - Multigraph Munin Plugins in Python <http://aouyar.github.io/PyMunin/>`_ - PyMunin includes a Multigraph Munin Plugin for monitoring Nginx using http_stub_status module. Graphs active connections, connection rate, request rate and average requests per connection.
+* :doc:`why_use_it`
 
-.. todo::
-   ..
-      * :doc:`whyuseit`
-   
+..
    Dead links now
    * `nWeb Script - Easy installer script for Debian / Ubuntu <http://thehook.eu/tools/nweb/>`_ (Installs nginx, with PHP support and MySQL)
    * `Intellij IDEA plugin for integration with nginx <http://code.google.com/p/idea-nginx/>`_

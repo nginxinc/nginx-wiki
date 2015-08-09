@@ -27,6 +27,7 @@ Getting Started
    topics/examples/imapauthenticatewithapachephpscript
    topics/examples/headers_management
    topics/examples/source_tricks
+   topics/examples/coding_style
    topics/recipes/alkaline
    topics/recipes/cms_made_simple
    topics/recipes/codeigniter
@@ -63,7 +64,6 @@ Getting Started
    topics/tutorials/dynamic_php
    topics/tutorials/config_pitfalls
    topics/tutorials/debugging
-   topics/tutorials/coding_style
    topics/tutorials/optimizations
    topics/tutorials/solaris_10_u5
    topics/tutorials/solaris_11
