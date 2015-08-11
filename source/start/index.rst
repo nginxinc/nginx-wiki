@@ -28,6 +28,7 @@ Getting Started
    topics/examples/headers_management
    topics/examples/source_tricks
    topics/examples/coding_style
+   topics/examples/initscripts
    topics/recipes/alkaline
    topics/recipes/cms_made_simple
    topics/recipes/codeigniter
@@ -79,6 +80,7 @@ Installing & Configuring NGINX
 * :doc:`Things to Avoid at all Costs<topics/tutorials/config_pitfalls>`
 * :doc:`Why IF Really is Evil<topics/depth/ifisevil>`
 * :doc:`Serving PHP<topics/tutorials/dynamic_php>`
+* :doc:`topics/examples/initscripts`
 
 Pre-canned Configurations
 -------------------------
