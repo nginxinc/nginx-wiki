@@ -57,13 +57,13 @@ Other Resources
 * `Nginx mailing list archive <http://markmail.org/browse/ru.sysoev.nginx>`_
 * `Geolocation database for Nginx in CIDR format (countries by IP) <http://www.wipmania.com/en/base/>`_
 * `Experiment to automatically convert Apache rewrites to Nginx rewrites <http://www.anilcetin.com/convert-apache-htaccess-to-nginx/>`_
-* `Nginx and Memcached, a 400% boost! <https://www.igvita.com/2008/02/11/nginx-and-memcached-a-400-boost/>`_
 * `Parsing PHP sessions in Nginx <http://mauro-stettler.blogspot.com/2011/06/php-session-parser-in-production.html>`_
 * `PyMunin - Multigraph Munin Plugins in Python <http://aouyar.github.io/PyMunin/>`_ - PyMunin includes a Multigraph Munin Plugin for monitoring Nginx using http_stub_status module. Graphs active connections, connection rate, request rate and average requests per connection.
 * :doc:`why_use_it`
 
 ..
    Dead links now
+   * `Nginx and Memcached, a 400% boost! <https://www.igvita.com/2008/02/11/nginx-and-memcached-a-400-boost/>`_
    * `nWeb Script - Easy installer script for Debian / Ubuntu <http://thehook.eu/tools/nweb/>`_ (Installs nginx, with PHP support and MySQL)
    * `Intellij IDEA plugin for integration with nginx <http://code.google.com/p/idea-nginx/>`_
    * `Unofficial Debian repository with the latest Nginx release <http://debian.perusio.net>`_

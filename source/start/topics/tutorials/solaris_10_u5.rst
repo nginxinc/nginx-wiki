@@ -37,18 +37,22 @@ Compiler which you can get from the following link:
    http://www.oracle.com/technetwork/java/index.html
 
 Although it's freely available to download, you must be registered
-at sun to access the download link. There are two options to
-download the package:
+at sun to access the download link.
 
-#. `Download Package
-   Installer <https://cds.sun.com/is-bin/INTERSHOP.enfinity/WFS/CDS-CDS_Developer-Site/en_US/-/USD/ViewProductDetail-Start?ProductRef=SSSP9-120-T99M@CDS-CDS_Developer>`__
-#. `Download Product
-   Tarfile <https://cds.sun.com/is-bin/INTERSHOP.enfinity/WFS/CDS-CDS_Developer-Site/en_US/-/USD/ViewProductDetail-Start?ProductRef=SSST9-120-T99M@CDS-CDS_Developer>`__
+..
+   Dead links
+   There are two options to download the package:
 
-We will use the second option, as it has the necessary file, plus some
-additional packages, which we won't need in our procedure. After you
-have downloaded the SunStudio12ml­-solaris­-x86­-200709­-ii.tar.bz2, we
-will extract it as follows :
+   #. `Download Package
+      Installer <https://cds.sun.com/is-bin/INTERSHOP.enfinity/WFS/CDS-CDS_Developer-Site/en_US/-/USD/ViewProductDetail-Start?ProductRef=SSSP9-120-T99M@CDS-CDS_Developer>`__
+   #. `Download Product
+      Tarfile <https://cds.sun.com/is-bin/INTERSHOP.enfinity/WFS/CDS-CDS_Developer-Site/en_US/-/USD/ViewProductDetail-Start?ProductRef=SSST9-120-T99M@CDS-CDS_Developer>`__
+
+   We will use the second option, as it has the necessary file, plus some
+   additional packages, which we won't need in our procedure.
+
+After you have downloaded the SunStudio12ml­-solaris­-x86­-200709­-ii.tar.bz2,
+we will extract it as follows :
 
 .. code-block:: bash
 
