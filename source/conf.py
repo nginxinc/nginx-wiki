@@ -369,7 +369,8 @@ linkcheck_ignore = [
                     r'.*lua.org.*', # 'utf8' codec can't decode byte 0xea in position 888: invalid continuation byte
                     r'http://i.6.cn.*', # timeouts on CI
                     r'.*www.linkedin.com.*',
-                    r'.*maisonbisson.com.*'
+                    r'.*maisonbisson.com.*',
+                    r'.*vtunnel.com.*' # often hits timeout on CI
                    ]
 
 
