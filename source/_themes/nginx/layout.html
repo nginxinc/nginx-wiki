@@ -1,57 +1,589 @@
-{%- extends "basic/layout.html" %}
-{%- block extrahead %}
-  {{ super() }}
-  {% if theme_touch_icon %}
-    <link rel="apple-touch-icon" href="{{ pathto('_static/' ~ theme_touch_icon, 1) }}" />
-  {% endif %}
-  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9">
+{#
+    basic/layout.html
+    ~~~~~~~~~~~~~~~~~
 
-{% endblock %}
-{% block header %}
-<div class="outertop">
-  <div class="topbar">
-      <a href="/" title="Nginx Wiki" class="logo"><img src="{{ pathto('_static/' + 'main_logo.png', true) }}"></a>
-  </div>
-</div>
-{% endblock %}
-{%- block relbar2 %}{% endblock %}
-{%- block footer %}
-    <div class="footer">
-        &copy;{{ copyright }}.<br/>
-      {% if theme_show_powered_by|lower == 'true' %}
-      |
-      Powered by <a href="http://sphinx-doc.org/">Sphinx {{ sphinx_version }}</a>
-      &amp; <a href="https://github.com/bitprophet/alabaster">Alabaster {{ alabaster_version }}</a>
-      {% endif %}
-      <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img src="{{ pathto('_static/' + 'by-sa.svg', true) }}" /></i></a>&nbsp;This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Attribution-ShareAlike 4.0 International License</a>.
-      {%- if show_source and has_source and sourcename %}
-      |
-      <a href="{{ pathto('_sources/' + sourcename, true)|e }}"
-          rel="nofollow">{{ _('Page source') }}</a></li>
-      {%- endif %}
-    </div>
+    Master layout template for Sphinx themes.
 
-    {% if theme_github_banner|lower != 'false' %}
-    <a href="https://github.com/{{ theme_github_user }}/{{ theme_github_repo }}" class="github">
-        <img style="position: absolute; top: 0; right: 0; border: 0;" src="{{ pathto('_static/' ~ theme_github_banner, 1) if theme_github_banner|lower != 'true' else 'http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png' }}" alt="Fork me on GitHub"  class="github"/>
-    </a>
-    {% endif %}
-
-    {% if theme_analytics_id %}
-    <script type="text/javascript">
-
-      var _gaq = _gaq || [];
-      _gaq.push(['_setAccount', '{{ theme_analytics_id }}']);
-      _gaq.push(['_setDomainName', 'none']);
-      _gaq.push(['_setAllowLinker', true]);
-      _gaq.push(['_trackPageview']);
-
-      (function() {
-        var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-        var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-      })();
-
-    </script>
-    {% endif %}
+    :copyright: Copyright 2007-2015 by the Sphinx team, see AUTHORS.
+    :license: BSD, see LICENSE for details.
+#}
+{%- block doctype -%}
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 {%- endblock %}
+{%- set reldelim1 = reldelim1 is not defined and ' &raquo;' or reldelim1 %}
+{%- set reldelim2 = reldelim2 is not defined and ' |' or reldelim2 %}
+{%- set render_sidebar = (not embedded) and (not theme_nosidebar|tobool) and
+                         (sidebars != []) %}
+{%- set url_root = pathto('', 1) %}
+{# XXX necessary? #}
+{%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
+{%- if not embedded and docstitle %}
+  {%- set titlesuffix = " &mdash; "|safe + docstitle|e %}
+{%- else %}
+  {%- set titlesuffix = "" %}
+{%- endif %}
+
+{%- macro relbar() %}
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>{{ _('Navigation') }}</h3>
+      <ul>
+        {%- for rellink in rellinks %}
+        <li class="right" {% if loop.first %}style="margin-right: 10px"{% endif %}>
+          <a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}"
+             {{ accesskey(rellink[2]) }}>{{ rellink[3] }}</a>
+          {%- if not loop.first %}{{ reldelim2 }}{% endif %}</li>
+        {%- endfor %}
+        {%- block rootrellink %}
+        <li class="nav-item nav-item-0"><a href="{{ pathto(master_doc) }}">{{ shorttitle|e }}</a>{{ reldelim1 }}</li>
+        {%- endblock %}
+        {%- for parent in parents %}
+          <li class="nav-item nav-item-{{ loop.index }}"><a href="{{ parent.link|e }}" {% if loop.last %}{{ accesskey("U") }}{% endif %}>{{ parent.title }}</a>{{ reldelim1 }}</li>
+        {%- endfor %}
+        {%- block relbaritems %} {% endblock %}
+      </ul>
+    </div>
+{%- endmacro %}
+
+{%- macro sidebar() %}
+      {%- if render_sidebar %}
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
+        <div class="sphinxsidebarwrapper">
+          {%- block sidebarlogo %}
+          {%- if logo %}
+            <p class="logo"><a href="{{ pathto(master_doc) }}">
+              <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
+            </a></p>
+          {%- endif %}
+          {%- endblock %}
+          {%- if sidebars != None %}
+            {#- new style sidebar: explicitly include/exclude templates #}
+            {%- for sidebartemplate in sidebars %}
+            {%- include sidebartemplate %}
+            {%- endfor %}
+          {%- else %}
+            {#- old style sidebars: using blocks -- should be deprecated #}
+            {%- block sidebartoc %}
+            {%- include "localtoc.html" %}
+            {%- endblock %}
+            {%- block sidebarrel %}
+            {%- include "relations.html" %}
+            {%- endblock %}
+            {%- block sidebarsourcelink %}
+            {%- include "sourcelink.html" %}
+            {%- endblock %}
+            {%- if customsidebar %}
+            {%- include customsidebar %}
+            {%- endif %}
+            {%- block sidebarsearch %}
+            {%- include "searchbox.html" %}
+            {%- endblock %}
+          {%- endif %}
+        </div>
+      </div>
+      {%- endif %}
+{%- endmacro %}
+
+{%- macro script() %}
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '{{ url_root }}',
+        VERSION:     '{{ release|e }}',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '{{ '' if no_search_suffix else file_suffix }}',
+        HAS_SOURCE:  {{ has_source|lower }}
+      };
+    </script>
+    {%- for scriptfile in script_files %}
+    <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
+    {%- endfor %}
+{%- endmacro %}
+
+{%- macro css() %}
+    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
+    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
+    {%- for cssfile in css_files %}
+    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
+    {%- endfor %}
+{%- endmacro %}
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset={{ encoding }}" />
+    {{ metatags }}
+    {%- block htmltitle %}
+    <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
+    {%- endblock %}
+    {{ css() }}
+    {%- if not embedded %}
+    {{ script() }}
+    {%- if use_opensearch %}
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}"
+          href="{{ pathto('_static/opensearch.xml', 1) }}"/>
+    {%- endif %}
+    {%- if favicon %}
+    <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
+    {%- endif %}
+    {%- endif %}
+{%- block linktags %}
+    {%- if hasdoc('about') %}
+    <link rel="author" title="{{ _('About these documents') }}" href="{{ pathto('about') }}" />
+    {%- endif %}
+    {%- if hasdoc('genindex') %}
+    <link rel="index" title="{{ _('Index') }}" href="{{ pathto('genindex') }}" />
+    {%- endif %}
+    {%- if hasdoc('search') %}
+    <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}" />
+    {%- endif %}
+    {%- if hasdoc('copyright') %}
+    <link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}" />
+    {%- endif %}
+    <link rel="top" title="{{ docstitle|e }}" href="{{ pathto(master_doc) }}" />
+    {%- if parents %}
+    <link rel="up" title="{{ parents[-1].title|striptags|e }}" href="{{ parents[-1].link|e }}" />
+    {%- endif %}
+    {%- if next %}
+    <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}" />
+    {%- endif %}
+    {%- if prev %}
+    <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" />
+    {%- endif %}
+{%- endblock %}
+{%- block extrahead %} {% endblock %}
+    <link rel='stylesheet' id='nginx-theme-style-css'
+          href='{{ pathto('_static/nginx-theme.css?ver=1438882823', 1) }}'
+          type='text/css' media='all'/>
+
+    <style type="text/css">
+        @media screen and (max-width: 978px) {
+            #menu-item-4239{
+                display: none;
+            }
+        }
+    </style>
+  </head>
+  <body role="document" class="home page page-id-4001 page-template page-template-audience-targeted-homepage page-template-audience-targeted-homepage-php logged-in admin-bar no-customize-support group-blog audience-group-none">
+<!-- End Google Tag Manager -->
+<div id="page" class="hfeed site">
+
+    <header id="masthead" class="site-header" role="banner" itemscope itemtype="http://schema.org/Organization">
+        <div class="site-header-inner">
+
+            <div class="site-branding-wrapper">
+                <div class="site-branding">
+                    <div class="site-title" itemprop="name"><a href="" rel="home"><img
+                            src="http://dev.wp.nginx.com/wp-content/themes/nginx-theme/assets/img/logo.png"
+                            alt="Web Server Load Balancing with NGINX Plus"></a></div>
+                </div>
+                <!-- /.site-branding -->
+            </div>
+            <!-- /.site-branding-wrapper -->
+
+            <div class="header-menus">
+
+                <div class="header-actions-menu-location-wrapper">
+                    <nav class="header-actions-menu-location" role="navigation">
+                        <div class="menu-header-actions-container">
+                            <ul id="menu-header-actions" class="menu">
+                                <li id="menu-item-4239"
+                                    class="no-border menu-item menu-item-type-post_type menu-item-object-page menu-item-4239">
+                                    <a href="http://nginx.com/products/pricing/">Price &#038; Buy</a></li>
+                                <li id="menu-item-4314"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4314"><a
+                                        href="https://www.nginx.com/#free-trial">Free Trial</a></li>
+                                <li id="menu-item-4112"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4112"><a
+                                        href="https://www.nginx.com/#contact">Contact Sales</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <!-- /.header-actions-menu-location -->
+                </div>
+                <!-- /.header-actions-menu-location -->
+
+
+                <div class="primary-menu-location-wrapper">
+                    <a class="sticky-menu-logo" href="http://nginx.com/" rel="home"><img
+                            src="http://nginx.com/wp-content/themes/wordpress-nginx/assets/img//nginx_n_icon.png"
+                            alt="Web Server Load Balancing with NGINX Plus"></a>
+                    <nav id="site-navigation" class="primary-menu-location" role="navigation">
+                        <div class="menu-primary-container">
+                            <ul id="menu-primary" class="menu">
+                                <li id="menu-item-4068"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4068">
+                                    <a href="http://nginx.com/products/"><span class="inner">Products</span><span
+                                            class="icon icon-arrow-down"></span></a>
+                                    <ul class="sub-menu">
+                                        <li id="menu-item-4078"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4078">
+                                            <a href="http://nginx.com/technical-specs-2/"><span class="inner">Technical Specifications</span></a>
+                                        </li>
+                                        <li id="menu-item-4110"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4110">
+                                            <a href="http://nginx.com/products/feature-matrix/"><span class="inner">Compare Versions</span></a>
+                                        </li>
+                                        <li id="menu-item-4114"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4114">
+                                            <a href="http://nginx.com/products/pricing/"><span class="inner">Price &#038; Buy</span></a>
+                                        </li>
+                                        <li id="menu-item-4077"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4077">
+                                            <a href="http://nginx.com/products/releases/"><span class="inner">NGINX Plus Releases</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li id="menu-item-4070"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4070">
+                                    <a href="http://nginx.com/solutions/"><span class="inner">Solutions</span><span
+                                            class="icon icon-arrow-down"></span></a>
+                                    <ul class="sub-menu">
+                                        <li id="menu-item-4075"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4075">
+                                            <a href="http://nginx.com/solutions/load-balancing/"><span class="inner">Load Balancing</span></a>
+                                        </li>
+                                        <li id="menu-item-4074"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4074">
+                                            <a href="http://nginx.com/solutions/web-mobile-acceleration/"><span
+                                                    class="inner">Web &#038; Mobile Acceleration</span></a></li>
+                                        <li id="menu-item-4081"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4081">
+                                            <a href="http://nginx.com/solutions/application-security/"><span
+                                                    class="inner">Application Security</span></a></li>
+                                        <li id="menu-item-4073"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4073">
+                                            <a href="http://nginx.com/solutions/streaming-media/"><span class="inner">Streaming Media</span></a>
+                                        </li>
+                                        <li id="menu-item-4071"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4071">
+                                            <a href="http://nginx.com/solutions/api-gateway/"><span class="inner">API Gateway</span></a>
+                                        </li>
+                                        <li id="menu-item-4072"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4072">
+                                            <a href="http://nginx.com/solutions/web-server/"><span class="inner">Web Server</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li id="menu-item-4211"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4211"><a
+                                        href="http://nginx.com/resources/"><span class="inner">Resources</span></a></li>
+                                <li id="menu-item-4113"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4113">
+                                    <a href="http://nginx.com/support-services/"><span class="inner">Support &#038; Services</span><span
+                                            class="icon icon-arrow-down"></span></a>
+                                    <ul class="sub-menu">
+                                        <li id="menu-item-4082"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4082">
+                                            <a href="http://nginx.com/support/"><span class="inner">Support</span></a>
+                                        </li>
+                                        <li id="menu-item-3991"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3991">
+                                            <a href="http://university.nginx.com/"><span
+                                                    class="inner">Training</span></a></li>
+                                        <li id="menu-item-4083"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4083">
+                                            <a href="http://nginx.com/services/"><span class="inner">Professional Services</span></a>
+                                        </li>
+                                        <li id="menu-item-4111"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4111">
+                                            <a href="http://nginx.com/faqs/"><span class="inner">FAQs</span></a></li>
+                                    </ul>
+                                </li>
+                                <li id="menu-item-4084"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4084">
+                                    <a href="http://nginx.com/company/"><span class="inner">Company</span><span
+                                            class="icon icon-arrow-down"></span></a>
+                                    <ul class="sub-menu">
+                                        <li id="menu-item-4088"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4088">
+                                            <a href="http://nginx.com/company/"><span class="inner">Company</span></a>
+                                        </li>
+                                        <li id="menu-item-4086"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4086">
+                                            <a href="http://nginx.com/jobs/"><span class="inner">Jobs/Careers</span></a>
+                                        </li>
+                                        <li id="menu-item-4085"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4085">
+                                            <a href="http://nginx.com/partners/"><span class="inner">Partners</span></a>
+                                        </li>
+                                        <li id="menu-item-4087"
+                                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4087">
+                                            <a href="http://nginx.com/leadership-team/"><span class="inner">Leadership Team</span></a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li id="menu-item-4079"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4079"><a
+                                        href="http://nginx.com/customers/"><span class="inner">Customers</span></a></li>
+                                <li id="menu-item-4069"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4069"><a
+                                        href="http://nginx.com/blog/"><span class="inner">Blog</span></a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                    <!-- /#site-navigation.primary-menu-location -->
+                </div>
+                <!-- /.primary-menu-location-wrapper -->
+
+                <div class="header-extras-wrapper">
+                    <div class="header-extras">
+                        <div class="header-extra header-tel" itemprop="telephone"><a href="tel:+18009159122">1-800-915-9122</a>
+                        </div>
+                        <div class="header-extra header-login">
+                            <a class="login-link" href="https://cs.nginx.com/login">
+                                <div class="icon icon-user"></div>
+                                <div class="login-text">Login</div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+            <!-- /.header-menus -->
+
+            <div class="mobile-menu-button-wrapper">
+                <a href="#" class="mobile-menu-button">
+                    <div class="icon icon-menu"></div>
+                </a>
+            </div>
+
+        </div>
+        <!-- /.site-header-inner -->
+    </header>
+    <!-- /#masthead -->
+
+{%- block header %}{% endblock %}
+
+{%- block relbar1 %}{{ relbar() }}{% endblock %}
+    <div id="main-content">
+
+    <!-- SECTION: LEAD -->
+
+{%- block content %}
+  {%- block sidebar1 %} {# possible location for sidebar #} {% endblock %}
+
+    <div class="document">
+  {%- block document %}
+      <div class="documentwrapper">
+      {%- if render_sidebar %}
+        <div class="bodywrapper">
+      {%- endif %}
+          <div class="body" role="main">
+            {% block body %} {% endblock %}
+          </div>
+      {%- if render_sidebar %}
+        </div>
+      {%- endif %}
+      </div>
+  {%- endblock %}
+
+  {%- block sidebar2 %}{{ sidebar() }}{% endblock %}
+      <div class="clearer"></div>
+    </div>
+{%- endblock %}
+
+{%- block relbar2 %}{{ relbar() }}{% endblock %}
+</div>
+{%- block footer %}
+
+    <footer id="colophon" class="site-footer" role="contentinfo">
+        <div class="site-footer-inner">
+            <div class="footer-primary-nav">
+                <nav class="footer-menu-wrap" role="navigation">
+                    <ul id="menu-footer-products" class="footer-menu">
+                        <li id="menu-item-3650"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3650">
+                            <a href="http://dev.wp.nginx.com/products/">Products</a>
+                            <ul class="sub-menu">
+                                <li id="menu-item-3652"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3652"><a
+                                        href="http://dev.wp.nginx.com/products/">NGINX Plus</a></li>
+                                <li id="menu-item-4100"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4100"><a
+                                        href="http://dev.wp.nginx.com/products/feature-matrix/">Compare Versions</a>
+                                </li>
+                                <li id="menu-item-4101"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4101"><a
+                                        href="http://dev.wp.nginx.com/products/pricing/">Price &amp; Buy</a></li>
+                                <li id="menu-item-4102"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4102"><a
+                                        href="http://dev.wp.nginx.com/technical-specs/">NGINX Technical
+                                    Specifications</a></li>
+                                <li id="menu-item-4104"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4104"><a
+                                        href="http://dev.wp.nginx.com/products/nginx-plus-aws/">NGINX Plus for AWS</a>
+                                </li>
+                                <li id="menu-item-4105"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4105"><a
+                                        href="http://dev.wp.nginx.com/products/nginx-plus-microsoft-azure/">NGINX Plus
+                                    for Microsoft Azure</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.footer-menu-location -->
+                <nav class="footer-menu-wrap" role="navigation">
+                    <ul id="menu-footer-solutions" class="footer-menu">
+                        <li id="menu-item-4128"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4128">
+                            <a href="http://dev.wp.nginx.com/solutions/">Solutions</a>
+                            <ul class="sub-menu">
+                                <li id="menu-item-4129"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4129"><a
+                                        href="http://dev.wp.nginx.com/solutions/web-mobile-acceleration/">Web &amp;
+                                    Mobile Acceleration</a></li>
+                                <li id="menu-item-4130"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4130"><a
+                                        href="http://dev.wp.nginx.com/solutions/load-balancing/">Load Balancing</a></li>
+                                <li id="menu-item-4131"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4131"><a
+                                        href="http://dev.wp.nginx.com/solutions/application-security/">Application
+                                    Security</a></li>
+                                <li id="menu-item-4132"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4132"><a
+                                        href="http://dev.wp.nginx.com/solutions/api-gateway/">API Gateway</a></li>
+                                <li id="menu-item-4133"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4133"><a
+                                        href="http://dev.wp.nginx.com/solutions/streaming-media/">Streaming Media</a>
+                                </li>
+                                <li id="menu-item-4134"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4134"><a
+                                        href="http://dev.wp.nginx.com/solutions/web-server/">Web Server</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.footer-menu-location -->
+            </div>
+            <div class="footer-secondary-nav">
+                <nav class="footer-menu-wrap" role="navigation">
+                    <ul id="menu-footer-resources-and-support" class="footer-menu">
+                        <li id="menu-item-4151"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4151">
+                            <a href="http://dev.wp.nginx.com/resources/">Resources</a>
+                            <ul class="sub-menu">
+                                <li id="menu-item-4153"
+                                    class="menu-item menu-item-type-taxonomy menu-item-object-nx_info_types menu-item-4153">
+                                    <a href="http://dev.wp.nginx.com/blog/nx_info_types/admin-guide/">Admin Guide</a>
+                                </li>
+                                <li id="menu-item-4154"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4154"><a
+                                        href="http://dev.wp.nginx.com/resources/webinars/">Webinars</a></li>
+                                <li id="menu-item-4155"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4155"><a
+                                        href="http://dev.wp.nginx.com/resources/more/">Community Resources</a></li>
+                                <li id="menu-item-4156"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4156"><a
+                                        href="http://dev.wp.nginx.com/faqs/">FAQ</a></li>
+                            </ul>
+                        </li>
+                        <li id="menu-item-5548"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-5548">
+                            <a href="http://dev.wp.nginx.com/support-services/">Support &amp; Services</a>
+                            <ul class="sub-menu">
+                                <li id="menu-item-5567"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5567"><a
+                                        href="http://dev.wp.nginx.com/support/">Support</a></li>
+                                <li id="menu-item-4150"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4150"><a
+                                        href="http://dev.wp.nginx.com/services/">Professional Services</a></li>
+                                <li id="menu-item-4149"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-4149"><a
+                                        href="http://university.nginx.com/">Training</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- /.footer-menu-location -->
+                <nav class="footer-menu-wrap" role="navigation">
+                    <ul id="menu-footer-extras" class="footer-menu">
+                        <li id="menu-item-4157"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-4157">
+                            <a href="http://dev.wp.nginx.com/company/">Company</a>
+                            <ul class="sub-menu">
+                                <li id="menu-item-4158"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4158"><a
+                                        href="http://dev.wp.nginx.com/company/">About Us</a></li>
+                                <li id="menu-item-4159"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4159"><a
+                                        href="http://dev.wp.nginx.com/jobs/">Careers</a></li>
+                                <li id="menu-item-4160"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4160"><a
+                                        href="http://dev.wp.nginx.com/partners/">Partners</a></li>
+                                <li id="menu-item-4162"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4162"><a
+                                        href="http://dev.wp.nginx.com/leadership-team/">Leadership</a></li>
+                                <li id="menu-item-5550"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5550"><a
+                                        href="http://dev.wp.nginx.com/press/">Press</a></li>
+                            </ul>
+                        </li>
+                        <li id="menu-item-4126"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4126"><a
+                                href="http://dev.wp.nginx.com/customers/">Customers</a></li>
+                        <li id="menu-item-4127"
+                            class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4127"><a
+                                href="http://dev.wp.nginx.com/blog/">Blog</a></li>
+                    </ul>
+                </nav>
+                <!-- /.footer-menu-location -->
+            </div>
+            <div class="footer-connect-nav">
+                <div class="footer-social">
+                    <span class="footer-head">Connect With Us</span>
+                    <ul>
+                        <li><a href="http://www.facebook.com/nginxinc" class="icon-facebook">facebook</a></li>
+                        <li><a href="http://twitter.com/nginx" class="icon-twitter">twitter</a></li>
+                        <li><a href="http://www.linkedin.com/company/nginx" class="icon-linkedin">linkedin</a></li>
+                        <li style="margin-right:-3px;margin-left:2px;"><a
+                                href="http://www.youtube.com/user/NginxInc"><img style="width:26px;height:auto;"
+                                                                                 src="http://dev.wp.nginx.com/wp-content/themes/nginx-theme/assets/img/yt-nginx@2x.png"></a>
+                        </li>
+                        <li><a href="http://dev.wp.nginx.com/feed/" class="icon-rss">rss</a></li>
+                    </ul>
+                </div>
+                <div class="footer-email-signup">
+                    </form>
+                </div>
+
+            </div>
+
+            <div class="site-info">
+                © NGINX Inc. · 85 Federal St. San Francisco, CA 94107 · 1-800-915-9122 · <a href="/privacy-policy/">Privacy
+                Policy</a></div>
+            <!-- /.site-info -->
+
+        </div>
+        <!-- /.site-footer-inner -->
+    </footer>
+</div>
+<!-- /#page -->
+
+<script>
+    (function ($) {
+        var mobileHeaderToggle = function () {
+            var expandedClass = 'mobile-expanded',
+                    $header = $('#masthead');
+
+            $header.stop(true, true);
+            if (!$header.hasClass(expandedClass)) {
+                $header.addClass(expandedClass);
+            } else {
+                $header.removeClass(expandedClass);
+            }
+        };
+
+        $(document).ready(function () {
+            $('.mobile-menu-button').on('click', function (e) {
+                e.preventDefault();
+                mobileHeaderToggle();
+            });
+        });
+    })(jQuery);
+
+</script>
+<!-- End Piwik Code -->
+
+{%- endblock %}
+  </body>
+</html>

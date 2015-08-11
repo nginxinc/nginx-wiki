@@ -1,0 +1,133 @@
+@charset "UTF-8";
+
+@font-face {
+  font-family: "nginx-font";
+  src:url("fonts/nginx-font.eot");
+  src:url("fonts/nginx-font.eot?#iefix") format("embedded-opentype"),
+    url("fonts/nginx-font.woff") format("woff"),
+    url("fonts/nginx-font.ttf") format("truetype"),
+    url("fonts/nginx-font.svg#nginx-font") format("svg");
+  font-weight: normal;
+  font-style: normal;
+
+}
+
+[data-icon]:before {
+  font-family: "nginx-font" !important;
+  content: attr(data-icon);
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^="icon-"]:before,
+[class*=" icon-"]:before {
+  font-family: "nginx-font" !important;
+  font-style: normal !important;
+  font-weight: normal !important;
+  font-variant: normal !important;
+  text-transform: none !important;
+  speak: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icon-arrow-disc:before {
+  content: "1";
+}
+.icon-nginx-cloud:before {
+  content: "b";
+}
+.icon-nginx-testdeploy:before {
+  content: "c";
+}
+.icon-nginx-webserver:before {
+  content: "d";
+}
+.icon-nginx-connected:before {
+  content: "e";
+}
+.icon-arrow-down:before {
+  content: "3";
+}
+.icon-arrow-right:before {
+  content: "4";
+}
+.icon-nginx-database:before {
+  content: "h";
+}
+.icon-nginx-dynamic:before {
+  content: "i";
+}
+.icon-arrow-submit:before {
+  content: "2";
+}
+.icon-nginx-focus:before {
+  content: "l";
+}
+.icon-nginx-internet:before {
+  content: "m";
+}
+.icon-linkedin:before {
+  content: "L";
+}
+.icon-play:before {
+  content: "9";
+}
+.icon-nginx-loadbalance:before {
+  content: "p";
+}
+.icon-nginx-modern:before {
+  content: "q";
+}
+.icon-rss:before {
+  content: "R";
+}
+.icon-search:before {
+  content: "S";
+}
+.icon-nginx-monitoring:before {
+  content: "t";
+}
+.icon-nginx-performance:before {
+  content: "u";
+}
+.icon-twitter:before {
+  content: "T";
+}
+.icon-user:before {
+  content: "U";
+}
+.icon-nginx-reliability:before {
+  content: "x";
+}
+.icon-nginx-softwareconfigure:before {
+  content: "y";
+}
+.icon-nginx-application:before {
+  content: "z";
+}
+.icon-nginx-caching:before {
+  content: "a";
+}
+.icon-nginx-streamingmedia:before {
+  content: "f";
+}
+.icon-facebook:before {
+  content: "F";
+}
+.icon-arrow-left:before {
+  content: "g";
+}
+.icon-arrow-up:before {
+  content: "j";
+}
+.icon-menu:before {
+  content: "k";
+}
