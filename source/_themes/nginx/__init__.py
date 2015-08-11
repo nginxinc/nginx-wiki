@@ -6,7 +6,7 @@ https://github.com/guzzle/guzzle_sphinx_theme/blob/master/guzzle_sphinx_theme/__
 import os
 import xml.etree.ElementTree as ET
 
-from alabaster import _version as version
+import _version as version
 
 
 def get_path():
