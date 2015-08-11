@@ -84,8 +84,8 @@ How do I generate an .htpasswd file without having Apache tools installed?
     }
 
 * Or, you may use the `htpasswd.py <http://trac.edgewall.org/browser/trunk/contrib/htpasswd.py>`_ python script.
-    
-    
+
+
 
 Why isn't my $foo (e.g. rewrite, proxy, location, unix:/$PATH, etc.) configuration working for me?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -160,12 +160,10 @@ The |HttpProxyModule| offers configurations for caching upstream servers.
 
 Can I disable the buffering for upload progress? / How can I display upload progress on the client side?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-These are both very frequently asked questions.  
+These are both very frequently asked questions.
 
-.. todo::
-   ..
-      Currently the only solution is the third-party module :doc:`../modules/upload_progress`.
-   
+Currently the only solution is the third-party module :doc:`../modules/upload_progress`.
+
 (This functionality is planned for a future release of Nginx.)
 
 
@@ -176,16 +174,16 @@ Mail Proxying
 Could someone explain how to configure and test the IMAP module (with a complete .conf example)?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Start with the configuration from the :doc:`../start/topics/examples/imapproxyexample`.
-   
+
 For detailed information about different configuration parameters, see the |MailCoreModule| page.
 
 Related resources:
 
 * :doc:`../start/topics/examples/imapauthenticatewithapachephpscript`
 
-.. todo::
+.. todo:
    ..
-      * :doc:`imapauthenticatewithembeddedperlscript`
+      :doc:`imapauthenticatewithembeddedperlscript`
 
 
 How can Nginx be deployed as an SMTP proxy, with a Postfix backend?

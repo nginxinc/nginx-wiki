@@ -25,6 +25,9 @@ Getting Started
    topics/examples/separateerrorloggingpervirtualhost
    topics/examples/imapproxyexample
    topics/examples/imapauthenticatewithapachephpscript
+   topics/examples/headers_management
+   topics/examples/source_tricks
+   topics/examples/coding_style
    topics/recipes/alkaline
    topics/recipes/cms_made_simple
    topics/recipes/codeigniter
@@ -61,6 +64,9 @@ Getting Started
    topics/tutorials/dynamic_php
    topics/tutorials/config_pitfalls
    topics/tutorials/debugging
+   topics/tutorials/optimizations
+   topics/tutorials/solaris_10_u5
+   topics/tutorials/solaris_11
 
 We have this handy :doc:`getting started<topics/tutorials/gettingstarted>` document to get you going. Additionally there are examples and tutorials below to help you get up to speed with configuring NGINX the way you want it.
 
