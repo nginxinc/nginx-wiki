@@ -64,8 +64,6 @@ Nginx 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Eval (agentzh's fork)     | Captures arbitrary subrequest's responses into nginx variables          | :github:`openresty/nginx-eval-module`                                                   |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| :doc:`extended_status`    | Extended status module for nginx                                        | :github:`zealot83/ngx_http_extended_status_module`                                      |
-+---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | EY Balancer               | Provides a request queue for limiting concurrent requests               | :github:`ezmobius/nginx-ey-balancer`                                                    |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`fair_balancer`      | Distributes incoming requests to least-busy servers                     | :github:`gnosek/nginx-upstream-fair`                                                    |
@@ -327,6 +325,7 @@ Nginx 3\ :sup:`rd` Party Modules
 ..
    Other notes:
    * Ownermatch patch link is a dead link, removed
+   * Extended Status killed as part of https://github.com/nginxinc/nginx-wiki/issues/62
 
 .. toctree::
    :hidden:
@@ -341,7 +340,6 @@ Nginx 3\ :sup:`rd` Party Modules
    domain_resolve
    drizzle
    echo
-   extended_status
    fair_balancer
    fancy_index
    foot_filter
