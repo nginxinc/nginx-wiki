@@ -52,7 +52,7 @@ at sun to access the download link.
    additional packages, which we won't need in our procedure.
 
 After you have downloaded the SunStudio12ml­-solaris­-x86­-200709­-ii.tar.bz2,
-we will extract it as follows :
+we will extract it as follows:
 
 .. code-block:: bash
 
