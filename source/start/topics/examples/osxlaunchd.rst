@@ -1,8 +1,6 @@
 OSX Launchd
 ===========
 
-This information taken from `Jane Avriette's blog <http://innenin.blogspot.com/2009/05/running-nginx-on-osx.html>`_
-
 Save this file as ``/System/Library/LaunchDaemons/nginx.plist``
 
 .. code-block:: xml

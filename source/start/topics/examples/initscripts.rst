@@ -20,7 +20,7 @@ Linux Init.d
 
 * :doc:`redhatnginxinit`
 * :doc:`redhatphpfcgiinit`
-* `Debian PHP-FPM (Lenny / Squeeze) <http://kbeezie.com/view/debian-ubuntu-nginx-init-script/>`_
+* `Debian PHP-FPM (Lenny / Squeeze) <http://kbeezie.com/debian-ubuntu-nginx-init-script/>`_
 * :github:`LSB compliant <Fleshgrinder/nginx-sysvinit-script>`
 
 Upstart
