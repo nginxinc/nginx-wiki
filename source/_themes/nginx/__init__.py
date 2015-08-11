@@ -6,8 +6,6 @@ https://github.com/guzzle/guzzle_sphinx_theme/blob/master/guzzle_sphinx_theme/__
 import os
 import xml.etree.ElementTree as ET
 
-from alabaster import _version as version
-
 
 def get_path():
     """
@@ -17,16 +15,11 @@ def get_path():
     return os.path.abspath(os.path.dirname(os.path.dirname(__file__)))
 
 
-def update_context(app, pagename, templatename, context, doctree):
-    context['alabaster_version'] = version.__version__
-
 def setup(app):
     app.connect('html-page-context', add_html_link)
     app.connect('build-finished', create_sitemap)
     app.sitemap_links = []
-    app.connect('html-page-context', update_context)
-    return {'version': version.__version__,
-            'parallel_read_safe': True}
+    return {'parallel_read_safe': True}
 
 def add_html_link(app, pagename, templatename, context, doctree):
     """As each page is built, collect page names for the sitemap"""
