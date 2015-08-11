@@ -379,3 +379,10 @@ nitpicky = True
 # Translations
 locale_dirs = ['locale/']
 gettext_compact = False
+
+# For sitemap
+sys.path.insert(0, os.path.abspath('.'))
+extensions.append('_themes.nginx')
+html_theme_options = {
+    "base_url": "/"
+}
