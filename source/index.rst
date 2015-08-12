@@ -13,7 +13,7 @@ requests, you can still benefit from Nginx's high-performance and small memory
 footprint. Nginx scales in all directions: from the smallest VPS all the way up
 to large clusters of servers.
 
-Nginx powers several high-visibility sites, such as `Netflix <http://www.netflix.com/>`_, `Hulu <http://www.hulu.com/>`_, `Pinterest <http://www.pinterest.com/>`_, `CloudFlare <http://www.cloudflare.com/>`_, `Airbnb <http://www.airbnb.com/>`_, `WordPress.com <http://www.wordpress.com/>`_, `GitHub <http://github.com/>`_, `SoundCloud <http://www.soundcloud.com/>`_, `Zynga <http://www.soundcloud.com/>`_, `Eventbrite <http://www.eventbrite.com/>`_, `Zappos <http://www.zappos.com/>`_, `Media Temple <http://www.mediatemple.net/>`_, `Heroku <http://www.heroku.com/>`_, `RightScale <http://www.rightscale.com/>`_, `Engine Yard <http://www.engineyard.com/>`_, `MaxCDN <http://maxcdn.com/>`_ and many others.
+Nginx powers several high-visibility sites, such as `Netflix <https://www.netflix.com/>`_, `Hulu <http://www.hulu.com/>`_, `Pinterest <https://www.pinterest.com/>`_, `CloudFlare <https://www.cloudflare.com/>`_, `Airbnb <https://www.airbnb.com/>`_, `WordPress.com <https://wordpress.com/>`_, `GitHub <https://github.com/>`_, `SoundCloud <https://soundcloud.com/>`_, `Zynga <https://www.zynga.com/>`_, `Eventbrite <https://eventbrite.com/>`_, `Zappos <http://www.zappos.com/>`_, `Media Temple <https://mediatemple.net/>`_, `Heroku <https://www.heroku.com/>`_, `RightScale <http://www.rightscale.com/>`_, `Engine Yard <https://www.engineyard.com/>`_, `MaxCDN <https://maxcdn.com/>`_ and many others.
 
 .. _introtable:
 
