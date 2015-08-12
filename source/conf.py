@@ -368,9 +368,10 @@ linkcheck_ignore = [
                     r'.*heiher.info.*', # Bad SSL cert
                     r'.*lua.org.*', # 'utf8' codec can't decode byte 0xea in position 888: invalid continuation byte
                     r'http://i.6.cn.*', # timeouts on CI
-                    r'.*www.linkedin.com.*',
+                    r'.*www.linkedin.com.*', # blocking the CI with 999 error
                     r'.*maisonbisson.com.*',
-                    r'.*vtunnel.com.*' # often hits timeout on CI
+                    r'.*vtunnel.com.*', # often hits timeout on CI
+                    r'.*www.slideshare.net.*' # blocking the CI with 999 error
                    ]
 
 
