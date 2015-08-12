@@ -1,3 +1,5 @@
+/* IMPORTANT: Please update the link to this in theme.conf with the correct date/time in YYYYMMDDHHMM format */
+
 {% set page_width = '1140px' %}
 {% set sidebar_width = '220px' %}
 
@@ -185,6 +187,10 @@ div.highlight {
     background-color: white;
 }
 
+div.highlight pre {
+    border: 1px solid {{ theme_note_border }};
+}
+
 dt:target, .highlight {
     background: #FAF3E8;
 }
@@ -305,20 +311,11 @@ pre {
     line-height: 1.3em;
 }
 
-dl pre, blockquote pre, li pre {
-    margin-left: -60px;
-    padding-left: 60px;
-}
-
-dl dl pre {
-    margin-left: -90px;
-    padding-left: 90px;
-}
-
 tt, code {
     background-color: #ecf0f3;
     color: #222;
     /* padding: 1px 2px; */
+    font-family: 'Courier 10 Pitch', Courier, monospace;
 }
 
 tt.xref, code.xref, a tt {
@@ -535,3 +532,12 @@ a .icon-holder {
 a:hover .icon-holder {
   fill: {{ theme_link_hover }};
 }
+
+a.internal em {
+    font-style: normal;
+}
+
+a.external {
+    border-bottom: 1px dashed;
+}
+
