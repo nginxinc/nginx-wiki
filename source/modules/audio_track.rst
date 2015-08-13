@@ -1,3 +1,5 @@
+.. title:: Audio Track for HLS Module | NGINX
+
 Audio Track for HTTP Live Streaming
 ===================================
 
@@ -25,13 +27,13 @@ A viewer requests the master playlist, and the response is modified. A simple lu
       rewrite (.*)master-playlist.m3u8$ $1playlist.m3u8 break;
       content_by_lua '
           local res = ngx.location.capture(ngx.var.uri);
-          local first_playlist = res.body:match("[^\\n]*m3u8")
+          local first_playlist = res.body:match("[^\n]*m3u8")
           local audio_playlist = first_playlist:gsub("\.m3u8", "-audio.m3u8")
-          local ext_inf = "#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=64000\\n"
+          local ext_inf = "#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=64000\n"
           ngx.print(res.body)
           ngx.print(ext_inf)
           ngx.print(audio_playlist)
-          ngx.print("\\n")
+          ngx.print("\n")
       ';
   }
 
@@ -112,4 +114,3 @@ Now you can look at our :github:`nginx configuration example <flavioribeiro/ngin
 .. warning::
 
    It's highly recommended to use caching in all locations of HLS, in special the one that returns the generated ``.aac``.
-

@@ -1,5 +1,7 @@
-Accept Language Module
-======================
+.. title:: Accept Language Module | NGINX
+
+Accept Language
+===============
 
 
 Description
