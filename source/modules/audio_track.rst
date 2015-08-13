@@ -27,13 +27,13 @@ A viewer requests the master playlist, and the response is modified. A simple lu
       rewrite (.*)master-playlist.m3u8$ $1playlist.m3u8 break;
       content_by_lua '
           local res = ngx.location.capture(ngx.var.uri);
-          local first_playlist = res.body:match("[^\n]*m3u8")
+          local first_playlist = res.body:match("[^\\n]*m3u8")
           local audio_playlist = first_playlist:gsub("\.m3u8", "-audio.m3u8")
-          local ext_inf = "#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=64000\n"
+          local ext_inf = "#EXT-X-STREAM-INF:PROGRAM-ID=1,BANDWIDTH=64000\\n"
           ngx.print(res.body)
           ngx.print(ext_inf)
           ngx.print(audio_playlist)
-          ngx.print("\n")
+          ngx.print("\\n")
       ';
   }
 
