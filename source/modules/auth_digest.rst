@@ -1,3 +1,5 @@
+.. title:: HTTP Digest Authentication Module | NGINX
+
 HTTP Digest Authentication
 ==========================
 

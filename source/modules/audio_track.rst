@@ -1,3 +1,5 @@
+.. title:: Audio Track for HLS Module | NGINX
+
 Audio Track for HTTP Live Streaming
 ===================================
 
@@ -112,4 +114,3 @@ Now you can look at our :github:`nginx configuration example <flavioribeiro/ngin
 .. warning::
 
    It's highly recommended to use caching in all locations of HLS, in special the one that returns the generated ``.aac``.
-
