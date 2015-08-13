@@ -1,3 +1,5 @@
+.. title:: Circle Gif Module | NGINX
+
 Circle Gif
 ==========
 

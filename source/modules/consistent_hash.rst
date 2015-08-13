@@ -1,3 +1,5 @@
+.. title:: Upstream Consistent Hash Module | NGINX
+
 Upstream Consistent Hash
 ========================
 

@@ -1,3 +1,5 @@
+.. title:: Concat Module | NGINX
+
 Concat
 ======
 
@@ -111,7 +113,9 @@ concat_delimiter
 :Context: *http, server, locatione*
 
 Defines the **delimiter** between two files.
-If the config is ``concat_delimiter "\n"``,a ``"\n"`` would be inserted betwen 1.js and 2.js when visting ``http://example.com/??1.js,2.js``
+If the config is ``concat_delimiter "
+"``,a ``"
+"`` would be inserted betwen 1.js and 2.js when visting ``http://example.com/??1.js,2.js``
 
 
 concat_ignore_file_error

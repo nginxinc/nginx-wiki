@@ -1,3 +1,5 @@
+.. title:: Clojure Module | NGINX
+
 Clojure
 =======
 
