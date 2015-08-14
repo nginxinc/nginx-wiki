@@ -389,3 +389,4 @@ extensions.append('_themes.nginx')
 html_theme_options = {
     "base_url": "/"
 }
+html_title = "NGINX"
