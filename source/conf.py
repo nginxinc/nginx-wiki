@@ -372,7 +372,9 @@ linkcheck_ignore = [
                     r'.*maisonbisson.com.*',
                     r'.*vtunnel.com.*', # often hits timeout on CI
                     r'.*www.slideshare.net.*', # blocking the CI with 999 error
-                    r'.*eventbrite.com.*' # 301 redirect to country specific site
+                    r'.*eventbrite.com.*', # 301 redirect to country specific site
+                    r'.*example.com.*', # Example URLs
+                    r'.*domain.com.*' # Example URLs
                    ]
 
 
