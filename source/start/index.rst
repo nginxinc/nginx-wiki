@@ -69,7 +69,13 @@ Getting Started
    topics/tutorials/solaris_10_u5
    topics/tutorials/solaris_11
 
-We have this handy :doc:`getting started<topics/tutorials/gettingstarted>` document to get you going. Additionally there are examples and tutorials below to help you get up to speed with configuring NGINX the way you want it.
+We have this handy :doc:`getting started<topics/tutorials/gettingstarted>` document to get you going. There is also the following resources:
+
+* `Igor's introductory docs <http://nginx.org/en/docs/introduction.html>`_
+* `Guide to the most common web stack <http://michael.lustfield.net/content/dummies-guide-nginx>`_
+* `Martin's Nginx, PHP, Primer <http://blog.martinfjordvald.com/2010/07/nginx-primer/>`_
+
+Additionally there are examples and tutorials below to help you get up to speed with configuring NGINX the way you want it.
 
 Installing & Configuring NGINX
 ------------------------------
