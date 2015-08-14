@@ -195,10 +195,9 @@ You might also want to peruse the :doc:`3rd party modules <../../../modules/inde
 Other Systems
 ^^^^^^^^^^^^^
 
-.. todo::
-   ..
-      * :doc:`installing_on_solaris_10_u5`
-      * :doc:`installing_on_solaris_11`
+* :doc:`solaris_10_u5`
+* :doc:`solaris_11`
+* :doc:`openbsd`
 
 .. warning:: These pages are not thoroughly, if at all, reviewed for accuracy as they are on this page.
 

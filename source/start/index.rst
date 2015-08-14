@@ -16,25 +16,36 @@ Getting Started
    topics/examples/phpfastcgionwindows
    topics/examples/simplecgi
    topics/examples/simplepythonfcgi
+   topics/examples/simplerubyfcgi
+   topics/examples/djangofastcgi
    topics/examples/fcgiwrap
    topics/examples/fastcgiexample
    topics/examples/javaservers
+   topics/examples/mono
    topics/examples/x-accel
    topics/examples/likeapache
    topics/examples/likeapache-htaccess
    topics/examples/separateerrorloggingpervirtualhost
    topics/examples/imapproxyexample
+   topics/examples/imapauthenticatewithapacheperlscript
    topics/examples/imapauthenticatewithapachephpscript
+   topics/examples/nonrootwebpath
    topics/examples/headers_management
    topics/examples/source_tricks
    topics/examples/coding_style
    topics/examples/initscripts
+   topics/examples/hardwarelberrors
+   topics/examples/xsendfile
+   topics/examples/memcachepreload
+   topics/examples/embeddedperlminifyjs
+   topics/examples/embeddedperlsitemapsproxy
    topics/recipes/alkaline
    topics/recipes/cms_made_simple
    topics/recipes/codeigniter
    topics/recipes/drupal
    topics/recipes/dokuwiki
    topics/recipes/elgg
+   topics/recipes/expressionengine
    topics/recipes/iredmail
    topics/recipes/mailman
    topics/recipes/mediawiki
@@ -46,6 +57,7 @@ Getting Started
    topics/recipes/phplist
    topics/recipes/piwik
    topics/recipes/pmwiki
+   topics/recipes/pylons
    topics/recipes/pyrocms
    topics/recipes/qwebirc
    topics/recipes/redmine
@@ -57,6 +69,7 @@ Getting Started
    topics/recipes/yii
    topics/recipes/zend
    topics/recipes/zenphoto
+   topics/recipes/fcgizope
    topics/depth/ifisevil
    topics/tutorials/gettingstarted
    topics/tutorials/install
@@ -68,11 +81,12 @@ Getting Started
    topics/tutorials/optimizations
    topics/tutorials/solaris_10_u5
    topics/tutorials/solaris_11
+   topics/tutorials/openbsd
 
 We have this handy :doc:`getting started<topics/tutorials/gettingstarted>` document to get you going. There is also the following resources:
 
-* `Igor's introductory docs <http://nginx.org/en/docs/introduction.html>`_
-* `Guide to the most common web stack <http://michael.lustfield.net/content/dummies-guide-nginx>`_
+* `Igor's introductory docs <http://nginx.org/en/docs/#introduction>`_
+* `Guide to the most common web stack <https://michael.lustfield.net/nginx/dummies-guide-to-setting-up-nginx>`_
 * `Martin's Nginx, PHP, Primer <http://blog.martinfjordvald.com/2010/07/nginx-primer/>`_
 
 Additionally there are examples and tutorials below to help you get up to speed with configuring NGINX the way you want it.
@@ -87,6 +101,13 @@ Installing & Configuring NGINX
 * :doc:`Why IF Really is Evil<topics/depth/ifisevil>`
 * :doc:`Serving PHP<topics/tutorials/dynamic_php>`
 * :doc:`topics/examples/initscripts`
+
+Full Stack HOWTOs
+-----------------
+
+* `ISPConfig Control Panel including NGINX in Ubuntu 12.04 <https://www.howtoforge.com/perfect-server-ubuntu-12.04-lts-nginx-bind-dovecot-ispconfig-3>`_
+* `LEMP Setup on Debian <http://www.binarytides.com/install-nginx-php-fpm-mariadb-debian/>`_
+* `PHP-FPM / NGINX Security for Shared Hosting Environments <https://www.howtoforge.com/php-fpm-nginx-security-in-shared-hosting-environments-debian-ubuntu>`_
 
 Pre-canned Configurations
 -------------------------
@@ -111,6 +132,7 @@ to work.
 * :doc:`topics/recipes/dokuwiki`
 * :doc:`topics/recipes/drupal`
 * :doc:`topics/recipes/elgg`
+* :doc:`topics/recipes/expressionengine`
 * `Feng Office <https://www.howtoforge.com/running-feng-office-community-edition-on-nginx-lemp-on-debian-squeeze-ubuntu-11.10>`_
 * `Icinga <https://www.howtoforge.com/icinga-configuration-for-nginx-on-debian-wheezy-ubuntu-11.10>`_
 * :doc:`topics/recipes/iredmail`
@@ -130,6 +152,7 @@ to work.
 * :doc:`topics/recipes/pmwiki`
 * `PrestaShop <https://www.howtoforge.com/running-prestashop-1.5.x-on-nginx-lemp-on-debian-wheezy-ubuntu-12.10>`_
 * `ProcessWire <https://www.howtoforge.com/running-processwire-on-nginx-lemp-on-debian-wheezy-ubuntu-13.04>`_
+* :doc:`topics/recipes/pylons`
 * :doc:`topics/recipes/pyrocms`
 * :doc:`topics/recipes/qwebirc`
 * `Redaxo <https://www.howtoforge.com/running-redaxo-4.4.x-on-nginx-lemp-on-debian-wheezy-ubuntu-12.10>`_
@@ -145,10 +168,12 @@ to work.
 * `TYPO3 4.6 <https://www.howtoforge.com/running-typo3-4.6-on-nginx-lemp-on-debian-squeeze-ubuntu-11.10>`_
 * `TYPO3 6.3 <https://www.howtoforge.com/running-typo3-6.2-on-nginx-lemp-on-debian-wheezy-ubuntu-13.10>`_
 * :doc:`topics/recipes/wordpress`
+* `Wordpress caching <http://kbeezie.com/caching-wordpress/>`_
 * :doc:`topics/recipes/xenforo`
 * :doc:`topics/recipes/yii`
 * :doc:`topics/recipes/zend`
 * :doc:`topics/recipes/zenphoto`
+* :doc:`topics/recipes/fcgizope`
 
 Other Examples
 --------------
@@ -169,15 +194,38 @@ developed.
 * :doc:`topics/examples/phpfastcgionwindows`
 * :doc:`topics/examples/simplecgi`
 * :doc:`topics/examples/simplepythonfcgi`
+* :doc:`topics/examples/simplerubyfcgi`
+* :doc:`topics/examples/djangofastcgi`
 * :doc:`topics/examples/fastcgiexample`
 * :doc:`topics/examples/fcgiwrap`
 * :doc:`topics/examples/javaservers`
+* :doc:`topics/examples/mono`
 * :doc:`topics/examples/x-accel`
 * :doc:`topics/examples/likeapache`
 * :doc:`topics/examples/likeapache-htaccess`
 * :doc:`topics/examples/separateerrorloggingpervirtualhost`
 * :doc:`topics/examples/imapproxyexample`
+* :doc:`topics/examples/imapauthenticatewithapacheperlscript`
 * :doc:`topics/examples/imapauthenticatewithapachephpscript`
+* :doc:`topics/examples/nonrootwebpath`
+* `NGINX + SSL + SPDY <https://www.mare-system.de/guide-to-nginx-ssl-spdy-hsts/>`_
+* `NGINX + PHP FPM + APC on CentOS 6 <http://www.binarytides.com/install-nginx-php-fpm-centos/>`_
+* `Adding new vhosts with NGINX, PHP-FPM and Bash <http://www.sebdangerfield.me.uk/2012/05/nginx-and-php-fpm-bash-script-for-creating-new-vhosts-under-separate-fpm-pools/>`_
+* `Serving an iPhone website with Nginx <http://nicknotfound.com/2009/01/12/iphone-website-with-nginx/>`_
+* :doc:`topics/examples/hardwarelberrors`
+* :doc:`topics/examples/xsendfile`
+* :doc:`topics/examples/memcachepreload`
+* `Block visitors by country <https://www.howtoforge.com/nginx-how-to-block-visitors-by-country-with-the-geoip-module-debian-ubuntu>`_
+* :doc:`topics/examples/embeddedperlminifyjs`
+* :doc:`topics/examples/embeddedperlsitemapsproxy`
+
+Tools
+-----
+
+* `WiNGINX LEMP stack for Windows <http://winginx.com/en/>`_
+* `VIM NGINX configuration syntax highlighting <http://www.vim.org/scripts/script.php?script_id=1886>`_
+* :github:`Script for enabling/disabling virtual hosts easily <perusio/nginx_ensite>`
+
 
 Advanced Topics
 ---------------

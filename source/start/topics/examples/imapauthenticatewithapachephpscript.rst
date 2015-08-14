@@ -1,5 +1,5 @@
-Using a PHP Script on an Apache Server as the Auth Backend
-==========================================================
+Using a PHP Script on an Apache Server as the IMPA Auth Backend
+===============================================================
 
 Start with the configuration from :doc:`imapproxyexample`. 
 For detailed information about different configuration parameters, see the NginxMailCoreModule page.
