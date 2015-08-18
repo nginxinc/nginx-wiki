@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Drizzle module provides a way for NGINX internals to access MySQL, Drizzle, and other RDBMSs that support the Drizzle or MySQL wired protocol
+
 Drizzle
 =======
 

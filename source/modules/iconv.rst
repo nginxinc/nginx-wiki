@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Iconv module brings the set_iconv command to NGINX that can be used to converts character encodings.
+
 Iconv
 =====
 

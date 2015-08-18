@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The HTTP Push Stream module turns NGINX into an adept stream HTTP Push server.
+
 HTTP Push Stream
 ================
 

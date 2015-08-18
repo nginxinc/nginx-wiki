@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The HTTP rDNS module enables reverse DNS lookups for incoming connections and provides simple access control for incoming hostnames.
+
 HTTP rDNS
 =========
 

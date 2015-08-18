@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The User Agent module is similar to NGINX's native ngx_http_browser_module, but provides more User-Agent search options.
+
 User Agent
 ==========
 

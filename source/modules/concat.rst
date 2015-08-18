@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Concat module enables the concatenation of files in a given context.
+
 Concat
 ======
 

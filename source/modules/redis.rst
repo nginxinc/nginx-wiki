@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The HTTP Redis module provides support for caching with Redis.
+
 HTTP Redis
 ==========
 

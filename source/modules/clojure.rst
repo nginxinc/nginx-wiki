@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Clojure module is used for embedding Clojure programs.
+
 Clojure
 =======
 

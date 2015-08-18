@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Nginx Upload Progress module is an implementation of an upload progress system, that monitors RFC1867 POST uploads as they are transmitted to upstream servers.
+
 Nginx Upload Progress Module
 ============================
 

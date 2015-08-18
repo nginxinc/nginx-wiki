@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The SR Cache module provides a transparent caching layer for arbitrary NGINX locations. The caching behavior is mostly compatible with RFC 2616.
+
 SR Cache
 ========
 

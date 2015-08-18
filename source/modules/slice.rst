@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Slice module can be thought of as a reverse byte-range request header. Its main utility is to allow NGINX to slice a big file into small byte-ranges.
+
 Slice
 =====
 

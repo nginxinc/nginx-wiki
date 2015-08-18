@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Upstream Fair Balancer module distributes incoming requests to the least busy backend servers, rather than using a round-robin algorithm.
+
 Upstream Fair Balancer
 ======================
 

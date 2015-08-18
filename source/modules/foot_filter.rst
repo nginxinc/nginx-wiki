@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Foot Filter module implements a body filter that adds a given string to the page footer.
+
 Foot Filter
 ===========
 

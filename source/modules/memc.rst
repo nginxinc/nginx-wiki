@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Memc module is an An extended version of the standard memcached module that supports set, add, delete, and many more memcached commands.
+
 Memc
 ====
 

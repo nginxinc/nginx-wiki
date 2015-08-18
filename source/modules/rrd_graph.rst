@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The RRD Graph module provides an HTTP interface to RRDtool's graphing facilities, and is faster than scripts and CGIs with similar purposes.
+
 RRD Graph
 =========
 

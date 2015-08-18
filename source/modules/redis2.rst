@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Redis2 module allows NGINX to communicate with a Redis 2.X server in a non-blocking way.
+
 Redis2
 ======
 

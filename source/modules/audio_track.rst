@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Audio Track for HTTP Live Streaming module generates an audio track for HLS streams on the fly.
+
 Audio Track for HTTP Live Streaming
 ===================================
 

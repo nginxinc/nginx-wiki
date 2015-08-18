@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The MP4 Streaming Lite module seeks a certain time within H.264/MP4 files when a "start" parameter is provided in the URL.
+
 MP4 Streaming Lite
 ==================
 

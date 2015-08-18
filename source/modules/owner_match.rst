@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Owner Match module provides a simple file owner-based access control. Access rules are checked according to the order of their declaration.
+
 Owner Match
 ===========
 

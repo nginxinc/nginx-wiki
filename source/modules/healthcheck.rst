@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The HTTP Healthcheck module can be used to health check HTTP servers inside an upstream context.
+
 HTTP Healthcheck
 ================
 

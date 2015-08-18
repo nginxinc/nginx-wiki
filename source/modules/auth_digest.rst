@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The HTTP Digest Authentication module can be used to add HTTP Digest Authentication support to your server.
+
 HTTP Digest Authentication
 ==========================
 

@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Java module is used for embedding Java programs.
+
 Java
 ====
 

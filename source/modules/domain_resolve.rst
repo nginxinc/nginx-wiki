@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Upstream Domain Resolve module implements a load balancer that resolves an upstream domain name asynchronously.
+
 Upstream Domain Resolve
 =======================
 

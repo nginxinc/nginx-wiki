@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Set Misc module extends the standard HttpRewriteModule's directive set to provide many more functions.
+
 Set Misc
 ========
 
