@@ -348,7 +348,6 @@ Nginx 3\ :sup:`rd` Party Modules
    healthcheck
    iconv
    java_handler
-   keepalive
    ketama_chash
    lua
    memc
