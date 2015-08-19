@@ -532,10 +532,9 @@ If the MySQL error code in MySQL's query result is not OK, then a 500 error page
 
 Caveats
 -------
-* Other usptream modules like ``upstream_hash`` and :doc:`keepalive` *must not* be used with this module in a single upstream block.
+* Other usptream modules like ``upstream_hash`` and `keepalive <http://nginx.org/en/docs/http/ngx_http_upstream_module.html#keepalive>`_ *must not* be used with this module in a single upstream block.
 * Directives like the `server <|HttpUpstreamModule|#server>` *must not* be mixed with drizzle_server_ either.
 * Upstream backends that don't use drizzle_server_ to define server entries *must not* be used in the drizzle_pass_ directive.
-
 
 
 Troubleshooting

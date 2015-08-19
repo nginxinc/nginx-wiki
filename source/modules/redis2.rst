@@ -314,7 +314,7 @@ Here's an artificial example:
 
 Connection Pool
 ---------------
-You can use the excellent :doc:`keepalive` with this module to provide TCP connection pool for Redis.
+You can use the excellent `keepalive <http://nginx.org/en/docs/http/ngx_http_upstream_module.html#keepalive>`_ with this module to provide TCP connection pool for Redis.
 
 A sample config snippet looks like this
 
@@ -545,7 +545,7 @@ Limitations For Redis Publish/Subscribe
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 If you want to use the `Redis pub/sub <http://redis.io/topics/pubsub>`_ feature with this module, then you must note the following limitations:
 
-* You cannot use :doc:`keepalive` with this Redis upstream. Only short Redis connections will work.
+* You cannot use `keepalive <http://nginx.org/en/docs/http/ngx_http_upstream_module.html#keepalive>`_ with this Redis upstream. Only short Redis connections will work.
 * There may be some race conditions that produce the harmless ``Redis server returned extra bytes`` warnings in your nginx's error.log. Such warnings might be rare but just be prepared for it.
 * You should tune the various timeout settings provided by this module like `redis2_connect_timeout`_ and `redis2_read_timeout`_.
 
@@ -556,7 +556,7 @@ If you cannot stand these limitations, then you are highly recommended to switch
 Performance Tuning
 ------------------
 
-* When you're using this module, please ensure you're using a TCP connection pool (provided by :doc:`keepalive`) and Redis pipelining wherever possible. These features will significantly improve performance.
+* When you're using this module, please ensure you're using a TCP connection pool (provided by `keepalive <http://nginx.org/en/docs/http/ngx_http_upstream_module.html#keepalive>`_) and Redis pipelining wherever possible. These features will significantly improve performance.
 * Using multiple instance of Redis servers on your multi-core machines also help a lot due to the sequential processing nature of a single Redis server instance.
 * When you're benchmarking performance using something like ``ab`` or ``http_load``, please ensure that your error log level is high enough (like ``warn``) to prevent Nginx workers spend too much cycles on flushing the ``error.log`` file, which is always non-buffered and blocking and thus very expensive.
 

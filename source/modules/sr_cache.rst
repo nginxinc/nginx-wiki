@@ -196,7 +196,7 @@ One thing that should be taken care of is that memcached does have restriction o
 
 Further, one can utilize the `srcache_fetch_skip`_ and `srcache_store_skip`_ directives to control what to cache and what not on a per-request basis, and Lua can also be used here in a similar way. So the possibility is really unlimited.
 
-To maximize speed, we often enable TCP (or Unix Domain Socket) connection pool for our memcached upstreams provided by :doc:`keepalive`, for example,
+To maximize speed, we often enable TCP (or Unix Domain Socket) connection pool for our memcached upstreams provided by `keepalive <http://nginx.org/en/docs/http/ngx_http_upstream_module.html#keepalive>`_, for example,
 
 .. code-block:: nginx
 
