@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Lua module embeds Lua into NGINX and by leveraging Nginx's subrequests, allows the integration of Lua threads into the NGINX event model.
+
 Lua
 ===
 

@@ -100,8 +100,6 @@ Nginx 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | JavaScript                | Embedding SpiderMonkey, a full port of Perl module, and more            | :github:`kung-fu-tzu/ngx_http_js_module#readme`                                         |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| :doc:`keepalive`          | Provides keep-alive connections to memcached upstreams                  | `Download <http://mdounin.ru/hg/ngx_http_upstream_keepalive>`__                         |
-+---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`ketama_chash`       | Provides upstream load distribution by hashing a configurable variable  | :github:`flygoast/ngx_http_upstream_ketama_chash/releases/`                             |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Limit Upload Rate         | Limit the transmission rate of request body from a client               | :github:`cfsego/limit_upload_rate`                                                      |
@@ -321,6 +319,7 @@ Nginx 3\ :sup:`rd` Party Modules
    * Strip Whitespace - no revision tree, was locally hosted
    * Upstream Request Hash - obsolete as of Nginx 1.7.2
    * WSGI - most recent patch was for Nginx 0.8.x, links broken
+   * Keepalive - available in ngx_http_upstream_keepalive as of Nginx 1.1.4
 
 ..
    Other notes:
@@ -349,7 +348,6 @@ Nginx 3\ :sup:`rd` Party Modules
    healthcheck
    iconv
    java_handler
-   keepalive
    ketama_chash
    lua
    memc

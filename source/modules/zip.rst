@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Zip module assembles ZIP archives on the fly. In simple configurations, it takes a list of local files and serves them as a single ZIP archive.
+   
 Zip
 ===
 

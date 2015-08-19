@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Secure Download module enables you to create links which are only valid until a certain datetime is reached.
+
 Secure Download
 ===============
 

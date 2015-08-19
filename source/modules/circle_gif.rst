@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Circle Gif module generates simple circle images with the colors and size specified in the URL.
+
 Circle Gif
 ==========
 

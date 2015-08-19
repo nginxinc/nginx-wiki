@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Groovy module is used for embedding or Groovy programs.
+
 Groovy
 ======
 

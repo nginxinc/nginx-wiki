@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Upstream Consistent Hash module provides upstream load distribution by using an internal consistent hash ring to select backend nodes.
+
 Upstream Consistent Hash
 ========================
 

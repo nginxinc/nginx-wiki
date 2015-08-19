@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The HTTP Echo module brings "echo", "sleep", "time", "exec" and more shell-style goodies to your NGINX configuration files.
+
 HTTP Echo Module
 ================
 

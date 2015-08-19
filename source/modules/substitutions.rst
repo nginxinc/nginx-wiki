@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Substitutions module performs both regular expression and fixed string substitutions on response bodies.
+
 Substitutions
 =============
 

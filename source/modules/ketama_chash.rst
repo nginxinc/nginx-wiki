@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Upstream Ketama CHash module provides upstream load distribution by hashing a configurable variable using ketama consistent hashing algorithm.
+
 Upstream Ketama CHash
 =====================
 

@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Headers More module allows you to add, set, or clear any input or output header that you specify.
+
 Headers More
 ============
 

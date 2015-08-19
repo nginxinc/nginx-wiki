@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Upload module handles file uploads using multipart/form-data encoding (RFC 1867).
+
 Upload
 ======
 

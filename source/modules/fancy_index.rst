@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Fancy Index module makes possible the generation of file listings like the built-in autoindex module does, but adds a touch of style.
+
 Fancy Index
 ===========
 

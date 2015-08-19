@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The Accept Language module parses Accept-Language HTTP headers to choose the most suitable locale for the user.
+
 Accept Language Module
 ======================
 
