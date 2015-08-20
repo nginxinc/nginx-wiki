@@ -4,7 +4,7 @@ MediaWiki
 Requirements
 ------------
 
-* :ref:`tutorials-phpfpm`
+* `php-fpm <http://php-fpm.org/>`__
 
 Recipe
 ------

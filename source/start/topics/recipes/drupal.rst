@@ -8,7 +8,7 @@ Drupal is a bit of a beast of a PHP application.
 Requirements
 ------------
 
-* :ref:`tutorials-phpfpm`
+* `php-fpm <http://php-fpm.org/>`__
 
 Recipe
 ------

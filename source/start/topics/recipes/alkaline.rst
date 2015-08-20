@@ -8,7 +8,7 @@ This configuration can be used with a default installation of Alkaline v1.1.
 Requirements
 ------------
 
-* :ref:`tutorials-phpfpm`
+* `php-fpm <http://php-fpm.org/>`__
 
 Recipe
 ------

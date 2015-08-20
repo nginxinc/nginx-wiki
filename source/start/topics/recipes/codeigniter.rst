@@ -6,7 +6,7 @@ A powerful PHP framework with a very small footprint.
 Requirements
 ------------
 
-* :ref:`tutorials-phpfpm`
+* `php-fpm <http://php-fpm.org/>`__
 
 Recipe
 ------
