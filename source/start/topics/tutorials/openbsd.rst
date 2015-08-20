@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: How to install, build, test, and control NGINX on OpenBSD.
+
 Installing and configuring Nginx / Mongrel on OpenBSD with Rails support
 ========================================================================
 

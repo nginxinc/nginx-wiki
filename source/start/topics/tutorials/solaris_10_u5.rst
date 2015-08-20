@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: How to install, build, test, and control NGINX on Solaris 10u5.
+
 Installation
 ============
 

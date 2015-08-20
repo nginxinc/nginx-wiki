@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: This page describes ways to optimize your NGINX configurations to improve your request processing speed.
+
 Hash Tables
 -----------
 

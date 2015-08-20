@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: Just getting started with NGINX? Well, you've come to the right place! This page outlines the next steps that you'll need to take.
+
 Getting Started
 ===============
 

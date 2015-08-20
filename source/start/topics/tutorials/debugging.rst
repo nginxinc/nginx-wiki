@@ -1,4 +1,7 @@
 
+.. meta::
+   :description: This tutorial explains how to use some of NGINX's essential debugging features.
+
 Debugging
 =========
 

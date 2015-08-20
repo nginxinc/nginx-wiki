@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: This page outlines some of the NGINX configuration issues that we see frequently and then explains how to resolve them.
+
 .. warning:: Read all of this! ALL OF IT!
 
 Pitfalls and Common Mistakes

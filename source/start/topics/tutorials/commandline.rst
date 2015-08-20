@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: This tutorial shows you how to start, stop, and control NGINX from the command line.
+
 CommandLine
 ===========
 

@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: This page describes some of the options that you should consider when compiling NGINX.
+
 Installation and Compile-Time Options
 =====================================
 
