@@ -3,13 +3,6 @@ Frequently Asked Questions
 
 Please review this entire FAQ before querying IRC or sending questions to the mailing list.
 
-HI I have a question about the nginx webserver whenever I start nginx by ``sudo ./nginx start`` and then type the ``ps -ef | grep nginx`` command I get the following output. (when I am in my ``/etc/init.d`` directory)
-
-.. code-block:: bash
-
-  1000 10760 10617 0 13:40 pts/0 00:00:00 grep --color=auto nginx
-
-
 
 General Questions
 -----------------
