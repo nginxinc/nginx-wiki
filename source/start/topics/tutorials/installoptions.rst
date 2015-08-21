@@ -47,7 +47,7 @@ Optional Modules
 **--with-http_ssl_module**
   enables building a module that adds the HTTPS protocol support to an HTTP server. This module is not built by default. The OpenSSL library is required to build and run this module.
 **--with-pcre=*path***
-  sets the path to the sources of the PCRE library. The library distribution (version 4.4 — 8.21) needs to be downloaded from the PCRE site and extracted. The rest is done by nginx's ``./configure`` and ``make``. The library is required for regular expressions support in the location directive and for the |HttpRewriteModule|. See `notes <installoptions_notes_>`_ below for using system PCRE on FreeBSD systems.
+  sets the path to the sources of the PCRE library. The library distribution (version 4.4 — 8.21) needs to be downloaded from the PCRE site and extracted. The rest is done by nginx's ``./configure`` and ``make``. The library is required for regular expressions support in the location directive and for the |HttpRewriteModule|. See `notes <installoptions.notes_>`_ below for using system PCRE on FreeBSD systems.
 **--with-pcre-jit**
   builds the PCRE library with "just-in-time compilation" support.
 **--with-zlib=*path***
@@ -78,7 +78,7 @@ Example of parameters usage (all of this needs to be typed in one line):
 
 
 
-.. _installoptions_notes:
+.. _installoptions.notes:
 
 Notes
 -----

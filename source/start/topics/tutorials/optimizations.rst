@@ -2,6 +2,9 @@
 .. meta::
    :description: This page describes ways to optimize your NGINX configurations to improve your request processing speed.
 
+Optimizations
+=============
+
 Hash Tables
 -----------
 
@@ -16,10 +19,9 @@ Selection is conducted until the size of table exceeds parameter hash
 max size. For the majority of hashes there are directives, which make it
 possible to change these parameters. For example, the hash with the
 names of servers are controlled by the directives
-`server\_names\_hash\_max\_size <NginxHttpCoreModule#server_names_hash_max_size>`__
-and
-`server\_names\_hash\_bucket\_size <NginxHttpCoreModule#server_names_hash_bucket_size>`__
-. Parameter hash bucket size is always equalized to the size, multiple
+`server_names_hash_max_size <|HttpCoreModule|#server_names_hash_max_size>`_ and
+`server_names_hash_bucket_size <|HttpCoreModule|#server_names_hash_bucket_size>`_.
+Parameter hash bucket size is always equalized to the size, multiple
 to the size of the line of processor cache. This makes it possible to
 accelerate the search for key in hash on processors, after decreasing
 the number of turnings to memory. If hash bucket size is equal to the
@@ -43,7 +45,7 @@ can be assigned by the ``use`` directive:
 -  **poll** - standard method. Compiled by default, if the current
    platform does not have a more effective method. You can enable or
    disable this module by using configuration parameters
-   --with-poll\_module and --without-poll\_module.
+   ``--with-poll_module`` and ``--without-poll_module``.
 -  **kqueue** - the effective method, used on FreeBSD 4.1+, OpenBSD
    2.9+, NetBSD 2.0 and MacOS X. With dual-processor machines running
    MacOS X using kqueue can lead to kernel panic.

@@ -2,10 +2,10 @@
 .. meta::
    :description: How to install, build, test, and control NGINX on Solaris 11.
 
-Installation
-============
+Installing on Solaris 11
+========================
 
-Please see `Solaris 10u5 <Installing_on_Solaris_10_u5>`__ for a detailed
+Please see :doc:`solaris_10_u5` for a detailed
 walkthrough, this is the bare essentials for installing nginx on Solaris
 11. Solaris 11 has much improved versions of PCRE and OpenSSL so it's
 not required to install them manually.
@@ -54,8 +54,7 @@ Fetch and compile nginx
 Startup script
 ==============
 
-Same as
-`Installing\_on\_Solaris\_10\_u5 <Installing_on_Solaris_10_u5>`__.
+Same as :doc:`solaris_10_u5`.
 
 Create the file /lib/svc/method/svc-nginx with the following content:
 

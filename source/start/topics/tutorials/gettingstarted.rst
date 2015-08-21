@@ -80,7 +80,4 @@ For Ubuntu, it is located at ``/var/run/nginx.pid``
 Advanced topics
 ---------------
 * :doc:`debugging`
-
-.. todo::
-   ..
-      * :doc:`optimizations`
+* :doc:`optimizations`

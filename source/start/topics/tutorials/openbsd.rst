@@ -62,16 +62,17 @@ By default, nginx saves its logs as ``/var/log/nginx.log`` and ``/var/log/nginx-
 Initializing Mongrel Cluster from your path/to/app/rails/
 ---------------------------------------------------------
 
-..
-  Codemongers is gone, so this needs revising...
+.. todo::
+   ..
+      Codemongers is gone, so this needs revising...
 
-  You can take the sample nginx.conf file from http://wiki.codemongers.com/NginxRubyonRailsMongrel and adjusting it to app
+      You can take the sample nginx.conf file from http://wiki.codemongers.com/NginxRubyonRailsMongrel and adjusting it to app
 
-  .. code-block:: bash
+      .. code-block:: bash
 
-     $ cd /var/www/rails_app/
-     $ sudo mongrel_rails cluster::configure 
-     $ sudo mongrel_rails cluster::start
+         $ cd /var/www/rails_app/
+         $ sudo mongrel_rails cluster::configure 
+         $ sudo mongrel_rails cluster::start
 
 Starting nginx
 --------------
