@@ -91,17 +91,20 @@ instances and have plenty of room to grow!
 -- `Wordpress.com <https://barry.wordpress.com/2008/04/28/load-balancer-update/>`_
 
 
-We were using Pound for load balancing at Justin.tv until today. It was
-consistently using about 20% CPU, and during spikes would use up to 80% CPU.
-Under extremely high load, it would occasionally freak out and break.
-We just switched to Nginx, and load immediately dropped to around 3% CPU.
-Our pages feel a little snappier, although that might be my imagination.
-Not only is the config format easier to understand and better documented,
-but it offers a full webserver's complement of functionality. We haven't
-hit any spikes yet, but given the current performance I suspect it will
-cream Pound.
+.. 
+   Dead link -- blog.emmettshear.com has no DNS entry (8/21/2015)
+   
+   We were using Pound for load balancing at Justin.tv until today. It was
+   consistently using about 20% CPU, and during spikes would use up to 80% CPU.
+   Under extremely high load, it would occasionally freak out and break.
+   We just switched to Nginx, and load immediately dropped to around 3% CPU.
+   Our pages feel a little snappier, although that might be my imagination.
+   Not only is the config format easier to understand and better documented,
+   but it offers a full webserver's complement of functionality. We haven't
+   hit any spikes yet, but given the current performance I suspect it will
+   cream Pound.
 
--- `Emmett Shear <http://blog.emmettshear.com/post/2008/03/03/Dont-use-Pound-for-load-balancing>`__
+   -- `Emmett Shear <http://blog.emmettshear.com/post/2008/03/03/Dont-use-Pound-for-load-balancing>`__
 
 
 We are using nginx as a primary software for free hosting platforms. I have
