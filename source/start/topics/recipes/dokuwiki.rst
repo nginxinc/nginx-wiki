@@ -6,7 +6,7 @@ A simple to use and highly versatile Open Source wiki software that doesn't requ
 Requirements
 ------------
 
-* :ref:`tutorials-phpfpm`
+* `php-fpm <http://php-fpm.org/>`__
 
 Recipe
 ------

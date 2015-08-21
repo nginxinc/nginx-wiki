@@ -75,7 +75,6 @@ Getting Started
    topics/tutorials/install
    topics/tutorials/installoptions
    topics/tutorials/commandline
-   topics/tutorials/dynamic_php
    topics/tutorials/config_pitfalls
    topics/tutorials/debugging
    topics/tutorials/optimizations
@@ -99,7 +98,6 @@ Installing & Configuring NGINX
 * :doc:`NGINX command line<topics/tutorials/commandline>`
 * :doc:`Things to Avoid at all Costs<topics/tutorials/config_pitfalls>`
 * :doc:`Why IF Really is Evil<topics/depth/ifisevil>`
-* :doc:`Serving PHP<topics/tutorials/dynamic_php>`
 * :doc:`topics/examples/initscripts`
 
 Full Stack HOWTOs

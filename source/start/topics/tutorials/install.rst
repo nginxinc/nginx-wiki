@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: This page describes various ways to download and install NGINX.
+
 Install
 =======
 
