@@ -101,11 +101,13 @@ This is an Nginx upstream module that makes nginx talk to a
 `Redis <http://redis.io/>`_ 2.x server in a non-blocking way. The full Redis 2.0
 unified protocol has been implemented including the Redis pipelining support.
 
-This module returns the raw TCP response from the Redis server. It's recommended
-to use my [[LuaRedisParser]] (written in pure C) to parse these responses into 
-lua data structure when combined with :doc:`lua`.
+.. todo:: 
+   ..
+      This module returns the raw TCP response from the Redis server. It's recommended
+      to use my :doc:`lua_redis_parser` (written in pure C) to parse these responses into 
+      lua data structure when combined with :doc:`lua`.
 
-When used in conjunction with :doc::github:`lua`, it is recommended to use the 
+When used in conjunction with :doc:`lua`, it is recommended to use the 
 `lua-resty-redis <openresty/lua-resty-redis>` library instead of this module 
 though, because the former is much more flexible and memory-efficient.
 
@@ -376,7 +378,11 @@ Then accessing ``/main`` yields
   [+PONG\r\n]
 
 
-where ``\r\n`` is ``CRLF``. That is, this module returns the *raw* TCP responses from the remote redis server. For Lua-based application developers, they may want to utilize the [[LuaRedisParser]] library (written in pure C) to parse such raw responses into Lua data structures.
+where ``\r\n`` is ``CRLF``. That is, this module returns the *raw* TCP responses from the remote redis server.
+
+.. todo::
+   ..
+      For Lua-based application developers, they may want to utilize the :doc:`lua_redis_parser` library (written in pure C) to parse such raw responses into Lua data structures.
 
 When moving the inlined Lua code into an external ``.lua`` file, it's important to use the escape sequence ``\r\n`` directly. We used ``\\r\\n`` above just because the Lua code itself needs quoting when being put into an Nginx string literal.
 
@@ -506,7 +512,11 @@ And then we create the ``conf/test.lua`` file (whose path is relative to the ser
   end
 
 
-Here we assume that your Redis server is listening on the default port (6379) of the localhost. We also make use of the [[LuaRedisParser]] library to construct raw Redis queries for us and also use it to parse the replies.
+Here we assume that your Redis server is listening on the default port (6379) of the localhost. 
+
+.. todo::
+   ..
+      We also make use of the :doc:`lua_redis_parser` library to construct raw Redis queries for us and also use it to parse the replies.
 
 Accessing the ``/test`` location via HTTP clients like ``curl`` yields the following output
 
@@ -516,7 +526,7 @@ Accessing the ``/test`` location via HTTP clients like ``curl`` yields the follo
   hello world
 
 
-A more realistic setting is to use a proper upstream definition for our Redis backend and enable TCP connection pool via the [[HttpUpstreamKeepaliveModule#keepalive|keepalive]] directive in it.
+A more realistic setting is to use a proper upstream definition for our Redis backend and enable TCP connection pool via the `keepalive <http://nginx.org/en/docs/http/ngx_http_upstream_module.html#keepalive>`_ directive in it.
 
 Redis Publish/Subscribe Support
 -------------------------------
@@ -535,9 +545,9 @@ Consider the following example:
 
 And then publish a message for the key ``/foo/bar`` in the ``redis-cli`` command line. And then you'll receive two multi-bulk replies from the ``/redis`` location.
 
-You can surely parse the replies with the [[LuaRedisParser]] library if you're using Lua to access this module's location.
-
-.. todo:: link to the LuaRedisParser page
+.. todo:: 
+   ..
+      You can surely parse the replies with the :doc:`lua_redis_parser` library if you're using Lua to access this module's location.
 
 
 
@@ -688,7 +698,10 @@ SEE ALSO
 --------
 * The `Redis <http://redis.io/>`_ server homepage.
 * The Redis wire protocol: http://redis.io/topics/protocol
-* a redis response parser and a request constructor for Lua: [[LuaRedisParser]].
 * :doc:`lua`
 * The `ngx_openresty bundle <http://openresty.org>`__.
 * The :github:`lua-resty-redis <openresty/lua-resty-redis>` library based on the :doc:`lua` cosocket API.
+
+.. todo::
+   ..
+      * a redis response parser and a request constructor for Lua: :doc:`lua_redis_parser`.

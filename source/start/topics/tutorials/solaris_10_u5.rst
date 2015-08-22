@@ -2,8 +2,8 @@
 .. meta::
    :description: How to install, build, test, and control NGINX on Solaris 10u5.
 
-Installation
-============
+Installing on Solaris 10u5
+==========================
 
 Before we can proceed with the installation process, we will install
 some dependencies that will be required by nginx. with my setup, I'll

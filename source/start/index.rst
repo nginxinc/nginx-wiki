@@ -39,6 +39,7 @@ Getting Started
    topics/examples/memcachepreload
    topics/examples/embeddedperlminifyjs
    topics/examples/embeddedperlsitemapsproxy
+   topics/examples/refererspam
    topics/recipes/alkaline
    topics/recipes/cms_made_simple
    topics/recipes/codeigniter
