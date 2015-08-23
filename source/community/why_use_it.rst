@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: Testimonials from people using NGINX in the real world, under real load, serving real applications and websites.
+
 Why Use Nginx?
 ==============
 

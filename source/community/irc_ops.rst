@@ -1,7 +1,11 @@
+
+.. meta::
+   :description: Resources for operators on the NGINX IRC channel.
+
 .. _community-irc_ops:
 
-Operator Guidelines
--------------------
+IRC Operator Guidelines
+=======================
 
 Here are some points to remember when enabling operator status:
 
