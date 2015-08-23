@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: Find ways that you can get involved with the NGINX community.
+
 .. _community-get_involved:
 
 Getting Involved

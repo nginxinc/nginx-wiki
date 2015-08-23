@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: Answers to the most frequently asked questions about NGINX.
+
 Frequently Asked Questions
 ==========================
 

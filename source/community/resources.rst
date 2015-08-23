@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: Various resources for learning more about NGINX.
+
 Resources
 =========
 
@@ -71,4 +75,3 @@ Other Resources
    * `ISPConfig support for Nginx <http://www.howtoforge.com/forums/showthread.php?p=161742>`_
    * `Latest bug reports about nginx found by bugspy.net <http://bugspy.net/search/?q=nginx>`_
    * `Using nginx as reverse-proxy <http://paulohiga.com/posts/nginx-proxy-reverso-php-apache.php>`_
-

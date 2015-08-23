@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The NGINX IRC channel code of conduct. We expect users and operators to follow these guidelines.
+
 .. _community-irc:
 
 IRC Channel
