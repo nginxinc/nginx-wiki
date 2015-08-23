@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: How to generate translated documentation with Sphinx. Make sure to do this whenever contributing to the NGINX Wiki.
+
 Translating Docs
 ================
 

@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: This document will help guide you through the contribution process for the NGINX Wiki.
+
 Submitting Contributions
 ========================
 

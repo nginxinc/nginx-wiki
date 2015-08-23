@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: How to use reStructuredText to write documentation for the NGINX Wiki.
+
 Writing Documentation
 =====================
 
