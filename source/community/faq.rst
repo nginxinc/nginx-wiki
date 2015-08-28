@@ -11,9 +11,9 @@ Please review this entire FAQ before querying IRC or sending questions to the ma
 General Questions
 -----------------
 
-How do you pronounce "Nginx"?
+How do you pronounce "NGINX"?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-There seems to be some confusion surrounding the pronunciation of Nginx.
+There seems to be some confusion surrounding the pronunciation of NGINX.
 
 `Pronunciation Key <http://dictionary.reference.com/help/luna/Spell_pron_key.html>`_
 
@@ -32,8 +32,8 @@ Is it safe to use the development branch in production?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In general, all releases (development or otherwise) are quite stable.
 This site runs the latest development version at all times.
-Many nginx users tend to represent an "early adopter" crowd, so a large segment is using the bleeding edge version at any given point.
-The major and most important point about development version is that it can occasionally break APIs for 3rd party modules (APIs are sometimes changed in the development branch).
+Many nginx users tend to represent an "early adopter" crowd, so a large segment is using the bleeding-edge version at any given point.
+The major and most important point about the development version is that it can occasionally break APIs for third-party modules (APIs are sometimes changed in the development branch).
 Other than that, it gets all non-emergency bugfixes first.
 
 That said, if stability is crucial it is best to briefly hold off on deployment after a development release; critical bugs tend to show up within the first couple days (which often results in another release immediately afterwards).
@@ -43,7 +43,7 @@ In the event that you discover a bug, capture a debug log and submit a descripti
 
 How do I generate an .htpasswd file without having Apache tools installed?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-* In Linux (and other Posix):  given users John, Mary, Jane and Jim and passwords V3Ry, SEcRe7, V3RySEcRe7 and SEcRe7PwD, in order to generate a password file named .htpasswd, you would issue:
+* In Linux (and other Posix):  given users John, Mary, Jane, and Jim with passwords V3Ry, SEcRe7, V3RySEcRe7, and SEcRe7PwD, in order to generate a password file named .htpasswd, you would issue:
 
   .. code-block:: bash
 
@@ -61,7 +61,7 @@ How do I generate an .htpasswd file without having Apache tools installed?
 
     (PASSWORD="SEcRe7PwD";SALT="$(openssl rand -base64 3)";SHA1=$(printf "$PASSWORD$SALT" | openssl dgst -binary -sha1 | sed 's#$#'"$SALT"'#' | base64);printf "Jim:{SSHA}$SHA1\n" >> .htpasswd) # this example uses SSHA encryption
 
-* Or, you may use the following `crypt.pl <https://gist.github.com/3349662>`_ Perl script. Simply save it as e.g. ``crypt.pl`` and ``chmod 700 crypt.pl`` in order to be able to execute it.
+* Or, you may use the following `crypt.pl <https://gist.github.com/3349662>`_ Perl script. Simply save it as (for example) ``crypt.pl`` and ``chmod 700 crypt.pl`` in order to be able to execute it.
 
   .. code-block:: perl
 
@@ -88,7 +88,7 @@ Why isn't my $foo (e.g. rewrite, proxy, location, unix:/$PATH, etc.) configurati
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Start by investigating possible problem causes. Review :doc:`../start/topics/tutorials/debugging` and carefully look **LINE BY LINE** through the error log.
 
-If you can't determine the problem cause through testing, experimentation, searches on the 'net, etc., then **gather all relevant details** and clearly explain your problem on IRC or in a note to the mailing list.
+If you can't determine the cause of the problem through testing, experimentation, searches on the 'net, etc., then **gather all relevant details** and clearly explain your problem on IRC or in a note to the mailing list.
 (If you are new to interacting with FOSS support communities, please read: `How To Ask Questions The Smart Way <http://catb.org/~esr/faqs/smart-questions.html>`_.)
 
 
@@ -101,44 +101,44 @@ Are there other, similar web servers?
 
 What most people mean by "similar" in this context is: "lightweight" or "not Apache".
 You can find many comparisons using Google, but most web servers fall into two categories: process-based (forking or threaded) and asynchronous.
-Nginx and Lighttpd are probably the two best-known asynchronous servers and Apache is undoubtedly the best known process-based server.
+NGINX and Lighttpd are probably the two best-known asynchronous servers and Apache is undoubtedly the best-known process-based server.
 Cherokee is a lesser-known process-based server (but with very high performance).
 
 The main advantage of the asynchronous approach is *scalability*.
 In a process-based server, each simultaneous connection requires a thread which incurs significant overhead.
 An asynchronous server, on the other hand, is event-driven and handles requests in a single (or at least, very few) threads.
 
-While a process-based server can often perform on par with an asynchronous server under light loads, under heavier loads they usually consume far too much RAM, which significantly degrades performance.
-Also, they degrade much faster on less powerful hardware or in a resource-restricted environment such as a VPS.
+While process-based servers can often perform on par with asynchronous servers under light loads, under heavier loads they usually consume far too much RAM, which significantly degrades performance.
+Also, their performance degrades much faster on less powerful hardware or in a resource-restricted environment such as a VPS.
 
-Pulling numbers from thin air for illustrative purposes: serving 10,000 simultaneous connections would probably only cause Nginx to use a few megabytes of RAM, while Apache would likely consume hundreds of megabytes (if it could do it at all).
+Pulling numbers from thin air for illustrative purposes: serving 10,000 simultaneous connections would probably only cause NGINX to use a few megabytes of RAM, while Apache would likely consume hundreds of megabytes (if it could do it at all).
 
 
 Is support for chroot planned?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Unknown at this time.  Unless/until that changes, you can achieve a similar - or better - effect by using OS-level features (e.g. ``BSD Jails``, ``OpenVZ`` with ``proxyarp`` on Linux, etc.).
+Unknown at this time.  Unless/until that changes, you can achieve a similar - or better - effect by using OS-level features (for example ``BSD Jails``, ``OpenVZ`` with ``proxyarp`` on Linux, etc.).
 
 
 What about support for something like mod_suexec?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-mod_suexec is a solution to a problem that Nginx does not have.
+mod_suexec is a solution to a problem that NGINX does not have.
 When running servers such as Apache, each instance consumes a significant amount of RAM, so it becomes important to only have a monolithic instance that handles all one's needs.
-With Nginx, the memory and CPU utilization is so low that running dozens of instances of it is not an issue.
+With NGINX, the memory and CPU utilization is so low that running dozens of instances of it is not an issue.
 
-A comparable Nginx setup to Apache + ``mod_suexec`` is to run a separate instance of Nginx as the CGI script user (i.e. *the user that would have been specified as suexec user under Apache*), and then proxy to that from the main Nginx instance.
+A comparable NGINX setup to Apache + ``mod_suexec`` is to run a separate instance of NGINX as the CGI script user (that is, *the user that would have been specified as suexec user under Apache*), and then proxy to that from the main NGINX instance.
 
 Alternatively, PHP could simply be executed through FastCGI, which itself would be running under a CGI script user account.
 
-.. note::  ``mod_php`` (the module suexec is normally utilized to defend against) does not exist with Nginx.
+.. note::  ``mod_php`` (the module suexec is normally utilized to defend against) does not exist with NGINX.
 
 
 
 HTTP
 ----
 
-What's this @ thing mean?
-^^^^^^^^^^^^^^^^^^^^^^^^^
-@location is a named location.  Named locations preserve $uri as it was before entering such location.
+What does this @ thing mean?
+^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+@location is a named location.  Named locations preserve $uri as it was before entering said location.
 They were introduced in 0.6.6 and can be reached only via `error_page <|HttpCoreModule|#error_page>`_, `post_action <|HttpCoreModule|#post_action>`_ (since 0.6.26) and `try_files <|HttpCoreModule|#try_files>`_ (since 0.7.27, backported to 0.6.36).
 
 
@@ -146,10 +146,10 @@ They were introduced in 0.6.6 and can be reached only via `error_page <|HttpCore
 HTTP Proxying
 -------------
 
-For which general use cases is Nginx more appropriate than Squid? (And vice versa...)
+For which general use cases is NGINX more appropriate than Squid? (And vice versa...)
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Nginx is generally deployed as a reverse proxy, not as a caching proxy (like Squid).
-The key advantage with Nginx is its nominal RAM and CPU usage under heavy load.
+NGINX is generally deployed as a reverse proxy, not as a caching proxy (like Squid).
+The key advantage with NGINX is its nominal RAM and CPU usage under heavy load.
 Squid is best applied to cache dynamic content for applications that cannot do it themselves.
 
 The |HttpProxyModule| offers configurations for caching upstream servers.
@@ -161,7 +161,7 @@ These are both very frequently asked questions.
 
 Currently the only solution is the third-party module :doc:`../modules/upload_progress`.
 
-(This functionality is planned for a future release of Nginx.)
+(This functionality is planned for a future release of NGINX.)
 
 
 
@@ -183,7 +183,7 @@ Related resources:
       :doc:`imapauthenticatewithembeddedperlscript`
 
 
-How can Nginx be deployed as an SMTP proxy, with a Postfix backend?
+How can NGINX be deployed as an SMTP proxy, with a Postfix backend?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 First, declare the mail part as follows:
 
@@ -208,7 +208,7 @@ First, declare the mail part as follows:
 The example is for unauthenticated e-mail as you can see, but if you need authentication just check out the |MailCoreModule| information on how to achieve it.
 Postfix by default doesn't support XCLIENT, so it got turned off in the example as well.
 
-Next, you need to configure the authentication backend. If you just need to have some sort of pass-through mode towards a single address, you can do so with the following code:
+Next, you need to configure the authentication back end. If you just need to have some sort of pass-through mode towards a single address, you can do so with the following code:
 
 .. code-block:: nginx
 
@@ -236,28 +236,28 @@ Next, you need to configure the authentication backend. If you just need to have
   }
 
 
-Basically, it accepts connections and for a request towards a .php file, it will return with code 200 and with the address of the (in this case) Postfix backend (on 127.0.0.1:25 here).
+Basically, it accepts connections, and for a request towards a .php file, it returns code 200 and the address of the (in this case) Postfix back end (here, 127.0.0.1:25).
 
 
 
 Load Balancing
 --------------
 
-What algorithm does Nginx use to load balance?  Can it balance based on connection load?
+What algorithm does NGINX use to load balance?  Can it balance based on connection load?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Currently, Nginx has round-robin, least connections and ip-hash algorithms (all come with weights).
+Currently, NGINX has round-robin, least-connections and ip-hash algorithms (all come with weights).
 
 There are also a number of third-party modules for load balancing.
 
-.. note:: Many users have requested that Nginx implement a feature in the load balancer to limit the number of requests per backend (usually to one).  While support for this is planned, it's worth mentioning that demand for this feature is rooted in misbehaviour on the part of the application being proxied ''to'' (Ruby on Rails seems to be one example). This is not an Nginx issue. In an ideal world, this particular problem fix request would be directed toward the backend application and its ability handle simultaneous requests.
+.. note:: Many users have requested that NGINX implement a feature in the load balancer to limit the number of requests per back end (usually to one).  While support for this is planned, it's worth mentioning that demand for this feature is rooted in misbehavior on the part of the application being proxied ''to'' (Ruby on Rails seems to be one example). This is not an NGINX issue. In an ideal world, this particular fix request would be directed toward the back-end application and its (in)ability to handle simultaneous requests.
 
 
 
 Miscellaneous
 -------------
 
-Why do I see "Welcome to nginx!" when I'm trying to access Facebook, Yahoo!, Google or some other well-known website? Is nginx a virus?
+Why do I see "Welcome to nginx!" when I'm trying to access Facebook, Yahoo!, Google or some other well-known website? Is NGINX a virus?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Nginx is not a virus. Please check a detailed description here::
+NGINX is not a virus. Please check a detailed description here::
 
   `Welcome to nginx! <http://nginx.org/en/docs/welcome_nginx_facebook.html>`_
