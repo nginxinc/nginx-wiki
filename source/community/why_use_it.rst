@@ -2,22 +2,22 @@
 .. meta::
    :description: Testimonials from people using NGINX in the real world, under real load, serving real applications and websites.
 
-Why Use Nginx?
+Why Use NGINX?
 ==============
 
-There have been a couple benchmarks done that show Nginx to edge out
-other lightweight webservers and proxies, and to stomp out the not-so
+A couple benchmarks have shown NGINX to edge out
+other lightweight web servers and proxies, and to stomp out the not-so
 lightweight ones.
 
 Some people say those benchmarks weren't valid because the competition
 wasn't tuned this way or that, etc. I tend to agree that benchmarks only
 tell part of the story and that there's little you can do to truly
-remove bias from them anyway (has anyone ever seen a benchmark that
-everyone agreed was fair? Me either).
+remove bias from them anyway. (Has anyone ever seen a benchmark that
+everyone agreed was fair? Me neither.)
 
-Anyway, rather than post links to benchmarks for people to argue over
-(you can use Google to find them yourself if you like), instead, what
-follows is quotes from people using Nginx in the real world, under real
+Anyway, instead of links to benchmarks for people to argue over
+(you can use Google to find them yourself if you like), what
+follows is quotes from people using NGINX in the real world, under real
 load, serving real applications and websites.
 
 Please feel free to add your own testimonial, but see the
@@ -31,7 +31,7 @@ Several of the companies we invested in were able to solve significant scaling
 issues by switching their web platforms to NGINX. NGINX transparently and
 effectively enables the growth of the largest sites on the Internet today.
 
--- Thomas Gieselmann, BV Capital.
+-- Thomas Gieselmann, BV Capital
 
 
 My advice to anyone running a web site today who is hitting performance
@@ -45,7 +45,7 @@ resources.
 -- Matthew Prince, co-founder and CEO of CloudFlare
 
 
-Both [Apache and Nginx] are capable of serving a huge number of requests per
+Both servers [Apache and Nginx] are capable of serving a huge number of requests per
 second, but Apache's performance start decreasing as you add more concurrent
 connections whereas Nginx's performance almost doesn't drop!
 But here comes the best bit: because Nginx is event-based it doesn't need to
@@ -75,7 +75,7 @@ than Apache.
 
 
 I currently have Nginx doing reverse proxy of over tens of millions of
-HTTP requests per day (thats a few hundred per second) on a single server.
+HTTP requests per day (that's a few hundred per second) on a single server.
 At peak load it uses about 15MB RAM and 10% CPU on my particular configuration
 (FreeBSD 6).
 Under the same kind of load, Apache falls over (after using 1000 or so
@@ -101,17 +101,17 @@ instances and have plenty of room to grow!
    We were using Pound for load balancing at Justin.tv until today. It was
    consistently using about 20% CPU, and during spikes would use up to 80% CPU.
    Under extremely high load, it would occasionally freak out and break.
-   We just switched to Nginx, and load immediately dropped to around 3% CPU.
+   We just switched to NGINX, and load immediately dropped to around 3% CPU.
    Our pages feel a little snappier, although that might be my imagination.
    Not only is the config format easier to understand and better documented,
-   but it offers a full webserver's complement of functionality. We haven't
+   but it offers a full web server's complement of functionality. We haven't
    hit any spikes yet, but given the current performance I suspect it will
    cream Pound.
 
    -- `Emmett Shear <http://blog.emmettshear.com/post/2008/03/03/Dont-use-Pound-for-load-balancing>`__
 
 
-We are using nginx as a primary software for free hosting platforms. I have
+...we are using nginx as a primary software for free hosting platforms. I have
 developed specific modules for banner inserting and stats calculation in nginx
 and now our central server can handle about 150-200Mbit/s of highly fragmented
 http-traffic (all files are small).
@@ -162,8 +162,8 @@ Notes
 -----
 
 Please feel free to add your own testimonial, but we prefer that it
-refer to a *high traffic site* or a site that Nginx somehow provided a
+refer to a *high traffic site* or a site that NGINX somehow provided a
 *unique* solution for. Also, if numbers (server utilization, network
 throughput, simultaneous connections, etc) and/or an actual link to the
 site being discussed can be provided it makes it much more relevant for
-people curious about Nginx.
+people curious about NGINX.
