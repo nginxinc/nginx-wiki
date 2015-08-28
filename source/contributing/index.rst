@@ -1,10 +1,10 @@
-Contributing to Nginx
+Contributing to NGINX
 =====================
 
-Contributing to Nginx
+Contributing to NGINX
 ---------------------
 
-A detailed breakdown of how to contribute code changes to Nginx can be found in the `Nginx documentation <http://nginx.org/en/docs/contributing_changes.html>`_.
+A detailed breakdown of how to contribute code changes to NGINX can be found in the `NGINX documentation <http://nginx.org/en/docs/contributing_changes.html>`_.
 
 
 Contributing to the Wiki
@@ -17,4 +17,4 @@ Contributing to the Wiki
    github
    translating_docs
 
-.. todo: contributing to Nginx codebase
+.. todo: contributing to NGINX codebase
