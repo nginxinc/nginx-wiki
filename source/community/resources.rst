@@ -17,15 +17,15 @@ Developer Resources
 
 English Guides
 --------------
-* `Evan Miller's Guide to Nginx Module Development <http://www.evanmiller.org/nginx-modules-guide.html>`_
-* `Evan Miller's Advanced Topics In Nginx Module Development <http://www.evanmiller.org/nginx-modules-guide-advanced.html>`_
+* `EMiller's Guide to Nginx Module Development <http://www.evanmiller.org/nginx-modules-guide.html>`_ (Evan Miller)
+* `EMiller's Advanced Topics In Nginx Module Development <http://www.evanmiller.org/nginx-modules-guide-advanced.html>`_ (Evan Miller and Grzegorz Nosek)
 * Slides of agentzh's `Introduction to nginx.conf scripting <http://agentzh.org/misc/slides/nginx-conf-scripting/>`_ talk in Beijing (use arrow keys to navigate)
 * Slides of agentzh's `Recent developments in nginx.conf scripting <http://agentzh.org/misc/slides/recent-dev-nginx-conf/>`_ talk in Beijing (use arrow keys to navigate)
 * Slides of Joshua Zhu's `Nginx Internals <http://www.slideshare.net/joshzhu/nginx-internals>`_ talk in Guangzhou
-* `Nginx source code cross-reference <http://lxr.evanmiller.org/http/source/>`_
+* `NGINX source code cross-reference <http://lxr.evanmiller.org/http/source/>`_
 * `nginx-devel mailing list archive <http://mailman.nginx.org/pipermail/nginx-devel/>`_
-* `Chapter about nginx in The Architecture of Open Source Applications Volume II <http://www.aosabook.org/en/nginx.html>`_
-* `nginx how-to at calomel.org <https://calomel.org/nginx.html>`_
+* `"nginx" chapter in The Architecture of Open Source Applications Volume II <http://www.aosabook.org/en/nginx.html>`_
+* `"Nginx Secure Web Server" how-to at calomel.org <https://calomel.org/nginx.html>`_
 * Notes about :doc:`../start/topics/examples/headers_management`
 
 
@@ -44,9 +44,9 @@ Russian Guides
 
 Chinese Guides
 --------------
-* `Nginx Variable Tutorials <http://blog.sina.com.cn/openresty>`_ by `agentzh <http://agentzh.org>`_
-* `Nginx Code Review by chaoslawful and rainx <http://code.google.com/p/nginxsrp/wiki/NginxCodeReview>`_
-* `Chinese Version of Emiller's Guide <http://code.google.com/p/emillers-guide-to-nginx-module-chn/>`_
+* `NGINX Variable Tutorials <http://blog.sina.com.cn/openresty>`_ by `agentzh <http://agentzh.org>`_
+* `NginxCodeReview <http://code.google.com/p/nginxsrp/wiki/NginxCodeReview>`_ by chaoslawful and rainx
+* `Chinese version of "Emiller's Guide to Nginx Module Development" <http://code.google.com/p/emillers-guide-to-nginx-module-chn/>`_
 
 ..
    Dead links now
@@ -58,11 +58,11 @@ Chinese Guides
 
 Other Resources
 ---------------
-* `Nginx mailing list archive <http://markmail.org/browse/ru.sysoev.nginx>`_
-* `Geolocation database for Nginx in CIDR format (countries by IP) <http://www.wipmania.com/en/base/>`_
+* `NGINX mailing list archive <http://markmail.org/browse/ru.sysoev.nginx>`_
+* `Geolocation database for Nginx in CIDR format (countries by IP) <http://www.wipmania.com/en/base/>`_ 
 * `Experiment to automatically convert Apache rewrites to Nginx rewrites <http://www.anilcetin.com/convert-apache-htaccess-to-nginx/>`_
-* `Parsing PHP sessions in Nginx <http://mauro-stettler.blogspot.com/2011/06/php-session-parser-in-production.html>`_
-* `PyMunin - Multigraph Munin Plugins in Python <http://aouyar.github.io/PyMunin/>`_ - PyMunin includes a Multigraph Munin Plugin for monitoring Nginx using http_stub_status module. Graphs active connections, connection rate, request rate and average requests per connection.
+* `Parsing PHP sessions in NGINX <http://mauro-stettler.blogspot.com/2011/06/php-session-parser-in-production.html>`_
+* `PyMunin - Multigraph Munin Plugins in Python <http://aouyar.github.io/PyMunin/>`_ - PyMunin includes a Multigraph Munin Plugin for monitoring NGINX using http_stub_status module. Graphs active connections, connection rate, request rate, and average requests per connection.
 * :doc:`why_use_it`
 
 ..
