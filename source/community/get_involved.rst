@@ -37,7 +37,7 @@ NGINX development, then you should absolutely jump on the mailing list.
 Planet Ngx
 ----------
 
-`Planet Ngx`_ is a collection of blogs related to NNGINX, aggregated into one
+`Planet Ngx`_ is a collection of blogs related to NGINX, aggregated into one
 source. If you're interested in having your blog aggregated here, it's pretty
 simple. Just check out the README.mkd file in the `git repository`_.
 
