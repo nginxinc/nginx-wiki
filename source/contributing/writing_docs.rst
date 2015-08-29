@@ -5,10 +5,10 @@
 Writing Documentation
 =====================
 
-Adding new documentation
+Adding New Documentation
 ------------------------
 
-If any new documentation files are added the need to be added to the *toctree* for that section. This is usually found in the ``index.rst`` file for the directory you need to add your documentation to.  For example in the ``community/`` directory the ``index.rst`` file contains a toctree similar to this:
+If you are adding any new documentation files, you need to add them to the *toctree* for their section, which is usually in the ``index.rst`` file in the directory where you are adding files. For example, in the ``community/`` directory the ``index.rst`` file contains a toctree similar to this:
 
 .. code-block: rst
 
@@ -17,25 +17,25 @@ If any new documentation files are added the need to be added to the *toctree* f
       github
       writing_docs
 
-Each one are implied to have a ``.rst`` extension. Each file will compile to a seperate HTML file when built with Sphinx.
+Each entry has an implied ``.rst`` extension. Each file will compile to a separate HTML file when built with Sphinx.
 
-Adding a module document
+Adding a Module Document
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-In addition to adding to the tocree, modules should be added to the big table in ``modules/index.rst``. This has three columns, the module language should use the ``:doc:`` directive to point to a ``.rst`` file for the documentation. The description should be a summary of a few words. The repository should use the :rst:role:`github` or :rst:role:`bitbucket` directive if possible, or should be a link to the repository if something else was used.
+In addition to adding entries to the toctree, you need to add modules to the big table in the ``modules/index.rst`` file, which has three columns. The module language should use the ``:doc:`` directive to point to a ``.rst`` file for the documentation. The description should be a summary of a few words. The repository should use the :rst:role:`github` or :rst:role:`bitbucket` directive if possible, or should be a link to the repository if something else was used.
 
 .. todo::
 
    document the :doc: directive and link to them in the paragraph above
 
-Please keep the modules in alphabetical order, this makes it easier for others to find them.
+Please keep the modules in alphabetical order to make it easier for others to find them.
 
 reStructuredText Basics
 -----------------------
 
-These are the basics for writing reStructuredText files. For more imformation we highly recommend looking at `Sphinx's own documentation <http://sphinx-doc.org/contents.html>`_ and `Quick reStructuredText <http://docutils.sourceforge.net/docs/user/rst/quickref.html>`_. For a more detailed view what is possible, take a look at the `reStructuredText specification <http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html>`_.
+These are the basics for writing reStructuredText files. For more imformation we highly recommend looking at the `Sphinx documentation <http://sphinx-doc.org/contents.html>`_ and `Quick reStructuredText <http://docutils.sourceforge.net/docs/user/rst/quickref.html>`_. For more details about what is possible, take a look at the `reStructuredText specification <http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html>`_.
 
-Like Python, blocks of content are typically nested using whitespace indentation. For example:
+As in Python, blocks of content are typically nested using whitespace indentation. For example, this markup:
 
 .. code-block:: rst
 
@@ -43,6 +43,8 @@ Like Python, blocks of content are typically nested using whitespace indentation
 
       This is a note!
       It is multi-line!
+
+results in this output:
 
 .. note::
 
@@ -52,7 +54,7 @@ Like Python, blocks of content are typically nested using whitespace indentation
 Inline Markup
 ^^^^^^^^^^^^^
 
-There are various inline markups you can use for basic text formatting. For example:
+There are various inline markups you can use for basic text formatting. For example, this markup:
 
 .. code-block:: rst
 
@@ -61,6 +63,8 @@ There are various inline markups you can use for basic text formatting. For exam
    * ``literal``
    * :sub:`subscript`
    * :sup:`superscript`
+
+results in this output:
 
 * *emphasis*
 * **bold**
@@ -71,38 +75,38 @@ There are various inline markups you can use for basic text formatting. For exam
 Bullets and Lists
 ^^^^^^^^^^^^^^^^^
 
-Bullets and ordered lists are very simple.
+It's very simple to create bulleted and ordered (numbered) lists.
 
 .. code-block:: rst
 
-   * bullet points are asterisks
+   * bullet points are marked up with asterisks
 
      * and can be nested
-     * but need a blank line between parent and children
+     * but put a blank line between parent and children
 
    * and another blank line to continue the parent list
 
-* bullet points are asterisks
+* bullet points are marked up with asterisks
 
   * and can be nested
-  * but need a blank line between parent and children
+  * but put a blank line between parent and children
 
 * and another blank line to continue the parent list
 
 .. code-block:: rst
 
-   #. An auto-generated numbered list
+   #. Items in an auto-generated numbered list are marked up with ``#.``
 
-      #. It too can be nested
+      #. They too can be nested
 
    #. And continue with the parent
 
    1. Fixed numbered lists
    2. Are also possible
 
-#. An auto-generated numbered list
+#. Items in an auto-generated numbered list are marked up with ``#.``
 
-   #. It too can be nested
+   #. They too can be nested
 
 #. And continue with the parent
 
@@ -112,48 +116,48 @@ Bullets and ordered lists are very simple.
 Links
 ^^^^^
 
-There are internal links as well as external links that are possible.
+You can create both internal and external links.
 
 .. code-block:: rst
 
    .. _reference-location:
 
-   `Nginx Website <https://www.nginx.com/>`_
+   `NGINX, Inc. website <https://www.nginx.com/>`_
 
    A link to another document: :doc:`index`
 
-   And a link to an :ref:`abritrary reference <reference-location>`
+   And a link to an :ref:`arbitrary reference <reference-location>`
 
 .. _reference-location:
 
-`Nginx Website <https://www.nginx.com/>`_
+`NGINX, Inc. website <https://www.nginx.com/>`_
 
 A link to another document: :doc:`index`
 
-And a link to an :ref:`abritrary reference <reference-location>`
+And a link to an :ref:`arbitrary reference <reference-location>`
 
 Headings
 ^^^^^^^^
 
-Headings are signified by using characters on the line below to underline them. Different styles signify level. Headings are automatically used to build the table of contents for the wiki:
+To indicate that a line of text is a heading, "underline" it with characters on the line below, the equal sign (``=``) for first-level headings, the hyphen (``-``) for the second level, and the caret (``^``) for the third level. Headings are automatically used to build a table of contents for the Wiki:
 
 .. code-block:: rst
 
-   Heading
-   =======
+   Level-1 Heading
+   ===============
 
-   SubHeading
-   ----------
+   Level-2 Heading
+   ---------------
 
-   More depth
-   ^^^^^^^^^^
+   Level-3 Heading
+   ^^^^^^^^^^^^^^^
 
 Tables
 ^^^^^^
 
-There are two ways to create tables, Grid Tables and Simple Tables.
+There are two types of table, grid tables and simple tables.
 
-Grid Tables use ASCII art to design the table. An example is as follows:
+To create a grid table, use ASCII art as in this markup:
 
 .. code-block:: rst
 
@@ -170,6 +174,8 @@ Grid Tables use ASCII art to design the table. An example is as follows:
    | item 4    |          | too.     |
    +-----------+----------+----------+
 
+which results in this table:
+
 +-----------+----------+----------+
 | Column 1  | Column 2 | Column 3 |
 | Multiline |          |          |
@@ -183,7 +189,7 @@ Grid Tables use ASCII art to design the table. An example is as follows:
 | item 4    |          | too.     |
 +-----------+----------+----------+
 
-Simple tables on the other hand are less flexible but are easier to create:
+You can't span cells in simple tables, but the markup is easier to create:
 
 .. code-block:: rst
 
@@ -229,10 +235,10 @@ Sphinx can highlight the syntax of code blocks. For example:
      return 0;
    }
 
-There is also syntax highlighting for Nginx configuration files, here is an example of this with line numbers:
+You can also use syntax highlighting in NGINX configuration files, as in this example with line numbers:
 
 .. code-block:: rst
-
+    
    .. code-block:: nginx
       :linenos:
 
@@ -274,7 +280,7 @@ There is also syntax highlighting for Nginx configuration files, here is an exam
 Footnotes
 ^^^^^^^^^
 
-Footnotes in their most simple form can be generated using ``[1]_`` in the text
+The easiest way to generate a footnotes is to precede the footnote text with ``[1]_``
 and then a section of the bottom of the page as follows [1]_:
 
 .. code-block:: rest
@@ -290,10 +296,10 @@ Which generates:
 .. [1] Like this
 
 
-Notes, Warnings, Todo and See Also
+Notes, Warnings, Todo, and See Also
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Notes, warnings and todos all take similar forms. The wiki is configured to hide *todo* whilst rendering:
+The markup for notes, warnings, and todos is similar. The NGINX Wiki is configured to omit *todo*s from the output:
 
 .. code-block:: rest
 
@@ -324,10 +330,10 @@ Which generates:
    This is a See Also
 
 
-Nginx Wiki specific rols
-------------------------
+Roles Specific to the NGINX Wiki
+--------------------------------
 
-A few extra roles have been added to assist with creating documentation for this wiki.
+A few extra roles have been added to assist with creating documentation for this Wiki.
 
 .. rst:role:: icon
 
