@@ -8,7 +8,21 @@ Writing Documentation
 Adding New Documentation
 ------------------------
 
-If you are adding any new documentation files, you need to add them to the *toctree* for their section, which is usually in the ``index.rst`` file in the directory where you are adding files. For example, in the ``community/`` directory the ``index.rst`` file contains a toctree similar to this:
+If you are adding any new documentation files, you need to add them to t24-Aug H read O'Reilly/Corona book on NGINX as research for rewrite
+25-Aug H mtg: group (1h)
+         revise section on sendfile in /blog/tuning-nginx
+	 further revision to Google Cloud instrux
+26-Aug O mtg: content (.25h)
+         watch Ilya Grigorik presentation on HTTP/2 at Velocity (.75h)
+	 update /products/session-persistence per owen comments in email dated 23-jun
+	 finalize /blog/tuning-nginx info about sendfile
+	 work on updating products/technical-specifications with nginx-plus-extras modules
+27-Aug O add list of modules in N+ Extras package to /products/technical-specifications
+         add missing hyperlinks and revise module descriptions on /products/technical-specifications
+	 mtg: peterg 1:1 (.25h)
+	 suggest in faisal's dynamic reconfiguration blog post
+	 read Perl regexp reference and tutorial
+he *toctree* for their section, which is usually in the ``index.rst`` file in the directory where you are adding files. For example, in the ``community/`` directory the ``index.rst`` file contains a toctree similar to this:
 
 .. code-block: rst
 
@@ -33,7 +47,7 @@ Please keep the modules in alphabetical order to make it easier for others to fi
 reStructuredText Basics
 -----------------------
 
-These are the basics for writing reStructuredText files. For more imformation we highly recommend looking at the `Sphinx documentation <http://sphinx-doc.org/contents.html>`_ and `Quick reStructuredText <http://docutils.sourceforge.net/docs/user/rst/quickref.html>`_. For more details about what is possible, take a look at the `reStructuredText specification <http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html>`_.
+These are the basics for writing reStructuredText files. For more information we highly recommend looking at the `Sphinx documentation <http://sphinx-doc.org/contents.html>`_ and `Quick reStructuredText <http://docutils.sourceforge.net/docs/user/rst/quickref.html>`_. For more details about what is possible, take a look at the `reStructuredText specification <http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html>`_.
 
 As in Python, blocks of content are typically nested using whitespace indentation. For example, this markup:
 
