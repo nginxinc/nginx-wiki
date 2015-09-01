@@ -5,33 +5,33 @@
 Submitting Contributions
 ========================
 
-The Nginx Wiki is automatically generated from `reStructuredText files <https://en.wikipedia.org/wiki/ReStructuredText>`_ using `Sphinx Documentation Generator <http://sphinx-doc.org/>`_. The source files are `stored in GitHub <https://github.com/nginxinc/nginx-wiki>`_ and are open to contributions via. pull requests. This document will help guide you through this process.
+The NGINX Wiki is automatically generated from `reStructuredText files <https://en.wikipedia.org/wiki/ReStructuredText>`_ using `Sphinx Documentation Generator <http://sphinx-doc.org/>`_. The source files are `stored in GitHub <https://github.com/nginxinc/nginx-wiki>`_ and are open to contributions via pull requests. This document will help guide you through this process.
 
-These instructions are for Linux and Mac users and assumes you have a GitHub account and the ``git`` command line tool is installed.
+These instructions are for Linux and Mac users, and assume you have a GitHub account and the ``git`` command-line tool is installed.
 
-You will also need *python-sphinx* installed, some linux distributions have this in their repositories, others can install it using `pip`:
+You also need *python-sphinx* installed; some Linux distributions have this in their repositories, while for others you can install it using ``pip``:
 
 .. code-block:: bash
 
    $ pip install -U Sphinx
 
-GitHub's Two Factor Authentication
+GitHub's Two-Factor Authentication
 ----------------------------------
 
-If you use `two-factor authentication <https://github.com/settings/two_factor_authentication/configure>`_ with GitHub (highly recommended) you can access GitHub using the instructions outlined in this document with an access token instead of a password. This can be obtained from your `application settings page <https://github.com/settings/applications>`_.
+If you use GitHub's `two-factor authentication <https://github.com/settings/two_factor_authentication/configure>`_ (highly recommended), you can use an access token instead of a password when accessing GitHub with the instructions outlined in this document. This can be obtained from your `application settings page <https://github.com/settings/applications>`_.
 
-Alternatively you can use SSH to access GitHub. Simply go to your `SSH keys page <https://github.com/settings/ssh>`_, add your key and change the URLs in this document from ``https://github.com/user/project.git`` to ``git@github.com:user/project.git``.
+Alternatively, you can use SSH to access GitHub. Simply go to your `SSH keys page <https://github.com/settings/ssh>`_, add your key, and change the URLs in this document from ``https://github.com/<user>/nginx-wiki.git`` to ``git@github.com:<user>/nginx-wiki.git``.
 
 Forking
 -------
 
-You need to create a *fork* of the source so that you have a working area for it. To do this go to the `wiki GitHub page <https://github.com/nginxinc/nginx-wiki>`_, sign in and click the *Fork* button near the top. Once you have forked you can get a local copy of this fork to work on. To do this run the following in your console (where *user* is your username):
+You need to create a *fork* of the source so that you have a working area for it. To do this go to the `NGINX Wiki GitHub page <https://github.com/nginxinc/nginx-wiki>`_, sign in, and click the *Fork* button near the top. Once you have forked you can get a local copy of this fork to work on. To do this, run the following command in your console (where <*user*> is your username):
 
 .. code-block:: bash
 
-   $ git clone https://github.com/user/nginx-wiki.git
+   $ git clone https://github.com/<user>/nginx-wiki.git
 
-You then need to make your local clone aware of the upstream repository:
+You then need to associate your local clone with the upstream repository:
 
 .. code-block:: bash
 
@@ -41,7 +41,7 @@ You then need to make your local clone aware of the upstream repository:
 Branch
 ------
 
-Every new batch of additions/edits to be merged into the wiki needs its own branch. Before creating a new branch you should first make sure your local copy is up to date:
+Every new batch of additions/edits you want to merge into the Wiki needs its own branch. Before creating a new branch, first make sure your local copy is up to date:
 
 .. code-block:: bash
 
@@ -49,13 +49,13 @@ Every new batch of additions/edits to be merged into the wiki needs its own bran
    $ git pull --ff-only upstream master
    $ git push
 
-You can then create a new branch from master to work on (replacing *name_for_branch* with what you want to call the branch):
+You can then create a new branch based on the master (replacing <*branch-name*> with the name you choose for the branch):
 
 .. code-block:: bash
 
-   $ git checkout -b name_for_branch
+   $ git checkout -b <branch-name>
 
-Hack on the wiki!
+Hack on the Wiki!
 -----------------
 
 Hack away on the changes you wish to make. See :doc:`writing_docs` for more information.
@@ -63,16 +63,16 @@ Hack away on the changes you wish to make. See :doc:`writing_docs` for more info
 Test
 ----
 
-Once your edits are ready to test you can check to see if they build correctly using:
+Once your edits are ready to test, run these commands to check that they build correctly:
 
 .. code-block:: bash
 
    $ make html
    $ make linkcheck
 
-If either of these error then these edits will likely need fixing. The Nginx community team will be happy to assist you with this.
+If either command generates an error, your edits probably need fixing. The NGINX community team will be happy to assist you with this.
 
-One way you could preview the output is to use PHP's built-in server:
+One way to preview the output is with PHP's built-in server:
 
 .. code-block:: bash
 
@@ -81,61 +81,61 @@ One way you could preview the output is to use PHP's built-in server:
 
 You can then use your web browser to go to ``http://localhost:8000/`` and view the result.
 
-Commit and push
+Commit and Push
 ---------------
 
-When you are ready to push up your changes you need to commit these and push them up to GitHub.
+When you are ready to submit your changes, you need to commit them in your cloned repository and then push them up to GitHub.
 
-If you have never pushed code up to GitHub before then you need to setup git so that is knows you for the commit:
+If you have never pushed code up to GitHub before, run these commands to register with ``git``:
 
 .. code-block:: bash
 
    $ git config --global user.name "Real Name"
    $ git config --global user.email "me@me.com"
 
-Make sure you use `git add` to add any new files to the respository and then commit:
+Use ``git add`` to add any new files to the respository, and then commit:
 
 .. code-block:: bash
 
    $ git commit -a
 
-Your default text editor will pop up to enter a commit message above the comments. The first line should be no more than 50 characters and should be a subject of the commit. The second line should be blank. The third line onwards can contain details and these should be no more than 72 characters long per line.
+Your default text editor pops up. Enter a commit message above the comments. The first (subject) line should describe the purpose of the commit in no more than 50 characters. The second line should be blank. The third line onwards can contain details, with no more than 72 characters per line.
 
-If your commit fixes an issue you can add the following (for issue #45 for example)::
+If your commit fixes an issue, the first line might be something like this example for issue #45::
 
-    Fixes nginxinc/niginx-wiki#45
+    Fixes nginxinc/nginx-wiki#45
 
-Once all your commits are done a quick rebase may be needed to make sure your changes will merge OK with what is now in master:
+Once all your commits are done, you might need to do a quick rebase to make sure your changes will merge correctly into the master branch:
 
 .. code-block:: bash
 
    $ git fetch upstream
    $ git rebase -i upstream/master
 
-This should bring up a commit-style message in the editor with *pick* as the first word.  Save this and the rebase will complete.  If the rebase tells you there is a conflict you will need to locate the problem using ``git diff``, fix it and do:
+Your editor should pop up again with a commit-style message that has *pick* as the first word. Save the message and the rebase will complete. If the rebase tells you there is a conflict, you will need to locate the problem using ``git diff``, fix it, and run these commands:
 
 .. code-block:: bash
 
-   git add <filename>
-   git rebase --continue
+   $ git add <filename>
+   $ git rebase --continue
 
-If things look like they are going wrong you can undo the rebase using the following and can get in touch with the Nginx Community team:
+If things look like they are going wrong, you can undo the rebase using the following command and then get in touch with the NGINX community team for help:
 
 .. code-block:: bash
 
-   git rebase --abort
+   $ git rebase --abort
 
 You should now be ready to push up to GitHub:
 
 .. code-block:: bash
 
-   git push --set-upstream origin name_for_branch
+   $ git push --set-upstream origin <branch-name>
 
 Pull Request
 ------------
 
-If you go to your repository on GitHub's website you will an option to file a *Pull Request*. Use this to submit a pull request upstream for your branch. You are welcome to make multiple commits in a branch before opening a pull request.
+When you go to your repository on GitHub's website, you will see an option to file a *Pull Request*. Use this to submit a pull request upstream for your branch. You are welcome to make multiple commits in a branch before submitting the pull request.
 
 .. todo:
 
-   Travis CI will automatically test your branch and report back on the pull request, this typically takes up to 5 minutes.  If there is a failure you can commit more changes and push them up, these will automatically be tested by Travis as part of the pull request.  Your pull request will then be reviewed by a human and if all is good it will be merged.  Feedback will be left on the pull request for you.
+   Travis CI will automatically test your branch and report back on the pull request; this typically takes up to 5 minutes. If there is a failure, you can commit more changes to correct the problem. When you push them up, Travis will automatically test them as part of the pull request. Your pull request will then be reviewed by a human, and merged if all is good. Feedback for you will be left on the pull request.
