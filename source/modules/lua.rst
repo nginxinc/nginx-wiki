@@ -311,7 +311,7 @@ Build the source with this module:
 
   # Here we assume Nginx is to be installed under /opt/nginx/.
   ./configure --prefix=/opt/nginx \
-              --with-ld-opt='-Wl,-rpath,/path/to/luajit-or-lua/lib" \
+              --with-ld-opt="-Wl,-rpath,/path/to/luajit-or-lua/lib" \
               --add-module=/path/to/ngx_devel_kit \
               --add-module=/path/to/lua-nginx-module
 
@@ -702,13 +702,13 @@ PCRE sequences such as ``\d``, ``\s``, or ``\w``, require special attention beca
 .. code-block:: nginx
 
   # nginx.conf
-  ? location /test {
-  ?     content_by_lua '
-  ?         local regex = "\d+"  -- THIS IS WRONG!!
-  ?         local m = ngx.re.match("hello, 1234", regex)
-  ?         if m then ngx.say(m[0]) else ngx.say("not matched!") end
-  ?     ';
-  ? }
+    location /test {
+        content_by_lua '
+            local regex = "\d+"  -- THIS IS WRONG!!
+            local m = ngx.re.match("hello, 1234", regex)
+            if m then ngx.say(m[0]) else ngx.say("not matched!") end
+        ';
+    }
   # evaluates to "not matched!"
 
 To avoid this, *double* escape the backslash:
@@ -1353,17 +1353,17 @@ On the other hand, the following will not work as expected:
 
 .. code-block:: nginx
 
-  ?  location /foo {
-  ?      set $a 12; # create and initialize $a
-  ?      set $b ''; # create and initialize $b
-  ?      rewrite_by_lua 'ngx.var.b = tonumber(ngx.var.a) + 1';
-  ?      if ($b = '13') {
-  ?         rewrite ^ /bar redirect;
-  ?         break;
-  ?      }
-  ?
-  ?      echo "res = $b";
-  ?  }
+    location /foo {
+        set $a 12; # create and initialize $a
+        set $b ''; # create and initialize $b
+        rewrite_by_lua 'ngx.var.b = tonumber(ngx.var.a) + 1';
+        if ($b = '13') {
+           rewrite ^ /bar redirect;
+           break;
+        }
+
+        echo "res = $b";
+    }
 
 
 because ``if`` runs *before* `rewrite_by_lua`_ even if it is placed after `rewrite_by_lua`_ in the config.
