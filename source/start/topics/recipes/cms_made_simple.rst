@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: A sample NGINX configuration for CMS Made Simple.
+
 CMS Made Simple
 ===============
 

@@ -1,7 +1,11 @@
+
+.. meta::
+   :description: How to use NGINX as a front-end for Zope via FastCGI.
+
 Zope via FastCGI
 ================
 
-Using Nginx as front-end for Zope thru FastCGI isn't straightforward. Something must be fixed.
+This is an example of how to use NGINX as a front-end for Zope via FastCGI.
 
 .. code-block:: nginx
 
