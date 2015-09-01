@@ -1,6 +1,6 @@
 
 .. meta::
-   :description: The Accept Language module parses Accept-Language HTTP headers to choose the most suitable locale for the user.
+   :description: The Accept Language module parses the Accept-Language field in HTTP headers to choose the most suitable locale for the user.
 
 Accept Language Module
 ======================
@@ -8,13 +8,13 @@ Accept Language Module
 
 Description
 -----------
-**nginx_accept_language_module** - Parses the Accept-Language header and gives 
-the most suitable locale for the user from a list of supported locales from 
+**nginx_accept_language_module** - Parses the ``Accept-Language`` field in HTTP headers and chooses 
+the most suitable locale for the user from the list of locales supported at  
 your website.
 
 Available on github at :github:`giom/nginx_accept_language_module`
 
-.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions <accept_language.installation_>`_.
+.. note:: *This module is not distributed with the NGINX source.* See the `installation instructions <accept_language.installation_>`_.
 
 
 
@@ -25,11 +25,11 @@ Example Configuration
   set_from_accept_language $lang en ja pl;
 
 where ``$lang`` is the variable in which to store the locale and ``en ja pl`` 
-are the locales supported by your website
+are the locales supported by the website.
 
 If none of the locales from ``accept_language`` is available on your website, 
-it sets the variable to the first locale of your website's supported locales 
-(in this case ``en``).
+the variable (here, ``$lang``) is set to the first locale in the list 
+(here, ``en``).
  
 .. note:: It currently assumes that the accept-language is sorted by quality 
   values (from my tests it's the case for Safari, Firefox, Opera and IE) and 
@@ -45,7 +45,7 @@ Installation
 ------------
 1. Download the module source from :github:`GitHub <giom/nginx_accept_language_module>`
 
-2. Unpack, and then compile Nginx with:
+2. Unpack, and then compile NGINX with:
 
   .. code-block:: bash
 
@@ -53,7 +53,7 @@ Installation
 
 
 
-Why did I create it?
+Why Did I Create It?
 --------------------
 I'm using page caching with merb on a multi-lingual website and I needed a way to serve the correct language page from the cache.
 
@@ -71,7 +71,7 @@ Send Bugs to Guillaume Maury (dev@gom-jabbar.org)
 
 Credits
 -------
-Thanks to Evan Miller for his `guide on writing nginx modules <http://www.evanmiller.org/nginx-modules-guide.html>`_.
+Thanks to Evan Miller for his `guide on writing NGINX modules <http://www.evanmiller.org/nginx-modules-guide.html>`_.
 
 
 
