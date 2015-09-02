@@ -376,7 +376,8 @@ linkcheck_ignore = [
                     r'.*www.slideshare.net.*', # blocking the CI with 999 error
                     r'.*eventbrite.com.*', # 301 redirect to country specific site
                     r'.*example.com.*', # Example URLs
-                    r'.*domain.com.*' # Example URLs
+                    r'.*domain.com.*', # Example URLs
+                    r'.*quakenet.org.*' # Blocks Shippable with a 523 error
                    ]
 
 
