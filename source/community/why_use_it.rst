@@ -84,7 +84,7 @@ and using 400MB+ of RAM for all the thread stacks), and Lighty leaks more
 than 20MB per hour (and uses more CPU, but not significantly more).
 
 -- `Bob Ippolito <http://www.linkedin.com/in/bobippolito>`__ in the
-`TurboGears mailing list <https://groups.google.com/forum/#!topic/turbogears/pWlg6jjj6m0#eac050092252b78d>`_, 2006-08-24
+`TurboGears mailing list <http://markmail.org/message/q3smhtnlujh2mvpu>`_, 2006-08-24
 
 
 We are currently using Nginx 0.6.29 with the upstream hash module which
@@ -108,7 +108,7 @@ instances and have plenty of room to grow!
    hit any spikes yet, but given the current performance I suspect it will
    cream Pound.
 
-   -- `Emmett Shear <http://blog.emmettshear.com/post/2008/03/03/Dont-use-Pound-for-load-balancing>`__
+   -- `Emmett Shear <http://blog.emmettshear.com/post/2008/03/03/Dont-use-Pound-for-load-balancing>`_
 
 
 ...we are using nginx as a primary software for free hosting platforms. I have
@@ -118,7 +118,7 @@ http-traffic (all files are small).
 I think, this is really good result because with any possible tunings of Apache
 on the same servers we were not able to handle even 60-80Mbit/s.
 
--- `Alexey Kovyrin <http://kovyrin.net/2006/04/04/nginx-small-powerful-web-server/>`__
+-- `Alexey Kovyrin <http://kovyrin.net/2006/04/04/nginx-small-powerful-web-server/>`_
 
 
 A while back, we changed our frontend IMAP/POP proxy from perdition to nginx...
@@ -127,7 +127,7 @@ The net result of all this is that each frontend proxy server currently maintain
 over 10,000 simultaneous IMAP, POP, Web & SMTP connections (including many SSL
 ones) using only about 10% of the available CPU.
 
--- `FastMail.fm blog <http://blog.fastmail.com/2007/01/04/webimappop-frontend-proxies-changed-to-nginx/>`__
+-- `FastMail.fm blog <http://blog.fastmail.com/2007/01/04/webimappop-frontend-proxies-changed-to-nginx/>`_
 
 
 We recently switched over our static content webserver over to Nginx,
@@ -136,7 +136,7 @@ it on a machine with 8Gb of memory (along with some other stuff), but
 the nginx process is only using a ridiculously small 1.4Mb. In other words,
 it barely registers in any measurable way.
 
--- `Philip Jacob <http://seventhfloor.whirlycott.com/2007/10/05/singing-the-praises-of-nginx/>`__
+-- `Philip Jacob <http://seventhfloor.whirlycott.com/2007/10/05/singing-the-praises-of-nginx/>`_
 
 
 We've replaced our Squid (reverse proxy) + Apache setup with nginx, and
@@ -144,7 +144,7 @@ load average as well as CPU usage have been reduced by half. In addition
 to that our benchmarks show that the new setup can handle about two to
 three times as many requests per second (RPS) as the old setup.
 
--- `HowtoForge <https://www.howtoforge.com>`__
+-- `HowtoForge <https://www.howtoforge.com>`_
 
 
 We've done some `benchmarks <https://timmehosting.de/benchmarks>`__ for
@@ -153,7 +153,7 @@ result is that nginx delivers pages up to 50% faster than Apache. At the
 same time nginx can handle up to 177% as many requests per second (RPS)
 as Apache.
 
--- `Timme Hosting <https://timmehosting.de>`__
+-- `Timme Hosting <https://timmehosting.de>`_
 
 
 .. _why_use_it.notes:
