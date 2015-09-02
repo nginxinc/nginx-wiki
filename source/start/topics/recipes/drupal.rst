@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: A sample NGINX configuration for Drupal.
+
 .. _recipe-drupal:
 
 Drupal

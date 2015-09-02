@@ -40,7 +40,6 @@ Getting Started
    topics/examples/embeddedperlminifyjs
    topics/examples/embeddedperlsitemapsproxy
    topics/examples/refererspam
-   topics/recipes/alkaline
    topics/recipes/cms_made_simple
    topics/recipes/codeigniter
    topics/recipes/drupal
@@ -122,7 +121,6 @@ resulted in many "copy and paste" configurations that are almost guaranteed
 to work.
 
 * `ActiveColab <https://www.howtoforge.com/running-activecollab-3-on-nginx-lemp-on-debian-wheezy-ubuntu-12.10>`_
-* :doc:`topics/recipes/alkaline`
 * `Chive <https://github.com/perusio/chive-nginx>`_
 * :doc:`topics/recipes/cms_made_simple`
 * :doc:`topics/recipes/codeigniter`
