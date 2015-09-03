@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: A full-fledged example of an NGINX configuration.
+
 Full Example Configuration
 ==========================
 

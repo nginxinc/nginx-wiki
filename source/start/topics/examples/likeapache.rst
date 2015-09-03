@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: How to set up an NGINX proxy that acts like Apache's ProxyPassReverse.
+
 Nginx Solution for Apache ProxyPassReverse
 ==========================================
 

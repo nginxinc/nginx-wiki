@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: An example NGINX configuration that acts as a proxy for a ruby application server.
+
 Simple Ruby FCGI
 ================
 

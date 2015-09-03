@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: Various useful init scripts for starting NGINX.
+
 Nginx Init Scripts
 ==================
 

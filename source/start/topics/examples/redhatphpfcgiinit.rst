@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: An example PHP FastCGI init script that works on Red Hat systems.
+
 PHP/FastCGI Init Script for Red Hat systems
 ===========================================
 

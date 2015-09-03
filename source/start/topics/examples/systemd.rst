@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: An example of a simple NGINX systemd service file.
+
 Nginx systemd service file
 ==========================
 

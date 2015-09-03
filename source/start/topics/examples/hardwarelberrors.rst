@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: An example NGINX configuration that can test the readiness of your backend machines.
+
 Hardware Loadbalancer Check Errors
 ==================================
 

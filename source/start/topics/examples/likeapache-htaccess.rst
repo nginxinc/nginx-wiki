@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: You might think that you want to use .htaccess in your NGINX configuration, but you don't. Here's why.
+
 Like Apache: .htaccess
 ======================
 

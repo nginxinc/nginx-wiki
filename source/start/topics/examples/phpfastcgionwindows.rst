@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: How to use NGINX to interface with PHP on windows using a FastCGI daemon.
+
 PHP-FastCGI on Windows
 ======================
 

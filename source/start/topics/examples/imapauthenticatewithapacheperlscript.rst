@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: An example NGINX configuration that uses a Perl script as the IMAP auth backend.
+
 Using a Perl Script as the IMAP Auth Backend
 ============================================
 

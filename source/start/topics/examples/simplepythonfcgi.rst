@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: This example NGINX configuration dispatches TurboGears Python using FastCGI.
+
 Dispatching TurboGears Python via FCGI
 ======================================
 

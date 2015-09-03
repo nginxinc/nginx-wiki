@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: An example NGINX configuration that preloads Memcache.
+
 Memcache Preload
 ================
 

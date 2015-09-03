@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: How to configure NGINX with PHP FastCGI Process Manager.
+
 PHP FastCGI Example
 ===================
 

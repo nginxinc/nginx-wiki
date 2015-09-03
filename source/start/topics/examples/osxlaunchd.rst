@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: How to launch an NGINX daemon on a system running OSX.
+
 OSX Launchd
 ===========
 

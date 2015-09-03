@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: An example NGINX configuration that acts as an SSL-Offloader.
+
 SSL-Offloader
 =============
 

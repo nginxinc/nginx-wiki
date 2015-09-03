@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: An example NGINX configuration that acts as a reverse proxy with caching.
+
 Reverse Proxy with Caching
 ==========================
 

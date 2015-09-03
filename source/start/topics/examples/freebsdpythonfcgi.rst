@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: An example Python FastCGI init script that works on FreeBSD.
+
 FreeBSD Python FCGI Init Script
 ===============================
 

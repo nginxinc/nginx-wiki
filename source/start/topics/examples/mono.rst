@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: An example configuration that runs .NET websites behind NGINX without having to use Windows.
+
 Mono FCGI
 =========
 
