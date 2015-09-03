@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: An example of how to use dynamic SSI in your NGINX configuration.
+
 Dynamic SSI Example
 ===================
 

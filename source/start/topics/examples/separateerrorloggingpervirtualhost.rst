@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: An example NGINX configuration that keeps a separate error log for each server block.
+
 Separating Error Logs per Virtual Host
 ======================================
 

@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: Various example configurations that demonstrate various ways to use NGINX server blocks.
+
 Server Block Examples
 =====================
 

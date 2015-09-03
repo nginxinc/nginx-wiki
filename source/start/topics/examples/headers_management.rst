@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: Some examples that show how to manage request headers in your NGINX configuration.
+
 Managing request headers
 ------------------------
 

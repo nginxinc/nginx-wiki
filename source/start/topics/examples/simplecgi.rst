@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: A simple guide to serving your CGI applications with FastCGI and NGINX.
+
 Simple CGI
 ==========
 

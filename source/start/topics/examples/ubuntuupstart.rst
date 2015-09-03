@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: An example Ubuntu upstart recipe for NGINX.
+
 Ubuntu Upstart
 ==============
 

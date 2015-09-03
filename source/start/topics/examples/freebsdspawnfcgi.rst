@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: A "one size fits all" script to interface with spawn-fcgi in a friendly way.
+
 FreeBSD Spawn FCGI Init Script
 ==============================
 

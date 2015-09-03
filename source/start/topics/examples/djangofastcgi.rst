@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: Examples and tips of how to use Django and FastCGI in your NGINX configuration.
+
 Django FastCGI
 ==============
 

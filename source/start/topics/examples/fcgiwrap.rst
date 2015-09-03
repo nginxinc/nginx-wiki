@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: An example NGINX configuration that uses fcgiwrap to run CGI applications over FastCGI.
+
 FCGI Wrap
 =========
 

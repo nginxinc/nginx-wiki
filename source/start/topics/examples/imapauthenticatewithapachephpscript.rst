@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: An example NGINX configuration that uses a PHP script on an Apache server as the IMAP auth backend.
+
 Using a PHP Script on an Apache Server as the IMAP Auth Backend
 ===============================================================
 

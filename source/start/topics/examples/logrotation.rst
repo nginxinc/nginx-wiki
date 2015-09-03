@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: NGINX re-opens its logs in response to the USR1 signal, so you should kill it before doing something with your log files.
+
 Log Rotation
 ============
 

@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: An example NGINX configuration that sets certain FastCGI parameters for applications installed in a non-root web path.
+
 Non-root Web Path
 =================
 

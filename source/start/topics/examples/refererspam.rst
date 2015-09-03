@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: An example NGINX configuration that uses the valid_referers directive to handle referer spam.
+
 Referer Spam Blocking
 =====================
 

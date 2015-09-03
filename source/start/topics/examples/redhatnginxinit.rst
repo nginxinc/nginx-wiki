@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: An example NGINX init script that works on Red Hat systems.
+
 Red Hat Nginx Init Script
 =========================
 

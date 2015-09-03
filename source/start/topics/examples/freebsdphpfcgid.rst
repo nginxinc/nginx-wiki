@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: An example PHP FastCGI init script that works on FreeBSD.
+
 FreeBSD PHP FCGI Init Script
 ============================
 

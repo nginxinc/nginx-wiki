@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: An example configuration that shows how to use NGINX as a reverse proxy for Java servers.
+
 Java servers like Jetty, GlassFish and Tomcat
 =============================================
 

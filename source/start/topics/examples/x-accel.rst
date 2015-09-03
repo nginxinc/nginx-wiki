@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: How to use X-Accel in your NGINX configuration.
+
 X-Accel
 =======
 

@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: Examples that demonstrate how to use the X-Accel-Redirect header with NGINX.
+
 XSendfile
 =========
 

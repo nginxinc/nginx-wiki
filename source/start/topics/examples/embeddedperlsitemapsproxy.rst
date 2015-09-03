@@ -1,7 +1,11 @@
+
+.. meta::
+   :description: An example NGINX configuration that acts as a proxy that serves sitemaps dynamically.
+
 Embedded Perl Sitemaps Proxy
 ============================
 
-We run a CMS hosting business. 
+We run a CMS hosting business.
 
 Each website is hosted on its own domain and for each website a sitemap.xml is dynamically generated on the fly when requested.
 

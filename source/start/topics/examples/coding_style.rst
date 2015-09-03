@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: Learn the coding style used in the NGINX source files by example.
+
 The Nginx source code is written in the C programming language by
 Kernighan and Ritchie and maintains a consistent style.
 

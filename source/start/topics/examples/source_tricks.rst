@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: A couple handy bash one-liners that display information about your NGINX configuration's server context.
+
 ... More to come, but needed some place to put PiotrSikora's handy
 little commands (and will expand on them later):
 

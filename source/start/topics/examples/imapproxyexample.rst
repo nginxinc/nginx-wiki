@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: Example NGINX configurations for basic and STARTTLS IMAP proxies.
+
 IMAP Proxy Example
 ==================
 

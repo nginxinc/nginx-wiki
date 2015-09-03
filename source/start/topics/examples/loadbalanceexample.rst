@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: An example NGINX configuration that performs simple load balancing.
+
 Simple Load Balancing
 =====================
 

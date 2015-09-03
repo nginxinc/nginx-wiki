@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: An example of how to minify javascript in your NGINX configuration.
+
 Embedded Perl Minify JS
 =======================
 
