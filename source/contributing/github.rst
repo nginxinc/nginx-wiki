@@ -70,6 +70,12 @@ Once your edits are ready to test, run these commands to check that they build c
    $ make html
    $ make linkcheck
 
+.. note::
+
+    The rendered output used by the published wiki is using ``make dirhtml`` which is identical but has a wiki page per directory rather than per html file.
+
+    In addition the full output is rebuilt on every execution of ``make dirhtml`` rather than just the changes with ``make html``.
+
 If either command generates an error, your edits probably need fixing. The NGINX community team will be happy to assist you with this.
 
 One way to preview the output is with PHP's built-in server:
