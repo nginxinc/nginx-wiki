@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: This is the index page for the NGINX community.
+
 Community
 =========
 

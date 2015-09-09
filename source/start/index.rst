@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: Useful tools, examples, and other learning resources for getting started with NGINX.
+
 Getting Started
 ===============
 
