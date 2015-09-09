@@ -1,0 +1,13 @@
+language: python
+
+python: "3.4"
+
+before_install:
+    - pip install Sphinx
+
+script:
+    - ".ci/${CI_TARGET}.sh"
+
+env:
+    - CI_TARGET=html
+    - CI_TARGET=linkcheck
