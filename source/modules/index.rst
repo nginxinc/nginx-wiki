@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: A list of third party modules for NGINX.
+
 .. _modules:
 
 .. todo::

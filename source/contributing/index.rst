@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: How to contribute to the NGINX codebase and to the NGINX wiki.
+
 Contributing to NGINX
 =====================
 

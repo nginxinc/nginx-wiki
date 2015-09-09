@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: The NGINX "if" directive is evil. If you need to use it, make sure you actually understand how it works first. You've been warned.
+
 If Is Evil
 ==========
 
