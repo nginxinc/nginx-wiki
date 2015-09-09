@@ -140,7 +140,7 @@ Notes
 #. The ``if`` lets nginx check whether the ``*.php`` does indeed exist to prevent nginx to feeding PHP FPM non php script file (like uploaded image).
 
 Some guides recommend to use ``try_files`` instead of ``if``,
-if you do that, beware of nginx `bug #321 <http://trac.nginx.org/nginx/ticket/321>`_.
+if you do that, beware of nginx `bug #321 <https://trac.nginx.org/nginx/ticket/321>`_.
 I personally think ``if`` is more appropriate for this, even :doc:`../depth/ifisevil` agree this is one of the 100% safe thing to use ``if`` with.
 
 This guide run fine on php.ini ``cgi.fix_pathinfo = 1`` (the default).
