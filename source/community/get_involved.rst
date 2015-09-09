@@ -42,7 +42,7 @@ source. If you're interested in having your blog aggregated here, it's pretty
 simple. Just check out the README.mkd file in the `git repository`_.
 
 .. _`NGINX mailing list`: http://mailman.nginx.org/mailman/listinfo
-.. _`bug tracker`: http://trac.nginx.org/nginx/
+.. _`bug tracker`: https://trac.nginx.org/nginx/
 .. _`Planet Ngx`: http://planet.ngx.cc/
 .. _`git repository`: https://github.com/ngx/planet
 

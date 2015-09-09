@@ -6,11 +6,11 @@ Managing request headers
 ------------------------
 
 As far as the
-:github:`Nginx.HeadersIn <kung-fu-tzu/ngx_http_js_module/blob/master/src/classes/Request/HeadersIn.c>`
+:github:`Nginx.HeadersIn <peter-leonov/ngx_http_js_module/blob/master/src/classes/Request/HeadersIn.c>`
 and
-:github:`Nginx.HeadersOut <kung-fu-tzu/ngx_http_js_module/blob/master/src/classes/Request/HeadersOut.c>`
+:github:`Nginx.HeadersOut <peter-leonov/ngx_http_js_module/blob/master/src/classes/Request/HeadersOut.c>`
 classes of
-the :github:`ngx\_http\_js\_module <kung-fu-tzu/ngx_http_js_module>`
+the :github:`ngx\_http\_js\_module <peter-leonov/ngx_http_js_module>`
 implemented almost fully now we can talk about this ``headers_in`` and ``headers_out`` structs a little.
 
 The HTTP headers in nginx are split in two parts: the input request

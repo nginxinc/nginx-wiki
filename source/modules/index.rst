@@ -102,7 +102,7 @@ Nginx 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`java_handler`       | A module for embedding Clojure, Java, and Groovy programs               | :github:`nginx-clojure/nginx-clojure`                                                   |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| JavaScript                | Embedding SpiderMonkey, a full port of Perl module, and more            | :github:`kung-fu-tzu/ngx_http_js_module#readme`                                         |
+| JavaScript                | Embedding SpiderMonkey, a full port of Perl module, and more            | :github:`peter-leonov/ngx_http_js_module#readme`                                        |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`ketama_chash`       | Provides upstream load distribution by hashing a configurable variable  | :github:`flygoast/ngx_http_upstream_ketama_chash/releases/`                             |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
