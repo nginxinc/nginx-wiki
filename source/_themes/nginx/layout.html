@@ -79,6 +79,17 @@
             {%- include "searchbox.html" %}
             {%- endblock %}
           {%- endif %}
+          <h3>Edit this page</h3>
+           <ul>
+  {%- if show_on_github_url %}
+    <li><a href="{{ show_on_github_url }}"
+        rel="nofollow"><span class="icon-holder">{%- include "../../exts/icons/eye.svg" %}</span>&nbsp;{{ _('Show on GitHub') }}</a></li>
+  {%- endif %}
+  {%- if edit_on_github_url %}
+    <li><a href="{{ edit_on_github_url }}"
+        rel="nofollow"><span class="icon-holder">{%- include "../../exts/icons/pencil.svg" %}</span>&nbsp;{{ _('Edit on GitHub') }}</a></li>
+  {%- endif %}
+            </ul>
         </div>
       </div>
       {%- endif %}
