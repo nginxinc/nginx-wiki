@@ -32,7 +32,7 @@ needs_sphinx = '1.1'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 sys.path.append(os.path.abspath('exts'))
-extensions = ['font_awesome', 'sphinx.ext.todo']
+extensions = ['font_awesome', 'sphinx.ext.todo', 'edit_on_github']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -412,3 +412,8 @@ class OverrideErrorTokenFilter(Filter):
             yield ttype, value
 
 FILTERS['raiseonerror'] = OverrideErrorTokenFilter
+
+# Edit on GitHub
+
+edit_on_github_project = 'nginxinc/nginx-wiki'
+edit_on_github_branch = 'master'

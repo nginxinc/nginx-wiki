@@ -7,6 +7,14 @@ Submitting Contributions
 
 The NGINX Wiki is automatically generated from `reStructuredText files <https://en.wikipedia.org/wiki/ReStructuredText>`_ using `Sphinx Documentation Generator <http://sphinx-doc.org/>`_. The source files are `stored in GitHub <https://github.com/nginxinc/nginx-wiki>`_ and are open to contributions via pull requests. This document will help guide you through this process.
 
+Editing on GitHub
+-----------------
+
+Whilst viewing wiki you will find "Edit on GitHub" links in the sidebar on every page. Using this you can edit edit page content and submitting your edits will generate a pull request. This is a relatively simple way to make quick edits.
+
+Editing on your local computer
+------------------------------
+
 These instructions are for Linux and Mac users, and assume you have a GitHub account and the ``git`` command-line tool is installed.
 
 You also need *python-sphinx* installed; some Linux distributions have this in their repositories, while for others you can install it using ``pip``:
