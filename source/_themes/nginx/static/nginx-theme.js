@@ -208,6 +208,4 @@
         });
     }
 
-    $('a[href^=#]').smoothScroll({offset: -120});
-
 })(jQuery);
