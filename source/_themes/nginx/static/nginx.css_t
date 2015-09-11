@@ -1,7 +1,7 @@
 /* IMPORTANT: Please update the link to this in theme.conf with the correct date/time in YYYYMMDDHHMM format */
 
-{% set page_width = '1140px' %}
-{% set sidebar_width = '220px' %}
+{% set page_width = '1127px' %}
+{% set sidebar_width = '354px' %}
 
 {% set theme_sidebar_header = theme_sidebar_header or theme_gray_1 %}
 {% set theme_sidebar_link = theme_sidebar_link or theme_gray_1 %}
@@ -58,6 +58,10 @@ div.bodywrapper {
     margin: 0 0 0 {{ sidebar_width }};
 }
 
+div.body {
+    padding-top: 18px;
+}
+
 div.sphinxsidebar {
     width: {{ sidebar_width }};
 }
@@ -76,7 +80,7 @@ div.sphinxsidebar {
 }
 
 div.sphinxsidebarwrapper {
-    padding: 18px 10px;
+    padding: 18px 26px 18px 0px;
     word-wrap: break-word;
 }
 
