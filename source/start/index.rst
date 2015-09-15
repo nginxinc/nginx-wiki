@@ -114,12 +114,12 @@ Full Stack HOWTOs
 Pre-canned Configurations
 -------------------------
 
-As you learned in the tutorials, most Nginx configuration files are very
+As you learned in the tutorials, most NGINX configuration files are very
 similar. You can apply the same logic to most web applications and achieve the
 desired result. There are some applications that have weird little quirks that
 tend to throw a wrench in things.
 
-Nginx happens to have a very well rounded community that has worked to first
+NGINX happens to have a very well rounded community that has worked to first
 address these quirks and then share the resulting configurations. This has
 resulted in many "copy and paste" configurations that are almost guaranteed
 to work.
@@ -179,7 +179,7 @@ to work.
 Other Examples
 --------------
 
-Of course, Nginx can do much more. We're barely scratching the surface. If
+Of course, NGINX can do much more. We're barely scratching the surface. If
 you're interested, you can take a look at some other examples that have been
 developed.
 
@@ -212,7 +212,7 @@ developed.
 * `NGINX + SSL + SPDY <https://www.mare-system.de/guide-to-nginx-ssl-spdy-hsts/>`_
 * `NGINX + PHP FPM + APC on CentOS 6 <http://www.binarytides.com/install-nginx-php-fpm-centos/>`_
 * `Adding new vhosts with NGINX, PHP-FPM and Bash <http://www.sebdangerfield.me.uk/2012/05/nginx-and-php-fpm-bash-script-for-creating-new-vhosts-under-separate-fpm-pools/>`_
-* `Serving an iPhone website with Nginx <http://nicknotfound.com/2009/01/12/iphone-website-with-nginx/>`_
+* `Serving an iPhone website with NGINX <http://nicknotfound.com/2009/01/12/iphone-website-with-nginx/>`_
 * :doc:`topics/examples/hardwarelberrors`
 * :doc:`topics/examples/xsendfile`
 * :doc:`topics/examples/memcachepreload`
