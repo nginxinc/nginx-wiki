@@ -7,9 +7,9 @@ HTTP Echo Module
 
 Name
 ----
-**ngx_echo** - Brings "echo", "sleep", "time", "exec" and more shell-style goodies to Nginx config file.
+**ngx_echo** - Brings "echo", "sleep", "time", "exec" and more shell-style goodies to NGINX config file.
 
-.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions <echo.installation_>`_.
+.. note:: *This module is not distributed with the NGINX source.* See the `installation instructions <echo.installation_>`_.
 
 
 
@@ -212,15 +212,15 @@ Synopsis
 
 Description
 -----------
-This module wraps lots of Nginx internal APIs for streaming input and output, parallel/sequential subrequests, timers and sleeping, as well as various meta data accessing.
+This module wraps lots of NGINX internal APIs for streaming input and output, parallel/sequential subrequests, timers and sleeping, as well as various meta data accessing.
 
 Basically it provides various utilities that help testing and debugging of other modules by trivially emulating different kinds of faked subrequest locations.
 
 People will also find it useful in real-world applications that need to
 
-#. serve static contents directly from memory (loading from the Nginx config file).
-#. wrap the upstream response with custom header and footer (kinda like the `addition module <http://nginx.org/en/docs/http/ngx_http_addition_module.html>`_ but with contents read directly from the config file and Nginx variables).
-#. merge contents of various "Nginx locations" (i.e., subrequests) together in a single main request (using `echo_location`_ and its friends).
+#. serve static contents directly from memory (loading from the NGINX config file).
+#. wrap the upstream response with custom header and footer (kinda like the `addition module <http://nginx.org/en/docs/http/ngx_http_addition_module.html>`_ but with contents read directly from the config file and NGINX variables).
+#. merge contents of various "NGINX locations" (i.e., subrequests) together in a single main request (using `echo_location`_ and its friends).
 
 This is a special dual-role module that can *lazily* serve as a content handler or register itself as an output filter only upon demand. By default, this module does not do anything at all.
 
@@ -229,12 +229,12 @@ Technially, this module has also demonstrated the following techniques that migh
 #. Issue parallel subreqeusts directly from content handler.
 #. Issue chained subrequests directly from content handler, by passing continuation along the subrequest chain.
 #. Issue subrequests with all HTTP 1.1 methods and even an optional faked HTTP request body.
-#. Interact with the Nginx event model directly from content handler using custom events and timers, and resume the content handler back if necessary.
+#. Interact with the NGINX event model directly from content handler using custom events and timers, and resume the content handler back if necessary.
 #. Dual-role module that can (lazily) serve as a content handler or an output filter or both.
-#. Nginx config file variable creation and interpolation.
+#. NGINX config file variable creation and interpolation.
 #. Streaming output control using output_chain, flush and its friends.
 #. Read client request body from the content handler, and returns back (asynchronously) to the content handler after completion.
-#. Use Perl-based declarative `test suite`_ to drive the development of Nginx C modules.
+#. Use Perl-based declarative `test suite`_ to drive the development of NGINX C modules.
 
 
 
@@ -242,9 +242,9 @@ Technially, this module has also demonstrated the following techniques that migh
 
 Content Handler Directives
 --------------------------
-Use of the following directives register this module to the current Nginx location as a content handler. If you want to use another module, like the `standard proxy module <http://nginx.org/en/docs/http/ngx_http_proxy_module.html>`_, as the content handler, use the `filter directives`_ provided by this module.
+Use of the following directives register this module to the current NGINX location as a content handler. If you want to use another module, like the `standard proxy module <http://nginx.org/en/docs/http/ngx_http_proxy_module.html>`_, as the content handler, use the `filter directives`_ provided by this module.
 
-All the content handler directives can be mixed together in a single Nginx location and they're supposed to run sequentially just as in the Bash scripting language.
+All the content handler directives can be mixed together in a single NGINX location and they're supposed to run sequentially just as in the Bash scripting language.
 
 Every content handler directive supports variable interpolation in its arguments (if any).
 
@@ -293,7 +293,7 @@ echo
 
 Sends arguments joined by spaces, along with a trailing newline, out to the client.
 
-Note that the data might be buffered by Nginx's underlying buffer. To force the output data flushed immediately, use the `echo_flush`_ command just after ``echo``, as in
+Note that the data might be buffered by NGINX's underlying buffer. To force the output data flushed immediately, use the `echo_flush`_ command just after ``echo``, as in
 
 .. code-block:: nginx
 
@@ -331,7 +331,7 @@ The output on the client side looks like this
   world
 
 
-Special characters like newlines (``\n``) and tabs (``\t``) can be escaped using C-style escaping sequences. But a notable exception is the dollar sign (``$``). As of Nginx 0.8.20, there's still no clean way to esacpe this characters. (A work-around might be to use a ``$echo_dollor`` variable that is always evaluated to the constant ``$`` character. This feature will possibly be introduced in a future version of this module.)
+Special characters like newlines (``\n``) and tabs (``\t``) can be escaped using C-style escaping sequences. But a notable exception is the dollar sign (``$``). As of NGINX 0.8.20, there's still no clean way to esacpe this characters. (A work-around might be to use a ``$echo_dollor`` variable that is always evaluated to the constant ``$`` character. This feature will possibly be introduced in a future version of this module.)
 
 As of the echo :github:`v0.28 <openresty/echo-nginx-module/tags>` release, one can suppress the trailing newline character in the output by using the ``-n`` option, as in
 
@@ -448,9 +448,9 @@ echo_flush
 :Context: *location, location if*
 :Phase: *content*
 
-Forces the data potentially buffered by underlying Nginx output filters to send immediately to the client side via socket.
+Forces the data potentially buffered by underlying NGINX output filters to send immediately to the client side via socket.
 
-Note that techically the command just emits a ngx_buf_t object with ``flush`` slot set to 1, so certain weird third-party output filter module could still block it before it reaches Nginx's (last) write filter.
+Note that techically the command just emits a ngx_buf_t object with ``flush`` slot set to 1, so certain weird third-party output filter module could still block it before it reaches NGINX's (last) write filter.
 
 This directive does not take any argument.
 
@@ -468,7 +468,7 @@ Consider the following example:
   }
 
 
-Then on the client side, using curl to access ``/flush``, you'll see the "hello" line immediately, but only after 1 second, the last "world" line. Without calling ``echo_flush`` in the example above, you'll most likely see no output until 1 second is elapsed due to the internal buffering of Nginx.
+Then on the client side, using curl to access ``/flush``, you'll see the "hello" line immediately, but only after 1 second, the last "world" line. Without calling ``echo_flush`` in the example above, you'll most likely see no output until 1 second is elapsed due to the internal buffering of NGINX.
 
 This directive will fail to flush the output buffer in case of subrequests get involved. Consider the following example:
 
@@ -513,7 +513,7 @@ echo_sleep
 
 Sleeps for the time period specified by the argument, which is in seconds.
 
-This operation is non-blocking on server side, so unlike the `echo_blocking_sleep`_ directive, it won't block the whole Nginx worker process.
+This operation is non-blocking on server side, so unlike the `echo_blocking_sleep`_ directive, it won't block the whole NGINX worker process.
 
 The period might takes three digits after the decimal point and must be greater than 0.001.
 
@@ -527,7 +527,7 @@ An example is
   }
 
 
-Behind the scene, it sets up a per-request "sleep" ngx_event_t object, and adds a timer using that custom event to the Nginx event model and just waits for a timeout on that event. Because the "sleep" event is per-request, this directive can work in parallel subrequests.
+Behind the scene, it sets up a per-request "sleep" ngx_event_t object, and adds a timer using that custom event to the NGINX event model and just waits for a timeout on that event. Because the "sleep" event is per-request, this directive can work in parallel subrequests.
 
 
 echo_blocking_sleep
@@ -541,9 +541,9 @@ This is a blocking version of the `echo_sleep`_ directive.
 
 See the documentation of `echo_sleep`_ for more detail.
 
-Behind the curtain, it calls the ngx_msleep macro provided by the Nginx core which maps to usleep on POSIX-compliant systems.
+Behind the curtain, it calls the ngx_msleep macro provided by the NGINX core which maps to usleep on POSIX-compliant systems.
 
-Note that this directive will block the current Nginx worker process completely while being executed, so never use it in production environment.
+Note that this directive will block the current NGINX worker process completely while being executed, so never use it in production environment.
 
 
 echo_reset_timer
@@ -581,7 +581,7 @@ The output on the client side might be
 
 The actual figures you get on your side may vary a bit due to your system's current activities.
 
-Invocation of this directive will force the underlying Nginx timer to get updated to the current system time (regardless the timer resolution specified elsewhere in the config file). Furthermore, references of the `$echo_timer_elapsed`_ variable will also trigger timer update forcibly.
+Invocation of this directive will force the underlying NGINX timer to get updated to the current system time (regardless the timer resolution specified elsewhere in the config file). Furthermore, references of the `$echo_timer_elapsed`_ variable will also trigger timer update forcibly.
 
 See also `echo_sleep`_ and `$echo_timer_elapsed`_.
 
@@ -593,7 +593,7 @@ echo_read_request_body
 :Context: *location, location if*
 :Phase: *content*
 
-Explicitly reads request body so that the `$request_body <http://nginx.org/en/docs/http/ngx_http_core_module.html#$request_body>`_ variable will always have non-empty values (unless the body is so big that it has been saved by Nginx to a local temporary file).
+Explicitly reads request body so that the `$request_body <http://nginx.org/en/docs/http/ngx_http_core_module.html#$request_body>`_ variable will always have non-empty values (unless the body is so big that it has been saved by NGINX to a local temporary file).
 
 Note that this might not be the original client request body because the current request might be a subrequest with a "artificial" body specified by its parent.
 
@@ -630,7 +630,7 @@ The content of ``/echoback`` looks like this on my side (I was using Perl's LWP 
 
 Because ``/echoback`` is the main request, `$request_body <http://nginx.org/en/docs/http/ngx_http_core_module.html#$request_body>`_ holds the original client request body.
 
-Before Nginx 0.7.56, it makes no sense to use this directive because `$request_body <http://nginx.org/en/docs/http/ngx_http_core_module.html#$request_body>`_ was first introduced in Nginx 0.7.58.
+Before NGINX 0.7.56, it makes no sense to use this directive because `$request_body <http://nginx.org/en/docs/http/ngx_http_core_module.html#$request_body>`_ was first introduced in NGINX 0.7.58.
 
 This directive itself was first introduced in the echo module's :github:`v0.14 <openresty/echo-nginx-module/tags>`
 
@@ -644,7 +644,7 @@ echo_location_async
 
 Issue GET subrequest to the location specified (first argument) with optional url arguments specified in the second argument.
 
-As of Nginx 0.8.20, the ``location`` argument does *not* support named location, due to a limitation in the ``ngx_http_subrequest`` function. The same is true for its brother, the `echo_location`_ directive.
+As of NGINX 0.8.20, the ``location`` argument does *not* support named location, due to a limitation in the ``ngx_http_subrequest`` function. The same is true for its brother, the `echo_location`_ directive.
 
 A very simple example is
 
@@ -700,7 +700,7 @@ Accessing ``/main`` yields
 
 You can see that the main handler ``/main`` does *not* wait the subrequests ``/sub1`` and ``/sub2`` to complete and quickly goes on, hence the "0.000 sec" timing result. The whole request, however takes approximately 2 sec in total to complete because ``/sub1`` and ``/sub2`` run in parallel (or "concurrently" to be more accurate).
 
-If you use `echo_blocking_sleep`_ in the previous example instead, then you'll get the same output, but with 3 sec total response time, because "blocking sleep" blocks the whole Nginx worker process.
+If you use `echo_blocking_sleep`_ in the previous example instead, then you'll get the same output, but with 3 sec total response time, because "blocking sleep" blocks the whole NGINX worker process.
 
 Locations can also take an optional querystring argument, for instance
 
@@ -724,9 +724,9 @@ Accessing ``/main`` yields
 
 Querystrings is *not* allowed to be concatenated onto the ``location`` argument with "?" directly, for example, ``/sub?foo=Foo&bar=Bar`` is an invalid location, and shouldn't be fed as the first argument to this directive.
 
-Technically speaking, this directive is an example that Nginx content handler issues one or more subrequests directly. AFAIK, the :github:`fancyindex module <aperezdc/ngx-fancyindex>` also does such kind of things ;)
+Technically speaking, this directive is an example that NGINX content handler issues one or more subrequests directly. AFAIK, the :github:`fancyindex module <aperezdc/ngx-fancyindex>` also does such kind of things ;)
 
-Nginx named locations like ``@foo`` is *not* supported here.
+NGINX named locations like ``@foo`` is *not* supported here.
 
 This directive is logically equivalent to the GET version of `echo_subrequest_async`_. For example,
 
@@ -746,7 +746,7 @@ But calling this directive is slightly faster than calling `echo_subrequest_asyn
 
 There is a known issue with this directive when disabling the standard `standard SSI module <http://nginx.org/en/docs/http/ngx_http_ssi_module.html>`_. See `Known Issues`_ for more details.
 
-This directive is first introduced in :github:`v0.09 <openresty/echo-nginx-module/tags>` of this module and requires at least Nginx 0.7.46.
+This directive is first introduced in :github:`v0.09 <openresty/echo-nginx-module/tags>` of this module and requires at least NGINX 0.7.46.
 
 
 echo_location
@@ -809,9 +809,9 @@ is logically equivalent to
 
 But calling this directive is slightly faster than calling `echo_subrequest`_ using ``GET`` because we don't have to parse the HTTP method names like ``GET`` and options like ``-q``.
 
-Behind the scene, it creates an ``ngx_http_post_subrequest_t`` object as a *continuation* and passes it into the ``ngx_http_subrequest`` function call. Nginx will later reopen this "continuation" in the subrequest's ``ngx_http_finalize_request`` function call. We resumes the execution of the parent-request's content handler and starts to run the next directive (command) if any.
+Behind the scene, it creates an ``ngx_http_post_subrequest_t`` object as a *continuation* and passes it into the ``ngx_http_subrequest`` function call. NGINX will later reopen this "continuation" in the subrequest's ``ngx_http_finalize_request`` function call. We resumes the execution of the parent-request's content handler and starts to run the next directive (command) if any.
 
-Nginx named locations like ``@foo`` is *not* supported here.
+NGINX named locations like ``@foo`` is *not* supported here.
 
 This directive was first introduced in the :github:`v0.12 <openresty/echo-nginx-module/tags>`
 
@@ -894,7 +894,7 @@ Then on the client side, we can see that
   body: hello, world.
 
 
-Nginx named locations like ``@foo`` is *not* supported here.
+NGINX named locations like ``@foo`` is *not* supported here.
 
 This directive takes several options:
 
@@ -924,11 +924,11 @@ echo_subrequest
 :Context: *location, location if*
 :Phase: *content*
 
-This is the synchronous version of the `echo_subrequest_async`_ directive. And just like `echo_location`_, it does not block the Nginx worker process (while `echo_blocking_sleep`_ does), rather, it uses continuation to pass control along the subrequest chain.
+This is the synchronous version of the `echo_subrequest_async`_ directive. And just like `echo_location`_, it does not block the NGINX worker process (while `echo_blocking_sleep`_ does), rather, it uses continuation to pass control along the subrequest chain.
 
 See `echo_subrequest_async`_ for more details.
 
-Nginx named locations like ``@foo`` is *not* supported here.
+NGINX named locations like ``@foo`` is *not* supported here.
 
 This directive was first introduced in the :github:`v0.15 <openresty/echo-nginx-module/tags>`
 
@@ -1002,7 +1002,7 @@ Then accessing /merge to merge the ``.js`` resources specified in the query stri
 
   $ curl 'http://localhost/merge?/foo/bar.js&/yui/blah.js&/baz.js'
 
-One can also use third-party Nginx cache module to cache the merged response generated by the ``/merge`` location in the previous example.
+One can also use third-party NGINX cache module to cache the merged response generated by the ``/merge`` location in the previous example.
 
 This directive was first introduced in the :github:`v0.17 <openresty/echo-nginx-module/tags>`
 
@@ -1092,7 +1092,7 @@ But query string (if any) will always be ignored for named location redirects du
 
 Never try to echo things before the ``echo_exec`` directive or you won't see the proper response of the location you want to redirect to. Because any echoing will cause the original location handler to send HTTP headers before the redirection happens.
 
-Technically speaking, this directive exposes the Nginx internal API functions ``ngx_http_internal_redirect`` and ``ngx_http_named_location``.
+Technically speaking, this directive exposes the NGINX internal API functions ``ngx_http_internal_redirect`` and ``ngx_http_named_location``.
 
 This directive was first introduced in the :github:`v0.21 <openresty/echo-nginx-module/tags>`
 
@@ -1269,7 +1269,7 @@ This variable holds the seconds elapsed since the start of the current request (
 
 The timing result takes three digits after the decimal point.
 
-References of this variable will force the underlying Nginx timer to update to the current system time, regardless the timer resolution settings elsewhere in the config file, just like the `echo_reset_timer`_ directive.
+References of this variable will force the underlying NGINX timer to update to the current system time, regardless the timer resolution settings elsewhere in the config file, just like the `echo_reset_timer`_ directive.
 
 
 $echo_request_body
@@ -1285,7 +1285,7 @@ Behind the scene, it just takes the string data stored in ``r->method_name``.
 
 Compare it to the `$echo_client_request_method`_ variable.
 
-At least for Nginx 0.8.20 and older, the `$request_method <http://nginx.org/en/docs/http/ngx_http_core_module.html#$request_method>`_ variable provided by the `http core module <http://nginx.org/en/docs/http/ngx_http_core_module.html>`_ is actually doing what our `$echo_client_request_method`_ is doing.
+At least for NGINX 0.8.20 and older, the `$request_method <http://nginx.org/en/docs/http/ngx_http_core_module.html#$request_method>`_ variable provided by the `http core module <http://nginx.org/en/docs/http/ngx_http_core_module.html>`_ is actually doing what our `$echo_client_request_method`_ is doing.
 
 This variable was first introduced in our :github:`v0.15 <openresty/echo-nginx-module/tags>`
 
@@ -1397,12 +1397,12 @@ This directive was first introduced in the :github:`v0.23 <openresty/echo-nginx-
 
 Installation
 ------------
-You're recommended to install this module (as well as the Nginx core and many other goodies) via the `ngx_openresty bundle <http://openresty.org>`__. See `the detailed instructions <http://openresty.org/#Installation>`_ for downloading and installing ngx_openresty into your system. This is the easiest and most safe way to set things up.
+You're recommended to install this module (as well as the NGINX core and many other goodies) via the `ngx_openresty bundle <http://openresty.org>`__. See `the detailed instructions <http://openresty.org/#Installation>`_ for downloading and installing ngx_openresty into your system. This is the easiest and most safe way to set things up.
 
-Alternatively, you can install this module manually with the Nginx source:
+Alternatively, you can install this module manually with the NGINX source:
 
-Grab the nginx source code from `nginx.org <http://nginx.org/>`_, for example,
-the version 1.7.7 (see `nginx compatibility <echo.compatibility_>`_), and then build the source with this module:
+Grab the NGINX source code from `nginx.org <http://nginx.org/>`_, for example,
+the version 1.7.7 (see `NGINX compatibility <echo.compatibility_>`_), and then build the source with this module:
 
 .. code-block:: bash
 
@@ -1428,7 +1428,7 @@ Also, this module is included and enabled by default in the `ngx_openresty bundl
 
 Compatibility
 -------------
-The following versions of Nginx should work with this module:
+The following versions of NGINX should work with this module:
 
 * **1.7.x**                       (last tested: 1.7.7)
 * **1.6.x**
@@ -1445,20 +1445,20 @@ The following versions of Nginx should work with this module:
 In particular,
 
 * the directive `echo_location_async`_ and its brother `echo_subrequest_async`_ do *not* work with **0.7.x < 0.7.46**.
-* the `echo_after_body`_ directive does *not* work at all with nginx **< 0.8.7**.
-* the `echo_sleep`_ directive cannot be used after `echo_location`_ or `echo_subrequest`_ for nginx **< 0.8.11**.
+* the `echo_after_body`_ directive does *not* work at all with NGINX **< 0.8.7**.
+* the `echo_sleep`_ directive cannot be used after `echo_location`_ or `echo_subrequest`_ for NGINX **< 0.8.11**.
 
-Earlier versions of Nginx like 0.6.x and 0.5.x will *not* work at all.
+Earlier versions of NGINX like 0.6.x and 0.5.x will *not* work at all.
 
-If you find that any particular version of Nginx above 0.7.21 does not work with this module, please consider `echo.reporting-a-bug`_.
+If you find that any particular version of NGINX above 0.7.21 does not work with this module, please consider `echo.reporting-a-bug`_.
 
 
 
 Known Issues
 ------------
-Due to an unknown bug in Nginx (it still exists in Nginx 1.7.7), the `standard SSI module <http://nginx.org/en/docs/http/ngx_http_ssi_module.html>`_ is required to ensure that the contents of the subrequests issued by `echo_location_async`_ and `echo_subrequest_async`_ are correctly merged into the output chains of the main one. Fortunately, the SSI module is enabled by default during Nginx's ``configure`` process.
+Due to an unknown bug in NGINX (it still exists in NGINX 1.7.7), the `standard SSI module <http://nginx.org/en/docs/http/ngx_http_ssi_module.html>`_ is required to ensure that the contents of the subrequests issued by `echo_location_async`_ and `echo_subrequest_async`_ are correctly merged into the output chains of the main one. Fortunately, the SSI module is enabled by default during NGINX's ``configure`` process.
 
-If calling this directive without SSI module enabled, you'll get truncated response without contents of any subrequests and get an alert message in your Nginx's ``error.log``, like this:
+If calling this directive without SSI module enabled, you'll get truncated response without contents of any subrequests and get an alert message in your NGINX's ``error.log``, like this:
 
 .. code-block:: nginx
 
@@ -1535,11 +1535,11 @@ To run it on your side:
   $ PATH=/path/to/your/nginx-with-echo-module:$PATH prove -r t
 
 
-You need to terminate any Nginx processes before running the test suite if you have changed the Nginx server binary.
+You need to terminate any NGINX processes before running the test suite if you have changed the NGINX server binary.
 
-Because a single nginx server (by default, ``localhost:1984``) is used across all the test scripts (``.t`` files), it's meaningless to run the test suite in parallel by specifying ``-jN`` when invoking the ``prove`` utility.
+Because a single NGINX server (by default, ``localhost:1984``) is used across all the test scripts (``.t`` files), it's meaningless to run the test suite in parallel by specifying ``-jN`` when invoking the ``prove`` utility.
 
-Some parts of the test suite requires standard modules `proxy <http://nginx.org/en/docs/http/ngx_http_proxy_module.html>`_, `rewrite <http://nginx.org/en/docs/http/ngx_http_rewrite_module.html>`_ and `SSI <http://nginx.org/en/docs/http/ngx_http_ssi_module.html>`_ to be enabled as well when building Nginx.
+Some parts of the test suite requires standard modules `proxy <http://nginx.org/en/docs/http/ngx_http_proxy_module.html>`_, `rewrite <http://nginx.org/en/docs/http/ngx_http_rewrite_module.html>`_ and `SSI <http://nginx.org/en/docs/http/ngx_http_ssi_module.html>`_ to be enabled as well when building NGINX.
 
 
 
@@ -1547,7 +1547,7 @@ TODO
 ----
 * Fix the `echo_after_body`_ directive in subrequests.
 * Add directives *echo_read_client_request_body* and *echo_request_headers*.
-* Add new directive *echo_log* to use Nginx's logging facility directly from the config file and specific loglevel can be specified, as in
+* Add new directive *echo_log* to use NGINX's logging facility directly from the config file and specific loglevel can be specified, as in
 
   .. code-block:: nginx
 

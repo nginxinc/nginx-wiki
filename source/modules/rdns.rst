@@ -20,7 +20,7 @@ Features
 
 You can get the module on :github:`GitHub <flant/nginx-http-rdns>`
 
-.. note:: *This module is not distributed with nginx source.* See the `installation instructions <rdns.installation_>`_.
+.. note:: *This module is not distributed with NGINX source.* See the `installation instructions <rdns.installation_>`_.
 
 
 
@@ -98,7 +98,7 @@ Making rDNS requests in named locations isn't supported and may invoke a loop. F
   }
 
 
-Being in a named location and restarting request handling pipeline, nginx continue its request handling in usual (unnamed) location. That's why this example will make a loop if you don't disable the module in your named location. The correct config for this example should be as follows:
+Being in a named location and restarting request handling pipeline, NGINX continue its request handling in usual (unnamed) location. That's why this example will make a loop if you don't disable the module in your named location. The correct config for this example should be as follows:
 
 .. code-block:: nginx
 

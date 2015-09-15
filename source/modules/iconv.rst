@@ -7,8 +7,8 @@ Iconv
 
 Description
 -----------
-**iconv-nginx-module** - an nginx module that uses libiconv to convert 
-characters of different encoding. It brings the ``set_iconv`` command to nginx.
+**iconv-nginx-module** - an NGINX module that uses libiconv to convert 
+characters of different encoding. It brings the ``set_iconv`` command to NGINX.
 
 This module depends on the ngx_devel_kit (NDK) module.
 
@@ -16,8 +16,8 @@ This module depends on the ngx_devel_kit (NDK) module.
 
 Installation
 ------------
-#. Get the nginx source code from http://nginx.org.
-#. Untar the source code and build nginx with this module.
+#. Get the NGINX source code from http://nginx.org.
+#. Untar the source code and build NGINX with this module.
 
 .. code-block:: bash
 

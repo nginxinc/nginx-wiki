@@ -7,9 +7,9 @@ Redis2
 
 Name
 ----
-**ngx_redis2** - Nginx upstream module for the Redis 2.0 protocol.
+**ngx_redis2** - NGINX upstream module for the Redis 2.0 protocol.
 
-.. note:: *This module is not distributed with the Nginx source.* See the 
+.. note:: *This module is not distributed with the NGINX source.* See the 
   `installation instructions <redis2.installation_>`_.
 
 Status
@@ -97,7 +97,7 @@ Synopsis
 
 Description
 -----------
-This is an Nginx upstream module that makes nginx talk to a 
+This is an NGINX upstream module that makes NGINX talk to a 
 `Redis <http://redis.io/>`_ 2.x server in a non-blocking way. The full Redis 2.0
 unified protocol has been implemented including the Redis pipelining support.
 
@@ -161,7 +161,7 @@ redis2_raw_query
 :Default: *none*
 :Context: *location, location if*
 
-Specify raw Redis queries and nginx variables are recognized in the ``QUERY`` argument.
+Specify raw Redis queries and NGINX variables are recognized in the ``QUERY`` argument.
 
 Only *one* Redis command is allowed in the ``QUERY`` argument, or you'll receive an error. If you want to specify multiple pipelined commands in a single query, use the `redis2_raw_queries`_ directive instead.
 
@@ -174,7 +174,7 @@ redis2_raw_queries
 :Context: *location, location if*
 
 Specify ``N`` commands in the ``QUERIES`` argument. Both the ``N`` and ``QUERIES``
-arguments can take Nginx variables.
+arguments can take NGINX variables.
 
 Here's some examples:
 
@@ -207,7 +207,7 @@ redis2_literal_raw_query
 :Default: *none*
 :Context: *location, location if*
 
-Specify a raw Redis query but Nginx variables in it will not be *not* recognized. In other words, you're free to use the dollar sign character (``$``) in your ``QUERY`` argument.
+Specify a raw Redis query but NGINX variables in it will not be *not* recognized. In other words, you're free to use the dollar sign character (``$``) in your ``QUERY`` argument.
 
 Only One redis command is allowed in the ``QUERY`` argument.
 
@@ -384,7 +384,7 @@ where ``\r\n`` is ``CRLF``. That is, this module returns the *raw* TCP responses
    ..
       For Lua-based application developers, they may want to utilize the :doc:`lua_redis_parser` library (written in pure C) to parse such raw responses into Lua data structures.
 
-When moving the inlined Lua code into an external ``.lua`` file, it's important to use the escape sequence ``\r\n`` directly. We used ``\\r\\n`` above just because the Lua code itself needs quoting when being put into an Nginx string literal.
+When moving the inlined Lua code into an external ``.lua`` file, it's important to use the escape sequence ``\r\n`` directly. We used ``\\r\\n`` above just because the Lua code itself needs quoting when being put into an NGINX string literal.
 
 You can also use POST/PUT subrequests to transfer the raw Redis request via request body, which does not require URI escaping and unescaping, thus saving some CPU cycles. Here's such an example:
 
@@ -461,7 +461,7 @@ One can also use Lua to pick up a concrete Redis backend based on some complicat
 
 Pipelined Redis Requests by Lua
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Here's a complete example demonstrating how to use Lua to issue multiple pipelined Redis requests via this Nginx module.
+Here's a complete example demonstrating how to use Lua to issue multiple pipelined Redis requests via this NGINX module.
 
 First of all, we include the following in our ``nginx.conf`` file:
 
@@ -481,7 +481,7 @@ First of all, we include the following in our ``nginx.conf`` file:
 
 Basically we use URI query args to pass the number of Redis requests and request body to pass the pipelined Redis request string.
 
-And then we create the ``conf/test.lua`` file (whose path is relative to the server root of Nginx) to include the following Lua code:
+And then we create the ``conf/test.lua`` file (whose path is relative to the server root of NGINX) to include the following Lua code:
 
 .. code-block:: lua
 
@@ -556,7 +556,7 @@ Limitations For Redis Publish/Subscribe
 If you want to use the `Redis pub/sub <http://redis.io/topics/pubsub>`_ feature with this module, then you must note the following limitations:
 
 * You cannot use `keepalive <http://nginx.org/en/docs/http/ngx_http_upstream_module.html#keepalive>`_ with this Redis upstream. Only short Redis connections will work.
-* There may be some race conditions that produce the harmless ``Redis server returned extra bytes`` warnings in your nginx's error.log. Such warnings might be rare but just be prepared for it.
+* There may be some race conditions that produce the harmless ``Redis server returned extra bytes`` warnings in your NGINX's error.log. Such warnings might be rare but just be prepared for it.
 * You should tune the various timeout settings provided by this module like `redis2_connect_timeout`_ and `redis2_read_timeout`_.
 
 If you cannot stand these limitations, then you are highly recommended to switch to the :github:`lua-resty-redis <openresty/lua-resty-redis>` library for :doc:`lua`.
@@ -568,7 +568,7 @@ Performance Tuning
 
 * When you're using this module, please ensure you're using a TCP connection pool (provided by `keepalive <http://nginx.org/en/docs/http/ngx_http_upstream_module.html#keepalive>`_) and Redis pipelining wherever possible. These features will significantly improve performance.
 * Using multiple instance of Redis servers on your multi-core machines also help a lot due to the sequential processing nature of a single Redis server instance.
-* When you're benchmarking performance using something like ``ab`` or ``http_load``, please ensure that your error log level is high enough (like ``warn``) to prevent Nginx workers spend too much cycles on flushing the ``error.log`` file, which is always non-buffered and blocking and thus very expensive.
+* When you're benchmarking performance using something like ``ab`` or ``http_load``, please ensure that your error log level is high enough (like ``warn``) to prevent NGINX workers spend too much cycles on flushing the ``error.log`` file, which is always non-buffered and blocking and thus very expensive.
 
 
 
@@ -576,11 +576,11 @@ Performance Tuning
 
 Installation
 ------------
-You are recommended to install this module (as well as the Nginx core and many many other goodies) via the `ngx_openresty bundle <http://openresty.org>`__. Check out the `installation instructions <http://openresty.org/#Installation>`_ for setting up `ngx_openresty <http://openresty.org>`_.
+You are recommended to install this module (as well as the NGINX core and many many other goodies) via the `ngx_openresty bundle <http://openresty.org>`__. Check out the `installation instructions <http://openresty.org/#Installation>`_ for setting up `ngx_openresty <http://openresty.org>`_.
 
-Alternatively, you can install this module manually by recompiling the standard Nginx core as follows:
+Alternatively, you can install this module manually by recompiling the standard NGINX core as follows:
 
-* Grab the nginx source code from `nginx.org <http://nginx.org>`_, for example, the version 1.7.4 (see Compatibility_),
+* Grab the NGINX source code from `nginx.org <http://nginx.org>`_, for example, the version 1.7.4 (see Compatibility_),
 * and then download the latest version of the release tarball of this module from ngx_redis2's :github:`file list <openresty/redis2-nginx-module/tags>`
 * and finally build the source with this module:
 
@@ -604,7 +604,7 @@ Compatibility
 Redis 2.0, 2.2, 2.4, and above should work with this module without any issues. So is the `Alchemy Database <http://code.google.com/p/alchemydatabase/>`_
  (aka redisql in its early days).
 
-The following versions of Nginx should work with this module:
+The following versions of NGINX should work with this module:
 
 * **1.7.x** (last tested: 1.7.4)
 * **1.6.x**
@@ -617,9 +617,9 @@ The following versions of Nginx should work with this module:
 * **0.9.x** (last tested: 0.9.4)
 * **0.8.x** >= 0.8.31 (last tested: 0.8.54)
 
-Earlier versions of Nginx will *not* work.
+Earlier versions of NGINX will *not* work.
 
-If you find that any particular version of Nginx above 0.8.31 does not work with this module, please consider reporting a bug.
+If you find that any particular version of NGINX above 0.8.31 does not work with this module, please consider reporting a bug.
 
 .. _redis2.community:
 

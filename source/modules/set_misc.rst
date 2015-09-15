@@ -7,9 +7,9 @@ Set Misc
 
 Name
 ----
-**ngx_set_misc** - Various set_xxx directives added to nginx's rewrite module (md5/sha1, sql/json quoting, and many more).
+**ngx_set_misc** - Various set_xxx directives added to NGINX's rewrite module (md5/sha1, sql/json quoting, and many more).
 
-.. note:: *This module is not distributed with the Nginx source.* See the`installation instructions <set_misc.installation_>`_.
+.. note:: *This module is not distributed with the NGINX source.* See the`installation instructions <set_misc.installation_>`_.
 
 
 
@@ -154,7 +154,7 @@ Description
 -----------
 This module extends the standard HttpRewriteModule's directive set to provide more functionalities like URI escaping and unescaping, JSON quoting, Hexadecimal/MD5/SHA1/Base32/Base64 digest encoding and decoding, random number generator, and more!
 
-Every directive provided by this module can be mixed freely with other |HttpRewriteModule|'s directives, like `if <|HttpRewriteModule|#if>`_ and `set <|HttpRewriteModule|#set>`_. (Thanks to the :github:`Nginx Devel Kit <simpl/ngx_devel_kit>`)
+Every directive provided by this module can be mixed freely with other |HttpRewriteModule|'s directives, like `if <|HttpRewriteModule|#if>`_ and `set <|HttpRewriteModule|#set>`_. (Thanks to the :github:`NGINX Devel Kit <simpl/ngx_devel_kit>`)
 
 
 
@@ -222,7 +222,7 @@ Then request ``GET /test`` will yield the following output
   'hello\n\r\'\"\\'
 
 
-.. note:: We're using :doc:`echo_module's <echo>` ``echo`` directive here to output values of nginx variables directly.
+.. note:: We're using :doc:`echo_module's <echo>` ``echo`` directive here to output values of NGINX variables directly.
   
 When taking a single argument, this directive will do in-place modification of the argument variable. 
 
@@ -289,7 +289,7 @@ Then request ``GET /test`` will yield the following output
   "hello\n\r'\"\\"
 
 
-.. note:: We're using :doc:`echo_module's <echo>` ``echo`` directive here to output   values of nginx variables directly.
+.. note:: We're using :doc:`echo_module's <echo>` ``echo`` directive here to output   values of NGINX variables directly.
 
 When taking a single argument, this directive will do in-place modification of the argument variable. For example,
 
@@ -338,9 +338,9 @@ Then request ``GET /test?key=hello+world%21`` will yield the following output
   hello world!
 
 
-The nginx standard `$arg_PARAMETER <|HttpCoreModule|#$arg_PARAMETER>`_ variable holds the raw (escaped) value of the URI parameter. So we need the ``set_unescape_uri`` directive to unescape it first.
+The NGINX standard `$arg_PARAMETER <|HttpCoreModule|#$arg_PARAMETER>`_ variable holds the raw (escaped) value of the URI parameter. So we need the ``set_unescape_uri`` directive to unescape it first.
 
-.. note:: We're using :doc:`echo_module's <echo>` ``echo`` directive here to output values of nginx variables directly.
+.. note:: We're using :doc:`echo_module's <echo>` ``echo`` directive here to output values of NGINX variables directly.
 
 When taking a single argument, this directive will do in-place modification of the argument variable. For example,
 
@@ -403,7 +403,7 @@ For example,
 
 Then ``GET /test?key=blah`` will output either "moon", "sun", or "earth", depending on the actual value of the ``key`` query argument.
 
-This directive is usually used to compute an nginx variable to be passed to :doc:`memc`'s ``memc_pass`` directive, :doc:`redis2`'s ``redis2_pass`` directive, and |HttpProxyModule|'s `proxy_pass <|HttpProxyModule|#proxy_pass>`_ directive, among others.
+This directive is usually used to compute an NGINX variable to be passed to :doc:`memc`'s ``memc_pass`` directive, :doc:`redis2`'s ``redis2_pass`` directive, and |HttpProxyModule|'s `proxy_pass <|HttpProxyModule|#proxy_pass>`_ directive, among others.
 
 
 .. _set_misc.set_encode_base32:
@@ -439,7 +439,7 @@ Then request ``GET /test`` will yield the following output
 
 
 Please note that we're using :doc:`echo_module's <echo>` 
-``echo`` directive here to output values of nginx variables directly.
+``echo`` directive here to output values of NGINX variables directly.
 
 RFC forces the ``[A-Z2-7]`` RFC-3548 compliant encoding, but we are using the 
 "base32hex" encoding (``[0-9a-v]``) by default. The `set_base32_alphabet`_ 
@@ -553,7 +553,7 @@ Then request ``GET /test`` will yield the following output
 
 
 .. note:: We're using :doc:`echo_module's <echo>` ``echo`` directive here to output 
-  values of nginx variables directly.
+  values of NGINX variables directly.
 
 When taking a single argument, this directive will do in-place modification of the argument variable. For example,
 
@@ -617,7 +617,7 @@ Then request ``GET /test`` will yield the following output
 
 
 .. note:: We're using :doc:`echo_module's <echo>` ``echo`` directive here to output 
-  values of nginx variables directly.
+  values of NGINX variables directly.
 
 When taking a single argument, this directive will do in-place modification of 
 the argument variable. For example,
@@ -685,7 +685,7 @@ Then request ``GET /test`` will yield the following output
 
 
 .. note:: We're using :doc:`echo_module's <echo>` ``echo`` directive here to output 
-  values of nginx variables directly.
+  values of NGINX variables directly.
   
 When taking a single argument, this directive will do in-place modification of the argument variable. For example,
 
@@ -737,7 +737,7 @@ Then request ``GET /test`` will yield the following output
 
 
 .. note:: We're using :doc:`echo_module's <echo>` ``echo`` directive here to output 
-  values of nginx variables directly.
+  values of NGINX variables directly.
 
 When taking a single argument, this directive will do in-place modification of 
 the argument variable. For example,
@@ -790,7 +790,7 @@ Then request ``GET /test`` will yield the following output
   R/pvxzHC4NLtj7S+kXFg/NePTmk=
 
 
-.. note:: We're using :doc:`echo_module's <echo>` ``echo`` directive here to output values of nginx variables directly.
+.. note:: We're using :doc:`echo_module's <echo>` ``echo`` directive here to output values of NGINX variables directly.
 
 This directive requires the OpenSSL library enabled in your Nignx build (usually by passing the ``--with-http_ssl_module`` option to the ``./configure`` script).
 
@@ -970,7 +970,7 @@ then request ``GET /today`` will output something like
 
 and year, the actual date you get here will vary every day ;)
 
-Behind the scene, this directive utilizes the ``ngx_time`` API in the Nginx core, so usually no syscall is involved due to the time caching mechanism in the Nginx core.
+Behind the scene, this directive utilizes the ``ngx_time`` API in the NGINX core, so usually no syscall is involved due to the time caching mechanism in the NGINX core.
 
 
 set_formatted_gmt_time
@@ -1036,7 +1036,7 @@ This directive was first added in the ``0.23`` release.
 
 Caveats
 -------
-Do not use `$arg_PARAMETER <|HttpCoreModule|#$arg_PARAMETER>`_, `$cookie_COOKIE <|HttpCoreModule|#$cookie_COOKIE>`_, `$http_HEADER <|HttpCoreModule|#$http_HEADER>`_ or other special variables defined in the Nginx core module as the target variable in this module's directives. 
+Do not use `$arg_PARAMETER <|HttpCoreModule|#$arg_PARAMETER>`_, `$cookie_COOKIE <|HttpCoreModule|#$cookie_COOKIE>`_, `$http_HEADER <|HttpCoreModule|#$http_HEADER>`_ or other special variables defined in the NGINX core module as the target variable in this module's directives. 
 
 For instance,
 
@@ -1053,9 +1053,9 @@ may lead to segmentation faults.
 
 Installation
 ------------
-This module is included and enabled by default in the `ngx_openresty bundle <http://openresty.org>`__. If you want to install this module manually with your own Nginx source tarball, then follow the steps below:
+This module is included and enabled by default in the `ngx_openresty bundle <http://openresty.org>`__. If you want to install this module manually with your own NGINX source tarball, then follow the steps below:
 
-Grab the nginx source code from `nginx.org <http://nginx.org/>`_, for example, the version 1.7.7 (see Compatibility_), and then build the source with this module:
+Grab the NGINX source code from `nginx.org <http://nginx.org/>`_, for example, the version 1.7.7 (see Compatibility_), and then build the source with this module:
 
 .. code-block:: bash
 
@@ -1063,7 +1063,7 @@ Grab the nginx source code from `nginx.org <http://nginx.org/>`_, for example, t
   tar -xzvf nginx-1.7.7.tar.gz
   cd nginx-1.7.7/
   
-  # Here we assume you would install you nginx under /opt/nginx/.
+  # Here we assume you would install you NGINX under /opt/nginx/.
   ./configure --prefix=/opt/nginx \
       --with-http_ssl_module \
       --add-module=/path/to/ngx_devel_kit \
@@ -1081,7 +1081,7 @@ Also, this module is included and enabled by default in the `ngx_openresty bundl
 
 Compatibility
 -------------
-The following versions of Nginx should work with this module:
+The following versions of NGINX should work with this module:
 
 * **1.7.x**     (last tested: 1.7.7)
 * **1.6.x**
@@ -1094,7 +1094,7 @@ The following versions of Nginx should work with this module:
 * **0.8.x**     (last tested: 0.8.54)
 * **>= 0.7.46** (last tested: 0.7.68)
 
-If you find that any particular version of Nginx above 0.7.46 does not work 
+If you find that any particular version of NGINX above 0.7.46 does not work 
 with this module, please consider `reporting a bug <set_misc.report-bugs_>`_.
 
 
@@ -1140,9 +1140,9 @@ To run it on your side:
   $ PATH=/path/to/your/nginx-with-set-misc-module:$PATH prove -r t
 
 
-You need to terminate any Nginx processes before running the test suite if you have changed the Nginx server binary.
+You need to terminate any NGINX processes before running the test suite if you have changed the NGINX server binary.
 
-Because a single nginx server (by default, ``localhost:1984``) is used across all the test scripts (``.t`` files), it's meaningless to run the test suite in parallel by specifying ``-jN`` when invoking the ``prove`` utility.
+Because a single NGINX server (by default, ``localhost:1984``) is used across all the test scripts (``.t`` files), it's meaningless to run the test suite in parallel by specifying ``-jN`` when invoking the ``prove`` utility.
 
 
 
@@ -1180,5 +1180,5 @@ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS IS" AND 
 
 .. seealso::
 
-  * :github:`Nginx Development Kit <simpl/ngx_devel_kit>`
+  * :github:`NGINX Development Kit <simpl/ngx_devel_kit>`
   * `The ngx_openresty bundle <http://openresty.org>`_

@@ -7,9 +7,9 @@ HTTP Digest Authentication
 
 Description
 -----------
-**ngx_http_auth_digest** - HTTP Digest Authentication support for Nginx.
+**ngx_http_auth_digest** - HTTP Digest Authentication support for NGINX.
 
-.. note:: *This module is not distributed with the Nginx source.* See the :github:`installation instructions <samizdatco/nginx-http-auth-digest/blob/master/readme.rst>`
+.. note:: *This module is not distributed with the NGINX source.* See the :github:`installation instructions <samizdatco/nginx-http-auth-digest/blob/master/readme.rst>`
 
 
 
@@ -22,7 +22,7 @@ The module is feature-complete with respect to the RFC but is in need of broader
 Synopsis
 --------
 You can limit access to a directory tree by adding the following lines into
-a *server* section in your Nginx configuration file:
+a *server* section in your NGINX configuration file:
 
 .. code-block:: nginx
 
@@ -166,7 +166,7 @@ Christian Swinehart / `Samizdat Drafting Co. <http://samizdat.cc>`_
 
 Copyright & License
 -------------------
-The basic request-handling and password-file-parsing is based on the ``ngx_http_auth_basic`` module in the Nginx 1.0.8 sources. The original code is copyright Igor Sysoev.
+The basic request-handling and password-file-parsing is based on the ``ngx_http_auth_basic`` module in the NGINX 1.0.8 sources. The original code is copyright Igor Sysoev.
 
 Copyright (c) 2011, Christian Swinehart
 

@@ -126,8 +126,8 @@ For ngx_http_redis >= 0.3.4 is not obligatory, default value is ``0`` if not def
 
 Keep-alive connections to redis servers
 ---------------------------------------
-In 0.3.5 support of keep-alive connection backported from original ngx_http_memcached module of nginx 1.1.4.
-For previous versions of nginx you should use following instruction.
+In 0.3.5 support of keep-alive connection backported from original ngx_http_memcached module of NGINX 1.1.4.
+For previous versions of NGINX you should use following instruction.
 
 You need Maxim Dounin's third party ngx_upstream_keepalive module together with this module for keep-alive TCP connections to your backend redis servers.
 
@@ -169,5 +169,5 @@ Sergey A. Osokin <osa@FreeBSD.ORG.ru>
 .. seealso::
 
   * :doc:`redis2` that implements almost the whole Redis 2.0 protocol.
-  * :doc:`sr_cache` that can be used with this module to do transparent response caching for arbitrary Nginx locations.
+  * :doc:`sr_cache` that can be used with this module to do transparent response caching for arbitrary NGINX locations.
   * The :github:`lua-resty-redis <openresty/lua-resty-redis>` library for :doc:`lua`.

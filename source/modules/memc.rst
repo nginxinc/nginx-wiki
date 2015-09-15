@@ -9,7 +9,7 @@ Name
 ----
 **ngx_memc** - An extended version of the standard memcached module that supports set, add, delete, and many more memcached commands.
 
-.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions <memc.installation_>`_.
+.. note:: *This module is not distributed with the NGINX source.* See the `installation instructions <memc.installation_>`_.
 
 Version
 -------
@@ -126,9 +126,9 @@ Description
 -----------
 This module extends the standard `memcached module <http://nginx.org/en/docs/http/ngx_http_memcached_module.html>`_ to support almost the whole `memcached ascii protocol <https://github.com/memcached/memcached/blob/master/doc/protocol.txt>`_.
 
-It allows you to define a custom `REST <https://en.wikipedia.org/wiki/REST>`_ interface to your memcached servers or access memcached in a very efficient way from within the nginx server by means of subrequests or `independent fake requests <srlindsay/nginx-independent-subrequest>`.
+It allows you to define a custom `REST <https://en.wikipedia.org/wiki/REST>`_ interface to your memcached servers or access memcached in a very efficient way from within the NGINX server by means of subrequests or `independent fake requests <srlindsay/nginx-independent-subrequest>`.
 
-This module is not supposed to be merged into the Nginx core because I've used `Ragel <http://www.colm.net/open-source/ragel/>`_ to generate the memcached response parsers (in C) for joy :)
+This module is not supposed to be merged into the NGINX core because I've used `Ragel <http://www.colm.net/open-source/ragel/>`_ to generate the memcached response parsers (in C) for joy :)
 
 If you are going to use this module to cache location responses out of the box, try :doc:`sr_cache` with this module to achieve that.
 
@@ -177,7 +177,7 @@ The memcached storage commands `set command <memc.set_>`_, `add command <memc.ad
 If ``$memc_value`` is not defined at all, then the request body will be used as the value of the ``$memc_value`` except for the `incr command <memc.incr_>`_ and `decr command <memc.decr_>`_ commands. Note that if ``$memc_value`` is defined as an empty string (``""``), that empty string will still be used as the value as is.
 
 The following memcached commands have been implemented and tested (with their parameters marked by corresponding
-nginx variables defined by this module):
+NGINX variables defined by this module):
 
 
 get $memc_key
@@ -392,7 +392,7 @@ Directives
 ----------
 All the standard 
 `memcached module <http://nginx.org/en/docs/http/ngx_http_memcached_module.html>`__ 
-directives in nginx 0.8.28 are directly inherited, with the ``memcached_`` prefixes 
+directives in NGINX 0.8.28 are directly inherited, with the ``memcached_`` prefixes 
 replaced by ``memc_``. For example, the ``memcached_pass`` directive is spelled 
 ``memc_pass``.
 
@@ -443,7 +443,7 @@ memc_flags_to_last_modified
 :Context: *http, server, location, if*
 
 Read the memcached flags as epoch seconds and set it as the value of the 
-``Last-Modified`` header. For conditional GET, it will signal nginx to return 
+``Last-Modified`` header. For conditional GET, it will signal NGINX to return 
 ``304 Not Modified`` response to save bandwidth.
 
 
@@ -525,15 +525,15 @@ This directive was first added in the ``v0.14`` release.
 
 Installation
 ------------
-You're recommended to install this module (as well as the Nginx core and many 
+You're recommended to install this module (as well as the NGINX core and many 
 other goodies) via the `ngx_openresty bundle <http://openresty.org>`__. See the 
 `installation steps <http://openresty.org/#Installation>`_ for ``ngx_openresty``.
 
-Alternatively, you can compile this module into the standard Nginx source 
+Alternatively, you can compile this module into the standard NGINX source 
 distribution by hand:
 
-Grab the nginx source code from `nginx.org <http://nginx.org/>`_, for example,
-the version 1.7.2 (see `nginx compatibility <memc.compatibility_>`_), and then 
+Grab the NGINX source code from `nginx.org <http://nginx.org/>`_, for example,
+the version 1.7.2 (see `NGINX compatibility <memc.compatibility_>`_), and then 
 build the source with this module:
 
 .. code-block:: bash
@@ -570,7 +570,7 @@ use the following command from the root of the memc module's source tree:
 
 Compatibility
 -------------
-The following versions of Nginx should work with this module:
+The following versions of NGINX should work with this module:
 
 * **1.7.x**                       (last tested: 1.7.2)
 * **1.5.x**                       (last tested: 1.5.12)
@@ -582,11 +582,11 @@ The following versions of Nginx should work with this module:
 * **0.8.x**                       (last tested: 0.8.54)
 * **0.7.x >= 0.7.46**             (last tested: 0.7.68)
 
-It's worth mentioning that some 0.7.x versions older than 0.7.46 might also work, but I can't easily test them because the test suite makes extensive use of the :doc:`echo`'s echo_location directive, which requires at least nginx 0.7.46 :)
+It's worth mentioning that some 0.7.x versions older than 0.7.46 might also work, but I can't easily test them because the test suite makes extensive use of the :doc:`echo`'s echo_location directive, which requires at least NGINX 0.7.46 :)
 
-Earlier versions of Nginx like 0.6.x and 0.5.x will *not* work.
+Earlier versions of NGINX like 0.6.x and 0.5.x will *not* work.
 
-If you find that any particular version of Nginx above 0.7.46 does not work with this module, please consider `reporting a bug <memc.report-bugs_>`_.
+If you find that any particular version of NGINX above 0.7.46 does not work with this module, please consider `reporting a bug <memc.report-bugs_>`_.
 
 
 
@@ -610,7 +610,7 @@ Report Bugs
 Although a lot of effort has been put into testing and code tuning, there must be some serious bugs lurking somewhere in this module. So whenever you are bitten by any quirks, please don't hesitate to
 
 #. create a ticket on the :github:`issue tracking interface <openresty/memc-nginx-module/issues>` provided by GitHub,
-#. or send a bug report or even patches to the `nginx mailing list <http://mailman.nginx.org/mailman/listinfo/nginx>`_.
+#. or send a bug report or even patches to the `NGINX mailing list <http://mailman.nginx.org/mailman/listinfo/nginx>`_.
 
 
 
@@ -647,8 +647,8 @@ To run it on your side:
   $ PATH=/path/to/your/nginx-with-memc-module:$PATH prove -r t
 
 
-You need to terminate any Nginx processes before running the test suite if you 
-have changed the Nginx server binary.
+You need to terminate any NGINX processes before running the test suite if you 
+have changed the NGINX server binary.
 
 Either `LWP::UserAgent <http://search.cpan.org/perldoc?LWP::UserAgent>`_ or 
 `IO::Socket <http://search.cpan.org/perldoc?IO::Socket>`_
@@ -657,7 +657,7 @@ Either `LWP::UserAgent <http://search.cpan.org/perldoc?LWP::UserAgent>`_ or
   Commented out the following, dead GitHub link
   is used by the `test scaffold <openresty/memc-nginx-module/blob/master/test/lib/Test/Nginx/LWP.pm>`
 
-Because a single nginx server (by default, ``localhost:1984``) is used across 
+Because a single NGINX server (by default, ``localhost:1984``) is used across 
 all the test scripts (``.t`` files), it's meaningless to run the test suite in 
 parallel by specifying ``-jN`` when invoking the ``prove`` utility.
 
@@ -667,7 +667,7 @@ localhost before running the test suite.
 Some parts of the test suite requires modules 
 `rewrite <http://nginx.org/en/docs/http/ngx_http_rewrite_module.html>`_ and 
 :doc:`echo` to be enabled as 
-well when building Nginx.
+well when building NGINX.
 
 
 
@@ -701,7 +701,7 @@ Copyright & License
 -------------------
 The code base is borrowed directly from the standard 
 `memcached module <http://nginx.org/en/docs/http/ngx_http_memcached_module.html>`__ 
-in the Nginx core. This part of code is copyrighted by Igor Sysoev and Nginx Inc.
+in the NGINX core. This part of code is copyrighted by Igor Sysoev and NGINX Inc.
 
 Copyright (c) 2009-2013, Yichun "agentzh" Zhang (章亦春) <agentzh@gmail.com>, 
 CloudFlare Inc.
@@ -731,11 +731,11 @@ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
 
 .. seealso::
 
-  * The original announcement email on the nginx mailing list: `ngx_memc: "an extended version of ngx_memcached that supports set, add, delete, and many more commands" <http://forum.nginx.org/read.php?2,28359>`_
+  * The original announcement email on the NGINX mailing list: `ngx_memc: "an extended version of ngx_memcached that supports set, add, delete, and many more commands" <http://forum.nginx.org/read.php?2,28359>`_
   * My slides demonstrating various ngx_memc usage: http://agentzh.org/misc/slides/nginx-conf-scripting/nginx-conf-scripting.html#34 (use the arrow or pageup/pagedown keys on the keyboard to swith pages)
   * The latest `memcached TCP protocol <https://github.com/memcached/memcached/blob/master/doc/protocol.txt>`_.
   * The :github:`ngx_srcache <openresty/srcache-nginx-module>` module
   * The :github:`lua-resty-memcached <openresty/lua-resty-memcached>` library based on the :doc:`lua` cosocket API.
   * The standard `memcached <http://nginx.org/en/docs/http/ngx_http_memcached_module.html>`_ module.
-  * The :doc:`echo` for Nginx module's automated testing.
+  * The :doc:`echo` for NGINX module's automated testing.
   * The standard `headers <http://nginx.org/en/docs/http/ngx_http_headers_module.html>`_ module and the 3rd-parth :doc:`headers_more` module.

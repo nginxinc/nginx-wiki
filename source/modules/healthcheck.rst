@@ -16,7 +16,7 @@ You can get the module from :github:`GitHub <cep21/healthcheck_nginx_upstreams>`
 .. note:: This also gives you access to a health status page that lets you 
   seehow well your healthcheck are doing.
 
-.. note:: *This module is not distributed with the Nginx source.* See the 
+.. note:: *This module is not distributed with the NGINX source.* See the 
   `installation instructions <healthcheck.installation_>`_.
 
 .. warning:: The docs on this wiki can get out of date. For the authoritative 
@@ -127,7 +127,7 @@ status. Use similarly to the stub_status module.
 
 Installation
 ------------
-This module is not distributed with the Nginx source. You can download the 
+This module is not distributed with the NGINX source. You can download the 
 module from :github:`here <cep21/healthcheck_nginx_upstreams>` 
 Read the installation instructions inside the README file.
 

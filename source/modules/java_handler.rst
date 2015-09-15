@@ -5,7 +5,7 @@
 Java
 ====
 
-`Nginx-Clojure <http://nginx-clojure.github.io>`_ is a Nginx module for embedding Clojure or Java or Groovy programs, typically those `Ring <ring-clojure/ring/blob/master/SPEC>` based handlers.
+`Nginx-Clojure <http://nginx-clojure.github.io>`_ is a NGINX module for embedding Clojure or Java or Groovy programs, typically those `Ring <ring-clojure/ring/blob/master/SPEC>` based handlers.
 
 There is a simple example about Java handler.
 
@@ -34,7 +34,7 @@ In Hello.java
          return new Object[] { 
                         NGX_HTTP_OK, //http status 200
                         ArrayMap.create(CONTENT_TYPE, "text/plain"), //headers map
-                        "Hello, Java & Nginx!"  //response body can be string, File or Array/Collection of them
+                        "Hello, Java & NGINX!"  //response body can be string, File or Array/Collection of them
                     };
      }
   }

@@ -19,7 +19,7 @@ Example:
     fair;
   }
 
-.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions <fair_balancer.installation_>`_.
+.. note:: *This module is not distributed with the NGINX source.* See the `installation instructions <fair_balancer.installation_>`_.
 
 
 
@@ -50,11 +50,11 @@ to 8 pages (so 32k on most systems).
 
 Installation
 ------------
-This module is not distributed with the Nginx source. You can browse its 
+This module is not distributed with the NGINX source. You can browse its 
 :github:`git repository <gnosek/nginx-upstream-fair/tree/master>` 
 or :github:`download the tar ball <gnosek/nginx-upstream-fair/tarball/master>`
 
-After extracting, add the following option to your Nginx ``./configure`` command:
+After extracting, add the following option to your NGINX ``./configure`` command:
 
 .. code-block:: bash
 

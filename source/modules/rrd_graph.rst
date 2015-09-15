@@ -9,9 +9,9 @@ Description
 -----------
 `RRDtool <http://oss.oetiker.ch/rrdtool/index.en.html>`_ stores and graphs time-series data. 
 
-**mod_rrd_graph** - is an Nginx module that provides an HTTP interface to RRDtool's graphing facilities. By linking RRDtool directly into Nginx, ngx_rrd_graph is faster than scripts and CGIs with similar purposes.
+**mod_rrd_graph** - is an NGINX module that provides an HTTP interface to RRDtool's graphing facilities. By linking RRDtool directly into NGINX, ngx_rrd_graph is faster than scripts and CGIs with similar purposes.
 
-.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions <rrd_graph.installation_>`_.
+.. note:: *This module is not distributed with the NGINX source.* See the `installation instructions <rrd_graph.installation_>`_.
 
 
 
@@ -67,7 +67,7 @@ Installation
 ------------
 * ngx_rrd_graph requires `RRDtool 1.3 <http://oss.oetiker.ch/rrdtool-trac/wiki/RRDtool13>`_  or later.
 * After installing RRDtool, get the mod_rrd_graph source code from :github:`Github <evanmiller/mod_rrd_graph>`
-* Extract the archive and add the following option to your Nginx ``./configure`` command:
+* Extract the archive and add the following option to your NGINX ``./configure`` command:
 
   .. code-block:: bash
 

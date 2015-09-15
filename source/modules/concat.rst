@@ -7,8 +7,8 @@ Concat
 
 Synopsis
 --------
-This is a module that is distributed with `Tengine <http://tengine.taobao.org>`_ which is a distribution of Nginx that is used by the e-commerce/auction site `Taobao.com <https://en.wikipedia.org/wiki/Taobao>`_. 
-This distribution contains some modules that are new on the Nginx scene. 
+This is a module that is distributed with `Tengine <http://tengine.taobao.org>`_ which is a distribution of NGINX that is used by the e-commerce/auction site `Taobao.com <https://en.wikipedia.org/wiki/Taobao>`_. 
+This distribution contains some modules that are new on the NGINX scene. 
 The *ngx_http_concat* module is one of them.
 
 The module is inspired by Apache's `modconcat <http://code.google.com/p/modconcat>`_. 
@@ -142,8 +142,8 @@ Installation
 
     --add-module=/path/to/nginx-http-concat
 
-* Build the nginx binary.
-* Install the nginx binary.
+* Build the NGINX binary.
+* Install the NGINX binary.
 * Configure contexts where concat is enabled.
 * Build your links such that the above format, i.e., all URIs that have files that are to be concatenated have a *??* prefix. The HTML produced would have something like this inside the *<head>* element for concatenating CSS files.
 
@@ -180,15 +180,15 @@ Other tengine modules on Github
 
 Other builds
 ------------
-1. As referred at the outset this module is part of the `Tengine <http://tengine.taobao.org>`_ Nginx distribution. So you might want to save yourself some work and just build it from scratch using *Tengine* in lieu if the official Nginx source.
-2. If you fancy a bleeding edge Nginx package (from the dev releases) for Debian made to measure then you might be interested in my `debian <http://debian.perusio.net/unstable>`_ Nginx package. Instructions for using the repository and making the package live happily inside a stable distribution installation are `provided <http://debian.perusio.net>`_.
+1. As referred at the outset this module is part of the `Tengine <http://tengine.taobao.org>`_ NGINX distribution. So you might want to save yourself some work and just build it from scratch using *Tengine* in lieu if the official NGINX source.
+2. If you fancy a bleeding edge NGINX package (from the dev releases) for Debian made to measure then you might be interested in my `debian <http://debian.perusio.net/unstable>`_ NGINX package. Instructions for using the repository and making the package live happily inside a stable distribution installation are `provided <http://debian.perusio.net>`_.
 
 
 
 Acknowledgments
 ---------------
 Thanks to `Joshua Zhu <http://blog.zhuzhaoyuan.com>`_ and the Taobao platform engineering team for releasing *Tengine*. Also for being kind
-enough to clarify things regarding this module on the `Nginx mailing list <http://mailman.nginx.org/pipermail/nginx/2011-December/030830.html>`_.
+enough to clarify things regarding this module on the `NGINX mailing list <http://mailman.nginx.org/pipermail/nginx/2011-December/030830.html>`_.
 
 
 
