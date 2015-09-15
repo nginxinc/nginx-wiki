@@ -6,7 +6,7 @@ Installing on Solaris 11
 ========================
 
 Please see :doc:`solaris_10_u5` for a detailed
-walkthrough, this is the bare essentials for installing nginx on Solaris
+walkthrough, this is the bare essentials for installing NGINX on Solaris
 11. Solaris 11 has much improved versions of PCRE and OpenSSL so it's
 not required to install them manually.
 
@@ -39,7 +39,7 @@ http://wiki.openindiana.org/oi/Spec+Files+Extra+Repository)
     pkg install developer/library/lint
     pkg install library/pcre
 
-Fetch and compile nginx
+Fetch and compile NGINX
 -----------------------
 
 .. code-block:: bash
@@ -65,14 +65,14 @@ Create the file /lib/svc/method/svc-nginx with the following content:
     NGINX_CONF="/opt/nginx/conf/nginx.conf"
     RETVAL=0
     start() {
-       echo "Starting Nginx Web Server: \c"
+       echo "Starting NGINX Web Server: \c"
        $NGINX_CMD -c $NGINX_CONF &
        RETVAL=$?
        [ $RETVAL -eq 0 ] && echo "ok" || echo "failed"
        return $RETVAL
     }
     stop() {
-       echo "Stopping Nginx Web Server: \c"
+       echo "Stopping NGINX Web Server: \c"
        NGINX_PID=`ps -ef |grep $NGINX_CMD |grep -v grep |awk '{print $2}'`
        kill $NGINX_PID
        RETVAL=$?
@@ -114,7 +114,7 @@ version number.
         <stability value='Stable' /> 
         <template> 
           <common_name>
-            <loctext xml:lang='C'> Nginx 1.4.3 </loctext> 
+            <loctext xml:lang='C'> NGINX 1.4.3 </loctext> 
           </common_name>
           <documentation> 
             <manpage title='nginx' section='8' manpath='/usr/share/man' /> 

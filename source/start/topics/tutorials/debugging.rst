@@ -7,9 +7,9 @@ Debugging
 
 Introduction
 ------------
-Nginx has wide range of debugging features, including detailed debug log. 
+NGINX has wide range of debugging features, including detailed debug log. 
 
-.. note:: Most debugging nits are only activated when nginx compiled with *--with-debug* configure argument.
+.. note:: Most debugging nits are only activated when NGINX compiled with *--with-debug* configure argument.
 
 
 
@@ -17,7 +17,7 @@ Debugging log
 -------------
 See `a debugging log <http://nginx.org/en/docs/debugging_log.html>`_ in documentation for details.
 
-To activate debugging log you have to compile nginx with *--with-debug* configure option and set debug level in `error_log <|HttpCoreModule|#error_log>`_ directive.
+To activate debugging log you have to compile NGINX with *--with-debug* configure option and set debug level in `error_log <|HttpCoreModule|#error_log>`_ directive.
 
 It's possible to debug only connections from specified addresses via `debug_connection <|EventModule|#debug_connection>`_ directive.
 
@@ -27,7 +27,7 @@ It's possible to debug only connections from specified addresses via `debug_conn
 
 Core dump
 ---------
-To obtain core dump you usually have to tune your OS. Though nginx simplifies some typical cases and usually adding
+To obtain core dump you usually have to tune your OS. Though NGINX simplifies some typical cases and usually adding
 
 .. code-block:: nginx
 
@@ -41,7 +41,7 @@ to nginx.conf is enough. Then run gdb to obtain backtrace as usual, e.g.
   gdb /path/to/nginx /path/to/cores/nginx.core
   backtrace full
 
-If your gdb backtrace warns that No symbol table info available. then you will need to recompile Nginx with the appropriate compiler flags for debugging symbols.
+If your gdb backtrace warns that No symbol table info available. then you will need to recompile NGINX with the appropriate compiler flags for debugging symbols.
 
 The exact flags required depend on the compiler used. If you use GCC, the flag ``-g`` enables the inclusion of debugging symbols. 
 Additionally disabling compiler optimization using ``-O0`` will make the debugger output easier to understand.
@@ -55,7 +55,7 @@ Additionally disabling compiler optimization using ``-O0`` will make the debugge
 Socket leaks
 ------------
 Sometimes socket leaks happen. 
-This usually results in ``[alert] 15248#0: open socket #123 left in connection 456`` messages in error log on nginx reload/restart/shutdown. 
+This usually results in ``[alert] 15248#0: open socket #123 left in connection 456`` messages in error log on NGINX reload/restart/shutdown. 
 To debug add 
 
 .. code-block:: bash
@@ -63,7 +63,7 @@ To debug add
   debug_points abort;
 
 to ``nginx.conf`` and configure core dumps (see above). 
-This will result in ``abort()`` call once nginx detects leak and core dump.
+This will result in ``abort()`` call once NGINX detects leak and core dump.
 
 Something like this in gdb should be usefull (assuming 456 is connection number from error message from the process which dumped core):
 
@@ -91,4 +91,4 @@ When asking for help with debugging please provide:
 * ``nginx -V`` output
 * full config
 * debug log
-* backtrace (if nginx exits on signal)
+* backtrace (if NGINX exits on signal)
