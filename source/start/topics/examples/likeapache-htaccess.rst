@@ -35,10 +35,10 @@ That's pretty typical.
 
 Now the numbers, that's 6 file system stats and 4 file system reads. 
 Including one for the requested file. This happens for every read. 
-We'll ignore parsing time because both Nginx and Apache need to do this and we'll consider the difference in time for this negligible.
+We'll ignore parsing time because both NGINX and Apache need to do this and we'll consider the difference in time for this negligible.
 
 +------------------+----------------+----------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------+
-| Requests / Hour  | Nginx FS Stats | Nginx FS Reads | Apache FD Stats | Apache FS Reads | Comment                                                                                                 |
+| Requests / Hour  | NGINX FS Stats | NGINX FS Reads | Apache FD Stats | Apache FS Reads | Comment                                                                                                 |
 +==================+================+================+=================+=================+=========================================================================================================+
 | 1                | 1              | 1              | 6               | 4               | Single Request&nbsp;&nbsp;[Pretty much no load]                                                         |
 +------------------+----------------+----------------+-----------------+-----------------+---------------------------------------------------------------------------------------------------------+
@@ -70,7 +70,7 @@ Two .htaccess files will be in this path unless you create your own.
 I'll be assuming you added one in /var/www/ because this is common.
 
 +-----------------+----------------+----------------+-----------------+-----------------+-------------+
-| Requests / Hour | Nginx FS Stats | Nginx FS Reads | Apache FD Stats | Apache FS Reads | Comment     |
+| Requests / Hour | NGINX FS Stats | NGINX FS Reads | Apache FD Stats | Apache FS Reads | Comment     |
 +=================+================+================+=================+=================+=============+
 | 144,000         | 144,000        | 144,000        | 1,296,000       | 576,000         | 40 req/sec  |
 +-----------------+----------------+----------------+-----------------+-----------------+-------------+
@@ -85,5 +85,5 @@ Conclusion
 ----------
 Stop using .htaccess. 
 It's horrible for performance. 
-Nginx is designed to be efficient. 
+NGINX is designed to be efficient. 
 Adding something like this destroys that.

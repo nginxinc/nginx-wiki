@@ -32,13 +32,13 @@ For example you might have an ``/etc/nginx/fastcgi.conf`` (or ``/etc/nginx/fastc
 
 This allows you to keep your individual FCGI configurations as simple as possible.
 You may also want to replace ``$document_root`` in ``SCRIPT_FILENAME`` and ``DOCUMENT_ROOT`` with an actual path, the ``$document_root`` variable is hardcoded and may not reflect your install (will cause variations on 'script not found' errors, usually).
-To use Nginx + Virtual Host + PHP you should ommit the ``SCRIPT_NAME`` variable in order for PHP to choose the correct ``DOCUMENT_ROOT``.
+To use NGINX + Virtual Host + PHP you should ommit the ``SCRIPT_NAME`` variable in order for PHP to choose the correct ``DOCUMENT_ROOT``.
 
 
 
 Spawning a FastCGI Process
 --------------------------
-Unlike Apache or Lighttpd, Nginx does not automatically spawn FCGI processes.
+Unlike Apache or Lighttpd, NGINX does not automatically spawn FCGI processes.
 You must start them separately.
 In fact, FCGI is a lot like proxying.
 There's a few ways to start FCGI programs, but luckily PHP5 will auto-spawn as many as you set in the ``PHP_FCGI_CHILDREN`` environment variable.
@@ -94,9 +94,9 @@ Install the usual way (for this debian init script, it's ``update-rc.d`` ``php-f
 
 
 
-Connecting Nginx to the running FastCGI Process
+Connecting NGINX to the running FastCGI Process
 -----------------------------------------------
-Now that the FCGI process is running, we must tell Nginx to proxy requests to it via the FCGI protocol:
+Now that the FCGI process is running, we must tell NGINX to proxy requests to it via the FCGI protocol:
 
 .. code-block:: nginx
 
@@ -105,7 +105,7 @@ Now that the FCGI process is running, we must tell Nginx to proxy requests to it
       fastcgi_pass  127.0.0.1:9000;
   }
 
-Restart Nginx.
+Restart NGINX.
 
 
 

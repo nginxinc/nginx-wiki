@@ -8,13 +8,13 @@ Dispatching TurboGears Python via FCGI
 This confirmed to run on Mac OS X 10.4.7 under Turbogears 0.9.9 and 1.1a (so, no reason not to run under the 1.0b release).
 
 
-Information was drawn from the Turbogears trac wiki which shows how to use Nginx to proxy to TG, and the nearby :doc:`fastcgiexample`  page, the latter detailing the PHP/FCGI process.
+Information was drawn from the Turbogears trac wiki which shows how to use NGINX to proxy to TG, and the nearby :doc:`fastcgiexample`  page, the latter detailing the PHP/FCGI process.
 
 .. 
    Dead link
    `Turbogears trac wiki <http://trac.turbogears.org/turbogears/wiki/NginxIntegration>`_
    
-This is for Nginx/FCGI/Turbogears
+This is for NGINX/FCGI/Turbogears
 
 
 
@@ -24,7 +24,7 @@ Substitute thoughout with the values relevant to your own set-up:
 
 - ``${HOST} = localhost`` - (or whatever you choose)
 - ``${PORT} = 8080`` - (or whatever you choose)
-- ``${NGINX} = /usr/local/nginx`` - location of nginx installation
+- ``${NGINX} = /usr/local/nginx`` - location of NGINX installation
 - ``${PROJECTBASE} /opt/projects/wiki20`` - location of Turbogears project
 - ``${PROJECTNAME} wiki20``
 
@@ -195,7 +195,7 @@ Then (replacing ``${HOST}`` and ``${PORT}`` values appropriately), execute the f
 
 
 
-Nginx configuration
+NGINX configuration
 -------------------
 Save the following into ``${NGINX}/conf/fastcgi_params``
 
@@ -246,9 +246,9 @@ Add the following to the server section of the ``${NGINX}/conf/nginx.conf`` conf
  
 
 
-Starting Nginx
+Starting NGINX
 --------------
-Start nginx with ``${NGINX}/sbin/nginx``. 
+Start NGINX with ``${NGINX}/sbin/nginx``. 
 Point your browser to ``http://${HOST}:${PORT}/``, your Turboears project should be serving via FastCGI. 
 If so... congratulations.
 

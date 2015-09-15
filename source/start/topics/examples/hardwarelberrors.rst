@@ -7,7 +7,7 @@ Hardware Loadbalancer Check Errors
 
 Some Hardware Load-balancers such Cisco's CSS and BigIP Products test the readiness of the backend Machines with  ``SYN-ACK-RST``.
 
-This behavior causes a 400 error in nginx.
+This behavior causes a 400 error in NGINX.
 
 With the `GEO Module <http://nginx.org/en/docs/http/ngx_http_geo_module.html>`_  and the ``if-Statement`` you can omit these entries:
 

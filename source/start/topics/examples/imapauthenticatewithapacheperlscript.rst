@@ -8,13 +8,13 @@ Using a Perl Script as the IMAP Auth Backend
 Using nginx-embedded-perl module on the same server as the imap/pop proxy as the auth backend
 
 .. note::
-   This solution will block entire nginx worker when reading user information from DB and therefore not recommended for real use.
+   This solution will block entire NGINX worker when reading user information from DB and therefore not recommended for real use.
 
    This solution is being used at at ISP with 35000+ mailboxes for almost 2 years now fine. If you want  shameful plug, the ISP is Worldsoft (http://www.worldsoft.info)
 
 Start with the configuration from :doc:`imapproxyexample`. For detail information about different configuration parameters, see the `ngx_mail_core_module <http://nginx.org/en/docs/mail/ngx_mail_core_module.html>`_ documentation.
 
-Configure nginx with embedded perl and mail
+Configure NGINX with embedded perl and mail
 
 .. code-block:: bash
 
@@ -64,7 +64,7 @@ Configure nginx with embedded perl and mail
       }
     }
 
-The ultrafast nginx based authentifier, ``nginx/perl/lib/mailauth.pm``:
+The ultrafast NGINX based authentifier, ``nginx/perl/lib/mailauth.pm``:
 
 .. code-block:: perl
 

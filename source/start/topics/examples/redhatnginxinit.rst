@@ -2,7 +2,7 @@
 .. meta::
    :description: An example NGINX init script that works on Red Hat systems.
 
-Red Hat Nginx Init Script
+Red Hat NGINX Init Script
 =========================
 
 Should work on RHEL, Fedora, CentOS.   Tested on CentOS 5.
@@ -16,7 +16,7 @@ Save this file as ``/etc/init.d/nginx``
     # nginx - this script starts and stops the nginx daemon
     #
     # chkconfig:   - 85 15 
-    # description:  Nginx is an HTTP(S) server, HTTP(S) reverse \
+    # description:  NGINX is an HTTP(S) server, HTTP(S) reverse \
     #               proxy and IMAP/POP3 proxy server
     # processname: nginx
     # config:      /etc/nginx/nginx.conf

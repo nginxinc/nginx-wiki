@@ -13,7 +13,7 @@ These sitemaps are useful to feed your urls to the search engines. http://www.si
 
 Normally it is the job of the site-owner/webmaster to submit these sites to the search engine. Some do and some dont.
 
-We wanted to serve all these sites dynamically and here is how it is done with nginx and perl module.
+We wanted to serve all these sites dynamically and here is how it is done with NGINX and perl module.
 
 Note: There might be other easier way of doing this but IANASEO.
 
@@ -44,7 +44,7 @@ So the ``robots.txt`` looks something like this
     sitemap: http://sitemaps.worldsoft-cms.info/ispman.net-sitemap.xml
 
 The domain-name.com is ofcoarse replaced with the correct name.
-This sends all sitemaps requests to a central server running nginx.
+This sends all sitemaps requests to a central server running NGINX.
 
 nginx.conf (related parts only):
 

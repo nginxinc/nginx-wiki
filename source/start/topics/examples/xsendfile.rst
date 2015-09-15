@@ -11,14 +11,14 @@ The delivery of a static file which depends on an application header is known as
 
 `Lighttpd <http://www.lighttpd.net>`_  has this feature and there is a `mod_xsendfile <https://tn123.org/mod_xsendfile/>`_ for Apache2.
 
-Nginx also has this feature, but implemented a little bit differently. In Nginx this feature is called ``X-Accel-Redirect``.
+NGINX also has this feature, but implemented a little bit differently. In NGINX this feature is called ``X-Accel-Redirect``.
 
 There are two main differences:
 
 #. The header must contain a ``URI``.
 #. The location ``should`` be defined as ``internal;`` to prevent the client from going directly to the URI.
 
-Example nginx configuration:
+Example NGINX configuration:
 
 .. code-block:: nginx
 
@@ -33,9 +33,9 @@ If the application adds an header X-Accel-Redirect for the location ``/protected
 
    X-Accel-Redirect: /protected/iso.img;
 
-Then nginx will serve the file ``/some/path/protected/iso.img`` - note that the root and internal redirect paths are concatenated.
+Then NGINX will serve the file ``/some/path/protected/iso.img`` - note that the root and internal redirect paths are concatenated.
 
-If you want to deliver ``/some/path/iso.img`` then configure nginx like this:
+If you want to deliver ``/some/path/iso.img`` then configure NGINX like this:
 
 .. code-block:: nginx
 
@@ -44,7 +44,7 @@ If you want to deliver ``/some/path/iso.img`` then configure nginx like this:
       alias   /some/path/; # note the trailing slash
     }
 
-Note that the following HTTP headers aren't ``modified`` by nginx::
+Note that the following HTTP headers aren't ``modified`` by NGINX::
 
     Content-Type
     Content-Disposition
@@ -65,7 +65,7 @@ The application can also have some control over the process, sending the followi
 
 Links to this issue
 -------------------
-* `Using X-Accel-Redirect Header With Nginx to Implement Controlled Downloads (with rails and php examples) <http://kovyrin.net/2006/11/01/nginx-x-accel-redirect-php-rails/>`_ from `Alexey Kovyrin <http://kovyrin.net/>`_
+* `Using X-Accel-Redirect Header With NGINX to Implement Controlled Downloads (with rails and php examples) <http://kovyrin.net/2006/11/01/nginx-x-accel-redirect-php-rails/>`_ from `Alexey Kovyrin <http://kovyrin.net/>`_
 
 * `Nginx-Fu: X-Accel-Redirect From Remote Servers <http://kovyrin.net/2010/07/24/nginx-fu-x-accel-redirect-remote/>`_ from `Alexey Kovyrin <http://kovyrin.net/>`_
 

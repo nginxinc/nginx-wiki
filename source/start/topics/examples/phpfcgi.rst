@@ -9,7 +9,7 @@ This example is for newer PHP (>= 5.3.3) using the included PHP FPM (FastCGI Pro
 
 This guide assume PHP FPM already installed and configured either using tcp port (``127.0.0.1:9000``) or unix socket (``/var/run/php-fpm.sock``).
 
-There are many guide about configuring nginx with PHP FPM,
+There are many guide about configuring NGINX with PHP FPM,
 but many of them are incomplete (*doesn't handle PATH_INFO correctly*)
 or contain security issues (*doesn't check whether the script is indeed php file*).
 
@@ -52,10 +52,10 @@ For example on debian and ubuntu by default there is ``/etc/nginx/fastcgi_params
 
 Please note if you're using Ubuntu Precise (12.04), I change ``SCRIPT_FILENAME`` and add ``PATH_INFO`` params.
 
-Connecting nginx to PHP FPM
+Connecting NGINX to PHP FPM
 ---------------------------
 
-Now we must tell Nginx to proxy requests to PHP FPM via the FCGI protocol:
+Now we must tell NGINX to proxy requests to PHP FPM via the FCGI protocol:
 
 .. code-block:: nginx
 
@@ -76,12 +76,12 @@ If you're using unix socket change ``fastcgi_pass`` to:
 
     fastcgi_pass unix:/var/run/php5-fpm.sock;
 
-Restart nginx.
+Restart NGINX.
 
 Testing
 -------
 
-Create ``test.php`` on nginx document root containing just:
+Create ``test.php`` on NGINX document root containing just:
 
 .. code-block:: php
 
@@ -137,10 +137,10 @@ Notes
 
 #. The location regex capable to handle ``PATH_INFO`` and properly check that the extension indeed .php (not .phps) whether there is PATH_INFO or not.
 #. The ``fastcgi_split_path_info`` regex capable to correctly handle request like ``/test.php/foo/blah.php`` or ``/test.php/``.
-#. The ``if`` lets nginx check whether the ``*.php`` does indeed exist to prevent nginx to feeding PHP FPM non php script file (like uploaded image).
+#. The ``if`` lets NGINX check whether the ``*.php`` does indeed exist to prevent NGINX to feeding PHP FPM non php script file (like uploaded image).
 
 Some guides recommend to use ``try_files`` instead of ``if``,
-if you do that, beware of nginx `bug #321 <https://trac.nginx.org/nginx/ticket/321>`_.
+if you do that, beware of NGINX `bug #321 <https://trac.nginx.org/nginx/ticket/321>`_.
 I personally think ``if`` is more appropriate for this, even :doc:`../depth/ifisevil` agree this is one of the 100% safe thing to use ``if`` with.
 
 This guide run fine on php.ini ``cgi.fix_pathinfo = 1`` (the default).
