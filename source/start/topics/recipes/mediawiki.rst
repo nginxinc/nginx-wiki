@@ -13,7 +13,7 @@ Requirements
 Recipe
 ------
 
-Here's the basic configuration used for the Nginx wiki.
+Here's the basic configuration used for the NGINX wiki.
 
 .. code-block:: nginx
 

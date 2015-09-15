@@ -181,7 +181,7 @@ Another working symfony
         include        fastcgi_params;
     }
 
-Using Nginx as a development server for symphony, this is a php (cli) script which configurate and launch Nginx in a directory, the result is similar to django development server.
+Using NGINX as a development server for symphony, this is a php (cli) script which configurate and launch NGINX in a directory, the result is similar to django development server.
 
 .. code-block:: php
 
@@ -259,7 +259,7 @@ Using Nginx as a development server for symphony, this is a php (cli) script whi
 
     echo passthru('nginx -c /tmp'.getcwd().'/nginx.conf -t', $return_var);
     assert ('0 == $return_var');
-    usleep(200000); echo "Launching Nginx\n";
+    usleep(200000); echo "Launching NGINX\n";
     // echo passthru('nginx -c /tmp'.getcwd().'/nginx.conf', $return_var);
     // assert ('0 == $return_var');
 
@@ -274,7 +274,7 @@ Using Nginx as a development server for symphony, this is a php (cli) script whi
     pcntl_sigwaitinfo(array(SIGHUP, SIGINT, SIGUSR1));
     pcntl_sigprocmask(SIG_SETMASK, $oldset);
 
-    echo "\nShutting doen Nginx\n";
+    echo "\nShutting doen NGINX\n";
     echo passthru('nginx -c /tmp'.getcwd().'/nginx.conf -s stop', $return_var);
     assert ('0 == $return_var');
 

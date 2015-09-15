@@ -16,7 +16,7 @@ digest delivery, spam filters, and more.
 Mailman is crazy. This page used to focus on giving you options to install,
 configure, and run it as you wish. Because of the crazy that is mailman, this
 will show you the most common and best supported way to set up Mailman
-software behind Nginx.
+software behind NGINX.
 
 The Recipe
 ----------
@@ -98,7 +98,7 @@ Fix Authentication
 
 If you end up running into an issue where you have to authenticate for every
 link clicked in the admin interface, you may have changed the URI. This would
-happen if you are migrating from Apache or something else to Nginx. You can
+happen if you are migrating from Apache or something else to NGINX. You can
 either try to match what you were using previously by manipulating the location
 blocks and thttpd config so the /mailman or the /cgi-bin/mailman will be passed
 to mailman. The other option is to run the command below.

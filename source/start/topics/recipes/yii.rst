@@ -11,7 +11,7 @@ Recipe
 This configuring gives SEF URLs for Yii
 
 
-Nginx configuration
+NGINX configuration
 ^^^^^^^^^^^^^^^^^^^
 
 .. code-block:: nginx

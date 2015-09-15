@@ -5,7 +5,7 @@
 WordPress
 =========
 
-`Nginx <http://nginx.org>`_ works perfectly well with a wide variety of applications, and `WordPress <https://wordpress.org>`_ is certainly one of them.  Nginx's configuration language is very powerful and straightforward if one is familiar with it, but often people coming from other servers are not sure how things work in Nginx and just copy and paste whatever they see from a blog that seems to fill their needs.  Everyone, especially people new to Nginx, should check out the `nginx.org documentation <http://nginx.org/en/docs/>`_ for an overview of how things work and should be done in Nginx.
+`NGINX <http://nginx.org>`_ works perfectly well with a wide variety of applications, and `WordPress <https://wordpress.org>`_ is certainly one of them.  NGINX's configuration language is very powerful and straightforward if one is familiar with it, but often people coming from other servers are not sure how things work in NGINX and just copy and paste whatever they see from a blog that seems to fill their needs.  Everyone, especially people new to NGINX, should check out the `nginx.org documentation <http://nginx.org/en/docs/>`_ for an overview of how things work and should be done in NGINX.
 
 Recipe
 ------
@@ -13,7 +13,7 @@ Recipe
 Abridged basic setup
 ^^^^^^^^^^^^^^^^^^^^
 
-Hopefully you have read the documentation above and maybe worked on setting up a virtual server or two in Nginx already - if not there are a few notes below, but you should still read the documentation.
+Hopefully you have read the documentation above and maybe worked on setting up a virtual server or two in NGINX already - if not there are a few notes below, but you should still read the documentation.
 
 First we setup a named upstream for our php, which allows us to abstract the backend and easily change the port or add more backends. After that, we setup our virtual host configuration for domain.tld.
 
@@ -100,7 +100,7 @@ Rewrite rules for Multisite
 
 `WordPress Multisite <http://codex.wordpress.org/Create_A_Network>`_ can be used in multiple ways. Most notably "subdirectories" mode and "subdomains" mode. 
 
-Nginx provides 2 special directive: `X-Accel-Redirect <x-accel.redirect_>` and `map <http://nginx.org/en/docs/http/ngx_http_map_module.html#map>`_. Using these 2 directives, one can eliminate performance hit for static-file serving on WordPress multisite network.
+NGINX provides 2 special directive: `X-Accel-Redirect <x-accel.redirect_>` and `map <http://nginx.org/en/docs/http/ngx_http_map_module.html#map>`_. Using these 2 directives, one can eliminate performance hit for static-file serving on WordPress multisite network.
 
 Rewrite rules for Multisite using subdirectories
 """"""""""""""""""""""""""""""""""""""""""""""""
@@ -204,6 +204,6 @@ Rewrite rules for Multisite using subdomains
 
     * For wordpress-nginx based sites management, `EasyEngine <https://github.com/rtCamp/easyengine>`_ can be used. EasyEngine is collection of shell scripts for Ubuntu.
     * map section can be completed manually for small sites. On large multisite network `nginx-helper <https://wordpress.org/plugins/nginx-helper/>`_ wordpress plugin can be used.
-    * Further performance gain is possible by using Nginx's fastcgi_cache. When using `fastcgi_cache <http://nginx.org/en/docs/http/ngx_http_fastcgi_module.html#fastcgi_cache>`_, compile nginx with `ngx_cache_purge <https://github.com/FRiCKLE/ngx_cache_purge>`_ module and add a wordpress-plugin which performs automatic cache purge on events e.g. a wordpress post/page is edited.
-    * `Nginx Cache Controller <https://wordpress.org/plugins/nginx-champuru/>`_ WordPress plugin provides some functions of controlling Nginx proxy server cache.
-    * `Nginx Mobile Theme <https://wordpress.org/plugins/nginx-mobile-theme/>`_ WordPress plugin allows you to switch theme according to the User Agent on the Nginx reverse proxy.
+    * Further performance gain is possible by using NGINX's fastcgi_cache. When using `fastcgi_cache <http://nginx.org/en/docs/http/ngx_http_fastcgi_module.html#fastcgi_cache>`_, compile NGINX with `ngx_cache_purge <https://github.com/FRiCKLE/ngx_cache_purge>`_ module and add a wordpress-plugin which performs automatic cache purge on events e.g. a wordpress post/page is edited.
+    * `NGINX Cache Controller <https://wordpress.org/plugins/nginx-champuru/>`_ WordPress plugin provides some functions of controlling NGINX proxy server cache.
+    * `NGINX Mobile Theme <https://wordpress.org/plugins/nginx-mobile-theme/>`_ WordPress plugin allows you to switch theme according to the User Agent on the NGINX reverse proxy.

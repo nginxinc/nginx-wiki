@@ -16,19 +16,19 @@ Follow the `installation instructions on their website <http://framework.zend.co
     Optionally, you can add the path to the library/ subdirectory of the archive to your php.ini's include_path setting.
     That's it! Zend Framework is now installed and ready to use.
 
-If that is your preference, you can stop reading now and read-up on how to configure ``nginx`` to work directly with :doc:`PHP FastCGI <../examples/phpfcgi>`
+If that is your preference, you can stop reading now and read-up on how to configure NGINX to work directly with :doc:`PHP FastCGI <../examples/phpfcgi>`
 
 Alternatively, Zend Framework also comes packaged with both, the free and paid-for edition of `Zend Server <http://www.zend.com/en/products/server/editions>`_:
 
     Zend Server includes a production-ready, tested stack that incorporates PHP, Zend Framework, required extensions and drivers - all installed through RPM/DEB on Linux or MSI on Windows. Zend Server also support IBM i.
 
-In the rest of this guide I am covering the integration of ``nginx`` with Zend Server Free Edition for PHP Version 5.3. My installation is on Ubuntu 10.10 Maverick Meerkat, but it should work on yours just as well. Detailed installation instructions for all supported platforms are at http://files.zend.com/help/Zend-Server-6/zend-server.htm#installation_guide.htm
+In the rest of this guide I am covering the integration of NGINX with Zend Server Free Edition for PHP Version 5.3. My installation is on Ubuntu 10.10 Maverick Meerkat, but it should work on yours just as well. Detailed installation instructions for all supported platforms are at http://files.zend.com/help/Zend-Server-6/zend-server.htm#installation_guide.htm
 
 A few of my observations for your consideration
 -----------------------------------------------
 
-* beginning with Zend Server 6.1, nginx is nativly suported by Zend Server
-* in a non-nginx setup, the Zend Server includes both, Apache 2.2 for serving your actual PHP application, and lighthttp for the Zend Server Administration GUI
+* beginning with Zend Server 6.1, NGINX is nativly suported by Zend Server
+* in a non-NGINX setup, the Zend Server includes both, Apache 2.2 for serving your actual PHP application, and lighthttp for the Zend Server Administration GUI
 * the number of additional packages and files from Zend are rather heavy-weight; you not only get PHP 5.3 (5.4 is also supported) but also the Zend Framework, Apache 2.2 and the Zend Server Administration GUI
 * also, once you install Zend Server, your "native" PHP installation packages from your distro will be removed, since those are obsolete now
 * on the upside, Zend provides repositories for Redhat/CentOS as well as Debian/Ubuntu, hence whenever you update your system, the Zend Server packages including your Zend Framework will be updated  with your regular update process, e.g. ``aptitude full-upgrade`` or ``yum update``. That is really nice, especially if you are using something like ``apticron``. No more out-dated PHP or Zend Framework libraries. Nice!
@@ -39,7 +39,7 @@ Allright, with no further ado, here we go ...
 Automated installation instructions
 -----------------------------------
 
-Starting with Zend Server 6.1 you can use an automated installation script to install nginx & Zend Server.
+Starting with Zend Server 6.1 you can use an automated installation script to install NGINX & Zend Server.
 
 #. Download the package called "Zend Server (DEB/RPM Installer Script)" from zend.com - http://www.zend.com/en/products/server/downloads
 
@@ -70,7 +70,7 @@ The following commands install the Zend Server Free Edition and stop both, the A
     sudo aptitude install zend-server-php-5.3
     sudo service zend-server stop
 
-Once that is done, you want to create a custom php-fastcgi script for ``Zend Server Free Edition`` that ``nginx`` can use to forward PHP template processing to, just as you would do for a regular PHP installation. 
+Once that is done, you want to create a custom php-fastcgi script for ``Zend Server Free Edition`` that NGINX can use to forward PHP template processing to, just as you would do for a regular PHP installation. 
 
 Create the file ``/etc/init.d/php-fastcgi`` as root and put the following content in it:
 
@@ -78,7 +78,7 @@ Create the file ``/etc/init.d/php-fastcgi`` as root and put the following conten
 
     #!/bin/bash
     # Inspired from /usr/local/zend/bin/lighttpdctl.sh
-    # Zend GUI uses lighttpd and fastcgi - we want the same for nginx
+    # Zend GUI uses lighttpd and fastcgi - we want the same for NGINX
     # its all about the unix socket - if on the same machine
     # otherwise bind to address and port; this is similar to the "regular" php-fastcgi
 
@@ -132,7 +132,7 @@ Create the file ``/etc/init.d/php-fastcgi`` as root and put the following conten
 
     exit $?
 
-You notice, we are lifting various settings from the Zend installation (/etc/zce.rc) that will have some impact on the configuration of ``nginx``. Particularly, I decided to use Unix sockets for performance reasons since I am on the same machine with both, ``nginx`` and the ``Zend Server and Framework``. The rest of the file is heavily inspired by the start and stop scripts for the built-in Zend GUI (based on lighttpd) which also uses spawn-cgi!!
+You notice, we are lifting various settings from the Zend installation (/etc/zce.rc) that will have some impact on the configuration of NGINX. Particularly, I decided to use Unix sockets for performance reasons since I am on the same machine with both, NGINX and the ``Zend Server and Framework``. The rest of the file is heavily inspired by the start and stop scripts for the built-in Zend GUI (based on lighttpd) which also uses spawn-cgi!!
 
 Next up, make the file executable and add it to your servers regular environment for controlling system daemons:
 
@@ -150,10 +150,10 @@ In order to avoid port conflicts and save system resources, and of course we do 
     cd /etc/init.d
     sudo update-rc.d -f zend-server remove
 
-Time for nginx
+Time for NGINX
 --------------
 
-Now, all that is left is to configure ``nginx`` to forward all PHP requests to our newly installed ``Zend Server``
+Now, all that is left is to configure NGINX to forward all PHP requests to our newly installed ``Zend Server``
 We are going to lean heavily on the regular instructions for :doc:`PHP FastCGI <../examples/phpfcgi>`. Just keep in mind that we are using Unix sockets, and not binding the Zend Sever PHP CGI process to a TCP/IP port. Therefore, this is what our configuration for PHP looks like. Also note: this is just the part in regards to plain PHP, most likely you would also want to make sure, no requests will be forwarded to Zend Server for any of your static or cached content!!
 
 .. code-block:: nginx

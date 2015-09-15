@@ -5,7 +5,7 @@
 Qwebric
 =======
 
-`Qwebirc <https://qwebirc.org/>`_ is a fast, easy to use, free and open source IRC client designed by and originally just for the `QuakeNet IRC network <https://www.quakenet.org/>`_. Released in 2009, it's a `python <https://www.python.org>`_ written web-based IRC client. It also has a fork, `iris <http://www.atheme.net/iris.html>`_, developed by the `Atheme <http://www.atheme.net/>`_ IRC services team, and provides better integration with Atheme's IRC services. Qwebirc uses its own embedded webserver utilizing non-blocking multiplexing, and can cope with thousands of users easily. Because of this, there are two methods which can be used to direct clients to a qwebirc instance via `nginx <http://nginx.org>`_: redirection, or reverse proxy.
+`Qwebirc <https://qwebirc.org/>`_ is a fast, easy to use, free and open source IRC client designed by and originally just for the `QuakeNet IRC network <https://www.quakenet.org/>`_. Released in 2009, it's a `python <https://www.python.org>`_ written web-based IRC client. It also has a fork, `iris <http://www.atheme.net/iris.html>`_, developed by the `Atheme <http://www.atheme.net/>`_ IRC services team, and provides better integration with Atheme's IRC services. Qwebirc uses its own embedded webserver utilizing non-blocking multiplexing, and can cope with thousands of users easily. Because of this, there are two methods which can be used to direct clients to a qwebirc instance via `NGINX <http://nginx.org>`_: redirection, or reverse proxy.
 
 Recipe
 ------
@@ -29,7 +29,7 @@ This would take any requests for webchat.domain.tld, and redirect it to webchat.
 Reserve Proxy Method
 ^^^^^^^^^^^^^^^^^^^^
 
-It is also possible to reverse proxy qwebirc from nginx, hiding the port number in the address bar, and using nginx as the frontend. To do this, you would first set up a server block to look like:
+It is also possible to reverse proxy qwebirc from NGINX, hiding the port number in the address bar, and using NGINX as the frontend. To do this, you would first set up a server block to look like:
 
 .. code-block:: nginx
 
