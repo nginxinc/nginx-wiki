@@ -165,6 +165,15 @@
     {%- endif %}
 {%- endblock %}
 {%- block extrahead %} {% endblock %}
+    <script type="text/javascript">
+        // workaround for rewriting anchor tags
+        $(function() {
+            var parts = window.location.hash.split('#', 2);
+            var fixed = parts[0] + '#' + parts[1].replace(/[\W_]/g, '-');
+            window.location.hash = fixed;
+        });
+    </script>
+
     <link rel='stylesheet' id='nginx-theme-style-css'
           href='{{ pathto('_static/nginx-theme.css?ver=1438882823', 1) }}'
           type='text/css' media='all'/>
