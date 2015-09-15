@@ -9,9 +9,9 @@ Form Input
 Description
 -----------
 
-**form-input-nginx-module** - an nginx module that reads HTTP POST and PUT request body encoded in
+**form-input-nginx-module** - an NGINX module that reads HTTP POST and PUT request body encoded in
 ``application/x-www-form-urlencoded``, and parses the arguments in request body
-into nginx variables.
+into NGINX variables.
 
 This module depends on the ngx_devel_kit (NDK) module.
 
@@ -20,9 +20,9 @@ This module depends on the ngx_devel_kit (NDK) module.
 Installation
 ------------
 
-#. Get the nginx source code from `nginx.org <http://nginx.org/>`_.
+#. Get the NGINX source code from `nginx.org <http://nginx.org/>`_.
 #. Get the ngx_devel_kit source code from :github:`GitHub simpl-it/ngx_devel_kit repository <simpl-it/ngx_devel_kit>`
-#. Unpack the source code and build nginx with this module.
+#. Unpack the source code and build NGINX with this module.
 
 .. code-block:: bash
 
@@ -72,7 +72,7 @@ Example:
 Compatibility
 -------------
 
-The following versions of Nginx should work with this module:
+The following versions of NGINX should work with this module:
 
 * **0.8.x <= 0.8.41**                       (last tested version is 0.8.43)
 * **0.7.x**                                 (last tested version is 0.7.67)

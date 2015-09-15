@@ -7,8 +7,8 @@ Foot Filter
 
 Synopsis
 --------
-This is a module that is distributed with `Tengine <http://tengine.taobao.org>`_ which is a distribution of Nginx that is used by the e-commerce/auction site Taobao.com.
-This distribution contains some modules that are new on the Nginx scene.
+This is a module that is distributed with `Tengine <http://tengine.taobao.org>`_ which is a distribution of NGINX that is used by the e-commerce/auction site Taobao.com.
+This distribution contains some modules that are new on the NGINX scene.
 The **ngx_http_footer_filter_module** is one of them.
 
 This module implements a body filter that adds a given string
@@ -59,8 +59,8 @@ Installation
 
     --add-module=/path/to/nginx-http-footer-filter
   
-#. Build the nginx binary.
-#. Install the nginx binary.
+#. Build the NGINX binary.
+#. Install the NGINX binary.
 #. Configure contexts where footer filter is enabled.
 #. Done.
 
@@ -75,7 +75,7 @@ I'm tagging each release in synch with the `Tengine <http://tengine.taobao.org>`
 Other tengine modules on Github
 -------------------------------
 * :github:`backtrace_module <alibaba/nginx-backtrace>`
-    Can be used to dump backtrace of nginx in case a worker process exits abnormally,
+    Can be used to dump backtrace of NGINX in case a worker process exits abnormally,
     e.g. when some signal is received (SIGABR, SIGBUS, SIGFPE, SIGILL, SIGIOT, SIGSEGV).
     It's quite handy for debugging purpose.
 
@@ -86,16 +86,16 @@ Other tengine modules on Github
 
 Other builds
 ------------
-1. As referred at the outset this module is part of the `Tengine <http://tengine.taobao.org>`_ Nginx distribution. So you might want to save yourself some work and just build it from scratch using *Tengine* in lieu if the official Nginx source.
+1. As referred at the outset this module is part of the `Tengine <http://tengine.taobao.org>`_ NGINX distribution. So you might want to save yourself some work and just build it from scratch using *Tengine* in lieu if the official NGINX source.
 
-2. If you fancy a bleeding edge Nginx package (from the dev releases) for Debian made to measure then you might be interested in my `debian <http://debian.perusio.net/unstable>`_ Nginx package. Instructions for using the repository and making the package live happily inside a stable distribution installation are `provided <http://debian.perusio.net>`_.
+2. If you fancy a bleeding edge NGINX package (from the dev releases) for Debian made to measure then you might be interested in my `debian <http://debian.perusio.net/unstable>`_ NGINX package. Instructions for using the repository and making the package live happily inside a stable distribution installation are `provided <http://debian.perusio.net>`_.
 
 
 
 Acknowledgments
 ---------------
 Thanks to `Joshua Zhu <http://blog.zhuzhaoyuan.com>`_ and the Taobao platform engineering team for releasing *Tengine*. Also for being kind
-enough to clarify things regarding this module on the `Nginx mailing list <http://mailman.nginx.org/pipermail/nginx/2011-December/030830.html>`_.
+enough to clarify things regarding this module on the `NGINX mailing list <http://mailman.nginx.org/pipermail/nginx/2011-December/030830.html>`_.
 
 
 

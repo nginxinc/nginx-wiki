@@ -17,7 +17,7 @@ Example usage:
       circle_gif;
   }
 
-.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions <circle_gif.installation_>`_.
+.. note:: *This module is not distributed with the NGINX source.* See the `installation instructions <circle_gif.installation_>`_.
 
 
 
@@ -79,13 +79,13 @@ Where *radius* is the radius in pixels, and the colors are 24-bit hex colors (e.
 
 Installation
 ------------
-You first need the ImageMagick development headers. This module is not distributed with the Nginx source. You can download the circle_gif module :github:`here <evanmiller/nginx_circle_gif>`.
+You first need the ImageMagick development headers. This module is not distributed with the NGINX source. You can download the circle_gif module :github:`here <evanmiller/nginx_circle_gif>`.
 
 ..
    Dead link
    You can download the circle_gif module `here <http://wiki.nginx.org/File:Nginx_circle_gif-0.1.3.tar.gz>`_.
 
-After extracting, add the following option to your Nginx ``./configure`` command:
+After extracting, add the following option to your NGINX ``./configure`` command:
 
 .. code-block:: html
 

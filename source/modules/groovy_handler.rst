@@ -5,7 +5,7 @@
 Groovy
 ======
 
-`Nginx-Clojure <http://nginx-clojure.github.io>`_ is a Nginx module for embedding Clojure or Java or Groovy programs, typically those `Ring <ring-clojure/ring/blob/master/SPEC>` based handlers.
+`Nginx-Clojure <http://nginx-clojure.github.io>`_ is a NGINX module for embedding Clojure or Java or Groovy programs, typically those `Ring <ring-clojure/ring/blob/master/SPEC>` based handlers.
 
 There are some simple examples about Groovy handler.
 
@@ -25,7 +25,7 @@ In nginx.conf
               public Object[] invoke(Map<String, Object> request){
                   return [200, //http status 200
                          ["Content-Type":"text/html"], //headers map
-                         "Hello, Groovy & Nginx!"]; //response body can be string, File or Array/Collection of them
+                         "Hello, Groovy & NGINX!"]; //response body can be string, File or Array/Collection of them
               }
           }
       ';
@@ -55,7 +55,7 @@ In HelloGroovy.groovy
        return 
        [200,  //http status 200
         ["Content-Type":"text/html"],//headers map
-        "Hello, Groovy & Nginx!" //response body can be string, File or Array/Collection of them
+        "Hello, Groovy & NGINX!" //response body can be string, File or Array/Collection of them
         ]; 
     }
   }

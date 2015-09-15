@@ -7,9 +7,9 @@ SR Cache
 
 Name
 ----
-**ngx_srcache** - Transparent subrequest-based caching layout for arbitrary nginx locations
+**ngx_srcache** - Transparent subrequest-based caching layout for arbitrary NGINX locations
 
-.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions <sr_cache.installation_>`_.
+.. note:: *This module is not distributed with the NGINX source.* See the `installation instructions <sr_cache.installation_>`_.
 
 
 
@@ -111,7 +111,7 @@ Synopsis
 
 Description
 -----------
-This module provides a transparent caching layer for arbitrary nginx locations (like those use an upstream or even serve static disk files). The caching behavior is mostly compatible with `RFC 2616 <http://www.ietf.org/rfc/rfc2616.txt>`_.
+This module provides a transparent caching layer for arbitrary NGINX locations (like those use an upstream or even serve static disk files). The caching behavior is mostly compatible with `RFC 2616 <http://www.ietf.org/rfc/rfc2616.txt>`_.
 
 Usually, :doc:`memc` is used together with this module to provide a concrete caching storage backend. But technically, any modules that provide a REST interface can be used as the fetching and storage subrequests used by this module.
 
@@ -207,7 +207,7 @@ To maximize speed, we often enable TCP (or Unix Domain Socket) connection pool f
   }
 
 
-where we define a connection pool which holds up to 10 keep-alive connections (per nginx worker process) for our ``moon`` upstream (cluster).
+where we define a connection pool which holds up to 10 keep-alive connections (per NGINX worker process) for our ``moon`` upstream (cluster).
 
 
 
@@ -255,7 +255,7 @@ This example makes use of the ``$echo_request_body`` variable provided by :doc:`
 
 Also, you need both :doc:`redis` and :doc:`redis2`. The former is used in the `srcache_fetch`_ subrequest and the latter is used in the `srcache_store`_ subrequest.
 
-The Nginx core also has a bug that could prevent :doc:`redis2`'s pipelining support from working properly in certain extreme conditions. And the following patch fixes this::
+The NGINX core also has a bug that could prevent :doc:`redis2`'s pipelining support from working properly in certain extreme conditions. And the following patch fixes this::
 
    http://mailman.nginx.org/pipermail/nginx-devel/2012-March/002040.html
 
@@ -331,7 +331,7 @@ srcache_fetch
 :Context: *http, server, location, location if*
 :Phase: *post-access*
 
-This directive registers an access phase handler that will issue an Nginx subrequest to lookup the cache.
+This directive registers an access phase handler that will issue an NGINX subrequest to lookup the cache.
 
 When the subrequest returns status code other than ``200``, than a cache miss is signaled and the control flow will continue to the later phases including the content phase configured by |HttpProxyModule|, |HttpFastCGIModule|, and others. If the subrequest returns ``200 OK``, then a cache hit is signaled and this module will send the subrequest's response as the current main request's response to the client directly.
 
@@ -348,7 +348,7 @@ srcache_fetch_skip
 :Context: *http, server, location, location if*
 :Phase: *post-access*
 
-The ``<flag>`` argument supports nginx variables. When this argument's value is not empty *and* not equal to ``0``, then the fetching process will be unconditionally skipped.
+The ``<flag>`` argument supports NGINX variables. When this argument's value is not empty *and* not equal to ``0``, then the fetching process will be unconditionally skipped.
 
 For example, to skip caching requests which have a cookie named ``foo`` with the value ``bar``, we can write
 
@@ -396,7 +396,7 @@ srcache_store
 :Context: *http, server, location, location if*
 :Phase: *output-filter*
 
-This directive registers an output filter handler that will issue an Nginx subrequest to save the response of the current main request into a cache backend. The status code of the subrequest will be ignored.
+This directive registers an output filter handler that will issue an NGINX subrequest to save the response of the current main request into a cache backend. The status code of the subrequest will be ignored.
 
 You can use the `srcache_store_skip`_ and `srcache_store_max_size`_ directives to disable caching for certain requests in case of a cache miss.
 
@@ -416,7 +416,7 @@ You can use the `srcache_store_pass_header`_ and/or `srcache_store_hide_header`_
 
 The original response's data chunks get emitted as soon as they arrive. ``srcache_store`` just copies and collects the data in an output filter without postponing them from being sent downstream.
 
-But please note that even though all the response data will be sent immediately, the current Nginx request lifetime will not finish until the srcache_store subrequest completes. That means a delay in closing the TCP connection on the server side (when HTTP keepalive is disabled, but proper HTTP clients should close the connection actively on the client side, which adds no extra delay or other issues at all) or serving the next request sent on the same TCP connection (when HTTP keepalive is in action).
+But please note that even though all the response data will be sent immediately, the current NGINX request lifetime will not finish until the srcache_store subrequest completes. That means a delay in closing the TCP connection on the server side (when HTTP keepalive is disabled, but proper HTTP clients should close the connection actively on the client side, which adds no extra delay or other issues at all) or serving the next request sent on the same TCP connection (when HTTP keepalive is in action).
 
 
 
@@ -442,9 +442,9 @@ srcache_store_skip
 :Context: *http, server, location, location if*
 :Phase: *output-header-filter*
 
-The ``<flag>`` argument supports Nginx variables. When this argument's value is not empty *and* not equal to ``0``, then the storing process will be unconditionally skipped.
+The ``<flag>`` argument supports NGINX variables. When this argument's value is not empty *and* not equal to ``0``, then the storing process will be unconditionally skipped.
 
-Starting from the ``v0.25`` release, the ``<flag>`` expression (possibly containing Nginx variables) can be evaluated up to twice: the first time is right after the response header is being sent and when the ``<flag>`` expression is not evaluated to true values it will be evaluated again right after the end of the response body data stream is seen. Before ``v0.25``, only the first time evaluation is performed.
+Starting from the ``v0.25`` release, the ``<flag>`` expression (possibly containing NGINX variables) can be evaluated up to twice: the first time is right after the response header is being sent and when the ``<flag>`` expression is not evaluated to true values it will be evaluated again right after the end of the response body data stream is seen. Before ``v0.25``, only the first time evaluation is performed.
 
 Here's an example using Lua to set $nocache to avoid storing URIs that contain the string "/tmp":
 
@@ -616,7 +616,7 @@ srcache_ignore_content_encoding
 :Context: *http, server, location, location if*
 :Phase: *output-header-filter*
 
-When this directive is turned ``off`` (which is the default), non-empty ``Content-Encoding`` response header will cause `srcache_store`_ skip storing the whole response into the cache and issue a warning into nginx's ``error.log`` file like this:
+When this directive is turned ``off`` (which is the default), non-empty ``Content-Encoding`` response header will cause `srcache_store`_ skip storing the whole response into the cache and issue a warning into NGINX's ``error.log`` file like this:
 
 .. code-block:: text
 
@@ -770,7 +770,7 @@ Variables
 
 $srcache_expire
 ^^^^^^^^^^^^^^^
-This Nginx integer value represents the recommended expiration time period (in seconds) for the current response being stored into the cache. The algorithm of computing the value is as follows:
+This NGINX integer value represents the recommended expiration time period (in seconds) for the current response being stored into the cache. The algorithm of computing the value is as follows:
 
 #. When the response header ``Cache-Control: max-age=N`` is specified, then ``N`` will be used as the expiration time,
 #. otherwise if the response header ``Expires`` is specified, then the expiration time will be obtained by subtracting the current time stamp from the time specified in the ``Expires`` header,
@@ -786,7 +786,7 @@ This variable was first introduced in the ``v0.12rc7`` release.
 
 $srcache_fetch_status
 ^^^^^^^^^^^^^^^^^^^^^
-This Nginx variable is evaluated to the status of the "fetch" phase for the caching system. Three values are possible, ``HIT``, ``MISS``, and ``BYPASS``.
+This NGINX variable is evaluated to the status of the "fetch" phase for the caching system. Three values are possible, ``HIT``, ``MISS``, and ``BYPASS``.
 
 When the "fetch" subrequest returns status code other than ``200`` or its response data is not well-formed, then this variable is evaluated to the value ``MISS``.
 
@@ -798,7 +798,7 @@ This variable was first introduced in the ``v0.14`` release.
 
 $srcache_store_status
 ^^^^^^^^^^^^^^^^^^^^^
-This Nginx variable gives the current caching status for the "store" phase. Two possible values, ``STORE`` and ``BYPASS`` can be obtained.
+This NGINX variable gives the current caching status for the "store" phase. Two possible values, ``STORE`` and ``BYPASS`` can be obtained.
 
 Because the responses for the "store" subrequest are always discarded, so the value of this variable will always be ``STORE`` as long as the "store" subrequest is actually issued.
 
@@ -817,7 +817,7 @@ Known Issues
 
 Caveats
 -------
-* It is recommended to disable your backend server's gzip compression and use nginx's |HttpGzipModule| to do the job. In case of |HttpProxyModule|, you can use the following configure setting to disable backend gzip compression:
+* It is recommended to disable your backend server's gzip compression and use NGINX's |HttpGzipModule| to do the job. In case of |HttpProxyModule|, you can use the following configure setting to disable backend gzip compression:
 
   .. code-block:: nginx
 
@@ -854,7 +854,7 @@ Caveats
 
 Trouble Shooting
 ----------------
-To debug issues, you should always check your Nginx ``error.log`` file first. If no error messages are printed, you need to enable the Nginx debugging logs to get more details, as explained in `debugging log <http://nginx.org/en/docs/debugging_log.html>`_.
+To debug issues, you should always check your NGINX ``error.log`` file first. If no error messages are printed, you need to enable the NGINX debugging logs to get more details, as explained in `debugging log <http://nginx.org/en/docs/debugging_log.html>`_.
 
 Several common pitfalls for beginners:
 
@@ -867,14 +867,14 @@ Several common pitfalls for beginners:
 
 Installation
 ------------
-It is recommended to install this module as well as the Nginx core and many other goodies via the `ngx_openresty bundle <http://openresty.org>`__. It is the easiest way and most safe way to set things up. See OpenResty's `installation instructions <http://openresty.org/#Installation>`_ for details.
+It is recommended to install this module as well as the NGINX core and many other goodies via the `ngx_openresty bundle <http://openresty.org>`__. It is the easiest way and most safe way to set things up. See OpenResty's `installation instructions <http://openresty.org/#Installation>`_ for details.
 
-Alternatively, you can build Nginx with this module all by yourself:
+Alternatively, you can build NGINX with this module all by yourself:
 
-* Grab the nginx source code from `nginx.org <http://nginx.org>`_, for example, the version 1.7.10 (see [[#Compatibility|Nginx Compatibility]]),
-* and then apply the patch to your nginx source tree that fixes an important bug in the mainline Nginx core: https://raw.githubusercontent.com/openresty/ngx_openresty/master/patches/nginx-1.4.3-upstream_truncation.patch (you do NOT need this patch if you are using nginx 1.5.3 and later versions.)
+* Grab the NGINX source code from `nginx.org <http://nginx.org>`_, for example, the version 1.7.10 (see [[#Compatibility|NGINX Compatibility]]),
+* and then apply the patch to your NGINX source tree that fixes an important bug in the mainline NGINX core: https://raw.githubusercontent.com/openresty/ngx_openresty/master/patches/nginx-1.4.3-upstream_truncation.patch (you do NOT need this patch if you are using NGINX 1.5.3 and later versions.)
 * after that, download the latest version of the release tarball of this module from srcache-nginx-module :github:`file list <openresty/srcache-nginx-module/tags>`
-* and finally build the Nginx source with this module
+* and finally build the NGINX source with this module
   
   .. code-block:: nginx
 
@@ -893,7 +893,7 @@ Alternatively, you can build Nginx with this module all by yourself:
 
 Compatibility
 -------------
-The following versions of Nginx should work with this module:
+The following versions of NGINX should work with this module:
 
 * **1.7.x** (last tested: 1.7.10)
 * **1.5.x** (last tested: 1.5.12)
@@ -905,9 +905,9 @@ The following versions of Nginx should work with this module:
 * **0.9.x** (last tested: 0.9.4)
 * **0.8.x** >= 0.8.54 (last tested: 0.8.54)
 
-Earlier versions of Nginx like 0.7.x, 0.6.x and 0.5.x will *not* work.
+Earlier versions of NGINX like 0.7.x, 0.6.x and 0.5.x will *not* work.
 
-If you find that any particular version of Nginx above 0.7.44 does not work with this module, please consider reporting a bug.
+If you find that any particular version of NGINX above 0.7.44 does not work with this module, please consider reporting a bug.
 
 
 
@@ -955,18 +955,18 @@ To run it on your side:
   $ PATH=/path/to/your/nginx-with-srcache-module:$PATH prove -r t
 
 
-You need to terminate any Nginx processes before running the test suite if you have changed the Nginx server binary.
+You need to terminate any NGINX processes before running the test suite if you have changed the NGINX server binary.
 
-Because a single nginx server (by default, ``localhost:1984``) is used across all the test scripts (``.t`` files), it's meaningless to run the test suite in parallel by specifying ``-jN`` when invoking the ``prove`` utility.
+Because a single NGINX server (by default, ``localhost:1984``) is used across all the test scripts (``.t`` files), it's meaningless to run the test suite in parallel by specifying ``-jN`` when invoking the ``prove`` utility.
 
-Some parts of the test suite requires modules |HttpRewriteModule|, :doc:`echo`, :github:`HttpRdsJsonModule <openresty/rds-json-nginx-module>`, and :doc:`drizzle` to be enabled as well when building Nginx.
+Some parts of the test suite requires modules |HttpRewriteModule|, :doc:`echo`, :github:`HttpRdsJsonModule <openresty/rds-json-nginx-module>`, and :doc:`drizzle` to be enabled as well when building NGINX.
 
 
 
 TODO
 ----
 * add gzip compression and decompression support.
-* add new nginx variable ``$srcache_key`` and new directives ``srcache_key_ignore_args``, ``srcache_key_filter_args``, and ``srcache_key_sort_args``.
+* add new NGINX variable ``$srcache_key`` and new directives ``srcache_key_ignore_args``, ``srcache_key_filter_args``, and ``srcache_key_sort_args``.
 
 
 

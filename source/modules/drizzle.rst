@@ -9,7 +9,7 @@ Name
 ----
 drizzle-nginx-module - Upstream module for talking to MySQL and Drizzle directly
 
-.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions <drizzle.installation_>`_.
+.. note:: *This module is not distributed with the NGINX source.* See the `installation instructions <drizzle.installation_>`_.
 
 
 ..
@@ -77,9 +77,9 @@ Synopsis
 
 Description
 -----------
-This is an nginx upstream module integrating `libdrizzle <https://launchpad.net/drizzle>`_ into Nginx in a non-blocking and streamming way.
+This is an NGINX upstream module integrating `libdrizzle <https://launchpad.net/drizzle>`_ into NGINX in a non-blocking and streamming way.
 
-Essentially it provides a very efficient and flexible way for nginx internals to access MySQL, Drizzle, as well as other RDBMS's that support the Drizzle or MySQL wired protocol. Also it can serve as a direct REST interface to those RDBMS backends.
+Essentially it provides a very efficient and flexible way for NGINX internals to access MySQL, Drizzle, as well as other RDBMS's that support the Drizzle or MySQL wired protocol. Also it can serve as a direct REST interface to those RDBMS backends.
 
 This module does not generate human-readable outputs, rather, in a binary format called Resty-DBD-Stream (RDS) designed by ourselves. You usually need other components, like :github:`HttpRdsJsonModule <openresty/rds-json-nginx-module>`, :github:`HttpRdsCsvModule <openresty/rds-csv-nginx-module>`, or :github:`HttpLuaRdsParser <openresty/lua-rds-parser>` to work with this module. See `Output Format`_ for details.
 
@@ -213,7 +213,7 @@ drizzle_query
 
 Specify the SQL queries sent to the Drizzle/MySQL backend.
 
-Nginx variable interpolation is supported, but you must be careful with SQL injection attacks. You can use the ``set_quote_sql_str`` directive, for example, to quote values for SQL interpolation:
+NGINX variable interpolation is supported, but you must be careful with SQL injection attacks. You can use the ``set_quote_sql_str`` directive, for example, to quote values for SQL interpolation:
 
 .. code-block:: nginx
 
@@ -235,7 +235,7 @@ drizzle_pass
 
 This directive specifies the Drizzle or MySQL upstream name to be queried in the current location. The ``<remote>`` argument can be any upstream name defined with the `drizzle_server`_ directive.
 
-Nginx variables can also be interpolated into the ``<remote>`` argument, so as to do dynamic backend routing, for example:
+NGINX variables can also be interpolated into the ``<remote>`` argument, so as to do dynamic backend routing, for example:
 
 .. code-block:: nginx
 
@@ -326,7 +326,7 @@ drizzle_status
 :Context: *location, location if*
 :Phase: *content*
 
-When specified, the current Nginx location will output a status report for all the drizzle upstream servers in the virtual server of the current Nginx worker process.
+When specified, the current NGINX location will output a status report for all the drizzle upstream servers in the virtual server of the current NGINX worker process.
 
 The output looks like this:
 
@@ -351,13 +351,13 @@ The output looks like this:
     servers: 1
     peers: 1
 
-.. note:: This is *not* the global statistics if you do have multiple Nginx worker processes configured in your ``nginx.conf``.
+.. note:: This is *not* the global statistics if you do have multiple NGINX worker processes configured in your ``nginx.conf``.
 
 
 
 Variables
 ---------
-This module creates the following Nginx variables:
+This module creates the following NGINX variables:
 
 $drizzle_thread_id
 ^^^^^^^^^^^^^^^^^^
@@ -400,7 +400,7 @@ Here's an example:
     '
   }
 
-where we make use of :doc:`headers_more`, :doc:`lua`, and `HttpRdsJsonModule <openresty/rds-json-nginx-module>` too. When the SQL query timed out, we'll explicitly cancel it immediately. One pitfall here is that you have to add these modules in this order while building Nginx:
+where we make use of :doc:`headers_more`, :doc:`lua`, and `HttpRdsJsonModule <openresty/rds-json-nginx-module>` too. When the SQL query timed out, we'll explicitly cancel it immediately. One pitfall here is that you have to add these modules in this order while building NGINX:
 
 * :doc:`lua`
 * :doc:`headers_more`
@@ -412,7 +412,7 @@ Such that, their output filters will work in the *reversed* order, i.e., first c
 
 Output Format
 -------------
-This module generates binary query results in a format that is shared among the various Nginx database driver modules like :github:`ngx_postgres <FRiCKLE/ngx_postgres/>`. This data format is named ``Resty DBD Stream`` (RDS).
+This module generates binary query results in a format that is shared among the various NGINX database driver modules like :github:`ngx_postgres <FRiCKLE/ngx_postgres/>`. This data format is named ``Resty DBD Stream`` (RDS).
 
 If you're a web app developer, you may be more interested in
 
@@ -515,7 +515,7 @@ The Fields Data consists zero or more fields of data. The field count is predete
 
 RDS buffer Limitations
 ^^^^^^^^^^^^^^^^^^^^^^
-On the nginx output chain link level, the following components should be put into a single ``ngx_buf_t`` struct:
+On the NGINX output chain link level, the following components should be put into a single ``ngx_buf_t`` struct:
 
 * the header
 * each column and the column list terminator
@@ -582,7 +582,7 @@ You're recommended to install this module as well as :github:`HttpRdsJsonModule 
 
 The installation steps are usually as simple as ``./configure --with-http_drizzle_module && make && make install`` (But you still need to install the libdrizzle library manually, see http://openresty.org/#DrizzleNginxModule for detailed instructions.
 
-Alternatively, you can compile this module with Nginx core's source by hand:
+Alternatively, you can compile this module with NGINX core's source by hand:
 
 1. You should first install libdrizzle 1.0 which is now distributed with the drizzle project and can be obtained from `https://launchpad.net/drizzle <https://launchpad.net/drizzle>`_. The latest drizzle7 release does not support building libdrizzle 1.0 separately and requires a lot of external dependencies like Boost and Protobuf which are painful to install. The last version supporting building libdrizzle 1.0 separately is ``2011.07.21``. You can download it from http://openresty.org/download/drizzle7-2011.07.21.tar.gz . Which this version of drizzle7, installation of libdrizzle 1.0 is usually as simple as
   
@@ -607,7 +607,7 @@ Alternatively, you can compile this module with Nginx core's source by hand:
   You can fix this by pointing ``python`` to ``python2``.
   
 2. Download the latest version of the release tarball of this module from drizzle-nginx-module :github:`file list <openresty/drizzle-nginx-module/tags>`
-3. Grab the nginx source code from `nginx.org <http://nginx.org/>`_, for example, the version 1.7.7 (see `nginx compatibility <drizzle.compatibility_>`_), and then build the source with this module:
+3. Grab the NGINX source code from `nginx.org <http://nginx.org/>`_, for example, the version 1.7.7 (see `NGINX compatibility <drizzle.compatibility_>`_), and then build the source with this module:
 
   .. code-block:: bash
 
@@ -640,7 +640,7 @@ If you're using MySQL, then MySQL ``5.0 ~ 5.5`` is required. We're not sure if M
 
 This module has been tested on Linux and Mac OS X. Reports on other POSIX-compliant systems will be highly appreciated.
 
-The following versions of Nginx should work with this module:
+The following versions of NGINX should work with this module:
 
 * 1.7.x (last tested: 1.7.7)
 * 1.6.x
@@ -653,9 +653,9 @@ The following versions of Nginx should work with this module:
 * 0.8.x (last tested: 0.8.55)
 * 0.7.x >= 0.7.44 (last tested version is 0.7.67)
 
-Earlier versions of Nginx like ``0.6.x`` and ``0.5.x`` will *not* work.
+Earlier versions of NGINX like ``0.6.x`` and ``0.5.x`` will *not* work.
 
-If you find that any particular version of Nginx above ``0.7.44`` does not work with this module, please consider reporting a bug.
+If you find that any particular version of NGINX above ``0.7.44`` does not work with this module, please consider reporting a bug.
 
 
 
@@ -701,7 +701,7 @@ To run it on your side:
 
   $ PATH=/path/to/your/nginx-with-echo-module:$PATH prove -r t
 
-Because a single nginx server (by default, ``localhost:1984``) is used across all the test scripts (``.t`` files), it's meaningless to run the test suite in parallel by specifying ``-jN`` when invoking the ``prove`` utility.
+Because a single NGINX server (by default, ``localhost:1984``) is used across all the test scripts (``.t`` files), it's meaningless to run the test suite in parallel by specifying ``-jN`` when invoking the ``prove`` utility.
 
 
 

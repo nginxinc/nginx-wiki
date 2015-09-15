@@ -7,9 +7,9 @@ Substitutions
 
 Description
 -----------
-**nginx_substitutions_filter** - a filter module which can do both regular expression and fixed string substitutions on response bodies. This module is quite different from the Nginx's native Substitution Module. It scans the output chains buffer and matches string line by line, just like Apache's `mod_substitute <http://httpd.apache.org/docs/trunk/mod/mod_substitute.html>`_.
+**nginx_substitutions_filter** - a filter module which can do both regular expression and fixed string substitutions on response bodies. This module is quite different from the NGINX's native Substitution Module. It scans the output chains buffer and matches string line by line, just like Apache's `mod_substitute <http://httpd.apache.org/docs/trunk/mod/mod_substitute.html>`_.
 
-.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions <substitutions.installation_>`_.
+.. note:: *This module is not distributed with the NGINX source.* See the `installation instructions <substitutions.installation_>`_.
 
 
 
@@ -55,7 +55,7 @@ subs_filter
 :Default: *g*
 :Context: *http, server, location*
 
-subs_filter_ allows replacing source string (regular expression or fixed) in the nginx response with
+subs_filter_ allows replacing source string (regular expression or fixed) in the NGINX response with
 destination string. Substitution text may contain variables. More than one substitution rules per
 location is supported. The meaning of the third flags are:
 
@@ -77,7 +77,7 @@ To install, get the source with subversion:
   git clone git://github.com/yaoweibin/ngx_http_substitutions_filter_module.git
 
 
-and then compile nginx with the following option:
+and then compile NGINX with the following option:
 
 .. code-block:: bash
 
@@ -102,7 +102,7 @@ Changelog
 
 - refactored the source structure, create branches of dev
 - fixed a bug of small chunk of buffers causing lose content
-- fixed the bug of last_buf and the nginx's compatibility above 0.8.25
+- fixed the bug of last_buf and the NGINX's compatibility above 0.8.25
 - fixed a bug with unwanted capture config error in fix string substitution
 - added feature of regex captures
 

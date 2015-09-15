@@ -1,18 +1,18 @@
 
 .. meta::
-   :description: The Nginx Upload Progress module is an implementation of an upload progress system, that monitors RFC1867 POST uploads as they are transmitted to upstream servers.
+   :description: The NGINX Upload Progress module is an implementation of an upload progress system, that monitors RFC1867 POST uploads as they are transmitted to upstream servers.
 
-Nginx Upload Progress Module
+NGINX Upload Progress Module
 ============================
 
 **nginx_uploadprogress_module** - an implementation of an upload progress
 system, that monitors RFC1867 POST upload as they are transmitted to
 upstream servers.
 
-It works by tracking the uploads proxied by Nginx to upstream servers
+It works by tracking the uploads proxied by NGINX to upstream servers
 without analysing the uploaded content and offers a web API to report
 upload progress in Javascript, JSON or configurable format. It works
-because Nginx acts as an accelerator of an upstream server, storing
+because NGINX acts as an accelerator of an upstream server, storing
 uploaded POST content on disk, before transmitting it to the upstream
 server. Each individual POST upload request should contain a progress
 unique identifier.
@@ -20,7 +20,7 @@ unique identifier.
 The JSON and mechanism idea are based on `Lighttpd's
 mod_uploadprogress <http://blog.lighttpd.net/articles/2006/08/01/mod_uploadprogress-is-back>`__
 
-.. note:: This module is not distributed with the Nginx source.
+.. note:: This module is not distributed with the NGINX source.
 
 
 Downloads
@@ -54,7 +54,7 @@ Downloads
 Installation
 ============
 
-After extracting, add the following option to your Nginx ``./configure``
+After extracting, add the following option to your NGINX ``./configure``
 command:
 
 .. code-block:: bash
@@ -98,7 +98,7 @@ track\_uploads
 
 This directive enables tracking uploads for the current location. Each
 POST landing in this location will register the request in the
-*zone\_name* upload progress tracker. Since Nginx doesn't support yet
+*zone\_name* upload progress tracker. Since NGINX doesn't support yet
 RFC 1867 upload, the location must be a proxy\_pass or fastcgi location.
 The POST *must* have a query parameter called *X-Progress-ID* (or an
 HTTP header of the same name) whose value is the unique identifier used
@@ -215,7 +215,7 @@ available list of state is:
 -  *error*
 -  *done*
 
-Nginx will replace the value of the following variables with their
+NGINX will replace the value of the following variables with their
 respective value for the upload:
 
 -  *$uploadprogress\_length:* total size of the upload
@@ -365,7 +365,7 @@ submit action. This also will start the ajax progress report mechanism.
 Usage with jQuery Upload Progress
 =================================
 
-You can use jQuery plugin to work with Nginx upload-progress-module -
+You can use jQuery plugin to work with NGINX upload-progress-module -
 https://github.com/drogus/jquery-upload-progress (based on it's
 documentation).
 
@@ -476,7 +476,7 @@ Defaults:
 Companion Software
 ==================
 
-This software can also work with Valery Kholodkov' Nginx Upload Module:
+This software can also work with Valery Kholodkov' NGINX Upload Module:
 http://www.grid.net.ru/nginx/upload.en.html
 
 You can also use the following javascript libraries client side:

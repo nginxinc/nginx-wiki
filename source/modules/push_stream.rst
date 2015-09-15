@@ -7,13 +7,13 @@ HTTP Push Stream
 
 Description
 -----------
-**nginx-push-stream-module** - A pure stream http push technology for your Nginx setup.
+**nginx-push-stream-module** - A pure stream http push technology for your NGINX setup.
 
 Comet made easy and **really scalable**.
 
 Available on github at :github:`nginx-push-stream-module <wandenberg/nginx-push-stream-module>`
 
-.. note:: *This module is not distributed with the Nginx source.* See the `installation instructions <push_stream.installation_>`_.
+.. note:: *This module is not distributed with the NGINX source.* See the `installation instructions <push_stream.installation_>`_.
 
 
 
@@ -78,7 +78,7 @@ Or you may do by yourself:
   git clone http://github.com/wandenberg/nginx-push-stream-module.git
   NGINX_PUSH_STREAM_MODULE_PATH=$PWD/nginx-push-stream-module
 
-  # get desired nginx version (works with 1.0.x, 0.9.x, 0.8.x series)
+  # get desired NGINX version (works with 1.0.x, 0.9.x, 0.8.x series)
   wget http://nginx.org/download/nginx-1.0.5.tar.gz
 
   # unpack, configure and build
@@ -366,7 +366,7 @@ push_stream_shared_memory_cleanup_objects_ttl
 The length of time a message or a channel will stay on garbage collection area 
 before it is completly discarded, freeing the shared memory. The minimum length 
 is 30 seconds to ensure that no one is using these elements.
-This operation is very important to help Nginx recycle memory consumed to 
+This operation is very important to help NGINX recycle memory consumed to 
 create messages and channels, so do not use a large time.
 
 
@@ -462,7 +462,7 @@ push_stream_subscriber_connection_ttl
 The length of time a subscriber will stay connected before it is considered 
 expired and disconnected. If you do not want subscribers to be automatically 
 disconnected, just not set this directive.
-But, this operation is very important to help Nginx recycle memory consumed 
+But, this operation is very important to help NGINX recycle memory consumed 
 to send messages to susbscriber, allocated at pool request.
 
 
@@ -621,7 +621,7 @@ subscribers.
 Attention
 ---------
 This module controls everything needed to send the messages to subscribers.
-So it disable Nginx’s chuncked filter to reduce memory consumption in streaming 
+So it disable NGINX’s chuncked filter to reduce memory consumption in streaming 
 connections.
 
 
@@ -688,7 +688,7 @@ and can combine any of these parameters, like:
 
 Discussion
 ----------
-Nginx Push Stream Module 
+NGINX Push Stream Module 
 `Discussion Group <https://groups.google.com/forum/#!forum/nginxpushstream>`_
 
 

@@ -7,9 +7,9 @@ Slice
 
 Synopsis 
 --------
-This is a module that is distributed with `Tengine <http://tengine.taobao.org>`_ which is a distribution of Nginx that is used by the e-commerce/auction site `Taobao.com <https://en.wikipedia.org/wiki/Taobao>`_. This distribution contains some modules that are new on the Nginx scene. The ``ngx_http_slice_module`` module is one of them.
+This is a module that is distributed with `Tengine <http://tengine.taobao.org>`_ which is a distribution of NGINX that is used by the e-commerce/auction site `Taobao.com <https://en.wikipedia.org/wiki/Taobao>`_. This distribution contains some modules that are new on the NGINX scene. The ``ngx_http_slice_module`` module is one of them.
 
-This module can be thought out as a **reverse byte-range** request header. It's main utility is to allow Nginx to slice a big file in small pieces (byte-ranges) while permitting to use on-the-fly gzip compression.
+This module can be thought out as a **reverse byte-range** request header. It's main utility is to allow NGINX to slice a big file in small pieces (byte-ranges) while permitting to use on-the-fly gzip compression.
 
 A typical example is for allowing someone to download a large video file while keeping the bandwith usage minimal. This might also be used as device for selling a video file by pieces where each link points to different zones of the file splitted by file ranges.
 
@@ -81,7 +81,7 @@ slice_header
 :Default: *none*
 :Context: *http, server, location*
 
-Defines the string to be used as the *header* of each slice being served by Nginx.
+Defines the string to be used as the *header* of each slice being served by NGINX.
 
 
 slice_footer
@@ -90,7 +90,7 @@ slice_footer
 :Default: *none*
 :Context: *http, server, location*
 
-Defines the string to be used as the *footer* of each slice being served by Nginx.
+Defines the string to be used as the *footer* of each slice being served by NGINX.
 
 
 slice_header_first
@@ -194,8 +194,8 @@ Installation
 
      --add-module=/path/to/nginx-http-slice
    
-#. Build the nginx binary.
-#. Install the nginx binary.
+#. Build the NGINX binary.
+#. Install the NGINX binary.
 #. Configure contexts where concat is enabled.
 #. Build your links such that the above format, i.e., all URIs that correspond to specific ranges. As example here's how to link to the first 4k of a file:
 
@@ -224,8 +224,8 @@ Other tengine modules on Github
 
 Other builds
 ------------
-* As referred at the outset this module is part of the `*Tengine* <http://tengine.taobao.org>`_ Nginx distribution. So you might want to save yourself some work and just build it from scratch using *tengine* in lieu if the official Nginx source.
-* If you fancy a bleeding edge Nginx package (from the dev releases) for Debian made to measure then you might be interested in my `debian <http://debian.perusio.net/unstable>`_ Nginx package. Instructions for using the repository and making the package live happily inside a stable distribution installation are `provided <http://debian.perusio.net>`_.
+* As referred at the outset this module is part of the `*Tengine* <http://tengine.taobao.org>`_ NGINX distribution. So you might want to save yourself some work and just build it from scratch using *tengine* in lieu if the official NGINX source.
+* If you fancy a bleeding edge NGINX package (from the dev releases) for Debian made to measure then you might be interested in my `debian <http://debian.perusio.net/unstable>`_ NGINX package. Instructions for using the repository and making the package live happily inside a stable distribution installation are `provided <http://debian.perusio.net>`_.
 
 
 

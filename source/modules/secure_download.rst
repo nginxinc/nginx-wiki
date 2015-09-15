@@ -69,8 +69,8 @@ the md5 hash gets generated out of the following string::
 
   <real_path>/<secret (user supplied)>/<expiration_timestamp>
 
-* ``real_path`` can be either the path of the file which you want to access or the folder which contains the file, which of those two has to be defined in the nginx config
-* ``secret`` is some random string which must be known by the nginx config and by the link generating script
+* ``real_path`` can be either the path of the file which you want to access or the folder which contains the file, which of those two has to be defined in the NGINX config
+* ``secret`` is some random string which must be known by the NGINX config and by the link generating script
 * ``expiration_timestamp`` is a unix_timestamp (seconds since beginning of 1970) in hexadecimal forma
 
 
@@ -80,7 +80,7 @@ Lets say you have a file in your document root under the path ``/somefolder/prot
 
 * Get the current timestamp, for example from http://www.unixtimestamp.com/index.php. In this example our timestamp would be ``1240928342``
 * Convert the timestamp into hex, like for example https://www.easycalculation.com/decimal-converter.php does. Our timestamp in hex is ``49F71056``
-* Now you need to decide for a secret string. It needs to be set in the nginx config with the parameter secure_download_secret_. For example "privatestring"
+* Now you need to decide for a secret string. It needs to be set in the NGINX config with the parameter secure_download_secret_. For example "privatestring"
 * Then you put the following string together ``/somefolder/protected.html/privatestring/49F71056`` which consists of ``<real path/secret string/timestamp in hex``
 * Now you need to create an md5 hash of that string which we put together. The resulting md5 should be ``f901b5272c17b456fabf49c3e9bcc120``
 * ok, you got everything you need, now you just have to put it together in the format ``<real_path>/<md5>/<timestamp>`` in our example this would look like ``/somefolder/protected.html/f901b5272c17b456fabf49c3e9bcc120/49F71056``
@@ -142,11 +142,11 @@ OR:
 
 Requirements
 ------------
-To compile the nginx with this module you will need to have following:
+To compile the NGINX with this module you will need to have following:
 
-- The mod_rewrite in the nginx has to be enabled
+- The mod_rewrite in the NGINX has to be enabled
 - You need the mhash library, it is used by the secure-download module to create the md5 hashes
-- I tested the module only with nginx 0.7.61 and 0.8.33, no guarantee for other versions
+- I tested the module only with NGINX 0.7.61 and 0.8.33, no guarantee for other versions
 
 
 

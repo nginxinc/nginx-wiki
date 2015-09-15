@@ -5,7 +5,7 @@
 Audio Track for HTTP Live Streaming
 ===================================
 
-This nginx module generates audio track for hls streams on the fly.
+This NGINX module generates audio track for hls streams on the fly.
 
 Available on :github:`GitHub <flavioribeiro/nginx-audio-track-for-hls-module>`
 
@@ -14,12 +14,12 @@ Why?
 
 Apple HTTP Live Streaming (HLS) has being adopted for almost all video stream players, and one of their recommendations is to serve an audio-only track to users that have experiencing bad bandwidth connections.
 
-This module aims to serve audio-only track directly on nginx, without the necessity to pre-demux the stream on Video On Demand (VoD) scenarios or the overhead and occupation of one stream output on the encoder side for live streams.
+This module aims to serve audio-only track directly on NGINX, without the necessity to pre-demux the stream on Video On Demand (VoD) scenarios or the overhead and occupation of one stream output on the encoder side for live streams.
 
 How?
 ----
 
-Using a combination of nginx locations with simple scripts written in Lua and this module, it's possible to generate the entire audio track on Nginx. Look at how things are done.
+Using a combination of NGINX locations with simple scripts written in Lua and this module, it's possible to generate the entire audio track on NGINX. Look at how things are done.
 
 A viewer requests the master playlist, and the response is modified. A simple lua script gets the first stream of the list and add an audio-playlist at the end:
 
@@ -104,14 +104,14 @@ Follow the steps:
 
     $ git clone git://github.com/chaoslawful/lua-nginx-module.git
 
-* Download nginx and compile it using both modules:
+* Download NGINX and compile it using both modules:
 
   .. code-block:: bash
 
     $ ./configure --add-module=/path/to/nginx-audio-track-for-hls-module --add-module=/path/to/lua-nginx-module
     $ make install
 
-Now you can look at our :github:`nginx configuration example <flavioribeiro/nginx-audio-track-for-hls-module/blob/master/nginx.conf>` and make your changes. Have fun!
+Now you can look at our :github:`NGINX configuration example <flavioribeiro/nginx-audio-track-for-hls-module/blob/master/nginx.conf>` and make your changes. Have fun!
 
 .. warning::
 

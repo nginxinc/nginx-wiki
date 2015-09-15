@@ -8,18 +8,18 @@ Zip
 Description
 -----------
 
-**mod_zip** - an HTTP module for nginx that assembles ZIP archives dynamically. In simple configurations, mod_zip will take a list of files on the local file system and serve them as a single ZIP archive. In more complex setups, mod_zip can stream component files from upstream servers with nginx's native proxying code. Unlike many ZIP creation scripts, the process never takes up more than a few KB of RAM at time, even while assembling archives that are (potentially) hundreds of megabytes.
+**mod_zip** - an HTTP module for NGINX that assembles ZIP archives dynamically. In simple configurations, mod_zip will take a list of files on the local file system and serve them as a single ZIP archive. In more complex setups, mod_zip can stream component files from upstream servers with NGINX's native proxying code. Unlike many ZIP creation scripts, the process never takes up more than a few KB of RAM at time, even while assembling archives that are (potentially) hundreds of megabytes.
 
 Installation
 ------------
 
-To install, download the source tarball, expand it, and then compile nginx with the following option:
+To install, download the source tarball, expand it, and then compile NGINX with the following option:
 
 .. code-block:: bash
 
   --add-module=/path/to/mod_zip-1.x
 
-nginx 0.7.25 or greater is required.
+NGINX 0.7.25 or greater is required.
 
 Usage
 -----
@@ -78,10 +78,10 @@ Changelog
 ^^^
 
 * 1.1.6: Features: Zip64 for large archives, serial subrequests, UTF-8 filenames. Bugfix: Allow spaces in URLs.
-* 1.1.5: Features: "If-Range" support, Range support with local files. Bugfix: nginx 0.7.25 compatibility.
+* 1.1.5: Features: "If-Range" support, Range support with local files. Bugfix: NGINX 0.7.25 compatibility.
 * 1.1.4: Feature: Range end is optional (e.g. "bytes=0-"). Bugfix: compilation error on FreeBSD.
 * 1.1.3: Feature: optional CRC-32's. Bugfix: support BOMArchiveHelper.app on Mac OS X. Bugfix: occasional crash when file returned 404.
-* 1.1.2: Bugfix: Compilation error with nginx 0.6 series.
+* 1.1.2: Bugfix: Compilation error with NGINX 0.6 series.
 * 1.1.1: Bugfix: Compilation error on certain platforms.
 * 1.1.0: Feature: Full byte-range support. Change: New file list syntax.
 

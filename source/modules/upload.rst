@@ -19,7 +19,7 @@ Get it from :github:`GitHub <vkholodkov/nginx-upload-module/tree/2.2>`
 
 Installation
 ------------
-After extracting, add the following option to your Nginx ./configure command:
+After extracting, add the following option to your NGINX ./configure command:
 
 .. code-block:: bash
 
@@ -55,7 +55,7 @@ upload_store
 :Default: *none*
 :Context: *server,location*
 
-Specifies a directory to which output files will be saved to. The directory could be hashed. In this case all subdirectories should exist before starting nginx.
+Specifies a directory to which output files will be saved to. The directory could be hashed. In this case all subdirectories should exist before starting NGINX.
 
 
 
@@ -65,7 +65,7 @@ upload_state_store
 :Default: *none*
 :Context: *server,location*
 
-Optional. Specifies a directory that will contain state files for resumable uploads. The directory could be hashed. In this case all subdirectories should exist before starting nginx.
+Optional. Specifies a directory that will contain state files for resumable uploads. The directory could be hashed. In this case all subdirectories should exist before starting NGINX.
 
 
 
@@ -108,7 +108,7 @@ upload_aggregate_form_field
 :Default: *none*
 :Context: *server,location*
 
-Optional. Specifies a form field(s) containing aggregate attributes to generate for each uploaded file in request body passed to backend. Both name and value could contain standard nginx variables, variables from upload_set_form_field directive and following additional special variables:
+Optional. Specifies a form field(s) containing aggregate attributes to generate for each uploaded file in request body passed to backend. Both name and value could contain standard NGINX variables, variables from upload_set_form_field directive and following additional special variables:
 * $upload_file_md5 -- MD5 checksum of the file
 * $upload_file_md5_uc -- MD5 checksum of the file in uppercase letters
 * $upload_file_sha1 -- SHA1 checksum of the file
@@ -196,7 +196,7 @@ upload_max_file_size
 :Default: *none*
 :Context: *server,location*
 
-Specifies maximal size of the file. Files longer than the value of this directive will be omitted. This directive specifies "soft" limit, in the sense, that after encountering file longer than specified limit, nginx will continue to process request body, trying to receive remaining files. For "hard" limit client_max_body_size directive must be used. The value of zero for this directive specifies that no restrictions on file size should be applied.
+Specifies maximal size of the file. Files longer than the value of this directive will be omitted. This directive specifies "soft" limit, in the sense, that after encountering file longer than specified limit, NGINX will continue to process request body, trying to receive remaining files. For "hard" limit client_max_body_size directive must be used. The value of zero for this directive specifies that no restrictions on file size should be applied.
 
 
 

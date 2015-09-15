@@ -7,7 +7,7 @@ Upstream Consistent Hash
 
 Description
 -----------
-**ngx_http_upstream_consistent_hash** - a load balancer that uses an internal consistent hash ring to select the right backend node. It is designed to be compatible with ``memcache.hash_strategy = consistent`` of the *php-memcache* module. This means you can store values into a memcached cluster using the *php-memcache* module, and later Nginx can find that value in the cluster and read it from there.
+**ngx_http_upstream_consistent_hash** - a load balancer that uses an internal consistent hash ring to select the right backend node. It is designed to be compatible with ``memcache.hash_strategy = consistent`` of the *php-memcache* module. This means you can store values into a memcached cluster using the *php-memcache* module, and later NGINX can find that value in the cluster and read it from there.
 
 
 
@@ -61,7 +61,7 @@ This parameter has to be inside the upstream definition. It turns on the consist
   }
     
 
-This example uses three backend servers. On initialization Nginx will create a hashring which contains each server (160 * weight) times in the same way as the *php-memcache* module with ``hash_strategy = consistent`` does. Based on a hash of ``$request_uri`` it will decide which backend server has to be used. Now the ``test.php`` script from the above example could look like following:
+This example uses three backend servers. On initialization NGINX will create a hashring which contains each server (160 * weight) times in the same way as the *php-memcache* module with ``hash_strategy = consistent`` does. Based on a hash of ``$request_uri`` it will decide which backend server has to be used. Now the ``test.php`` script from the above example could look like following:
 
 .. code-block:: php
 
@@ -77,9 +77,9 @@ This example uses three backend servers. On initialization Nginx will create a h
 
 Important to know
 -----------------
-* I tested with the PHP memcache module version 1.2.8. It seems that the module in this version has a bug which causes it to completely ignore the weight if *hash_strategy* is set to consistent_hash. The Nginx consistent hash upstream knows the weight parameter, but if you use it together with memcache   module 1.2.8 you shouldn't touch the weight for any backend server.
+* I tested with the PHP memcache module version 1.2.8. It seems that the module in this version has a bug which causes it to completely ignore the weight if *hash_strategy* is set to consistent_hash. The NGINX consistent hash upstream knows the weight parameter, but if you use it together with memcache   module 1.2.8 you shouldn't touch the weight for any backend server.
   
-* I tested the module with Nginx 0.7.61 and 0.6.34, no guarantee for other versions
+* I tested the module with NGINX 0.7.61 and 0.6.34, no guarantee for other versions
 
 
 
@@ -95,6 +95,6 @@ Mail: mauro.stettler(A.T)gmail.com
 
 Download
 --------
-On github I have to branches "master" and "dns". The reason for this is that if you want to use DNS entries on the PHP side, instead of IPs, you will need to apply a patch to the Nginx to make this work. So if your PHP does not use DNS names to connect to memcache, its nicer to download the "master" branch, because this is a clean module. If your PHP uses DNS names, you have to download the "dns" branch, which includes a patch for Nginx.
+On github I have to branches "master" and "dns". The reason for this is that if you want to use DNS entries on the PHP side, instead of IPs, you will need to apply a patch to the NGINX to make this work. So if your PHP does not use DNS names to connect to memcache, its nicer to download the "master" branch, because this is a clean module. If your PHP uses DNS names, you have to download the "dns" branch, which includes a patch for NGINX.
 
 :github:`Download from GitHub <replay/ngx_http_consistent_hash>`
