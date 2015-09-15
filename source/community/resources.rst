@@ -17,15 +17,15 @@ Developer Resources
 
 English Guides
 --------------
-* `EMiller's Guide to Nginx Module Development <http://www.evanmiller.org/nginx-modules-guide.html>`_ (Evan Miller)
-* `EMiller's Advanced Topics In Nginx Module Development <http://www.evanmiller.org/nginx-modules-guide-advanced.html>`_ (Evan Miller and Grzegorz Nosek)
+* `EMiller's Guide to NGINX Module Development <http://www.evanmiller.org/nginx-modules-guide.html>`_ (Evan Miller)
+* `EMiller's Advanced Topics In NGINX Module Development <http://www.evanmiller.org/nginx-modules-guide-advanced.html>`_ (Evan Miller and Grzegorz Nosek)
 * Slides of agentzh's `Introduction to nginx.conf scripting <http://agentzh.org/misc/slides/nginx-conf-scripting/>`_ talk in Beijing (use arrow keys to navigate)
 * Slides of agentzh's `Recent developments in nginx.conf scripting <http://agentzh.org/misc/slides/recent-dev-nginx-conf/>`_ talk in Beijing (use arrow keys to navigate)
-* Slides of Joshua Zhu's `Nginx Internals <http://www.slideshare.net/joshzhu/nginx-internals>`_ talk in Guangzhou
+* Slides of Joshua Zhu's `NGINX Internals <http://www.slideshare.net/joshzhu/nginx-internals>`_ talk in Guangzhou
 * `NGINX source code cross-reference <http://lxr.evanmiller.org/http/source/>`_
 * `nginx-devel mailing list archive <http://mailman.nginx.org/pipermail/nginx-devel/>`_
 * `"nginx" chapter in The Architecture of Open Source Applications Volume II <http://www.aosabook.org/en/nginx.html>`_
-* `"Nginx Secure Web Server" how-to at calomel.org <https://calomel.org/nginx.html>`_
+* `"NGINX Secure Web Server" how-to at calomel.org <https://calomel.org/nginx.html>`_
 * Notes about :doc:`../start/topics/examples/headers_management`
 
 
@@ -46,7 +46,7 @@ Chinese Guides
 --------------
 * `NGINX Variable Tutorials <http://blog.sina.com.cn/openresty>`_ by `agentzh <http://agentzh.org>`_
 * `NginxCodeReview <http://code.google.com/p/nginxsrp/wiki/NginxCodeReview>`_ by chaoslawful and rainx
-* `Chinese version of "Emiller's Guide to Nginx Module Development" <http://code.google.com/p/emillers-guide-to-nginx-module-chn/>`_
+* `Chinese version of "Emiller's Guide to NGINX Module Development" <http://code.google.com/p/emillers-guide-to-nginx-module-chn/>`_
 
 ..
    Dead links now
@@ -62,20 +62,20 @@ Other Resources
 
 ..
    Geo database is no longer downloadable from WIP Mania
-   * `Geolocation database for Nginx in CIDR format (countries by IP) <http://www.wipmania.com/en/base/>`_ 
+   * `Geolocation database for NGINX in CIDR format (countries by IP) <http://www.wipmania.com/en/base/>`_ 
 
-* `Experiment to automatically convert Apache rewrites to Nginx rewrites <http://www.anilcetin.com/convert-apache-htaccess-to-nginx/>`_
+* `Experiment to automatically convert Apache rewrites to NGINX rewrites <http://www.anilcetin.com/convert-apache-htaccess-to-nginx/>`_
 * `Parsing PHP sessions in NGINX <http://mauro-stettler.blogspot.com/2011/06/php-session-parser-in-production.html>`_
 * `PyMunin - Multigraph Munin Plugins in Python <http://aouyar.github.io/PyMunin/>`_ - PyMunin includes a Multigraph Munin Plugin for monitoring NGINX using http_stub_status module. Graphs active connections, connection rate, request rate, and average requests per connection.
 * :doc:`why_use_it`
 
 ..
    Dead links now
-   * `Nginx and Memcached, a 400% boost! <https://www.igvita.com/2008/02/11/nginx-and-memcached-a-400-boost/>`_
-   * `nWeb Script - Easy installer script for Debian / Ubuntu <http://thehook.eu/tools/nweb/>`_ (Installs nginx, with PHP support and MySQL)
-   * `Intellij IDEA plugin for integration with nginx <http://code.google.com/p/idea-nginx/>`_
-   * `Unofficial Debian repository with the latest Nginx release <http://debian.perusio.net>`_
-   * `Nginx vs Apache <http://www.joeandmotorboat.com/2008/02/28/apache-vs-nginx-web-server-performance-deathmatch/>`_
-   * `ISPConfig support for Nginx <http://www.howtoforge.com/forums/showthread.php?p=161742>`_
-   * `Latest bug reports about nginx found by bugspy.net <http://bugspy.net/search/?q=nginx>`_
-   * `Using nginx as reverse-proxy <http://paulohiga.com/posts/nginx-proxy-reverso-php-apache.php>`_
+   * `NGINX and Memcached, a 400% boost! <https://www.igvita.com/2008/02/11/nginx-and-memcached-a-400-boost/>`_
+   * `nWeb Script - Easy installer script for Debian / Ubuntu <http://thehook.eu/tools/nweb/>`_ (Installs NGINX, with PHP support and MySQL)
+   * `Intellij IDEA plugin for integration with NGINX <http://code.google.com/p/idea-nginx/>`_
+   * `Unofficial Debian repository with the latest NGINX release <http://debian.perusio.net>`_
+   * `NGINX vs Apache <http://www.joeandmotorboat.com/2008/02/28/apache-vs-nginx-web-server-performance-deathmatch/>`_
+   * `ISPConfig support for NGINX <http://www.howtoforge.com/forums/showthread.php?p=161742>`_
+   * `Latest bug reports about NGINX found by bugspy.net <http://bugspy.net/search/?q=nginx>`_
+   * `Using NGINX as reverse-proxy <http://paulohiga.com/posts/nginx-proxy-reverso-php-apache.php>`_
