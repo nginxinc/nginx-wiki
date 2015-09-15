@@ -485,7 +485,13 @@
 <!-- /#page -->
 <script type="text/javascript" src="{{ pathto('_static/nginx-theme.js', 1) }}?ver=20150911"></script>
 <!-- End Piwik Code -->
-
+<script type="text/javascript">
+var shiftWindow = function() { window.scrollBy(0, -80) };
+// Timeout to push the scrollBy to the bottom of the queue, otherwise it breaks in IE and Chrome
+var testWindow = function() { if (!!window.location.hash) setTimeout(function(){ shiftWindow(); }, 1); };
+window.addEventListener("load", testWindow);
+window.addEventListener("hashchange", shiftWindow);
+</script>
 {%- endblock %}
   </body>
 </html>
