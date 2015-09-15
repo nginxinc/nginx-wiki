@@ -5,7 +5,7 @@
 Redmine
 =======
 
-Redmine is seemingly complex. It is. However, when it comes to Nginx, it isn't.
+Redmine is seemingly complex. It is. However, when it comes to NGINX, it isn't.
 
 Recipe
 ------

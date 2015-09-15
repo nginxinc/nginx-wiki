@@ -24,11 +24,11 @@ Assuming your sites are organised as::
 
 and you have placed the pid (and socket) file(s) in a ``RUNFILES_PATH`` folder (like in the script in the above link).
 
-Nginx configuration
+NGINX configuration
 -------------------
 
 Put this configuration in your nginx.conf file (or in a ``sites-{available/enabled}/`` conf file if you want to use the "include" instruction).
-It was working immediately with the default configuration from my Ubuntu Karmic, using the ubuntu repository version of Nginx (which provides ``/etc/init.d/nginx stop|start|restart``).
+It was working immediately with the default configuration from my Ubuntu Karmic, using the ubuntu repository version of NGINX (which provides ``/etc/init.d/NGINX stop|start|restart``).
 
 .. code-block:: nginx
 
@@ -109,7 +109,7 @@ From the "sites" folder:
 
    $ sudo spawn --factory=spawning.django_factory.config_factory siteYY.settings --port={PORT NUMBER}
 
-Nginx settings
+NGINX settings
 ^^^^^^^^^^^^^^
 
 We just configure it as a proxy to the port defined in spawn.
@@ -129,10 +129,10 @@ The location directive is now (the rest being the same as in the section Django 
         # proxy_set_header X-Forwarded-For $remote_addr;
     }
 
-Django + FastCGI + Nginx on RHEL4
+Django + FastCGI + NGINX on RHEL4
 ---------------------------------
 
-install nginx
+install NGINX
 ^^^^^^^^^^^^^
 
 .. code-block:: bash
@@ -151,7 +151,7 @@ install nginx
     $ make
     $ sudo make install
 
-nginx configuration
+NGINX configuration
 ^^^^^^^^^^^^^^^^^^^
 
 This example is overly complicated and needs to be cleaned up.
@@ -278,7 +278,7 @@ stop
 
    kill -9 `cat {project_location}/log/django.pid`
 
-nginx frontend
+NGINX frontend
 --------------
 
 start

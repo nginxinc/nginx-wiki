@@ -118,7 +118,7 @@ There are internal links as well as external links that are possible.
 
    .. _reference-location:
 
-   `Nginx Website <https://www.nginx.com/>`_
+   `NGINX Website <https://www.nginx.com/>`_
 
    A link to another document: :doc:`index`
 
@@ -126,7 +126,7 @@ There are internal links as well as external links that are possible.
 
 .. _reference-location:
 
-`Nginx Website <https://www.nginx.com/>`_
+`NGINX Website <https://www.nginx.com/>`_
 
 A link to another document: :doc:`index`
 
@@ -229,7 +229,7 @@ Sphinx can highlight the syntax of code blocks. For example:
      return 0;
    }
 
-There is also syntax highlighting for Nginx configuration files, here is an example of this with line numbers:
+There is also syntax highlighting for NGINX configuration files, here is an example of this with line numbers:
 
 .. code-block:: rst
 
@@ -324,8 +324,8 @@ Which generates:
    This is a See Also
 
 
-Nginx Wiki specific rols
-------------------------
+NGINX Wiki specific roles
+-------------------------
 
 A few extra roles have been added to assist with creating documentation for this wiki.
 

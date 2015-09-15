@@ -17,11 +17,11 @@ This Guide Says
 The most frequent issue we see happens when someone attempts to just copy and
 paste a configuration snippet from some other guide. Not all guides out there
 are wrong, but a scary number of them are. Even the Linode library has poor
-quality information that some Nginx community members have futily attempted to
+quality information that some NGINX community members have futily attempted to
 correct.
 
 These docs were created and reviewed by community members that work
-directly with all types of Nginx users. This specific document exists only
+directly with all types of NGINX users. This specific document exists only
 because of the volume of common and recurring issues that community members see.
 
 My Issue Isn't Listed
@@ -177,10 +177,10 @@ BAD:
     }
 
 There are actually three problems here. The first being the if. That's what we
-care about now. Why is this bad? Did you read If is Evil? When nginx receives a
+care about now. Why is this bad? Did you read If is Evil? When NGINX receives a
 request no matter what is the subdomain being requested, be it www.example.com or
 just the plain example.com this if directive is **always** evaluated. Since
-you're requesting nginx to check for the Host header for **every request**.
+you're requesting NGINX to check for the Host header for **every request**.
 It's extremely inefficient. You should avoid it. Instead use two server
 directives like the example below.
 
@@ -198,7 +198,7 @@ GOOD:
     }
 
 Besides making the configuration file easier to read. This approach decreases
-nginx processing requirements. We got rid of the spurious if. We're also using
+NGINX processing requirements. We got rid of the spurious if. We're also using
 $scheme which doesn't hardcodes the URI scheme you're using, be it http or
 https.
 
@@ -206,7 +206,7 @@ Check (If) File Exists
 ----------------------
 
 Using if to ensure a file exists is horrible. It's mean. If you have any recent
-version of Nginx you should look at try_files which just made life much easier.
+version of NGINX you should look at try_files which just made life much easier.
 
 BAD:
 
@@ -275,7 +275,7 @@ well, if you don't care about checking for the existence of directories.
 Passing Uncontrolled Requests to PHP
 ------------------------------------
 
-Many example Nginx configurations for PHP on the web advocate passing every URI
+Many example NGINX configurations for PHP on the web advocate passing every URI
 ending in .php to the PHP interpreter. Note that this presents a serious
 security issue on most PHP setups as it may allow arbitrary code execution by
 third parties.
@@ -303,7 +303,7 @@ Options for avoiding this are:
 
 * Set cgi.fix_pathinfo=0 in php.ini. This causes the PHP interpreter to only
   try the literal path given and to stop processing if the file is not found.
-* Ensure that Nginx only passes specific PHP files for execution:
+* Ensure that NGINX only passes specific PHP files for execution:
 
 .. code-block:: nginx
 
@@ -346,9 +346,9 @@ FastCGI Path in Script Filename
 -------------------------------
 
 So many guides out there like to rely on absolute paths to get to your
-information. This is commonly seen in PHP blocks. When you install Nginx from a
+information. This is commonly seen in PHP blocks. When you install NGINX from a
 repository you'll usually wind up being able to toss "include fastcgi_params;"
-in your config. This is a file located in your Nginx root directory which is
+in your config. This is a file located in your NGINX root directory which is
 usually around /etc/nginx/.
 
 GOOD:
@@ -398,7 +398,7 @@ $request_uri we can effectively avoid doing any capturing or matching at all.
 Rewrite Missing ``http://``
 ---------------------------
 
-Very simply, rewrites are relative unless you tell nginx that they're not.
+Very simply, rewrites are relative unless you tell NGINX that they're not.
 Making a rewrite absolute is simple. Add a scheme.
 
 BAD:
@@ -435,7 +435,7 @@ BAD:
 
 Yucky. In this instance, you pass EVERYTHING to PHP. Why? Apache might do this,
 you don't need to. Let me put it this way... The try_files directive exists for
-an amazing reason. It tries files in a specific order. This means that Nginx can
+an amazing reason. It tries files in a specific order. This means that NGINX can
 first try to server the static content. If it can't, then it moves on. This
 means PHP doesn't get involved at all. MUCH faster. Especially if you're serving
 a 1MB image over PHP a few thousand times versus serving it directly. Let's take
@@ -476,8 +476,8 @@ Also GOOD:
     }
 
 It's easy, right? You see if the requested URI exists and can be served by
-Nginx. If not, is it a directory that can be served. If not, then you pass it to
-your proxy. Only when Nginx can't serve that requested URI directly does your
+NGINX. If not, is it a directory that can be served. If not, then you pass it to
+your proxy. Only when NGINX can't serve that requested URI directly does your
 proxy overhead get involved.
 
 Now.. consider how much of your requests are static content, such as images,
@@ -502,7 +502,7 @@ The fix:
 VirtualBox
 ----------
 
-If this does not work, and you're running nginx on a virtual machine in
+If this does not work, and you're running NGINX on a virtual machine in
 VirtualBox, it may be sendfile() that is causing the trouble. Simply comment out
 the sendfile directive or set it to "off". The directive is most likely found in
 your nginx.conf file.:
@@ -514,7 +514,7 @@ your nginx.conf file.:
 Missing (disappearing) HTTP Headers
 -----------------------------------
 
-If you do not explicitly set `underscores_in_headers on`, nginx will silently
+If you do not explicitly set `underscores_in_headers on`, NGINX will silently
 drop HTTP headers with underscores (which are perfectly valid according to the
 HTTP standard). This is done in order to prevent ambiguities when mapping
 headers to CGI variables as both dashes and underscores are mapped to
@@ -549,7 +549,7 @@ NEVER DO THIS!!! (yes, we have seen this)
 When a request is made for /foo, the request is passed to php because the file
 isn't found. This can appear fine, until a request in made for /etc/passwd.
 Yup, you just gave us a list of all users on that server. In some cases, the
-Nginx server is even set up run workers as root. Yup, we now have your user
+NGINX server is even set up run workers as root. Yup, we now have your user
 list as well as password hashes and how they've been hashed. We now own your
 box.
 
@@ -562,7 +562,7 @@ in either ``/var/www/``, ``/srv``, ``/usr/share/www``.
 Using the Default Document Root
 -------------------------------
 
-Nginx packages that exist in Ubuntu, Debian, or other operating systems, as an
+NGINX packages that exist in Ubuntu, Debian, or other operating systems, as an
 easy-to-install package will often provide a 'default' configuration file as
 an example of configuration methods, and will often include a document root to
 hold a basic HTML file.
@@ -576,7 +576,7 @@ during upgrades.
 You should not use the default document root for any site-critical files. There
 is no expectation that the default document root will be left untouched by the
 system and there is an extremely high possibility that your site-critical data
-may be lost upon updates and upgrades to the nginx packages for your operating
+may be lost upon updates and upgrades to the NGINX packages for your operating
 system.
 
 Using a Hostname to Resolve Addresses
@@ -597,12 +597,12 @@ BAD:
 
 You should never use a hostname in a listen directive. While this may work, it
 will come with a large number of issues. One such issue being that the hostname
-may not resolve at boot time or during a service restart. This can cause Nginx
-to be unable to bind to the desired TCP socket which will prevent Nginx from
+may not resolve at boot time or during a service restart. This can cause NGINX
+to be unable to bind to the desired TCP socket which will prevent NGINX from
 starting at all.
 
 A safer practice is to know the IP address that needs to be bound to and use
-that address instead of the hostname. This prevents Nginx from needing to look
+that address instead of the hostname. This prevents NGINX from needing to look
 up the address and removes dependencies on external and internal resolvers.
 
 This same issue applies to upstream locations. While it may not always be

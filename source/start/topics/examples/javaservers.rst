@@ -6,12 +6,12 @@ Java servers like Jetty, GlassFish and Tomcat
 =============================================
 
 You cannot deploy using .war files.
-The application files need to be deployed into a folder, because the Java web application folder must be specified for Nginx so that it can find and directly send static files like images (.jpg, .png, .gif), stylesheets (.css) and JavaScript (.js) directly.
-These files don't need to be processed by the Java server - just let Nginx do this job.
+The application files need to be deployed into a folder, because the Java web application folder must be specified for NGINX so that it can find and directly send static files like images (.jpg, .png, .gif), stylesheets (.css) and JavaScript (.js) directly.
+These files don't need to be processed by the Java server - just let NGINX do this job.
 
 For this sample we use Jetty, because it has the best performance.
 
-In the below example nginx works as a reverse proxy in the front of Java Servers.
+In the below example NGINX works as a reverse proxy in the front of Java Servers.
 
 
 
@@ -140,7 +140,7 @@ Server section configuration
 On the same server, protect the Java server from external access
 ----------------------------------------------------------------
 
-If you are running Nginx on the same server of the Java, the best practice is to deny access to port 8080 so only Nginx can access it. 
+If you are running NGINX on the same server of the Java, the best practice is to deny access to port 8080 so only NGINX can access it. 
 On Linux do
 
 .. code-block:: bash
@@ -169,7 +169,7 @@ Or on embedded Jetty server code:
   server.start();
   server.join();
 
-.. seealso:: To embed a java handler in nginx, check out :doc:`../../../modules/clojure`.
+.. seealso:: To embed a java handler in NGINX, check out :doc:`../../../modules/clojure`.
 
 .. todo::
    ..

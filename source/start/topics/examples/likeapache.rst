@@ -2,7 +2,7 @@
 .. meta::
    :description: How to set up an NGINX proxy that acts like Apache's ProxyPassReverse.
 
-Nginx Solution for Apache ProxyPassReverse
+NGINX Solution for Apache ProxyPassReverse
 ==========================================
 
 Apache 
@@ -19,13 +19,13 @@ Let's say we want to establish simple proxy between myhost:80 and myapp:8080. Th
   </VirtualHost>
 
 
-But Nginx does not have ProxyPassReverse... The solution is adding a few missing HTTP headers. 
+But NGINX does not have ProxyPassReverse... The solution is adding a few missing HTTP headers. 
 
 .. seealso:: `proxy_redirect <|HttpProxyModule|#proxy_redirect>`_. This wiki is partly incorrect. If you need to do location header rewriting, then you will need to use `proxy_redirect <|HttpProxyModule|#proxy_redirect>`_ as well.
 
 
 
-Nginx
+NGINX
 -----
 
 .. code-block:: nginx

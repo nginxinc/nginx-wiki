@@ -9,12 +9,12 @@ Synopsis
 --------
 X-accel allows for internal redirection to a location determined by a header returned from a backend.
 
-This allows you to handle authentication, logging or whatever else you please in your backend and then have Nginx handle serving the contents from redirected location to the end user, thus freeing up the backend to handle other requests.
+This allows you to handle authentication, logging or whatever else you please in your backend and then have NGINX handle serving the contents from redirected location to the end user, thus freeing up the backend to handle other requests.
 This feature is commonly known as X-Sendfile.
 
-This feature differs a bit from standard Nginx modules as it does not rely on directives but rather handles headers from upstream in a special way.
+This feature differs a bit from standard NGINX modules as it does not rely on directives but rather handles headers from upstream in a special way.
 The way it works is that you send the header `x-accel.redirect`_ with a URI.
-Nginx will match this URI against its locations as if it was a normal request.
+NGINX will match this URI against its locations as if it was a normal request.
 It will then serve the location that matches the defined root + URI passed in the header.
 
 Example configuration, notice the difference between alias and root.
@@ -56,7 +56,7 @@ X-Accel-Redirect
 :Syntax: *X-Accel-Redirect uri*
 :Default: *X-Accel-Redirect void*
 
-Sets the URI for Nginx to serve.
+Sets the URI for NGINX to serve.
 
 
 X-Accel-Buffering
@@ -82,7 +82,7 @@ X-Accel-Expires
 :Syntax: *X-Accel-Expires [off|seconds]*
 :Default: *X-Accel-Expires off*
 
-Sets when to expire the file in the internal Nginx cache, if one is used.
+Sets when to expire the file in the internal NGINX cache, if one is used.
 
 
 X-Accel-Limit-Rate

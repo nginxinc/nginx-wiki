@@ -5,7 +5,7 @@
 Installation and Compile-Time Options
 =====================================
 
-The build is configured using the ``./configure`` command. It defines various aspects of the system, including the methods nginx is allowed to use for connection processing.
+The build is configured using the ``./configure`` command. It defines various aspects of the system, including the methods NGINX is allowed to use for connection processing.
 At the end it creates a Makefile. 
 
 The configure command supports the following parameters:
@@ -15,13 +15,13 @@ Files and Permissions
 **--prefix=*path***
   defines a directory that will keep server files. This same directory will also be used for all relative paths set by configure (except for paths to libraries sources) and in the nginx.conf configuration file. It is set to the ``/usr/local/nginx`` directory by default.
 **--sbin-path=*path***
-  sets the name of an nginx executable file. This name is used only during installation. By default the file is named ``prefix/sbin/nginx``.
+  sets the name of an NGINX executable file. This name is used only during installation. By default the file is named ``prefix/sbin/nginx``.
 **--conf-path=*path***
-  sets the name of an ``nginx.conf`` configuration file. If needs be, nginx can always be started with a different configuration file, by specifying it in the command-line parameter ``-c file``. By default the file is named ``prefix/conf/nginx.conf``.
+  sets the name of an ``nginx.conf`` configuration file. If needs be, NGINX can always be started with a different configuration file, by specifying it in the command-line parameter ``-c file``. By default the file is named ``prefix/conf/nginx.conf``.
 **--pid-path=*path***
   sets the name of an nginx.pid file that will store the process ID of the main process. After installation, the file name can always be changed in the ``nginx.conf`` configuration file using the pid directive. By default the file is named ``prefix/logs/nginx.pid``.
 **--error-log-path=*path***
-  sets the name of the primary error, warnings, and diagnostic file. After installation, the file name can always be changed in the ``nginx.conf`` configuration file using the `error log <|HttpCoreModule|#error_log>`_ directive. By default the file is named ``prefix/logs/error.log``. The special "stderr" value tells nginx to log pre-configuration messages to the standard error.
+  sets the name of the primary error, warnings, and diagnostic file. After installation, the file name can always be changed in the ``nginx.conf`` configuration file using the `error log <|HttpCoreModule|#error_log>`_ directive. By default the file is named ``prefix/logs/error.log``. The special "stderr" value tells NGINX to log pre-configuration messages to the standard error.
 **--http-log-path=*path***
   sets the name of the primary request log file of the HTTP server. After installation, the file name can always be changed in the ``nginx.conf`` configuration file using the `access log <|HttpCoreModule|#access_log>`_ directive. By default the file is named ``prefix/logs/access.log``.
 **--user=*name***
@@ -47,11 +47,11 @@ Optional Modules
 **--with-http_ssl_module**
   enables building a module that adds the HTTPS protocol support to an HTTP server. This module is not built by default. The OpenSSL library is required to build and run this module.
 **--with-pcre=*path***
-  sets the path to the sources of the PCRE library. The library distribution (version 4.4 — 8.21) needs to be downloaded from the PCRE site and extracted. The rest is done by nginx's ``./configure`` and ``make``. The library is required for regular expressions support in the location directive and for the |HttpRewriteModule|. See `notes <installoptions.notes_>`_ below for using system PCRE on FreeBSD systems.
+  sets the path to the sources of the PCRE library. The library distribution (version 4.4 — 8.21) needs to be downloaded from the PCRE site and extracted. The rest is done by NGINX's ``./configure`` and ``make``. The library is required for regular expressions support in the location directive and for the |HttpRewriteModule|. See `notes <installoptions.notes_>`_ below for using system PCRE on FreeBSD systems.
 **--with-pcre-jit**
   builds the PCRE library with "just-in-time compilation" support.
 **--with-zlib=*path***
-  sets the path to the sources of the zlib library. The library distribution (version 1.1.3 — 1.2.5) needs to be downloaded from the zlib site and extracted. The rest is done by nginx's ``./configure`` and ``make``. The library is required for the |HttpGzipModule|.
+  sets the path to the sources of the zlib library. The library distribution (version 1.1.3 — 1.2.5) needs to be downloaded from the zlib site and extracted. The rest is done by NGINX's ``./configure`` and ``make``. The library is required for the |HttpGzipModule|.
 
 Compilation Controls
 ^^^^^^^^^^^^^^^^^^^^

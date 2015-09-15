@@ -11,12 +11,12 @@ I want to thank Igor Sysoev for this nice piece of software.
 For me, this is the only way to contribute something to this great project.
 I've tried to document the whole picture of building what we simply call our "SSL-Proxy" (aka. SSL/TLS/HTTPS-Offloader/-Accelerator/-Terminator/-Dispatcher/Reverse-Proxy/Loadbalancer etc.).
 
-In our company we use Nginx as a reverse proxy, serving HTTPS to the client while getting the content via HTTP from the multiple backends.
+In our company we use NGINX as a reverse proxy, serving HTTPS to the client while getting the content via HTTP from the multiple backends.
 We have two virtual machines "connected" with VRRP to one cluster, acting as a frontend for about 80 Tomcat servers (and some IIS, Apache/PHP ...), each with one or more applications.
 There were many reasons for this structure: One CI (ITIL: change item) for SSL certificates, customer demands (one URL xyz with multiple services), simple but effective failover mechanism for changes and so on.
 
 **Update 2014, success story:**
-  This Nginx setup as a reverse ssl-proxy with our "super-url's" works perfectly for over 7 years (in this time we changed the ubuntu versions several times - from hardy to precise).
+  This NGINX setup as a reverse ssl-proxy with our "super-url's" works perfectly for over 7 years (in this time we changed the ubuntu versions several times - from hardy to precise).
   Today only two applications left and couldn't be included in this scheme.
   The configuration without comments has about 7000 lines.
   We have about 10 changes in the setup per week and we can do all of them on fly (using reload).
@@ -43,7 +43,7 @@ The server works very efficient:
 #. Hypervisor: VMware ESXi
 #. VM: 4x CPU (load: ~0.15), 768 MByte RAM (used: ~12%), 4 GByte HD
 #. Base system: Ubuntu 12.04.5/precise
-#. Working horse: Nginx 1.6.2-5+precise0 (`ppa:nginx/stable <https://launchpad.net/~nginx/+archive/ubuntu/stable>`_)
+#. Working horse: NGINX 1.6.2-5+precise0 (`ppa:nginx/stable <https://launchpad.net/~nginx/+archive/ubuntu/stable>`_)
 #. SSL-Library: LibSSL 1.0.1-4ubuntu5.21
 #. Entropy-Daemon: haveged 1.1-2
 #. VRRP daemon: Keepalived 1:1.2.2-3ubuntu1.1
@@ -231,7 +231,7 @@ For the second system change the values of "state" and "priority".
 HTTPS Addresses
 ^^^^^^^^^^^^^^^
 One possible solution is to use direct routing and not a NAT (network address translation).
-In this case you need local ip addresses with fit to the server of the nginx configuration.
+In this case you need local ip addresses with fit to the server of the NGINX configuration.
 In the file ``/etc/network/interfaces`` you can add a ``post-up`` command for the dummy (or loopback) interface like this.
 Don't forget to add the modules ``dummy`` to ``/etc/modules``.
 
@@ -300,7 +300,7 @@ Core Configuration
 nginx.conf
 ^^^^^^^^^^
 I decided to change not too much in the default config file ``/etc/nginx/nginx.conf``.
-The VM has four cores, each core get one fixed worker, and I wanted nginx to get an better priority than other processes.
+The VM has four cores, each core get one fixed worker, and I wanted NGINX to get an better priority than other processes.
 All other setting were included
 (the included file ``mime.types`` is taken from the project `HTML5-Boilerplate <https://github.com/h5bp/server-configs-nginx/blob/master/mime.types>`_).
 
@@ -492,7 +492,7 @@ We defined the SSL-Proxy as a network device and therefore the application is re
 backend.conf
 ^^^^^^^^^^^^
 We use this file to define the relation of two backend servers with an ID.
-The syntax of nginx only let you define these definitions global.
+The syntax of NGINX only let you define these definitions global.
 This means you have to touch two files if you define one new backend/upstream.
 
 .. code-block:: nginx
@@ -762,10 +762,10 @@ Remote Logging
 
 The Problem
 ^^^^^^^^^^^
-In few words: **Nginx doesn't support Syslog.**
+In few words: **NGINX doesn't support Syslog.**
 Therefore you have some possibilities, if you want Syslog support:
 
-#. Compile Nginx with the **syslog patch**:
+#. Compile NGINX with the **syslog patch**:
     I prefer to use the original packages ...
 #. Use a **syslog implementation with file support** (e.g. rsyslog with "imfile"):
     That's okay for the ``error.log``, but it is a bad idea for the space consuming ``access.log``, because you don't want to store these data a second time local.
@@ -782,7 +782,7 @@ Simple Solution
 
 
 2. Create a file **/etc/rsyslog.d/nginx.conf** for file monitoring. Repeat the part in the middle for every file you want to see in the syslog.
-   The last line is important, otherwise you will log these messages three times (nginx log, udp syslog and local syslog):
+   The last line is important, otherwise you will log these messages three times (NGINX log, udp syslog and local syslog):
 
   .. code-block:: nginx
 

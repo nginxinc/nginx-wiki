@@ -32,7 +32,7 @@ Is it safe to use the development branch in production?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 In general, all releases (development or otherwise) are quite stable.
 This site runs the latest development version at all times.
-Many nginx users tend to represent an "early adopter" crowd, so a large segment is using the bleeding-edge version at any given point.
+Many NGINX users tend to represent an "early adopter" crowd, so a large segment is using the bleeding-edge version at any given point.
 The major and most important point about the development version is that it can occasionally break APIs for third-party modules (APIs are sometimes changed in the development branch).
 Other than that, it gets all non-emergency bugfixes first.
 

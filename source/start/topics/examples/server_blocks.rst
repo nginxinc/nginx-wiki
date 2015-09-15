@@ -5,7 +5,7 @@
 Server Block Examples
 =====================
 
-Note: "VirtualHost" is an Apache term. Nginx does not have Virtual hosts, it has "Server Blocks" that use the server_name and listen directives to bind to tcp sockets.
+Note: "VirtualHost" is an Apache term. NGINX does not have Virtual hosts, it has "Server Blocks" that use the server_name and listen directives to bind to tcp sockets.
 
 Two Server Blocks, Serving Static Files
 ---------------------------------------

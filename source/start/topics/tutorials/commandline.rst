@@ -5,16 +5,16 @@
 CommandLine
 ===========
 
-Starting, Stopping, and Restarting Nginx
+Starting, Stopping, and Restarting NGINX
 ----------------------------------------
-This page shows you how to start Nginx, and once it's running, how to control it so that it will stop or restart.
+This page shows you how to start NGINX, and once it's running, how to control it so that it will stop or restart.
 
 
-Starting Nginx
+Starting NGINX
 ^^^^^^^^^^^^^^
-Nginx is invoked from the command line, usually from ``/usr/bin/nginx``.
+NGINX is invoked from the command line, usually from ``/usr/bin/nginx``.
 
-Basic Example of Starting Nginx
+Basic Example of Starting NGINX
 """""""""""""""""""""""""""""""
 
 .. code-block:: bash
@@ -22,7 +22,7 @@ Basic Example of Starting Nginx
   /usr/bin/nginx
 
 
-Advanced Example of Starting Nginx
+Advanced Example of Starting NGINX
 """"""""""""""""""""""""""""""""""
 
 .. code-block:: bash
@@ -38,10 +38,10 @@ Options
 +-------------------+-----------------------------------------------------------------------------------------------------+
 | ``-v``            | Print version.                                                                                      |
 +-------------------+-----------------------------------------------------------------------------------------------------+
-| ``-V``            | Print nginx version, compiler version and configure parameters.                                     |
+| ``-V``            | Print NGINX version, compiler version and configure parameters.                                     |
 +-------------------+-----------------------------------------------------------------------------------------------------+
 | ``-t``            | Don't run, just test the configuration file.                                                        |
-|                   | Nginx checks configuration for correct syntax and then try to open files referred in configuration. |
+|                   | NGINX checks configuration for correct syntax and then try to open files referred in configuration. |
 +-------------------+-----------------------------------------------------------------------------------------------------+
 | ``-q``            | Suppress non-error messages during configuration testing.                                           |
 +-------------------+-----------------------------------------------------------------------------------------------------+
@@ -49,26 +49,26 @@ Options
 +-------------------+-----------------------------------------------------------------------------------------------------+
 | ``-p prefix``     | Set prefix path (default: ``/usr/local/nginx/``). (version >= 0.7.53)                               |
 +-------------------+-----------------------------------------------------------------------------------------------------+
-| ``-c filename``   | Specify which configuration file Nginx should use instead of the default.                           |
+| ``-c filename``   | Specify which configuration file NGINX should use instead of the default.                           |
 +-------------------+-----------------------------------------------------------------------------------------------------+
 | ``-g directives`` | Set `global <|HttpCoreModule|>`_ directives. (version >= 0.7.4)                                     |
 +-------------------+-----------------------------------------------------------------------------------------------------+
 
-.. note:: Nginx has only a few command-line parameters. Unlike many other software systems, the configuration is done entirely via the configuration file (imagine that).
+.. note:: NGINX has only a few command-line parameters. Unlike many other software systems, the configuration is done entirely via the configuration file (imagine that).
 
 
-Stopping or Restarting Nginx
+Stopping or Restarting NGINX
 ----------------------------
-There are two ways to control Nginx once it's already running.
-The first is to call Nginx again with the ``-s`` command line parameter.
-For example, ``/usr/bin/nginx -s stop`` will stop the Nginx server.
+There are two ways to control NGINX once it's already running.
+The first is to call NGINX again with the ``-s`` command line parameter.
+For example, ``/usr/bin/nginx -s stop`` will stop the NGINX server.
 (other ``-s`` options are given in the previous section)
 
-The second way to control Nginx is to send a signal to the Nginx master process...
-By default nginx writes its master process id to ``/usr/local/nginx/logs/nginx.pid``.
+The second way to control NGINX is to send a signal to the NGINX master process...
+By default NGINX writes its master process id to ``/usr/local/nginx/logs/nginx.pid``.
 You can change this by passing parameter with ``./configure`` at compile-time or by using ``pid`` directive in the configuration file.
 
-Here's how to send the ``QUIT`` (Graceful Shutdown) signal to the Nginx master process:
+Here's how to send the ``QUIT`` (Graceful Shutdown) signal to the NGINX master process:
 
 .. code-block:: bash
 
@@ -110,7 +110,7 @@ However, they support some signals, too:
 
 Loading a New Configuration Using Signals
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Nginx supports a few signals that you can use to control it's operation while it's running.
+NGINX supports a few signals that you can use to control it's operation while it's running.
 
 The most common of these is 15, which just stops the running process:
 
@@ -120,7 +120,7 @@ The most common of these is 15, which just stops the running process:
   root      2213  0.0  0.0   6784  2036 ?        Ss   03:01   0:00 nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx.conf
 
 
-The more interesting option however, is being able to change the nginx configuration on the fly (notice that we test the configuration prior to reloading it):
+The more interesting option however, is being able to change the NGINX configuration on the fly (notice that we test the configuration prior to reloading it):
 
 .. code-block:: bash
 
@@ -130,18 +130,18 @@ The more interesting option however, is being able to change the nginx configura
   root      2213  0.0  0.0   6784  2036 ?        Ss   03:01   0:00 nginx: master process /usr/sbin/nginx -c /etc/nginx/nginx.conf
 
 
-What happens is that when nginx receives the ``HUP`` signal, it tries to parse the configuration file (the specified one, if present, otherwise the default), and if successful, tries to apply a new configuration (i.e. re-open the log files and listen sockets).
-If successful, nginx runs new worker processes and signals graceful shutdown to old workers.
+What happens is that when NGINX receives the ``HUP`` signal, it tries to parse the configuration file (the specified one, if present, otherwise the default), and if successful, tries to apply a new configuration (i.e. re-open the log files and listen sockets).
+If successful, NGINX runs new worker processes and signals graceful shutdown to old workers.
 Notified workers close listen sockets but continue to serve current clients.
 After serving all clients old workers shutdown.
-If nginx couldn't successfully apply the new configuration, it continues to work with an old configuration.
+If NGINX couldn't successfully apply the new configuration, it continues to work with an old configuration.
 
 RequestForReviewCategory -- (Request For Review: Just What Happens With The Worker Processes at a HUP? -Olle)
 
 
 Upgrading To a New Binary On The Fly
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-If you need to replace nginx binary with a new one (when upgrading to a new version or adding/removing server modules), you can do it without any service downtime - no incoming requests will be lost.
+If you need to replace NGINX binary with a new one (when upgrading to a new version or adding/removing server modules), you can do it without any service downtime - no incoming requests will be lost.
 
 First, replace old binary with a new one, then send USR2 signal to the master process. It renames its ``.pid`` file to ``.oldbin`` (e.g. ``/usr/local/nginx/logs/nginx.pid.oldbin``), then executes a new binary, which in turn starts a new master process and the new worker processes:
 
@@ -158,7 +158,7 @@ First, replace old binary with a new one, then send USR2 signal to the master pr
   36267 36264 nobody   0.0  1364 kqread nginx: worker process (nginx)
 
 
-At this point, two instances of nginx are running, handling the incoming requests together.
+At this point, two instances of NGINX are running, handling the incoming requests together.
 To phase the old instance out, you have to send ``WINCH`` signal to the old master process, and its worker processes will start to gracefully shut down:
 
 .. code-block:: bash

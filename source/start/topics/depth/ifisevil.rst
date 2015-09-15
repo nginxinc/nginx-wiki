@@ -145,7 +145,7 @@ In case you think you found an example which isn't listed here - it's a good ide
 Why this happens and still not fixed
 ------------------------------------
 
-Directive "if" is part of rewrite module which evaluates instructions imperatively.  On the other hand, nginx configuration in general is declarative.  At some point due to users demand an attempt was made to enable some non-rewrite directives inside "if", and this lead to situation we have now.  It mostly works, but... see above.
+Directive "if" is part of rewrite module which evaluates instructions imperatively.  On the other hand, NGINX configuration in general is declarative.  At some point due to users demand an attempt was made to enable some non-rewrite directives inside "if", and this lead to situation we have now.  It mostly works, but... see above.
 
 Looks like the only correct fix would be to disable non-rewrite directives inside if completely.  It would break many configuration out there though, so wasn't done yet.
 

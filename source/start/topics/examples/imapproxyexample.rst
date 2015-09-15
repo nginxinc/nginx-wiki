@@ -73,7 +73,7 @@ To configure IMAP proxy with STARTTLS support, use nginx.conf like this:
 
   }
 
-.. note:: if you're using Nginx on linux, you need to run ``./configure`` with the mail options:
+.. note:: if you're using NGINX on linux, you need to run ``./configure`` with the mail options:
 
   .. code-block:: bash
   

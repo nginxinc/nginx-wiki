@@ -5,7 +5,7 @@
 Log Rotation
 ============
 
-Nginx will re-open its logs in response to the ``USR1`` signal.
+NGINX will re-open its logs in response to the ``USR1`` signal.
 
 .. code-block:: bash
 

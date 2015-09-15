@@ -2,7 +2,7 @@
 .. meta::
    :description: Various useful init scripts for starting NGINX.
 
-Nginx Init Scripts
+NGINX Init Scripts
 ==================
 
 .. toctree::
@@ -17,7 +17,7 @@ Nginx Init Scripts
    freebsdspawnfcgi
    osxlaunchd
 
-So many way to start Nginx. You can either used the binary or set something up that will work specifically for your needs. If you install Nginx from a repository, then it is likely that you already have an init script installed. If you installed from source, then you'll want to find a script from below to help you out.
+So many way to start NGINX. You can either used the binary or set something up that will work specifically for your needs. If you install NGINX from a repository, then it is likely that you already have an init script installed. If you installed from source, then you'll want to find a script from below to help you out.
 
 Linux Init.d
 ------------
@@ -52,4 +52,4 @@ OSX
 Windows
 -------
 
-* :github:`Nginx Service for Windows <InvGate/winginx/>` which uses `NSSM <http://nssm.cc/>`_ as a wrapper for service behaviour.
+* :github:`NGINX Service for Windows <InvGate/winginx/>` which uses `NSSM <http://nssm.cc/>`_ as a wrapper for service behaviour.

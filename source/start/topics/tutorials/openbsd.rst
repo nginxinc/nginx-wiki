@@ -2,7 +2,7 @@
 .. meta::
    :description: How to install, build, test, and control NGINX on OpenBSD.
 
-Installing and configuring Nginx / Mongrel on OpenBSD with Rails support
+Installing and configuring NGINX / Mongrel on OpenBSD with Rails support
 ========================================================================
 
 Install the PCRE library
@@ -14,7 +14,7 @@ It is advised you be familiar with installing packages on OpenBSD before proceed
 
     $ sudo pkg_add -v pcre
 
-Download and extract the nginx sources
+Download and extract the NGINX sources
 --------------------------------------
 
 Make sure to appropriately substitute the version numbers below:
@@ -52,12 +52,12 @@ Compile and install
 
     $ make && sudo make install
 
-After nginx has been installed, make sure to edit ``/etc/nginx/nginx.conf`` according to your needs.
+After NGINX has been installed, make sure to edit ``/etc/nginx/nginx.conf`` according to your needs.
 
 Log files
 ---------
 
-By default, nginx saves its logs as ``/var/log/nginx.log`` and ``/var/log/nginx-error.log``. You may wish to configure nginx so that it saves its logs on a per-host basis.
+By default, NGINX saves its logs as ``/var/log/nginx.log`` and ``/var/log/nginx-error.log``. You may wish to configure NGINX so that it saves its logs on a per-host basis.
 
 Initializing Mongrel Cluster from your path/to/app/rails/
 ---------------------------------------------------------
@@ -74,7 +74,7 @@ Initializing Mongrel Cluster from your path/to/app/rails/
          $ sudo mongrel_rails cluster::configure 
          $ sudo mongrel_rails cluster::start
 
-Starting nginx
+Starting NGINX
 --------------
 
 .. code-block:: bash
@@ -88,14 +88,14 @@ Testing, appoint your browser to rails app (localhost, default here)
 
     $ lynx http://localhost
 
-Restarting nginx
+Restarting NGINX
 ----------------
 
 .. code-block:: bash
 
    $ sudo kill -HUP $(head -1 /var/run/nginx.pid)
 
-Shutting down nginx
+Shutting down NGINX
 -------------------
 
 .. code-block:: bash
@@ -105,8 +105,8 @@ Shutting down nginx
 Final notes
 -----------
 
-The initial motivation for this article was a rapid introduction to install and setup nginx on OpenBSD.
-Currently exist a port under ``/usr/ports/www/nginx``. It can be the best way to install and handle new nginx versions on this Operating System.
+The initial motivation for this article was a rapid introduction to install and setup NGINX on OpenBSD.
+Currently exist a port under ``/usr/ports/www/nginx``. It can be the best way to install and handle new NGINX versions on this Operating System.
 
 Whenever it article is nice and functional.
 

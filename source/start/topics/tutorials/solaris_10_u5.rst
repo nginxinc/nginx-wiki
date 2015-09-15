@@ -6,9 +6,9 @@ Installing on Solaris 10u5
 ==========================
 
 Before we can proceed with the installation process, we will install
-some dependencies that will be required by nginx. with my setup, I'll
-compile Nginx with openssl and pcre support, So firstly we will compile
-these prerequisites, after that will continue Nginx compilation process.
+some dependencies that will be required by NGINX. with my setup, I'll
+compile NGINX with openssl and pcre support, So firstly we will compile
+these prerequisites, after that will continue NGINX compilation process.
 
 These prerequisites are:
 
@@ -69,7 +69,7 @@ There you will find some folders, the most important one is
 Building/Installing PCRE
 ------------------------
 
-As previously said, to build Nginx for Solaris, we must first satisfy a
+As previously said, to build NGINX for Solaris, we must first satisfy a
 couple of dependencies, namely PCRE (Perl Regular Expression Library)
 and OpenSSL. (Although OpenSSL is not strictly needed, I like to include
 it for completeness.) All builds will be full 64-bit.
@@ -118,10 +118,10 @@ exit. After that we can proceed and continue our compilation process:
    make
    make install
 
-Building/Installing Nginx
+Building/Installing NGINX
 -------------------------
 
-Our final stage is building and installing nginx from source tar ball,
+Our final stage is building and installing NGINX from source tar ball,
 we will follow the same steps as done above with pcre and openssl:
 
 .. code-block:: bash
@@ -130,7 +130,7 @@ we will follow the same steps as done above with pcre and openssl:
    gtar -zxf nginx-0.7.64.tar.gz
    cd nginx-0.7.64
 
-In order to complete nginx compilation process properly in full 64 bit
+In order to complete NGINX compilation process properly in full 64 bit
 mode, we have to edit src/os/unix/ngx\_sunpro\_amd64.il file firstly as
 follows:
 
@@ -158,10 +158,10 @@ save and exit now complete the process:
    make
    make install
 
-Testing Nginx
+Testing NGINX
 =============
 
-After finishing Nginx's installation process, we can now test that
+After finishing NGINX's installation process, we can now test that
 everything is fine as follows:
 
 .. code-block:: bash
@@ -169,14 +169,14 @@ everything is fine as follows:
    cd /opt/local/nginx/sbin/
    ./nginx
 
-Nginx now should be running on your machine. If you open
+NGINX now should be running on your machine. If you open
 \http://127.0.0.1/ in your browser, you should see a page with “Welcome
 to nginx!”.
 
-Running Nginx as SMF service
+Running NGINX as SMF service
 ============================
 
-In this section we will configure our Nginx Web server to run at Solaris
+In this section we will configure our NGINX Web server to run at Solaris
 10 bootup , and to achieve this we will use Solaris 10 SMF feature, and
 to simplify the process I've created the necessary files for that
 purpose.
@@ -194,14 +194,14 @@ And put the following inside the file:
    NGINX_CONF="/opt/local/nginx/conf/nginx.conf"
    RETVAL=0
    start() {
-      echo "Starting Nginx Web Server: \c"
+      echo "Starting NGINX Web Server: \c"
       $NGINX_CMD -c $NGINX_CONF &
       RETVAL=$?
       [ $RETVAL -eq 0 ] && echo "ok" || echo "failed"
       return $RETVAL
    }
    stop() {
-      echo "Stopping Nginx Web Server: \c"
+      echo "Stopping NGINX Web Server: \c"
       NGINX_PID=`ps -ef |grep $NGINX_CMD |grep -v grep |awk '{print $2}'`
       kill $NGINX_PID
       RETVAL=$?
@@ -264,7 +264,7 @@ Inside the file, put the following:
 
    <common_name>
 
-   <loctext xml:lang='C'> Nginx 0.7.64 </loctext>
+   <loctext xml:lang='C'> NGINX 0.7.64 </loctext>
 
    </common_name> <documentation>
 

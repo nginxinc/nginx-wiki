@@ -5,9 +5,9 @@
 Simple CGI
 ==========
 
-For the most part, lack of CGI support in Nginx is not an issue and actually has an important side-benefit: because Nginx cannot directly execute external programs (CGI), a malicious person can't trick your system into uploading and executing an arbitrary script.
+For the most part, lack of CGI support in NGINX is not an issue and actually has an important side-benefit: because NGINX cannot directly execute external programs (CGI), a malicious person can't trick your system into uploading and executing an arbitrary script.
 There are still ways, of course (uploading a PHP script into a directory where you've got a directive to execute PHP FastCGI scripts for example), but it does in fact make it a bit more difficult (or conversely, easier to secure).
-Still, sometimes you have a one-off simple CGI program you need to support and here's a recipe for exposing your CGI to Nginx as a FastCGI instead:
+Still, sometimes you have a one-off simple CGI program you need to support and here's a recipe for exposing your CGI to NGINX as a FastCGI instead:
 
 Let's say this is our CGI program, written in Perl:
 
@@ -187,10 +187,10 @@ Next, we need a Perl wrapper that will run as a FastCGI and run this for us:
 Save the above script as ``/usr/local/bin/cgiwrap-fcgi.pl``.
 
 Just running the program as above will bind it to a unix socket at ``/var/run/nginx/cgiwrap-dispatch.sock``. 
-Be sure your nginx worker process user has read/write access to this file.
+Be sure your NGINX worker process user has read/write access to this file.
 The script does not fork itself, so you will need to background it somehow (with Bash add an ampersand "&" at the end of your command to execute it).
 
-If this all works, then the next part is to setup Nginx:
+If this all works, then the next part is to setup NGINX:
 
 .. code-block:: nginx
 
@@ -221,7 +221,7 @@ If this all works, then the next part is to setup Nginx:
     }
   }
 
-Restart Nginx and point your browser at your CGI program. 
+Restart NGINX and point your browser at your CGI program. 
 The above sample config will execute any .cgi file in ``cgi-bin`` with the ``cgiwrap-fcgi.pl`` wrapper, tweak this to your heart's content.
 
 I've been able to run Python, Perl, and C++ cgi apps with this - apps that use GET or POST.

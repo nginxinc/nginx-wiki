@@ -57,7 +57,7 @@ nginx.conf
 
   <?php
   /*
-  Nginx sends headers as
+  NGINX sends headers as
   Auth-User: somuser
   Auth-Pass: somepass
   On my php app server these are seen as
@@ -82,7 +82,7 @@ nginx.conf
     $backend_port=25;
   }
   
-  // nginx likes ip address so if your
+  // NGINX likes ip address so if your
   // application gives back hostname, convert it to ip address here
   $backend_ip["mailhost01"] ="192.168.1.22";
   $backend_ip["mailhost02"] ="192.168.1.33";

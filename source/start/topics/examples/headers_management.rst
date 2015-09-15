@@ -6,14 +6,14 @@ Managing request headers
 ------------------------
 
 As far as the
-:github:`Nginx.HeadersIn <peter-leonov/ngx_http_js_module/blob/master/src/classes/Request/HeadersIn.c>`
+:github:`NGINX.HeadersIn <peter-leonov/ngx_http_js_module/blob/master/src/classes/Request/HeadersIn.c>`
 and
-:github:`Nginx.HeadersOut <peter-leonov/ngx_http_js_module/blob/master/src/classes/Request/HeadersOut.c>`
+:github:`NGINX.HeadersOut <peter-leonov/ngx_http_js_module/blob/master/src/classes/Request/HeadersOut.c>`
 classes of
 the :github:`ngx\_http\_js\_module <peter-leonov/ngx_http_js_module>`
 implemented almost fully now we can talk about this ``headers_in`` and ``headers_out`` structs a little.
 
-The HTTP headers in nginx are split in two parts: the input request
+The HTTP headers in NGINX are split in two parts: the input request
 headers
 (`headers\_in <http://lxr.evanmiller.org/http/source/http/ngx_http_request.h#L162>`__
 structure) and the output request headers
@@ -22,7 +22,7 @@ structure). There is no such an entity as a response, all the data
 is stored in the same single request structure. The actual response data
 is constructed from the request data and the ``headers_out`` structure fields.
 
-All the things in nginx are highly optimized. No memory overhead caused
+All the things in NGINX are highly optimized. No memory overhead caused
 by strings copying, no memory leaks and alloc/free burden as far as
 memory is managed with pools, no wasted CPU cycles by comparing those
 strings again and again, everything is cached in a sane way, complicated
@@ -37,16 +37,16 @@ Lets talk about HTTP headers a little. All of us have seen lots
 of headers. And we know that the HTTP header is a very flexible data
 format. Client may send only one simple header, or many headers with
 the same name each on its own line, or even one big header split into
-many lines. It's a kinda mess. And nginx in its turn tries to rule the
+many lines. It's a kinda mess. And NGINX in its turn tries to rule the
 mess.
 
-nginx takes care of known frequently used headers (`list of known
+NGINX takes care of known frequently used headers (`list of known
 headers\_in <http://lxr.evanmiller.org/http/source/http/ngx_http_request.c#L80>`__).
 It parses it and stores in the handy place (direct pointer in ``headers_in``). 
 If a known header may consist of more then one value (Cookies or
-Cache-Control for example.) nginx could handle it with an array. And for
+Cache-Control for example.) NGINX could handle it with an array. And for
 a header that known to have a numeric value (Content-Length, Expires)
-nginx will parse the text and store it directly in the ``headers_in`` struct. All the 
+NGINX will parse the text and store it directly in the ``headers_in`` struct. All the 
 rest of headers are carefully stored in a simple list within the ``headers_in``
 structure, so nothing is been lost.
 
@@ -70,7 +70,7 @@ is a good example).
 This is good if you know at compile time which header you are going to
 read. But how do we get the header by its name at run time where the
 name is just a string? For this kind of situation we have a smart hash
-of headers ``cmcf->headers_in_hash``. If the header is known to nginx the header name is cached within this
+of headers ``cmcf->headers_in_hash``. If the header is known to NGINX the header name is cached within this
 hash and we can find the header value relatively fast. If the header
 hasn't been hashed we'll have to run through the full headers list and
 compare all headers names with our one. This isn't very fast but also
@@ -239,18 +239,18 @@ a pre-hashed key.
 How does hashed search work?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-At the configuration stage nginx creates a hash
+At the configuration stage NGINX creates a hash
 (`ngx\_hash\_t <http://lxr.evanmiller.org/http/ident?i=ngx_hash_t>`__)
 of known HTTP headers (as mentioned above). In each pair the key is a
-the header name and the value is a nginx header handler structure
+the header name and the value is a NGINX header handler structure
 (pretty smart structure, you know). In this structure we can see the
 header name, its handler on a stage of headers parsing (for internal
 use) and, the most interesting, the offset of the header value in the
 headers\_in struct. This offset is used to fill the appropriate field in
 the request struct when the request value is been adding. At the parsing
-stage nginx calculates a hash of the lowercased header name (HTTP
+stage NGINX calculates a hash of the lowercased header name (HTTP
 headers names are case-insensitive) and searches the header handler by
-this hash (in main conf headers has). If the handler is found nginx
+this hash (in main conf headers has). If the handler is found NGINX
 invokes it, otherwise just adds the key/value pair to the plain list of
 headers (``headers_in.headers``). Pretty simple if you know how it' made ;)
 
@@ -264,7 +264,7 @@ output header by its name at runtime.
 How can I set a header?
 -----------------------
 
-As far as nginx may store a header value in many places you have to be
+As far as NGINX may store a header value in many places you have to be
 careful setting a header. Every known header needs a special way to be
 set. If it is a numeric header you could set it three times: a plain
 key/value pair in the list, the pointer in headers\_in struct and the

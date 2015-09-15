@@ -45,10 +45,10 @@ resources.
 -- Matthew Prince, co-founder and CEO of CloudFlare
 
 
-Both servers [Apache and Nginx] are capable of serving a huge number of requests per
+Both servers [Apache and NGINX] are capable of serving a huge number of requests per
 second, but Apache's performance start decreasing as you add more concurrent
-connections whereas Nginx's performance almost doesn't drop!
-But here comes the best bit: because Nginx is event-based it doesn't need to
+connections whereas NGINX's performance almost doesn't drop!
+But here comes the best bit: because NGINX is event-based it doesn't need to
 spawn new processes or threads for each request, so its memory usage is very low.
 Throughout my benchmark it just sat at 2.5MB of memory while Apache was using a
 lot more.
@@ -56,25 +56,25 @@ lot more.
 -- `WebFaction <http://blog.webfaction.com/2008/12/a-little-holiday-present-10000-reqssec-with-nginx-2/>`__
 
 
-I ran a simple test against Nginx v0.5.22 and Apache v2.2.8 using ab (Apache's
+I ran a simple test against NGINX v0.5.22 and Apache v2.2.8 using ab (Apache's
 benchmarking tool). During the tests, I monitored the system with vmstat and top.
-The results indicate that Nginx outperforms Apache when serving static content.
+The results indicate that NGINX outperforms Apache when serving static content.
 Both servers performed best with a concurrency of 100. Apache used four worker
 processes (threaded mode), 30% CPU and 17MB of memory to serve 6,500 requests per
-second. Nginx used one worker, 15% CPU and 1MB of memory to serve 11,500 requests
+second. NGINX used one worker, 15% CPU and 1MB of memory to serve 11,500 requests
 per second.
 
 -- `Linux Journal <http://www.linuxjournal.com/article/10108>`__
 
 
 Apache is like Microsoft Word, it has a million options but you only need
-six. Nginx does those six things, and it does five of them 50 times faster
+six. NGINX does those six things, and it does five of them 50 times faster
 than Apache.
 
 -- `Chris Lea <http://maisonbisson.com/post/12249/chris-lea-on-nginx-and-wordpress>`_
 
 
-I currently have Nginx doing reverse proxy of over tens of millions of
+I currently have NGINX doing reverse proxy of over tens of millions of
 HTTP requests per day (that's a few hundred per second) on a single server.
 At peak load it uses about 15MB RAM and 10% CPU on my particular configuration
 (FreeBSD 6).
@@ -87,9 +87,9 @@ than 20MB per hour (and uses more CPU, but not significantly more).
 `TurboGears mailing list <http://markmail.org/message/q3smhtnlujh2mvpu>`_, 2006-08-24
 
 
-We are currently using Nginx 0.6.29 with the upstream hash module which
+We are currently using NGINX 0.6.29 with the upstream hash module which
 gives us the static hashing we need to proxy to Varnish. We are regularly
-serving about 8-9k requests/second and about 1.2Gbit/sec through a few Nginx
+serving about 8-9k requests/second and about 1.2Gbit/sec through a few NGINX
 instances and have plenty of room to grow!
 
 -- `Wordpress.com <https://barry.wordpress.com/2008/04/28/load-balancer-update/>`_
@@ -111,8 +111,8 @@ instances and have plenty of room to grow!
    -- `Emmett Shear <http://blog.emmettshear.com/post/2008/03/03/Dont-use-Pound-for-load-balancing>`_
 
 
-...we are using nginx as a primary software for free hosting platforms. I have
-developed specific modules for banner inserting and stats calculation in nginx
+...we are using NGINX as a primary software for free hosting platforms. I have
+developed specific modules for banner inserting and stats calculation in NGINX
 and now our central server can handle about 150-200Mbit/s of highly fragmented
 http-traffic (all files are small).
 I think, this is really good result because with any possible tunings of Apache
@@ -121,8 +121,8 @@ on the same servers we were not able to handle even 60-80Mbit/s.
 -- `Alexey Kovyrin <http://kovyrin.net/2006/04/04/nginx-small-powerful-web-server/>`_
 
 
-A while back, we changed our frontend IMAP/POP proxy from perdition to nginx...
-[and] we’ve now switched over to using nginx for our frontend web proxy as well...
+A while back, we changed our frontend IMAP/POP proxy from perdition to NGINX...
+[and] we’ve now switched over to using NGINX for our frontend web proxy as well...
 The net result of all this is that each frontend proxy server currently maintains
 over 10,000 simultaneous IMAP, POP, Web & SMTP connections (including many SSL
 ones) using only about 10% of the available CPU.
@@ -130,16 +130,16 @@ ones) using only about 10% of the available CPU.
 -- `FastMail.fm blog <http://blog.fastmail.com/2007/01/04/webimappop-frontend-proxies-changed-to-nginx/>`_
 
 
-We recently switched over our static content webserver over to Nginx,
+We recently switched over our static content webserver over to NGINX,
 easily the most impressive webserver I’ve seen in years. We’re running
 it on a machine with 8Gb of memory (along with some other stuff), but
-the nginx process is only using a ridiculously small 1.4Mb. In other words,
+the NGINX process is only using a ridiculously small 1.4Mb. In other words,
 it barely registers in any measurable way.
 
 -- `Philip Jacob <http://seventhfloor.whirlycott.com/2007/10/05/singing-the-praises-of-nginx/>`_
 
 
-We've replaced our Squid (reverse proxy) + Apache setup with nginx, and
+We've replaced our Squid (reverse proxy) + Apache setup with NGINX, and
 load average as well as CPU usage have been reduced by half. In addition
 to that our benchmarks show that the new setup can handle about two to
 three times as many requests per second (RPS) as the old setup.
@@ -149,8 +149,8 @@ three times as many requests per second (RPS) as the old setup.
 
 We've done some `benchmarks <https://timmehosting.de/benchmarks>`__ for
 CMS systems such as Wordpress, Drupal, Joomla, TYPO3, etc., and the
-result is that nginx delivers pages up to 50% faster than Apache. At the
-same time nginx can handle up to 177% as many requests per second (RPS)
+result is that NGINX delivers pages up to 50% faster than Apache. At the
+same time NGINX can handle up to 177% as many requests per second (RPS)
 as Apache.
 
 -- `Timme Hosting <https://timmehosting.de>`_

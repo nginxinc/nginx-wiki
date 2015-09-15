@@ -10,7 +10,7 @@ After Installing
 
 .. todo::
    ..
-      The :doc:`configuration` page will give you some help getting things going after you get Nginx installed and the :doc:`../start/topics/tutorials/config_pitfalls.html` page will help keep you from making mistakes that so many users before you did. 
+      The :doc:`configuration` page will give you some help getting things going after you get NGINX installed and the :doc:`../start/topics/tutorials/config_pitfalls.html` page will help keep you from making mistakes that so many users before you did. 
 
 These two pages give you the chance to learn from others mistakes and hard work.
 
@@ -21,7 +21,7 @@ Binary Releases
 
 Prebuilt Packages for Linux and BSD
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Most Linux distributions and BSD variants have Nginx in the usual package repositories and they can be installed via whatever method is normally used to install software (``apt-get`` on Debian, ``emerge`` on Gentoo, ``ports`` on FreeBSD, etc).
+Most Linux distributions and BSD variants have NGINX in the usual package repositories and they can be installed via whatever method is normally used to install software (``apt-get`` on Debian, ``emerge`` on Gentoo, ``ports`` on FreeBSD, etc).
 
 Be aware that these packages are often somewhat out-of-date.
 If you want the latest features and bugfixes, it's recommended to build from source or use packages directly from nginx.org.
@@ -30,7 +30,7 @@ If you want the latest features and bugfixes, it's recommended to build from sou
 
 Official Red Hat/CentOS packages
 --------------------------------
-To add nginx yum repository, create a file named ``/etc/yum.repos.d/nginx.repo`` and paste one of the configurations below:
+To add NGINX yum repository, create a file named ``/etc/yum.repos.d/nginx.repo`` and paste one of the configurations below:
 
 CentOS::
 
@@ -79,7 +79,7 @@ Ubuntu PPA
 ^^^^^^^^^^
 This PPA is maintained by volunteers and is not distributed by nginx.org.  It has some additional compiled-in modules and may be more fitting for your environment.
 
-You can get the latest stable version of Nginx from the `Nginx PPA <https://launchpad.net/~nginx/+archive/ubuntu/development>`_ on Launchpad:
+You can get the latest stable version of NGINX from the `NGINX PPA <https://launchpad.net/~nginx/+archive/ubuntu/development>`_ on Launchpad:
 You will need to have root privileges to perform the following commands.
 
 For Ubuntu 10.04 and newer:
@@ -110,7 +110,7 @@ For other Debian/Ubuntu based distributions, you can try the lucid variant of th
 
 Official Win32 Binaries
 -----------------------
-As of nginx 0.8.50, nginx is now available as an `official Windows binary <http://nginx.org/en/download.html>`_.
+As of NGINX 0.8.50, NGINX is now available as an `official Windows binary <http://nginx.org/en/download.html>`_.
 
 Installation:
 
@@ -137,7 +137,7 @@ In addition, Kevin Worthington maintains earlier `Windows <http://kevinworthingt
 
 Source Releases
 ---------------
-There are currently two versions of Nginx available: ``stable (1.8.x)``, ``mainline (1.9.x)``.
+There are currently two versions of NGINX available: ``stable (1.8.x)``, ``mainline (1.9.x)``.
 The mainline branch gets new features and bugfixes sooner but might introduce new bugs as well.
 Critical bugfixes are backported to the stable branch.
 
@@ -154,7 +154,7 @@ See the `FAQ <faq.is_it_safe_>`.
 
 Stable
 ^^^^^^
-`nginx 1.8.0 <http://nginx.org/download/nginx-1.8.0.tar.gz>`_<br />
+`NGINX 1.8.0 <http://nginx.org/download/nginx-1.8.0.tar.gz>`_<br />
 21 Apr 2015<br />
 `changelog <http://nginx.org/en/CHANGES-1.8>`_
 </div>
@@ -166,7 +166,7 @@ Stable
 
 Mainline
 ^^^^^^^^
-`nginx 1.9.2 <http://nginx.org/download/nginx-1.9.2.tar.gz>`_<br />
+`NGINX 1.9.2 <http://nginx.org/download/nginx-1.9.2.tar.gz>`_<br />
 16 Jun 2015<br />
 `changelog <http://nginx.org/en/CHANGES>`_
 </div>
@@ -181,7 +181,7 @@ Source code repository is at `hg.nginx.org/nginx <http://hg.nginx.org/nginx>`_.
 Older versions can be found `here <http://nginx.org/en/download.html>`_.
 
 
-Building Nginx From Source
+Building NGINX From Source
 ^^^^^^^^^^^^^^^^^^^^^^^^^^
 After extracting the source, run these commands from a terminal:
 
@@ -191,7 +191,7 @@ After extracting the source, run these commands from a terminal:
   make
   sudo make install
 
-By default, Nginx will be installed in ``/usr/local/nginx``. You may change this and other options with the :doc:`installoptions`.
+By default, NGINX will be installed in ``/usr/local/nginx``. You may change this and other options with the :doc:`installoptions`.
 
 You might also want to peruse the :doc:`3rd party modules <../../../modules/index>`, since these must be built at compile-time.
 

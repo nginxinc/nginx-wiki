@@ -5,7 +5,7 @@
 Mono FCGI
 =========
 
-You want to run .NET websites behind Nginx and don't want to use Windows to do it. Spiffy.
+You want to run .NET websites behind NGINX and don't want to use Windows to do it. Spiffy.
 
 Here's the virtual host configuration you'll want.
 
