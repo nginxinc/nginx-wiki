@@ -45,7 +45,7 @@ div.topbar img {
 }
 
 div.document {
-    width: {{ page_width }};
+    max-width: {{ page_width }};
     margin: 30px auto 0 auto;
 }
 
@@ -64,6 +64,7 @@ div.body {
 
 div.sphinxsidebar {
     width: {{ sidebar_width }};
+    padding-left: 10px;
 }
 
 hr {
