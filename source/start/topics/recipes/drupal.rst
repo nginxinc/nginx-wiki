@@ -7,7 +7,7 @@
 Drupal
 ======
 
-Drupal is a bit of a beast of a PHP application.
+`Drupal <http://drupal.org/>`__ is a PHP-based open-source content management platform.
 
 Requirements
 ------------
