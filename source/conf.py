@@ -379,7 +379,8 @@ linkcheck_ignore = [
                     r'.*domain.com.*', # Example URLs
                     r'.*quakenet.org.*', # Blocks Shippable with a 523 error
                     r'.*calomel.org.*', # urlopen error EOF occurred in violation of protocol (_ssl.c:600)
-                    r'.*linux.die.net/*' # Network unreachable on CI
+                    r'.*linux.die.net/*', # Network unreachable on CI
+                    r'.*catap.ru.*' # 302 error
                    ]
 
 
