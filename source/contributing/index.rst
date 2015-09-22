@@ -5,8 +5,6 @@
 Contributing to NGINX
 =====================
 
-Contributing to NGINX
----------------------
 
 A detailed breakdown of how to contribute code changes to NGINX can be found in the `NGINX documentation <http://nginx.org/en/docs/contributing_changes.html>`_.
 
