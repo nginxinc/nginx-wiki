@@ -2,7 +2,7 @@
 .. meta::
   :description: Introduction to nginScript, the NGINX javascript.
   
-nginScript documentation
+nginScript Documentation
 ========================
 
 Section 1: Overview
