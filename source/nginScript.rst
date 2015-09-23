@@ -8,38 +8,38 @@ nginScript documentation
 Section 1: Overview
 -------------------
 
-NGINX’s Javascript is the next stage of the evolution of NGINX’s capabilities.  It’s currently at a very early stage of design and development, and we welcome feedback and suggestions to help shape the future direction of this feature.
+nginScript is the next stage of the evolution of NGINX’s capabilities.  It’s currently at a very early stage of design and development, and we welcome feedback and suggestions to help shape the future direction of this feature.
 
 Why?
 ^^^^
 
 NGINX is a powerful web server and layer-7 proxy, configured through directives which access functionality in NGINX modules (both built-in and third-party). Variables and conditional blocks let you define complex configurations.  You can do a lot with NGINX, but you’ll eventually hit a ceiling which is limited by the imagination and capabilities of the modules built by the NGINX team and the wider community.
 
-NGINX JavaScript will let you break through that ceiling, building solutions and solving problems that no one else has anticipated.
+nginScript will let you break through that ceiling, building solutions and solving problems that no one else has anticipated.
 
-What is NGINX JavaScript
+What is nginScript
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-NGINX JavaScript is built of two parts:
+nginScript is built of two parts:
 
 - **A custom VM** (virtual machine) and bytecode compiler that implements a large subset of the JavaScript language.  Unlike contemporary JavaScript VMs, the NGINX VM is tailored for the NGINX environment.  It has a very low startup and tear-down time so that it can run JS snippets efficiently.  It uses a short-term memory-pool architecture rather than a garbage collector for efficient and predictable memory usage.  Finally, we’re planning a pre-emption capability so that blocking operations (such as an HTTP subrequest) can be suspended and resumed, which aligns perfectly with the event-driven NGINX architecture
 - **A Configuration syntax** that allows you to embed snippets of JavaScript in your NGINX configuration.  These snippets will be evaluated at run-time, in the context of each HTTP transaction, allowing you to create much more powerful conditional configuration, modify requests and responses, and control the internal operation of NGINX precisely for each request.
 
-What NGINX JavaScript is not
+What nginScript is not
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-NGINX JavaScript is not an application server.  We don’t plan to create an alternative to node.js, or any other application platforms.  NGINX JavaScript is targeted very firmly at extending the NGINX configuration to give you more control over HTTP traffic.
+nginScript is not an application server.  We don’t plan to create an alternative to node.js, or any other application platforms.  nginScript is targeted very firmly at extending the NGINX configuration to give you more control over HTTP traffic.
 
-NGINX JavaScript is not a full, standards-compliant implementation of ECMAscript.  It shares the same syntax and behaviour, but for efficiency and pragmatic reasons, we don’t plan to support the more esoteric parts of the JavaScript language and built-in objects that believe are not necessary for our use cases.
+nginScript is not a full, standards-compliant implementation of ECMAscript.  It shares the same syntax and behaviour, but for efficiency and pragmatic reasons, we don’t plan to support the more esoteric parts of the JavaScript language and built-in objects that believe are not necessary for our use cases.
 
-NGINX JavaScript is not intended to replace or marginalize the excellent and highly-regarded Lua suite of modules for NGINX, or any of the other embedded languages for NGINX.  We believe in choice, we believe there’s a gap and an opportunity for JavaScript as an alternative, and we welcome the broad community of extensions to NGINX. It’s community and choice that makes NGINX so strong.
+nginScript is not intended to replace or marginalize the excellent and highly-regarded Lua suite of modules for NGINX, or any of the other embedded languages for NGINX.  We believe in choice, we believe there’s a gap and an opportunity for JavaScript as an alternative, and we welcome the broad community of extensions to NGINX. It’s community and choice that makes NGINX so strong.
 
-Early-Access to NGINX JavaScript
+Early-Access to nginScript
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-NGINX JavaScript is available as an early-access project.  It’s an external module of alpha quality, and the features and configuration syntax are likely to change as we develop the implementation and incorporate your feedback.  Please use at your own risk, but we’d love to get your feedback and ideas.
+nginScript is available as an early-access project.  It’s an external module of alpha quality, and the features and configuration syntax are likely to change as we develop the implementation and incorporate your feedback.  Please use at your own risk, but we’d love to get your feedback and ideas.
 
-Section 2: Installing the NGINX JavaScript module
+Section 2: Installing the nginScript module
 -------------------------------------------------
 
 Installation instructions:
@@ -50,7 +50,7 @@ Installation instructions:
   $ wget http://nginx.org/download/nginx-1.9.4.tar.gz
   $ tar -xzvf nginx-1.9.4.tar.gz
   
-  # Obtain the development sources for NGINX JavaScript
+  # Obtain the development sources for nginScript
   $ hg clone http://hg.nginx.org/njs
   
   # Build and install NGINX
@@ -61,10 +61,10 @@ Installation instructions:
 
 For more details on compiling NGINX and third-party modules, please refer to http://nginx.org/en/docs/configure.html 
 
-Section 3: Getting Started with NGINX JavaScript
+Section 3: Getting Started with nginScript
 ------------------------------------------------
 
-In the early-access release of NGINX JavaScript, you can do several things.
+In the early-access release of nginScript, you can do several things.
 
 Variables
 ^^^^^^^^^
@@ -112,7 +112,7 @@ The js_run directive is evaluated at the content-generation stage. It’s used t
 The request object
 ^^^^^^^^^^^^^^^^^^
 
-The NGINX JavaScript environment provides a request object, designated as $r.  You can read and set the properties of this object and use the methods it provides to access and modify the request.
+The nginScript environment provides a request object, designated as $r.  You can read and set the properties of this object and use the methods it provides to access and modify the request.
 
 .. code-block:: nginx
 
@@ -216,7 +216,7 @@ Any tunables or configuration for nJS
 Caveats and Limitations
 ^^^^^^^^^^^^^^^^^^^^^^^
 
-NGINX JavaScript supports a subset of the JS language.
+nginScript supports a subset of the JS language.
 
 Specific exclusions (e.g. no closures, no eval, etc)
 
@@ -238,4 +238,4 @@ suggestions for future features
 recommendations on architectural improvements
 
 .. note::
-  This is an early-access release of NGINX JavaScript.  Because the code is changing frequently, we’re not in a position to review and accept code contributions or patches at present.
+  This is an early-access release of nginScript.  Because the code is changing frequently, we’re not in a position to review and accept code contributions or patches at present.
