@@ -728,7 +728,7 @@ To avoid this, *double* escape the backslash:
 
 Here, ``\\\\d+`` is stripped down to ``\\d+`` by the NGINX config file parser and this is further stripped down to ``\d+`` by the Lua language parser before running.
 
-Alternatively, the regex pattern can be presented as a long-bracketed Lua string literal by encasing it in "long brackets", ``&#91;[...]]``, in which case backslashes have to only be escaped once for the NGINX config file parser.
+Alternatively, the regex pattern can be presented as a long-bracketed Lua string literal by encasing it in "long brackets", ``[[...]]``, in which case backslashes have to only be escaped once for the NGINX config file parser.
 
 .. code-block:: nginx
 
@@ -743,9 +743,9 @@ Alternatively, the regex pattern can be presented as a long-bracketed Lua string
   # evaluates to "1234"
 
 
-Here, ``&#91;[\\d+]]`` is stripped down to ``&#91;[\d+]]`` by the NGINX config file parser and this is processed correctly.
+Here, ``[[\\d+]]`` is stripped down to ``[[\d+]]`` by the NGINX config file parser and this is processed correctly.
 
-Note that a longer from of the long bracket, ``[=[...]=]``, may be required if the regex pattern contains ``&#91;...]`` sequences.
+Note that a longer from of the long bracket, ``[=[...]=]``, may be required if the regex pattern contains ``[...]`` sequences.
  The ``[=[...]=]`` form may be used as the default form if desired.
 
 .. code-block:: nginx
