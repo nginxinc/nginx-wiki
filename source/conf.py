@@ -26,7 +26,7 @@ from pygments.filters import Filter, FILTERS
 # -- General configuration ------------------------------------------------
 
 # If your documentation needs a minimal Sphinx version, state it here.
-needs_sphinx = '1.1'
+needs_sphinx = '1.3'
 
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
@@ -40,74 +40,10 @@ templates_path = ['_templates']
 # The suffix(es) of source filenames.
 # You can specify multiple suffix as a list of string:
 # source_suffix = ['.rst', '.md']
-source_suffix = '.rst'
-
-rst_epilog = """
-.. |HttpRewriteModule| replace:: ngx_http_rewrite_module
-
-.. _HttpRewriteModule: http://nginx.org/en/docs/http/ngx_http_rewrite_module.html
-
-
-.. |HttpAccessModule| replace:: ngx_http_access_module
-
-.. _HttpAccessModule: http://nginx.org/en/docs/http/ngx_http_access_module.html
-
-
-.. |HttpLogModule| replace:: ngx_http_log_module
-
-.. _HttpLogModule: http://nginx.org/en/docs/http/ngx_http_log_module.html
-
-
-.. |HttpCoreModule| replace:: ngx_http_core_module
-
-.. _HttpCoreModule: http://nginx.org/en/docs/http/ngx_http_core_module.html
-
-
-.. |HttpEchoModule| replace:: ngx_http_echo_module
-
-.. _HttpEchoModule: http://nginx.org/en/docs/http/ngx_http_echo_module.html
-
-
-.. |HttpUpstreamModule| replace:: /ngx_http_upstream_module
-
-.. _HttpUpstreamModule: http://nginx.org/en/docs/http/ngx_http_upstream_module.html
-
-
-.. |HttpProxyModule| replace:: ngx_http_proxy_module
-
-.. _HttpProxyModule: http://nginx.org/en/docs/http/ngx_http_proxy_module.html
-
-
-.. |HttpFastCGIModule| replace:: ngx_http_fastcgi_module
-
-.. _HttpFastCGIModule: http://nginx.org/en/docs/http/ngx_http_fastcgi_module.html
-
-
-.. |HttpSsiModule| replace:: ngx_http_ssi_module
-
-.. _HttpSsiModule: http://nginx.org/en/docs/http/ngx_http_ssi_module.html
-
-
-.. |HttpMapModule| replace:: ngx_http_map_module
-
-.. _HttpMapModule: http://nginx.org/en/docs/http/ngx_http_map_module.html
-
-
-.. |HttpGZipModule| replace:: ngx_http_gzip_module
-
-.. _HttpGZipModule: http://nginx.org/en/docs/http/ngx_http_gzip_module.html
-
-
-.. |MailCoreModule| replace:: ngx_mail_core_module
-
-.. ngx_mail_core_module: http://nginx.org/en/docs/mail/ngx_mail_core_module.html
-
-
-.. |EventsModule| replace:: ngx_http_core_module
-
-.. EventsModule: http://nginx.org/en/docs/http/ngx_http_core_module.html
-
-"""
+source_parsers = {
+    '.md': 'recommonmark.parser.CommonMarkParser',
+}
+source_suffix = ['.rst', '.md']
 
 # The encoding of source files.
 #source_encoding = 'utf-8-sig'

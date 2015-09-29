@@ -154,7 +154,7 @@ Description
 -----------
 This module extends the standard HttpRewriteModule's directive set to provide more functionalities like URI escaping and unescaping, JSON quoting, Hexadecimal/MD5/SHA1/Base32/Base64 digest encoding and decoding, random number generator, and more!
 
-Every directive provided by this module can be mixed freely with other |HttpRewriteModule|'s directives, like `if <|HttpRewriteModule|#if>`_ and `set <|HttpRewriteModule|#set>`_. (Thanks to the :github:`NGINX Devel Kit <simpl/ngx_devel_kit>`)
+Every directive provided by this module can be mixed freely with other ngx_http_rewrite_module's directives, like `if <http://nginx.org/en/docs/http/ngx_http_rewrite_module.html#if>`_ and `set <http://nginx.org/en/docs/http/ngx_http_rewrite_module.html#set>`_. (Thanks to the :github:`NGINX Devel Kit <simpl/ngx_devel_kit>`)
 
 
 
@@ -338,7 +338,7 @@ Then request ``GET /test?key=hello+world%21`` will yield the following output
   hello world!
 
 
-The NGINX standard `$arg_PARAMETER <|HttpCoreModule|#$arg_PARAMETER>`_ variable holds the raw (escaped) value of the URI parameter. So we need the ``set_unescape_uri`` directive to unescape it first.
+The NGINX standard `$arg_PARAMETER <http://nginx.org/en/docs/http/ngx_http_core_module.html#$arg_PARAMETER>`_ variable holds the raw (escaped) value of the URI parameter. So we need the ``set_unescape_uri`` directive to unescape it first.
 
 .. note:: We're using :doc:`echo_module's <echo>` ``echo`` directive here to output values of NGINX variables directly.
 
@@ -403,7 +403,7 @@ For example,
 
 Then ``GET /test?key=blah`` will output either "moon", "sun", or "earth", depending on the actual value of the ``key`` query argument.
 
-This directive is usually used to compute an NGINX variable to be passed to :doc:`memc`'s ``memc_pass`` directive, :doc:`redis2`'s ``redis2_pass`` directive, and |HttpProxyModule|'s `proxy_pass <|HttpProxyModule|#proxy_pass>`_ directive, among others.
+This directive is usually used to compute an NGINX variable to be passed to :doc:`memc`'s ``memc_pass`` directive, :doc:`redis2`'s ``redis2_pass`` directive, and ngx_http_proxy_module's `proxy_pass <http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_pass>`_ directive, among others.
 
 
 .. _set_misc.set_encode_base32:
@@ -1036,7 +1036,7 @@ This directive was first added in the ``0.23`` release.
 
 Caveats
 -------
-Do not use `$arg_PARAMETER <|HttpCoreModule|#$arg_PARAMETER>`_, `$cookie_COOKIE <|HttpCoreModule|#$cookie_COOKIE>`_, `$http_HEADER <|HttpCoreModule|#$http_HEADER>`_ or other special variables defined in the NGINX core module as the target variable in this module's directives. 
+Do not use `$arg_PARAMETER <http://nginx.org/en/docs/http/ngx_http_core_module.html#$arg_PARAMETER>`_, `$cookie_COOKIE <http://nginx.org/en/docs/http/ngx_http_core_module.html#$cookie_COOKIE>`_, `$http_HEADER <http://nginx.org/en/docs/http/ngx_http_core_module.html#$http_HEADER>`_ or other special variables defined in the NGINX core module as the target variable in this module's directives. 
 
 For instance,
 

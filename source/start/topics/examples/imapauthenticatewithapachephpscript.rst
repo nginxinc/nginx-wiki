@@ -6,7 +6,7 @@ Using a PHP Script on an Apache Server as the IMAP Auth Backend
 ===============================================================
 
 Start with the configuration from :doc:`imapproxyexample`. 
-For detailed information about different configuration parameters, see the |MailCoreModule| page.
+For detailed information about different configuration parameters, see the ngx_mail_core_module page.
 
 #. Your Proxy server for pop/imap is running on 192.168.1.1
 #. You have 2 backend pop/imap servers: 192.168.1.22 and 192.168.1.33

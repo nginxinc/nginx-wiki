@@ -47,7 +47,7 @@ and add it to the the site's configuration in the "server" section with
    ..
       The deb package contains an improved init script, which is mirrored :doc:`here <fcgiwrapdebianinitscript>` for completeness.
    
-After installing the package, also have a look at the |HttpFastCGIModule| documentation or the :doc:`fastcgiexample`.
+After installing the package, also have a look at the ngx_http_fastcgi_module documentation or the :doc:`fastcgiexample`.
 
 
 
@@ -134,4 +134,4 @@ What Happens
 ------------
 The sudo command will launch the fcgiwrapper init script as the www-data user. 
 The script bings a listener thread to ``/tmp/cgi.sock``. 
-This is what you need to use in `fastcgi_pass <|HttpFastCGIModule|#fastcgi_pass>`_: ``fastcgi_pass unix:/tmp/cgi.sock;``
+This is what you need to use in `fastcgi_pass <http://nginx.org/en/docs/http/ngx_http_fastcgi_module.html#fastcgi_pass>`_: ``fastcgi_pass unix:/tmp/cgi.sock;``

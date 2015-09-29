@@ -9,7 +9,7 @@ This is the source repository for the new NGINX wiki. It is written in reStructu
 Compiling
 ---------
 
-To compile a local copy of the documentation you will need Sphinx installed. Most linux distributions have this in their repositories and can be installed with commands such as:
+To compile a local copy of the documentation you will need Sphinx installed. Most Linux distributions have this in their repositories and can be installed with commands such as:
 
 .. code-block:: bash
 
@@ -26,6 +26,12 @@ Alternatively it can be installed with Python's pip package manager:
 .. code-block:: bash
 
    $ sudo pip install Sphinx
+
+There are a couple of extra dependencies you will also need to build the Markdown parts of the documentation:
+
+.. code-block:: bash
+
+   $ sudo pip install recommonmark commonmark
 
 You can then build the docs with:
 

@@ -139,7 +139,7 @@ HTTP
 What does this @ thing mean?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 @location is a named location.  Named locations preserve $uri as it was before entering said location.
-They were introduced in 0.6.6 and can be reached only via `error_page <|HttpCoreModule|#error_page>`_, `post_action <|HttpCoreModule|#post_action>`_ (since 0.6.26) and `try_files <|HttpCoreModule|#try_files>`_ (since 0.7.27, backported to 0.6.36).
+They were introduced in 0.6.6 and can be reached only via `error_page <http://nginx.org/en/docs/http/ngx_http_core_module.html#error_page>`_, `post_action <http://nginx.org/en/docs/http/ngx_http_core_module.html#post_action>`_ (since 0.6.26) and `try_files <http://nginx.org/en/docs/http/ngx_http_core_module.html#try_files>`_ (since 0.7.27, backported to 0.6.36).
 
 
 
@@ -152,7 +152,7 @@ NGINX is generally deployed as a reverse proxy, not as a caching proxy (like Squ
 The key advantage with NGINX is its nominal RAM and CPU usage under heavy load.
 Squid is best applied to cache dynamic content for applications that cannot do it themselves.
 
-The |HttpProxyModule| offers configurations for caching upstream servers.
+The ngx_http_proxy_module offers configurations for caching upstream servers.
 
 
 Can I disable the buffering for upload progress? / How can I display upload progress on the client side?
@@ -172,7 +172,7 @@ Could someone explain how to configure and test the IMAP module (with a complete
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 Start with the configuration from the :doc:`../start/topics/examples/imapproxyexample`.
 
-For detailed information about different configuration parameters, see the |MailCoreModule| page.
+For detailed information about different configuration parameters, see the ngx_mail_core_module page.
 
 Related resources:
 
@@ -205,7 +205,7 @@ First, declare the mail part as follows:
   }
 
 
-The example is for unauthenticated e-mail as you can see, but if you need authentication just check out the |MailCoreModule| information on how to achieve it.
+The example is for unauthenticated e-mail as you can see, but if you need authentication just check out the ngx_mail_core_module information on how to achieve it.
 Postfix by default doesn't support XCLIENT, so it got turned off in the example as well.
 
 Next, you need to configure the authentication back end. If you just need to have some sort of pass-through mode towards a single address, you can do so with the following code:
