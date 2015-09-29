@@ -17,7 +17,7 @@ Debugging log
 -------------
 See `a debugging log <http://nginx.org/en/docs/debugging_log.html>`_ in documentation for details.
 
-To activate debugging log you have to compile NGINX with *--with-debug* configure option and set debug level in `error_log <|HttpCoreModule|#error_log>`_ directive.
+To activate debugging log you have to compile NGINX with *--with-debug* configure option and set debug level in `error_log <http://nginx.org/en/docs/http/ngx_http_core_module.html#error_log>`_ directive.
 
 It's possible to debug only connections from specified addresses via `debug_connection <|EventModule|#debug_connection>`_ directive.
 

@@ -14,7 +14,7 @@ Second, in the event that rewriting has failed the ``index.php`` file will attem
 .. note::
 
    These instructions assume you are using PHP configured as :doc:`../examples/phpfcgi` or PHP-FPM listening on 127.0.0.1:9000.  
-   Make any appropriate changes `fastcgi_params <|HttpFastCGIModule|#fastcgi_params>`_ as needed for your environment.
+   Make any appropriate changes `fastcgi_params <http://nginx.org/en/docs/http/ngx_http_fastcgi_module.html#fastcgi_params>`_ as needed for your environment.
 
 Recipe
 ------

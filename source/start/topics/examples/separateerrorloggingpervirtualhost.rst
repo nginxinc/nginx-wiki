@@ -42,5 +42,5 @@ This way, a request for ``one.org/nonexistent.html`` file will output the follow
 
   2009/01/01 19:45:44 [error]  29874#0: *98 open() "/var/www/one/nonexistent.html" failed (2: No such file or directory), client: 11.22.33.44, server: one.org, request: "GET /nonexistent.html HTTP/1.1", host: "one.org"
 
-.. note:: The `error_log <|HttpCoreModule|#error_log>`_ directive has different default values depending on the section it appears in.
-  This means that you have to explicitly set the error logging level in the `server {...} <|HttpCoreModule|#server>`_ block.
+.. note:: The `error_log <http://nginx.org/en/docs/http/ngx_http_core_module.html#error_log>`_ directive has different default values depending on the section it appears in.
+  This means that you have to explicitly set the error logging level in the `server {...} <http://nginx.org/en/docs/http/ngx_http_core_module.html#server>`_ block.

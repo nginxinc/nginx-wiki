@@ -21,9 +21,9 @@ Files and Permissions
 **--pid-path=*path***
   sets the name of an nginx.pid file that will store the process ID of the main process. After installation, the file name can always be changed in the ``nginx.conf`` configuration file using the pid directive. By default the file is named ``prefix/logs/nginx.pid``.
 **--error-log-path=*path***
-  sets the name of the primary error, warnings, and diagnostic file. After installation, the file name can always be changed in the ``nginx.conf`` configuration file using the `error log <|HttpCoreModule|#error_log>`_ directive. By default the file is named ``prefix/logs/error.log``. The special "stderr" value tells NGINX to log pre-configuration messages to the standard error.
+  sets the name of the primary error, warnings, and diagnostic file. After installation, the file name can always be changed in the ``nginx.conf`` configuration file using the `error log <http://nginx.org/en/docs/http/ngx_http_core_module.html#error_log>`_ directive. By default the file is named ``prefix/logs/error.log``. The special "stderr" value tells NGINX to log pre-configuration messages to the standard error.
 **--http-log-path=*path***
-  sets the name of the primary request log file of the HTTP server. After installation, the file name can always be changed in the ``nginx.conf`` configuration file using the `access log <|HttpCoreModule|#access_log>`_ directive. By default the file is named ``prefix/logs/access.log``.
+  sets the name of the primary request log file of the HTTP server. After installation, the file name can always be changed in the ``nginx.conf`` configuration file using the `access log <http://nginx.org/en/docs/http/ngx_http_core_module.html#access_log>`_ directive. By default the file is named ``prefix/logs/access.log``.
 **--user=*name***
   sets the name of an unprivileged user whose credentials will be used by worker processes. After installation, the name can always be changed in the ``nginx.conf`` configuration file using the user directive. The default user name is nobody.
 **--group=*name***
@@ -47,11 +47,11 @@ Optional Modules
 **--with-http_ssl_module**
   enables building a module that adds the HTTPS protocol support to an HTTP server. This module is not built by default. The OpenSSL library is required to build and run this module.
 **--with-pcre=*path***
-  sets the path to the sources of the PCRE library. The library distribution (version 4.4 — 8.21) needs to be downloaded from the PCRE site and extracted. The rest is done by NGINX's ``./configure`` and ``make``. The library is required for regular expressions support in the location directive and for the |HttpRewriteModule|. See `notes <installoptions.notes_>`_ below for using system PCRE on FreeBSD systems.
+  sets the path to the sources of the PCRE library. The library distribution (version 4.4 — 8.21) needs to be downloaded from the PCRE site and extracted. The rest is done by NGINX's ``./configure`` and ``make``. The library is required for regular expressions support in the location directive and for the ngx_http_rewrite_module. See `notes <installoptions.notes_>`_ below for using system PCRE on FreeBSD systems.
 **--with-pcre-jit**
   builds the PCRE library with "just-in-time compilation" support.
 **--with-zlib=*path***
-  sets the path to the sources of the zlib library. The library distribution (version 1.1.3 — 1.2.5) needs to be downloaded from the zlib site and extracted. The rest is done by NGINX's ``./configure`` and ``make``. The library is required for the |HttpGzipModule|.
+  sets the path to the sources of the zlib library. The library distribution (version 1.1.3 — 1.2.5) needs to be downloaded from the zlib site and extracted. The rest is done by NGINX's ``./configure`` and ``make``. The library is required for the ngx_http_gzip_module.
 
 Compilation Controls
 ^^^^^^^^^^^^^^^^^^^^

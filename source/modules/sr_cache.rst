@@ -115,7 +115,7 @@ This module provides a transparent caching layer for arbitrary NGINX locations (
 
 Usually, :doc:`memc` is used together with this module to provide a concrete caching storage backend. But technically, any modules that provide a REST interface can be used as the fetching and storage subrequests used by this module.
 
-For main requests, the `srcache_fetch`_ directive works at the end of the access phase, so the `standard access module <|HttpAccessModule|>`_'s `allow <|HttpAccessModule|#allow>`_ and `deny <|HttpAccessModule|#deny>`_ direcives run *before* ours, which is usually the desired behavior for security reasons.
+For main requests, the `srcache_fetch`_ directive works at the end of the access phase, so the `standard access module <http://nginx.org/en/docs/http/ngx_http_access_module.html>`_'s `allow <http://nginx.org/en/docs/http/ngx_http_access_module.html#allow>`_ and `deny <http://nginx.org/en/docs/http/ngx_http_access_module.html#deny>`_ direcives run *before* ours, which is usually the desired behavior for security reasons.
 
 The workflow of this module looks like below:
 
@@ -288,7 +288,7 @@ we want to remove the ``SID`` and ``UID`` arguments from it. It is easy to achie
   }
 
 
-Here we use the ``echo`` directive from :doc:`echo` to dump out the final value of `$args <|HttpCoreModule|#$args>`_ in the end. You can replace it with your :doc:`sr_cache` configurations and upstream configurations instead for your case. Let's test this /t interface with curl:
+Here we use the ``echo`` directive from :doc:`echo` to dump out the final value of `$args <http://nginx.org/en/docs/http/ngx_http_core_module.html#$args>`_ in the end. You can replace it with your :doc:`sr_cache` configurations and upstream configurations instead for your case. Let's test this /t interface with curl:
 
 .. code-block:: bash
 
@@ -296,7 +296,7 @@ Here we use the ``echo`` directive from :doc:`echo` to dump out the final value 
   M=1&UNC=0&RT=62&H=1&L=EN&SRC=LK
 
 
-It is worth mentioning that, if you want to retain the order of the URI arguments, then you can do string substitutions on the value of `$args <|HttpCoreModule|#$args>`_ directly, for example:
+It is worth mentioning that, if you want to retain the order of the URI arguments, then you can do string substitutions on the value of `$args <http://nginx.org/en/docs/http/ngx_http_core_module.html#$args>`_ directly, for example:
 
 .. code-block:: nginx
 
@@ -333,9 +333,9 @@ srcache_fetch
 
 This directive registers an access phase handler that will issue an NGINX subrequest to lookup the cache.
 
-When the subrequest returns status code other than ``200``, than a cache miss is signaled and the control flow will continue to the later phases including the content phase configured by |HttpProxyModule|, |HttpFastCGIModule|, and others. If the subrequest returns ``200 OK``, then a cache hit is signaled and this module will send the subrequest's response as the current main request's response to the client directly.
+When the subrequest returns status code other than ``200``, than a cache miss is signaled and the control flow will continue to the later phases including the content phase configured by ngx_http_proxy_module, ngx_http_fastcgi_module, and others. If the subrequest returns ``200 OK``, then a cache hit is signaled and this module will send the subrequest's response as the current main request's response to the client directly.
 
-This directive will always run at the end of the access phase, such that |HttpAccessModule|'s `allow <|HttpAccessModule|#allow>`_ and `deny <|HttpAccessModule|#deny>`_ will always run *before* this.
+This directive will always run at the end of the access phase, such that ngx_http_access_module's `allow <http://nginx.org/en/docs/http/ngx_http_access_module.html#allow>`_ and `deny <http://nginx.org/en/docs/http/ngx_http_access_module.html#deny>`_ will always run *before* this.
 
 You can use the `srcache_fetch_skip`_ directive to disable cache look-up selectively.
 
@@ -375,7 +375,7 @@ For example, to skip caching requests which have a cookie named ``foo`` with the
 
 where :doc:`lua` is used to calculate the value of the ``$skip`` variable at the (earlier) rewrite phase. Similarly, the ``$key`` variable can be computed by Lua using the `set_by_lua <|HttpLuaModule|#set_by_lua>`_ or `rewrite_by_lua <|HttpLuaModule|#rewrite_by_lua>`_ directive too.
 
-The standard `map <|HttpMapModule|#map>`_ directive can also be used to compute the value of the ``$skip`` variable used in the sample above:
+The standard `map <http://nginx.org/en/docs/http/ngx_http_map_module.html#map>`_ directive can also be used to compute the value of the ``$skip`` variable used in the sample above:
 
 .. code-block:: nginx
 
@@ -385,7 +385,7 @@ The standard `map <|HttpMapModule|#map>`_ directive can also be used to compute 
   }
 
 
-but your `map <|HttpMapModule|#map>`_ statement should be put into the ``http`` config block in your ``nginx.conf`` file though.
+but your `map <http://nginx.org/en/docs/http/ngx_http_map_module.html#map>`_ statement should be put into the ``http`` config block in your ``nginx.conf`` file though.
 
 
 
@@ -817,14 +817,14 @@ Known Issues
 
 Caveats
 -------
-* It is recommended to disable your backend server's gzip compression and use NGINX's |HttpGzipModule| to do the job. In case of |HttpProxyModule|, you can use the following configure setting to disable backend gzip compression:
+* It is recommended to disable your backend server's gzip compression and use NGINX's ngx_http_gzip_module to do the job. In case of ngx_http_proxy_module, you can use the following configure setting to disable backend gzip compression:
 
   .. code-block:: nginx
 
     proxy_set_header  Accept-Encoding  "";
 
 
-* Do *not* use |HttpRewriteModule|'s `if <|HttpRewriteModule|#if>`_ directive in the same location as this module's, because "`if <|HttpRewriteModule|#if>`_ is evil". Instead, use |HttpMapModule| or :doc:`lua` combined with this module's `srcache_store_skip`_ and/or `srcache_fetch_skip`_ directives. For example:
+* Do *not* use ngx_http_rewrite_module's `if <http://nginx.org/en/docs/http/ngx_http_rewrite_module.html#if>`_ directive in the same location as this module's, because "`if <http://nginx.org/en/docs/http/ngx_http_rewrite_module.html#if>`_ is evil". Instead, use ngx_http_map_module or :doc:`lua` combined with this module's `srcache_store_skip`_ and/or `srcache_fetch_skip`_ directives. For example:
 
   .. code-block:: nginx
 
@@ -959,7 +959,7 @@ You need to terminate any NGINX processes before running the test suite if you h
 
 Because a single NGINX server (by default, ``localhost:1984``) is used across all the test scripts (``.t`` files), it's meaningless to run the test suite in parallel by specifying ``-jN`` when invoking the ``prove`` utility.
 
-Some parts of the test suite requires modules |HttpRewriteModule|, :doc:`echo`, :github:`HttpRdsJsonModule <openresty/rds-json-nginx-module>`, and :doc:`drizzle` to be enabled as well when building NGINX.
+Some parts of the test suite requires modules ngx_http_rewrite_module, :doc:`echo`, :github:`HttpRdsJsonModule <openresty/rds-json-nginx-module>`, and :doc:`drizzle` to be enabled as well when building NGINX.
 
 
 
