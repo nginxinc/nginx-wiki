@@ -189,11 +189,11 @@ div.admonition p.last {
     margin-bottom: 0;
 }
 
-div.highlight {
+pre.highlight, div.highlight {
     background-color: white;
 }
 
-div.highlight pre {
+pre.highlight, pre.literal-block, div.highlight pre {
     border: 1px solid {{ theme_note_border }};
 }
 
@@ -311,7 +311,7 @@ ul, ol {
 }
 
 pre {
-    background: {{ theme_pre_bg }};
+    background: {{ theme_pre_bg }} !important;
     padding: 7px 30px;
     margin: 15px 0px;
     line-height: 1.3em;
