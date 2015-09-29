@@ -21,7 +21,7 @@ You also need *python-sphinx* installed; some Linux distributions have this in t
 
 .. code-block:: bash
 
-   $ pip install -U Sphinx
+   $ pip install -U Sphinx recommonmark commonmark
 
 GitHub's Two-Factor Authentication
 ----------------------------------

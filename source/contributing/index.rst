@@ -16,6 +16,7 @@ Contributing to the Wiki
    :maxdepth: 2
 
    writing_docs
+   markdown
    github
    translating_docs
 
