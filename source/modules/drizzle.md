@@ -631,7 +631,7 @@ Alternatively, you can compile this module with NGINX core's source by hand:
 >
 > You can fix this by pointing `python` to `python2`.
 
-1.  Download the latest version of the release tarball of this module from drizzle-nginx-module [file list](https://openresty/drizzle-nginx-module/tags)
+1.  Download the latest version of the release tarball of this module from drizzle-nginx-module [file list](https://github.com/openresty/drizzle-nginx-module/tags)
 2.  Grab the NGINX source code from [nginx.org](http://nginx.org/), for example, the version 1.7.7 (see [NGINX compatibility](drizzle.compatibility_)), and then build the source with this module:
 
 > ``` bash

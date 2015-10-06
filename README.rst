@@ -54,6 +54,7 @@ Or if you have NGINX in a non-standard path (for example ``/opt/nginx/``) you ca
 NGINX will be started on port 8080 so you can view the wiki by browsing to http://localhost:8080/
 
 When you are done, **CTRL-C** will exit NGINX.
+
 Contributing
 ------------
 
