@@ -75,25 +75,26 @@ Once your edits are ready to test, run these commands to check that they build c
 
 .. code-block:: bash
 
-   $ make html
+   $ make dirhtml
    $ make linkcheck
 
-.. note::
+If either command generates an error, your edits probably need fixing. The NGINX developer relations team will be happy to assist you with this.
 
-    The rendered output used by the published wiki is using ``make dirhtml`` which is identical but has a wiki page per directory rather than per html file.
-
-    In addition the full output is rebuilt on every execution of ``make dirhtml`` rather than just the changes with ``make html``.
-
-If either command generates an error, your edits probably need fixing. The NGINX community team will be happy to assist you with this.
-
-One way to preview the output is with PHP's built-in server:
+One way to preview the output is to use NGINX. The build system can alread setup NGINX for you if you have it installed:
 
 .. code-block:: bash
 
-   $ cd build/html/
-   $ php -S localhost:8000
+   $ make serve
 
-You can then use your web browser to go to ``http://localhost:8000/`` and view the result.
+Or if you have NGINX in a non-standard path (for example ``/opt/nginx/``) you can point to the path of the NGINX binary with:
+
+.. code-block:: bash
+
+   $ NGINX_PATH=/opt/nginx/sbin make serve
+
+You can then use your web browser to go to ``http://localhost:8080/`` and view the result.
+
+When you are done, **CTRL-C** will exit NGINX.
 
 Commit and Push
 ---------------

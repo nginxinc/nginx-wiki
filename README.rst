@@ -37,15 +37,23 @@ You can then build the docs with:
 
 .. code-block:: bash
 
-   $ make html
+   $ make dirhtml
 
-The HTML output is stored in the ``build/html`` directory. You can view this any way you desire, a very easy way to do it is to use PHP's built-in web server:
+The HTML output is stored in the ``build/dirhtml`` directory. You can view this any way you desire, a very easy way to do it is to use NGINX. The build system can execute NGINX using:
 
 .. code-block:: bash
 
-   $ cd build/html
-   $ php -S localhost:8000
+   $ make serve
 
+Or if you have NGINX in a non-standard path (for example ``/opt/nginx/``) you can point to the path of the NGINX binary with:
+
+.. code-block:: bash
+
+   $ NGINX_PATH=/opt/nginx/sbin make serve
+
+NGINX will be started on port 8080 so you can view the wiki by browsing to http://localhost:8080/
+
+When you are done, **CTRL-C** will exit NGINX.
 Contributing
 ------------
 
