@@ -634,6 +634,7 @@ Before NGINX 0.7.56, it makes no sense to use this directive because `$request_b
 
 This directive itself was first introduced in the echo module's :github:`v0.14 <openresty/echo-nginx-module/tags>`
 
+.. _echo-location-async:
 
 echo_location_async
 ^^^^^^^^^^^^^^^^^^^
@@ -748,6 +749,7 @@ There is a known issue with this directive when disabling the standard `standard
 
 This directive is first introduced in :github:`v0.09 <openresty/echo-nginx-module/tags>` of this module and requires at least NGINX 0.7.46.
 
+.. _echo-location:
 
 echo_location
 ^^^^^^^^^^^^^
@@ -817,6 +819,7 @@ This directive was first introduced in the :github:`v0.12 <openresty/echo-nginx-
 
 See also `echo_location_async`_ for more details about the meaning of the arguments.
 
+.. _echo-subrequest-async:
 
 echo_subrequest_async
 ^^^^^^^^^^^^^^^^^^^^^
@@ -916,6 +919,7 @@ See also the `echo_subrequest`_ and `echo_location_async`_ directives.
 
 There is a known issue with this directive when disabling the standard `standard SSI module <http://nginx.org/en/docs/http/ngx_http_ssi_module.html>`_. See `Known Issues`_ for more details.
 
+.. _echo-subrequest:
 
 echo_subrequest
 ^^^^^^^^^^^^^^^

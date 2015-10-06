@@ -661,7 +661,7 @@ See `Data Sharing within an NGINX Worker`_ for the reasons behind this.
 
 Locations Configured by Subrequest Directives of Other Modules
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-The `ngx.location.capture`_ and `ngx.location.capture_multi`_ directives cannot capture locations that include the `add_before_body <|HttpAdditionModule|#add_before_body>`_, `add_after_body <|HttpAdditionModule|#add_after_body>`_, `auth_request <http://nginx.org/en/docs/http/ngx_http_auth_request_module.html#auth_request>`_, `echo_location <http://nginx.org/en/docs/http/ngx_http_echo_module.html#echo_location>`_, `echo_location_async <http://nginx.org/en/docs/http/ngx_http_echo_module.html#echo_location_async>`_, `echo_subrequest <http://nginx.org/en/docs/http/ngx_http_echo_module.html#echo_subrequest>`_, or `echo_subrequest_async <http://nginx.org/en/docs/http/ngx_http_echo_module.html#echo_subrequest_async>`_ directives.
+The `ngx.location.capture`_ and `ngx.location.capture_multi`_ directives cannot capture locations that include the `add_before_body <|HttpAdditionModule|#add_before_body>`_, `add_after_body <|HttpAdditionModule|#add_after_body>`_, `auth_request <http://nginx.org/en/docs/http/ngx_http_auth_request_module.html#auth_request>`_, :ref:`echo_location <echo-location>`, :ref:`echo_location_async <echo-location-async>`, :ref:`echo_subrequest <echo-subrequest>`, or :ref:`echo_subrequest_async <echo-subrequest-async>` directives.
 
 .. code-block:: nginx
 

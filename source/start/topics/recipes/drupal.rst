@@ -7,7 +7,7 @@
 Drupal
 ======
 
-`Drupal <http://drupal.org/>`__ is a PHP-based open-source content management platform.
+`Drupal <https://www.drupal.org/>`__ is a PHP-based open-source content management platform.
 
 Requirements
 ------------
