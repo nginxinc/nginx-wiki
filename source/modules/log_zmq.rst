@@ -1,6 +1,6 @@
 
 .. meta::
-   :description: The Log ZeroMQ module uses ZeroMQ protocol to log NGINX requests asynchronous via inproc, TCP or UDP.
+   :description: The Log ZeroMQ module uses ZeroMQ protocol to log NGINX requests asynchronous via inproc or TCP.
 
 Log ZMQ
 =======
