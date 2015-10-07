@@ -38,6 +38,12 @@ Save this file as ``/etc/init/nginx.conf``
 
 ``respawn limit`` tells that if the process is respawned more than 10 times within an interval of 5 seconds, the process will be stopped automatically, and not restarted (the default upstart value).
 
+First reload the Upstart configuration
+
+.. code-block:: bash
+
+   # initctl reload-configuration
+
 Then check the upstart job list:
 
 .. code-block:: bash
