@@ -169,8 +169,8 @@
         // workaround for rewriting anchor tags
         $(function() {
             var parts = window.location.hash.split('#', 2);
-            var fixed = parts[0] + '#' + parts[1].replace(/[\W_]/g, '-');
-            window.location.hash = fixed;
+            var anchor = parts[1].replace(/[\W_]/g, '-').toLowerCase();
+            window.location.hash = parts[0] + '#' + anchor;
         });
     </script>
 
