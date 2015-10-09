@@ -57,7 +57,7 @@ Recipe
 
         location / {
             # try_files $uri @rewrite; # For Drupal <= 6
-            try_files $uri /index.php; # For Drupal >= 7
+            try_files $uri /index.php?$query_string; # For Drupal >= 7
         }
 
         location @rewrite {
