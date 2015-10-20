@@ -168,9 +168,11 @@
     <script type="text/javascript">
         // workaround for rewriting anchor tags
         $(function() {
-            var parts = window.location.hash.split('#', 2);
-            var anchor = parts[1].replace(/[\W_]/g, '-').toLowerCase();
-            window.location.hash = parts[0] + '#' + anchor;
+       	    if(window.location.hash != '') {
+            	var parts = window.location.hash.split('#', 2);
+            	var anchor = parts[1].replace(/[\W_]/g, '-').toLowerCase();
+            	window.location.hash = parts[0] + '#' + anchor;
+       	    }
         });
     </script>
 
