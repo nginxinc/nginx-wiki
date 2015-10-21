@@ -142,39 +142,20 @@ The mainline branch gets new features and bugfixes sooner but might introduce ne
 Critical bugfixes are backported to the stable branch.
 
 In general, the stable release is recommended, but the mainline release is typically quite stable as well.
-See the `FAQ <faq.is_it_safe_>`.
-
-<br style="clear: both;" />
-
-<ul class="content-download-container">
-
-<li class="content-download-item">
-<div class="content-download-link">
+See the :ref:`FAQ <faq.is_it_safe>`.
 
 
 Stable
 ^^^^^^
-`NGINX 1.8.0 <http://nginx.org/download/nginx-1.8.0.tar.gz>`_<br />
-21 Apr 2015<br />
-`changelog <http://nginx.org/en/CHANGES-1.8>`_
-</div>
-</li>
-
-<li class="content-download-item">
-<div class="content-download-link">
-
+| `NGINX 1.8.0 <http://nginx.org/download/nginx-1.8.0.tar.gz>`_  
+| 21 Apr 2015  
+| `changelog <http://nginx.org/en/CHANGES-1.8>`__  
 
 Mainline
 ^^^^^^^^
-`NGINX 1.9.2 <http://nginx.org/download/nginx-1.9.2.tar.gz>`_<br />
-16 Jun 2015<br />
-`changelog <http://nginx.org/en/CHANGES>`_
-</div>
-</li>
-
-</ul>
-
-<br style="clear: both;" />
+| `NGINX 1.9.5 <http://nginx.org/download/nginx-1.9.5.tar.gz>`_  
+| 22 Sep 2015  
+| `changelog <http://nginx.org/en/CHANGES>`__  
 
 Source code repository is at `hg.nginx.org/nginx <http://hg.nginx.org/nginx>`_.
 
@@ -209,4 +190,4 @@ Other Systems
 
 References
 ----------
-`Original Documentation <http://sysoev.ru/nginx/docs/install.html>`_
+`Original Documentation <http://nginx.org/en/docs/install.html>`_
