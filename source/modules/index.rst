@@ -194,6 +194,8 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | SmallLight                | Dynamic Image Transformation Module For NGINX                           | :github:`cubicdaiya/ngx_small_light`                                                    |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| Sorted Querystring        | Expose a variable with the parameters ordered to be used as a cache_key | :github:`wandenberg/nginx-sorted-querystring-module`                                    |
++---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Sphinx                    | NGINX upstream module for Sphinx 2.x                                    | :github:`reeteshranjan/sphinx2-nginx-module`                                            |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | SPNEGO                    | Support for SPNEGO/gssapi in NGINX                                      | :github:`stnoonan/spnego-http-auth-nginx-module`                                        |
@@ -299,6 +301,7 @@ NGINX 3\ :sup:`rd` Party Modules
    * sFlow
    * SlowFS Cache
    * SmallLight
+   * Sorted Querystring
    * Sphinx
    * SPNEGO
    * Static etags
