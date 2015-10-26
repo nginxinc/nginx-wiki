@@ -86,7 +86,7 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`groovy_handler`     | A module for embedding Clojure, Java, and Groovy programs               | :github:`nginx-clojure/nginx-clojure`                                                   |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| :doc:`headers_more`       | Set and clear input and output headers... more than "add"!              | :github:`openresty/headers-more-nginx-module`                                           |
+| Headers More              | Set and clear input and output headers... more than "add"!              | :github:`openresty/headers-more-nginx-module`                                           |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`healthcheck`        | Health check HTTP servers inside an upstream                            | :github:`cep21/healthcheck_nginx_upstreams`                                             |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -333,6 +333,7 @@ NGINX 3\ :sup:`rd` Party Modules
 ..
   This is a list of agentzh's modules we have a legacy page for but link externally to
   * Lua
+  * Headers More
 
 ..
    Other notes:
