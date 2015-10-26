@@ -116,7 +116,7 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Lower Upper Case          | Provides upper/lowercase string functions in NGINX config files         | :github:`replay/ngx_http_lower_upper_case`                                              |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| :doc:`lua`                | Embed the power of Lua into NGINX                                       | :github:`openresty/lua-nginx-module`                                                    |
+| Lua                       | Embed the power of Lua into NGINX                                       | :github:`openresty/lua-nginx-module`                                                    |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Luafile                   | Embed the power of Lua into NGINX                                       | :github:`alacner/nginx_lua_module`                                                      |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -329,6 +329,10 @@ NGINX 3\ :sup:`rd` Party Modules
    * Upstream Request Hash - obsolete as of NGINX 1.7.2
    * WSGI - most recent patch was for NGINX 0.8.x, links broken
    * Keepalive - available in ngx_http_upstream_keepalive as of NGINX 1.1.4
+
+..
+  This is a list of agentzh's modules we have a legacy page for but link externally to
+  * Lua
 
 ..
    Other notes:
