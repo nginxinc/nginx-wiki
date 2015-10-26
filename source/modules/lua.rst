@@ -177,6 +177,11 @@ Copyright and License
 
 See :github:`openresty/lua-nginx-module#copyright-and-license`
 
+See Also
+--------
+
+See :github:`openresty/lua-nginx-module#see-also`
+
 Directives
 ----------
 
