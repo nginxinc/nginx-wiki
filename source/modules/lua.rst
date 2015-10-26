@@ -5,7 +5,7 @@
 Lua
 ===
 
-See :github:`openresty/lua-nginx-module#readme`
+This document has been move to :github:`openresty/lua-nginx-module#readme`
 
 Name
 ----
