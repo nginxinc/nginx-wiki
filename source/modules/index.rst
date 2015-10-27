@@ -58,7 +58,7 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Dynamic Upstream          | Update upstreams' config by restful interface                           | :github:`yzprofile/ngx_http_dyups_module`                                               |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| :doc:`echo`               | Provides familiar shell commands to NGINX config files                  | :github:`openresty/echo-nginx-module`                                                   |
+| HTTP Echo                 | Provides familiar shell-style commands to NGINX config files            | :github:`openresty/echo-nginx-module`                                                   |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Encrypted Session         | Encrypt NGINX variables for light-weight session-based authentication   | :github:`openresty/encrypted-session-nginx-module`                                      |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -334,6 +334,7 @@ NGINX 3\ :sup:`rd` Party Modules
   This is a list of agentzh's modules we have a legacy page for but link externally to
   * Lua
   * Headers More
+  * HTTP Echo
 
 ..
    Other notes:
