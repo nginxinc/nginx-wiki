@@ -122,7 +122,7 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | MD5 Filter                | Returns the MD5 sum of content that would've otherwise been served      | :github:`kainswor/nginx_md5_filter`                                                     |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| :doc:`memc`               | Extension of the standard memcached module                              | :github:`openresty/memc-nginx-module`                                                   |
+| HTTP Memc                 | Extension of the standard memcached module                              | :github:`openresty/memc-nginx-module`                                                   |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | ModSecurity               | Web application firewall                                                | :github:`spiderlabs/modsecurity/`                                                       |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -335,6 +335,7 @@ NGINX 3\ :sup:`rd` Party Modules
   * Lua
   * Headers More
   * HTTP Echo
+  * HTTP Memc
 
 ..
    Other notes:
