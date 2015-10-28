@@ -200,7 +200,7 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | SPNEGO                    | Support for SPNEGO/gssapi in NGINX                                      | :github:`stnoonan/spnego-http-auth-nginx-module`                                        |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| :doc:`sr_cache`           | Transparent subrequest-based caching layout for NGINX locations         | :github:`openresty/srcache-nginx-module`                                                |
+| HTTP SRCache              | Transparent subrequest-based caching layout for NGINX locations         | :github:`openresty/srcache-nginx-module`                                                |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Static etags              | Generates etags for static content                                      | :github:`mikewest/nginx-static-etags`                                                   |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -337,6 +337,7 @@ NGINX 3\ :sup:`rd` Party Modules
   * HTTP Echo
   * HTTP Memc
   * HTTP Redis2
+  * HTTP SRCache
 
 ..
    Other notes:
