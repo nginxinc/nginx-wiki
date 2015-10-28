@@ -162,7 +162,7 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`redis`              | Redis support module                                                    | `Download <http://people.FreeBSD.ORG/~osa/ngx_http_redis-0.3.5.tar.gz>`__               |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| :doc:`redis2`             | Upstream module for the full Redis 2.0 protocol                         | :github:`openresty/redis2-nginx-module`                                                 |
+| HTTP Redis2               | HTTP Upstream module for the full Redis 2.0 protocol                    | :github:`openresty/redis2-nginx-module`                                                 |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Replace Filter            | Performs regular expression substitutions on response bodies            | :github:`openresty/replace-filter-nginx-module`                                         |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -336,6 +336,7 @@ NGINX 3\ :sup:`rd` Party Modules
   * Headers More
   * HTTP Echo
   * HTTP Memc
+  * HTTP Redis2
 
 ..
    Other notes:
