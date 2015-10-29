@@ -66,7 +66,7 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Eval                      | A module for evaluating memcached or proxy response into variable       | :github:`vkholodkov/nginx-eval-module`                                                  |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| Eval (agentzh's fork)     | Captures arbitrary subrequest's responses into NGINX variables          | :github:`openresty/nginx-eval-module`                                                   |
+| Eval (OpenResty's fork)   | Captures arbitrary subrequests' responses into custom NGINX variables   | :github:`openresty/nginx-eval-module`                                                   |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | EY Balancer               | Provides a request queue for limiting concurrent requests               | :github:`ezmobius/nginx-ey-balancer`                                                    |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
