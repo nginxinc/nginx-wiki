@@ -184,7 +184,7 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Set Lang                  | Set a variable to indicate the language based on a variety of sources   | :github:`simpl/ngx_http_set_lang/downloads`                                             |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| :doc:`set_misc`           | Various set_xxx directives added to NGINX's rewrite module              | :github:`openresty/set-misc-nginx-module`                                               |
+| HTTP Set Misc             | Various set_xxx directives added to NGINX's rewrite module              | :github:`openresty/set-misc-nginx-module`                                               |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | sFlow                     | Operational performance monitoring with standard sFlow protocol         | `Download <http://code.google.com/p/nginx-sflow-module/downloads/list>`__               |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -338,6 +338,7 @@ NGINX 3\ :sup:`rd` Party Modules
   * HTTP Memc
   * HTTP Redis2
   * HTTP SRCache
+  * HTTP Set Misc
 
 ..
    Other notes:
