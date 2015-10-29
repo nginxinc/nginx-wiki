@@ -58,7 +58,9 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Dynamic Upstream          | Update upstreams' config by restful interface                           | :github:`yzprofile/ngx_http_dyups_module`                                               |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| HTTP Echo                 | Provides familiar shell-style commands to NGINX config files            | :github:`openresty/echo-nginx-module`                                                   |
+| HTTP Echo                 | Provides familiar shell-style commands to NGINX HTTP servers            | :github:`openresty/echo-nginx-module`                                                   |
++---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| Stream Echo               | Provides familiar shell-style commands to NGINX stream servers          | :github:`openresty/stream-echo-nginx-module`                                            |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Encrypted Session         | Encrypt NGINX variables for light-weight session-based authentication   | :github:`openresty/encrypted-session-nginx-module`                                      |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
