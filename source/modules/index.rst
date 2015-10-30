@@ -52,7 +52,7 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`domain_resolve`     | An asynchronous domain name resolve module for NGINX upstream           | :github:`wdaike/ngx_upstream_jdomain/`                                                  |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| :doc:`drizzle`            | Make NGINX talk directly to mysql and drizzle                           | :github:`openresty/drizzle-nginx-module`                                                |
+| HTTP Drizzle              | Make NGINX talk directly to MySQL or Drizzle database servers           | :github:`openresty/drizzle-nginx-module`                                                |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Dynamic etags             | NGINX module for etags on dynamic content                               | :github:`kali/nginx-dynamic-etags`                                                      |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -343,6 +343,7 @@ NGINX 3\ :sup:`rd` Party Modules
   * HTTP Redis2
   * HTTP SRCache
   * HTTP Set Misc
+  * HTTP Drizzle
 
 ..
    Other notes:
