@@ -19,8 +19,9 @@ This will let the web server serve the static content like CSS, JS, images.
 in moin config (usually mywiki.py):
 
 .. code-block:: python
-class Config(FarmConfig):
-   url_prefix_static = '/path/to/MoinMoin/web/static/htdocs'
+
+   class Config(FarmConfig):
+      url_prefix_static = '/path/to/MoinMoin/web/static/htdocs'
 
 .. code-block:: nginx
 
