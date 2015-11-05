@@ -96,7 +96,7 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | HTTP Push                 | Turns NGINX into an adept long-polling HTTP Push server                 | :github:`slact/nginx_http_push_module`                                                  |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| :doc:`iconv`              | Converts character encodings                                            | :github:`calio/iconv-nginx-module`                                                      |
+| HTTP Iconv                | Converts character encodings                                            | :github:`calio/iconv-nginx-module`                                                      |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Internal Redirect         | A NGINX module for internal redirection                                 | :github:`flygoast/ngx_http_internal_redirect/`                                          |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -335,7 +335,7 @@ NGINX 3\ :sup:`rd` Party Modules
    * Keepalive - available in ngx_http_upstream_keepalive as of NGINX 1.1.4
 
 ..
-  This is a list of agentzh's modules we have a legacy page for but link externally to
+  This is a list of agentzh maintained modules we have a legacy page for but link externally to
   * Lua
   * Headers More
   * HTTP Echo
@@ -344,6 +344,7 @@ NGINX 3\ :sup:`rd` Party Modules
   * HTTP SRCache
   * HTTP Set Misc
   * HTTP Drizzle
+  * HTTP Iconv
 
 ..
    Other notes:
