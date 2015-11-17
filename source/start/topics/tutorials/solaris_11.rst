@@ -60,41 +60,41 @@ Create the file /lib/svc/method/svc-nginx with the following content:
 
 .. code-block:: bash
 
-   #!/bin/sh
-   unalias stop
-   NGINX_CMD="/opt/nginx/sbin/nginx"
-   NGINX_CONF="/opt/nginx/conf/nginx.conf"
-   RETVAL=0
-   start() {
-      echo "Starting NGINX Web Server: \c"
-      $NGINX_CMD -c $NGINX_CONF &
-      RETVAL=$?
-      [ $RETVAL -eq 0 ] && echo "ok" || echo "failed"
-      return $RETVAL
-   }
-   stop() {
-      echo "Stopping NGINX Web Server: \c"
-      $NGINX_CMD -s quit
-      RETVAL=$?
-      [ $RETVAL -eq 0 ] && echo "ok" || echo "failed"
-      return $RETVAL
-   }
-   case "$1" in
-      start)
-         start
-         ;;
-      stop)
-         stop
-         ;;
-      restart)
-         stop
-         start
-         ;;
-      *)
-         echo "Usage: $0 {start|stop|restart}"
-         exit 1
-   esac
-   exit $RETVAL
+    #!/bin/sh
+    unalias stop
+    NGINX_CMD="/opt/nginx/sbin/nginx"
+    NGINX_CONF="/opt/nginx/conf/nginx.conf"
+    RETVAL=0
+    start() {
+       echo "Starting NGINX Web Server: \c"
+       $NGINX_CMD -c $NGINX_CONF &
+       RETVAL=$?
+       [ $RETVAL -eq 0 ] && echo "ok" || echo "failed"
+       return $RETVAL
+    }
+    stop() {
+       echo "Stopping NGINX Web Server: \c"
+       $NGINX_CMD -s quit
+       RETVAL=$?
+       [ $RETVAL -eq 0 ] && echo "ok" || echo "failed"
+       return $RETVAL
+    }
+    case "$1" in
+       start)
+          start
+          ;;
+       stop)
+          stop
+          ;;
+       restart)
+          stop
+          start
+          ;;
+       *)
+          echo "Usage: $0 {start|stop|restart}"
+          exit 1
+    esac
+    exit $RETVAL
 
 
 Create the manifest: /var/svc/manifest/network/nginx.xml (almost same
