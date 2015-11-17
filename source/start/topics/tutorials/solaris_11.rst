@@ -61,6 +61,7 @@ Create the file /lib/svc/method/svc-nginx with the following content:
 .. code-block:: bash
 
     #!/bin/sh
+    unalias stop
     NGINX_CMD="/opt/nginx/sbin/nginx"
     NGINX_CONF="/opt/nginx/conf/nginx.conf"
     RETVAL=0
@@ -73,8 +74,7 @@ Create the file /lib/svc/method/svc-nginx with the following content:
     }
     stop() {
        echo "Stopping NGINX Web Server: \c"
-       NGINX_PID=`ps -ef |grep $NGINX_CMD |grep -v grep |awk '{print $2}'`
-       kill $NGINX_PID
+       $NGINX_CMD -s quit
        RETVAL=$?
        [ $RETVAL -eq 0 ] && echo "ok" || echo "failed"
        return $RETVAL
