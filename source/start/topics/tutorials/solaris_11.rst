@@ -96,7 +96,6 @@ Create the file /lib/svc/method/svc-nginx with the following content:
     esac
     exit $RETVAL
 
-
 Create the manifest: /var/svc/manifest/network/nginx.xml (almost same
 but correct typo in stability to "Stable" with a capital S, and new
 version number.
