@@ -21,7 +21,7 @@ Recipe
 
     server {
         server_name example.com;
-        root /var/www/drupal7; ## <-- Your only path reference.
+        root /var/www/drupal8; ## <-- Your only path reference.
 
         location = /favicon.ico {
             log_not_found off;
@@ -64,8 +64,8 @@ Recipe
             rewrite ^/(.*)$ /index.php?q=$1;
         }
 
-        location ~ \.php$ {
-            fastcgi_split_path_info ^(.+\.php)(/.+)$;
+        location ~ \.php(/|$) {
+            fastcgi_split_path_info ^(.+?\.php)(|/.*)$;
             #NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
             include fastcgi_params;
             fastcgi_param SCRIPT_FILENAME $request_filename;
