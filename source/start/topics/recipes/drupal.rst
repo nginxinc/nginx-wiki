@@ -64,7 +64,15 @@ Recipe
             rewrite ^/(.*)$ /index.php?q=$1;
         }
 
-        location ~ \.php(/|$) {
+        # In Drupal 8, we must also match new paths where the '.php' appears in the middle,
+        # such as update.php/selection. The rule we use is strict, and only allows this pattern
+        # with the update.php front controller.  This allows legacy path aliases in the form of
+        # blog/index.php/legacy-path to continue to route to Drupal nodes. If you do not have 
+        # any paths like that, then you might prefer to use a laxer rule, such as: 
+        #   location ~ \.php(/|$) {
+        # The laxer rule will continue to work if Drupal uses this new URL pattern with front
+        # controllers other than update.php in a future release.
+        location ~ '\.php$|^/update.php' {
             fastcgi_split_path_info ^(.+?\.php)(|/.*)$;
             #NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
             include fastcgi_params;
