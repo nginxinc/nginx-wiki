@@ -79,6 +79,8 @@ Recipe
             fastcgi_param SCRIPT_FILENAME $request_filename;
             fastcgi_intercept_errors on;
             fastcgi_pass unix:/tmp/phpfpm.sock;
+            # For Debian based systems (Ubuntu) use the following line
+            # fastcgi_pass unix:/var/run/php5-fpm.sock;
         }
 
         # Fighting with Styles? This little gem is amazing.
