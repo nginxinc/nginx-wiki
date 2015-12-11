@@ -202,7 +202,7 @@ Rewrite rules for Multisite using subdomains
 
 .. note::
 
-    * For wordpress-nginx based sites management, `EasyEngine <https://github.com/rtCamp/easyengine>`_ can be used. EasyEngine is collection of shell scripts for Ubuntu.
+    * For wordpress-nginx based sites management, `EasyEngine <https://github.com/rtCamp/easyengine>`_ can be used. EasyEngine (ee) is python based command line control panel to setup NGINX server on Ubuntu and Debian Linux distribution for HTML, PHP, MySQL, HHVM, PageSpeed and WordPress sites.
     * map section can be completed manually for small sites. On large multisite network `nginx-helper <https://wordpress.org/plugins/nginx-helper/>`_ wordpress plugin can be used.
     * Further performance gain is possible by using NGINX's fastcgi_cache. When using `fastcgi_cache <http://nginx.org/en/docs/http/ngx_http_fastcgi_module.html#fastcgi_cache>`_, compile NGINX with `ngx_cache_purge <https://github.com/FRiCKLE/ngx_cache_purge>`_ module and add a wordpress-plugin which performs automatic cache purge on events e.g. a wordpress post/page is edited.
     * `NGINX Cache Controller <https://wordpress.org/plugins/nginx-champuru/>`_ WordPress plugin provides some functions of controlling NGINX proxy server cache.
