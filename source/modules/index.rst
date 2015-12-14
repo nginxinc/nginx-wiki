@@ -94,8 +94,6 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | HTTP Accounting           | Realtime netflow and status code monitoring                             | :github:`Lax/ngx_http_accounting_module`                                                |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| HTTP Push                 | Turns NGINX into an adept long-polling HTTP Push server                 | :github:`slact/nginx_http_push_module`                                                  |
-+---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | HTTP Iconv                | Converts character encodings                                            | :github:`calio/iconv-nginx-module`                                                      |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Internal Redirect         | A NGINX module for internal redirection                                 | :github:`flygoast/ngx_http_internal_redirect/`                                          |
@@ -135,6 +133,8 @@ NGINX 3\ :sup:`rd` Party Modules
 | Mongo                     | Upstream module for direct communication with MongoDB                   | :github:`simpl/ngx_mongo`                                                               |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`mp4_streaming`      | Seeks time within H.264/MP4 files if a "start" parameter is in the URL  | `Download <http://i.6.cn/nginx_mp4_streaming_public_20081229.tar.bz2>`__                |
++---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :doc:`Nchan`              | Pubsub server for Websockets, Long-Poll, EventSource etc.               | :github:`slact/nchan`                                                                   |                   
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Naxsi                     | Web Application Firewall for NGINX                                      | :github:`nbs-system/naxsi`                                                              |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -270,7 +270,6 @@ NGINX 3\ :sup:`rd` Party Modules
    * GeoIP2
    * GridFS
    * HTTP Accounting
-   * HTTP Push
    * Internal Redirect
    * IP2Location
    * JavaScript
