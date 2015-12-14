@@ -377,6 +377,7 @@ NGINX 3\ :sup:`rd` Party Modules
    log_zmq
    memc
    mp4_streaming
+   Nchan
    owner_match
    push_stream
    rdns
