@@ -13,11 +13,11 @@ Description
 Messages are published to channels with HTTP POST requests or websockets, and subscribed also through websockets, long-polling, EventSource (SSE), old-fashioned interval polling, and more. Any location can be a subscriber endpoint for up to 4 channels. Each subscriber can be optionally authenticated via a custom application url, and an events meta channel is available for debugging.
 
 
-Nchan was originally the `Nginx HTTP Push Module <https://pushmodule.slact.net>`. It was renamed after a complete refactoring and overhaul. 
+Nchan was originally the `Nginx HTTP Push Module <https://pushmodule.slact.net>`_. It was renamed after a complete refactoring and overhaul. 
 
 Available on github at :github:`nchan <slact/nchan>`
 
 Documentation
 -------------
 
-Nchan is thoroughly documented at `nchan.slact.net <https://nchan.slact.net>`
+Nchan is thoroughly documented at `nchan.slact.net <https://nchan.slact.net>`_
