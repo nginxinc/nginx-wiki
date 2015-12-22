@@ -64,6 +64,12 @@ Recipe
             rewrite ^/(.*)$ /index.php?q=$1;
         }
 
+        # Don't allow direct access to PHP files in the vendor directory.
+        location ~ /vendor/.*\.php$ {
+            deny all;
+            return 404;
+        }
+
         # In Drupal 8, we must also match new paths where the '.php' appears in the middle,
         # such as update.php/selection. The rule we use is strict, and only allows this pattern
         # with the update.php front controller.  This allows legacy path aliases in the form of
