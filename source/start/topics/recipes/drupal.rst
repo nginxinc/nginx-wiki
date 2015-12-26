@@ -89,7 +89,7 @@ Recipe
 
         # Fighting with Styles? This little gem is amazing.
         # location ~ ^/sites/.*/files/imagecache/ { # For Drupal <= 6
-        location ~ ^/sites/.*/files/styles/ { # For Drpal >= 7
+        location ~ ^/sites/.*/files/styles/ { # For Drupal >= 7
             try_files $uri @rewrite;
         }
 
