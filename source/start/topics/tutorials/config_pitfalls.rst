@@ -39,11 +39,11 @@ help. Fix your configuration by reading through this. Don't just skim it.
 Chmod 777
 ---------
 
-NEVER use 777. I't might be one nifty number, but even in testing it's a sign of
+NEVER use 777. It might be one nifty number, but even in testing it's a sign of
 having no clue what you're doing. Look at the permissions in the whole path and
 think through what's going on.
 
-To easily display all the permissions on a path, you can use
+To easily display all the permissions on a path, you can use:
 
 .. code-block:: text
 
@@ -236,17 +236,17 @@ What we changed is that we try to see if $uri exists without requiring an if.
 Using try_files mean that you can test a sequence. If $uri doesn't exist, try
 $uri/, if that doesn't exist try a fallback location.
 
-In this case it will see if the $uri file exists. If it does then serve it. If
-it doesn't then tests if that directory exists. If not, then it will proceed to
-serve index.html which you make sure exists. It's loaded but oh so simple. This
-is another instance you can completely eliminate If.
+In this case, if the $uri file exists, serve it. If not, check if that directory
+exists. If not, then proceed to serve index.html which you make sure exists.
+It's loaded–but oh-so-simple! This is another instance where you can completely
+eliminate If.
 
 Front Controller Pattern Web Apps
 ---------------------------------
 
-"Front Controller Pattern" designs are popular and used on the many of the most
-popular PHP software packages. A lot of examples are more complex than they need
-to be. To get Drupal, Joomla, etc. to work, just use this:
+"Front Controller Pattern" designs are popular and areused on the many of the most
+popular PHP software packages; But a lot of examples are more complex than they need
+to be. For Drupal, Joomla, etc., just use this:
 
 .. code-block:: nginx
 
@@ -255,22 +255,22 @@ to be. To get Drupal, Joomla, etc. to work, just use this:
 Note - the parameter names are different based on the package you're using. For
 example:
 
-* "q" is the parameter used by Drupal, Joomla, WordPress 
+* "q" is the parameter used by Drupal, Joomla, WordPress
 * "page" is used by CMS Made Simple
 
-Some software doesn't even need the query string, and can read from REQUEST_URI
-(WordPress supports this, for example):
+Some software don't even need the query string and can read from REQUEST_URI.
+For example, WordPress supports this:
 
 .. code-block:: nginx
 
     try_files $uri $uri/ /index.php;
 
-Of course, your mileage may vary and you may need more complex things based on
-your needs, but for a basic sites, these will work perfectly. You should always
-start simple and build from there.
+If you don't care about checking for the existence of directories, you can skip
+it by removing "$uri/".
 
-You can also decide to skip the directory check and remove "$uri/" from it as
-well, if you don't care about checking for the existence of directories.
+Of course, your mileage may vary and you may require something more complex based on
+your needs, but for basic sites, these will work perfectly. You should always
+start simple and build from there.
 
 Passing Uncontrolled Requests to PHP
 ------------------------------------
@@ -347,7 +347,7 @@ FastCGI Path in Script Filename
 
 So many guides out there like to rely on absolute paths to get to your
 information. This is commonly seen in PHP blocks. When you install NGINX from a
-repository you'll usually wind up being able to toss "include fastcgi_params;"
+repository, you'll usually wind up being able to toss "include fastcgi_params;"
 in your config. This is a file located in your NGINX root directory which is
 usually around /etc/nginx/.
 
@@ -434,12 +434,11 @@ BAD:
     }
 
 Yucky. In this instance, you pass EVERYTHING to PHP. Why? Apache might do this,
-you don't need to. Let me put it this way... The try_files directive exists for
-an amazing reason. It tries files in a specific order. This means that NGINX can
-first try to server the static content. If it can't, then it moves on. This
-means PHP doesn't get involved at all. MUCH faster. Especially if you're serving
-a 1MB image over PHP a few thousand times versus serving it directly. Let's take
-a look at how to do that.
+but you don't need to. The try_files directive exists for an amazing reason:
+It tries files in a specific order. NGINX can first try to serve the static
+content, and if it can't, it moves on. This means PHP doesn't get involved at
+all. MUCH faster. Especially if you're serving a 1MB image over PHP a few
+thousand times versus serving it directly. Let's take a look at how to do that.
 
 GOOD:
 
@@ -475,13 +474,13 @@ Also GOOD:
         }
     }
 
-It's easy, right? You see if the requested URI exists and can be served by
-NGINX. If not, is it a directory that can be served. If not, then you pass it to
-your proxy. Only when NGINX can't serve that requested URI directly does your
-proxy overhead get involved.
+Easy, right? See if the requested URI exists and can be served by NGINX. If not,
+see if it is a directory that can be served. If not, then pass it to your proxy.
+Only when NGINX can't serve that requested URI directly does your proxy overhead
+get involved.
 
-Now.. consider how much of your requests are static content, such as images,
-css, javascript, etc. That's probably a lot of overhead you just saved.
+Consider how much of your requests are for static content (images, css,
+javascript, etc.). That's probably a lot of overhead you just saved.
 
 Config Changes Not Reflected
 ----------------------------
@@ -494,7 +493,7 @@ file was served. If you are playing with a types{} block you'll encounter this.
 The fix:
 
 * In Firefox press Ctrl+Shift+Delete, check Cache, click Clear Now. In
-  any other browser just ask your favorite search engine. Do this after every
+  any other browser, just ask your favorite search engine. Do this after every
   change (unless you know it's not needed) and you'll save yourself a lot of
   headaches.
 * Use curl.
@@ -524,7 +523,7 @@ Not Using Standard Document Root Locations
 ------------------------------------------
 
 Some directories in any file system should never be used for hosting data from.
-Some of these include ``/`` and ``root``. You should never use these as your
+These include ``/`` and ``root``. You should never use these as your
 document root.
 
 Doing this leaves you open to a request outside of your expected area returning
@@ -542,7 +541,7 @@ NEVER DO THIS!!! (yes, we have seen this)
         }
 
         location @php {
-            [...]
+            # [...]
         }
     }
 
@@ -625,7 +624,7 @@ GOOD:
 Using SSLv3 with HTTPS
 ----------------------
 
-Due to the POODLE vulnerability in SSLv3, it is advised to not use SSLv3 in your 
+Due to the POODLE vulnerability in SSLv3, it is advised to not use SSLv3 in your
 SSL-enabled sites. You can very easily disable SSLv3 with this line and provide
 only the TLS protocols instead:
 
