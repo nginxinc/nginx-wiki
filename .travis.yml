@@ -3,7 +3,7 @@ language: python
 python: "3.4"
 
 before_install:
-    - pip install Sphinx commonmark recommonmark
+    - pip install Sphinx commonmark==0.5.5 recommonmark
 
 script:
     - ".ci/${CI_TARGET}.sh"
