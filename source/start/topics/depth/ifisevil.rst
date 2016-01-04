@@ -11,16 +11,16 @@ Introduction
 Directive `if <http://nginx.org/en/docs/http/ngx_http_rewrite_module.html#if>`_ has problems when used in location context,
 in some cases it doesn't do what you expect but something completely different instead.  In some cases it even segfaults.  It's generally a good idea to avoid it if possible.
 
-The only 100% safe things which may be done inside if in location context are:
+The only 100% safe things which may be done inside if in a location context are:
 
 * `return <http://nginx.org/en/docs/http/ngx_http_rewrite_module.html#return>`_ ...;
 * `rewrite <http://nginx.org/en/docs/http/ngx_http_rewrite_module.html#rewrite>`_ ... last;
 
 Anything else may possibly cause unpredictable behaviour, including potential SIGSEGV.
 
-It is important to note that the behaviour of if is not inconsistent, given two identical requests it will not randomly fail on one and work on the other, with proper testing and understanding ifs '''can''' be used. The advice to use other directives where available still very much apply, though.
+It is important to note that the behaviour of if is not inconsistent, given two identical requests it will not randomly fail on one and work on the other, with proper testing and understanding ifs '''can''' be used. The advice to use other directives where available still very much applies, though.
 
-There are cases where you simply cannot avoid using an if, for example if you need to test a variable which has no equivalent directive. 
+There are cases where you simply cannot avoid using an if, for example, if you need to test a variable which has no equivalent directive.
 
 .. code-block:: nginx
 
@@ -34,7 +34,7 @@ There are cases where you simply cannot avoid using an if, for example if you ne
 What to do instead
 ------------------
 
-Use `try_files <http://nginx.org/en/docs/http/ngx_http_core_module.html#try_files>`_ if it suits your needs.  Use the "return ..." or "rewrite ... last" in other cases.  In some cases it's also possible to move ifs to server level (where it's safe as only other rewrite module directives are allowed within it).
+Use `try_files <http://nginx.org/en/docs/http/ngx_http_core_module.html#try_files>`_ if it suits your needs.  Use the "return ..." or "rewrite ... last" in other cases.  In some cases, it's also possible to move ifs to server level (where it's safe as only other rewrite module directives are allowed within it).
 
 E.g. the following may be used to safely change location which will be used to process request:
 

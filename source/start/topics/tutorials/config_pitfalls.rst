@@ -39,11 +39,11 @@ help. Fix your configuration by reading through this. Don't just skim it.
 Chmod 777
 ---------
 
-NEVER use 777. I't might be one nifty number, but even in testing it's a sign of
+NEVER use ``777``. It might be one nifty number, but even in testing it's a sign of
 having no clue what you're doing. Look at the permissions in the whole path and
 think through what's going on.
 
-To easily display all the permissions on a path, you can use
+To easily display all the permissions on a path, you can use:
 
 .. code-block:: text
 
@@ -72,9 +72,9 @@ BAD:
         }
     }
 
-This works. Putting root inside of a location block will work and it's perfectly
-valid. What's wrong is when you start adding location blocks. If you add a root
-to every location block then a location block that isn't matched will have no
+This works. Putting root inside of a ``location`` block will work and it's perfectly
+valid. What's wrong is when you start adding ``location`` blocks. If you add a root
+to every location block then a ``location`` block that isn't matched will have no
 root. Let's look at a good configuration.
 
 GOOD:
@@ -124,8 +124,8 @@ BAD:
         }
     }
 
-Why repeat so many lines when not needed. Simply use the "index" directive one
-time. It only needs to occur in your http { } block and it will be inherited
+Why repeat so many lines when not needed. Simply use the ``index`` directive one
+time. It only needs to occur in your ``http{}`` block and it will be inherited
 below.
 
 GOOD:
@@ -151,11 +151,11 @@ GOOD:
         }
     }
 
-Using If
---------
+Using ``if``
+------------
 
-There is a little page about using if statements. It's called IfIsEvil and you
-really should check it out. Let's take a look at a few uses of if that are bad.
+There is a little page about using ``if`` statements. It's called IfIsEvil and you
+really should check it out. Let's take a look at a few uses of ``if`` that are bad.
 
 .. seealso:: :doc:`If Is Evil </start/topics/depth/ifisevil>`
 
@@ -176,12 +176,12 @@ BAD:
         }
     }
 
-There are actually three problems here. The first being the if. That's what we
+There are actually three problems here. The first being the ``if``. That's what we
 care about now. Why is this bad? Did you read If is Evil? When NGINX receives a
 request no matter what is the subdomain being requested, be it www.example.com or
-just the plain example.com this if directive is **always** evaluated. Since
+just the plain example.com this ``if`` directive is **always** evaluated. Since
 you're requesting NGINX to check for the Host header for **every request**.
-It's extremely inefficient. You should avoid it. Instead use two server
+It's extremely inefficient. You should avoid it. Instead use two ``server``
 directives like the example below.
 
 GOOD:
@@ -198,15 +198,15 @@ GOOD:
     }
 
 Besides making the configuration file easier to read. This approach decreases
-NGINX processing requirements. We got rid of the spurious if. We're also using
-$scheme which doesn't hardcodes the URI scheme you're using, be it http or
+NGINX processing requirements. We got rid of the spurious ``if``. We're also using
+``$scheme`` which doesn't hardcodes the URI scheme you're using, be it http or
 https.
 
 Check (If) File Exists
 ----------------------
 
-Using if to ensure a file exists is horrible. It's mean. If you have any recent
-version of NGINX you should look at try_files which just made life much easier.
+Using ``if`` to ensure a file exists is horrible. It's mean. If you have any recent
+version of NGINX you should look at ``try_files`` which just made life much easier.
 
 BAD:
 
@@ -232,21 +232,21 @@ GOOD:
         }
     }
 
-What we changed is that we try to see if $uri exists without requiring an if.
-Using try_files mean that you can test a sequence. If $uri doesn't exist, try
-$uri/, if that doesn't exist try a fallback location.
+What we changed is that we try to see if ``$uri`` exists without requiring ``if``.
+Using ``try_files`` means that you can test a sequence. If ``$uri`` doesn't exist, try
+``$uri/``, if that doesn't exist try a fallback location.
 
-In this case it will see if the $uri file exists. If it does then serve it. If
-it doesn't then tests if that directory exists. If not, then it will proceed to
-serve index.html which you make sure exists. It's loaded but oh so simple. This
-is another instance you can completely eliminate If.
+In this case, if the ``$uri`` file exists, serve it. If not, check if that directory
+exists. If not, then proceed to serve ``index.html`` which you make sure exists.
+It's loaded–but oh-so-simple! This is another instance where you can completely
+eliminate If.
 
 Front Controller Pattern Web Apps
 ---------------------------------
 
-"Front Controller Pattern" designs are popular and used on the many of the most
-popular PHP software packages. A lot of examples are more complex than they need
-to be. To get Drupal, Joomla, etc. to work, just use this:
+"Front Controller Pattern" designs are popular and areused on the many of the most
+popular PHP software packages; But a lot of examples are more complex than they need
+to be. For Drupal, Joomla, etc., just use this:
 
 .. code-block:: nginx
 
@@ -255,28 +255,28 @@ to be. To get Drupal, Joomla, etc. to work, just use this:
 Note - the parameter names are different based on the package you're using. For
 example:
 
-* "q" is the parameter used by Drupal, Joomla, WordPress 
+* "q" is the parameter used by Drupal, Joomla, WordPress
 * "page" is used by CMS Made Simple
 
-Some software doesn't even need the query string, and can read from REQUEST_URI
-(WordPress supports this, for example):
+Some software don't even need the query string and can read from REQUEST_URI.
+For example, WordPress supports this:
 
 .. code-block:: nginx
 
     try_files $uri $uri/ /index.php;
 
-Of course, your mileage may vary and you may need more complex things based on
-your needs, but for a basic sites, these will work perfectly. You should always
-start simple and build from there.
+If you don't care about checking for the existence of directories, you can skip
+it by removing ``$uri/``.
 
-You can also decide to skip the directory check and remove "$uri/" from it as
-well, if you don't care about checking for the existence of directories.
+Of course, your mileage may vary and you may require something more complex based on
+your needs, but for basic sites, these will work perfectly. You should always
+start simple and build from there.
 
 Passing Uncontrolled Requests to PHP
 ------------------------------------
 
 Many example NGINX configurations for PHP on the web advocate passing every URI
-ending in .php to the PHP interpreter. Note that this presents a serious
+ending in ``.php`` to the PHP interpreter. Note that this presents a serious
 security issue on most PHP setups as it may allow arbitrary code execution by
 third parties.
 
@@ -289,7 +289,7 @@ The problem section usually looks like this:
         # [...]
     }
 
-Here, every request ending in .php will be passed to the FastCGI backend. The
+Here, every request ending in ``.php`` will be passed to the FastCGI backend. The
 issue with this is that the default PHP configuration tries to guess which file
 you want to execute if the full path does not lead to an actual file on the
 filesystem.
@@ -301,7 +301,7 @@ this code will be executed accordingly.
 
 Options for avoiding this are:
 
-* Set cgi.fix_pathinfo=0 in php.ini. This causes the PHP interpreter to only
+* Set ``cgi.fix_pathinfo=0`` in ``php.ini``. This causes the PHP interpreter to only
   try the literal path given and to stop processing if the file is not found.
 * Ensure that NGINX only passes specific PHP files for execution:
 
@@ -322,7 +322,7 @@ Options for avoiding this are:
         # [...]
     }
 
-* Use the `try_files` directive to filter out the problem condition:
+* Use the ``try_files`` directive to filter out the problem condition:
 
 .. code-block:: nginx
 
@@ -347,9 +347,9 @@ FastCGI Path in Script Filename
 
 So many guides out there like to rely on absolute paths to get to your
 information. This is commonly seen in PHP blocks. When you install NGINX from a
-repository you'll usually wind up being able to toss "include fastcgi_params;"
+repository, you'll usually wind up being able to toss ``include fastcgi_params;``
 in your config. This is a file located in your NGINX root directory which is
-usually around /etc/nginx/.
+usually around ``/etc/nginx/``.
 
 GOOD:
 
@@ -363,7 +363,7 @@ BAD:
 
     fastcgi_param  SCRIPT_FILENAME    /var/www/yoursite.com/$fastcgi_script_name;
 
-Where is $document_root set? It's set by the root directive that should be in
+Where is ``$document_root`` set? It's set by the root directive that should be in
 your server block. Is your root directive not there? See the first pitfall.
 
 Taxing Rewrites
@@ -393,7 +393,7 @@ BETTER:
 
 Look at the above. Then back here. Then up, and back here. OK. The first rewrite
 captures the full URI minus the first slash. By using the built-in variable
-$request_uri we can effectively avoid doing any capturing or matching at all.
+``$request_uri`` we can effectively avoid doing any capturing or matching at all.
 
 Rewrite Missing ``http://``
 ---------------------------
@@ -434,12 +434,11 @@ BAD:
     }
 
 Yucky. In this instance, you pass EVERYTHING to PHP. Why? Apache might do this,
-you don't need to. Let me put it this way... The try_files directive exists for
-an amazing reason. It tries files in a specific order. This means that NGINX can
-first try to server the static content. If it can't, then it moves on. This
-means PHP doesn't get involved at all. MUCH faster. Especially if you're serving
-a 1MB image over PHP a few thousand times versus serving it directly. Let's take
-a look at how to do that.
+but you don't need to. The try_files directive exists for an amazing reason:
+It tries files in a specific order. NGINX can first try to serve the static
+content, and if it can't, it moves on. This means PHP doesn't get involved at
+all. MUCH faster. Especially if you're serving a 1MB image over PHP a few
+thousand times versus serving it directly. Let's take a look at how to do that.
 
 GOOD:
 
@@ -475,13 +474,13 @@ Also GOOD:
         }
     }
 
-It's easy, right? You see if the requested URI exists and can be served by
-NGINX. If not, is it a directory that can be served. If not, then you pass it to
-your proxy. Only when NGINX can't serve that requested URI directly does your
-proxy overhead get involved.
+Easy, right? See if the requested URI exists and can be served by NGINX. If not,
+see if it is a directory that can be served. If not, then pass it to your proxy.
+Only when NGINX can't serve that requested URI directly does your proxy overhead
+get involved.
 
-Now.. consider how much of your requests are static content, such as images,
-css, javascript, etc. That's probably a lot of overhead you just saved.
+Consider how much of your requests are for static content (images, css,
+javascript, etc.). That's probably a lot of overhead you just saved.
 
 Config Changes Not Reflected
 ----------------------------
@@ -489,12 +488,12 @@ Config Changes Not Reflected
 Browser cache. Your configuration may be perfect but you'll sit there and beat
 your head against a cement wall for a month. What's wrong is your browser cache.
 When you download something, your browser stores it. It also stores how that
-file was served. If you are playing with a types{} block you'll encounter this.
+file was served. If you are playing with a ``types{}`` block you'll encounter this.
 
 The fix:
 
 * In Firefox press Ctrl+Shift+Delete, check Cache, click Clear Now. In
-  any other browser just ask your favorite search engine. Do this after every
+  any other browser, just ask your favorite search engine. Do this after every
   change (unless you know it's not needed) and you'll save yourself a lot of
   headaches.
 * Use curl.
@@ -514,7 +513,7 @@ your nginx.conf file.:
 Missing (disappearing) HTTP Headers
 -----------------------------------
 
-If you do not explicitly set `underscores_in_headers on`, NGINX will silently
+If you do not explicitly set ``underscores_in_headers on;``, NGINX will silently
 drop HTTP headers with underscores (which are perfectly valid according to the
 HTTP standard). This is done in order to prevent ambiguities when mapping
 headers to CGI variables as both dashes and underscores are mapped to
@@ -524,7 +523,7 @@ Not Using Standard Document Root Locations
 ------------------------------------------
 
 Some directories in any file system should never be used for hosting data from.
-Some of these include ``/`` and ``root``. You should never use these as your
+These include ``/`` and ``root``. You should never use these as your
 document root.
 
 Doing this leaves you open to a request outside of your expected area returning
@@ -542,12 +541,12 @@ NEVER DO THIS!!! (yes, we have seen this)
         }
 
         location @php {
-            [...]
+            # [...]
         }
     }
 
-When a request is made for /foo, the request is passed to php because the file
-isn't found. This can appear fine, until a request in made for /etc/passwd.
+When a request is made for ``/foo``, the request is passed to php because the file
+isn't found. This can appear fine, until a request in made for ``/etc/passwd``.
 Yup, you just gave us a list of all users on that server. In some cases, the
 NGINX server is even set up run workers as root. Yup, we now have your user
 list as well as password hashes and how they've been hashed. We now own your
@@ -625,7 +624,7 @@ GOOD:
 Using SSLv3 with HTTPS
 ----------------------
 
-Due to the POODLE vulnerability in SSLv3, it is advised to not use SSLv3 in your 
+Due to the POODLE vulnerability in SSLv3, it is advised to not use SSLv3 in your
 SSL-enabled sites. You can very easily disable SSLv3 with this line and provide
 only the TLS protocols instead:
 
