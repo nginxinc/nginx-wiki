@@ -152,7 +152,7 @@ GOOD:
     }
 
 Using ``if``
---------
+------------
 
 There is a little page about using ``if`` statements. It's called IfIsEvil and you
 really should check it out. Let's take a look at a few uses of ``if`` that are bad.
