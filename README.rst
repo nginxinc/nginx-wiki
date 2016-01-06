@@ -31,7 +31,7 @@ There are a couple of extra dependencies you will also need to build the Markdow
 
 .. code-block:: bash
 
-   $ sudo pip install recommonmark commonmark
+   $ sudo pip install recommonmark commonmark==0.5.5
 
 You can then build the docs with:
 
