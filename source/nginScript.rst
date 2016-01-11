@@ -119,7 +119,7 @@ The nginScript environment provides a request object, designated as $r.  You can
   js_set $summary "
               var a, s, h;
   
-              s = ‘Request summary\n\n';
+              s = 'Request summary\n\n';
   
               s += 'Method: ' + $r.method + '\n';
               s += 'HTTP version: ' + $r.httpVersion + '\n';
