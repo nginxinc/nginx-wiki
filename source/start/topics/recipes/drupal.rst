@@ -82,7 +82,8 @@ Recipe
             fastcgi_split_path_info ^(.+?\.php)(|/.*)$;
             #NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
             include fastcgi_params;
-            fastcgi_param SCRIPT_FILENAME $request_filename;
+            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+            fastcgi_param PATH_INFO $fastcgi_path_info;
             fastcgi_intercept_errors on;
             fastcgi_pass unix:/var/run/php5-fpm.sock;
         }
