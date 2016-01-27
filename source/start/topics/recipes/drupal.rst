@@ -47,7 +47,12 @@ Recipe
         location ~ ^/sites/.*/private/ {
             return 403;
         }
-
+        
+        # Allow Let's Encrypt RFC 5785 ACME protocol
+        location ~* ^/.well-known/ {
+            allow all;
+        }        
+        
         # Block access to "hidden" files and directories whose names begin with a
         # period. This includes directories used by version control systems such
         # as Subversion or Git to store control files.
