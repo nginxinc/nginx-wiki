@@ -48,7 +48,7 @@ Recipe
             return 403;
         }
         
-        # Allow Let's Encrypt RFC 5785 ACME protocol
+        # Allow "Well-Known URIs" as per RFC 5785
         location ~* ^/.well-known/ {
             allow all;
         }        
