@@ -38,6 +38,8 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Backtrace                 | A NGINX module to dump backtrace case a worker process exits abnormally | :github:`alibaba/nginx-backtrace`                                                       |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| Brotli                    | Serves dynamically or statically compressed responses with brotli       | :github:`google/ngx_brotli`                                                             |
++---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Cache Purge               | Adds ability to purge content from FastCGI, proxy, and uWSGI caches     | :github:`FRiCKLE/ngx_cache_purge`                                                       |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`circle_gif`         | Generates simple circle images with colors/size specified in the URL    | :github:`evanmiller/nginx_circle_gif`                                                   |
