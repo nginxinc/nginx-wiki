@@ -116,7 +116,7 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Lower Upper Case          | Provides upper/lowercase string functions in NGINX config files         | :github:`replay/ngx_http_lower_upper_case`                                              |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| HTTP Lua                  | Embed the power of Lua into NGINX HTTP servers.                         | :github:`openresty/lua-nginx-module`                                                    |
+| HTTP Lua                  | Embed the power of Lua into NGINX HTTP servers (OpenResty Official)     | :github:`openresty/lua-nginx-module`                                                    |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Stream Lua                | Embed the power of Lua into NGINX TCP servers (OpenResty Official)      | :github:`openresty/stream-lua-nginx-module`                                             |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
