@@ -11,14 +11,13 @@ An example of the new format is as follows:
 
    ngx_module_type=HTTP
    ngx_module_name=ngx_http_my_module
-   ngx_module_incs=
-   ngx_module_deps=
    ngx_module_srcs="$ngx_addon_dir/ngx_http_my_module.c"
-   ngx_module_libs=
 
    . auto/module
 
    ngx_addon_name=$ngx_module_name
+
+You do not need to set empty variables for things that are not required as these will be cleared for each module by the build system.
 
 .. note:: the ``. auto/module`` line is required to trigger the new module build system.
 
@@ -62,7 +61,7 @@ Options
 
 .. ini:key:: ngx_module_link
 
-   This is set by the build system to ``DYNAMIC`` for a dynamic module or ``YES`` for a static module. It is not used often but can be useful if something different needs to happen for different compile modes. The value of this variable can be tested using a standard ``if`` as used in a shell script.
+   This is set by the build system to ``DYNAMIC`` for a dynamic module or ``ADDON`` for a static module. It is not used often but can be useful if something different needs to happen for different compile modes. The value of this variable can be tested using a standard ``if`` as used in a shell script.
 
 .. ini:key:: ngx_module_order
 

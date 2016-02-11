@@ -63,10 +63,7 @@ The new method uses a build script called ``auto/module`` to setup many things s
    if test -n "$ngx_module_link"; then
        ngx_module_type=HTTP
        ngx_module_name=ngx_http_response_module
-       ngx_module_incs=
-       ngx_module_deps=
        ngx_module_srcs="$ngx_addon_dir/ngx_http_response_module.c"
-       ngx_module_libs=
 
        . auto/module
    else
@@ -170,25 +167,22 @@ The end conversion looks like this:
                     "
     ngx_module_incs=$ngx_addon_dir
     ngx_module_deps=$RTMP_DEPS
-    ngx_module_libs=
 
     if [ $ngx_module_link = DYNAMIC ] ; then
         ngx_module_name="$RTMP_CORE_MODULES $RTMP_HTTP_MODULES"
         ngx_module_srcs="$RTMP_CORE_SRCS $RTMP_HTTP_SRCS"
         . auto/module
-    elif [ $ngx_module_link = YES ] ; then
+    elif [ $ngx_module_link = ADDON ] ; then
         ngx_module_type=CORE
         ngx_module_name=$RTMP_CORE_MODULES
         ngx_module_srcs=$RTMP_CORE_SRCS
         . auto/module
         ngx_module_type=HTTP
         ngx_module_name=$RTMP_HTTP_MODULES
-        ngx_module_incs=
-        ngx_module_deps=
         ngx_module_srcs=$RTMP_HTTP_SRCS
         . auto/module
     fi
 
     USE_OPENSSL=YES
 
-When compiling a module ``$ngx_module_link`` is set to ``YES`` for compiling a module as a static module and ``DYNAMIC`` when compiling as a Dynamic Module. The static compilation calls ``auto/module`` twice, once for the CORE module and once for the HTTP module. Whereas the dynamic compilation happens in a single module.
+When compiling a module ``$ngx_module_link`` is set to ``ADDON`` for compiling a module as a static module and ``DYNAMIC`` when compiling as a Dynamic Module. The static compilation calls ``auto/module`` twice, once for the CORE module and once for the HTTP module. Whereas the dynamic compilation happens in a single module.
