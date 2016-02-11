@@ -1,3 +1,7 @@
+
+.. meta::
+   :description: Learn how to create documentation in Markdown when contributing to the NGINX Community Wiki.
+
 Docs in Markdown
 ================
 
