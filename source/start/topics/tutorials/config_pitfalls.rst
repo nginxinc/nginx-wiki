@@ -244,7 +244,7 @@ eliminate If.
 Front Controller Pattern Web Apps
 ---------------------------------
 
-"Front Controller Pattern" designs are popular and areused on the many of the most
+"Front Controller Pattern" designs are popular and are used on the many of the most
 popular PHP software packages; But a lot of examples are more complex than they need
 to be. For Drupal, Joomla, etc., just use this:
 
