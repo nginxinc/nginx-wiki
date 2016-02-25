@@ -5,17 +5,6 @@
 Install
 =======
 
-After Installing
-----------------
-
-.. todo::
-   ..
-      The :doc:`configuration` page will give you some help getting things going after you get NGINX installed and the :doc:`../start/topics/tutorials/config_pitfalls.html` page will help keep you from making mistakes that so many users before you did. 
-
-These two pages give you the chance to learn from others mistakes and hard work.
-
-
-
 Binary Releases
 ---------------
 
@@ -186,7 +175,10 @@ Other Systems
 
 .. warning:: These pages are not thoroughly, if at all, reviewed for accuracy as they are on this page.
 
+After Installing
+----------------
 
+There are many different example configurations that can be found in :doc:`../../index` section. Also the :doc:`config_pitfalls` page will help keep you from making mistakes that so many users before you did.
 
 References
 ----------
