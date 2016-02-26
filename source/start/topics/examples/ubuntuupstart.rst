@@ -34,7 +34,7 @@ Save this file as ``/etc/init/nginx.conf``
 
    exec $DAEMON
 
-``respawn`` tells upstart to keep NGINX master process alive and expect fork tracks ngnix after the fork. pre-start script helps say when the services fails
+``respawn`` tells upstart to keep NGINX master process alive and expect fork tracks NGINX after the fork. pre-start script helps say when the services fails
 
 ``respawn limit`` tells that if the process is respawned more than 10 times within an interval of 5 seconds, the process will be stopped automatically, and not restarted (the default upstart value).
 
