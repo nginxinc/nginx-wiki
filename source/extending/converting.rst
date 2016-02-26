@@ -29,7 +29,15 @@ A new configure option has been created to add a module as a dynamic module. Ins
 
    $ ./configure --add-dynamic-module=/opt/source/ngx_my_module/
 
-During compilation the module binary will be created as a ``.so`` file. This ``.so`` file is then installed into the ``modules`` sub-directory of NGINX's installation path.
+Modules are compiled along with NGINX by running the ``make`` command. Alternatively you can ask NGINX to just build the modules by doing:
+
+.. code-block:: bash
+
+   $ make -f objs/Makefile modules
+
+It is possible to run configure with the same paraters as before with an additional module, compiling as above and using the resulting module binary with the NGINX that has already been built with the source. If you change other configure options or the NGINX source you will need to recompile everything since there is no API/ABI compatibility at present.
+
+During compilation the module binary will be created as a ``.so`` file in the ``objs`` directory. This ``.so`` file is then installed into the ``modules`` sub-directory of NGINX's installation path.
 
 Loading a Dynamic Module
 ------------------------
