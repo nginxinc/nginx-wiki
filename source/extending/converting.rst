@@ -35,6 +35,12 @@ Modules are compiled along with NGINX by running the ``make`` command. Alternati
 
    $ make -f objs/Makefile modules
 
+With NGINX 1.9.13 the following is another way of doing this:
+
+.. code-block:: bash
+
+   $ make modules
+
 It is possible to run configure with the same paraters as before with an additional module, compiling as above and using the resulting module binary with the NGINX that has already been built with the source. If you change other configure options or the NGINX source you will need to recompile everything since there is no API/ABI compatibility at present.
 
 During compilation the module binary will be created as a ``.so`` file in the ``objs`` directory. This ``.so`` file is then installed into the ``modules`` sub-directory of NGINX's installation path.
