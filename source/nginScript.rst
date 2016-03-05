@@ -49,10 +49,10 @@ Installation instructions:
   # Obtain the latest source for NGINX from http://nginx.org/en/download.html
   $ wget http://nginx.org/download/nginx-1.9.4.tar.gz
   $ tar -xzvf nginx-1.9.4.tar.gz
-  
+
   # Obtain the development sources for nginScript
   $ hg clone http://hg.nginx.org/njs
-  
+
   # Build and install NGINX
   $ cd nginx-1.9.4
   $ ./configure --add-module=../njs/nginx --prefix=/your/installation/directory
@@ -65,19 +65,21 @@ Section 3: Getting Started with nginScript
 ------------------------------------------------
 
 In the early-access release of nginScript, you can do several things.
+Note that all JavaScript code should be inside JavaScript function that takes a request object and a response object.
 
 Variables
 ^^^^^^^^^
 
-You can declare variables using js_set:
+You can declare variables using ``js_set`` by writing a JavaScript function that returns a value:
 
-.. code-block:: js
-  
-  js_set $msg "
-     var m = 'Hello ';
-     m += 'world!';
-     m;
-  ";
+.. code-block:: nginx
+
+  js_set $msg “function msg(req, res) {
+      var m = 'Hello ';
+      m += 'world!';
+      return m;
+  }";
+
 
 These variables can be used by NGINX configuration directives. The JavaScript code is evaluated when the variable is used:
 
@@ -88,108 +90,100 @@ These variables can be used by NGINX configuration directives. The JavaScript co
       return 200 $msg;
   }
 
-Content Generation
+Content generation
 ^^^^^^^^^^^^^^^^^^
 
-The js_run directive is evaluated at the content-generation stage. It’s used to execute JavaScript natively and generate an HTTP response:
+The ``js_run`` directive is evaluated at the content-generation stage. It’s used to execute JavaScript natively and generate an HTTP response:
 
 .. code-block:: nginx
 
   location /hello {
-      js_run "
-          var res;
-          res = $r.response;  
-  
+      js_run “function hello(req, res) {
           res.contentType = 'text/plain';
           res.status = 200;
-          res.sendHeader(); 
-  
+          res.sendHeader();
+
           res.send( 'Hello, world!' );
           res.finish();
-      ";
+      }";
   }
+
 
 The request object
 ^^^^^^^^^^^^^^^^^^
 
-The nginScript environment provides a request object, designated as $r.  You can read and set the properties of this object and use the methods it provides to access and modify the request.
+The nginScript environment provides a request object and passes it to your function as the first parameter.  You can read and set the properties of this object and use the methods it provides to access and modify the request.
 
 .. code-block:: nginx
 
-  js_set $summary "
-              var a, s, h;
-  
-              s = 'Request summary\n\n';
-  
-              s += 'Method: ' + $r.method + '\n';
-              s += 'HTTP version: ' + $r.httpVersion + '\n';
-              s += 'Host: ' + $r.headers.host + '\n';
-              s += 'Remote Address: ' + $r.remoteAddress + '\n';
-              s += 'URI: ' + $r.uri + '\n';
-  
-              s += 'Headers:\n';
-              for (h in $r.headers) {
-                  s += '  header \"' + h + '\" is \"' + $r.headers[h] + '\"\n';
-              }
-  
-              s += 'Args:\n';
-              for (a in $r.args) {
-                  s += '  arg \"' + a + '\" is \"' + $r.args[a] + '\"\n';
-              }
-  
-              s;
-              ";
+  js_set $summary "function summary(req, res) {
+      var a, s, h;
+
+      s = 'Request summary\n\n';
+
+      s += 'Method: ' + req.method + '\n';
+      s += 'HTTP version: ' + req.httpVersion + '\n';
+      s += 'Host: ' + req.headers.host + '\n';
+      s += 'Remote Address: ' + req.remoteAddress + '\n';
+      s += 'URI: ' + req.uri + '\n';
+
+      s += 'Headers:\n';
+      for (h in req.headers) {
+          s += '  header \"' + h + '\" is \"' + req.headers[h] + '\"\n';
+      }
+
+      s += 'Args:\n';
+      for (a in req.args) {
+          s += '  arg \"' + a + '\" is \"' + req.args[a] + '\"\n';
+      }
+
+      return s;
+  }";
 
 The response object
 ^^^^^^^^^^^^^^^^^^^
 
-You can obtain the response object from the current $r request object, and generate a response during variable evaluation or content generation:
+The nginScript environment passes a response object as the second function parameter.
+You can use the response object to generate a response during variable evaluation or content generation:
 
 .. code-block:: nginx
 
-      js_run "
-          var res;
-          res = $r.response;
-  
-          res.contentType = 'text/plain';
-          res.status = 200;
-          res.sendHeader();
-  
-          res.send( 'Hello, world!' );
-          res.finish();
-      ";
+  js_run “function hello(req, res) {
+      res.contentType = 'text/plain';
+      res.status = 200;
+      res.sendHeader();
+
+      res.send( 'Hello, world!' );
+      res.finish();
+  }";
 
 Bringing it all together
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
 The following example illustrates how to obtain a parameter from the query string of a request and generate a response.
 
-
 .. code-block:: nginx
 
  location /fib {
-     js_run "
+     js_run "function fib(req, res) {
           function f( n ) { return ( n < 2 ) ? 1: f( n-1 ) + f( n-2 ) ; }
-  
-          var nn = $r.args['n'];
-  
+
+          var nn = req.args['n'];
+
           // nn++ is a hack to convert nn to an integer
           var n = nn++;
-  
+
           var msg = 'Fibonacci( ' + n + ' ) = ' + f( n );
-  
-          var res = $r.response;
-  
+
           res.contentType = 'text/plain';
           res.status = 200;
           res.sendHeader();
-  
+
           res.send( msg );
           res.send( '\n' );
           res.finish();
-      ";  
+      }";
   }
-
 
 
 Section 4: Documentation
