@@ -24,19 +24,19 @@ Options
 
 .. ini:key:: HTTP_MODULES
 
-   This adds your module to the list of HTTP modules to be loaded. It should be prepended with ``$HTTP_MODULES`` so that it is addative to the list of HTTP modules already defined.
+   This adds your module to the list of HTTP modules to be loaded. It should be prepended with ``$HTTP_MODULES`` so that it is addative to the list of HTTP modules already defined. The name used in this should be the same name as the :c:type:`module definition struct <ngx_module_t>`
 
 .. ini:key:: HTTP_FILTER_MODULES
 
-   Similar to :ini:key:`HTTP_MODULES` this adds your module to the list of HTTP filter modules to be loaded. It should be prepended with ``$HTTP_FILTER_MODULES`` so that it is additive to the list of HTTP filter modules already defined.
+   Similar to :ini:key:`HTTP_MODULES` this adds your module to the list of HTTP filter modules to be loaded. It should be prepended with ``$HTTP_FILTER_MODULES`` so that it is additive to the list of HTTP filter modules already defined. The name used in this should be the same name as the :c:type:`module definition struct <ngx_module_t>`
 
 .. ini:key:: MAIL_MODULES
 
-   Similar to :ini:key:`HTTP_MODULES` this adds your module to the list of mail modules to be loaded. It should be prepended with ``$MAIL_MODULES`` so that it is additive to the list of mail modules already defined.
+   Similar to :ini:key:`HTTP_MODULES` this adds your module to the list of mail modules to be loaded. It should be prepended with ``$MAIL_MODULES`` so that it is additive to the list of mail modules already defined. The name used in this should be the same name as the :c:type:`module definition struct <ngx_module_t>`
 
 .. ini:key:: STREAM_MODULES
 
-   Similar to :ini:key:`HTTP_MODULES` this adds your module to the list of TCP/IP stream modules to be loaded. It should be prepended with ``$HTTP_FILTER_MODULES`` so that it is additive to the list of TCP/IP stream modules already defined.
+   Similar to :ini:key:`HTTP_MODULES` this adds your module to the list of TCP/IP stream modules to be loaded. It should be prepended with ``$HTTP_FILTER_MODULES`` so that it is additive to the list of TCP/IP stream modules already defined. The name used in this should be the same name as the :c:type:`module definition struct <ngx_module_t>`
 
 .. ini:key:: NGX_ADDON_SRCS
 
