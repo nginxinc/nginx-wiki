@@ -37,7 +37,7 @@ Options
 
 .. ini:key:: ngx_module_name
 
-   The name of the module. This is used in the build system for compiling a dynamic module. Multiple whitespace separated values are possible here for multiple modules in a single set of source files, the first name in this list will be used for the name of the output binary for a dynamic module. See the complex example in :doc:`converting`
+   The name of the module. This is used in the build system for compiling a dynamic module. Multiple whitespace separated values are possible here for multiple modules in a single set of source files, the first name in this list will be used for the name of the output binary for a dynamic module. See the complex example in :doc:`converting`. The names used in this should be the same names as the :c:type:`module definition struct <ngx_module_t>`.
 
 .. ini:key:: ngx_module_incs
 

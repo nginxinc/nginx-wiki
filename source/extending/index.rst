@@ -7,3 +7,4 @@ Extending NGINX
     compiling
     new_config
     old_config
+    api/index
