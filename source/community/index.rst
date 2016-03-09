@@ -12,5 +12,6 @@ Community
    irc
    irc_ops
    resources
+   talks/index
    faq
    why_use_it
