@@ -23,7 +23,7 @@ Related Links
 
 * Ingress Controllers -- https://github.com/kubernetes/contrib/tree/master/ingress/controllers
 
-* Our NGINX controllers -- <I’ll insert a link soon>
+* Our NGINX controllers -- https://github.com/nginxinc/kubernetes-ingress
 
 * Load Balancing Kubernetes Services with NGINX Plus -- https://www.nginx.com/blog/load-balancing-kubernetes-services-nginx-plus/
 
