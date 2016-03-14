@@ -1,0 +1,252 @@
+{#
+    basic/layout.html
+    ~~~~~~~~~~~~~~~~~
+
+    Master layout template for Sphinx themes.
+
+    :copyright: Copyright 2007-2015 by the Sphinx team, see AUTHORS.
+    :license: BSD, see LICENSE for details.
+#}
+{%- block doctype -%}
+<!DOCTYPE html>
+{%- endblock %}
+{%- set reldelim1 = reldelim1 is not defined and ' &raquo;' or reldelim1 %}
+{%- set reldelim2 = reldelim2 is not defined and ' |' or reldelim2 %}
+{%- set render_sidebar = (not embedded) and (not theme_nosidebar|tobool) and
+                         (sidebars != []) %}
+{%- set url_root = pathto('', 1) %}
+{# XXX necessary? #}
+{%- if url_root == '#' %}{% set url_root = '' %}{% endif %}
+{%- if not embedded and docstitle %}
+  {%- set titlesuffix = " | "|safe + docstitle|e %}
+{%- else %}
+  {%- set titlesuffix = "" %}
+{%- endif %}
+
+
+{%- macro relbar() %}
+    <div class="related" role="navigation" aria-label="related navigation">
+      <h3>{{ _('Navigation') }}</h3>
+      <ul>
+        {%- for rellink in rellinks %}
+        <li class="right" {% if loop.first %}style="margin-right: 10px"{% endif %}>
+          <a href="{{ pathto(rellink[0]) }}" title="{{ rellink[1]|striptags|e }}"
+             {{ accesskey(rellink[2]) }}>{{ rellink[3] }}</a>
+          {%- if not loop.first %}{{ reldelim2 }}{% endif %}</li>
+        {%- endfor %}
+        {%- block rootrellink %}
+        <li class="nav-item nav-item-0"><a href="{{ pathto(master_doc) }}">{{ shorttitle|e }}</a>{{ reldelim1 }}</li>
+        {%- endblock %}
+        {%- for parent in parents %}
+          <li class="nav-item nav-item-{{ loop.index }}"><a href="{{ parent.link|e }}" {% if loop.last %}{{ accesskey("U") }}{% endif %}>{{ parent.title }}</a>{{ reldelim1 }}</li>
+        {%- endfor %}
+        {%- block relbaritems %} {% endblock %}
+      </ul>
+    </div>
+{%- endmacro %}
+
+{%- macro sidebar() %}
+<!-- All codes have been moved to sidebar.html -->
+{%- endmacro %}
+
+
+{%- macro script() %}
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    '{{ url_root }}',
+        VERSION:     '{{ release|e }}',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '{{ '' if no_search_suffix else file_suffix }}',
+        HAS_SOURCE:  {{ has_source|lower }}
+      };
+    </script>
+    {%- for scriptfile in script_files %}
+    <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
+    {%- endfor %}
+
+{%- endmacro %}
+
+{%- macro css() %}
+    <link rel="stylesheet" href="{{ pathto('_static/' + style, 1) }}" type="text/css" />
+    <link rel="stylesheet" href="{{ pathto('_static/pygments.css', 1) }}" type="text/css" />
+    {%- for cssfile in css_files %}
+    <link rel="stylesheet" href="{{ pathto(cssfile, 1) }}" type="text/css" />
+    {%- endfor %}
+{%- endmacro %}
+
+<html lang="en">
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset={{ encoding }}" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    {{ metatags }}
+    {%- block htmltitle %}
+    <title>{{ title|striptags|e }}{{ titlesuffix }}</title>
+    {%- endblock %}
+    {{ css() }}
+    {%- if not embedded %}
+    {{ script() }}
+    {%- if use_opensearch %}
+    <link rel="search" type="application/opensearchdescription+xml"
+          title="{% trans docstitle=docstitle|e %}Search within {{ docstitle }}{% endtrans %}"
+          href="{{ pathto('_static/opensearch.xml', 1) }}"/>
+    {%- endif %}
+    {%- if favicon %}
+    <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
+    {%- endif %}
+    <link rel="icon" type="image/png" href="{{ pathto('_static/nginx-favicon.png', 1) }}">
+    {%- endif %}
+{%- block linktags %}
+    {%- if hasdoc('about') %}
+    <link rel="author" title="{{ _('About these documents') }}" href="{{ pathto('about') }}" />
+    {%- endif %}
+    {%- if hasdoc('genindex') %}
+    <link rel="index" title="{{ _('Index') }}" href="{{ pathto('genindex') }}" />
+    {%- endif %}
+    {%- if hasdoc('search') %}
+    <link rel="search" title="{{ _('Search') }}" href="{{ pathto('search') }}" />
+    {%- endif %}
+    {%- if hasdoc('copyright') %}
+    <link rel="copyright" title="{{ _('Copyright') }}" href="{{ pathto('copyright') }}" />
+    {%- endif %}
+    <link rel="top" title="{{ docstitle|e }}" href="{{ pathto(master_doc) }}" />
+    {%- if parents %}
+    <link rel="up" title="{{ parents[-1].title|striptags|e }}" href="{{ parents[-1].link|e }}" />
+    {%- endif %}
+    {%- if next %}
+    <link rel="next" title="{{ next.title|striptags|e }}" href="{{ next.link|e }}" />
+    {%- endif %}
+    {%- if prev %}
+    <link rel="prev" title="{{ prev.title|striptags|e }}" href="{{ prev.link|e }}" />
+    {%- endif %}
+{%- endblock %}
+{%- block extrahead %} {% endblock %}
+    <script type="text/javascript">
+        // workaround for rewriting anchor tags
+        $(function() {
+            if(window.location.hash != '') {
+              var parts = window.location.hash.split('#', 2);
+              var anchor = parts[1].replace(/[\W_]/g, '-').toLowerCase();
+              window.location.hash = parts[0] + '#' + anchor;
+            }
+        });
+    </script>   
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+
+  
+
+  <link rel="stylesheet" href='{{ pathto('_static/css/bootstrap.min.css', 1) }}'>
+
+<link rel='stylesheet' id='nginx-theme-style-css'
+          href='{{ pathto('_static/nginx-theme.css?ver=1438882823', 1) }}'
+          type='text/css' media='all'/>
+          
+
+  <link rel="stylesheet" href='{{ pathto('_static/style.css', 1) }}'>
+</head>
+<body>
+  <!-- Header Section Start -->
+
+  {% include 'includes/header.html' %}
+<!-- Header Section End -->
+
+<!-- Navigation Section Start -->
+{%- block header %}{% endblock %}
+
+{%- block relbar1 %}{{ relbar() }}{% endblock %}
+<!-- Navigation Section End -->
+
+  <section id="wrapper">
+
+{%- block content %}
+  {%- block sidebar1 %} {# possible location for sidebar #} {% endblock %}
+
+    <section class="global-header-wrapper">
+      <div class="global-header">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="content">
+                <h1>{{ title }}</h1>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="wiki-body">
+      <div class="container">
+        <div class="row">
+          
+          <!-- Start main document block -->
+        {%- block document %}
+
+          <div class="col-md-9" id="page_content">
+            {% block body %} {% endblock %}
+
+            {% if pagename == 'index' %} 
+              {% include 'includes/home_page_body.html' %}
+            {% endif %}
+
+          </div>
+        {%- endblock %}
+          <!-- End main document block -->
+          
+          <!-- Start Sidebar block -->
+          <div class="col-md-3">
+            {%- block sidebar2 %}
+               {%- if render_sidebar %}
+                 {% include 'includes/sidebar.html' %}
+               {%- endif %}
+            {% endblock %}  
+          </div>
+          <!-- Start Sidebar block -->
+
+        </div><!-- end class="row" -->
+      </div><!-- end class="container" -->
+    </section><!-- end class="wiki-body" -->
+
+
+{%- endblock %}
+
+{%- block relbar2 %}{{ relbar() }}{% endblock %}
+
+  </section> <!-- End Wrapper -->
+
+{%- block footer %}
+
+  <!-- Footer Section Start -->
+  {% include 'includes/footer.html' %}
+  <!-- Footer Section End -->
+ 
+   <!-- Js From old design --> 
+   <!-- /#page -->
+  <script type="text/javascript" src="{{ pathto('_static/nginx-theme.js', 1) }}?ver=20150911"></script>
+  <!-- End Piwik Code -->
+  <script type="text/javascript">
+  var shiftWindow = function() { window.scrollBy(0, -80) };
+  // Timeout to push the scrollBy to the bottom of the queue, otherwise it breaks in IE and Chrome
+  var testWindow = function() { if (!!window.location.hash) setTimeout(function(){ shiftWindow(); }, 1); };
+  window.addEventListener("load", testWindow);
+  window.addEventListener("hashchange", shiftWindow);
+  </script>
+  <!-- Google Tag Manager -->
+  <noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-WBXGM3"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-WBXGM3');</script>
+  <!-- End Google Tag Manager -->
+
+
+  <!-- Js Files new for design -->
+  <!-- jQuery is automatically included in header -->
+  <script src="{{ pathto('_static/js/bootstrap.min.js', 1) }}"></script>
+  <script src="{{ pathto('_static/js/main.js', 1) }}"></script>
+ {%- endblock %} 
+</body>
+</html>

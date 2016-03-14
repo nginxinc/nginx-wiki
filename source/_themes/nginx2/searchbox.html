@@ -1,0 +1,16 @@
+<div class="search_box">
+	<form action="{{ pathto('search') }}" method="get">
+		<div class="input-group">
+			
+			<input type="text" name="q" class="form-control" placeholder="Search Wiki">
+			<span class="input-group-btn">
+			  <input type="submit" class="btn" value="">
+			    <i class="fa fa-chevron-circle-right"></i>
+			  </input>
+			</span>
+			<input type="hidden" name="check_keywords" value="yes" />
+			<input type="hidden" name="area" value="default" />
+			
+		</div>
+	</form>
+</div>
