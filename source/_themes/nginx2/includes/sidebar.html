@@ -1,0 +1,71 @@
+  <aside class="wiki-sidebar">
+    <!-- Search Box Start -->
+    <div class="sidebar-widget">
+        {%- block sidebarsearch %}
+        {%- include "searchbox.html" %}
+        {%- endblock %}
+    </div>
+    <!-- Search Box End -->
+    <div class="sidebar-widget">
+      {%- block sidebarlogo %}
+        {%- if logo %}
+          <p class="logo"><a href="{{ pathto(master_doc) }}">
+            <img class="logo" src="{{ pathto('_static/' + logo, 1) }}" alt="Logo"/>
+          </a></p>
+        {%- endif %}
+      {%- endblock %}
+    </div>
+      
+    <div class="sidebar-menu sidebar-widget">
+
+      {%- if sidebars != None %}
+        {#- new style sidebar: explicitly include/exclude templates #}
+        {%- for sidebartemplate in sidebars %}
+        {%- include sidebartemplate %}
+        {%- endfor %}
+      {%- else %}
+        {#- old style sidebars: using blocks -- should be deprecated #}
+        {%- block sidebartoc %}
+        {%- include "localtoc.html" %}
+        {%- endblock %}
+        {%- block sidebarrel %}
+        {%- include "relations.html" %}
+        {%- endblock %}
+        {%- block sidebarsourcelink %}
+        {%- include "sourcelink.html" %}
+        {%- endblock %}
+        {%- if customsidebar %}
+        {%- include customsidebar %}
+        {%- endif %}
+      {%- endif %}
+    </div>
+
+    <div class="sidebar-widget sidebar-email-signup">
+      <h3>Newsletter Sign-up</h3>
+      <form action="https://app-ab05.marketo.com/index.php/leadCapture/save" class="regpg-main-form-element" enctype="application/x-www-form-urlencoded" id="mf1" method="post">
+        <input id="Email Address" name="Email" placeholder="enter your email" type="email" required></input><button id="footernewsletter" style="display: none;"></button>
+        <div onclick="javascript:$('#footernewsletter').click();" type="submit"><div class="icon icon-arrow-submit"></div></div>
+        <input name="formid" type="hidden" value="1544"></input>
+        <input name="munchkinId" type="hidden" value="990-FXF-735"></input>
+        <input name="_mkt_trk" type="hidden" value="id:990-FXF-735&amp;token:_mch-nginx.com-1452198173438-76151"></input>
+        <input name="returnURL" type="hidden" value="https://www.nginx.com/newsletter-signup/confirmation/"></input>
+        <span style="display:none;"><input name="_marketo_comments" type="text" value=""></input></span>
+      </form>
+    </div>
+
+
+    <div class="sidebar-menu sidebar-widget">
+      <h3>Edit this page</h3>
+       <ul>
+        {%- if show_on_github_url %}
+          <li><a href="{{ show_on_github_url }}"
+              rel="nofollow"><span class="icon-holder">{%- include "../../exts/icons/eye.svg" %}</span>&nbsp;{{ _('Show on GitHub') }}</a></li>
+        {%- endif %}
+        {%- if edit_on_github_url %}
+          <li><a href="{{ edit_on_github_url }}"
+              rel="nofollow"><span class="icon-holder">{%- include "../../exts/icons/pencil.svg" %}</span>&nbsp;{{ _('Edit on GitHub') }}</a></li>
+        {%- endif %}
+        </ul>
+    </div>
+
+  </aside>
