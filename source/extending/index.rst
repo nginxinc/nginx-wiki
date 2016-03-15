@@ -8,3 +8,4 @@ Extending NGINX
     new_config
     old_config
     api/index
+    examples/index
