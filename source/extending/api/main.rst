@@ -70,6 +70,8 @@ ngx_module_t
 
    A required structure used to define some basic module hooks.
 
+   Used in example: :doc:`../examples/body_filter`
+
    .. c:member:: NGX_MODULE_V1
 
        A macro for the header of the struct
@@ -176,6 +178,10 @@ ngx_http_module_t
 ^^^^^^^^^^^^^^^^^
 
 .. c:type:: ngx_http_module_t
+
+   Defines the module context of an HTTP module.
+
+   Used in example: :doc:`../examples/body_filter`
 
    .. c:member:: ngx_int_t (*preconfiguration)(ngx_conf_t *cf)
 

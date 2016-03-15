@@ -44,6 +44,8 @@ ngx_command_t
             ngx_null_command
       };
 
+   Used in example: :doc:`../examples/body_filter`
+
    .. c:member:: ngx_str_t name
 
       The name of the directive
@@ -92,7 +94,7 @@ ngx_command_t
       ========================= ======================= ========================================================
       Callback name             Data type               Description
       ========================= ======================= ========================================================
-      ngx_conf_set_flag_slot    :c:type:`ngx_flag_t`
+      ngx_conf_set_flag_slot    :c:type:`ngx_flag_t`    Allows ``on`` and ``off`` as values for a boolean
       ngx_conf_set_str_slot     :c:type:`ngx_str_t`
       ngx_conf_set_str_array    :c:type:`ngx_array_t` * Returns a pointer to an array of :c:type:`ngx_str_t`
       ngx_conf_set_keyval_slot  :c:type:`ngx_array_t` * Returns a pointer to an array of :c:type:`ngx_keyval_t`
@@ -219,6 +221,8 @@ ngx_http_get_module_loc_conf
 .. c:function:: void *ngx_http_get_module_loc_conf(ngx_http_request_t *r, ngx_module_t *module)
 
    A macro which gets the module's http location block configuration object from the request object
+
+   Used in example: :doc:`../examples/body_filter`
 
    :param request: The request object
    :param module: The module we are getting the configuration for
