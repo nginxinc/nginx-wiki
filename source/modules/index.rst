@@ -156,6 +156,8 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | PHP-Memache Standard Hash | Load balancer that imitates the PHP-Memcache standard hash's behaviour  | :github:`replay/ngx_http_php_memcache_standard_balancer`                                |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| POST authentication       | Authentication and authorization via POST request and PAM               | :github:`veruu/ngx_form_auth`                                                           |
++---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Postgres                  | Allows NGINX to communicate directly with PostgreSQL database           | `Download <http://labs.frickle.com/nginx_ngx_postgres>`__                               |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Pubcookie                 | Adds Pubcookie-based cross-site authentication method to NGINX          | `Download <http://www.vanko.me/book/page/pubcookie-module-nginx>`__                     |
