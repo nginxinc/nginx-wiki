@@ -4,9 +4,9 @@ KubeCon 2016
 Creating an Advanced Load Balancing Solution for Kubernetes with NGINX
 ----------------------------------------------------------------------
 
-Links to video and slides coming soon...
+* Video -- https://www.youtube.com/watch?v=u-CE4c3fSfg
 
-`Link to talk in KubeCon Schedule <https://kubeconeurope2016.sched.org/event/6Bc9/creating-an-advanced-load-balancing-solution-for-kubernetes-with-nginx>`_
+* Slides -- http://www.slideshare.net/kubecon/kubecon-eu-2016-creating-an-advanced-load-balancing-solution-for-kubernetes-with-nginx
 
 Related Links
 ^^^^^^^^^^^^^
