@@ -74,7 +74,7 @@ You can declare variables using ``js_set`` by writing a JavaScript function that
 
 .. code-block:: nginx
 
-  js_set $msg “function msg(req, res) {
+  js_set $msg "function msg(req, res) {
       var m = 'Hello ';
       m += 'world!';
       return m;
@@ -98,7 +98,7 @@ The ``js_run`` directive is evaluated at the content-generation stage. It’s us
 .. code-block:: nginx
 
   location /hello {
-      js_run “function hello(req, res) {
+      js_run "function hello(req, res) {
           res.contentType = 'text/plain';
           res.status = 200;
           res.sendHeader();
@@ -148,7 +148,7 @@ You can use the response object to generate a response during variable evaluatio
 
 .. code-block:: nginx
 
-  js_run “function hello(req, res) {
+  js_run "function hello(req, res) {
       res.contentType = 'text/plain';
       res.status = 200;
       res.sendHeader();
@@ -165,9 +165,9 @@ The following example illustrates how to obtain a parameter from the query strin
 .. code-block:: nginx
 
  location /fib {
-     js_run "function fib(req, res) {
-          function f( n ) { return ( n < 2 ) ? 1: f( n-1 ) + f( n-2 ) ; }
-
+     js_run "function f( n ) { return ( n < 2 ) ? 1: f( n-1 ) + f( n-2 ) ; }
+          function fib(req, res) {
+          
           var nn = req.args['n'];
 
           // nn++ is a hack to convert nn to an integer
