@@ -41,7 +41,7 @@ With NGINX 1.9.13 the following is another way of doing this:
 
    $ make modules
 
-It is possible to run configure with the same paraters as before with an additional module, compiling as above and using the resulting module binary with the NGINX that has already been built with the source. If you change other configure options or the NGINX source you will need to recompile everything since there is no API/ABI compatibility at present.
+It is possible to run configure with the same parameters as before with an additional module, compiling as above and using the resulting module binary with the NGINX that has already been built with the source. If you change other configure options or the NGINX source you will need to recompile everything since there is no API/ABI compatibility at present.
 
 During compilation the module binary will be created as a ``.so`` file in the ``objs`` directory. This ``.so`` file is then installed into the ``modules`` sub-directory of NGINX's installation path.
 
@@ -85,7 +85,7 @@ The new method uses a build script called ``auto/module`` to setup many things s
        NGX_ADDON_SRCS="$NGX_ADDON_SRCS $ngx_addon_dir/ngx_http_response_module.c"
    fi
 
-This incorporates the old-style ``config`` file as well so that older versions of NGINX will be compatible with the module. For a more detailed explaination of these options see :doc:`new_config`
+This incorporates the old-style ``config`` file as well so that older versions of NGINX will be compatible with the module. For a more detailed explanation of these options see :doc:`new_config`
 
 Complex Example
 ---------------
