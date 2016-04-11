@@ -185,6 +185,7 @@ The following example illustrates how to obtain a parameter from the query strin
       }";
   }
 
+.. note:: If more than one JavaScript functions are defined, the nginScript environment will pass the request and response objects to the function that was defined last.
 
 Section 4: Documentation
 ------------------------
