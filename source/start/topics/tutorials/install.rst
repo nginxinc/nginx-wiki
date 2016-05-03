@@ -136,14 +136,14 @@ See the :ref:`FAQ <faq.is_it_safe>`.
 
 Stable
 ^^^^^^
-| `NGINX 1.8.0 <http://nginx.org/download/nginx-1.8.0.tar.gz>`_  
-| 21 Apr 2015  
-| `changelog <http://nginx.org/en/CHANGES-1.8>`__  
+| `NGINX 1.10.0 <http://nginx.org/download/nginx-1.10.0.tar.gz>`_  
+| 26 Apr 2016  
+| `changelog <http://nginx.org/en/CHANGES-1.10>`__  
 
 Mainline
 ^^^^^^^^
-| `NGINX 1.9.5 <http://nginx.org/download/nginx-1.9.5.tar.gz>`_  
-| 22 Sep 2015  
+| `NGINX 1.9.15 <http://nginx.org/download/nginx-1.9.15.tar.gz>`_  
+| 19 Apr 2016  
 | `changelog <http://nginx.org/en/CHANGES>`__  
 
 Source code repository is at `hg.nginx.org/nginx <http://hg.nginx.org/nginx>`_.
