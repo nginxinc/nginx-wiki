@@ -3,7 +3,7 @@
    :description: The Tarantool module allows NginX to communicate with a Tarantool appication server.
 
 Tarantool
-======
+=========
 
 This document has been moved to :github:`tarantool/nginx_upstream_module#readme`.
 
