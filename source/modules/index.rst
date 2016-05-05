@@ -174,6 +174,8 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | HTTP Redis2               | HTTP Upstream module for the full Redis 2.0 protocol                    | :github:`openresty/redis2-nginx-module`                                                 |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| HTTP Tarantool            | HTTP Upstream module for communicate with Tarantool DB                  | :github:`tarantool/nginx_upstream_module`                                               |
++---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Replace Filter            | Performs regular expression substitutions on response bodies            | :github:`openresty/replace-filter-nginx-module`                                         |
 +---------------------------+-------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Roboo                     | HTTP Robot Mitigator that integrates easily with NGINX                  | :github:`yuri-gushin/Roboo/downloads`                                                   |
@@ -332,7 +334,7 @@ NGINX 3\ :sup:`rd` Party Modules
    * Video Thumb Extractor
    * VTS
    * XSS
-
+   * Tarantool upstream module
 ..
    This is a list of modules we haven't added and why:
    * Access Key - no revision tree, was locally hosted
@@ -393,6 +395,7 @@ NGINX 3\ :sup:`rd` Party Modules
    rdns
    redis
    redis2
+   tarantool
    rrd_graph
    secure_download
    set_misc
