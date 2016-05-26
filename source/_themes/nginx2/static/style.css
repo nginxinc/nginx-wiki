@@ -22,7 +22,7 @@ body {
     display: block;
     font-weight: 400;
     padding: 8px 9px;
-    margin-left: 9px;
+    margin-left: 0;
     text-align: center;
     color: #d9d9d6;
     text-transform: uppercase; }
@@ -30,7 +30,15 @@ body {
       text-decoration: none;
       color: #fff; }
   .header-actions-menu li:first-child a {
-    border: none; }
+   /* border: none; */}
+
+.header-actions-menu ul li:first-child a {
+  margin-right: 6px;
+}
+
+.header-actions-menu ul li:last-child a {
+  margin-left: 6px;
+}
 
 .site-header {
   color: #f3f3f3;
@@ -52,6 +60,7 @@ body {
       color: #d9d9d6;
       padding: 12px 8px;
       line-height: 15px;
+      font-weight: normal;
       text-transform: uppercase; }
       .site-header .site-main-menu .navbar-nav li > a:hover {
         color: #fff;
@@ -73,7 +82,8 @@ body {
         .site-header .site-main-menu .navbar-nav .dropdown-menu li:hover a, .site-header .site-main-menu .navbar-nav .dropdown-menu li:focus a {
           background: #323130; }
         .site-header .site-main-menu .navbar-nav .dropdown-menu li a {
-          padding: 12px 12px 12px 14px; }
+          padding: 12px 12px 12px 14px; 
+          text-transform:none;}
           .site-header .site-main-menu .navbar-nav .dropdown-menu li a:hover {
             color: #fff; }
           .site-header .site-main-menu .navbar-nav .dropdown-menu li a:hover:before {
@@ -98,7 +108,10 @@ body {
     float: none;
     display: block; }
     .mobile-header .logo img {
-      width: 100%; }
+      margin-top: -6px;
+      padding: 8px;
+      width: 200px;
+    }
   .mobile-header .navbar {
     margin-bottom: 0; }
   .mobile-header .logo {
@@ -106,20 +119,29 @@ body {
   .mobile-header .navbar-toggle {
     float: left;
     border: 1px solid #333333;
-    margin-left: 20px;
+    margin-left: 15px;
+    margin-top: 5px;
     padding: 9px 5px; }
     .mobile-header .navbar-toggle:hover {
       background: #F2A83A; }
-  .mobile-header .navbar-collapse {
-    background: #020101; }
+.mobile-header .navbar-collapse {
+  background: #020101 none repeat scroll 0 0;
+  margin-top: 6px;
+}
     .mobile-header .navbar-collapse .header-actions-menu {
-      margin: 12px 0; }
+  margin: 12px 0;
+  min-height: 40px;
+}
       .mobile-header .navbar-collapse .header-actions-menu ul {
-        padding-left: 0; }
+        padding-left: 0; 
+        margin: 0;
+      }
       .mobile-header .navbar-collapse .header-actions-menu li {
-        width: 48%; }
+        float: left;
+        width: 50%;
+      }
         .mobile-header .navbar-collapse .header-actions-menu li:first-child {
-          margin-right: 12px; }
+          /* margin-right: 12px; */ }
   .mobile-header .navbar-toggle .icon-bar {
     background: #fff; }
   .mobile-header .mobile-menu li {
@@ -129,10 +151,14 @@ body {
       font-size: 16px;
       text-transform: uppercase;
       font-weight: 200;
-      padding: 14px 46px 14px 2.5788%; }
+      padding: 14px 46px 14px 2.5788%; 
+	  }
       .mobile-header .mobile-menu li a:hover, .mobile-header .mobile-menu li a:focus, .mobile-header .mobile-menu li a:active {
         background: transparent;
         color: #fff; }
+	.mobile-header .mobile-menu li ul li a {
+		text-transform: none;
+	}
   .mobile-header .mobile-menu .open > a {
     background-color: transparent; }
   .mobile-header .mobile-menu .dropdown-arrow-button {
@@ -143,8 +169,10 @@ body {
     height: 100%;
     border-left: 1px solid #333232;
     margin-top: 5px; }
-    .mobile-header .mobile-menu .dropdown-arrow-button i {
-      margin-top: 5px; }
+.mobile-header .mobile-menu .dropdown-arrow-button i {
+  font-size: 10px;
+  margin-top: 5px;
+}
   .mobile-header .mobile-menu .navbar-nav .open .dropdown-menu {
     background: #21201F; }
   .mobile-header .mobile-menu .dropdown-menu {
@@ -155,12 +183,12 @@ body {
     position: relative; }
   .mobile-header .mobile-search-box {
     position: absolute;
-    right: 8px;
+    right: 15px;
     top: 6px;
     width: 35%; }
     .mobile-header .mobile-search-box .searchbox {
       position: relative;
-      min-width: 40px;
+      min-width: 30px;
       width: 0%;
       height: 30px;
       float: right;
@@ -186,7 +214,7 @@ body {
       padding-left: 10px; }
     .mobile-header .mobile-search-box .searchbox-icon,
     .mobile-header .mobile-search-box .searchbox-submit {
-      width: 40px;
+      width: 30px;
       height: 30px;
       display: block;
       position: absolute;
@@ -205,7 +233,8 @@ body {
       border: 1px solid #333333; }
       .mobile-header .mobile-search-box .searchbox-icon i,
       .mobile-header .mobile-search-box .searchbox-submit i {
-        color: #fff; }
+        color: #fff; 
+        font-size: 16px;}
     .mobile-header .mobile-search-box .searchbox-open {
       width: 240px; }
 
@@ -265,7 +294,7 @@ body {
   margin-left: 1em;
   padding-top: 20px;
   position: absolute;
-  right: 10px; }
+  right: 15px; }
 
 .header-extras-wrapper .header-tel {
   margin-right: 1em; }
@@ -629,8 +658,8 @@ body{
 }
 
 .navbar-nav li a, .header-actions-menu li a  {
-  font-size: 14px;
-  line-height: 20px;
+  font-size: 100%;
+  line-height: 22px;
 }
 
 div.related {
@@ -895,8 +924,8 @@ aside.wiki-sidebar .sidebar-widget ul li a {
 }
 
 .mobile-header {
-  height: 68px;
-  padding-top: 10px;
+  height: 69px;
+  padding-top: 12px;
 }
 
 .mobile-header.sticky-menu {
@@ -914,7 +943,7 @@ aside.wiki-sidebar .sidebar-widget ul li a {
 }
 
 .mobile-header .navbar-toggle {
-  background: transparent none repeat scroll 0 0;
+  background: #5a3806 none repeat scroll 0 0;
   border: 1px solid #333333;
   box-shadow: none;
   padding: 5px;
@@ -1068,8 +1097,11 @@ aside.wiki-sidebar .sidebar-widget ul li a {
     float: none; }
 
   .mobile-header .navbar-collapse .header-actions-menu li:first-child {
+    /*
     padding-bottom: 10px;
-    width: 100%; }
+    width: 100%;
+     */
+     }
 
   .container-fluid > .navbar-collapse, .container-fluid > .navbar-header, .container > .navbar-collapse, .container > .navbar-header {
     margin-left: -15px !important;
@@ -1082,8 +1114,11 @@ aside.wiki-sidebar .sidebar-widget ul li a {
     display: block; }
 
   .mobile-header .navbar-collapse .header-actions-menu li:first-child {
+  /*
     padding-bottom: 10px;
-    width: 100%; } 
+    width: 100%; 
+    */
+  } 
 
   #footer .col-md-offset-1::after {
     display: none;
