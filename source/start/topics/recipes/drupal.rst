@@ -98,6 +98,11 @@ Recipe
         location ~ ^/sites/.*/files/styles/ { # For Drupal >= 7
             try_files $uri @rewrite;
         }
+       
+        # Handle private files through Drupal.
+        location ~ ^/system/files/ { # For Drupal >= 7
+            try_files $uri /index.php?$query_string;
+        }
 
         location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
             expires max;
