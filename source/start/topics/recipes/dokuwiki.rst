@@ -31,7 +31,7 @@ This is pretty straight-forward. Just add this to your ``nginx.conf``. Note that
         try_files $uri $uri/ @dokuwiki;
       }
 
-      location ^~ /lib/ {
+      location ~ ^/lib.*\.(gif|png|ico|jpg)$ {
         expires 30d;
       }
 
