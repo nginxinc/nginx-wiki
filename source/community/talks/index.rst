@@ -5,3 +5,4 @@ NGINX Conference Talks and Meetups
 
     kubecon2016
     coreos_meetup_march2016
+    MaxCDN
