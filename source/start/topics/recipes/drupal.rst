@@ -47,12 +47,12 @@ Recipe
         location ~ ^/sites/.*/private/ {
             return 403;
         }
-        
+
         # Allow "Well-Known URIs" as per RFC 5785
         location ~* ^/.well-known/ {
             allow all;
-        }        
-        
+        }
+
         # Block access to "hidden" files and directories whose names begin with a
         # period. This includes directories used by version control systems such
         # as Subversion or Git to store control files.
@@ -75,14 +75,17 @@ Recipe
             return 404;
         }
 
-        # In Drupal 8, we must also match new paths where the '.php' appears in the middle,
-        # such as update.php/selection. The rule we use is strict, and only allows this pattern
-        # with the update.php front controller.  This allows legacy path aliases in the form of
-        # blog/index.php/legacy-path to continue to route to Drupal nodes. If you do not have 
-        # any paths like that, then you might prefer to use a laxer rule, such as: 
+        # In Drupal 8, we must also match new paths where the '.php' appears in
+        # the middle, such as update.php/selection. The rule we use is strict,
+        # and only allows this pattern with the update.php front controller.
+        # This allows legacy path aliases in the form of
+        # blog/index.php/legacy-path to continue to route to Drupal nodes. If
+        # you do not have any paths like that, then you might prefer to use a
+        # laxer rule, such as:
         #   location ~ \.php(/|$) {
-        # The laxer rule will continue to work if Drupal uses this new URL pattern with front
-        # controllers other than update.php in a future release.
+        # The laxer rule will continue to work if Drupal uses this new URL
+        # pattern with front controllers other than update.php in a future
+        # release.
         location ~ '\.php$|^/update.php' {
             fastcgi_split_path_info ^(.+?\.php)(|/.*)$;
             #NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
@@ -98,7 +101,7 @@ Recipe
         location ~ ^/sites/.*/files/styles/ { # For Drupal >= 7
             try_files $uri @rewrite;
         }
-       
+
         # Handle private files through Drupal.
         location ~ ^/system/files/ { # For Drupal >= 7
             try_files $uri /index.php?$query_string;
