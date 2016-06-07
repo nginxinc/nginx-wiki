@@ -88,7 +88,9 @@ Recipe
         # release.
         location ~ '\.php$|^/update.php' {
             fastcgi_split_path_info ^(.+?\.php)(|/.*)$;
-            #NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
+            # Security note: If you're running a version of PHP older than the
+            # latest 5.3, you should have "cgi.fix_pathinfo = 0;" in php.ini.
+            # See http://serverfault.com/q/627903/94922 for details.
             include fastcgi_params;
             fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
             fastcgi_param PATH_INFO $fastcgi_path_info;
