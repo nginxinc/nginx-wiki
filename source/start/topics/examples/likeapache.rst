@@ -35,7 +35,7 @@ NGINX
       server_name  myhost;
       location / {
           root /path/to/myapp/public;
-          proxy_set_header X-Forwarded-Host $host;
+          proxy_set_header X-Forwarded-Host $host:$server_port;
           proxy_set_header X-Forwarded-Server $host;
           proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for; 
           proxy_pass http://myapp:8080;
