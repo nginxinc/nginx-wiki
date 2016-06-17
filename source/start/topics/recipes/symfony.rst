@@ -8,9 +8,6 @@ Symfony
 Recipe
 ------
 
-Secure Symfony 2.0
-^^^^^^^^^^^^^^^^^^
-
 .. warning::
 
     The following configuration makes all PHP scripts except app.php, app_dev.php and config.php downloadable instead of executing them. This is probably not desired if you'd like to use a tool like phpMyAdmin in the same virtual host.
