@@ -25,9 +25,9 @@ Alternatively it can be installed with Python's pip package manager:
 
 .. code-block:: bash
 
-   $ sudo pip install Sphinx<=1.3.6
+   $ sudo pip install -r requirements.txt
 
-There are a couple of extra dependencies you will also need to build the Markdown parts of the documentation:
+There are a couple of extra dependencies you will also need to build the Markdown parts of the documentation, these are automatically installed with the pip command above:
 
 .. code-block:: bash
 
