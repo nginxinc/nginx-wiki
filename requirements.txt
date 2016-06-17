@@ -1,0 +1,3 @@
+Sphinx<=1.3.6
+commonmark==0.5.5
+recommonmark
