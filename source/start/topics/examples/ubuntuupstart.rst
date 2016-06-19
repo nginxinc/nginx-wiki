@@ -14,7 +14,7 @@ Save this file as ``/etc/init/nginx.conf``
    description "nginx http daemon"
    author "George Shammas <georgyo@gmail.com>"
 
-   start on (filesystem and net-device-up IFACE=!lo)
+   start on (filesystem and net-device-up IFACE!=lo)
    stop on runlevel [!2345]
 
    env DAEMON=/usr/sbin/nginx
