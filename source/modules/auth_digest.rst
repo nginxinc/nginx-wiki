@@ -154,13 +154,15 @@ seconds.
 
 Source Repository
 -----------------
-Available on github at :github:`samizdatco/nginx-http-auth-digest`.
+Available on github at :github:`atomx/nginx-http-auth-digest`.
 
 
 
 Author
 ------
+Atomx <https://www.atomx.com/>  
 Christian Swinehart / `Samizdat Drafting Co. <http://samizdat.cc>`_
+
 
 
 
