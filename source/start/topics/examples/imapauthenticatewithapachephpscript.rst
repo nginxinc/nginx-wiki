@@ -107,6 +107,13 @@ nginx.conf
   //END
   
   function authuser($user,$pass){
+    // password characters encoded by nginx:
+    // " " 0x20h (SPACE)
+    // "%" 0x25h
+    // see nginx source: src/core/ngx_string.c:ngx_escape_uri(...)
+    $pass = str_replace('%20',' ', $pass);
+    $pass = str_replace('%25','%', $pass);
+
     // put your logic here to authen the user to any backend
     // you want (datbase, ldap, etc)
     // for example, we will just return true;
