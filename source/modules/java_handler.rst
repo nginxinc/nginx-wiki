@@ -35,7 +35,7 @@ In Hello.java
                         NGX_HTTP_OK, //http status 200
                         ArrayMap.create(CONTENT_TYPE, "text/plain"), //headers map
                         "Hello, Java & NGINX!"  //response body can be string, File or Array/Collection of them
-                    };
+                    }
      }
   }
 
