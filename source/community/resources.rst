@@ -7,7 +7,8 @@ Resources
 
 Developer Resources
 -------------------
-* `Contributing Changes (official guide) <http://nginx.org/en/docs/contributing_changes.html>`_
+* :doc:`../contributing/index`
+* :doc:`../extending/index`
 * :doc:`../start/topics/tutorials/gettingstarted`
 * :doc:`faq`
 * :doc:`../start/topics/examples/coding_style`
