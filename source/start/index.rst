@@ -18,7 +18,6 @@ Getting Started
    topics/examples/server_blocks
    topics/examples/phpfcgi
    topics/examples/phpfastcgionwindows
-   topics/examples/simplecgi
    topics/examples/simplepythonfcgi
    topics/examples/simplerubyfcgi
    topics/examples/djangofastcgi
@@ -193,7 +192,6 @@ developed.
 * :doc:`topics/examples/dynamic_ssi`
 * :doc:`topics/examples/phpfcgi`
 * :doc:`topics/examples/phpfastcgionwindows`
-* :doc:`topics/examples/simplecgi`
 * :doc:`topics/examples/simplepythonfcgi`
 * :doc:`topics/examples/simplerubyfcgi`
 * :doc:`topics/examples/djangofastcgi`
