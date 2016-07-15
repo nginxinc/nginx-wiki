@@ -45,18 +45,45 @@ Due to differences between how CentOS, RHEL, and Scientific Linux populate the `
 
 Official Debian/Ubuntu packages
 -------------------------------
-Append the appropriate stanza to ``/etc/apt/sources.list``. The Pgp page explains the signing of the nginx.org released packaging.
 
-Ubuntu 10.04:
+Ubuntu:
+
+The available NGINX Ubuntu release support is listed at `this distribution page <http://nginx.org/packages/ubuntu/dists/>`_. For a mapping of Ubuntu versions to release names, please visit the `Official Ubuntu Releases page <https://wiki.ubuntu.com/Releases>`_.
+
+Append the appropriate stanza to ``/etc/apt/sources.list``. If there is concern about persistence of repository additions (i.e. DigitalOcean Droplets), the appropriate stanza may instead be added to a different list file under ``/etc/apt/sources.list.d/``, such as ``/etc/apt/sources.list.d/nginx.list``.
 
 .. code-block:: bash
 
-  deb http://nginx.org/packages/ubuntu/ lucid nginx
-  deb-src http://nginx.org/packages/ubuntu/ lucid nginx
+  ## Replace $release with your corresponding Ubuntu release.
+  deb http://nginx.org/packages/ubuntu/ $release nginx
+  deb-src http://nginx.org/packages/ubuntu/ $release nginx
 
+e.g. Ubuntu 16.04 (Xenial):
 
+.. code-block:: bash
+
+  deb http://nginx.org/packages/ubuntu/ xenial nginx
+  deb-src http://nginx.org/packages/ubuntu/ xenial nginx
+
+To install the packages, execute in your shell:
+
+.. code-block:: bash
+
+  sudo apt-get update
+  sudo apt-get install nginx
+
+If a ``W: GPG error: http://nginx.org/packages/ubuntu xenial Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY $key`` is encountered during the NGINX repository update, execute the following:
+
+.. code-block:: bash
+
+  ## Replace $key with the corresponding $key from your GPG error.
+  sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $key
+  sudo apt-get update
+  sudo apt-get install nginx
 
 Debian 6:
+
+Append the appropriate stanza to ``/etc/apt/sources.list``.
 
 .. code-block:: bash
 
