@@ -64,7 +64,10 @@ Now we must tell NGINX to proxy requests to PHP FPM via the FCGI protocol:
         if (!-f $document_root$fastcgi_script_name) {
             return 404;
         }
-
+        
+        # Mitigate https://httpoxy.org/ vulnerabilities
+        fastcgi_param HTTP_PROXY "";
+        
         fastcgi_pass 127.0.0.1:9000;
         fastcgi_index index.php;
         include fastcgi_params;
