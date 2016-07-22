@@ -162,7 +162,7 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Postgres                  | Allows NGINX to communicate directly with PostgreSQL database            | `Download <http://labs.frickle.com/nginx_ngx_postgres>`__                               |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| Pubcookie                 | Adds Pubcookie-based cross-site authentication method to NGINX           | `Download <http://www.vanko.me/book/page/pubcookie-module-nginx>`__                     |
+| Pubcookie                 | Adds Pubcookie-based cross-site authentication method to NGINX           | :github:`ivandeex/pubcookie`                                                            |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`push_stream`        | Turns NGINX into an adept stream HTTP Push server                        | :github:`wandenberg/nginx-push-stream-module`                                           |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
