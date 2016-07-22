@@ -97,7 +97,10 @@ Recipe
             fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
             fastcgi_param PATH_INFO $fastcgi_path_info;
             fastcgi_intercept_errors on;
-            fastcgi_pass unix:/var/run/php5-fpm.sock;
+            # PHP 5 socket location.
+            #fastcgi_pass unix:/var/run/php5-fpm.sock;
+            # PHP 7 socket location.
+            fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
         }
 
         # Fighting with Styles? This little gem is amazing.
