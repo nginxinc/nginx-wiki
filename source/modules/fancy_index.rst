@@ -7,7 +7,7 @@ Fancy Index
 
 Synopsis
 --------
-The Fancy Index module makes possible the generation of file listings, like the built-in autoindex module does, but adding a touch of style. This is possible because the module module allows a certain degree of customization of the generated content:
+The Fancy Index module makes possible the generation of file listings, like the built-in autoindex module does, but adding a touch of style. This is possible because the module allows a certain degree of customization of the generated content:
 
 * Custom headers (either local or stored remotely).
 * Custom footers (either local or stored remotely).
