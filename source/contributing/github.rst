@@ -10,7 +10,7 @@ The NGINX Wiki is automatically generated from `reStructuredText files <https://
 Editing on GitHub
 -----------------
 
-Whilst viewing wiki you will find "Edit on GitHub" links in the sidebar on every page. Using this you can edit edit page content and submitting your edits will generate a pull request. This is a relatively simple way to make quick edits.
+Whilst viewing wiki you will find "Edit on GitHub" links in the sidebar on every page. Using this you can edit page content and submitting your edits will generate a pull request. This is a relatively simple way to make quick edits.
 
 Editing on your local computer
 ------------------------------
@@ -80,7 +80,7 @@ Once your edits are ready to test, run these commands to check that they build c
 
 If either command generates an error, your edits probably need fixing. The NGINX developer relations team will be happy to assist you with this.
 
-One way to preview the output is to use NGINX. The build system can alread setup NGINX for you if you have it installed:
+One way to preview the output is to use NGINX. The build system can already setup NGINX for you if you have it installed:
 
 .. code-block:: bash
 
