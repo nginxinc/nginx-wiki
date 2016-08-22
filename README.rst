@@ -27,12 +27,6 @@ Alternatively it can be installed with Python's pip package manager:
 
    $ sudo pip install -r requirements.txt
 
-There are a couple of extra dependencies you will also need to build the Markdown parts of the documentation, these are automatically installed with the pip command above:
-
-.. code-block:: bash
-
-   $ sudo pip install recommonmark commonmark==0.5.5
-
 You can then build the docs with:
 
 .. code-block:: bash

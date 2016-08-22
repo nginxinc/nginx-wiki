@@ -23,12 +23,6 @@ You also need *python-sphinx* installed; some Linux distributions have this in t
 
    $ sudo pip install -r requirements.txt
 
-There are a couple of extra dependencies you will also need to build the Markdown parts of the documentation, these are automatically installed with the pip command above:
-
-.. code-block:: bash
-
-   $ pip install -U Sphinx recommonmark commonmark==0.5.5
-
 GitHub's Two-Factor Authentication
 ----------------------------------
 
