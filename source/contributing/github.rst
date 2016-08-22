@@ -80,7 +80,7 @@ Once your edits are ready to test, run these commands to check that they build c
 
 If either command generates an error, your edits probably need fixing. The NGINX developer relations team will be happy to assist you with this.
 
-One way to preview the output is to use NGINX. The build system can alread setup NGINX for you if you have it installed:
+One way to preview the output is to use NGINX. The build system can already setup NGINX for you if you have it installed:
 
 .. code-block:: bash
 
