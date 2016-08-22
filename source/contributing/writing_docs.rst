@@ -22,7 +22,7 @@ Each one are implied to have a ``.rst`` extension. Each file will compile to a s
 Adding a module document
 ^^^^^^^^^^^^^^^^^^^^^^^^
 
-In addition to adding to the tocree, modules should be added to the big table in ``modules/index.rst``. This has three columns, the module language should use the ``:doc:`` directive to point to a ``.rst`` file for the documentation. The description should be a summary of a few words. The repository should use the :rst:role:`github` or :rst:role:`bitbucket` directive if possible, or should be a link to the repository if something else was used.
+In addition to adding to the toctree, modules should be added to the big table in ``modules/index.rst``. This has three columns, the module language should use the ``:doc:`` directive to point to a ``.rst`` file for the documentation. The description should be a summary of a few words. The repository should use the :rst:role:`github` or :rst:role:`bitbucket` directive if possible, or should be a link to the repository if something else was used.
 
 .. todo::
 
