@@ -18,7 +18,7 @@ FastCGI Params
 
 First thing, I recommend keeping all your typical FCGI settings in a single file and importing them.
 
-For example on debian and ubuntu by default there is ``/etc/nginx/fastcgi_params`` file that should looks like this:
+For example on debian and ubuntu by default there is ``/etc/nginx/fastcgi_params`` file that should look like this:
 
 .. code-block:: nginx
 
