@@ -3,7 +3,7 @@
    :description: How to configure NGINX with PHP FastCGI Process Manager.
 
 PHP FastCGI Example
-===================
+=====================
 
 This example is for newer PHP (>= 5.3.3) using the included PHP FPM (FastCGI Process Manager).
 
