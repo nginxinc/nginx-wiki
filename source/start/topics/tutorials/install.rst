@@ -153,7 +153,7 @@ In addition, Kevin Worthington maintains earlier `Windows <http://kevinworthingt
 
 Source Releases
 ---------------
-There are currently two versions of NGINX available: ``stable (1.8.x)``, ``mainline (1.9.x)``.
+There are currently two versions of NGINX available: ``stable (1.10.x)``, ``mainline (1.11.x)``.
 The mainline branch gets new features and bugfixes sooner but might introduce new bugs as well.
 Critical bugfixes are backported to the stable branch.
 
@@ -163,14 +163,14 @@ See the :ref:`FAQ <faq.is_it_safe>`.
 
 Stable
 ^^^^^^
-| `NGINX 1.10.0 <http://nginx.org/download/nginx-1.10.0.tar.gz>`_  
-| 26 Apr 2016  
+| `NGINX 1.10.1 <http://nginx.org/download/nginx-1.10.1.tar.gz>`_  
+| 31 May 2016  
 | `changelog <http://nginx.org/en/CHANGES-1.10>`__  
 
 Mainline
 ^^^^^^^^
-| `NGINX 1.9.15 <http://nginx.org/download/nginx-1.9.15.tar.gz>`_  
-| 19 Apr 2016  
+| `NGINX 1.11.3 <http://nginx.org/download/nginx-1.11.3.tar.gz>`_  
+| 26 Jul 2016  
 | `changelog <http://nginx.org/en/CHANGES>`__  
 
 Source code repository is at `hg.nginx.org/nginx <http://hg.nginx.org/nginx>`_.
