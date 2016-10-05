@@ -109,7 +109,12 @@ Recipe
             try_files $uri @rewrite;
         }
 
-        # Handle private files through Drupal.
+        # Handle private files through Drupal. Private file's path can come
+        # with a language prefix.
+        location ~ ^(/[a-z][a-z])?/system/files/ { # For Drupal >= 7
+            try_files $uri /index.php?$query_string;
+        }
+
         location ~ ^/system/files/ { # For Drupal >= 7
             try_files $uri /index.php?$query_string;
         }
