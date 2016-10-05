@@ -115,10 +115,6 @@ Recipe
             try_files $uri /index.php?$query_string;
         }
 
-        location ~ ^/system/files/ { # For Drupal >= 7
-            try_files $uri /index.php?$query_string;
-        }
-
         location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
             expires max;
             log_not_found off;
