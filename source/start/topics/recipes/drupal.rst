@@ -111,7 +111,7 @@ Recipe
 
         # Handle private files through Drupal. Private file's path can come
         # with a language prefix.
-        location ~ ^(/[a-z][a-z])?/system/files/ { # For Drupal >= 7
+        location ~ ^(/[a-z\-]+)?/system/files/ { # For Drupal >= 7
             try_files $uri /index.php?$query_string;
         }
 
