@@ -62,6 +62,7 @@ Other Resources
 * `NGINX mailing list archive <http://markmail.org/browse/ru.sysoev.nginx>`_
 * `Parsing PHP sessions in NGINX <http://mauro-stettler.blogspot.com/2011/06/php-session-parser-in-production.html>`_
 * `PyMunin - Multigraph Munin Plugins in Python <http://aouyar.github.io/PyMunin/>`_ - PyMunin includes a Multigraph Munin Plugin for monitoring NGINX using http_stub_status module. Graphs active connections, connection rate, request rate, and average requests per connection.
+* `Guide to NGINX (and NGINX Plus) monitoring <https://www.datadoghq.com/blog/how-to-monitor-nginx/>`_
 * :doc:`why_use_it`
 
 ..
