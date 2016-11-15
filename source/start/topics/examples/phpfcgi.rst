@@ -10,8 +10,8 @@ This example is for newer PHP (>= 5.3.3) using the included PHP FPM (FastCGI Pro
 This guide assume PHP FPM already installed and configured either using tcp port (``127.0.0.1:9000``) or unix socket (``/var/run/php-fpm.sock``).
 
 There are many guide about configuring NGINX with PHP FPM,
-but many of them are incomplete (*doesn't handle PATH_INFO correctly*)
-or contain security issues (*doesn't check whether the script is indeed php file*).
+but many of them are incomplete (*don't handle PATH_INFO correctly*)
+or contain security issues (*don't check whether the script is indeed php file*).
 
 FastCGI Params
 --------------
