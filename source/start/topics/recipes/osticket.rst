@@ -58,20 +58,20 @@ SSL setup isn't required, but I'd recommend it.
             }
 
             if ($request_uri ~ "^/api(/[^\?]+)") {
-            set $path_info $1;
-        }
+                set $path_info $1;
+            }
 
-        location ~ ^/api/(?:tickets|tasks).*$ {
-            try_files $uri $uri/ /api/http.php?$query_string;
-        }
+            location ~ ^/api/(?:tickets|tasks).*$ {
+                try_files $uri $uri/ /api/http.php?$query_string;
+            }
 
-        if ($request_uri ~ "^/scp/.*\.php(/[^\?]+)") {
-            set $path_info $1;
-        }
+            if ($request_uri ~ "^/scp/.*\.php(/[^\?]+)") {
+                set $path_info $1;
+            }
 
-        location ~ ^/scp/ajax.php/.*$ {
-            try_files $uri $uri/ /scp/ajax.php?$query_string;
-        }
+            location ~ ^/scp/ajax.php/.*$ {
+                try_files $uri $uri/ /scp/ajax.php?$query_string;
+            }
 
             location / {
                 try_files $uri $uri/ index.php;
