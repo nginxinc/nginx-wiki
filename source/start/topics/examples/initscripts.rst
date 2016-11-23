@@ -17,7 +17,7 @@ NGINX Init Scripts
    freebsdspawnfcgi
    osxlaunchd
 
-So many way to start NGINX. You can either used the binary or set something up that will work specifically for your needs. If you install NGINX from a repository, then it is likely that you already have an init script installed. If you installed from source, then you'll want to find a script from below to help you out.
+So many ways to start NGINX. You can either used the binary or set something up that will work specifically for your needs. If you install NGINX from a repository, then it is likely that you already have an init script installed. If you installed from source, then you'll want to find a script from below to help you out.
 
 Linux Init.d
 ------------
