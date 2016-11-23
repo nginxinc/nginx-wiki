@@ -67,7 +67,7 @@ BAD:
             # [...]
         }
         location /bar {
-            root /var/www/nginx-default/;
+            root /some/other/place;
             # [...]
         }
     }
@@ -75,7 +75,9 @@ BAD:
 This works. Putting root inside of a ``location`` block will work and it's perfectly
 valid. What's wrong is when you start adding ``location`` blocks. If you add a root
 to every location block then a ``location`` block that isn't matched will have no
-root. Let's look at a good configuration.
+root. Therefore, it is important that a root directive occur prior to your
+``location`` blocks, which can then override this directive if they need to.
+Let's look at a good configuration.
 
 GOOD:
 
@@ -91,6 +93,7 @@ GOOD:
             # [...]
         }
         location /bar {
+            root /some/other/place;
             # [...]
         }
     }
