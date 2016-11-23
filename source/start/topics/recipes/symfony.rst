@@ -251,7 +251,7 @@ Another working symfony
         include        fastcgi_params;
     }
 
-Using NGINX as a development server for symphony, this is a php (cli) script which configurate and launch NGINX in a directory, the result is similar to django development server.
+Using NGINX as a development server for symfony, this is a php (cli) script which configurate and launch NGINX in a directory, the result is similar to django development server.
 
 .. code-block:: php
 
