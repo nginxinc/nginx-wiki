@@ -38,7 +38,7 @@ Including one for the requested file. This happens for every read.
 We'll ignore parsing time because both NGINX and Apache need to do this and we'll consider the difference in time for this negligible.
 
 +-----------------+----------------+----------------+-----------------+-----------------+--------------------------------------------------------------+
-| Requests / Hour | NGINX FS Stats | NGINX FS Reads | Apache FD Stats | Apache FS Reads | Comment                                                      |
+| Requests / Hour | NGINX FS Stats | NGINX FS Reads | Apache FS Stats | Apache FS Reads | Comment                                                      |
 +=================+================+================+=================+=================+==============================================================+
 | 1               | 1              | 1              | 6               | 4               | Single Request [Pretty much no load]                         |
 +-----------------+----------------+----------------+-----------------+-----------------+--------------------------------------------------------------+
