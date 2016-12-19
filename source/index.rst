@@ -2,8 +2,8 @@
 .. meta::
    :description: This is the NGINX Wiki. NGINX is a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
 
-Welcome to NGINX Wiki's documentation!
-======================================
+Welcome to NGINX Wiki!
+======================
 
 NGINX is a free, open-source, high-performance HTTP server and reverse proxy,
 as well as an IMAP/POP3 proxy server. NGINX is known for its high performance,
