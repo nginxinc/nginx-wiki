@@ -34,7 +34,6 @@ NGINX powers several high-visibility sites, such as `Netflix <https://www.netfli
    community/index
    modules/index
    contributing/index
-   nginScript
    extending/index
 
 .. |moduleicon| replace:: :icon:`puzzle-piece`
