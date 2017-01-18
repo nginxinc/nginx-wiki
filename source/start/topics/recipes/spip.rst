@@ -17,7 +17,10 @@ Recipe
         index index.php;
 
         location / {
+            # this is the usual way, but careful because all non-existing content will display home page with code 200
             try_files $uri $uri/ /spip.php?q=$uri&$args;
+            # if you don't use rewriting (all internal links are already like spip.php?…), next line is enough
+            #try_files $uri $uri/;
         }
 
         location ~^/(tmp|config)/{
@@ -32,6 +35,10 @@ Recipe
             fastcgi_buffer_size 32k;
             include fastcgi_params;
             fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        }
+        
+        location ~ /(tmp|config)/ {
+            deny  all;
         }
     }
 
