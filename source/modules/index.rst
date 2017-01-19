@@ -268,9 +268,7 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`zip`                | Assemble ZIP archives on the fly                                         | :github:`evanmiller/mod_zip`                                                            |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
----------------------------------------------------------+
-| execute                    | commands remotely and return results                                    | :github:`limithit/NginxExecute`                                                        |
-+---------------------------+--------------------------------------------------------------------------+--------------------------------
+
 
 ..
    This is a list of modules that didn't have a wiki page on the old wiki:
@@ -348,7 +346,6 @@ NGINX 3\ :sup:`rd` Party Modules
    * VTS
    * XSS
    * Tarantool upstream module
-   * execute
 ..
    This is a list of modules we haven't added and why:
    * Access Key - no revision tree, was locally hosted
@@ -420,5 +417,5 @@ NGINX 3\ :sup:`rd` Party Modules
    upload_progress
    user_agent
    zip
-   execute
+
 
