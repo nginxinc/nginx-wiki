@@ -72,6 +72,8 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Eval (OpenResty's fork)   | Captures arbitrary subrequests' responses into custom NGINX variables    | :github:`openresty/nginx-eval-module`                                                   |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| Execute                   | Commands remotely and return results                                     | :github:`limithit/NginxExecute`                                                         |
++---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | EY Balancer               | Provides a request queue for limiting concurrent requests                | :github:`ezmobius/nginx-ey-balancer`                                                    |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`fair_balancer`      | Distributes incoming requests to least-busy servers                      | :github:`gnosek/nginx-upstream-fair`                                                    |
@@ -288,6 +290,7 @@ NGINX 3\ :sup:`rd` Party Modules
    * Enhanced Memcached
    * Eval
    * Eval (agentzh's fork)
+   * Execute
    * EY Balancer
    * Footer If Filter
    * GeoIP2
