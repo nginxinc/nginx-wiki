@@ -72,8 +72,11 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Eval (OpenResty's fork)   | Captures arbitrary subrequests' responses into custom NGINX variables    | :github:`openresty/nginx-eval-module`                                                   |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+<<<<<<< HEAD
 | Execute                   | Commands remotely and return results                                     | :github:`limithit/NginxExecute`                                                         |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+=======
+>>>>>>> parent of ccf56b1... Delete index.rst
 | EY Balancer               | Provides a request queue for limiting concurrent requests                | :github:`ezmobius/nginx-ey-balancer`                                                    |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`fair_balancer`      | Distributes incoming requests to least-busy servers                      | :github:`gnosek/nginx-upstream-fair`                                                    |
@@ -270,7 +273,12 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`zip`                | Assemble ZIP archives on the fly                                         | :github:`evanmiller/mod_zip`                                                            |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+<<<<<<< HEAD
 
+=======
+| Execute                   | Execute commands and return results                                      | :github:`limithit/NginxExecute`                                                         |          
++---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+>>>>>>> parent of ccf56b1... Delete index.rst
 
 ..
    This is a list of modules that didn't have a wiki page on the old wiki:
@@ -290,7 +298,10 @@ NGINX 3\ :sup:`rd` Party Modules
    * Enhanced Memcached
    * Eval
    * Eval (agentzh's fork)
+<<<<<<< HEAD
    * Execute
+=======
+>>>>>>> parent of ccf56b1... Delete index.rst
    * EY Balancer
    * Footer If Filter
    * GeoIP2
@@ -349,6 +360,10 @@ NGINX 3\ :sup:`rd` Party Modules
    * VTS
    * XSS
    * Tarantool upstream module
+<<<<<<< HEAD
+=======
+   * Execute
+>>>>>>> parent of ccf56b1... Delete index.rst
 ..
    This is a list of modules we haven't added and why:
    * Access Key - no revision tree, was locally hosted
@@ -420,5 +435,9 @@ NGINX 3\ :sup:`rd` Party Modules
    upload_progress
    user_agent
    zip
+<<<<<<< HEAD
+=======
+   execute
+>>>>>>> parent of ccf56b1... Delete index.rst
 
 
