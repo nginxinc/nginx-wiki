@@ -7,8 +7,7 @@ Resources
 
 Developer Resources
 -------------------
-* :doc:`../contributing/index`
-* :doc:`../extending/index`
+* `Contributing Changes (official guide) <http://nginx.org/en/docs/contributing_changes.html>`_
 * :doc:`../start/topics/tutorials/gettingstarted`
 * :doc:`faq`
 * :doc:`../start/topics/examples/coding_style`
@@ -60,14 +59,9 @@ Chinese Guides
 Other Resources
 ---------------
 * `NGINX mailing list archive <http://markmail.org/browse/ru.sysoev.nginx>`_
-
-..
-   Geo database is no longer downloadable from WIP Mania
-   * `Geolocation database for NGINX in CIDR format (countries by IP) <http://www.wipmania.com/en/base/>`_ 
-
-* `Experiment to automatically convert Apache rewrites to NGINX rewrites <http://www.anilcetin.com/convert-apache-htaccess-to-nginx/>`_
 * `Parsing PHP sessions in NGINX <http://mauro-stettler.blogspot.com/2011/06/php-session-parser-in-production.html>`_
 * `PyMunin - Multigraph Munin Plugins in Python <http://aouyar.github.io/PyMunin/>`_ - PyMunin includes a Multigraph Munin Plugin for monitoring NGINX using http_stub_status module. Graphs active connections, connection rate, request rate, and average requests per connection.
+* `Guide to NGINX (and NGINX Plus) monitoring <https://www.datadoghq.com/blog/how-to-monitor-nginx/>`_
 * :doc:`why_use_it`
 
 ..
@@ -80,3 +74,5 @@ Other Resources
    * `ISPConfig support for NGINX <http://www.howtoforge.com/forums/showthread.php?p=161742>`_
    * `Latest bug reports about NGINX found by bugspy.net <http://bugspy.net/search/?q=nginx>`_
    * `Using NGINX as reverse-proxy <http://paulohiga.com/posts/nginx-proxy-reverso-php-apache.php>`_
+   * `Geolocation database for NGINX in CIDR format (countries by IP) <http://www.wipmania.com/en/base/>`_ 
+   * `Experiment to automatically convert Apache rewrites to NGINX rewrites <http://www.anilcetin.com/convert-apache-htaccess-to-nginx/>`_

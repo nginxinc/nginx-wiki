@@ -20,7 +20,7 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | AFCGI                     | Asynchronous/multiplexing FastCGI for NGINX                              | :github:`rsms/afcgi`                                                                    |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| Akamai G2O                | Restricts access to content to Akamai edge servers using G2O headers     | :github:`refractalize/nginx_mod_akamai_g2o`                                             |
+| Akamai G2O                | Restricts access to content to Akamai edge servers using G2O headers     | :github:`kaltura/nginx_mod_akamai_g2o`                                                  |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Array Var                 | Add support for array variables to NGINX config files                    | :github:`openresty/array-var-nginx-module`                                              |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -28,7 +28,7 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`auth_digest`        | HTTP Digest Authentication                                               | :github:`atomx/nginx-http-auth-digest`                                                  |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| PAM Authentication        | HTTP Basic Authentication using PAM                                      | :github:`stogh/ngx_http_auth_pam_module`                                                |
+| PAM Authentication        | HTTP Basic Authentication using PAM                                      | :github:`sto/ngx_http_auth_pam_module`                                                  |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Request Authentication    | Allows authorization based on subrequest result                          | `ngx_http_auth_request_module <http://mdounin.ru/hg/ngx_http_auth_request_module/>`_    |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -71,6 +71,8 @@ NGINX 3\ :sup:`rd` Party Modules
 | Eval                      | A module for evaluating memcached or proxy response into variable        | :github:`vkholodkov/nginx-eval-module`                                                  |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Eval (OpenResty's fork)   | Captures arbitrary subrequests' responses into custom NGINX variables    | :github:`openresty/nginx-eval-module`                                                   |
++---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| Execute                   | Commands remotely and return results                                     | :github:`limithit/NginxExecute`                                                         |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | EY Balancer               | Provides a request queue for limiting concurrent requests                | :github:`ezmobius/nginx-ey-balancer`                                                    |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -212,6 +214,8 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | SmallLight                | Dynamic Image Transformation Module For NGINX                            | :github:`cubicdaiya/ngx_small_light`                                                    |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| SOCKS                     | SOCKS5 proxy module for NGINX                                            | :github:`dannote/socks-nginx-module`                                                    |
++---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Sorted Querystring        | Expose a variable with the parameters ordered to be used as a cache_key  | :github:`wandenberg/nginx-sorted-querystring-module`                                    |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Sphinx                    | NGINX upstream module for Sphinx 2.x                                     | :github:`reeteshranjan/sphinx2-nginx-module`                                            |
@@ -258,6 +262,8 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Video Thumb Extractor     | NGINX module to extract thumbs from a video file                         | :github:`wandenberg/nginx-video-thumbextractor-module`                                  |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| VOD                       | Repackage MP4 files for streaming in HLS, HDS, MSS and DASH              | :github:`kaltura/nginx-vod-module`                                                      |
++---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | VTS                       | A virtual host and upstream traffic status module                        | :github:`vozlt/nginx-module-vts`                                                        |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | XSS                       | Native support for cross-site scripting (XSS)                            | :github:`openresty/xss-nginx-module`                                                    |
@@ -284,6 +290,7 @@ NGINX 3\ :sup:`rd` Party Modules
    * Enhanced Memcached
    * Eval
    * Eval (agentzh's fork)
+   * Execute
    * EY Balancer
    * Footer If Filter
    * GeoIP2

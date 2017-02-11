@@ -43,20 +43,22 @@ Save this file as ``/etc/init.d/nginx``
 
     make_dirs() {
        # make required directories
-       user=`$nginx -V 2>&1 | grep "configure arguments:" | sed 's/[^*]*--user=\([^ ]*\).*/\1/g' -`
-       if [ -z "`grep $user /etc/passwd`" ]; then
-           useradd -M -s /bin/nologin $user
-       fi
-       options=`$nginx -V 2>&1 | grep 'configure arguments:'`
-       for opt in $options; do
-           if [ `echo $opt | grep '.*-temp-path'` ]; then
-               value=`echo $opt | cut -d "=" -f 2`
-               if [ ! -d "$value" ]; then
-                   # echo "creating" $value
-                   mkdir -p $value && chown -R $user $value
-               fi
-           fi
-       done
+       user=`$nginx -V 2>&1 | grep "configure arguments:.*--user=" | sed 's/[^*]*--user=\([^ ]*\).*/\1/g' -`
+       if [ -n "$user" ]; then
+          if [ -z "`grep $user /etc/passwd`" ]; then
+             useradd -M -s /bin/nologin $user
+          fi
+          options=`$nginx -V 2>&1 | grep 'configure arguments:'`
+          for opt in $options; do
+              if [ `echo $opt | grep '.*-temp-path'` ]; then
+                  value=`echo $opt | cut -d "=" -f 2`
+                  if [ ! -d "$value" ]; then
+                      # echo "creating" $value
+                      mkdir -p $value && chown -R $user $value
+                  fi
+              fi
+           done
+        fi
     }
 
     start() {

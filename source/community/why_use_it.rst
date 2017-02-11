@@ -155,6 +155,12 @@ as Apache.
 
 -- `Timme Hosting <https://timmehosting.de>`_
 
+I just want to say that after migrating to NGINX, we will never use APACHE ever again. 
+Its stability, easy scalability and optimum use of resources make of Nginx the best choice 
+for sites that require a high performance, such as ours, delivering millions of page views 
+to our readers, even with modest hardware infrastructures.
+
+-- `Fernando Salvato, VP Digital Business Development, La Gran Época (Epoch Times) <http://www.lagranepoca.com>`_
 
 .. _why_use_it.notes:
 

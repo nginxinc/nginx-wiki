@@ -96,6 +96,7 @@ Recipe
             fastcgi_param HTTP_PROXY "";
             fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
             fastcgi_param PATH_INFO $fastcgi_path_info;
+            fastcgi_param QUERY_STRING $query_string;
             fastcgi_intercept_errors on;
             # PHP 5 socket location.
             #fastcgi_pass unix:/var/run/php5-fpm.sock;
@@ -109,8 +110,9 @@ Recipe
             try_files $uri @rewrite;
         }
 
-        # Handle private files through Drupal.
-        location ~ ^/system/files/ { # For Drupal >= 7
+        # Handle private files through Drupal. Private file's path can come
+        # with a language prefix.
+        location ~ ^(/[a-z\-]+)?/system/files/ { # For Drupal >= 7
             try_files $uri /index.php?$query_string;
         }
 
