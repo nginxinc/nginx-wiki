@@ -68,9 +68,17 @@ SSL setup isn't required, but I'd recommend it.
             if ($request_uri ~ "^/scp/.*\.php(/[^\?]+)") {
                 set $path_info $1;
             }
+            
+            if ($request_uri ~ "^/.*\.php(/[^\?]+)") {
+                set $path_info $1;
+            }
 
             location ~ ^/scp/ajax.php/.*$ {
                 try_files $uri $uri/ /scp/ajax.php?$query_string;
+            }
+            
+            location ~ ^/ajax.php/.*$ {
+                try_files $uri $uri/ /ajax.php?$query_string;
             }
 
             location / {
