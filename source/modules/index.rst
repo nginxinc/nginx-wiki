@@ -156,6 +156,8 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | PageSpeed                 | Rewrites webpages and associated assets to reduce latency and bandwidth  | :github:`pagespeed/ngx_pagespeed`                                                       |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| PHP                       | Embedded php script language for nginx-module                            | :github:`rryqszq4/ngx_php`                                                              |
++---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | PHP Session Parser        | Extract values that are stored in a serialized PHP session               | :github:`replay/ngx_http_php_session`                                                   |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | PHP-Memache Standard Hash | Load balancer that imitates the PHP-Memcache standard hash's behaviour   | :github:`replay/ngx_http_php_memcache_standard_balancer`                                |
