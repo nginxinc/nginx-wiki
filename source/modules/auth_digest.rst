@@ -9,13 +9,13 @@ Description
 -----------
 **ngx_http_auth_digest** - HTTP Digest Authentication support for NGINX.
 
-.. note:: *This module is not distributed with the NGINX source.* See the :github:`installation instructions <samizdatco/nginx-http-auth-digest/blob/master/readme.rst>`
+.. note:: *This module is not distributed with the NGINX source.* See the :github:`installation instructions <atomx/nginx-http-auth-digest/blob/master/readme.rst>`
 
 
 
 Status
 ------
-The module is feature-complete with respect to the RFC but is in need of broader testing before it can be considered secure enough for use in production. See the :github:`bugs.txt <samizdatco/nginx-http-auth-digest/blob/master/bugs.txt>` file and the github :github:`issue tracker <samizdatco/nginx-http-auth-digest/issues>` for the current set of caveats.
+The module is feature-complete with respect to the RFC but is in need of broader testing before it can be considered secure enough for use in production. See the :github:`bugs.txt <atomx/nginx-http-auth-digest/blob/master/bugs.txt>` file and the github :github:`issue tracker <atomx/nginx-http-auth-digest/issues>` for the current set of caveats.
 
 
 
@@ -88,7 +88,7 @@ auth_digest_user_file
 :Context: *server, location*
 
 The password file should be of the form created by the apache ``htdigest`` command (or the 
-included :github:`htdigest.py <samizdatco/nginx-http-auth-digest/blob/master/htdigest.py>` script). Each line of the file is a colon-separated list composed 
+included :github:`htdigest.py <atomx/nginx-http-auth-digest/blob/master/htdigest.py>` script). Each line of the file is a colon-separated list composed 
 of a username, realm, and md5 hash combining name, realm, and password. For example:
 
 ::
@@ -172,7 +172,7 @@ The basic request-handling and password-file-parsing is based on the ``ngx_http_
 
 Copyright (c) 2011, Christian Swinehart
 
-This module is licensed under the terms of the :github:`BSD license <samizdatco/nginx-http-auth-digest/blob/master/LICENSE>`
+This module is licensed under the terms of the :github:`BSD license <atomx/nginx-http-auth-digest/blob/master/LICENSE>`
 
 
 
