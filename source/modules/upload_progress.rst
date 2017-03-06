@@ -28,11 +28,11 @@ Downloads
 
 | **Download version**:
 
-`v0.8.4 <https://codeload.github.com/masterzen/nginx-upload-progress-module/legacy.tar.gz/v0.8.4>`
+`v0.8.4 <https://codeload.github.com/masterzen/nginx-upload-progress-module/legacy.tar.gz/v0.8.4>`_
 
 | **Download version**:
 
-`v0.9.0 <https://codeload.github.com/masterzen/nginx-upload-progress-module/legacy.tar.gz/v0.9.0>`
+`v0.9.0 <https://codeload.github.com/masterzen/nginx-upload-progress-module/legacy.tar.gz/v0.9.0>`_
 
 | **Source code**:
 

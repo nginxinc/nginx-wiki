@@ -116,7 +116,7 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Log If                    | Log the requests only when given conditions are met                      | :github:`cfsego/ngx_log_if/`                                                            |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| :doc:`log_zmq`            | Log the requests via ZeroMQ                                              | :github:`alticelabs/nginx-log-zmq`                                                           |
+| :doc:`log_zmq`            | Log the requests via ZeroMQ                                              | :github:`alticelabs/nginx-log-zmq`                                                      |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Lower Upper Case          | Provides upper/lowercase string functions in NGINX config files          | :github:`replay/ngx_http_lower_upper_case`                                              |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -206,7 +206,7 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | HTTP Set Misc             | Various set_xxx directives added to NGINX's rewrite module               | :github:`openresty/set-misc-nginx-module`                                               |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| sFlow                     | Operational performance monitoring with standard sFlow protocol          | `Download <https://code.google.com/archive/p/nginx-sflow-module/downloads>`__               |
+| sFlow                     | Operational performance monitoring with standard sFlow protocol          | `Download <https://code.google.com/archive/p/nginx-sflow-module/downloads>`__           |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Shibboleth Auth           | Perform authorization based on subrequest to Shibboleth FastCGI app      | :github:`nginx-shib/nginx-http-shibboleth`                                              |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
