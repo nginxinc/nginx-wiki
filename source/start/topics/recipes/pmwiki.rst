@@ -13,7 +13,7 @@ websites.
 Requirements
 ------------
 
-* `php-fpm <http://php-fpm.org/>`__
+* `php-fpm <https://php-fpm.org/>`__
 
 Recipe
 ----------

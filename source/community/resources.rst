@@ -22,7 +22,7 @@ English Guides
 * Slides of agentzh's `Introduction to nginx.conf scripting <http://agentzh.org/misc/slides/nginx-conf-scripting/>`_ talk in Beijing (use arrow keys to navigate)
 * Slides of agentzh's `Recent developments in nginx.conf scripting <http://agentzh.org/misc/slides/recent-dev-nginx-conf/>`_ talk in Beijing (use arrow keys to navigate)
 * Slides of Joshua Zhu's `NGINX Internals <http://www.slideshare.net/joshzhu/nginx-internals>`_ talk in Guangzhou
-* `NGINX source code cross-reference <http://lxr.evanmiller.org/http/source/>`_
+* `NGINX source code cross-reference <http://lxr.nginx.org/source/src>`_
 * `nginx-devel mailing list archive <http://mailman.nginx.org/pipermail/nginx-devel/>`_
 * `"nginx" chapter in The Architecture of Open Source Applications Volume II <http://www.aosabook.org/en/nginx.html>`_
 * `"NGINX Secure Web Server" how-to at calomel.org <https://calomel.org/nginx.html>`_
@@ -45,8 +45,8 @@ Russian Guides
 Chinese Guides
 --------------
 * `NGINX Variable Tutorials <http://blog.sina.com.cn/openresty>`_ by `agentzh <http://agentzh.org>`_
-* `NginxCodeReview <http://code.google.com/p/nginxsrp/wiki/NginxCodeReview>`_ by chaoslawful and rainx
-* `Chinese version of "Emiller's Guide to NGINX Module Development" <http://code.google.com/p/emillers-guide-to-nginx-module-chn/>`_
+* `NginxCodeReview <https://code.google.com/archive/p/nginxsrp/wikis/NginxCodeReview.wiki>`_ by chaoslawful and rainx
+* `Chinese version of "Emiller's Guide to NGINX Module Development" <https://code.google.com/archive/p/emillers-guide-to-nginx-module-chn/>`_
 
 ..
    Dead links now

@@ -138,7 +138,7 @@ to work.
 * `Joomla <https://docs.joomla.org/Nginx>`_
 * :doc:`topics/recipes/mailman`
 * :doc:`topics/recipes/mediawiki`
-* `Minio Object Storage <https://docs.minio.io/docs/setup-nginx-proxy-with-minio-server>`_
+* `Minio Object Storage <https://docs.minio.io/docs/setup-nginx-proxy-with-minio>`_
 * :doc:`topics/recipes/moinmoin`
 * :doc:`topics/recipes/mybb`
 * :doc:`topics/recipes/omeka`

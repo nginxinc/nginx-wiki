@@ -51,7 +51,7 @@ Steps
 Autostarting PHP and NGINX
 --------------------------
 #. Schedule a basic (on Windows Vista) task to run the batch file above at system start up under the SYSTEM account. 
-#. If using Windows NGINX from http://kevinworthington.com/nginx-for-windows/, schedule a basic (on Windows Vista) task to run ``C:\nginx\conf\start-nginx.bat`` file at system start up under the SYSTEM account in starting directory ``C:\nginx``. 
+#. If using Windows NGINX from https://kevinworthington.com/nginx-for-windows/, schedule a basic (on Windows Vista) task to run ``C:\nginx\conf\start-nginx.bat`` file at system start up under the SYSTEM account in starting directory ``C:\nginx``. 
 #. A home made Cygwin build of NGINX can be scheduled using a batch file similar to this:
 
   .. code-block:: bash

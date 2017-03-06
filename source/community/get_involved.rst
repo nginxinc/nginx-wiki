@@ -13,7 +13,6 @@ we can take action.
 
 A short list of ways to get involved:
 
-* If your blog has high-quality NGINX topics, add it to :ref:`community-planet`.
 * Jump into the :ref:`community-irc` and help answer questions.
 * Report and track bugs using the NGINX `bug tracker`_.
 * Subscribe to the :ref:`community-email`.
@@ -31,18 +30,6 @@ development issues. The IRC channel is filled mostly with server
 administrators that don't do much NGINX development. If you need help with
 NGINX development, then you should absolutely subscribe and participate on the mailing list.
 
-
-.. _community-planet:
-
-Planet Ngx
-----------
-
-`Planet Ngx`_ is a collection of blogs related to NGINX, aggregated into one
-feed. If you're interested in having your blog aggregated here, it's pretty
-simple. Just check out the README.mkd file in the `git repository`_.
-
 .. _`NGINX mailing list`: http://mailman.nginx.org/mailman/listinfo
 .. _`bug tracker`: https://trac.nginx.org/nginx/
-.. _`Planet Ngx`: http://planet.ngx.cc/
-.. _`git repository`: https://github.com/ngx/planet
 

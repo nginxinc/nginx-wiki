@@ -11,7 +11,7 @@ This is a module that is distributed with `Tengine <http://tengine.taobao.org>`_
 This distribution contains some modules that are new on the NGINX scene. 
 The *ngx_http_concat* module is one of them.
 
-The module is inspired by Apache's `modconcat <http://code.google.com/p/modconcat>`_. 
+The module is inspired by Apache's `modconcat <https://code.google.com/archive/p/modconcat/>`_. 
 It follows the same pattern for enabling the concatenation. It uses two *?*, like this::
 
     http://example.com/??style1.css,style2.css,foo/style3.css
@@ -187,7 +187,7 @@ Other builds
 
 Acknowledgments
 ---------------
-Thanks to `Joshua Zhu <http://blog.zhuzhaoyuan.com>`_ and the Taobao platform engineering team for releasing *Tengine*. Also for being kind
+Thanks to Joshua Zhu and the Taobao platform engineering team for releasing *Tengine*. Also for being kind
 enough to clarify things regarding this module on the `NGINX mailing list <http://mailman.nginx.org/pipermail/nginx/2011-December/030830.html>`_.
 
 

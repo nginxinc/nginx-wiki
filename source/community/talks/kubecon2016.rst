@@ -11,13 +11,13 @@ Creating an Advanced Load Balancing Solution for Kubernetes with NGINX
 Related Links
 ^^^^^^^^^^^^^
 
-* Checking Pod Health -- http://kubernetes.github.io/docs/user-guide/liveness/
+* Checking Pod Health -- https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/
 
-* Services -- http://kubernetes.github.io/docs/user-guide/services/
+* Services -- https://kubernetes.io/docs/user-guide/services/
 
-* Ingress Resource -- http://kubernetes.github.io/docs/user-guide/ingress/
+* Ingress Resource -- https://kubernetes.io/docs/user-guide/ingress/
 
-* Secrets -- http://kubernetes.github.io/docs/user-guide/secrets/
+* Secrets -- https://kubernetes.io/docs/user-guide/secrets/
 
 * Service loadbalancer -- https://github.com/kubernetes/contrib/tree/master/service-loadbalancer
 

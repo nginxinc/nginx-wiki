@@ -10,7 +10,7 @@ Synopsis
 
 The Zend Framework is a Model-View-Controller (MVC) framework and provides all the components required for most web applications in a single distribution. It can either be added to your existing PHP stack or comes included with the free and paid-for version of Zend Server.
 
-Follow the `installation instructions on their website <http://framework.zend.com/manual/1.12/en/learning.quickstart.create-project.html>`_ in order to add Zend Framework to your already installed PHP stack:
+Follow the `installation instructions on their website <https://framework.zend.com/manual/1.12/en/learning.quickstart.create-project.html>`_ in order to add Zend Framework to your already installed PHP stack:
 
     You can download the latest version of Zend Framework and extract the contents; make a note of where you have done so.
     Optionally, you can add the path to the library/ subdirectory of the archive to your php.ini's include_path setting.
@@ -18,7 +18,7 @@ Follow the `installation instructions on their website <http://framework.zend.co
 
 If that is your preference, you can stop reading now and read-up on how to configure NGINX to work directly with :doc:`PHP FastCGI <../examples/phpfcgi>`
 
-Alternatively, Zend Framework also comes packaged with both, the free and paid-for edition of `Zend Server <http://www.zend.com/en/products/server/editions>`_:
+Alternatively, Zend Framework also comes packaged with both, the free and paid-for edition of `Zend Server <http://www.zend.com/en/products/zend_server#editions>`_:
 
     Zend Server includes a production-ready, tested stack that incorporates PHP, Zend Framework, required extensions and drivers - all installed through RPM/DEB on Linux or MSI on Windows. Zend Server also support IBM i.
 

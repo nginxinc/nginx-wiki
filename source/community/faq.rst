@@ -15,7 +15,7 @@ How do you pronounce "NGINX"?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 There seems to be some confusion surrounding the pronunciation of NGINX.
 
-`Pronunciation Key <http://dictionary.reference.com/help/luna/Spell_pron_key.html>`_
+`Pronunciation Key <http://www.dictionary.com/pronunciation/Spell_pron_key>`_
 
 **Correct**
 
@@ -61,7 +61,7 @@ How do I generate an .htpasswd file without having Apache tools installed?
 
     (PASSWORD="SEcRe7PwD";SALT="$(openssl rand -base64 3)";SHA1=$(printf "$PASSWORD$SALT" | openssl dgst -binary -sha1 | xxd -ps | sed 's#$#'"`echo -n $SALT | xxd -ps`"'#' | xxd -r -ps | base64);printf "Jim:{SSHA}$SHA1\n" >> .htpasswd) # this example uses SSHA encryption
 
-* Or, you may use the following `crypt.pl <https://gist.github.com/3349662>`_ Perl script. Simply save it as (for example) ``crypt.pl`` and ``chmod 700 crypt.pl`` in order to be able to execute it.
+* Or, you may use the following `crypt.pl <https://gist.github.com/Fleshgrinder/3349662>`_ Perl script. Simply save it as (for example) ``crypt.pl`` and ``chmod 700 crypt.pl`` in order to be able to execute it.
 
   .. code-block:: perl
 
@@ -80,7 +80,7 @@ How do I generate an .htpasswd file without having Apache tools installed?
       close $fh or die $!;
     }
 
-* Or, you may use the `htpasswd.py <http://trac.edgewall.org/browser/trunk/contrib/htpasswd.py>`_ python script.
+* Or, you may use the `htpasswd.py <https://trac.edgewall.org/browser/trunk/contrib/htpasswd.py>`_ python script.
 
 
 
@@ -95,7 +95,7 @@ If you can't determine the cause of the problem through testing, experimentation
 Are there other, similar web servers?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* `Cherokee <http://www.0x50.org/>`_
+* `Cherokee <http://cherokee-project.com/>`_
 * `Lighttpd (Lighty) <http://www.lighttpd.net/>`_
 * `thttpd <http://www.acme.com/software/thttpd/>`_
 

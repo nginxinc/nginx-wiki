@@ -8,12 +8,12 @@ Elgg
 Requirements
 ------------
 
-* `php-fpm <http://php-fpm.org/>`__
+* `php-fpm <https://php-fpm.org/>`__
 
 Recipe
 ------
 
-A `sample Elgg-1.8 configuration <https://gist.github.com/755617>`_ (Github Gist.)
+A `sample Elgg-1.8 configuration <https://gist.github.com/hellekin/755617>`_ (Github Gist.)
 
 The following was found on the elgg forums. It looks like it could be improved if someone wants to test it.
 

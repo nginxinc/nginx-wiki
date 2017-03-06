@@ -64,8 +64,8 @@ This list is not inclusive. We will uphold the `Freenode Network Guidelines`_
 as well as the `Freenode Channel Guidelines`_. Any and all users should both
 follow and enforce these guidelines where they see fit.
 
-.. _`Freenode Network Guidelines`: http://freenode.net/channel_guidelines.shtml
-.. _`Freenode Channel Guidelines`: http://freenode.net/poundfreenode.shtml
+.. _`Freenode Network Guidelines`: https://freenode.net/policies
+.. _`Freenode Channel Guidelines`: https://freenode.net/changuide
 
 Appeals Process
 ---------------

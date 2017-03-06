@@ -24,7 +24,7 @@ Install packages (OpenIndiana 151a8)
 ------------------------------------
 
 Activate SFE repos (see
-http://wiki.openindiana.org/oi/Spec+Files+Extra+Repository)
+https://wiki.openindiana.org/oi/Spec+Files+Extra+Repository)
 
 .. code-block:: bash
 

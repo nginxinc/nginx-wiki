@@ -695,4 +695,4 @@ NGINX Push Stream Module
 
 Contributors
 ------------
-:github:`People <wandenberg/nginx-push-stream-module/contributors>`
+:github:`People <wandenberg/nginx-push-stream-module/graphs/contributors>`

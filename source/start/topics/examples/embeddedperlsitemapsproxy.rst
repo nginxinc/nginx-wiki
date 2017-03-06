@@ -9,7 +9,7 @@ We run a CMS hosting business.
 
 Each website is hosted on its own domain and for each website a sitemap.xml is dynamically generated on the fly when requested.
 
-These sitemaps are useful to feed your urls to the search engines. http://www.sitemaps.org/
+These sitemaps are useful to feed your urls to the search engines. https://www.sitemaps.org/index.html
 
 Normally it is the job of the site-owner/webmaster to submit these sites to the search engine. Some do and some dont.
 

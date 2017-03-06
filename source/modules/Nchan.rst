@@ -20,4 +20,4 @@ Available on github at :github:`nchan <slact/nchan>`
 Documentation
 -------------
 
-Nchan is thoroughly documented at `nchan.slact.net <https://nchan.slact.net>`_
+Nchan is thoroughly documented at `nchan.slact.net <https://nchan.io>`_

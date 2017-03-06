@@ -231,7 +231,7 @@ Other builds
 
 Acknowledgments
 ---------------
-Thanks to `Joshua Zhu <http://blog.zhuzhaoyuan.com>`_ and the Taobao platform engineering team for releasing *tengine*.
+Thanks to Joshua Zhu and the Taobao platform engineering team for releasing *tengine*.
 
 
 

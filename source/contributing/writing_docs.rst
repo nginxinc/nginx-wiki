@@ -33,7 +33,7 @@ Please keep the modules in alphabetical order, this makes it easier for others t
 reStructuredText Basics
 -----------------------
 
-These are the basics for writing reStructuredText files. For more imformation we highly recommend looking at `Sphinx's own documentation <http://sphinx-doc.org/contents.html>`_ and `Quick reStructuredText <http://docutils.sourceforge.net/docs/user/rst/quickref.html>`_. For a more detailed view what is possible, take a look at the `reStructuredText specification <http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html>`_.
+These are the basics for writing reStructuredText files. For more imformation we highly recommend looking at `Sphinx's own documentation <http://www.sphinx-doc.org/en/stable/contents.html>`_ and `Quick reStructuredText <http://docutils.sourceforge.net/docs/user/rst/quickref.html>`_. For a more detailed view what is possible, take a look at the `reStructuredText specification <http://docutils.sourceforge.net/docs/ref/rst/restructuredtext.html>`_.
 
 Like Python, blocks of content are typically nested using whitespace indentation. For example:
 
@@ -331,7 +331,7 @@ A few extra roles have been added to assist with creating documentation for this
 
 .. rst:role:: icon
 
-   The icon role lets you use `Font Awesome <https://fortawesome.github.io/Font-Awesome/icons/>`_ icons in text. Simply use as described in the Font Awesome documentation but without the *fa* prefix and the options comma separated. For example:
+   The icon role lets you use `Font Awesome <http://fontawesome.io/icons/>`_ icons in text. Simply use as described in the Font Awesome documentation but without the *fa* prefix and the options comma separated. For example:
 
    .. code-block:: rst
 
