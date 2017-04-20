@@ -8,7 +8,7 @@ PHP-FastCGI on Windows
 Overview
 --------
 NGINX can interface with PHP on Windows via a FastCGI daemon, which ships with PHP: php-cgi.exe. 
-You need to run ``php-cgi.exe -b 127.0.0.1:<port>`` and use ``fastcgi_pass_ 127.0.0.1:<port>;`` in the NGINX configuration file. 
+You need to run ``php-cgi.exe -b 127.0.0.1:<port>`` and use ``fastcgi_pass 127.0.0.1:<port>;`` in the NGINX configuration file. 
 After being launched, ``php-cgi.exe`` will keep listening for connections in a command prompt window. 
 To hide that window, use the tiny utility `RunHiddenConsole <http://redmine.lighttpd.net/attachments/660/RunHiddenConsole.zip>`_ 
 
