@@ -37,25 +37,25 @@ NGINX powers several high-visibility sites, such as `Netflix <https://www.netfli
    extending/index
 
 .. |moduleicon| replace:: :icon:`puzzle-piece`
-.. _moduleicon: modules/index.html
+.. _moduleicon: modules/index.rst
 
 .. |moduletext| replace:: 3\ :sup:`rd` Party Modules
-.. _moduletext: modules/index.html
+.. _moduletext: modules/index.rst
 
 .. |communityicon| replace:: :icon:`users`
-.. _communityicon: community/index.html
+.. _communityicon: community/index.rst
 
 .. |communitytext| replace:: Community
-.. _communitytext: community/index.html
+.. _communitytext: community/index.rst
 
 .. |startedicon| replace:: :icon:`play`
-.. _startedicon: start/index.html
+.. _startedicon: start/index.rst
 
 .. |startedtext| replace:: Getting Started
-.. _startedtext: start/index.html
+.. _startedtext: start/index.rst
 
 .. |contribicon| replace:: :icon:`wrench`
-.. _contribicon: contributing/index.html
+.. _contribicon: contributing/index.rst
 
 .. |contribtext| replace:: Contributing
-.. _contribtext: contributing/index.html
+.. _contribtext: contributing/index.rst
