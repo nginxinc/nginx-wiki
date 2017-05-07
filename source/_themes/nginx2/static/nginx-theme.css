@@ -1089,8 +1089,10 @@ a:active {
         margin-right: 20px;
         position: relative;
         text-transform: uppercase;
+        /*
         width: 100%;
         max-width: 680px
+        */
     }
 }
 @media screen and (min-width: 980px) and (max-width: 1200px) {
