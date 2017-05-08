@@ -162,6 +162,13 @@ to our readers, even with modest hardware infrastructures.
 
 -- `Fernando Salvato, VP Digital Business Development, La Gran Época (Epoch Times) <http://www.lagranepoca.com>`_
 
+After moving our site to NGINX, we are more than satisfied and using it 
+from several years. NGINX is capable of serving a huge number of requests as compared 
+to Apache! We never look back and this is the end of story. As per our site results,
+NGINX is more than 50% faster than Apache.
+
+-- `WPArena <https://wparena.com/>`__
+
 .. _why_use_it.notes:
 
 Notes
