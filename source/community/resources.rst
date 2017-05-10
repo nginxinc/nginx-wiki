@@ -47,6 +47,9 @@ Chinese Guides
 * `NGINX Variable Tutorials <http://blog.sina.com.cn/openresty>`_ by `agentzh <http://agentzh.org>`_
 * `NginxCodeReview <https://code.google.com/archive/p/nginxsrp/wikis/NginxCodeReview.wiki>`_ by chaoslawful and rainx
 * `Chinese version of "Emiller's Guide to NGINX Module Development" <https://code.google.com/archive/p/emillers-guide-to-nginx-module-chn/>`_
+* `NginxCodeReview <http://code.google.com/p/nginxsrp/wiki/NginxCodeReview>`_ by chaoslawful and rainx
+* `Chinese version of "Emiller's Guide to NGINX Module Development" <http://code.google.com/p/emillers-guide-to-nginx-module-chn/>`_
+* `Chinese version of "NGINX Development Guide" <https://github.com/baishancloud/nginx-development-guide>`_ by `baishancloud <https://github.com/baishancloud>`_
 
 ..
    Dead links now

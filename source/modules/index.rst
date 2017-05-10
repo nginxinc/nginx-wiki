@@ -234,6 +234,8 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Sticky upstream           | Adds an upstream server persistance using cookies                        | :bitbucket:`nginx-goodies/nginx-sticky-module-ng/get/master.tar.gz`                     |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| STS                       | A stream traffic status module                                           | :github:`vozlt/nginx-module-sts`                                                        |
++---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Subrange                  | Split one big HTTP/Range request to multiple subrange requesets          | :github:`Qihoo360/ngx_http_subrange_module`                                             |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`substitutions`      | Performs regular expression and string substitutions on response bodies  | :github:`yaoweibin/ngx_http_substitutions_filter_module`                                |
@@ -245,6 +247,8 @@ NGINX 3\ :sup:`rd` Party Modules
 | Sync Upstreams            | Syncing upstreams from etcd or consul, needn't reload nginx(HTTP Module) | :github:`weibocom/nginx-upsync-module`                                                  |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Sync Upstreams            | Syncing upstreams from etcd or consul, needn't reload nginx(TCP Module)  | :github:`xiaokai-wang/nginx-stream-upsync-module`                                       |
++---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| SysGuard                  | A module to protect the system against too high load                     | :github:`vozlt/nginx-module-sysguard`                                                   |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | TCP Proxy                 | TCP proxy with NGINX, includes health check and status monitor           | :github:`yaoweibin/nginx_tcp_proxy_module`                                              |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
