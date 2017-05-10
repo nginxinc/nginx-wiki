@@ -91,7 +91,7 @@
         });
 
         // Toggle mobile menu item.
-        $('#page').on('click', '#masthead.mobile-expanded #menu-primary > li.menu-item-has-children > a .icon', function(e) {
+        $(document).on('click', '#masthead.mobile-expanded #menu-primary > li.menu-item-has-children > a .icon', function(e) {
             e.preventDefault();
             nginxTheme.mobilePrimaryMenuItemToggle(this);
         });
