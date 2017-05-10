@@ -240,6 +240,8 @@ body {
 
 /* Extra header */
 .site-header.sticky-menu {
+  height: 70px;
+  padding-top: 8px;
   position: fixed;
   top: 0;
   width: 100%;
@@ -1106,7 +1108,7 @@ aside.wiki-sidebar .sidebar-widget ul li a {
     margin-right: -15px !important; } }
 @media only screen and (max-width: 767px) {
   .site-header {
-    display: block; }
+    display: none; }
 
   .mobile-header {
     display: block; }

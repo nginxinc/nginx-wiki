@@ -571,6 +571,7 @@ a:active {
     content: "j"
 }
 .icon-menu:before {
+    top: 7px;
     position: relative;
     content: "k"
 }
@@ -863,7 +864,12 @@ a:active {
         min-height: 30px;
         width: 104px
     }
-    
+    #masthead+section,
+    #masthead+div,
+    .single #content,
+    .athp-lead-section {
+        padding-top: 10px
+    }
     .site-header-inner {
         padding-bottom: 0
     }
@@ -1089,10 +1095,8 @@ a:active {
         margin-right: 20px;
         position: relative;
         text-transform: uppercase;
-        /*
         width: 100%;
-        max-width: 680px
-        */
+        max-width: 926px
     }
 }
 @media screen and (min-width: 980px) and (max-width: 1200px) {
@@ -1103,7 +1107,7 @@ a:active {
 @media screen and (min-width: 980px) {
     .primary-menu-location .menu-primary-container {
         position: relative;
-        float: left
+        float: right
     }
     .primary-menu-location a {
         transition: color 0.1s ease
@@ -1328,11 +1332,13 @@ a:active {
 #masthead.site-header.sticky-menu {
     z-index: 150;
     position: fixed;
-    top: 0px;
+    top: -70px;
     width: 100%
 }
 @media screen and (min-width: 980px) {
-
+    #masthead.site-header.sticky-menu .primary-menu-location {
+        margin-left: 184px
+    }
     #masthead.site-header.sticky-menu .sticky-menu-logo {
         position: absolute;
         top: 13px;
@@ -1362,7 +1368,6 @@ a:active {
         font-weight: 400
     }
 }
-/*
 @media screen and (min-width: 980px) and (max-width: 1200px) {
     #masthead.site-header.sticky-menu .primary-menu-location .menu-item>a {
         font-size: 12px
@@ -1394,7 +1399,7 @@ a:active {
     #masthead.site-header.sticky-menu .primary-menu-location .menu-item .menu-item a {
         padding: 12px 12px 12px 14px
     }
-}*/
+}
 .admin-bar #masthead.site-header.sticky-menu {
     top: -70px
 }
@@ -2002,7 +2007,7 @@ a:focus {
 .site-header-inner,
 .site-content-inner,
 .site-footer-inner {
-    max-width: 1120px;
+    max-width: 1100px;
     margin-left: auto;
     margin-right: auto;
     min-width: 280px;
@@ -2772,109 +2777,3 @@ form #name-tp {
     width: 100%;
     margin-top: 10px
 }
-
-
-/*============ some modified rules after menu change ================== */
-
-
-@media only screen and (min-width: 768px) {
-  .primary-menu-location .menu-item.menu-item-has-children:hover>a::after,
-  .primary-menu-location .menu-item.menu-item-has-children>a .icon{
-    display: none !important;
-  }
-}
-@media screen and (min-width: 980px){
-  .primary-menu-location .menu-item .menu-item a {
-      padding-bottom: 0;
-  }
-  .primary-menu-location .menu-item .menu-item a .inner {
-    padding-bottom: 16px;
-  }
-}
-
-.menu-logo{
-  float: left;
-  margin-right:5px;
-  width: 140px;
-}
-
-.header-login{
-  float: left;
-  margin-top: 7px;
-  margin-left: 12px;
-}
-.header-actions-menu-location{
-  top: 15px;
-}
-.site-branding-wrapper{
-  display: none;
-}
-.primary-menu-location{
-  margin-left: 20px;
-}
-.primary-menu-location .menu-item>a {
-    padding: 5px 9px 0;
-}
-
-.login-text{
-  display: none;
-}
-
-/*print css */
-#site_logo_print_only{
-  text-align: center;
-  display: none;
-  }
-#site_logo_print_only img{
-  width: 200px;
-  margin: 0px;
-  padding: 0px;
-}
-
-@media only print {
-   #masthead, #secondary, #nx_breadcrumb_wrap, .social_share_buttons_wrap{
-    display: none;
-  }
-  #site_logo_print_only{
-    display: block;
-  }
-  /*hide chat box*/
-  #olark-wrapper{ 
-    display: none!important;
-  }
-  #habla_window_div *{ display: none !important; } 
-}
-/*end print css */
-
-@media screen and (max-width: 979px){
-  .primary-menu-location .menu-item a .inner {
-      padding-left:19px;
-  }
-}
-
-  @media only screen and (max-width: 767px) {
-    
-    .site-branding-wrapper{
-      display: block;
-    }
-    .menu-logo,
-    .icon-user{
-      display: none;
-    }
-    .login-text{
-      display: block;
-      padding: 8px 0 15px 15px;
-      text-transform: uppercase;
-    }
-
-    .site-branding-wrapper{
-      display: block;
-    }
-
-    .login-text{
-      display: block;
-      padding: 8px 0 15px 15px;
-      text-transform: uppercase;
-    }
- }
-
