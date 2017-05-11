@@ -24,6 +24,7 @@ help:
 	@echo "  serve      to make HTML files and serve with a local NGINX"
 	@echo "  gettext    to make PO message catalogs"
 	@echo "  linkcheck  to check all external links for integrity"
+	@echo "  linkfix    to update all external links returning 301 (run linkcheck first)"
 
 clean:
 	rm -rf $(BUILDDIR)/*
@@ -49,3 +50,9 @@ linkcheck:
 	@echo
 	@echo "Link check complete; look for any errors in the above output " \
 	      "or in $(BUILDDIR)/linkcheck/output.txt."
+
+linkfix:
+	python linkfix.py
+	@echo
+	@echo "Link fix complete. This script is imperfect; remember to" \
+	      "review the changes made and fix broken links manually."
