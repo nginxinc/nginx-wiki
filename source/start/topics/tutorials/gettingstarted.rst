@@ -44,11 +44,11 @@ Platform-specific Notes and Builds
       #. :doc:`platformfedora`
       #. :doc:`platformgentoo`
    
-#. `x86/64 build for Solaris <https://www.joyent.com/blog/ok-nginx-is-cool>`_
 #. `NGINX for Windows (32-bit); development, stable, and legacy binaries available <https://kevinworthington.com/nginx-for-windows/>`_
 
 ..
    Dead links
+   #. `x86/64 build for Solaris <https://www.joyent.com/blog/ok-nginx-is-cool>`_
    #. `NGINX building script for Slackware <http://dotimes.com/slackbuilds/nginx/>`_
    #. `How to Compile NGINX on MacOSX <http://nginx.darwinports.com/>`_
 
