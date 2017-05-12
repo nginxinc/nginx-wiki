@@ -9,10 +9,6 @@ from datetime import datetime, timedelta
 
 from sphinx.util.console import purple, darkgreen, darkred, white
 
-IGNORE_LINKS_WITH = [
-    '429 Client Error: Too Many Requests'
-]
-
 LINE_RE = re.compile(r'^([^:]+):(\d+): \[([^\]]+)\] (\S+)(.*)$')
 REASON_RE = re.compile(r'\s*(.+) (?:for|with) url:.+')
 
@@ -126,7 +122,7 @@ def main():
         filename, lineno, status, url, more = m.groups()
 
         # ignore links with certain status messages
-        if any(x in more for x in IGNORE_LINKS_WITH):
+        if '429' in more and 'Too Many Requests' in more.title():
             continue
 
         # gather data for broken urls

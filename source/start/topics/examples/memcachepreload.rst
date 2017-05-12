@@ -15,7 +15,7 @@ Ingredients
 
    * `NGINX <http://nginx.org/en/docs/http/ngx_http_memcached_module.html>`_: webserver with memcache api
 
-   * `couchbase <http://www.couchbase.com/nosql-databases/downloads>`_: persistent memcache server
+   * `couchbase <https://www.couchbase.com/downloads>`_: persistent memcache server
 
 #. preload memcache
 
@@ -23,7 +23,7 @@ Ingredients
 
    * fuse: file system in user space
 
-   * `fuse.py <http://code.google.com/p/fusepy/source/browse/trunk/fuse.py>`_: python library for fuse
+   * `fuse.py <https://code.google.com/archive/p/fusepy/source>`_: python library for fuse
 
    * `memcache.py <http://bazaar.launchpad.net/~python-memcached-team/python-memcached/trunk/view/head:/memcache.py>`_: python library for memcache
 

@@ -165,8 +165,8 @@ Installation
 
 To build a nginx binary containting this module:
 
-* Download the latest version of this module from :github:`GitHub <sapo/nginx-log-zmq>`.
-* Grab the nginx source code from `nginx.org <http://www.nginx.org>`_, for example, version 1.6.2 (see `nginx compatibility <log_zmq.compatibility_>`_), and then build it like so:
+* Download the latest version of this module from :github:`GitHub <alticelabs/nginx-log-zmq>`.
+* Grab the nginx source code from `nginx.org <http://nginx.org/>`_, for example, version 1.6.2 (see `nginx compatibility <log_zmq.compatibility_>`_), and then build it like so:
 
 .. code-block:: bash
 
@@ -192,7 +192,7 @@ The following versions of nginx are known to work with this module:
 Report Bugs
 -----------
 
-Bug reports, wishlists, or patches are welcome. You can submit them on our :github:`GitHub <sapo/nginx-log-zmq>`.
+Bug reports, wishlists, or patches are welcome. You can submit them on our :github:`GitHub <alticelabs/nginx-log-zmq>`.
 
 .. _log_zmq.licence:
 
