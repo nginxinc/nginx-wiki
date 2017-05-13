@@ -65,9 +65,9 @@ The application can also have some control over the process, sending the followi
 
 Links to this issue
 -------------------
-* `Using X-Accel-Redirect Header With NGINX to Implement Controlled Downloads (with rails and php examples) <http://kovyrin.net/2006/11/01/nginx-x-accel-redirect-php-rails/>`_ from `Alexey Kovyrin <http://kovyrin.net/>`_
+* `Using X-Accel-Redirect Header With NGINX to Implement Controlled Downloads (with rails and php examples) <https://kovyrin.net/2006/11/01/nginx-x-accel-redirect-php-rails/>`_ from `Alexey Kovyrin <https://kovyrin.net/>`_
 
-* `Nginx-Fu: X-Accel-Redirect From Remote Servers <http://kovyrin.net/2010/07/24/nginx-fu-x-accel-redirect-remote/>`_ from `Alexey Kovyrin <http://kovyrin.net/>`_
+* `Nginx-Fu: X-Accel-Redirect From Remote Servers <https://kovyrin.net/2010/07/24/nginx-fu-x-accel-redirect-remote/>`_ from `Alexey Kovyrin <https://kovyrin.net/>`_
 
 * `Rails 3.x assets pipeline support for X-Accel-Redirect <http://guides.rubyonrails.org/asset_pipeline.html#x-sendfile-headers>`_
 

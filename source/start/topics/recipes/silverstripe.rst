@@ -5,7 +5,7 @@
 SilverStripe
 ============
 
-`SilverStripe <http://www.silverstripe.org/>`_ is a modern PHP based CMS Framework that runs happily on NGINX.  
+`SilverStripe <https://www.silverstripe.org/>`_ is a modern PHP based CMS Framework that runs happily on NGINX.  
   
 There are several built in failsafes that will attempt to rectify any errors in rewrite rules.  
 First, SS relies on an ``.htaccess`` file to define how to handle URLs.  

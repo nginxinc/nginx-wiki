@@ -53,7 +53,7 @@ spawn new processes or threads for each request, so its memory usage is very low
 Throughout my benchmark it just sat at 2.5MB of memory while Apache was using a
 lot more.
 
--- `WebFaction <http://blog.webfaction.com/2008/12/a-little-holiday-present-10000-reqssec-with-nginx-2/>`__
+-- `WebFaction <https://blog.webfaction.com/2008/12/a-little-holiday-present-10000-reqssec-with-nginx-2/>`__
 
 
 I ran a simple test against NGINX v0.5.22 and Apache v2.2.8 using ab (Apache's
@@ -118,7 +118,7 @@ http-traffic (all files are small).
 I think, this is really good result because with any possible tunings of Apache
 on the same servers we were not able to handle even 60-80Mbit/s.
 
--- `Alexey Kovyrin <http://kovyrin.net/2006/04/04/nginx-small-powerful-web-server/>`_
+-- `Alexey Kovyrin <https://kovyrin.net/2006/04/04/nginx-small-powerful-web-server/>`_
 
 
 A while back, we changed our frontend IMAP/POP proxy from perdition to NGINX...
@@ -127,7 +127,7 @@ The net result of all this is that each frontend proxy server currently maintain
 over 10,000 simultaneous IMAP, POP, Web & SMTP connections (including many SSL
 ones) using only about 10% of the available CPU.
 
--- `FastMail.fm blog <http://blog.fastmail.com/2007/01/04/webimappop-frontend-proxies-changed-to-nginx/>`_
+-- `FastMail.fm blog <https://blog.fastmail.com/2007/01/04/webimappop-frontend-proxies-changed-to-nginx/>`_
 
 
 We recently switched over our static content webserver over to NGINX,
@@ -160,7 +160,7 @@ Its stability, easy scalability and optimum use of resources make of Nginx the b
 for sites that require a high performance, such as ours, delivering millions of page views 
 to our readers, even with modest hardware infrastructures.
 
--- `Fernando Salvato, VP Digital Business Development, La Gran Época (Epoch Times) <http://www.lagranepoca.com>`_
+-- `Fernando Salvato, VP Digital Business Development, La Gran Época (Epoch Times) <https://www.lagranepoca.com/>`_
 
 After moving our site to NGINX, we are more than satisfied and using it 
 from several years. NGINX is capable of serving a huge number of requests as compared 

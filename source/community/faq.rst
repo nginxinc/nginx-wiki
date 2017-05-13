@@ -15,7 +15,7 @@ How do you pronounce "NGINX"?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 There seems to be some confusion surrounding the pronunciation of NGINX.
 
-`Pronunciation Key <http://dictionary.reference.com/help/luna/Spell_pron_key.html>`_
+`Pronunciation Key <http://www.dictionary.com/pronunciation/Spell_pron_key>`_
 
 **Correct**
 
@@ -95,7 +95,7 @@ If you can't determine the cause of the problem through testing, experimentation
 Are there other, similar web servers?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-* `Cherokee <http://www.0x50.org/>`_
+* `Cherokee <http://cherokee-project.com/>`_
 * `Lighttpd (Lighty) <http://www.lighttpd.net/>`_
 * `thttpd <http://www.acme.com/software/thttpd/>`_
 

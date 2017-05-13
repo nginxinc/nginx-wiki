@@ -5,7 +5,7 @@
 ExpressionEngine
 ================
 
-`ExpressionEngine <https://ellislab.com/expressionengine>`_  is a flexible, feature-rich content management system that empowers thousands of individuals, organizations, and companies around the world to easily manage their website.
+`ExpressionEngine <https://expressionengine.com/>`_  is a flexible, feature-rich content management system that empowers thousands of individuals, organizations, and companies around the world to easily manage their website.
 
 
 This configuration isn't heavily tested, but it seems to work.
@@ -115,7 +115,7 @@ The above code did not work for me, I had to use the following code:
         }
     }
 
-The problem was that EE wanted to have the URL like this http://domain.com/index.php/your-path without the question mark. See https://ellislab.com/forums/viewthread/92987/ for a complete configuration.
+The problem was that EE wanted to have the URL like this http://domain.com/index.php/your-path without the question mark. See https://expressionengine.com/forums/archive/topic/92987/how-to-remove-index.php-on-nginx for a complete configuration.
 
 Prevent duplicate content
 -------------------------
@@ -145,5 +145,5 @@ Note this may require an explicit 404 page e.g. in your server block:
       # ...
     }
 
-EllisLab only very recently (2013/12) updated their docs with this, see: https://ellislab.com/blog/entry/fully-removing-index.php-from-urls
+EllisLab only very recently (2013/12) updated their docs with this, see: https://expressionengine.com/blog/fully-removing-index.php-from-urls
 

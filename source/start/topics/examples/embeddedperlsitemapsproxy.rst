@@ -9,7 +9,7 @@ We run a CMS hosting business.
 
 Each website is hosted on its own domain and for each website a sitemap.xml is dynamically generated on the fly when requested.
 
-These sitemaps are useful to feed your urls to the search engines. http://www.sitemaps.org/
+These sitemaps are useful to feed your urls to the search engines. https://www.sitemaps.org/index.html
 
 Normally it is the job of the site-owner/webmaster to submit these sites to the search engine. Some do and some dont.
 
@@ -124,10 +124,10 @@ Example master-map:
 .. code-block:: xml
 
     <?xml version='1.0' encoding='UTF-8'?>
-        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        <urlset xmlns="https://www.sitemaps.org/index.htmlschemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        xsi:schemaLocation="https://www.sitemaps.org/index.htmlschemas/sitemap/0.9
+        https://www.sitemaps.org/index.htmlschemas/sitemap/0.9/sitemap.xsd">
 
     <url><loc>http://sitemaps.worldsoft-cms.info/demo-domain0.de-sitemap.xml</loc></url>
     <url><loc>http://sitemaps.worldsoft-cms.info/demo-domain1.de-sitemap.xml</loc></url>

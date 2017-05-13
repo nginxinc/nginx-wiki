@@ -147,7 +147,7 @@ Control:
 
 For problems look in c:\nginx\logs\error.log or in EventLog.
 
-In addition, Kevin Worthington maintains earlier `Windows <http://kevinworthington.com/nginx-for-windows/>`_ builds of the development branch.
+In addition, Kevin Worthington maintains earlier `Windows <https://kevinworthington.com/nginx-for-windows/>`_ builds of the development branch.
 
 
 

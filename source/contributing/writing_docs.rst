@@ -331,7 +331,7 @@ A few extra roles have been added to assist with creating documentation for this
 
 .. rst:role:: icon
 
-   The icon role lets you use `Font Awesome <https://fortawesome.github.io/Font-Awesome/icons/>`_ icons in text. Simply use as described in the Font Awesome documentation but without the *fa* prefix and the options comma separated. For example:
+   The icon role lets you use `Font Awesome <http://fontawesome.io/icons/>`_ icons in text. Simply use as described in the Font Awesome documentation but without the *fa* prefix and the options comma separated. For example:
 
    .. code-block:: rst
 

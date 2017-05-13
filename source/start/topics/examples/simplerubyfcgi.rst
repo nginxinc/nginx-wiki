@@ -5,7 +5,7 @@
 Simple Ruby FCGI
 ================
 
-The following minimal config will proxy to a ruby application server such as `unicorn <http://unicorn.bogomips.org/>`_ or `thin <http://code.macournoyer.com/thin/>`_ via a socket.
+The following minimal config will proxy to a ruby application server such as `unicorn <https://bogomips.org/unicorn/>`_ or `thin <http://code.macournoyer.com/thin/>`_ via a socket.
 
 Some values below are specific to
 `Arch Linux <https://www.archlinux.org/>`_

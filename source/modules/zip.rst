@@ -101,7 +101,7 @@ Bugs
 
 Send bug reports to `Evan Miller <http://www.evanmiller.org/>`_.
 
-`mod_zip <http://code.google.com/p/mod-zip/>`_ at Google Code.
+`mod_zip <https://code.google.com/archive/p/mod-zip>`_ at Google Code.
 
 Thanks
 ------
