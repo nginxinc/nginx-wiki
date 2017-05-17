@@ -187,7 +187,7 @@ Other builds
 
 Acknowledgments
 ---------------
-Thanks to `Joshua Zhu <http://blog.zhuzhaoyuan.com>`_ and the Taobao platform engineering team for releasing *Tengine*. Also for being kind
+Thanks to Joshua Zhu and the Taobao platform engineering team for releasing *Tengine*. Also for being kind
 enough to clarify things regarding this module on the `NGINX mailing list <http://mailman.nginx.org/pipermail/nginx/2011-December/030830.html>`_.
 
 

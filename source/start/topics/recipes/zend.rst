@@ -18,7 +18,7 @@ Follow the `installation instructions on their website <https://framework.zend.c
 
 If that is your preference, you can stop reading now and read-up on how to configure NGINX to work directly with :doc:`PHP FastCGI <../examples/phpfcgi>`
 
-Alternatively, Zend Framework also comes packaged with both, the free and paid-for edition of `Zend Server <http://www.zend.com/en/products/zend_server>`_:
+Alternatively, Zend Framework also comes packaged with both, the free and paid-for edition of `Zend Server <http://www.zend.com/en/products/zend_server#editions>`_:
 
     Zend Server includes a production-ready, tested stack that incorporates PHP, Zend Framework, required extensions and drivers - all installed through RPM/DEB on Linux or MSI on Windows. Zend Server also support IBM i.
 

@@ -206,5 +206,5 @@ If an update is successful and you want to keep the new server, send QUIT signal
 
 References
 ^^^^^^^^^^
-* `Command Line Options <http://sysoev.ru/nginx/docs/switches.html>`_
-* `Signals <http://sysoev.ru/nginx/docs/control.html>`_
+* `Command Line Options <http://nginx.org/ru/docs/switches.html>`_
+* `Signals <http://nginx.org/ru/docs/control.html>`_

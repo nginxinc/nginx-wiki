@@ -17,7 +17,7 @@ Requirements
 Download
 --------
 Go to the :doc:`install` Page of this wiki to download NGINX.
-Alternatively, here is a link to the `English download page <http://nginx.org/en/download.html>`_ and the original `Russian download page <http://sysoev.ru/nginx/download.html>`_.
+Alternatively, here is a link to the `English download page <http://nginx.org/en/download.html>`_ and the original `Russian download page <http://nginx.org/ru/download.html>`_.
 
 
 
@@ -49,6 +49,7 @@ Platform-specific Notes and Builds
 
 ..
    Dead links
+   #. `x86/64 build for Solaris <https://www.joyent.com/blog/ok-nginx-is-cool>`_
    #. `NGINX building script for Slackware <http://dotimes.com/slackbuilds/nginx/>`_
    #. `How to Compile NGINX on MacOSX <http://nginx.darwinports.com/>`_
 

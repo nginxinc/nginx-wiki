@@ -28,11 +28,11 @@ Downloads
 
 | **Download version**:
 
-:github:`v0.8.4 <masterzen/nginx-upload-progress-module/tarball/v0.8.4>`
+`v0.8.4 <https://codeload.github.com/masterzen/nginx-upload-progress-module/legacy.tar.gz/v0.8.4>`_
 
 | **Download version**:
 
-:github:`v0.9.0 <masterzen/nginx-upload-progress-module/tarball/v0.9.0>`
+`v0.9.0 <https://codeload.github.com/masterzen/nginx-upload-progress-module/legacy.tar.gz/v0.9.0>`_
 
 | **Source code**:
 
@@ -478,6 +478,3 @@ Companion Software
 
 This software can also work with Valery Kholodkov' NGINX Upload Module:
 http://www.grid.net.ru/nginx/upload.en.html
-
-You can also use the following javascript libraries client side:
-http://drogomir.com/blog/2008/6/30/upload-progress-script-with-safari-support

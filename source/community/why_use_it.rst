@@ -160,7 +160,7 @@ Its stability, easy scalability and optimum use of resources make of Nginx the b
 for sites that require a high performance, such as ours, delivering millions of page views 
 to our readers, even with modest hardware infrastructures.
 
--- `Fernando Salvato, VP Digital Business Development, La Gran Época (Epoch Times) <https://www.lagranepoca.com/>`_
+-- `Fernando Salvato, VP Digital Business Development, La Gran Época (Epoch Times) <https://www.lagranepoca.com>`_
 
 After moving our site to NGINX, we are more than satisfied and using it 
 from several years. NGINX is capable of serving a huge number of requests as compared 

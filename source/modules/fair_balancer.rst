@@ -52,7 +52,7 @@ Installation
 ------------
 This module is not distributed with the NGINX source. You can browse its 
 :github:`git repository <gnosek/nginx-upstream-fair/tree/master>` 
-or :github:`download the tar ball <gnosek/nginx-upstream-fair/tarball/master>`
+or `download the tar ball <https://codeload.github.com/gnosek/nginx-upstream-fair/legacy.tar.gz/master>`_
 
 After extracting, add the following option to your NGINX ``./configure`` command:
 

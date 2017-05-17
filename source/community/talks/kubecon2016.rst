@@ -11,7 +11,7 @@ Creating an Advanced Load Balancing Solution for Kubernetes with NGINX
 Related Links
 ^^^^^^^^^^^^^
 
-* Checking Pod Health -- https://kubernetes.io/docs/user-guide/liveness/
+* Checking Pod Health -- https://kubernetes.io/docs/tasks/configure-pod-container/configure-liveness-readiness-probes/
 
 * Services -- https://kubernetes.io/docs/user-guide/services/
 

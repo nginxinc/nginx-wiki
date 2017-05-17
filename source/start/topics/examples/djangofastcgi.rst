@@ -87,7 +87,7 @@ Django through Spawning
 Requirements
 ^^^^^^^^^^^^
 
-You will need `Spawning <https://pypi.python.org/pypi/Spawning>`_, and `PasteDeploy <http://pythonpaste.org/deploy/>`_.
+You will need `Spawning <https://pypi.python.org/pypi/Spawning>`_, and `PasteDeploy <https://pypi.python.org/pypi/Paste>`_.
 You can install both of them with easy_install.
 
 If your sites are organised as::

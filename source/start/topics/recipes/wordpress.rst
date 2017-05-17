@@ -202,7 +202,6 @@ Rewrite rules for Multisite using subdomains
 
 .. note::
 
-
     * NGINX WordPress Shared Hosting Model - `AnsiPress <https://github.com/AnsiPress/AnsiPress>`_ can be used. AnsiPress is created based on Ansible playbooks and support NGINX, PHP7, MariaDB, Google PageSpeed installation as well as automate WordPress installations/setup. 
     * For wordpress-nginx based sites management, `EasyEngine <https://github.com/EasyEngine/easyengine>`_ can be used. EasyEngine (ee) is python based command line control panel to setup NGINX server on Ubuntu and Debian Linux distribution for HTML, PHP, MySQL, HHVM, PageSpeed and WordPress sites.
     * map section can be completed manually for small sites. On large multisite network `nginx-helper <https://wordpress.org/plugins/nginx-helper/>`_ wordpress plugin can be used.

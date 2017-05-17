@@ -207,7 +207,7 @@ developed.
 * :doc:`topics/examples/imapauthenticatewithapacheperlscript`
 * :doc:`topics/examples/imapauthenticatewithapachephpscript`
 * :doc:`topics/examples/nonrootwebpath`
-* `NGINX + SSL + SPDY <https://www.mare-system.de/guide-to-nginx-ssl-spdy-hsts/>`_
+* `NGINX + SSL + SPDY <http://www.mare-system.de/guide-to-nginx-ssl-spdy-hsts/>`_
 * `NGINX + PHP FPM + APC on CentOS 6 <http://www.binarytides.com/install-nginx-php-fpm-centos/>`_
 * `Adding new vhosts with NGINX, PHP-FPM and Bash <http://www.sebdangerfield.me.uk/2012/05/nginx-and-php-fpm-bash-script-for-creating-new-vhosts-under-separate-fpm-pools/>`_
 * `Serving an iPhone website with NGINX <http://nicknotfound.com/2009/01/12/iphone-website-with-nginx/>`_

@@ -15,9 +15,9 @@ implemented almost fully now we can talk about this ``headers_in`` and ``headers
 
 The HTTP headers in NGINX are split in two parts: the input request
 headers
-(`headers\_in <http://lxr.evanmiller.org/http/source/http/ngx_http_request.h#L162>`__
+(`headers\_in <http://lxr.nginx.org/source/src/http/ngx_http_request.h#L162>`__
 structure) and the output request headers
-(`headers\_out <http://lxr.evanmiller.org/http/source/http/ngx_http_request.h#L227>`__
+(`headers\_out <http://lxr.nginx.org/source/src/http/ngx_http_request.h#L227>`__
 structure). There is no such an entity as a response, all the data
 is stored in the same single request structure. The actual response data
 is constructed from the request data and the ``headers_out`` structure fields.
@@ -41,7 +41,7 @@ many lines. It's a kinda mess. And NGINX in its turn tries to rule the
 mess.
 
 NGINX takes care of known frequently used headers (`list of known
-headers\_in <http://lxr.evanmiller.org/http/source/http/ngx_http_request.c#L80>`__).
+headers\_in <http://lxr.nginx.org/source/src/http/ngx_http_request.c#L80>`__).
 It parses it and stores in the handy place (direct pointer in ``headers_in``). 
 If a known header may consist of more then one value (Cookies or
 Cache-Control for example.) NGINX could handle it with an array. And for
@@ -56,15 +56,15 @@ Get a header value
 That said, there are at least three ways to get the value. As we already
 know, every input header value may be obtained by a brute force lookup
 in the
-`headers\_in->headers <http://lxr.evanmiller.org/http/source/http/ngx_http_request.h#L163>`__
+`headers\_in->headers <http://lxr.nginx.org/source/src/http/ngx_http_request.h#L163>`__
 list (typeof
-`ngx\_list\_t <http://lxr.evanmiller.org/http/ident?i=ngx_list_t>`__).
+`ngx\_list\_t <http://lxr.nginx.org/ident?i=ngx_list_t>`__).
 The known header value may be found with a help of a simple pointer in
 the ``headers_in`` structure (``NULL`` if the header does not exist). And for the 
 known numeric headers there is even easier way to get the value: by a special field 
 in the ``headers_in``
 
-(`content\_length\_n <http://lxr.evanmiller.org/http/source/http/ngx_http_request.h#L214>`__
+(`content\_length\_n <http://lxr.nginx.org/source/src/http/ngx_http_request.h#L214>`__
 is a good example).
 
 This is good if you know at compile time which header you are going to
@@ -240,7 +240,7 @@ How does hashed search work?
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 At the configuration stage NGINX creates a hash
-(`ngx\_hash\_t <http://lxr.evanmiller.org/http/ident?i=ngx_hash_t>`__)
+(`ngx\_hash\_t <http://lxr.nginx.org/ident?i=ngx_hash_t>`__)
 of known HTTP headers (as mentioned above). In each pair the key is a
 the header name and the value is a NGINX header handler structure
 (pretty smart structure, you know). In this structure we can see the

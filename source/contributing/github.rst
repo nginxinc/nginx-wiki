@@ -5,7 +5,7 @@
 Submitting Contributions
 ========================
 
-The NGINX Wiki is automatically generated from `reStructuredText files <https://en.wikipedia.org/wiki/ReStructuredText>`_ using `Sphinx Documentation Generator <http://sphinx-doc.org/>`_. The source files are `stored in GitHub <https://github.com/nginxinc/nginx-wiki>`_ and are open to contributions via pull requests. This document will help guide you through this process.
+The NGINX Wiki is automatically generated from `reStructuredText files <https://en.wikipedia.org/wiki/ReStructuredText>`_ using `Sphinx Documentation Generator <http://www.sphinx-doc.org/en/stable/>`_. The source files are `stored in GitHub <https://github.com/nginxinc/nginx-wiki>`_ and are open to contributions via pull requests. This document will help guide you through this process.
 
 Editing on GitHub
 -----------------
