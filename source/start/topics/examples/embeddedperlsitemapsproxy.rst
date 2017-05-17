@@ -124,10 +124,10 @@ Example master-map:
 .. code-block:: xml
 
     <?xml version='1.0' encoding='UTF-8'?>
-        <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        <urlset xmlns="https://www.sitemaps.org/index.htmlschemas/sitemap/0.9"
         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+        xsi:schemaLocation="https://www.sitemaps.org/index.htmlschemas/sitemap/0.9
+        https://www.sitemaps.org/index.htmlschemas/sitemap/0.9/sitemap.xsd">
 
     <url><loc>http://sitemaps.worldsoft-cms.info/demo-domain0.de-sitemap.xml</loc></url>
     <url><loc>http://sitemaps.worldsoft-cms.info/demo-domain1.de-sitemap.xml</loc></url>

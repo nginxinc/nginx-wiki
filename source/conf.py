@@ -298,7 +298,6 @@ linkcheck_anchors = False
 linkcheck_timeout = 60
 
 linkcheck_ignore = [
-                    r'https://github.com/nginxinc/nginx-wiki.*', # while the repo is private
                     r'http://.*sourceforge.net/.*', # CI system is blocked from accessing sourceforge
                     r'.*zend-server.htm.*', # Some Javascript voodoo that fails linkcheck
                     r'http://lemp.test.*', # An example URL

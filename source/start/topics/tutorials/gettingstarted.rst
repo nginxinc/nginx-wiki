@@ -44,6 +44,7 @@ Platform-specific Notes and Builds
       #. :doc:`platformfedora`
       #. :doc:`platformgentoo`
    
+#. `x86/64 build for Solaris <https://jasonhoffman.blog/2007/04/25/ok-nginx-is-cool>`_
 #. `NGINX for Windows (32-bit); development, stable, and legacy binaries available <https://kevinworthington.com/nginx-for-windows/>`_
 
 ..

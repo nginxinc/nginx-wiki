@@ -32,4 +32,3 @@ NGINX development, then you should absolutely subscribe and participate on the m
 
 .. _`NGINX mailing list`: http://mailman.nginx.org/mailman/listinfo
 .. _`bug tracker`: https://trac.nginx.org/nginx/
-

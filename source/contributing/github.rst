@@ -78,7 +78,15 @@ Once your edits are ready to test, run these commands to check that they build c
    $ make dirhtml
    $ make linkcheck
 
-If either command generates an error, your edits probably need fixing. The NGINX developer relations team will be happy to assist you with this.
+If either command generates an error, your edits probably need fixing.
+
+If you've recently run ``make linkcheck`` and many permanent redirects were found, you can automatically replace them all by running:
+
+.. code-block:: bash
+
+   $ make linkfix
+
+This script is just a quick hack for the lazy, so make sure to check that it didn't break anything syntactically before you commit.
 
 One way to preview the output is to use NGINX. The build system can already setup NGINX for you if you have it installed:
 
