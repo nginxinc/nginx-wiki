@@ -22,6 +22,14 @@ Recipe
     server {
         server_name example.com;
         root /var/www/drupal8; ## <-- Your only path reference.
+        
+        if ($request_uri ~* "^(.*/)index\.php$") {
+            return 301 $1;
+        }
+        
+        location ~ '^/index\.php/(.*)$' {
+            return 301  $scheme://$server_name/$1;
+        }
 
         location = /favicon.ico {
             log_not_found off;
