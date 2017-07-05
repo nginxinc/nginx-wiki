@@ -686,7 +686,7 @@ ngx_escape_uri
 
 .. c:function:: uintptr_t ngx_escape_uri(unsigned char *dst, unsigned char *src, size_t size, ngx_uint_t type)
 
-   Escapes a URI. Different types use slightly different escape algorithms. A ``dst`` of ``NULL`` will return the number of characters that would fill ``dst``. Otherwise a pointer to the end of data in ``dst`` is returned.
+   Escapes a URI. Different types use slightly different escape algorithms. A ``dst`` of ``NULL`` will return the number of characters that would be escaped. Otherwise a pointer to the end of data in ``dst`` is returned.
 
    ============================ ================================
    Type                         Definition
@@ -704,7 +704,7 @@ ngx_escape_uri
    :param src: The source string
    :param size: The length of the source string
    :param type: The type of escape algorithm to use
-   :returns: A pointer to the end of the used ``dst`` or the output count if ``dst`` is ``NULL``
+   :returns: A pointer to the end of the used ``dst`` or the count of escaped characters if ``dst`` is ``NULL``
 
 ngx_unescape_uri
 ^^^^^^^^^^^^^^^^
