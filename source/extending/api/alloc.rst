@@ -281,7 +281,7 @@ ngx_reset_pool
    :param pool: The pool to be reset
 
 ngx_pnalloc
-^^^^^^^^^^
+^^^^^^^^^^^
 
 .. c:function:: void *ngx_pnalloc(ngx_pool_t *pool, size_t size)
 
@@ -296,7 +296,7 @@ ngx_pnalloc
    :returns: A pointer to the memory requested or ``NULL`` upon failure
 
 ngx_palloc
-^^^^^^^^^^^
+^^^^^^^^^^
 
 .. c:function:: void *ngx_palloc(ngx_pool_t *pool, size_t size)
 
