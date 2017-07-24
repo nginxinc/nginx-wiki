@@ -280,10 +280,10 @@ ngx_reset_pool
 
    :param pool: The pool to be reset
 
-ngx_palloc
-^^^^^^^^^^
+ngx_pnalloc
+^^^^^^^^^^^
 
-.. c:function:: void *ngx_palloc(ngx_pool_t *pool, size_t size)
+.. c:function:: void *ngx_pnalloc(ngx_pool_t *pool, size_t size)
 
    Allocates a block of memory from a pool.
 
@@ -295,12 +295,12 @@ ngx_palloc
    :param size: The size of the allocation required
    :returns: A pointer to the memory requested or ``NULL`` upon failure
 
-ngx_pnalloc
-^^^^^^^^^^^
+ngx_palloc
+^^^^^^^^^^
 
-.. c:function:: void *ngx_pnalloc(ngx_pool_t *pool, size_t size)
+.. c:function:: void *ngx_palloc(ngx_pool_t *pool, size_t size)
 
-   Similar to :c:func:`ngx_palloc` but allocates a block of memory from the pool aligned to ``NGX_ALIGNMENT``
+   Similar to :c:func:`ngx_pnalloc` but allocates a block of memory from the pool aligned to ``NGX_ALIGNMENT``
 
    :param pool: A pointer to the pool to allocate from
    :param size: The size of the allocation required
@@ -311,7 +311,7 @@ ngx_pcalloc
 
 .. c:function:: void *ngx_pcalloc(ngx_pool_t *pool, size_t size)
 
-   A wrapper for :c:func:`ngx_pcalloc` which also sets every byte of the allocation to ``0``
+   A wrapper for :c:func:`ngx_palloc` which also sets every byte of the allocation to ``0``
 
    :param pool: A pointer to the pool to allocate from
    :param size: The size of the allocation required
