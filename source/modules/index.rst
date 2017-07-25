@@ -110,6 +110,8 @@ NGINX 3\ :sup:`rd` Party Modules
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`ketama_chash`       | Provides upstream load distribution by hashing a configurable variable   | :github:`flygoast/ngx_http_upstream_ketama_chash/releases/`                             |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| LDAP Auth                 | LDAP module which supports authentication against multiple LDAP servers  | :github:`kvspb/nginx-auth-ldap`                                                         |
++---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Limit Upload Rate         | Limit the transmission rate of request body from a client                | :github:`cfsego/limit_upload_rate`                                                      |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Limit Upstream Connection | Limits the maximum connections to each server in a upstream              | :github:`cfsego/nginx-limit-upstream/`                                                  |
