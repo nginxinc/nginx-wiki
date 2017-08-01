@@ -81,7 +81,7 @@ nginx.conf
       }
     }
 
-proxy_conf
+proxy.conf
 ----------
 
 .. code-block:: nginx
@@ -97,7 +97,7 @@ proxy_conf
     proxy_read_timeout      90;
     proxy_buffers           32 4k;
 
-fastcgi_conf
+fastcgi.conf
 ------------
 
 .. code-block:: nginx
@@ -124,7 +124,7 @@ fastcgi_conf
 
     fastcgi_param  REDIRECT_STATUS    200;
 
-mime_types
+mime.types
 ----------
 
 .. code-block:: nginx
