@@ -117,6 +117,7 @@ Recipe
         }
 
         location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
+            try_files $uri @rewrite;
             expires max;
             log_not_found off;
         }
