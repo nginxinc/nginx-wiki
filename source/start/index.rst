@@ -122,6 +122,11 @@ address these quirks and then share the resulting configurations. This has
 resulted in many "copy and paste" configurations that are almost guaranteed
 to work.
 
+If the web applications with the configuration don't work, please check
+whether the simplest web application works. For example, if PHP based web
+applications such as mediawiki don't work, please check if PHP FastCGI 
+(refer to :doc:`topics/examples/phpfcgi`) works.
+
 * `ActiveColab <https://www.howtoforge.com/running-activecollab-3-on-nginx-lemp-on-debian-wheezy-ubuntu-12.10>`_
 * `Chive <https://github.com/perusio/chive-nginx>`_
 * :doc:`topics/recipes/cms_made_simple`
