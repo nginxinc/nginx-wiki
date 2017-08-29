@@ -42,6 +42,7 @@ Getting Started
    topics/examples/memcachepreload
    topics/examples/embeddedperlminifyjs
    topics/examples/embeddedperlsitemapsproxy
+   topics/examples/forwarded
    topics/recipes/cms_made_simple
    topics/recipes/codeigniter
    topics/recipes/drupal
@@ -217,6 +218,7 @@ developed.
 * `Block visitors by country <https://www.howtoforge.com/nginx-how-to-block-visitors-by-country-with-the-geoip-module-debian-ubuntu>`_
 * :doc:`topics/examples/embeddedperlminifyjs`
 * :doc:`topics/examples/embeddedperlsitemapsproxy`
+* :doc:`topics/examples/forwarded`
 
 Tools
 -----
