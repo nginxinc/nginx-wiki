@@ -70,14 +70,22 @@ Now we must tell NGINX to proxy requests to PHP FPM via the FCGI protocol:
         
         fastcgi_pass 127.0.0.1:9000;
         fastcgi_index index.php;
+
+        # include the fastcgi_param setting
         include fastcgi_params;
+
+        # SCRIPT_FILENAME parameter is used for PHP FPM determining
+        #  the script name. If it is not set in fastcgi_params file,
+        # i.e. /etc/nginx/fastcgi_params or in the parent contexts,
+        # please comment off following line:
+        # fastcgi_param  SCRIPT_FILENAME   $document_root$fastcgi_script_name;
     }
 
 If you're using unix socket change ``fastcgi_pass`` to:
 
 .. code-block:: nginx
 
-    fastcgi_pass unix:/var/run/php5-fpm.sock;
+    fastcgi_pass unix:/var/run/php-fpm.sock;
 
 Restart NGINX.
 
@@ -97,7 +105,8 @@ In the browser try to request:
 # /test.php/foo/bar.php
 # /test.php/foo/bar.php?v=1
 
-Pay attention to the value of REQUEST_URI, SCRIPT_NAME, PATH_INFO and PHP_SELF.
+Pay attention to the value of REQUEST_URI, SCRIPT_FILENAME, SCRIPT_NAME,
+PATH_INFO and PHP_SELF.
 
 Here's the correct output for http://lemp.test/test.php/foo/bar.php?v=1 ::
 
@@ -139,13 +148,24 @@ Notes
 -----
 
 #. The location regex capable to handle ``PATH_INFO`` and properly check that the extension indeed .php (not .phps) whether there is PATH_INFO or not.
+
 #. The ``fastcgi_split_path_info`` regex capable to correctly handle request like ``/test.php/foo/blah.php`` or ``/test.php/``.
+
 #. The ``if`` lets NGINX check whether the ``*.php`` does indeed exist to prevent NGINX to feeding PHP FPM non php script file (like uploaded image).
 
-Some guides recommend to use ``try_files`` instead of ``if``,
-if you do that, beware of NGINX `bug #321 <https://trac.nginx.org/nginx/ticket/321>`_.
-I personally think ``if`` is more appropriate for this, even :doc:`../depth/ifisevil` agree this is one of the 100% safe thing to use ``if`` with.
+   Some guides recommend to use ``try_files`` instead of ``if``, if you do that, beware of NGINX `bug #321 <https://trac.nginx.org/nginx/ticket/321>`_.
+   I personally think ``if`` is more appropriate for this, even :doc:`../depth/ifisevil` agree this is one of the 100% safe thing to use ``if`` with.
 
-This guide run fine on php.ini ``cgi.fix_pathinfo = 1`` (the default).
-Some guide insist to change it to ``cgi.fix_pathinfo = 0`` but doing that make ``PHP_SELF`` variable broken (not equal to ``DOCUMENT_URI``).
+#. The ``SCRIPT_FILENAME`` parameter is required as it is passed to PHP FPM to determine the script name.
+
+   In the builds of NGINX for a lot of Linux distributions, this parameter has been added in ``fastcgi_params file``, i.e. ``/etc/nginx/fastcgi_params``so the users could import all the CGI params via the ``include`` directive, i.e. ``include fastcgi_params`` . But for some distributions, such as CentOS, this parameter does not exist in ``fastcgi_params file``.
+
+   If this parameter is not set, PHP FPM responses 200 OK with empty content, and there is no error or warning. 
+   For more informaton about the CGI params, please refer to `nginx beginners guide <https://nginx.org/en/docs/beginners_guide.html#fastcgi>`_, `$_SERVER in PHP <http://php.net/manual/en/reserved.variables.server.php>`_ and `RFC3875 <http://www.ietf.org/rfc/rfc3875>`_.
+
+#. If you see a blank page in browser, please check if ``SCRIPT_FILENAME`` parameter is set.
+
+#. This guide run fine on php.ini with ``cgi.fix_pathinfo = 1`` (the default).
+
+   Some guide insist to change it to ``cgi.fix_pathinfo = 0`` but doing that make ``PHP_SELF`` variable broken (not equal to ``DOCUMENT_URI``).
 

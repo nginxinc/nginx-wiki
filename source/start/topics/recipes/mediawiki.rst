@@ -10,6 +10,8 @@ Requirements
 
 * `php-fpm <https://php-fpm.org/>`__
 
+* The ``SCRIPT_FILENAME`` parameter is defined in ``fastcgi_params file`` or in parent contexts, for more details, please refer to :doc:`../examples/phpfcgi`
+
 Recipe
 ------
 
