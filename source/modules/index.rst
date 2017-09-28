@@ -60,6 +60,8 @@ our partners, see https://www.nginx.com/products/nginx/modules.
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`consistent_hash`    | Select backend based on Consistent hash ring                             | :github:`replay/ngx_http_consistent_hash`                                               |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :doc:`ngx_c_handler`      | c/c++ service function handler which built for NGINX fastcgi             | :github:`Taymindis/ngx-c-handler`                                                       |
++---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Development Kit           | An extension to the core functionality of NGINX                          | :github:`simpl/ngx_devel_kit`                                                           |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`domain_resolve`     | An asynchronous domain name resolve module for NGINX upstream            | :github:`wdaike/ngx_upstream_jdomain/`                                                  |
@@ -406,6 +408,7 @@ our partners, see https://www.nginx.com/products/nginx/modules.
    clojure
    concat
    consistent_hash
+   ngx_c_handler
    domain_resolve
    drizzle
    echo
