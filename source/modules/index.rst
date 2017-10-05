@@ -60,8 +60,6 @@ our partners, see https://www.nginx.com/products/nginx/modules.
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`consistent_hash`    | Select backend based on Consistent hash ring                             | :github:`replay/ngx_http_consistent_hash`                                               |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| :doc:`ngx_c_handler`      | c/c++ service function handler which built for NGINX fastcgi             | :github:`Taymindis/ngx-c-handler`                                                       |
-+---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Development Kit           | An extension to the core functionality of NGINX                          | :github:`simpl/ngx_devel_kit`                                                           |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`domain_resolve`     | An asynchronous domain name resolve module for NGINX upstream            | :github:`wdaike/ngx_upstream_jdomain/`                                                  |
@@ -93,6 +91,8 @@ our partners, see https://www.nginx.com/products/nginx/modules.
 | :doc:`fancy_index`        | Like the built-in autoindex module, but fancier                          | :github:`aperezdc/ngx-fancyindex`                                                       |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`foot_filter`        | Implements a body filter that adds a given string to the page footer     | :github:`alibaba/nginx-http-footer-filter`                                              |
++---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :doc:`fcgi_function`      | c/c++ service function handler which built for NGINX fastcgi             | :github:`Taymindis/fcgi-function`                                                       |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Footer If Filter          | Applies a footer if a response meets a specified condition               | :github:`flygoast/ngx_http_footer_if_filter/`                                           |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -408,12 +408,12 @@ our partners, see https://www.nginx.com/products/nginx/modules.
    clojure
    concat
    consistent_hash
-   ngx_c_handler
    domain_resolve
    drizzle
    echo
    fair_balancer
    fancy_index
+   fcgi_function
    foot_filter
    form_input
    groovy_handler
