@@ -94,6 +94,8 @@ our partners, see https://www.nginx.com/products/nginx/modules.
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`foot_filter`        | Implements a body filter that adds a given string to the page footer     | :github:`alibaba/nginx-http-footer-filter`                                              |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| :doc:`fcgi_function`      | c/c++ service function handler which built for NGINX fastcgi             | :github:`Taymindis/fcgi-function`                                                       |
++---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Footer If Filter          | Applies a footer if a response meets a specified condition               | :github:`flygoast/ngx_http_footer_if_filter/`                                           |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`form_input`         | Parses HTTP POST request bodies and saves results to NGINX variables     | :github:`calio/form-input-nginx-module`                                                 |
@@ -413,6 +415,7 @@ our partners, see https://www.nginx.com/products/nginx/modules.
    echo
    fair_balancer
    fancy_index
+   fcgi_function
    foot_filter
    form_input
    groovy_handler
