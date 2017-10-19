@@ -35,18 +35,7 @@ This configuration file was provided by Seph. You can see the complete informati
 
         root  /var/www/sites/stats.example.com/;
         index  index.php index.html;
-
-        # Disallow any usage of piwik assets if referer is non valid.
-        location ~* ^.+\.(?:jpg|png|css|gif|jpeg|js|swf)$ {
-                 # Defining the valid referers.
-                 valid_referers none blocked *.mysite.com othersite.com;
-                 if ($invalid_referer)  {
-                    return 444;
-                 }
-                 expires max;
-                 break;
-        }
-
+        
         # Support for favicon. Return a 204 (No Content) if the favicon
         # doesn't exist.
         location = /favicon.ico {
