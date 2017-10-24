@@ -190,6 +190,10 @@ All CSS related to site header includeing logo, CSR FTR buttons, search box, men
     width: 190px;
     z-index: 10
 }
+.icon-menu:before {
+    content: "k"
+}
+
 @media screen and (max-width: 600px) {
     #masthead .site-branding .site-title.logo-left {
         margin-left: 50px

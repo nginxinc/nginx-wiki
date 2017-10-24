@@ -571,8 +571,6 @@ a:active {
     content: "j"
 }
 .icon-menu:before {
-    top: 7px;
-    position: relative;
     content: "k"
 }
 @-moz-keyframes nx-button-wiggle-for-scroll {
