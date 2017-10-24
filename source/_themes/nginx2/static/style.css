@@ -637,9 +637,10 @@ aside.wiki-sidebar .sidebar-widget ul li a {
 }
 
 @media only screen and (max-width: 400px) {
-.global-header {
-  padding: 60px 0 25px;
-}
+  .global-header {
+    /*padding: 79px 0 25px; */
+    padding-bottom:0px;
+  }
 }
 
 
