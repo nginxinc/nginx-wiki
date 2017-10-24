@@ -722,74 +722,6 @@ a:active {
     }
 }
 
-@media screen and (min-width: 980px) {
-    
-}
-
-@media screen and (min-width: 980px) {
-    
-}
-
-
-@media screen and (max-width: 979px) {
-   
-}
-@media screen and (max-width: 979px) and (min-width: 500px) {
-    
-}
-@media screen and (max-width: 979px) {
-    
-}
-@media screen and (max-width: 979px) and (max-width: 350px) {
-    
-}
-@media screen and (max-width: 979px) {
-
-}
-@media screen and (min-width: 980px) {
-    
-}
-@media screen and (min-width: 980px) and (max-width: 1200px) {
-    
-}
-@media screen and (min-width: 980px) {
-    
-}
-@media screen and (min-width: 980px) and (min-width: 1100px) {
-    
-}
-@media screen and (min-width: 980px) {
-    
-}
-@media screen and (min-width: 980px) and (max-width: 1200px) {
-    
-}
-@media screen and (min-width: 980px) {
-    
-}
-
-@media screen and (min-width: 980px) {
-    
-}
-@media screen and (min-width: 980px) and (max-width: 1200px) {
-    
-}
-@media screen and (min-width: 980px) and (max-width: 1100px) {
-    
-}
-@media screen and (min-width: 980px) {
-    
-}
-@media screen and (min-width: 980px) and (max-width: 1200px) {
-    
-}
-@media screen and (min-width: 980px) and (max-width: 1100px) {
-    
-}
-@media screen and (min-width: 980px) {
-    
-}
-
 .screen-reader-text {
     clip: rect(1px, 1px, 1px, 1px);
     position: absolute !important;
@@ -2157,3 +2089,105 @@ form #name-tp {
     width: 100%;
     margin-top: 10px
 }
+
+/*
+==========================================================
+        Button Styles | Copied from nginx.com default.css
+==========================================================  
+*/
+
+.nginx-button{
+    display: inline-block;
+    border:2px solid #F0A828;
+    font-size: 17px;
+    text-transform: uppercase;
+    border-radius: 4px;
+    padding: 11px 35px;
+    font-weight: 500;
+    position: relative;
+}
+a.button-primary,
+button.button-primary,
+.button-primary{
+    background: #F0A828;
+    color: #200000;
+}
+a.button-primary:hover,
+button.button-primary:hover,
+.button-primary:hover{
+    background: #eea119;
+}
+a.button-secondary,
+button.button-secondary,
+.button-secondary{
+    background: none;
+    color: #000;
+}
+a.button-secondary:hover,
+button.button-secondary:hover,
+.button-secondary:hover{
+    /*background: #fbfbfb;*/
+}
+
+a.btn-have-icon,
+button.btn-have-icon,
+.btn-have-icon{
+    padding: 11px 54px 11px 22px;
+}
+.btn-have-icon .icon {
+    bottom: 0;
+    font-size: 24px;
+    height: 24px;
+    line-height: 1.1;
+    margin: auto;
+    padding-top: 1px;
+    position: absolute;
+    right: 18px;
+    top: 0;
+}
+
+.share-report .nginx-button{
+    font-size: 15px;
+}
+form .nginx-button{
+    width: 100%;
+}
+button.nginx-button.btn-have-icon span.icon{
+    margin: auto !important;
+}
+
+@media screen and (max-width: 767px){
+    .pre-footer-cta-button .nginx-button{
+        width: 100%;
+    }
+}
+
+.email-subscribe-btn-white{
+    border: 2px solid #dcd8d6;
+    box-shadow: none;
+    color: #666!important;
+    display: block;
+    float: none;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    padding: 7px 45px 7px 10px!important;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    -webkit-border-radius: 3px;
+}
+.email-subscribe-btn-white.btn-have-icon .icon{
+    width: 20px; 
+    height: 22px; 
+    font-size: 21px;
+    color: #dcd8d6;
+}
+
+/*=====Instruction====
+<a href="" class="nginx-button button-secondary">Button 1</a>
+<a href="" class="nginx-button button-primary">Button 2</a>
+<a href="" class="nginx-button button-primary btn-have-icon">Button 3 <span class="icon icon-arrow-disc"></span></a>
+=====================*/
