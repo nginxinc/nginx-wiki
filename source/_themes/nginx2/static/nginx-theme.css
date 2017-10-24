@@ -916,35 +916,10 @@ a:active {
 .footer-social ul a:before {
     font-size: 28px
 }
-.footer-email-signup input {
-    background-color: transparent;
-    border-color: rgba(243, 243, 243, 0.5);
-    border-width: 2px;
-    color: #999;
-    display: block;
-    font-size: 15px;
-    font-size: 1.5rem;
-    height: 36px;
-    line-height: 15px;
-    padding: 3px 35px 3px 10px;
-    width: 100%
+.footer-social ul a img {
+    vertical-align: inherit;
 }
-.footer-email-signup input:focus {
-    color: #999;
-    outline: none
-}
-.footer-email-signup .icon-arrow-submit {
-    cursor: pointer;
-    font-size: 0;
-    float: right;
-    height: 36px;
-    margin: -29px -3px 0 0;
-    width: 36px
-}
-.footer-email-signup .icon-arrow-submit:before {
-    color: rgba(153, 153, 153, 0.5);
-    font-size: 24px
-}
+
 .site-footer .site-info {
     clear: both;
     color: #999;
@@ -1319,7 +1294,7 @@ a:focus {
 .site-header-inner,
 .site-content-inner,
 .site-footer-inner {
-    max-width: 1100px;
+    max-width: 1120px;
     margin-left: auto;
     margin-right: auto;
     min-width: 280px;
