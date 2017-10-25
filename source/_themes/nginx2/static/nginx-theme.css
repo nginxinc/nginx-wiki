@@ -2137,29 +2137,60 @@ button.nginx-button.btn-have-icon span.icon{
     }
 }
 
-.email-subscribe-btn-white{
-    border: 2px solid #dcd8d6;
+.wiki-email-subscribe-btn-white{
+    height: 42px;
+    width: 100%;
+    border: 2px solid #707070;
     box-shadow: none;
-    color: #666!important;
+    color: #999!important;
     display: block;
+    background-color: transparent;
     float: none;
-    font-size: 14px;
+    font-size: 1.5rem;
     font-weight: bold;
     letter-spacing: 1px;
-    padding: 7px 45px 7px 10px!important;
-    text-align: center;
-    text-transform: uppercase;
-    width: 100%;
+    padding: 9px 5px 7px 10px!important;
+    text-align: left;
     border-radius: 3px;
     -moz-border-radius: 3px;
     -webkit-border-radius: 3px;
+    text-transform: uppercase;
 }
-.email-subscribe-btn-white.btn-have-icon .icon{
+.wiki-email-subscribe-btn-white .icon-arrow-submit {
+    cursor: pointer;
+    font-size: 0;
+    float: right;
+    height: 0px;
+    margin: 3px 25px 0 0;
+    width: 0px
+}
+.wiki-email-subscribe-btn-white .icon-arrow-submit:before {
+    color: #f2a901;
+    font-size: 30px;
+    line-height: 16px;
+    content: "\f138";
+    font-family: "FontAwesome"!important;
+}
+
+/*
+.wiki-email-subscribe-btn-white .icon{
     width: 20px; 
     height: 22px; 
     font-size: 21px;
     color: #dcd8d6;
+
+    bottom: 0;
+    font-size: 24px;
+    height: 24px;
+    line-height: 1.1;
+    margin: auto;
+    padding-top: 1px;
+    position: absolute;
+    right: 18px;
+    top: 0;
 }
+*/
+
 
 /*=====Instruction====
 <a href="" class="nginx-button button-secondary">Button 1</a>
