@@ -2,3 +2,4 @@
 build
 *.swp
 *.mo
+.DS_Store
