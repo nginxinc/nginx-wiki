@@ -11,7 +11,7 @@ Recipe
 .. code-block:: nginx
 
     server {
-            server_name omeka.corp.good-sam.com;
+            server_name omeka.domain.tld;
             root /var/www/omeka;
 
             location = /favicon.ico {
