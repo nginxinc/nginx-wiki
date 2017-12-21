@@ -104,6 +104,8 @@ our partners, see https://www.nginx.com/products/nginx/modules.
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`groovy_handler`     | A module for embedding Clojure, Java, and Groovy programs                | :github:`nginx-clojure/nginx-clojure`                                                   |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| Haskell                   | Binding Haskell code in configuration files for great good!              | :github:`lyokha/nginx-haskell-module`                                                   |
++---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Headers More              | Set and clear input and output headers... more than "add"!               | :github:`openresty/headers-more-nginx-module`                                           |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`healthcheck`        | Health check HTTP servers inside an upstream                             | :github:`cep21/healthcheck_nginx_upstreams`                                             |
