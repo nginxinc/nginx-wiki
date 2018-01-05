@@ -1,267 +1,125 @@
-  <header class="site-header">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-12">
-          <div class="top-header clearfix">
-            <div class="logo pull-left">
-              <a href="https://www.nginx.com/">
-                <img src="{{ pathto('_static/img/logo.png', 1) }}" alt="NGINX , High Performance Load Balancer, Web Server, &amp; Reverse Proxy">
-              </a>
-            </div>
-            <div class="header-actions-menu pull-right">
-              <ul>
-                <li>
-                  <a href="https://www.nginx.com/free-trial-request/">Free Trial</a>
-                </li>
-                <li>
-                  <a href="https://www.nginx.com/contact-sales/">Contact Sales</a>
-                </li>
-              </ul>
-            </div>
+<!-- NGINX SITE HEADER START -->
+<header id="masthead" class="site-header" role="banner" itemscope itemtype="http://schema.org/Organization">
+    <!-- sticky-menu show-sticky-menu-->
+    <div class="site-header-inner">
 
-
-          </div>
-          <div class="header-menus">
-            <div class="site-main-menu">
-              <a rel="home" href="https://www.nginx.com/" class="sticky-menu-logo pull-left">
-                <img alt="Web Server Load Balancing with NGINX Plus" src="{{ pathto('_static/img/nginx_n_icon.png', 1) }}">
-              </a>
-              <ul class="nav navbar-nav">
-                <li class="dropdown">
-                  <a href="https://www.nginx.com/products/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Products
-                    <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="https://www.nginx.com/products/">NGINX Plus</a></li>
-                    <li><a href="https://www.nginx.com/products/technical-specs/">Technical Specifications</a></li>
-                    <li><a href="https://www.nginx.com/products/feature-matrix/">Compare Versions</a></li>
-                    <li><a href="https://www.nginx.com/products/pricing/">Price &amp; Buy</a></li>
-                    <li><a href="https://www.nginx.com/products/nginx-plus-aws/">NGINX Plus for AWS</a></li>
-                    <li><a href="https://www.nginx.com/products/nginx-plus-microsoft-azure/">NGINX Plus for Azure</a></li>
-                    <li><a href="https://www.nginx.com/products/nginx-plus-google-cloud-platform/">NGINX Plus for Google Cloud</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="https://www.nginx.com/solutions/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Solutions
-                    <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-					<li><a href="https://www.nginx.com/solutions/load-balancing/">Load Balancing</a></li>
-					<li><a href="https://www.nginx.com/solutions/adc/">Application Delivery Controller</a></li>
-					<li><a href="https://www.nginx.com/solutions/microservices/">Microservices</a></li>
-					<li><a href="https://www.nginx.com/solutions/cloud/">Move to the Cloud</a></li>
-					<li><a href="https://www.nginx.com/solutions/api-gateway/">API Gateway</a></li>
-					<li><a href="https://www.nginx.com/solutions/web-mobile-acceleration/">Web &#038; Mobile Acceleration</a></li>
-					<li><a href="https://www.nginx.com/solutions/application-security/">Application Security</a></li>
-					<li><a href="https://www.nginx.com/solutions/web-server/">Web Server</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="https://www.nginx.com/resources/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources
-                    <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-					<li><a href="https://www.nginx.com/resources/admin-guide/">Admin Guide</a></li>
-					<li><a href="https://www.nginx.com/resources/library/">Library</a></li>
-					<li><a href="https://www.nginx.com/resources/webinars/">Webinars</a></li>
-					<li><a href="https://www.nginx.com/resources/events/">Events</a></li>
-					<li><a href="https://www.nginx.com/resources/more/">Community Resources</a></li>
-					<li><a href="https://www.nginx.com/resources/wiki/">Community Wiki</a></li>
-					<li><a href="https://www.nginx.com/faqs/">FAQ</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="https://www.nginx.com/support-services/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Support &amp; Services
-                    <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="https://www.nginx.com/support/">Support</a></li>
-                    <li><a href="https://www.nginx.com/services/">Professional Services</a></li>
-                    <li><a href="http://university.nginx.com/">Training</a></li>
-                  </ul>
-                </li>
-                <li class="dropdown">
-                  <a href="https://www.nginx.com/company/" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Company
-                    <span class="caret"></span></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="https://www.nginx.com/company/">About Us</a></li>
-                    <li><a href="https://www.nginx.com/jobs/">Careers</a></li>
-                    <li><a href="https://www.nginx.com/partners/">Partners</a></li>
-                    <li><a href="https://www.nginx.com/leadership-team/">Leadership</a></li>
-                    <li><a href="https://www.nginx.com/press/">Press</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="https://www.nginx.com/customers/">Customers</a>
-                </li>
-                <li>
-                  <a href="https://www.nginx.com/blog/">Blog</a>
-                </li>
-              </ul>
-
-              <!-- Search Box -->
-                 <div class="search-box">
-                  <form method="get" class="searchbox" action="https://www.nginx.com/">
-                      <span class="search-icon">
-                        <i class="fa fa-search"></i>
-                      </span>
-                      <input type="search" placeholder="Search nginx.com" name="s" class="search-field"  required>
-                      <input type="submit" class="searchbox-submit">
-                  </form>
+        <div class="site-branding-wrapper">
+            <div class="site-branding">
+                <div class="site-title" itemprop="name">
+                    <a href="https://www.nginx.com/" rel="home"><img src="https://www.nginx.com/wp-content/themes/nginx-theme/assets/img/logo.png" alt="Web Server Load Balancing with NGINX Plus"></a>
                 </div>
-
             </div>
-
-            <!-- Header extra menu item-->
-            <div class="header-extras-wrapper">
-              <div class="header-extras">
-                <div itemprop="telephone" class="header-extra header-tel"><a href="tel:+18009159122">1-800-915-9122</a></div>
-                <div class="header-extra header-login">
-                  <a href="https://cs.nginx.com/login?_ga=1.179616420.1294354987.1452198183" class="login-link">
-                    <i class="fa fa-user"></i>
-                    <div class="login-text">Login</div>
-                  </a>
-                </div>
-              </div>
-            </div>
-          </div> <!-- Header menus-->
-
+            <!-- /.site-branding -->
         </div>
-      </div>
-    </div>
-  </header>
+        <!-- /.site-branding-wrapper -->
 
+        <div class="header-menus">
 
-  <div class="mobile-header">
-    <nav class="navbar">
-        <div class="container-fluid">
-          <!-- Brand and toggle get grouped for better mobile display -->
-          <div class="navbar-header">
-              <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand logo" href="#">
-            <img src="{{ pathto('_static/img/logo.png', 1) }}" alt="">
-            </a>
-             <div class="mobile-search-box pull-right">
-              <form method="get" class="searchbox" action="https://www.nginx.com/">
-                  <input type="search" placeholder="Search nginx.com" name="s" class="searchbox-input"  required>
-                  <input type="submit" class="searchbox-submit">
-                  <span class="searchbox-icon">
-                    <i class="fa fa-search"></i>
-                  </span>
-              </form>
+            <div class="header-actions-menu-location-wrapper">
+                <nav class="header-actions-menu-location" role="navigation">
+                    <div class="menu-header-actions-container">
+                        <ul id="menu-header-actions" class="menu">
+                            <li id="menu-item-5252" class="free-trial-menu-btn menu-item menu-item-type-custom menu-item-object-custom menu-item-5252"><a href="https://www.nginx.com/free-trial-request">Free Trial</a></li>
+                            <li id="menu-item-4811" class="contact-sales-menu-btn menu-item menu-item-type-custom menu-item-object-custom menu-item-4811"><a href="https://www.nginx.com/#contact-us">Contact Us</a></li>
+                        </ul>
+                    </div>
+                </nav>
+                <!-- /.header-actions-menu-location -->
             </div>
-          </div>
+            <!-- /.header-actions-menu-location -->
+            <div class="primary-menu-location-wrapper">
+                <a class="menu-logo" href="https://www.nginx.com/" rel="home"><img src="https://www.nginx.com/wp-content/themes/nginx-theme/assets/img/logo.png" alt="Web Server Load Balancing with NGINX Plus"></a>
+                <nav id="site-navigation" class="primary-menu-location" role="navigation">
+                    <div class="menu-primary-container">
+                        <ul id="menu-primary" class="menu">
+                            <li id="menu-item-3570" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3570"><a href="https://www.nginx.com/products/"><span class="inner">Products</span><span class="icon icon-arrow-down"></span></a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-53220" class="menu-item menu-item-type-post_type menu-item-object-nx_product_module menu-item-53220"><a href="https://www.nginx.com/products/nginx/"><span class="inner">NGINX Plus</span></a></li>
+                                    <li id="menu-item-53219" class="menu-item menu-item-type-post_type menu-item-object-nx_product_module menu-item-53219"><a href="https://www.nginx.com/products/nginx-controller/"><span class="inner">NGINX Controller</span></a></li>
+                                    <li id="menu-item-53225" class="menu-item menu-item-type-post_type menu-item-object-nx_product_module menu-item-53225"><a href="https://www.nginx.com/products/nginx-unit/"><span class="inner">NGINX Unit</span></a></li>
+                                    <li id="menu-item-53221" class="menu-item menu-item-type-post_type menu-item-object-nx_product_module menu-item-53221"><a href="https://www.nginx.com/products/nginx-amplify/"><span class="inner">NGINX Amplify</span></a></li>
+                                    <li id="menu-item-53226" class="menu-item menu-item-type-post_type menu-item-object-nx_product_module menu-item-53226"><a href="https://www.nginx.com/products/nginx-waf/"><span class="inner">NGINX WAF</span></a></li>
+                                </ul>
+                            </li>
+                            <li id="menu-item-3572" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3572"><a href="https://www.nginx.com/solutions/"><span class="inner">Solutions</span><span class="icon icon-arrow-down"></span></a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-53542" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53542"><a href="https://www.nginx.com/solutions/microservices/"><span class="inner">Microservices</span></a></li>
+                                    <li id="menu-item-53543" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53543"><a href="https://www.nginx.com/solutions/adc/"><span class="inner">ADC / Load balancing</span></a></li>
+                                    <li id="menu-item-53544" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53544"><a href="https://www.nginx.com/solutions/cloud/"><span class="inner">Cloud migration</span></a></li>
+                                    <li id="menu-item-53545" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53545"><a href="https://www.nginx.com/solutions/application-security/"><span class="inner">Security</span></a></li>
+                                    <li id="menu-item-53546" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53546"><a href="https://www.nginx.com/solutions/web-mobile-acceleration/"><span class="inner">Web &#038; mobile performance</span></a></li>
+                                    <li id="menu-item-53547" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53547"><a href="https://www.nginx.com/solutions/api-gateway/"><span class="inner">API gateway</span></a></li>
+                                </ul>
+                            </li>
+                            <li id="menu-item-3622" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-3622"><a href="https://www.nginx.com/resources/"><span class="inner">Resources</span><span class="icon icon-arrow-down"></span></a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-4235" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4235"><a href="https://www.nginx.com/resources/admin-guide/"><span class="inner">Admin Guide</span></a></li>
+                                    <li id="menu-item-5758" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-5758"><a href="https://www.nginx.com/resources/library/"><span class="inner">Ebooks</span></a></li>
+                                    <li id="menu-item-4056" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4056"><a href="https://www.nginx.com/resources/webinars/"><span class="inner">Webinars</span></a></li>
+                                    <li id="menu-item-49023" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49023"><a href="https://www.nginx.com/customers/"><span class="inner">Case studies</span></a></li>
+                                    <li id="menu-item-4093" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-4093"><a href="https://www.nginx.com/faqs/"><span class="inner">FAQ</span></a></li>
+                                    <li id="menu-item-14377" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-14377"><a href="https://www.nginx.com/resources/glossary/"><span class="inner">Glossary</span></a></li>
+                                    <li id="menu-item-53223" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-53223"><a href="https://www.nginx.com/products/modules"><span class="inner">Third party integrations</span></a></li>
+                                </ul>
+                            </li>
+                            <li id="menu-item-53052" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-has-children menu-item-53052"><a href="https://www.nginx.com/support/"><span class="inner">Support</span><span class="icon icon-arrow-down"></span></a>
+                                <ul class="sub-menu">
+                                    <li id="menu-item-3628" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3628"><a href="https://www.nginx.com/support/"><span class="inner">NGINX Plus support</span></a></li>
+                                    <li id="menu-item-3626" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-3626"><a target="_blank" href="http://university.nginx.com/"><span class="inner">Training</span></a></li>
+                                    <li id="menu-item-3631" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3631"><a href="https://www.nginx.com/services/"><span class="inner">Professional Services</span></a></li>
+                                </ul>
+                            </li>
+                            <li id="menu-item-49226" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-49226"><a href="https://www.nginx.com/products/pricing/"><span class="inner">Pricing</span></a></li>
+                            <li id="menu-item-3571" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-3571"><a href="https://www.nginx.com/blog/"><span class="inner">Blog</span></a></li>
+                        </ul>
+                    </div>
 
-          <!-- Collect the nav links, forms, and other content for toggling -->
-          <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
-              <div class="header-actions-menu">
-            <ul>
-              <li>
-                <a href="https://www.nginx.com/free-trial-request/">Free Trial</a>
-              </li>
-              <li>
-                <a href="https://www.nginx.com/contact-sales/">Contact Sales</a>
-              </li>
-            </ul>
-          </div>
+                    <div class="search-form-wrapper">
+                        <form method="get" class="search-form" action="https://www.nginx.com/">
+                            <label for="search" class="screen-reader-text">Search</label>
+                            <input type="search" name="s" id="s" class="search-field" placeholder="Search nginx.com" value="" maxlength="150" />
+                            <input type="submit" class="search-button" value="Search">
+                        </form>
+                    </div>
 
-            <ul class="nav navbar-nav navbar-right mobile-menu">
-              <li class="dropdown">
-                <a href="https://www.nginx.com/products/" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Products</a>
-                  <div data-toggle="dropdown" class="dropdown-arrow-button">
-                    <i class="fa fa-chevron-down"></i>
-                  </div>
-                <ul class="dropdown-menu">
-                  <li><a href="https://www.nginx.com/products/"><span class="inner">NGINX Plus</span></a></li>
-                  <li><a href="https://www.nginx.com/products/technical-specs/"><span class="inner">Technical Specifications</span></a></li>
-                  <li><a href="https://www.nginx.com/products/feature-matrix/"><span class="inner">Compare Versions</span></a></li>
-                  <li><a href="https://www.nginx.com/products/pricing/"><span class="inner">Price &#038; Buy</span></a></li>
-                  <li><a href="https://www.nginx.com/products/nginx-plus-aws/"><span class="inner">NGINX Plus for AWS</span></a></li>
-                  <li><a href="https://www.nginx.com/products/nginx-plus-microsoft-azure/"><span class="inner">NGINX Plus for Azure</span></a></li>
-                  <li><a href="https://www.nginx.com/products/nginx-plus-google-cloud-platform/"><span class="inner">NGINX Plus for Google Cloud Platform</span></a></li>
-                </ul>
-              </li>
+                    <div class="header-login">
+                        <a class="login-link" href="https://cs.nginx.com/login">
+                            <div class="icon icon-user"></div>
+                            <div class="login-text">Login</div>
+                        </a>
+                    </div>
+                </nav>
+                <!-- /#site-navigation.primary-menu-location -->
+            </div>
+            <!-- /.primary-menu-location-wrapper -->
 
-              <li class="dropdown">
-                <a href="https://www.nginx.com/solutions/" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Solutions</a>
-                <div data-toggle="dropdown" class="dropdown-arrow-button">
-                    <i class="fa fa-chevron-down"></i>
+            <div class="header-extras-wrapper" style="display: none;">
+                <div class="header-extras">
+                    <div class="header-extra header-tel" itemprop="telephone"><a href="tel:+18009159122">1-800-915-9122</a></div>
                 </div>
-                <ul class="dropdown-menu">
-					<li><a href="https://www.nginx.com/solutions/load-balancing/"><span class="inner">Load Balancing</span></a></li>
-					<li><a href="https://www.nginx.com/solutions/adc/"><span class="inner">Application Delivery Controller</span></a></li>
-					<li><a href="https://www.nginx.com/solutions/microservices/"><span class="inner">Microservices</span></a></li>
-					<li><a href="https://www.nginx.com/solutions/cloud/"><span class="inner">Move to the Cloud</span></a></li>
-					<li><a href="https://www.nginx.com/solutions/api-gateway/"><span class="inner">API Gateway</span></a></li>
-					<li><a href="https://www.nginx.com/solutions/web-mobile-acceleration/"><span class="inner">Web &#038; Mobile Acceleration</span></a></li>
-					<li><a href="https://www.nginx.com/solutions/application-security/"><span class="inner">Application Security</span></a></li>
-					<li><a href="https://www.nginx.com/solutions/web-server/"><span class="inner">Web Server</span></a></li>         
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a href="https://www.nginx.com/resources/" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Resources</a>
-                <div data-toggle="dropdown" class="dropdown-arrow-button">
-                    <i class="fa fa-chevron-down"></i>
-                </div>
-                <ul class="dropdown-menu">
-					<li><a href="https://www.nginx.com/resources/admin-guide/"><span class="inner">Admin Guide</span></a></li>
-					<li><a href="https://www.nginx.com/resources/library/"><span class="inner">Library</span></a></li>
-					<li><a href="https://www.nginx.com/resources/webinars/"><span class="inner">Webinars</span></a></li>
-					<li><a href="https://www.nginx.com/resources/events/"><span class="inner">Events</span></a></li>
-					<li><a href="https://www.nginx.com/resources/more/"><span class="inner">Community Resources</span></a></li>
-					<li><a href="https://www.nginx.com/resources/wiki/"><span class="inner">Community Wiki</span></a></li>
-					<li><a href="https://www.nginx.com/faqs/"><span class="inner">FAQ</span></a></li>
-                 </ul>
-              </li>
-              <li class="dropdown">
-                <a href="https://www.nginx.com/support-services/" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Support &amp; Services</a>
-                <div data-toggle="dropdown" class="dropdown-arrow-button">
-                    <i class="fa fa-chevron-down"></i>
-                </div>
-                <ul class="dropdown-menu">
-                  <li><a href="https://www.nginx.com/support/"><span class="inner">Support</span></a></li>
-                  <li><a href="https://www.nginx.com/services/"><span class="inner">Professional Services</span></a></li>
-                  <li><a target="_blank" href="http://university.nginx.com/"><span class="inner">Training</span></a></li>
-                </ul>
-              </li>
-              <li class="dropdown">
-                <a href="https://www.nginx.com/company/" class="dropdown-toggle" role="button" aria-haspopup="true" aria-expanded="false">Company</a>
-                <div data-toggle="dropdown" class="dropdown-arrow-button">
-                    <i class="fa fa-chevron-down"></i>
-                </div>
-                <ul class="dropdown-menu">
-                  <li><a href="https://www.nginx.com/company/"><span class="inner">About Us</span></a></li>
-                  <li><a href="https://www.nginx.com/jobs/"><span class="inner">Careers</span></a></li>
-                  <li><a href="https://www.nginx.com/partners/"><span class="inner">Partners</span></a></li>
-                  <li><a href="https://www.nginx.com/leadership-team/"><span class="inner">Leadership</span></a></li>
-                  <li><a href="https://www.nginx.com/press/"><span class="inner">Press</span></a></li>
-                </ul>
-              </li>
-              <li>
-                <a href="https://www.nginx.com/customers/"><span class="inner">Customers</span></a>
-              </li>
-              <li>
-                <a href="https://www.nginx.com/blog/"><span class="inner">Blog</span></a>
-              </li>
-            </ul>
+            </div>
+        </div>
+        <!-- /.header-menus -->
 
-            <!-- Header extra menu item-->
-            <div class="header-extras-wrapper">
-              <div class="header-extras">
-                <div itemprop="telephone" class="header-extra header-tel"><a href="tel:+18009159122">1-800-915-9122</a></div>
-                <div class="header-extra header-login">
-                  <a href="#" class="login-link">
-                    <i class="fa fa-user"></i>
-                    <div class="login-text">Login</div>
-                  </a>
-                </div>
-              </div>
-            </div><!-- Header extra menu item-->
+        <div class="mobile-menu-button-wrapper">
+            <a href="#" class="mobile-menu-button">
+                <div class="icon icon-menu"></div>
+            </a>
+        </div>
 
-          </div><!-- /.navbar-collapse -->
-         
-      </div><!-- /.container-fluid -->
-    </nav>
+        <div class="mobile-search-button-wrapper">
+            <div class="search-form-wrapper">
+                <form method="get" class="search-form" action="https://www.nginx.com/">
+                    <label for="search" class="screen-reader-text">Search</label>
+                    <input type="search" name="s" id="s" class="search-field" placeholder="Search nginx.com" value="" maxlength="150" />
+                    <input type="submit" class="search-button" value="Search">
+                </form>
+            </div>
+        </div>
 
-  </div>
+    </div>
+    <!-- /.site-header-inner -->
+</header>
+<!-- /#masthead -->
+
+<!-- NGINX SITE HEADER END -->
