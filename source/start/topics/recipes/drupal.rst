@@ -48,6 +48,11 @@ Recipe
             return 403;
         }
 
+        # Block access to scripts in site files directory
+        location ~ ^/sites/[^/]+/files/.*\.php$ {
+            deny all;
+        }
+
         # Allow "Well-Known URIs" as per RFC 5785
         location ~* ^/.well-known/ {
             allow all;
