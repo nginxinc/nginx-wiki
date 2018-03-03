@@ -634,3 +634,42 @@ only the TLS protocols instead:
 .. code-block:: nginx
 
     ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+
+Using the ``try_files $uri`` directive with ``alias``
+-----------------------------------------------------
+
+The symptoms of this are difficult to diagnose: typically, it will appear that
+you've done everything right and yet you get mysterious 404 errors. Why? well,
+turning on debug-level error logging reveals that ``try_files`` is appending
+``$uri`` onto the path already set with ``alias``. This is due to a bug_ in NGINX,
+but don't worry—the workaround is simple! As long as your ``try_files`` line is
+something like ``try_files $uri $uri/ =404;``, you can simply delete the ``try_files``
+line with no significant adverse effect. Here is an example where you cannot use
+``try_files``.
+
+BAD:
+
+.. code-block:: nginx
+
+    location ~^/\~(?<user>[^/]*)/(?<page>.*)$ {
+        alias /home/$user/public_html/$page;
+        try_files $uri $uri/ =404;
+    }
+
+GOOD:
+
+.. code-block:: nginx
+
+    location ~^/\~(?<user>[^/]*)/(?<page>.*)$ {
+        alias /home/$user/public_html/$page;
+    }
+
+The one caveat is that this workaround prevents you from using ``try_files`` to avoid
+PATH_INFO attacks. See `Passing Uncontrolled Requests to PHP`_ above for alternative ways
+to mitigate these attacks.
+
+Also note that the ``snippets/fastcgi-php.conf`` file shipped by some Linux distributions
+may need to be edited to remove a ``try_files`` directive if it's included in a ``location``
+block with ``alias``.
+
+.. _bug: https://trac.nginx.org/nginx/ticket/97
