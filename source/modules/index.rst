@@ -42,7 +42,7 @@ our partners, see https://www.nginx.com/products/nginx/modules.
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Request Authentication    | Allows authorization based on subrequest result                          | `ngx_http_auth_request_module <http://mdounin.ru/hg/ngx_http_auth_request_module/>`_    |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| Auto Lib                  | Reuse pre-compiled/installed versions of OpenSSL, PCRE and Zlib          | :github:`simplresty/ngx_auto_lib`                                                            |
+| Auto Lib                  | Reuse pre-compiled/installed versions of OpenSSL, PCRE and Zlib          | :github:`simplresty/ngx_auto_lib`                                                       |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | AWS Auth                  | Generate security headers for GET requests to Amazon S3                  | :github:`anomalizer/ngx_aws_auth`                                                       |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -60,7 +60,7 @@ our partners, see https://www.nginx.com/products/nginx/modules.
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`consistent_hash`    | Select backend based on Consistent hash ring                             | :github:`replay/ngx_http_consistent_hash`                                               |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| Development Kit           | An extension to the core functionality of NGINX                          | :github:`simplresty/ngx_devel_kit`                                                           |
+| Development Kit           | An extension to the core functionality of NGINX                          | :github:`simplresty/ngx_devel_kit`                                                      |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`domain_resolve`     | An asynchronous domain name resolve module for NGINX upstream            | :github:`wdaike/ngx_upstream_jdomain/`                                                  |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -152,7 +152,7 @@ our partners, see https://www.nginx.com/products/nginx/modules.
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Mogilefs                  | Implements a MogileFS client                                             | `Download <http://www.grid.net.ru/nginx/download/nginx_mogilefs_module-1.0.2.tar.gz>`__ |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| Mongo                     | Upstream module for direct communication with MongoDB                    | :github:`simplresty/ngx_mongo`                                                               |
+| Mongo                     | Upstream module for direct communication with MongoDB                    | :github:`simplresty/ngx_mongo`                                                          |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`mp4_streaming`      | Seeks time within H.264/MP4 files if a "start" parameter is in the URL   | `Download <http://i.6.cn/nginx_mp4_streaming_public_20081229.tar.bz2>`__                |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -220,9 +220,9 @@ our partners, see https://www.nginx.com/products/nginx/modules.
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Set CConv                 | Conversion between Simplified and Traditional Chinese at rewrite phase   | :github:`liseen/set-cconv-nginx-module`                                                 |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| Set Hash                  | Set a variable to hash functions, including MD5, SHA1 and Murmurhash 2   | :github:`simplresty/ngx_http_set_hash`                                                       |
+| Set Hash                  | Set a variable to hash functions, including MD5, SHA1 and Murmurhash 2   | :github:`simplresty/ngx_http_set_hash`                                                  |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| Set Lang                  | Set a variable to indicate the language based on a variety of sources    | :github:`simplresty/ngx_http_set_lang/downloads`                                             |
+| Set Lang                  | Set a variable to indicate the language based on a variety of sources    | :github:`simplresty/ngx_http_set_lang/downloads`                                        |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | HTTP Set Misc             | Various set_xxx directives added to NGINX's rewrite module               | :github:`openresty/set-misc-nginx-module`                                               |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
