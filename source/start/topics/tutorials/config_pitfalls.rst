@@ -16,9 +16,7 @@ This Guide Says
 
 The most frequent issue we see happens when someone attempts to just copy and
 paste a configuration snippet from some other guide. Not all guides out there
-are wrong, but a scary number of them are. Even the Linode library has poor
-quality information that some NGINX community members have futily attempted to
-correct.
+are wrong, but a scary number of them are.
 
 These docs were created and reviewed by community members that work
 directly with all types of NGINX users. This specific document exists only
