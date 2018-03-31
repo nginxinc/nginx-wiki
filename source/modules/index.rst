@@ -118,6 +118,8 @@ our partners, see https://www.nginx.com/products/nginx/modules.
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | IP2Location               | Identifies the country name/code of an IP address                        | :github:`chrislim2888/ip2location-nginx`                                                |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| ipscrub                   | Anonymizes IP addresses for logging                                      | :github:`masonicboom/ipscrub`                                                           |
++---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`java_handler`       | A module for embedding Clojure, Java, and Groovy programs                | :github:`nginx-clojure/nginx-clojure`                                                   |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | JavaScript                | Embedding SpiderMonkey, a full port of Perl module, and more             | :github:`peter-leonov/ngx_http_js_module#readme`                                        |
