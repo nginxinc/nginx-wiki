@@ -17,6 +17,7 @@ nginx.conf
           location / {
               proxy_pass             http://1.2.3.4;
               proxy_set_header       Host $host;
+              proxy_buffering        on;
               proxy_cache            STATIC;
               proxy_cache_valid      200  1d;
               proxy_cache_use_stale  error timeout invalid_header updating
