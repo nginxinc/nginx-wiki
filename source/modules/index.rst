@@ -74,6 +74,8 @@ our partners, see https://www.nginx.com/products/nginx/modules.
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Stream Echo               | Provides familiar shell-style commands to NGINX stream servers           | :github:`openresty/stream-echo-nginx-module`                                            |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| Elasticsearch client      | Elasticsearch client in nginx proxy for multiple elasticsearch server    | :github:`Taymindis/nginx-elastic-client`                                                |
++---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Encrypted Session         | Encrypt NGINX variables for light-weight session-based authentication    | :github:`openresty/encrypted-session-nginx-module`                                      |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Enhanced Memcached        | Repackaging of the standard memcached module to add features             | :github:`bpaquet/ngx_http_enhanced_memcached_module`                                    |
