@@ -237,3 +237,8 @@ Advanced Topics
 ---------------
 
 * :doc:`topics/tutorials/debugging`
+
+Learning Resources
+------------------
+
+* `Programming Community Curated Resources for learning NGINX <https://hackr.io/tutorials/learn-nginx>`_
