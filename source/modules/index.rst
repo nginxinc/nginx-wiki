@@ -152,6 +152,8 @@ our partners, see https://www.nginx.com/products/nginx/modules.
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | HTTP Memc                 | Extension of the standard memcached module                               | :github:`openresty/memc-nginx-module`                                                   |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| ModJPEG                   | Add overlays and logos to JPEGs on-the-fly without degrading the quality | :github:`ioppermann/modjpeg-nginx`                                                      |
++---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | ModSecurity               | Web application firewall                                                 | :github:`spiderlabs/modsecurity/`                                                       |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Mogilefs                  | Implements a MogileFS client                                             | `Download <http://www.grid.net.ru/nginx/download/nginx_mogilefs_module-1.0.2.tar.gz>`__ |
