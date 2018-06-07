@@ -250,6 +250,8 @@ our partners, see https://www.nginx.com/products/nginx/modules.
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Sticky upstream           | Adds an upstream server persistance using cookies                        | :bitbucket:`nginx-goodies/nginx-sticky-module-ng/get/master.tar.gz`                     |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
+| Stomp Messaging Protocol  | A STOMP upstream module on nginx, send http to any AMQ which has stomp   | :github:`Taymindis/ngx-stomp`                                                           |
++---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | STS                       | A stream traffic status module                                           | :github:`vozlt/nginx-module-sts`                                                        |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Subrange                  | Split one big HTTP/Range request to multiple subrange requesets          | :github:`Qihoo360/ngx_http_subrange_module`                                             |
