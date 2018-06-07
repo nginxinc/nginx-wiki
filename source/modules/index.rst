@@ -114,7 +114,7 @@ our partners, see https://www.nginx.com/products/nginx/modules.
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | :doc:`healthcheck`        | Health check HTTP servers inside an upstream                             | :github:`cep21/healthcheck_nginx_upstreams`                                             |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| HTTP Accounting           | Realtime netflow and status code monitoring                              | :github:`Lax/ngx_http_accounting_module`                                                |
+| :doc:`traffic_accounting` | Realtime traffic and status code monitoring (HTTP + Stream)              | :github:`Lax/traffic-accounting-nginx-module`                                           |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | HTTP Iconv                | Converts character encodings                                             | :github:`calio/iconv-nginx-module`                                                      |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
@@ -455,6 +455,7 @@ our partners, see https://www.nginx.com/products/nginx/modules.
    slice
    sr_cache
    substitutions
+   traffic_accounting
    upload
    upload_progress
    user_agent
