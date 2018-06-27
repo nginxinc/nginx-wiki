@@ -57,8 +57,13 @@
         VERSION:     '{{ release|e }}',
         COLLAPSE_INDEX: false,
         FILE_SUFFIX: '{{ '' if no_search_suffix else file_suffix }}',
-        HAS_SOURCE:  {{ has_source|lower }}
+        HAS_SOURCE:  {{ has_source|lower }},
+        SOURCELINK_SUFFIX: '{{ sourcelink_suffix }}'
       };
+    </script>
+    <script type="text/javascript" src="{{ pathto('_static/js/nginx-gdpr.js', 1) }}?ver=1234"></script>
+    <script type="text/javascript">
+
     </script>
     {%- for scriptfile in script_files %}
     <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
@@ -144,8 +149,14 @@
           
 
   <link rel="stylesheet" href='{{ pathto('_static/style.css', 1) }}'>
+  <link rel="stylesheet" type='text/css' href='{{ pathto('_static/nginx-site-header.css', 1) }}'>
 </head>
 <body>
+<!-- GDPR Section Start -->
+
+  {% include 'includes/gdpr.html' %}
+<!-- GDPR Section End -->
+
   <!-- Header Section Start -->
 
   {% include 'includes/header.html' %}
@@ -224,6 +235,7 @@
    <!-- Js From old design --> 
    <!-- /#page -->
   <script type="text/javascript" src="{{ pathto('_static/nginx-theme.js', 1) }}?ver=20150911"></script>
+  <script type="text/javascript" src="{{ pathto('_static/js/nginx-site-header.js', 1) }}?ver=20171024"></script>
   <!-- End Piwik Code -->
   <script type="text/javascript">
   var shiftWindow = function() { window.scrollBy(0, -80) };

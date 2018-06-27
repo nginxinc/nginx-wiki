@@ -33,19 +33,8 @@
                 });
 
 
-            $(window).scroll(function() {
-                if ($(document).scrollTop() > 200) {
-                    $('.site-header, .mobile-header').addClass('sticky-menu', 500);
-                }
-                else {
-                    $('.site-header, .mobile-header').removeClass('sticky-menu');
-                }
-            });
-
-
             $('.searchbox .search-icon').click(function() {
               $('.searchbox').toggleClass('stretch-search');
-              $('.header-extras-wrapper').slideToggle( "500" );
             });
         });
             function buttonUp(){

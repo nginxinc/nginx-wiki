@@ -1,0 +1,128 @@
+<!-- GDPR HTML start -->
+<div id="nx_gdpr_modal" class="hidden">
+	<div class="nx_gdpr_modal_inner_wrap">
+		<div class="nx_gdpr_modal_inner">
+
+			<div id="nx_gdpr_modal_main">
+
+				<h2>Have a Cookie? :)</h2>
+				<img src="{{ pathto('_static/img/cookie-img.png', 1) }}" alt="">
+				
+				<p>Our site uses cookies to provide functionality and performance as well as for social media and advertising purposes. Social media and advertising cookies of third parties are used to offer you social media functionalities and personalized ads for NGINX content and offers. To get more information about these cookies and how we process personal data, check our <a href="https://www.nginx.com/privacy-policy/">Privacy Policy</a>. Do you accept the use of cookies and the processing of personal data involved?</p>
+
+				<div class="button-wrap">
+					<button class="nginx-button button-secondary" onclick="nx_gdpr_show_more_info()">More Information</button>
+					<button class="nginx-button button-primary" onclick="nx_gdpr_accept()" id="nx_gdpr_accept_btn">Yes, I accept</button>
+				</div>
+			</div>
+
+			<div id="nx_gdpr_modal_more_info" class="hidden">
+				<h2>Your Cookie Settings</h2>
+				<form action="">
+					<div class="gdpr_modal_chkbox">
+					  <input type="checkbox" id="nx_gdpr_func_con_checkbox" value="yes" checked disabled readonly />
+					  <label for="nx_gdpr_func_con_checkbox">Site functionality and performance</label>
+					</div>
+					<p>These cookies are required for NGINX site functionality and are therefore always enabled. These include cookies that allow you to be remembered as you explore the NGINX site, help make the shopping cart and checkout process possible as well as assist in security issues and conforming to regulations. To use the NGINX website, you have to consent to these cookies and the processing of personal data according to the NGINX website terms of use and privacy policy.</p>
+
+					<div class="gdpr_modal_chkbox">
+					  <input type="checkbox" id="nx_gdpr_social_con_checkbox" value="yes" checked />
+					  <label for="nx_gdpr_social_con_checkbox">Social media and advertising</label>
+					</div>
+					<p>Social media cookies offer the possibility to connect you to your social networks and share content from our website through social media. Advertising cookies (of third parties) collect information to help better tailor NGINX advertising to your interests, both within and beyond NGINX websites. De-selecting these cookies may result in seeing advertising that is not as relevant to you or you not being able to link effectively with Facebook, Twitter, or other social networks and/or not allowing you to share content on social media.</p>
+				</form>
+				
+				
+				<div class="button-wrap">
+					<button onclick="nx_gdpr_hide_more_info()" class="nginx-button button-primary">Back</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+</div><!-- /#nx_gdpr_modal -->
+
+
+
+<style type="text/css">
+.hidden{ display: none; }
+#nx_gdpr_modal{
+	position: fixed;
+    width: 100%;
+    height: 100%;
+    z-index: 999999999;
+    background-color: rgba(0,0,0,0.7);
+    top: 0;
+    display: table;
+    transition: display 2s;
+    -webkit-transition: display 2s;
+}
+#nx_gdpr_modal.hidden{ display: none!important;}
+
+.nx_gdpr_modal_inner_wrap{
+	display: table-cell;
+    vertical-align: middle;
+    width: 100vw;
+}
+
+.nx_gdpr_modal_inner_wrap h2{
+	font-weight: 26px;
+	margin-bottom: 10px;
+}
+.nx_gdpr_modal_inner{
+	background-color: white;
+    border-radius: 10px;
+    width: 500px;
+    height: auto;
+    margin: 15px auto;
+    position: relative;
+    text-align: center;
+    padding: 25px;
+}
+.nx_gdpr_modal_inner img{
+	height: 200px;
+}
+.nx_gdpr_modal_inner p{
+	text-align: left;
+}
+.button-wrap button.nginx-button{
+	font-size:16px;
+	padding: 8px 23px;
+	margin: 0 8px 8px;
+	box-shadow: none!important;
+	text-shadow: none!important;
+}
+.button-wrap button.nginx-button:hover{
+	border-color: #F0A828!important;
+}
+.gdpr_modal_chkbox{
+	text-align: left;
+	margin-bottom: 10px;
+}
+.gdpr_modal_chkbox label{
+	color: #000;
+	font-weight: 400;
+}
+
+@media only screen and (max-width: 640px) {
+	.nx_gdpr_modal_inner_wrap {
+	    display: block;
+	    overflow-y: scroll;
+	    height: 98vh;
+	}
+	.nx_gdpr_modal_inner {
+	    width: calc(100% - 30px);
+	    margin: 15px;
+	    padding: 25px;
+	}
+}
+
+.mktf_Explicit_Opt_In__c_wrap{
+    font-size: 95% !important;
+    padding-bottom: 7px !important;
+}
+
+
+
+</style>
+<!-- GDPR HTML end -->
