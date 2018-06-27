@@ -61,6 +61,10 @@
         SOURCELINK_SUFFIX: '{{ sourcelink_suffix }}'
       };
     </script>
+    <script type="text/javascript" src="{{ pathto('_static/js/gdpr.js', 1) }}?ver=1234"></script>
+    <script type="text/javascript">
+
+    </script>
     {%- for scriptfile in script_files %}
     <script type="text/javascript" src="{{ pathto(scriptfile, 1) }}"></script>
     {%- endfor %}
@@ -148,6 +152,11 @@
   <link rel="stylesheet" type='text/css' href='{{ pathto('_static/nginx-site-header.css', 1) }}'>
 </head>
 <body>
+<!-- GDPR Section Start -->
+
+  {% include 'includes/gdpr.html' %}
+<!-- GDPR Section End -->
+
   <!-- Header Section Start -->
 
   {% include 'includes/header.html' %}
