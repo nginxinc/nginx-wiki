@@ -231,9 +231,15 @@ Tools
 * `WiNGINX LEMP stack for Windows <http://winginx.com/en/>`_
 * `VIM NGINX configuration syntax highlighting <http://www.vim.org/scripts/script.php?script_id=1886>`_
 * :github:`Script for enabling/disabling virtual hosts easily <perusio/nginx_ensite>`
+* :github:`build-nginx <jaygooby/build-nginx>` - Fetches nginx and any optional third-party modules and dependencies you specify, such as openssl and PCRE and then configures and builds
 
 
 Advanced Topics
 ---------------
 
 * :doc:`topics/tutorials/debugging`
+
+Learning Resources
+------------------
+
+* `Programming Community Curated Resources for learning NGINX <https://hackr.io/tutorials/learn-nginx>`_

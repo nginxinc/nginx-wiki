@@ -14,6 +14,74 @@ Recipe
 
 The minimum configuration to get your application running under Nginx is:
 
+Secure Symfony 4.x
+^^^^^^^^^^^^^^^^^^^^^^^
+.. code-block:: nginx
+
+    server {
+        server_name domain.tld www.domain.tld;
+        root /var/www/project/public;
+    
+        location / {
+            # try to serve file directly, fallback to app.php
+            try_files $uri /index.php$is_args$args;
+        }
+        # DEV
+        # This rule should only be placed on your development environment
+        # In production, don't include this and don't deploy index_dev.php or config.php
+        location ~ ^/(index_dev|config)\.php(/|$) {
+            fastcgi_pass unix:/var/run/php5-fpm.sock;
+            fastcgi_split_path_info ^(.+\.php)(/.*)$;
+            include fastcgi_params;
+            # When you are using symlinks to link the document root to the
+            # current version of your application, you should pass the real
+            # application path instead of the path to the symlink to PHP
+            # FPM.
+            # Otherwise, PHP's OPcache may not properly detect changes to
+            # your PHP files (see https://github.com/zendtech/ZendOptimizerPlus/issues/126
+            # for more information).
+            fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+            fastcgi_param DOCUMENT_ROOT $realpath_root;
+        }
+        # PROD
+        location ~ ^public/index\.php(/|$) {
+            fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+            fastcgi_split_path_info ^(.+\.php)(/.*)$;
+            include fastcgi_params;
+           # When you are using symlinks to link the document root to the
+           # current version of your application, you should pass the real
+           # application path instead of the path to the symlink to PHP
+           # FPM.
+           # Otherwise, PHP's OPcache may not properly detect changes to
+           # your PHP files (see https://github.com/zendtech/ZendOptimizerPlus/issues/126
+           # for more information).
+           fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+           fastcgi_param DOCUMENT_ROOT $realpath_root;
+           # Prevents URIs that include the front controller. This will 404:
+           # http://domain.tld/app.php/some-path
+           # Remove the internal directive to allow URIs like this
+           internal;
+       }
+   
+       # return 404 for all other php files not matching the front controller
+       # this prevents access to other php files you don't want to be accessible.
+       location ~ \.php$ {
+         return 404;
+       }
+   
+       error_log /var/log/nginx/project_error.log;
+       access_log /var/log/nginx/project_access.log;
+    }
+
+Depending on your PHP-FPM config, the ``fastcgi_pass`` can also be ``fastcgi_pass 127.0.0.1:9000``.
+
+This executes only ``app.php``, ``app_dev.php`` and ``config.php`` in the web directory. All other files ending in ``".php"`` will be denied.
+
+If you have other PHP files in your web directory that need to be executed, be sure to include them in the location block above.
+
+After you deploy to production, make sure that you cannot access the ``app_dev.php`` or ``config.php`` scripts (i.e. ``http://example.com/app_dev.php`` and ``http://example.com/config.php``). If you can access these, be sure to remove the DEV section from the above configuration.
+
+
 Secure Symfony 3.x, 2.x
 ^^^^^^^^^^^^^^^^^^^^^^^
 
