@@ -44,7 +44,7 @@ Secure Symfony 4.x
             fastcgi_param DOCUMENT_ROOT $realpath_root;
         }
         # PROD
-        location ~ ^public/index\.php(/|$) {
+        location ~ ^/index\.php(/|$) {
             fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
             fastcgi_split_path_info ^(.+\.php)(/.*)$;
             include fastcgi_params;
