@@ -484,7 +484,7 @@ Consider how much of your requests are for static content (images, css,
 javascript, etc.). That's probably a lot of overhead you just saved.
 
 Use ``$request_filename`` for ``SCRIPT_FILENAME``
--------------------
+-------------------------------------------------
 
 Use ``$request_filename`` instead of ``$document_root$fastcgi_script_name``.
 
