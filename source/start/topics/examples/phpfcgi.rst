@@ -30,7 +30,7 @@ For example on debian and ubuntu by default there is ``/etc/nginx/fastcgi_params
     fastcgi_param   SCRIPT_FILENAME         $document_root$fastcgi_script_name;
     fastcgi_param   SCRIPT_NAME             $fastcgi_script_name;
     fastcgi_param   PATH_INFO               $fastcgi_path_info;
-    fastcgi_param 	PATH_TRANSLATED	        $document_root$fastcgi_path_info;
+    fastcgi_param   PATH_TRANSLATED         $document_root$fastcgi_path_info;
     fastcgi_param   REQUEST_URI             $request_uri;
     fastcgi_param   DOCUMENT_URI            $document_uri;
     fastcgi_param   DOCUMENT_ROOT           $document_root;
