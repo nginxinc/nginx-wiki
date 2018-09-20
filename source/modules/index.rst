@@ -140,7 +140,7 @@ https://github.com/nginxinc/nginx-wiki.
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Lock Free Queue           | enqueue/dequeue across multiple threads and workers without any lock     | :github:`Taymindis/ngx_lfqueue`                                                                |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| Lock Free Stack           | push/pop across multiple threads and workers without any lock     	   | :github:`Taymindis/ngx_lfstack`                                                                |
+| Lock Free Stack           | push/pop across multiple threads and workers without any lock            | :github:`Taymindis/ngx_lfstack`                                                                |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Log If                    | Log the requests only when given conditions are met                      | :github:`cfsego/ngx_log_if/`                                                                   |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
