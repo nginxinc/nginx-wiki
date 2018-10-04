@@ -57,7 +57,7 @@ More Numbers
 ------------
 The default for Apache is to use AllowOverride All. Let's look at this for a Drupal website. 
 One image for the theme. 
-If you're website DocRoot is at ``/var/www/drupal6/`` then we just added more file system stats. 
+If your website DocRoot is at ``/var/www/drupal6/`` then we just added more file system stats. 
 This adds 3 stats per request. 
 This is an incredibly common Apache/Drupal setup. 
 It's the end result of countless guides out there.
