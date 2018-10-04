@@ -483,6 +483,54 @@ get involved.
 Consider how much of your requests are for static content (images, css,
 javascript, etc.). That's probably a lot of overhead you just saved.
 
+Use ``$request_filename`` for ``SCRIPT_FILENAME``
+-------------------------------------------------
+
+Use ``$request_filename`` instead of ``$document_root$fastcgi_script_name``.
+
+If use ``alias`` directive with ``$document_root$fastcgi_script_name``, ``$document_root$fastcgi_script_name`` will return the wrong path.
+
+BAD:
+
+.. code-block:: nginx
+
+   location /api/ {
+        index  index.php index.html index.htm;
+        alias /app/www/;
+        location ~* "\.php$" {
+            try_files      $uri =404;
+            fastcgi_pass   127.0.0.1:9000;
+            fastcgi_index  index.php;
+            fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        }
+    }
+
+Request ``/api/testing.php``:
+
+- ``$document_root$fastcgi_script_name`` == ``/app/www//api/testing.php``
+- ``$request_filename`` == ``/app/www/testing.php``
+
+Request ``/api/``:
+
+- ``$document_root$fastcgi_script_name`` == ``/app/www//api/index.php``
+- ``$request_filename`` == ``/app/www/index.php``
+
+And if you use ``$request_filename``, you should set index using ``index`` directive, ``fastcgi_index`` will not work.
+
+GOOD:
+
+.. code-block:: nginx
+
+   location /api/ {
+        index  index.php index.html index.htm;
+        alias /app/www/;
+        location ~* "\.php$" {
+            try_files      $uri =404;
+            fastcgi_pass   127.0.0.1:9000;
+            fastcgi_param  SCRIPT_FILENAME  $request_filename;
+        }
+    }
+
 Config Changes Not Reflected
 ----------------------------
 

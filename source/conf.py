@@ -333,7 +333,11 @@ html_theme_options = {
     "base_url": "/"
 }
 html_title = "NGINX"
-
+#Use user defined variables in templates
+html_context = {
+  'test_var': "test value", 
+  'site_url' : 'https://www.nginx.com/resources/wiki'
+  }
 
 # Override Pygments error handling
 
