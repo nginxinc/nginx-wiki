@@ -76,6 +76,14 @@ def bitbucket_role(role, rawtext, text, lineno, inliner, options={}, content=[])
 
     return [node], []
 
+def support_role(role, rawtext, text, lineno, inliner, options={}, content=[]):
+
+    node = reference( '(support)', '(support)', refuri="https://www.nginx.com/products/nginx/modules/#"+text, **options)
+    node.insert(0, raw('', text='', format='html'))
+
+    return [node], []
+
+
 def setup(app): # pragma: no cover
     app.info('Adding the font awesome icon role')
     app.add_role('icon', icon_role)
@@ -83,5 +91,7 @@ def setup(app): # pragma: no cover
     app.add_role('github', github_role)
     app.info('Adding the font awesome bitbucket role')
     app.add_role('bitbucket', bitbucket_role)
+    app.info('Adding the font awesome nginx support link role')
+    app.add_role('support', support_role)
 
     return
