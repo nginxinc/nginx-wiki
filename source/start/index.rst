@@ -242,4 +242,5 @@ Advanced Topics
 Learning Resources
 ------------------
 
+* `Learn NGINX from the top tutorials ranked by developers <https://gitconnected.com/learn/nginx>`_
 * `Programming Community Curated Resources for learning NGINX <https://hackr.io/tutorials/learn-nginx>`_
