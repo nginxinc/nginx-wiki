@@ -671,3 +671,128 @@ aside.wiki-sidebar .sidebar-widget ul li a {
 
 
 }
+
+
+/*======GDPR2==================*/
+
+  .hidden{
+    display: none;
+  }
+  #nx_gdpr_modal2 {
+
+    position: fixed;
+    left: 0;
+    bottom: 25%;
+    width: 420px;
+    background: #fff;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    -webkit-box-shadow: 1px 0 1px #ccc;
+    box-shadow: 1px 0 1px #ccc;
+    z-index: 999;
+    padding: 2rem 3rem 1rem;
+    color: #404040;
+    font-style: normal;
+    font-weight: 300;
+
+}
+#nx_gdpr_modal2 #nx_gdpr_modal_more_info2 {
+    padding-bottom: 2rem;
+}
+#nx_gdpr_modal2 h2 {
+    margin: 1rem 0 0;
+    font-size: 1.5rem;
+    color: #009639;
+    font-weight: 500;
+    text-align: inherit;
+    clear: both;
+    font-family: Roboto-Regular,"Helvetica Neue",Arial,sans-serif;
+    line-height: 1.25;
+}
+#nx_gdpr_modal2 #nx_gdpr_modal_main2 p {
+    margin-bottom: 0;
+    color: #404040;
+    font-style: normal;
+    font-weight: 300;
+
+}
+#nx_gdpr_modal2 p {
+    font-size: 1.6rem;
+}
+#nx_gdpr_modal2 .submit-button-wrap {
+    text-align: center;
+    padding: 0 2rem 1rem;
+    overflow: hidden;
+    float: right;
+}
+#nx_gdpr_modal2 #nx_gdpr_accept_btn {
+    float: right;
+    font-size: 1.5rem;
+    padding: .7rem 1.8rem;
+    background-color: #fff;
+}
+
+#nx_gdpr_modal2 #nx_gdpr_modal_more_info2 {
+    padding-bottom: 2rem;
+}
+#nx_gdpr_modal2 #nx_gdpr_modal_more_info2 .less-info-wrap {
+    float: right;
+}
+#nx_gdpr_modal2 #nx_gdpr_modal_more_info2 .less-info-wrap a {
+    font-size: 3rem;
+    outline: 0;
+    color: #009639;
+text-decoration: none;
+}
+
+#nx_gdpr_modal2 #nx_gdpr_modal_more_info2 .gdpr_info_section .gdpr_modal_chkbox2 {
+    text-align: left;
+    float: left;
+    margin-right: 20px;
+    display: inline-block;
+}
+#nx_gdpr_modal2 #nx_gdpr_modal_more_info2 .gdpr_info_section p {
+    margin-bottom: .2rem;
+    line-height: 2.3rem;
+    width: 87%;
+    display: inline-block;
+
+}
+
+
+@media screen and (max-width: 575px) {
+    
+  #masthead.site-header {
+      height: auto!important;
+      padding-bottom: 14px;
+  }
+  #masthead.site-header .header-menus{
+    top:64px!important;
+  }
+
+  #nx_gdpr_modal2 {
+
+      width: auto;
+      position: relative;
+      border-radius: 0;
+      background-color: #f0eeed;
+
+  }
+
+  #nx_gdpr_modal2 #nx_gdpr_modal_main2 {
+      text-align: center;
+  }
+  #nx_gdpr_modal2 .submit-button-wrap {
+      padding-top: 2rem;
+      float: none;
+  }
+  #nx_gdpr_modal2 #nx_gdpr_accept_btn {
+      float: none;
+      margin: 0 auto;
+  }
+
+
+
+}
+
+/*======END GDPR2==================*/

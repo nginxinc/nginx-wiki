@@ -156,7 +156,7 @@
 
   {% include 'includes/header.html' %}
 <!-- Header Section End -->
-
+<div id="nx_fake_header"><!-- a fake div to fix the auto padding of next element of #masthead div--></div>
 <!-- Navigation Section Start -->
 {%- block header %}{% endblock %}
 
@@ -229,6 +229,8 @@
  
    <!-- Js From old design --> 
    <!-- /#page -->
+  <script type="text/javascript" src="{{ pathto('_static/js/nginx-cookie.js', 1) }}?ver=20150911"></script>
+  <script type="text/javascript" src="{{ pathto('_static/js/nginx-gdpr2.js', 1) }}?ver=20150911"></script> 
   <script type="text/javascript" src="{{ pathto('_static/nginx-theme.js', 1) }}?ver=20150911"></script>
   <script type="text/javascript" src="{{ pathto('_static/js/nginx-site-header.js', 1) }}?ver=20171024"></script>
   <!-- End Piwik Code -->
