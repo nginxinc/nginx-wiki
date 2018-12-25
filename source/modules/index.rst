@@ -70,7 +70,7 @@ our partners, see https://www.nginx.com/products/nginx/modules.
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | Dynamic Upstream          | Update upstreams' config by restful interface                            | :github:`yzprofile/ngx_http_dyups_module`                                               |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
-| Dynamic limit             | Dynamic lock IP and release regularly                                    | :github:`limithit/ngx_dynamic_limit_req_module`                                         |
+| Dynamic limit             | dynamically lock IP and release it periodically                          | :github:`limithit/ngx_dynamic_limit_req_module`                                         |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
 | HTTP Echo                 | Provides familiar shell-style commands to NGINX HTTP servers             | :github:`openresty/echo-nginx-module`                                                   |
 +---------------------------+--------------------------------------------------------------------------+-----------------------------------------------------------------------------------------+
