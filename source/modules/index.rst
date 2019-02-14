@@ -72,7 +72,7 @@ https://github.com/nginxinc/nginx-wiki.
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Dynamic Upstream          | Update upstreams' config by restful interface                            | :github:`yzprofile/ngx_http_dyups_module`                                                      |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| Dynamic limit             | Dynamic lock IP and release regularly                                    | :github:`limithit/ngx_dynamic_limit_req_module`                                                |
+| Dynamic limit             | Dynamically lock IP and release it periodically                          | :github:`limithit/ngx_dynamic_limit_req_module`                                                |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | HTTP Echo                 | Provides familiar shell-style commands to NGINX HTTP servers             | :github:`openresty/echo-nginx-module`                                                          |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
