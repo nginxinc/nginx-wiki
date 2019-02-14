@@ -1,12 +1,15 @@
 <!-- NGINX SITE HEADER START -->
 <header id="masthead" class="site-header" role="banner" itemscope itemtype="http://schema.org/Organization">
+    <!-- GDPR Section Start -->
+  {% include 'includes/gdpr2.html' %}
+  <!-- GDPR Section End -->
     <!-- sticky-menu show-sticky-menu-->
     <div class="site-header-inner">
 
         <div class="site-branding-wrapper">
             <div class="site-branding">
                 <div class="site-title" itemprop="name">
-                    <a href="https://www.nginx.com/" rel="home"><img src="https://www.nginx.com/wp-content/themes/nginx-theme/assets/img/logo.png" alt="Web Server Load Balancing with NGINX Plus"></a>
+                    <a href="https://www.nginx.com/" rel="home"><img src="{{ pathto('_static/img/logo.svg', 1)}}" alt="Web Server Load Balancing with NGINX Plus"></a>
                 </div>
             </div>
             <!-- /.site-branding -->
@@ -28,7 +31,7 @@
             </div>
             <!-- /.header-actions-menu-location -->
             <div class="primary-menu-location-wrapper">
-                <a class="menu-logo" href="https://www.nginx.com/" rel="home"><img src="https://www.nginx.com/wp-content/themes/nginx-theme/assets/img/logo.png" alt="Web Server Load Balancing with NGINX Plus"></a>
+                <a class="menu-logo" href="https://www.nginx.com/" rel="home"><img src="{{ pathto('_static/img/logo.svg', 1)}}" alt="Web Server Load Balancing with NGINX Plus"></a>
                 <nav id="site-navigation" class="primary-menu-location" role="navigation">
                     <div class="menu-primary-container">
                         <ul id="menu-primary" class="menu">
