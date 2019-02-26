@@ -79,7 +79,11 @@
 <head>
   <meta http-equiv="Content-Type" content="text/html; charset={{ encoding }}" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-
+  {% if pagename == 'index' %}
+  <link rel="canonical" href="{{site_url}}/" />
+  {% else %}
+  <link rel="canonical" href="{{site_url}}/{{ pagename | replace('/index','') }}/" />
+  {% endif %}
     {{ metatags }}
     {%- block htmltitle %}
     <title>{{ title|striptags|e }}{{ titlesuffix }}</title>

@@ -51,14 +51,29 @@ This configuration file was provided by Seph. You can see the complete informati
         location ~* ^/(?:index|piwik)\.php$ {
                 fastcgi_pass unix:/tmp/php-cgi/php-cgi.socket;
         }
-
-        # Any other attempt to access PHP files returns a 404.
-        location ~* ^.+\.php$ {
+        
+        # Return a 404 for protected directories
+        location ~ /(?:config|tmp|vendor)/ {
                   return 404;
         }
 
+        # Any other attempt to access PHP files returns a 404.
+        location ~* ^.*\.php$ {
+                  return 404;
+        }
+
+        # Return a 404 for files and directories starting with a period. This includes directories used by version control systems
+        location ~ /\. {
+                 return 404;
+        }
+        
+        # Return a 404 for package manager config files
+        location ~ (?:composer.json|composer.lock|bower.json)$ {
+                 return 404;
+        }
+
         # Return a 404 for all text files.
-        location ~* ^/(?:README|LICENSE[^.]*|LEGALNOTICE)(?:\.txt)*$ {
+        location ~* (?:README|LICENSE|LEGALNOTICE|\.txt|\.md)$ {
                  return 404;
         }
 

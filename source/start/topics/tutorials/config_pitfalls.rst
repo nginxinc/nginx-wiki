@@ -16,9 +16,7 @@ This Guide Says
 
 The most frequent issue we see happens when someone attempts to just copy and
 paste a configuration snippet from some other guide. Not all guides out there
-are wrong, but a scary number of them are. Even the Linode library has poor
-quality information that some NGINX community members have futily attempted to
-correct.
+are wrong, but a scary number of them are.
 
 These docs were created and reviewed by community members that work
 directly with all types of NGINX users. This specific document exists only
@@ -485,6 +483,54 @@ get involved.
 Consider how much of your requests are for static content (images, css,
 javascript, etc.). That's probably a lot of overhead you just saved.
 
+Use ``$request_filename`` for ``SCRIPT_FILENAME``
+-------------------------------------------------
+
+Use ``$request_filename`` instead of ``$document_root$fastcgi_script_name``.
+
+If use ``alias`` directive with ``$document_root$fastcgi_script_name``, ``$document_root$fastcgi_script_name`` will return the wrong path.
+
+BAD:
+
+.. code-block:: nginx
+
+   location /api/ {
+        index  index.php index.html index.htm;
+        alias /app/www/;
+        location ~* "\.php$" {
+            try_files      $uri =404;
+            fastcgi_pass   127.0.0.1:9000;
+            fastcgi_index  index.php;
+            fastcgi_param  SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+        }
+    }
+
+Request ``/api/testing.php``:
+
+- ``$document_root$fastcgi_script_name`` == ``/app/www//api/testing.php``
+- ``$request_filename`` == ``/app/www/testing.php``
+
+Request ``/api/``:
+
+- ``$document_root$fastcgi_script_name`` == ``/app/www//api/index.php``
+- ``$request_filename`` == ``/app/www/index.php``
+
+And if you use ``$request_filename``, you should set index using ``index`` directive, ``fastcgi_index`` will not work.
+
+GOOD:
+
+.. code-block:: nginx
+
+   location /api/ {
+        index  index.php index.html index.htm;
+        alias /app/www/;
+        location ~* "\.php$" {
+            try_files      $uri =404;
+            fastcgi_pass   127.0.0.1:9000;
+            fastcgi_param  SCRIPT_FILENAME  $request_filename;
+        }
+    }
+
 Config Changes Not Reflected
 ----------------------------
 
@@ -634,3 +680,42 @@ only the TLS protocols instead:
 .. code-block:: nginx
 
     ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+
+Using the ``try_files $uri`` directive with ``alias``
+-----------------------------------------------------
+
+The symptoms of this are difficult to diagnose: typically, it will appear that
+you've done everything right and yet you get mysterious 404 errors. Why? well,
+turning on debug-level error logging reveals that ``try_files`` is appending
+``$uri`` onto the path already set with ``alias``. This is due to a bug_ in NGINX,
+but don't worry—the workaround is simple! As long as your ``try_files`` line is
+something like ``try_files $uri $uri/ =404;``, you can simply delete the ``try_files``
+line with no significant adverse effect. Here is an example where you cannot use
+``try_files``.
+
+BAD:
+
+.. code-block:: nginx
+
+    location ~^/\~(?<user>[^/]*)/(?<page>.*)$ {
+        alias /home/$user/public_html/$page;
+        try_files $uri $uri/ =404;
+    }
+
+GOOD:
+
+.. code-block:: nginx
+
+    location ~^/\~(?<user>[^/]*)/(?<page>.*)$ {
+        alias /home/$user/public_html/$page;
+    }
+
+The one caveat is that this workaround prevents you from using ``try_files`` to avoid
+PATH_INFO attacks. See `Passing Uncontrolled Requests to PHP`_ above for alternative ways
+to mitigate these attacks.
+
+Also note that the ``snippets/fastcgi-php.conf`` file shipped by some Linux distributions
+may need to be edited to remove a ``try_files`` directive if it's included in a ``location``
+block with ``alias``.
+
+.. _bug: https://trac.nginx.org/nginx/ticket/97
