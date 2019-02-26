@@ -120,7 +120,7 @@ The problem was that EE wanted to have the URL like this http://domain.com/index
 Prevent duplicate content
 -------------------------
 
-e.g. preventing http://example.com/index.php/your-path/
+e.g. preventing `http://example.com/index.php/your-path/`
 
 In your php configuration:
 
