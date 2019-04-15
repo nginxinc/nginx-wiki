@@ -73,6 +73,7 @@ Getting Started
    topics/recipes/zend
    topics/recipes/zenphoto
    topics/recipes/fcgizope
+   topics/recipes/b2evolution
    topics/depth/ifisevil
    topics/tutorials/gettingstarted
    topics/tutorials/install
@@ -180,6 +181,7 @@ applications such as mediawiki don't work, please check if PHP FastCGI
 * :doc:`topics/recipes/zend`
 * :doc:`topics/recipes/zenphoto`
 * :doc:`topics/recipes/fcgizope`
+* :doc:`topics/recipes/b2evolution`
 
 Other Examples
 --------------
