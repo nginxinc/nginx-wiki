@@ -47,5 +47,5 @@ This configuration isn't heavily tested, but I used it as a base for further enh
       fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
       }
 
-}
+    }
 
