@@ -55,7 +55,7 @@ ngx_log_stderr
 
    Sends an error to the system's stderr. Accepts a variable list of parameters using printf format placeholders.
 
-   :param err: A pointer to the NGINX logging object
+   :param err: The operating system error code (0 if not applicable)
    :param fmt: The error message text including printf format placeholders
 
 ngx_log_abort
