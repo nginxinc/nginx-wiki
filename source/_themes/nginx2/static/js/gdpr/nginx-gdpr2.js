@@ -265,7 +265,7 @@ var NX_GDPR = {
   showPopup: function () {
     // set the state of the checkboxes according to the cookies.
     var scc = NX_COOKIES.getCookie(this.socialCookieName);
-    if (!scc || scc === 'no') {
+    if (scc === 'no') {
       document.getElementById('nx_gdpr_social_con_checkbox').checked = false;
     }
     this.showElement('nx_gdpr_modal2');
