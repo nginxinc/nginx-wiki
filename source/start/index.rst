@@ -244,3 +244,4 @@ Learning Resources
 
 * `Learn NGINX - Top NGINX tutorials ranked by developers <https://gitconnected.com/learn/nginx>`_
 * `Programming Community Curated Resources for learning NGINX <https://hackr.io/tutorials/learn-nginx>`_
+* `Learn NGINX - Free & Best online courses to learn NGINX  <https://coursesity.com/free-tutorials-learn/Nginx/96>`_
