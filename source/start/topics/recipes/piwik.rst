@@ -1,14 +1,16 @@
 
 .. meta::
-   :description: A sample NGINX configuration for Piwik.
+   :description: A sample NGINX configuration for Matomo.
 
-Piwik
-======
+Matomo
+=======
 
 Recipe
 ------
 
-This configuration file was provided by Seph. You can see the complete information :github:`here <perusio/piwik-nginx>`.
+You can see the complete information :github:`here <matomo-org/matomo-nginx>`.
+
+This configuration file was initially provided by Seph.
 
 .. code-block:: nginx
 
