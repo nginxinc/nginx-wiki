@@ -18,7 +18,7 @@ Recipe
 
         location / {
             # this is the usual way, but careful because all non-existing content will display home page with code 200
-            try_files $uri $uri/ /spip.php?q=$uri&$args;
+            try_files    $uri $uri/ /spip.php?$args;
             # if you don't use rewriting (all internal links are already like spip.php?…), next line is enough
             #try_files $uri $uri/;
         }
