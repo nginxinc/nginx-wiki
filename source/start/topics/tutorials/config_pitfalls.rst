@@ -601,9 +601,9 @@ NGINX server is even set up run workers as root. Yup, we now have your user
 list as well as password hashes and how they've been hashed. We now own your
 box.
 
-.. todo:: dead link for Filesystem Hierarchy Standard removed, needs replacing
+.. _`File System Hierarchy` : https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
 
-The [Filesystem Hierarchy Standard](https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard "Filesystem Hierarchy Standard on WikiPedia") defines where data should exist. You should
+The `File System Hierarchy`_ defines where data should exist. You should
 definitely read it. The short version is that you want your web content to exist
 in either ``/var/www/``, ``/srv``, ``/usr/share/www``.
 
