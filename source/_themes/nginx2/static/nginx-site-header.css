@@ -514,7 +514,7 @@ All CSS related to site header includeing logo, CSR FTR buttons, search box, men
     }
     .primary-menu-location .menu-item.menu-item-has-children:hover>a::after {
         content: '';
-        background-image: url('../img/primary-menu-parent-item-edge.png?1480854649');
+        background-image: url('../_static/img/primary-menu-parent-item-edge.png?1480854649');
         height: 31px;
         position: absolute;
         right: -21px;
