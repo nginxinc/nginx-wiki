@@ -14,10 +14,15 @@ NGINX 3\ :sup:`rd` Party Modules
 ================================
 
 Below is a list of third-party modules for NGINX and NGINX Plus, created
-and maintained by members of the NGINX community. NGINX, Inc. provides 
-support for some of these modules, where indicated in the table below.
-For a full list of supported modules, and additional NGINX Plus Certified 
-Modules from our partners, see https://www.nginx.com/products/nginx/modules.
+and maintained by members of the NGINX community. NGINX, Inc. does not
+provide support for these modules, so please reach out to each
+individual module developer for issues or help. For information on how
+to contribute a module to this list, see
+https://github.com/nginxinc/nginx-wiki.
+
+For a list of officially
+supported modules from NGINX, Inc. and NGINX Plus Certified Modules from
+our partners, see https://www.nginx.com/products/nginx/modules.
 
 For information on how to contribute a module to this list, see
 https://github.com/nginxinc/nginx-wiki.
