@@ -2197,3 +2197,124 @@ button.nginx-button.btn-have-icon span.icon{
 <a href="" class="nginx-button button-primary">Button 2</a>
 <a href="" class="nginx-button button-primary btn-have-icon">Button 3 <span class="icon icon-arrow-disc"></span></a>
 =====================*/
+
+/* ===== GDPR styles ======= */
+/* Marketo form styles */
+.mktf_Explicit_Opt_In__c_wrap {
+  font-size: 95% !important;
+  text-align: left;
+  margin-top: 8px;
+  display: flex;
+}
+
+.mktf_Explicit_Opt_In__c_wrap .mktf_Explicit_Opt_In__c {
+    display: block;
+    width: initial;
+    margin-right: 5px;
+    margin-top: 5px;
+    margin-bottom: initial !important;
+}
+ 
+ .mktf_Explicit_Opt_In__c_wrap  label {
+    position: relative;
+    left: 5px;
+}
+  
+ .mktf_Explicit_Opt_In__c_wrap #free_trial_request_Explicit_Opt_In__c {
+    float: left;
+    width: initial;
+    margin-top: -3px;
+}
+
+/* GDPR 2 styles */
+
+#nx_gdpr_modal2 {
+   position: fixed;
+  left: 0;
+  bottom: 25%;
+  width: 420px;
+  background: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 1px 0 1px #ccc;
+  z-index: 999; /*we want this to be on top always*/
+  padding: 2rem 3rem 1rem;
+ 
+}
+#nx_gdpr_modal2 h2 {
+    margin: 1rem 0 0;
+    font-size: 1.5rem;
+    color: #009639;
+    font-weight: 500;
+    text-align: inherit;
+}
+#nx_gdpr_modal2 p {
+    font-size: 1.6rem;
+}
+#nx_gdpr_modal2 #nx_gdpr_modal_more_info2 {
+    padding-bottom: 2rem;
+}
+#nx_gdpr_modal2 #nx_gdpr_modal_more_info2 .gdpr_info_section {
+    overflow: hidden; /* contains floats */
+    text-align: left;
+}
+#nx_gdpr_modal2 #nx_gdpr_modal_more_info2 .gdpr_info_section .gdpr_modal_chkbox2 {
+    text-align: left;
+    float: left;
+    margin-right: 20px;
+    display: inline-block;
+}
+#nx_gdpr_modal2 #nx_gdpr_modal_more_info2 .gdpr_info_section p {
+    margin-bottom: .2rem;
+    line-height: 2.3rem;
+    width: 87%;
+    display: inline-block;
+}
+#nx_gdpr_modal2 #nx_gdpr_modal_more_info2 .less-info-wrap {
+    float: right;
+}
+#nx_gdpr_modal2 #nx_gdpr_modal_more_info2 .less-info-wrap a {
+    font-size: 3rem;
+    outline: none;
+}
+#nx_gdpr_modal2 #nx_gdpr_modal_main2 p {
+    margin-bottom: 0;
+}
+
+#nx_gdpr_modal2 #nx_gdpr_modal_main2 img.gdpr-cookie {
+   width: 16px; 
+}
+#nx_gdpr_modal2 .submit-button-wrap {
+    text-align: center;
+    padding: 0 2rem 1rem;
+    overflow: hidden; /* contains floats */
+    float: right;
+}
+
+#nx_gdpr_modal2 #nx_gdpr_accept_btn {
+    float: right;
+    font-size: 1.5rem;
+    padding: 0.7rem 1.8rem;
+    background-color: #fff;
+}
+
+@media screen and (max-width:575.98px) {
+    #nx_gdpr_modal2  {
+       width: auto;
+        position: relative;
+        border-radius: 0;
+        background-color: #f0eeed; 
+    }
+    #nx_gdpr_modal2 #nx_gdpr_modal_main2 img.gdpr-cookie {
+       text-align: center;
+    }
+    #nx_gdpr_modal2 .submit-button-wrap {
+       padding-top: 2rem;
+      float: none; 
+    }
+    #nx_gdpr_modal2 #nx_gdpr_accept_btn {
+        float: none;
+        margin: 0 auto;
+    }
+    
+}
