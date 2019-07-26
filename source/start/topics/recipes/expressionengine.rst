@@ -145,5 +145,5 @@ Note this may require an explicit 404 page e.g. in your server block:
       # ...
     }
 
-EllisLab only very recently (2013/12) updated their docs with this, see: https://expressionengine.com/blog/fully-removing-index.php-from-urls
+EllisLab only very recently (2013/12) updated their docs with this, see their `documentation page <https://docs.expressionengine.com/latest/installation/best-practices.html#removing-indexphp-from-your-urls>`_.
 
