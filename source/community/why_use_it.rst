@@ -169,6 +169,10 @@ NGINX is more than 50% faster than Apache.
 
 -- `WPArena <https://wparena.com/>`__
 
+At `Kinsta <https://kinsta.com>`__, we exclusively use Nginx as part of our performance-optimized hosting solutions for WordPress and WooCommerce. Every WordPress site is housed in its own isolated container, which has all of the software resources required to run it (Nginx, Linux, PHP, MySQL). The resources are 100% private and are not shared between any other sites. Nginx is very efficient in serving static content on its own. It can cache static content without the need to fetch it from the protected, origin server every time. Tens of thousands of small and large WordPress sites are powered by Nginx at Kinsta. You can read more on why we chose `Nginx over Apache <https://kinsta.com/blog/nginx-vs-apache/>`__.
+
+CFO at Kinsta
+
 .. _why_use_it.notes:
 
 Notes
