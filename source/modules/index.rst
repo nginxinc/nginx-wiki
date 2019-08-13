@@ -185,7 +185,7 @@ https://github.com/nginxinc/nginx-wiki.
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | OCSP proxy                | OCSP processing module designed for response caching                     | :github:`kyprizel/nginx_ocsp_proxy-module`                                                     |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| OpenSSL Version           | OpenSSL minimum version constraints in configuration                     | :github:`apcera/nginx-openssl-version`                                                         |
+| OpenSSL Version           | OpenSSL minimum version constraints in configuration                     | :github:`PennockTech/nginx-openssl-version`                                                         |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | :doc:`owner_match`        | Provides a simple file owner-based access control                        | `Download <https://heiher.info/1755.html>`_                                                    |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
