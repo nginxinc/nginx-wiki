@@ -223,6 +223,8 @@ https://github.com/nginxinc/nginx-wiki.
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | HTTP Tarantool            | HTTP Upstream module for communicate with Tarantool DB                   | :github:`tarantool/nginx_upstream_module`                                                      |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| redirection.io            | Embeds the redirect manager and SEO-optimizer "redirection.io" in NGINX  | :github:`redirectionio/libnginx-mod-redirectionio`                                             |
++---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Replace Filter            | Performs regular expression substitutions on response bodies             | :github:`openresty/replace-filter-nginx-module`                                                |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Roboo                     | HTTP Robot Mitigator that integrates easily with NGINX                   | :github:`yuri-gushin/Roboo/downloads`                                                          |
