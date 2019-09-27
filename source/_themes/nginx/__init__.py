@@ -24,8 +24,9 @@ def setup(app):
 def add_html_link(app, pagename, templatename, context, doctree):
     """As each page is built, collect page names for the sitemap"""
     base_url = app.config['html_theme_options'].get('base_url', '')
-    if base_url:
-        app.sitemap_links.append(base_url + pagename + ".html")
+    # Edit 09/29/19 Now using nx_sitemap_generator extension to generate sitemap links
+    #if base_url:
+    #    app.sitemap_links.append(base_url + pagename + ".html")
 
 
 def create_sitemap(app, exception):
