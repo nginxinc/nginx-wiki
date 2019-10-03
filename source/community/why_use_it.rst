@@ -169,6 +169,10 @@ NGINX is more than 50% faster than Apache.
 
 -- `WPArena <https://wparena.com/>`__
 
+Our business is one of the apparently growing number bailing out on Microsoft's IIS servers. The problem is that we need to serve out static content over lots of concurrent connections and had never been satisfied with the MS performance. Bottom line, we narrowed it down to Apache and NGINX but finally went with the latter, to the shock of some, after talking to a few companies that had similar use demands. After making the switch, we tested exhaustively and found that our content delivery speed almost doubled, which was a good enough result to justify the hassle of changing by itself, but also found that overall system memory demand decreased almost 5%. We finally fell in love with our server.
+
+-- `Gary Stevens, Hosting Canada <https://hostingcanada.org/>`__
+
 .. _why_use_it.notes:
 
 Notes
