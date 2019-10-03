@@ -189,7 +189,7 @@ https://github.com/nginxinc/nginx-wiki.
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | OCSP proxy                | OCSP processing module designed for response caching                     | :github:`kyprizel/nginx_ocsp_proxy-module`                                                     |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| OpenSSL Version           | OpenSSL minimum version constraints in configuration                     | :github:`apcera/nginx-openssl-version`                                                         |
+| OpenSSL Version           | OpenSSL minimum version constraints in configuration                     | :github:`PennockTech/nginx-openssl-version`                                                    |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | :doc:`ssl_status`         | OpenSSL status counters (SSL_CTX_sess_*)                                 | :github:`andreydomas/ngx_http_ssl_status_module`                                               |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
