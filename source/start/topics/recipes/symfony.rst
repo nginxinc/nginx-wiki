@@ -30,7 +30,7 @@ Secure Symfony 4.x
         # This rule should only be placed on your development environment
         # In production, don't include this and don't deploy index_dev.php or config.php
         location ~ ^/(index_dev|config)\.php(/|$) {
-            fastcgi_pass unix:/var/run/php5-fpm.sock;
+            fastcgi_pass unix:/var/run/php7.2-fpm.sock;
             fastcgi_split_path_info ^(.+\.php)(/.*)$;
             include fastcgi_params;
             # When you are using symlinks to link the document root to the
@@ -45,7 +45,7 @@ Secure Symfony 4.x
         }
         # PROD
         location ~ ^/index\.php(/|$) {
-            fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+            fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
             fastcgi_split_path_info ^(.+\.php)(/.*)$;
             include fastcgi_params;
            # When you are using symlinks to link the document root to the

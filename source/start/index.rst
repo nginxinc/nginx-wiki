@@ -73,6 +73,7 @@ Getting Started
    topics/recipes/zend
    topics/recipes/zenphoto
    topics/recipes/fcgizope
+   topics/recipes/b2evolution
    topics/depth/ifisevil
    topics/tutorials/gettingstarted
    topics/tutorials/install
@@ -180,6 +181,7 @@ applications such as mediawiki don't work, please check if PHP FastCGI
 * :doc:`topics/recipes/zend`
 * :doc:`topics/recipes/zenphoto`
 * :doc:`topics/recipes/fcgizope`
+* :doc:`topics/recipes/b2evolution`
 
 Other Examples
 --------------
@@ -242,5 +244,7 @@ Advanced Topics
 Learning Resources
 ------------------
 
+* `NGINX online courses - A collection of online courses from a wide range of providers <https://classpert.com/nginx>`_
 * `Learn NGINX - Top NGINX tutorials ranked by developers <https://gitconnected.com/learn/nginx>`_
 * `Programming Community Curated Resources for learning NGINX <https://hackr.io/tutorials/learn-nginx>`_
+* `Learn NGINX - Free & Best online courses to learn NGINX  <https://coursesity.com/free-tutorials-learn/Nginx/96>`_

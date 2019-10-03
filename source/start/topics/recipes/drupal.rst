@@ -126,4 +126,10 @@ Recipe
             expires max;
             log_not_found off;
         }
+        # Enforce clean URLs 
+        # Removes index.php from urls like www.example.com/index.php/my-page --> www.example.com/my-page
+        # Could be done with 301 for permanent or other redirect codes.
+        if ($request_uri ~* "^(.*/)index\.php(.*)") {
+            return 307 $1$2;
+        }
     }
