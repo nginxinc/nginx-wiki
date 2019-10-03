@@ -237,6 +237,8 @@ https://github.com/nginxinc/nginx-wiki.
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | :doc:`secure_download`    | Create expiring links                                                    | :github:`replay/ngx_http_secure_download`                                                      |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| Security Headers          | Adds security HTTP headers like X-Content-Type-Options                   | :github:`GetPageSpeed/ngx_security_headers`                                                    |
++---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Selective Cache Purge     | A cache purge module that allows GLOB expressions like *.jpg or /test*   | :github:`wandenberg/nginx-selective-cache-purge-module`                                        |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Set CConv                 | Conversion between Simplified and Traditional Chinese at rewrite phase   | :github:`liseen/set-cconv-nginx-module`                                                        |
