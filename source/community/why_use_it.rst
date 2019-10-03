@@ -169,7 +169,28 @@ NGINX is more than 50% faster than Apache.
 
 -- `WPArena <https://wparena.com/>`__
 
-Our business is one of the apparently growing number bailing out on Microsoft's IIS servers. The problem is that we need to serve out static content over lots of concurrent connections and had never been satisfied with the MS performance. Bottom line, we narrowed it down to Apache and NGINX but finally went with the latter, to the shock of some, after talking to a few companies that had similar use demands. After making the switch, we tested exhaustively and found that our content delivery speed almost doubled, which was a good enough result to justify the hassle of changing by itself, but also found that overall system memory demand decreased almost 5%. We finally fell in love with our server.
+At `Kinsta <https://kinsta.com>`__, we exclusively use Nginx as part of our 
+performance-optimized hosting solutions for WordPress and WooCommerce. 
+Every WordPress site is housed in its own isolated container, which has all 
+of the software resources required to run it (Nginx, Linux, PHP, MySQL). The 
+resources are 100% private and are not shared between any other sites. Nginx 
+is very efficient in serving static content on its own. It can cache static 
+content without the need to fetch it from the protected, origin server every 
+time. Tens of thousands of small and large WordPress sites are powered by Nginx 
+at Kinsta. You can read more on why we chose `Nginx over Apache 
+<https://kinsta.com/blog/nginx-vs-apache/>`__.
+
+-- `CFO at Kinsta <https://kinsta.com>`__
+
+Our business is one of the apparently growing number bailing out on Microsoft's 
+IIS servers. The problem is that we need to serve out static content over lots 
+of concurrent connections and had never been satisfied with the MS performance. 
+Bottom line, we narrowed it down to Apache and NGINX but finally went with the 
+latter, to the shock of some, after talking to a few companies that had similar 
+use demands. After making the switch, we tested exhaustively and found that our 
+content delivery speed almost doubled, which was a good enough result to justify 
+the hassle of changing by itself, but also found that overall system memory 
+demand decreased almost 5%. We finally fell in love with our server.
 
 -- `Gary Stevens, Hosting Canada <https://hostingcanada.org/>`__
 
