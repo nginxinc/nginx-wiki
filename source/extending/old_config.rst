@@ -36,7 +36,7 @@ Options
 
 .. ini:key:: STREAM_MODULES
 
-   Similar to :ini:key:`HTTP_MODULES` this adds your module to the list of TCP/IP stream modules to be loaded. It should be prepended with ``$HTTP_FILTER_MODULES`` so that it is additive to the list of TCP/IP stream modules already defined. The name used in this should be the same name as the :c:type:`module definition struct <ngx_module_t>`
+   Similar to :ini:key:`HTTP_MODULES` this adds your module to the list of TCP/IP stream modules to be loaded. It should be prepended with ``$STREAM_MODULES`` so that it is additive to the list of TCP/IP stream modules already defined. The name used in this should be the same name as the :c:type:`module definition struct <ngx_module_t>`
 
 .. ini:key:: NGX_ADDON_SRCS
 
