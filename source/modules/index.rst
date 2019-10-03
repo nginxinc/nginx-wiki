@@ -191,6 +191,8 @@ https://github.com/nginxinc/nginx-wiki.
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | OpenSSL Version           | OpenSSL minimum version constraints in configuration                     | :github:`apcera/nginx-openssl-version`                                                         |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :doc:`ssl_status`         | OpenSSL status counters (SSL_CTX_sess_*)                                 | :github:`andreydomas/ngx_http_ssl_status_module`                                               |
++---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | :doc:`owner_match`        | Provides a simple file owner-based access control                        | `Download <https://heiher.info/1755.html>`_                                                    |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | PageSpeed                 | Rewrites webpages and associated assets to reduce latency and bandwidth  | :github:`pagespeed/ngx_pagespeed`                                                              |
@@ -470,6 +472,7 @@ https://github.com/nginxinc/nginx-wiki.
    slice
    sr_cache
    substitutions
+   ssl_status
    traffic_accounting
    upload
    upload_progress
