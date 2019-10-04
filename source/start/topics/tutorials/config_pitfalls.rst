@@ -125,7 +125,7 @@ BAD:
         }
     }
 
-Why repeat so many lines when not needed. Simply use the ``index`` directive one
+Why repeat so many lines when not needed? Simply use the ``index`` directive one
 time. It only needs to occur in your ``http{}`` block and it will be inherited
 below.
 
@@ -179,10 +179,10 @@ BAD:
 
 There are actually three problems here. The first being the ``if``. That's what we
 care about now. Why is this bad? Did you read If is Evil? When NGINX receives a
-request no matter what is the subdomain being requested, be it www.example.com or
-just the plain example.com this ``if`` directive is **always** evaluated. Since
-you're requesting NGINX to check for the Host header for **every request**.
-It's extremely inefficient. You should avoid it. Instead use two ``server``
+request - no matter what is the subdomain being requested, be it www.example.com or 
+just the plain example.com - this ``if`` directive is **always** evaluated. Since
+you're requesting NGINX to check for the Host header for **every request**,
+it's extremely inefficient. You should avoid it. Instead use two ``server``
 directives like the example below.
 
 GOOD:
@@ -200,7 +200,7 @@ GOOD:
 
 Besides making the configuration file easier to read. This approach decreases
 NGINX processing requirements. We got rid of the spurious ``if``. We're also using
-``$scheme`` which doesn't hardcodes the URI scheme you're using, be it http or
+``$scheme`` which doesn't hardcode the URI scheme you're using, be it http or
 https.
 
 Check (If) File Exists
@@ -239,7 +239,7 @@ Using ``try_files`` means that you can test a sequence. If ``$uri`` doesn't exis
 
 In this case, if the ``$uri`` file exists, serve it. If not, check if that directory
 exists. If not, then proceed to serve ``index.html`` which you make sure exists.
-It's loaded–but oh-so-simple! This is another instance where you can completely
+It's loaded – but oh-so-simple! This is another instance where you can completely
 eliminate If.
 
 Front Controller Pattern Web Apps
@@ -475,12 +475,12 @@ Also GOOD:
         }
     }
 
-Easy, right? See if the requested URI exists and can be served by NGINX. If not,
-see if it is a directory that can be served. If not, then pass it to your proxy.
-Only when NGINX can't serve that requested URI directly does your proxy overhead
+Easy, right? Check if the requested URI exists and can be served by NGINX. If not,
+check if it is a directory that can be served. If not, then pass it to your proxy.
+Only when NGINX can't serve that requested URI directly, your proxy overhead will
 get involved.
 
-Consider how much of your requests are for static content (images, css,
+Consider how many of your requests are for static content (images, css,
 javascript, etc.). That's probably a lot of overhead you just saved.
 
 Use ``$request_filename`` for ``SCRIPT_FILENAME``
@@ -601,9 +601,9 @@ NGINX server is even set up run workers as root. Yup, we now have your user
 list as well as password hashes and how they've been hashed. We now own your
 box.
 
-.. todo:: dead link for Filesystem Hierarchy Standard removed, needs replacing
+.. _`File System Hierarchy` : https://en.wikipedia.org/wiki/Filesystem_Hierarchy_Standard
 
-The Filesystem Hierarchy Standard defines where data should exist. You should
+The `File System Hierarchy`_ defines where data should exist. You should
 definitely read it. The short version is that you want your web content to exist
 in either ``/var/www/``, ``/srv``, ``/usr/share/www``.
 

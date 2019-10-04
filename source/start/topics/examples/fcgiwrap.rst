@@ -21,7 +21,7 @@ OK! Let's make this as simple as possible for you.
 Install on Debian or Ubuntu
 ---------------------------
 
-There are packages for `Debian <https://packages.debian.org/squeeze/fcgiwrap>`_ and `Ubuntu <http://packages.ubuntu.com/maverick/fcgiwrap>`_ now. Simply type
+There are packages for `Debian <https://packages.debian.org/jessie/fcgiwrap>`_ and `Ubuntu <https://packages.ubuntu.com/xenial/web/fcgiwrap>`_ now. Simply type
 
 .. code-block:: bash
 

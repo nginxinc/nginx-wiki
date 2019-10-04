@@ -18,7 +18,7 @@ Recipe
 
         location / {
             # this is the usual way, but careful because all non-existing content will display home page with code 200
-            try_files $uri $uri/ /spip.php?q=$uri&$args;
+            try_files $uri $uri/ /spip.php?$args;
             # if you don't use rewriting (all internal links are already like spip.php?…), next line is enough
             #try_files $uri $uri/;
         }
@@ -36,7 +36,7 @@ Recipe
             include fastcgi_params;
             fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
         }
-        
+
         location ~ /(tmp|config)/ {
             deny  all;
         }
@@ -49,11 +49,10 @@ SPIP was made to be used with Apache. So when you deploy a SPIP on a web server
 
 Another way to prevent this kind of attack is:
 
-#. put these dir outside the spip root path 
+#. put these dir outside the spip root path
 #. redefine ``_DIR_TMP`` & ``_DIR_CONNECT`` constants in mes_options.php
 
 fastcgi buffer
 ^^^^^^^^^^^^^^
 
 fastcgi_buffers and fastcgi_buffers_size is to prevent "upstream sent too big header while reading response header from upstream" error
-

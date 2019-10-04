@@ -742,7 +742,7 @@ ngx_escape_json
 
 .. c:function:: uintptr_t ngx_escape_json(unsigned char *dst, unsigned char *src, size_t size)
 
-   Escapes the JSON entites ``\``, ``"`` and 0x1f. A ``dst`` of ``NULL`` will return the number of characters that would fill ``dst``. Otherwise a pointer to the end of data in ``dst`` is returned.
+   Escapes the JSON entites ``\``, ``"``, 0x1f. Additional escape sequences ``\n``, ``\r``, ``\t``, ``\b`` and ``\f`` are also escaped. A ``dst`` of ``NULL`` will return the number of characters that would fill ``dst``. Otherwise a pointer to the end of data in ``dst`` is returned.
 
    :param dst: A destination memory location, or ``NULL`` for a length count
    :param src: The source string

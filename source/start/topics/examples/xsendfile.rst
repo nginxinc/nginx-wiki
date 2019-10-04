@@ -31,7 +31,7 @@ If the application adds an header X-Accel-Redirect for the location ``/protected
 
 .. code-block:: http
 
-   X-Accel-Redirect: /protected/iso.img;
+   X-Accel-Redirect: /protected/iso.img
 
 Then NGINX will serve the file ``/some/path/protected/iso.img`` - note that the root and internal redirect paths are concatenated.
 
