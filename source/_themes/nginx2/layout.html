@@ -99,7 +99,8 @@
     {%- if favicon %}
     <link rel="shortcut icon" href="{{ pathto('_static/' + favicon, 1) }}"/>
     {%- endif %}
-    <link rel="icon" type="image/png" href="{{ pathto('_static/nginx-favicon.png', 1) }}">
+    <link rel="icon" type="image/png" href="{{ pathto('_static/favicon-48x48.ico', 1) }}" sizes="48x48">
+    <link rel="icon" type="image/png" href="{{ pathto('_static/favicon-64x46.ico', 1) }}" sizes="64x46">
     {%- endif %}
 {%- block linktags %}
     {%- if hasdoc('about') %}
