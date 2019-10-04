@@ -42,7 +42,7 @@ Directives
 redis_pass
 ^^^^^^^^^^
 :Syntax: *redis_pass [name:port]*
-:Default: *none*
+:Default: \-
 :Context: *http, server, location*
 
 The backend should set the data in redis. The redis key is ``/uri?args``.
@@ -51,7 +51,7 @@ The backend should set the data in redis. The redis key is ``/uri?args``.
 redis_bind
 ^^^^^^^^^^
 :Syntax: *redis_bind [addr]*
-:Default: *none*
+:Default: \-
 :Context: *http, server, localtion*
 
 Use the following IP address as the source address for redis connections.
@@ -60,7 +60,7 @@ Use the following IP address as the source address for redis connections.
 redis_connect_timeout
 ^^^^^^^^^^^^^^^^^^^^^
 :Syntax: *redis_connect_timeout [time]*
-:Default: *60000*
+:Default: ``redis_connect_timeout 60000ms;``
 :Context: *http, server, location*
 
 The timeout for connecting to redis, in milliseconds.
@@ -69,7 +69,7 @@ The timeout for connecting to redis, in milliseconds.
 redis_read_timeout
 ^^^^^^^^^^^^^^^^^^
 :Syntax: *redis_read_timeout [time]*
-:Default: *60000*
+:Default: ``redis_read_timeout 60000ms;``
 :Context: *http, server, location*
 
 The timeout for reading from redis, in milliseconds.
@@ -78,7 +78,7 @@ The timeout for reading from redis, in milliseconds.
 redis_send_timeout
 ^^^^^^^^^^^^^^^^^^
 :Syntax: *redis_send_timeout [time]*
-:Default: *60000*
+:Default: ``redis_send_timeout 60000ms;``
 :Context: *http, server, location*
 
 The timeout for sending to redis, in milliseconds.
@@ -96,7 +96,7 @@ The recv/send buffer size, in bytes.
 redis_next_upstream
 ^^^^^^^^^^^^^^^^^^^
 :Syntax: *redis_next_upstream [error] [timeout] [invalid_response] [not_found] [off]*
-:Default: *error timeout*
+:Default: ``redis_next_upstream error timeout;``
 :Context: *http, server, location*
 
 Which failure conditions should cause the request to be forwarded to another upstream server? Applies only when the value in redis_pass_ is an upstream with two or more servers.
@@ -105,7 +105,7 @@ Which failure conditions should cause the request to be forwarded to another ups
 redis_gzip_flag
 ^^^^^^^^^^^^^^^
 :Syntax: *redis_gzip_flag [number]*
-:Default: *unset*
+:Default: ``redis_gzip_flag unset;``
 :Context: *location*
 
 Reimplementation of memcached_gzip_flag, see https://forum.nginx.org/read.php?29,34332,34463 for details.
