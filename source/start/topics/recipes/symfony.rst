@@ -30,7 +30,7 @@ Secure Symfony 4.x
         # This rule should only be placed on your development environment
         # In production, don't include this and don't deploy index_dev.php or config.php
         location ~ ^/(index_dev|config)\.php(/|$) {
-            fastcgi_pass unix:/var/run/php5-fpm.sock;
+            fastcgi_pass unix:/var/run/php7.2-fpm.sock;
             fastcgi_split_path_info ^(.+\.php)(/.*)$;
             include fastcgi_params;
             # When you are using symlinks to link the document root to the
@@ -40,12 +40,15 @@ Secure Symfony 4.x
             # Otherwise, PHP's OPcache may not properly detect changes to
             # your PHP files (see https://github.com/zendtech/ZendOptimizerPlus/issues/126
             # for more information).
+            # Caveat: When PHP-FPM is hosted on a different machine from nginx
+            #         $realpath_root may not resolve as you expect! In this case try using
+            #         $document_root instead.
             fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
             fastcgi_param DOCUMENT_ROOT $realpath_root;
         }
         # PROD
         location ~ ^/index\.php(/|$) {
-            fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
+            fastcgi_pass unix:/var/run/php/php7.2-fpm.sock;
             fastcgi_split_path_info ^(.+\.php)(/.*)$;
             include fastcgi_params;
            # When you are using symlinks to link the document root to the
@@ -74,6 +77,8 @@ Secure Symfony 4.x
     }
 
 Depending on your PHP-FPM config, the ``fastcgi_pass`` can also be ``fastcgi_pass 127.0.0.1:9000``.
+
+When PHP-FPM is hosted on a different machine from nginx ``$realpath_root`` may not resolve as you expect! In this case try using ``$document_root`` instead.
 
 This executes only ``app.php``, ``app_dev.php`` and ``config.php`` in the web directory. All other files ending in ``".php"`` will be denied.
 

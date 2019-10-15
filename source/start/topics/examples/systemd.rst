@@ -5,7 +5,7 @@
 NGINX systemd service file
 ==========================
 
-Should work on Fedora, OpenSUSE, Arch Linux. Tested on Fedora 16 and 17.
+Should work on Fedora, OpenSUSE, Arch Linux, Ubuntu. Tested on Fedora 16 and 17, Ubuntu 18.04 .
 
 The location of the PIDFile and the NGINX binary may be different depending on how NGINX was compiled.
 

@@ -92,8 +92,8 @@ Save this file as ``/etc/init.d/nginx``
     reload() {
         configtest || return $?
         echo -n $"Reloading $prog: "
-        killproc $nginx -HUP
-        RETVAL=$?
+        killproc $prog -HUP
+        retval=$?
         echo
     }
 

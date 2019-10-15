@@ -671,3 +671,11 @@ aside.wiki-sidebar .sidebar-widget ul li a {
 
 
 }
+/* new logo placement 2019-10-04 */
+.menu-logo img {
+    margin-top: -15px;
+}
+
+.site-title img {
+    margin-top: -10px;
+}

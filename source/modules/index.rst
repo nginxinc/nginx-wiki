@@ -189,7 +189,9 @@ https://github.com/nginxinc/nginx-wiki.
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | OCSP proxy                | OCSP processing module designed for response caching                     | :github:`kyprizel/nginx_ocsp_proxy-module`                                                     |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
-| OpenSSL Version           | OpenSSL minimum version constraints in configuration                     | :github:`apcera/nginx-openssl-version`                                                         |
+| OpenSSL Version           | OpenSSL minimum version constraints in configuration                     | :github:`PennockTech/nginx-openssl-version`                                                    |
++---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :doc:`ssl_status`         | OpenSSL status counters (SSL_CTX_sess_*)                                 | :github:`andreydomas/ngx_http_ssl_status_module`                                               |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | :doc:`owner_match`        | Provides a simple file owner-based access control                        | `Download <https://heiher.info/1755.html>`_                                                    |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
@@ -223,6 +225,8 @@ https://github.com/nginxinc/nginx-wiki.
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | HTTP Tarantool            | HTTP Upstream module for communicate with Tarantool DB                   | :github:`tarantool/nginx_upstream_module`                                                      |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| redirection.io            | Embeds the redirect manager and SEO-optimizer "redirection.io" in NGINX  | :github:`redirectionio/libnginx-mod-redirectionio`                                             |
++---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Replace Filter            | Performs regular expression substitutions on response bodies             | :github:`openresty/replace-filter-nginx-module`                                                |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Roboo                     | HTTP Robot Mitigator that integrates easily with NGINX                   | :github:`yuri-gushin/Roboo/downloads`                                                          |
@@ -236,6 +240,8 @@ https://github.com/nginxinc/nginx-wiki.
 | Sass                      | Compiles SASS files in NGINX before sending the response                 | :github:`mneudert/sass-nginx-module`                                                           |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | :doc:`secure_download`    | Create expiring links                                                    | :github:`replay/ngx_http_secure_download`                                                      |
++---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| Security Headers          | Adds security HTTP headers like X-Content-Type-Options                   | :github:`GetPageSpeed/ngx_security_headers`                                                    |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Selective Cache Purge     | A cache purge module that allows GLOB expressions like *.jpg or /test*   | :github:`wandenberg/nginx-selective-cache-purge-module`                                        |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
@@ -298,6 +304,8 @@ https://github.com/nginxinc/nginx-wiki.
 | TestCookie module         | Simple robot (DDoS) mitigation module                                    | :github:`kyprizel/testcookie-nginx-module`                                                     |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Types Filter              | Changes the *Content-Type* output header on specified conditions         | :github:`flygoast/ngx_http_types_filter`                                                       |
++---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| UnTar                     | serve static file content from tar archives                              | :github:`ajax16384/ngx_http_untar_module`                                                      |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | UnZip                     | serve file directly from the archives                                    | :github:`youzee/nginx-unzip-module`                                                            |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
@@ -468,6 +476,7 @@ https://github.com/nginxinc/nginx-wiki.
    slice
    sr_cache
    substitutions
+   ssl_status
    traffic_accounting
    upload
    upload_progress
