@@ -40,7 +40,10 @@ Here's the basic configuration used for the NGINX wiki.
 
         location ~ \.php$ {
             include fastcgi_params;
-            fastcgi_pass unix:/tmp/phpfpm.sock;
+            fastcgi_pass unix:/var/run/php/php7.3-fpm.sock;
+            fastcgi_param SCRIPT_FILENAME $request_filename;
+
+            
         }
 
         location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
