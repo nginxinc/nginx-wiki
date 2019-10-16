@@ -32,7 +32,7 @@ needs_sphinx = '1.3'
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
 sys.path.append(os.path.abspath('exts'))
-extensions = ['font_awesome', 'sphinx.ext.todo', 'edit_on_github', 'inidomain', 'c_domains']
+extensions = ['font_awesome', 'sphinx.ext.todo', 'edit_on_github', 'inidomain', 'c_domains', 'nx_sitemap_generator']
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
