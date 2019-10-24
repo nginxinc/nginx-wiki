@@ -488,7 +488,7 @@ Use ``$request_filename`` for ``SCRIPT_FILENAME``
 
 Use ``$request_filename`` instead of ``$document_root$fastcgi_script_name``.
 
-If use ``alias`` directive with ``$document_root$fastcgi_script_name``, ``$document_root$fastcgi_script_name`` will return the wrong path.
+If you use the ``alias`` directive with ``$document_root$fastcgi_script_name``, ``$document_root$fastcgi_script_name`` will return the wrong path.
 
 BAD:
 
