@@ -92,6 +92,8 @@ Recipe
         # pattern with front controllers other than update.php in a future
         # release.
         location ~ '\.php$|^/update.php' {
+            # Ensure the php file exists. Mitigates CVE-2019-11043
+            try_files $uri =404;
             fastcgi_split_path_info ^(.+?\.php)(|/.*)$;
             # Security note: If you're running a version of PHP older than the
             # latest 5.3, you should have "cgi.fix_pathinfo = 0;" in php.ini.
