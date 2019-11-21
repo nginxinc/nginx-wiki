@@ -79,6 +79,8 @@ https://github.com/nginxinc/nginx-wiki.
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Dynamic limit             | Dynamically lock IP and release it periodically                          | :github:`limithit/ngx_dynamic_limit_req_module`                                                |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+|Dynamic limit token        | Generate token according to cookie                                       | :github:`limithit/ngx_cookie_limit_req_module`                                                 |                                    
++---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | HTTP Echo                 | Provides familiar shell-style commands to NGINX HTTP servers             | :github:`openresty/echo-nginx-module`                                                          |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Stream Echo               | Provides familiar shell-style commands to NGINX stream servers           | :github:`openresty/stream-echo-nginx-module`                                                   |
