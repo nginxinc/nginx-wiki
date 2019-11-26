@@ -27,7 +27,7 @@ Example NGINX configuration:
      root   /some/path;
     }
 
-If the application adds an header X-Accel-Redirect for the location ``/protected/iso.img``:
+If the application adds the header ``X-Accel-Redirect`` for the location ``/protected/iso.img``:
 
 .. code-block:: http
 
