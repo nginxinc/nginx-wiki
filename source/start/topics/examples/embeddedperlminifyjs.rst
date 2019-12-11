@@ -15,8 +15,8 @@ http://search.cpan.org/~pmichaux/JavaScript-Minifier/
 
 For CSS the minify library is available from http://search.cpan.org/~pmichaux/CSS-Minifier-0.01/
 
-You can read more about the origional jsmin here:
-http://www.crockford.com/javascript/jsmin.html
+You can read more about the original jsmin here:
+https://www.crockford.com/jsmin.html
 
 
 nginx.conf
