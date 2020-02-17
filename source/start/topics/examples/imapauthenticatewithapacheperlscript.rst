@@ -12,7 +12,7 @@ Using nginx-embedded-perl module on the same server as the imap/pop proxy as the
 
    This solution is being used at at ISP with 35000+ mailboxes for almost 2 years now fine. If you want  shameful plug, the ISP is Worldsoft (http://www.worldsoft.info)
 
-Start with the configuration from :doc:`imapproxyexample`. For detail information about different configuration parameters, see the `ngx_mail_core_module <http://nginx.org/en/docs/mail/ngx_mail_core_module.html>`_ documentation.
+Start with the configuration from :doc:`imapproxyexample`. For detail information about different configuration parameters, see the `ngx_mail_core_module <https://nginx.org/en/docs/mail/ngx_mail_core_module.html>`_ documentation.
 
 Configure NGINX with embedded perl and mail
 

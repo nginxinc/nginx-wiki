@@ -88,7 +88,7 @@ Getting Started
 
 We have this handy :doc:`getting started<topics/tutorials/gettingstarted>` document to get you going. There is also the following resources:
 
-* `Igor's introductory docs <http://nginx.org/en/docs/#introduction>`_
+* `Igor's introductory docs <https://nginx.org/en/docs/#introduction>`_
 * `Guide to the most common web stack <https://michael.lustfield.net/nginx/dummies-guide-to-setting-up-nginx>`_
 * `Martin's Nginx, PHP, Primer <https://blog.martinfjordvald.com/nginx-primer/>`_
 

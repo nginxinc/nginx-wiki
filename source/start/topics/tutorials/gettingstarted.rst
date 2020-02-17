@@ -17,7 +17,7 @@ Requirements
 Download
 --------
 Go to the :doc:`install` Page of this wiki to download NGINX.
-Alternatively, here is a link to the `English download page <http://nginx.org/en/download.html>`_ and the original `Russian download page <http://nginx.org/ru/download.html>`_.
+Alternatively, here is a link to the `English download page <https://nginx.org/en/download.html>`_ and the original `Russian download page <https://nginx.org/ru/download.html>`_.
 
 
 

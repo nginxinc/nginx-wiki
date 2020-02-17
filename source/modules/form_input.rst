@@ -20,7 +20,7 @@ This module depends on the ngx_devel_kit (NDK) module.
 Installation
 ------------
 
-#. Get the NGINX source code from `nginx.org <http://nginx.org/>`_.
+#. Get the NGINX source code from `nginx.org <https://nginx.org/>`_.
 #. Get the ngx_devel_kit source code from :github:`GitHub simpl-it/ngx_devel_kit repository <simpl-it/ngx_devel_kit>`
 #. Unpack the source code and build NGINX with this module.
 

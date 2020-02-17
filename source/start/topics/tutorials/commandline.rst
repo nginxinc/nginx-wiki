@@ -51,7 +51,7 @@ Options
 +-------------------+--------------------------------------------------------------------------------------------------------+
 | ``-c filename``   | Specify which configuration file NGINX should use instead of the default.                              |
 +-------------------+--------------------------------------------------------------------------------------------------------+
-| ``-g directives`` | Set `global <http://nginx.org/en/docs/http/ngx_http_core_module.html>`_ directives. (version >= 0.7.4) |
+| ``-g directives`` | Set `global <https://nginx.org/en/docs/http/ngx_http_core_module.html>`_ directives. (version >= 0.7.4) |
 +-------------------+--------------------------------------------------------------------------------------------------------+
 
 .. note:: NGINX has only a few command-line parameters. Unlike many other software systems, the configuration is done entirely via the configuration file (imagine that).
@@ -206,5 +206,5 @@ If an update is successful and you want to keep the new server, send QUIT signal
 
 References
 ^^^^^^^^^^
-* `Command Line Options <http://nginx.org/ru/docs/switches.html>`_
-* `Signals <http://nginx.org/ru/docs/control.html>`_
+* `Command Line Options <https://nginx.org/ru/docs/switches.html>`_
+* `Signals <https://nginx.org/ru/docs/control.html>`_

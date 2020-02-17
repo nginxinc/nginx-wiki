@@ -32,7 +32,7 @@ msgstr ""
 msgid ""
 "Should be obvious what this is once you've seen/done the WSGI configuration "
 "and read the `ngx_http_uwsgi_module "
-"<http://nginx.org/en/docs/http/ngx_http_uwsgi_module.html>`_ documentation."
+"<https://nginx.org/en/docs/http/ngx_http_uwsgi_module.html>`_ documentation."
 msgstr ""
 
 #: ../../source/start/topics/recipes/moinmoin.rst:31

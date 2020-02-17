@@ -35,7 +35,7 @@ msgid "Installation"
 msgstr ""
 
 #: ../../source/modules/form_input.rst:19
-msgid "Get the nginx source code from `nginx.org <http://nginx.org/>`_."
+msgid "Get the nginx source code from `nginx.org <https://nginx.org/>`_."
 msgstr ""
 
 #: ../../source/modules/form_input.rst:20

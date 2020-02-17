@@ -166,7 +166,7 @@ Installation
 To build a nginx binary containting this module:
 
 * Download the latest version of this module from :github:`GitHub <alticelabs/nginx-log-zmq>`.
-* Grab the nginx source code from `nginx.org <http://nginx.org/>`_, for example, version 1.6.2 (see `nginx compatibility <log_zmq.compatibility_>`_), and then build it like so:
+* Grab the nginx source code from `nginx.org <https://nginx.org/>`_, for example, version 1.6.2 (see `nginx compatibility <log_zmq.compatibility_>`_), and then build it like so:
 
 .. code-block:: bash
 

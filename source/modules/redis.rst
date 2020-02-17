@@ -11,7 +11,7 @@ Description
 You can use this module to perform simple caching.  There are plans to extend this module in the near future.
 Latest version available at https://people.freebsd.org/~osa/ngx_http_redis-0.3.9.tar.gz.
 
-Starting from nginx 1.9.11, it's possible to compile this module as a dynamic module, by using the ``--add-dynamic-module=PATH`` option instead of ``--add-module=PATH`` on the ``./configure`` command line.  Then it's possible to explicitly load the module in a ``nginx.conf`` via the ``load_module`` (http://nginx.org/en/docs/ngx_core_module.html#load_module)
+Starting from nginx 1.9.11, it's possible to compile this module as a dynamic module, by using the ``--add-dynamic-module=PATH`` option instead of ``--add-module=PATH`` on the ``./configure`` command line.  Then it's possible to explicitly load the module in a ``nginx.conf`` via the ``load_module`` (https://nginx.org/en/docs/ngx_core_module.html#load_module)
 directive:
 
 ``load_module /path/to/modules/ngx_http_redis_module.so;``

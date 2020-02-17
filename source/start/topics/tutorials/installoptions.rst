@@ -21,9 +21,9 @@ Files and Permissions
 **--pid-path=*path***
   sets the name of an nginx.pid file that will store the process ID of the main process. After installation, the file name can always be changed in the ``nginx.conf`` configuration file using the pid directive. By default the file is named ``prefix/logs/nginx.pid``.
 **--error-log-path=*path***
-  sets the name of the primary error, warnings, and diagnostic file. After installation, the file name can always be changed in the ``nginx.conf`` configuration file using the `error log <http://nginx.org/en/docs/http/ngx_http_core_module.html#error_log>`_ directive. By default the file is named ``prefix/logs/error.log``. The special "stderr" value tells NGINX to log pre-configuration messages to the standard error.
+  sets the name of the primary error, warnings, and diagnostic file. After installation, the file name can always be changed in the ``nginx.conf`` configuration file using the `error log <https://nginx.org/en/docs/http/ngx_http_core_module.html#error_log>`_ directive. By default the file is named ``prefix/logs/error.log``. The special "stderr" value tells NGINX to log pre-configuration messages to the standard error.
 **--http-log-path=*path***
-  sets the name of the primary request log file of the HTTP server. After installation, the file name can always be changed in the ``nginx.conf`` configuration file using the `access log <http://nginx.org/en/docs/http/ngx_http_core_module.html#access_log>`_ directive. By default the file is named ``prefix/logs/access.log``.
+  sets the name of the primary request log file of the HTTP server. After installation, the file name can always be changed in the ``nginx.conf`` configuration file using the `access log <https://nginx.org/en/docs/http/ngx_http_core_module.html#access_log>`_ directive. By default the file is named ``prefix/logs/access.log``.
 **--user=*name***
   sets the name of an unprivileged user whose credentials will be used by worker processes. After installation, the name can always be changed in the ``nginx.conf`` configuration file using the user directive. The default user name is nobody.
 **--group=*name***

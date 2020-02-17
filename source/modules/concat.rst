@@ -104,7 +104,7 @@ size of your platform. On Linux you can get the page size issuing::
 Usually is 4k. So if you try to concatenate a lot of files together in
 a given context you might hit this barrier. To overcome that OS
 defined limitation you must use
-the `large_client_header_buffers <http://nginx.org/en/docs/http/ngx_http_core_module.html#large_client_header_buffers>`_
+the `large_client_header_buffers <https://nginx.org/en/docs/http/ngx_http_core_module.html#large_client_header_buffers>`_
 directive. Set it to the value you need.
 
 

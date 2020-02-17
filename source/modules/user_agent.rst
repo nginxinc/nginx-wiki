@@ -7,7 +7,7 @@ User Agent
 
 Description
 -----------
-**nginx-http-user-agent** -  similar to NGINX's native `ngx_http_browser_module <http://nginx.org/en/docs/http/ngx_http_browser_module.html>`_, but provides more search options.
+**nginx-http-user-agent** -  similar to NGINX's native `ngx_http_browser_module <https://nginx.org/en/docs/http/ngx_http_browser_module.html>`_, but provides more search options.
 
 
 Source Repository

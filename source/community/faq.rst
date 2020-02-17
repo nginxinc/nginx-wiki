@@ -139,7 +139,7 @@ HTTP
 What does this @ thing mean?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 @location is a named location.  Named locations preserve $uri as it was before entering said location.
-They were introduced in 0.6.6 and can be reached only via `error_page <http://nginx.org/en/docs/http/ngx_http_core_module.html#error_page>`_, `post_action <http://nginx.org/en/docs/http/ngx_http_core_module.html#post_action>`_ (since 0.6.26) and `try_files <http://nginx.org/en/docs/http/ngx_http_core_module.html#try_files>`_ (since 0.7.27, backported to 0.6.36).
+They were introduced in 0.6.6 and can be reached only via `error_page <https://nginx.org/en/docs/http/ngx_http_core_module.html#error_page>`_, `post_action <https://nginx.org/en/docs/http/ngx_http_core_module.html#post_action>`_ (since 0.6.26) and `try_files <https://nginx.org/en/docs/http/ngx_http_core_module.html#try_files>`_ (since 0.7.27, backported to 0.6.36).
 
 
 
@@ -260,4 +260,4 @@ Why do I see "Welcome to nginx!" when I'm trying to access Facebook, Yahoo!, Goo
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 NGINX is not a virus. Please check a detailed description here::
 
-  `Welcome to nginx! <http://nginx.org/en/docs/welcome_nginx_facebook.html>`_
+  `Welcome to nginx! <https://nginx.org/en/docs/welcome_nginx_facebook.html>`_

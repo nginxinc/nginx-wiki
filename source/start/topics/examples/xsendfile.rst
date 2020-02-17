@@ -71,7 +71,7 @@ Links to this issue
 
 * `Rails 3.x assets pipeline support for X-Accel-Redirect <http://guides.rubyonrails.org/asset_pipeline.html#x-sendfile-headers>`_
 
-* `proxy_ignore_headers <http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_ignore_headers>`_ Ignoring Content Type headers when using X-Accel-Redirect
+* `proxy_ignore_headers <https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_ignore_headers>`_ Ignoring Content Type headers when using X-Accel-Redirect
 
-* `proxy_hide_header <http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_hide_header>`_ Hide headers from upstream servers when using X-Accel-Redirect
+* `proxy_hide_header <https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_hide_header>`_ Hide headers from upstream servers when using X-Accel-Redirect
 
