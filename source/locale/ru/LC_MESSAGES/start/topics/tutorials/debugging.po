@@ -36,7 +36,7 @@ msgstr ""
 
 #: ../../source/start/topics/tutorials/debugging.rst:15
 msgid ""
-"See `a debugging log <http://nginx.org/en/docs/debugging_log.html>`_ in "
+"See `a debugging log <https://nginx.org/en/docs/debugging_log.html>`_ in "
 "documentation for details."
 msgstr ""
 

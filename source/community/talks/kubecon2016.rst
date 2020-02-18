@@ -27,7 +27,7 @@ Related Links
 
 * Load Balancing Kubernetes Services with NGINX Plus -- https://www.nginx.com/blog/load-balancing-kubernetes-services-nginx-plus/
 
-* NGINX Plus -- https://www.nginx.com/products/ and NGINX -- http://nginx.org/
+* NGINX Plus -- https://www.nginx.com/products/ and NGINX -- https://nginx.org/
 
 * Mercurial page for NGINX code http://hg.nginx.org/
 

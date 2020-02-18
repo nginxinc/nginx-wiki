@@ -550,7 +550,7 @@ msgstr ""
 
 #: ../../source/modules/redis2.rst:569
 msgid ""
-"Grab the nginx source code from `nginx.org <http://nginx.org>`_, for "
+"Grab the nginx source code from `nginx.org <https://nginx.org>`_, for "
 "example, the version 1.7.4 (see Compatibility_),"
 msgstr ""
 

@@ -25,7 +25,7 @@ CentOS::
 
   [nginx]
   name=nginx repo
-  baseurl=http://nginx.org/packages/centos/$releasever/$basearch/
+  baseurl=https://nginx.org/packages/centos/$releasever/$basearch/
   gpgcheck=0
   enabled=1
 
@@ -34,7 +34,7 @@ RHEL::
 
   [nginx]
   name=nginx repo
-  baseurl=http://nginx.org/packages/rhel/$releasever/$basearch/
+  baseurl=https://nginx.org/packages/rhel/$releasever/$basearch/
   gpgcheck=0
   enabled=1
 
@@ -48,22 +48,22 @@ Official Debian/Ubuntu packages
 
 Ubuntu:
 
-The available NGINX Ubuntu release support is listed at `this distribution page <http://nginx.org/packages/ubuntu/dists/>`_. For a mapping of Ubuntu versions to release names, please visit the `Official Ubuntu Releases page <https://wiki.ubuntu.com/Releases>`_.
+The available NGINX Ubuntu release support is listed at `this distribution page <https://nginx.org/packages/ubuntu/dists/>`_. For a mapping of Ubuntu versions to release names, please visit the `Official Ubuntu Releases page <https://wiki.ubuntu.com/Releases>`_.
 
 Append the appropriate stanza to ``/etc/apt/sources.list``. If there is concern about persistence of repository additions (i.e. DigitalOcean Droplets), the appropriate stanza may instead be added to a different list file under ``/etc/apt/sources.list.d/``, such as ``/etc/apt/sources.list.d/nginx.list``.
 
 .. code-block:: bash
 
   ## Replace $release with your corresponding Ubuntu release.
-  deb http://nginx.org/packages/ubuntu/ $release nginx
-  deb-src http://nginx.org/packages/ubuntu/ $release nginx
+  deb https://nginx.org/packages/ubuntu/ $release nginx
+  deb-src https://nginx.org/packages/ubuntu/ $release nginx
 
 e.g. Ubuntu 16.04 (Xenial):
 
 .. code-block:: bash
 
-  deb http://nginx.org/packages/ubuntu/ xenial nginx
-  deb-src http://nginx.org/packages/ubuntu/ xenial nginx
+  deb https://nginx.org/packages/ubuntu/ xenial nginx
+  deb-src https://nginx.org/packages/ubuntu/ xenial nginx
 
 To install the packages, execute in your shell:
 
@@ -72,7 +72,7 @@ To install the packages, execute in your shell:
   sudo apt-get update
   sudo apt-get install nginx
 
-If a ``W: GPG error: http://nginx.org/packages/ubuntu xenial Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY $key`` is encountered during the NGINX repository update, execute the following:
+If a ``W: GPG error: https://nginx.org/packages/ubuntu xenial Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY $key`` is encountered during the NGINX repository update, execute the following:
 
 .. code-block:: bash
 
@@ -87,8 +87,8 @@ Append the appropriate stanza to ``/etc/apt/sources.list``.
 
 .. code-block:: bash
 
-  deb http://nginx.org/packages/debian/ squeeze nginx
-  deb-src http://nginx.org/packages/debian/ squeeze nginx
+  deb https://nginx.org/packages/debian/ squeeze nginx
+  deb-src https://nginx.org/packages/debian/ squeeze nginx
 
 
 Ubuntu PPA
@@ -126,7 +126,7 @@ For other Debian/Ubuntu based distributions, you can try the lucid variant of th
 
 Official Win32 Binaries
 -----------------------
-As of NGINX 0.8.50, NGINX is now available as an `official Windows binary <http://nginx.org/en/download.html>`_.
+As of NGINX 0.8.50, NGINX is now available as an `official Windows binary <https://nginx.org/en/download.html>`_.
 
 Installation:
 
@@ -163,19 +163,19 @@ See the :ref:`FAQ <faq.is_it_safe>`.
 
 Stable
 ^^^^^^
-| `NGINX 1.10.1 <http://nginx.org/download/nginx-1.10.1.tar.gz>`_  
+| `NGINX 1.10.1 <https://nginx.org/download/nginx-1.10.1.tar.gz>`_  
 | 31 May 2016  
-| `changelog <http://nginx.org/en/CHANGES-1.10>`__  
+| `changelog <https://nginx.org/en/CHANGES-1.10>`__  
 
 Mainline
 ^^^^^^^^
-| `NGINX 1.11.3 <http://nginx.org/download/nginx-1.11.3.tar.gz>`_  
+| `NGINX 1.11.3 <https://nginx.org/download/nginx-1.11.3.tar.gz>`_  
 | 26 Jul 2016  
-| `changelog <http://nginx.org/en/CHANGES>`__  
+| `changelog <https://nginx.org/en/CHANGES>`__  
 
 Source code repository is at `hg.nginx.org/nginx <http://hg.nginx.org/nginx>`_.
 
-Older versions can be found `here <http://nginx.org/en/download.html>`_.
+Older versions can be found `here <https://nginx.org/en/download.html>`_.
 
 
 Building NGINX From Source
@@ -209,4 +209,4 @@ There are many different example configurations that can be found in :doc:`../..
 
 References
 ----------
-`Original Documentation <http://nginx.org/en/docs/install.html>`_
+`Original Documentation <https://nginx.org/en/docs/install.html>`_
