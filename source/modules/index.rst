@@ -245,6 +245,8 @@ https://github.com/nginxinc/nginx-wiki.
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Security Headers          | Adds security HTTP headers like X-Content-Type-Options                   | :github:`GetPageSpeed/ngx_security_headers`                                                    |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| Select Lang               | Chooses a suitable language from key-values and set it in the variable   | :github:`sndyuk/nginx_select_lang_module`                                                      |
++---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Selective Cache Purge     | A cache purge module that allows GLOB expressions like *.jpg or /test*   | :github:`wandenberg/nginx-selective-cache-purge-module`                                        |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Set CConv                 | Conversion between Simplified and Traditional Chinese at rewrite phase   | :github:`liseen/set-cconv-nginx-module`                                                        |
