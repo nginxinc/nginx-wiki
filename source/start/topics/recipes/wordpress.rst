@@ -52,9 +52,11 @@ First we setup a named upstream for our php, which allows us to abstract the bac
 
             location ~ \.php$ {
                     #NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
-                    include fastcgi.conf;
+                    include fastcgi_params;
                     fastcgi_intercept_errors on;
                     fastcgi_pass php;
+                    #The following parameter can be also included in fastcgi_params file
+                    fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
             }
 
             location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
