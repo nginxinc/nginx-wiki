@@ -79,6 +79,12 @@ Recipe
             deny all;
             return 404;
         }
+        
+        # Protect files and directories from prying eyes.
+        location ~* \.(engine|inc|install|make|module|profile|po|sh|.*sql|theme|twig|tpl(\.php)?|xtmpl|yml)(~|\.sw[op]|\.bak|\.orig|\.save)?$|^(\.(?!well-known).*|Entries.*|Repository|Root|Tag|Template|composer\.(json|lock)|web\.config)$|^#.*#$|\.php(~|\.sw[op]|\.bak|\.orig|\.save)$ {
+            deny all;
+            return 404;
+        }
 
         # In Drupal 8, we must also match new paths where the '.php' appears in
         # the middle, such as update.php/selection. The rule we use is strict,
