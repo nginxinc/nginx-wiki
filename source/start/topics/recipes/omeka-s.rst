@@ -2,13 +2,14 @@
 .. meta::
    :description: A sample NGINX configuration for Omeka S.
 
-Omeka
+Omeka S
 =====
 
 Recipe
 ------
 
 .. code-block:: nginx
+
 server {
         server_name omeka.domain.tld;
         root /var/www/omeka;
