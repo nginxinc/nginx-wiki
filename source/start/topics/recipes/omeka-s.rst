@@ -2,7 +2,7 @@
 .. meta::
    :description: A sample NGINX configuration for Omeka S.
 
-Omeka S
+Omeka
 =====
 
 Recipe
