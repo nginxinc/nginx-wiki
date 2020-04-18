@@ -330,7 +330,7 @@ gettext_compact = False
 sys.path.insert(0, os.path.abspath('.'))
 extensions.append('_themes.nginx')
 html_theme_options = {
-    "base_url": "/"
+    "base_url": "https://www.nginx.com/resources/wiki/"
 }
 html_title = "NGINX"
 #Use user defined variables in templates

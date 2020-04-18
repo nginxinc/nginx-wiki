@@ -129,7 +129,7 @@ msgstr ""
 #: ../../source/start/topics/tutorials/install.rst:109
 msgid ""
 "As of nginx 0.8.50, nginx is now available as an `official Windows binary "
-"<http://nginx.org/en/download.html>`_."
+"<https://nginx.org/en/download.html>`_."
 msgstr ""
 
 #: ../../source/start/topics/tutorials/install.rst:111
@@ -189,8 +189,8 @@ msgstr ""
 
 #: ../../source/start/topics/tutorials/install.rst:153
 msgid ""
-"`nginx 1.8.0 <http://nginx.org/download/nginx-1.8.0.tar.gz>`_<br /> 21 Apr "
-"2015<br /> `changelog <http://nginx.org/en/CHANGES-1.8>`_ </div> </li>"
+"`nginx 1.8.0 <https://nginx.org/download/nginx-1.8.0.tar.gz>`_<br /> 21 Apr "
+"2015<br /> `changelog <https://nginx.org/en/CHANGES-1.8>`_ </div> </li>"
 msgstr ""
 
 #: ../../source/start/topics/tutorials/install.rst:164
@@ -199,8 +199,8 @@ msgstr ""
 
 #: ../../source/start/topics/tutorials/install.rst:165
 msgid ""
-"`nginx 1.9.2 <http://nginx.org/download/nginx-1.9.2.tar.gz>`_<br /> 16 Jun "
-"2015<br /> `changelog <http://nginx.org/en/CHANGES>`_ </div> </li>"
+"`nginx 1.9.2 <https://nginx.org/download/nginx-1.9.2.tar.gz>`_<br /> 16 Jun "
+"2015<br /> `changelog <https://nginx.org/en/CHANGES>`_ </div> </li>"
 msgstr ""
 
 #: ../../source/start/topics/tutorials/install.rst:171
@@ -215,7 +215,7 @@ msgstr ""
 
 #: ../../source/start/topics/tutorials/install.rst:177
 msgid ""
-"Older versions can be found `here <http://nginx.org/en/download.html>`_."
+"Older versions can be found `here <https://nginx.org/en/download.html>`_."
 msgstr ""
 
 #: ../../source/start/topics/tutorials/install.rst:181

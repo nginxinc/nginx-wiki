@@ -9,7 +9,7 @@ Some Hardware Load-balancers such Cisco's CSS and BigIP Products test the readin
 
 This behavior causes a 400 error in NGINX.
 
-With the `GEO Module <http://nginx.org/en/docs/http/ngx_http_geo_module.html>`_  and the ``if-Statement`` you can omit these entries:
+With the `GEO Module <https://nginx.org/en/docs/http/ngx_http_geo_module.html>`_  and the ``if-Statement`` you can omit these entries:
 
 .. code-block:: nginx
 

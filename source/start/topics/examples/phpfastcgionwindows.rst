@@ -20,7 +20,7 @@ To hide that window, use the tiny utility `RunHiddenConsole <http://redmine.ligh
 
 Steps
 -----
-#. Install `NGINX for Win32 <install_win32_binaries_>_`.
+#. Install `NGINX for Win32 <https://www.nginx.com/resources/wiki/start/topics/tutorials/install/#official-win32-binaries>`_.
 #. Install the `Windows binaries of PHP <http://windows.php.net/>`_, making sure that ``php-cgi.exe`` is installed in the same directory as ``php.exe``.
 #. Create somewhere (e.g. in ``c:\nginx\``) a batch file ``start-php-fcgi.bat`` similar to this one:
 

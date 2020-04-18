@@ -79,6 +79,12 @@ Recipe
             deny all;
             return 404;
         }
+        
+        # Protect files and directories from prying eyes.
+        location ~* \.(engine|inc|install|make|module|profile|po|sh|.*sql|theme|twig|tpl(\.php)?|xtmpl|yml)(~|\.sw[op]|\.bak|\.orig|\.save)?$|^(\.(?!well-known).*|Entries.*|Repository|Root|Tag|Template|composer\.(json|lock)|web\.config)$|^#.*#$|\.php(~|\.sw[op]|\.bak|\.orig|\.save)$ {
+            deny all;
+            return 404;
+        }
 
         # In Drupal 8, we must also match new paths where the '.php' appears in
         # the middle, such as update.php/selection. The rule we use is strict,
@@ -93,6 +99,8 @@ Recipe
         # release.
         location ~ '\.php$|^/update.php' {
             fastcgi_split_path_info ^(.+?\.php)(|/.*)$;
+            # Ensure the php file exists. Mitigates CVE-2019-11043
+            try_files $fastcgi_script_name =404;
             # Security note: If you're running a version of PHP older than the
             # latest 5.3, you should have "cgi.fix_pathinfo = 0;" in php.ini.
             # See http://serverfault.com/q/627903/94922 for details.

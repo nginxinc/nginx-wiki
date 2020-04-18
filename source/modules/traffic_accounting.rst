@@ -19,7 +19,7 @@ For every period (defined by interval), a timer event is triggered, those metric
 Usage
 -----
 
-Starting from nginx 1.9.11, it's possible to compile this module as a dynamic module, by using the ``--add-dynamic-module=PATH`` option instead of ``--add-module=PATH`` on the ``./configure`` command line.  Then it's possible to explicitly load the module in a ``nginx.conf`` via the ``load_module`` (http://nginx.org/en/docs/ngx_core_module.html#load_module)
+Starting from nginx 1.9.11, it's possible to compile this module as a dynamic module, by using the ``--add-dynamic-module=PATH`` option instead of ``--add-module=PATH`` on the ``./configure`` command line.  Then it's possible to explicitly load the module in a ``nginx.conf`` via the ``load_module`` (https://nginx.org/en/docs/ngx_core_module.html#load_module)
 directive:
 
 ``load_module modules/ngx_http_accounting_module.so;``
@@ -73,7 +73,7 @@ accounting_log
 :Context: *http, stream*
 
 Support same kind of log target as *error_log*: local file, syslog, stderr and memory.
-Refer to `error_log <http://nginx.org/en/docs/ngx_core_module.html#error_log>` synopsis.
+Refer to `error_log <https://nginx.org/en/docs/ngx_core_module.html#error_log>` synopsis.
 
 accounting_interval
 ^^^^^^^^^^^^^^^^^^^

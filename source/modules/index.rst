@@ -79,6 +79,8 @@ https://github.com/nginxinc/nginx-wiki.
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Dynamic limit             | Dynamically lock IP and release it periodically                          | :github:`limithit/ngx_dynamic_limit_req_module`                                                |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+|Dynamic limit token        | Generate token according to cookie                                       | :github:`limithit/ngx_cookie_limit_req_module`                                                 |                                    
++---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | HTTP Echo                 | Provides familiar shell-style commands to NGINX HTTP servers             | :github:`openresty/echo-nginx-module`                                                          |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Stream Echo               | Provides familiar shell-style commands to NGINX stream servers           | :github:`openresty/stream-echo-nginx-module`                                                   |
@@ -124,6 +126,8 @@ https://github.com/nginxinc/nginx-wiki.
 | :doc:`traffic_accounting` | Realtime traffic and status code monitoring (HTTP + Stream)              | :github:`Lax/traffic-accounting-nginx-module`                                                  |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | HTTP Iconv                | Converts character encodings                                             | :github:`calio/iconv-nginx-module`                                                             |
++---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| Immutable                 | Setting immutable caching on static assets                               | :github:`GetPageSpeed/ngx_immutable`                                                           |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Internal Redirect         | A NGINX module for internal redirection                                  | :github:`flygoast/ngx_http_internal_redirect/`                                                 |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
@@ -242,6 +246,8 @@ https://github.com/nginxinc/nginx-wiki.
 | :doc:`secure_download`    | Create expiring links                                                    | :github:`replay/ngx_http_secure_download`                                                      |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Security Headers          | Adds security HTTP headers like X-Content-Type-Options                   | :github:`GetPageSpeed/ngx_security_headers`                                                    |
++---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| Select Lang               | Chooses a suitable language from key-values and set it in the variable   | :github:`sndyuk/nginx_select_lang_module`                                                      |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Selective Cache Purge     | A cache purge module that allows GLOB expressions like *.jpg or /test*   | :github:`wandenberg/nginx-selective-cache-purge-module`                                        |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+

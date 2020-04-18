@@ -5,7 +5,7 @@
 Qwebric
 =======
 
-`Qwebirc <https://qwebirc.org/>`_ is a fast, easy to use, free and open source IRC client designed by and originally just for the `QuakeNet IRC network <https://www.quakenet.org/>`_. Released in 2009, it's a `python <https://www.python.org>`_ written web-based IRC client. It also has a fork, `iris <https://github.com/atheme-legacy/iris>`_, developed by the `Atheme <https://github.com/atheme/atheme>`_ IRC services team, and provides better integration with Atheme's IRC services. Qwebirc uses its own embedded webserver utilizing non-blocking multiplexing, and can cope with thousands of users easily. Because of this, there are two methods which can be used to direct clients to a qwebirc instance via `NGINX <http://nginx.org>`_: redirection, or reverse proxy.
+`Qwebirc <https://qwebirc.org/>`_ is a fast, easy to use, free and open source IRC client designed by and originally just for the `QuakeNet IRC network <https://www.quakenet.org/>`_. Released in 2009, it's a `python <https://www.python.org>`_ written web-based IRC client. It also has a fork, `iris <https://github.com/atheme-legacy/iris>`_, developed by the `Atheme <https://github.com/atheme/atheme>`_ IRC services team, and provides better integration with Atheme's IRC services. Qwebirc uses its own embedded webserver utilizing non-blocking multiplexing, and can cope with thousands of users easily. Because of this, there are two methods which can be used to direct clients to a qwebirc instance via `NGINX <https://nginx.org>`_: redirection, or reverse proxy.
 
 Recipe
 ------
@@ -13,7 +13,7 @@ Recipe
 Redirect Method
 ^^^^^^^^^^^^^^^
 
-Because qwebirc is meant to be run on its own port, you can use a redirect to send requests to qwebirc's embedded webserver. Your `server <http://nginx.org/en/docs/http/ngx_http_core_module.html#server>`_ block would look something like (substituting 8080 for whatever port you're using):
+Because qwebirc is meant to be run on its own port, you can use a redirect to send requests to qwebirc's embedded webserver. Your `server <https://nginx.org/en/docs/http/ngx_http_core_module.html#server>`_ block would look something like (substituting 8080 for whatever port you're using):
 
 .. code-block:: nginx
 
@@ -24,7 +24,7 @@ Because qwebirc is meant to be run on its own port, you can use a redirect to se
         return 301 $scheme://webchat.domain.tld:8080$request_uri;
     }
 
-This would take any requests for webchat.domain.tld, and redirect it to webchat.domain.tld:8080, and would also append any `request URI's <http://nginx.org/en/docs/http/ngx_http_core_module.html#variables>`_ to the rewrite.
+This would take any requests for webchat.domain.tld, and redirect it to webchat.domain.tld:8080, and would also append any `request URI's <https://nginx.org/en/docs/http/ngx_http_core_module.html#variables>`_ to the rewrite.
 
 Reserve Proxy Method
 ^^^^^^^^^^^^^^^^^^^^

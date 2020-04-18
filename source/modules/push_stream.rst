@@ -79,7 +79,7 @@ Or you may do by yourself:
   NGINX_PUSH_STREAM_MODULE_PATH=$PWD/nginx-push-stream-module
 
   # get desired NGINX version (works with 1.0.x, 0.9.x, 0.8.x series)
-  wget http://nginx.org/download/nginx-1.0.5.tar.gz
+  wget https://nginx.org/download/nginx-1.0.5.tar.gz
 
   # unpack, configure and build
   tar xzvf nginx-1.0.5.tar.gz

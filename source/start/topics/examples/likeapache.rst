@@ -21,7 +21,7 @@ Let's say we want to establish simple proxy between myhost:80 and myapp:8080. Th
 
 But NGINX does not have ProxyPassReverse... The solution is adding a few missing HTTP headers. 
 
-.. seealso:: `proxy_redirect <http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_redirect>`_. This wiki is partly incorrect. If you need to do location header rewriting, then you will need to use `proxy_redirect <http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_redirect>`_ as well.
+.. seealso:: `proxy_redirect <https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_redirect>`_. This wiki is partly incorrect. If you need to do location header rewriting, then you will need to use `proxy_redirect <https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_redirect>`_ as well.
 
 
 

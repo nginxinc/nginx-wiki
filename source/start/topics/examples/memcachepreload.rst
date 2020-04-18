@@ -13,7 +13,7 @@ Ingredients
 
 #. serve the requests
 
-   * `NGINX <http://nginx.org/en/docs/http/ngx_http_memcached_module.html>`_: webserver with memcache api
+   * `NGINX <https://nginx.org/en/docs/http/ngx_http_memcached_module.html>`_: webserver with memcache api
 
    * `couchbase <https://www.couchbase.com/downloads>`_: persistent memcache server
 

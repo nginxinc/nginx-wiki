@@ -97,4 +97,4 @@ Off means unlimited.
 
 References
 ----------
-`Original Documentation <http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_ignore_headers>`_
+`Original Documentation <https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_ignore_headers>`_
