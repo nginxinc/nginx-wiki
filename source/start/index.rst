@@ -55,6 +55,7 @@ Getting Started
    topics/recipes/moinmoin
    topics/recipes/mybb
    topics/recipes/omeka
+   topics/recipes/omeka-s
    topics/recipes/oscommerce
    topics/recipes/osticket
    topics/recipes/phplist
