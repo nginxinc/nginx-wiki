@@ -3,7 +3,7 @@
    :description: A sample NGINX configuration for Omeka S.
 
 Omeka-s
-=====
+=======
 
 Recipe
 ------
