@@ -54,6 +54,7 @@ Getting Started
    topics/recipes/mediawiki
    topics/recipes/moinmoin
    topics/recipes/mybb
+   topics/recipes/omeka-s
    topics/recipes/omeka
    topics/recipes/oscommerce
    topics/recipes/osticket
@@ -126,7 +127,7 @@ to work.
 
 If the web applications with the configuration don't work, please check
 whether the simplest web application works. For example, if PHP based web
-applications such as mediawiki don't work, please check if PHP FastCGI 
+applications such as mediawiki don't work, please check if PHP FastCGI
 (refer to :doc:`topics/examples/phpfcgi`) works.
 
 * `ActiveColab <https://www.howtoforge.com/running-activecollab-3-on-nginx-lemp-on-debian-wheezy-ubuntu-12.10>`_
@@ -149,6 +150,7 @@ applications such as mediawiki don't work, please check if PHP FastCGI
 * :doc:`topics/recipes/moinmoin`
 * :doc:`topics/recipes/mybb`
 * :doc:`topics/recipes/omeka`
+* :doc:`topics/recipes/omeka-s`
 * :doc:`topics/recipes/oscommerce`
 * :doc:`topics/recipes/osticket`
 * `ownCloud <https://www.howtoforge.com/running-owncloud-5.0-on-nginx-lemp-on-debian-wheezy>`_
