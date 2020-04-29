@@ -30,7 +30,7 @@ msgid ""
 "Description below is obsolete and needs editing.  Keepalive connections to "
 "upstream servers are in the main code since 1.1.4, including the latest "
 "stable branch of 1.2.x. Check the documentation at `nginx.org "
-"<http://nginx.org/en/docs/http/ngx_http_upstream_module.html#keepalive>`_."
+"<https://nginx.org/en/docs/http/ngx_http_upstream_module.html#keepalive>`_."
 msgstr ""
 
 #: ../../source/modules/keepalive.rst:10

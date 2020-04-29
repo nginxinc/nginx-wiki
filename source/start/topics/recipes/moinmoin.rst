@@ -37,7 +37,7 @@ in moin config (usually mywiki.py):
        uwsgi_pass unix:/path/to/uwsgi.socket;
    }
 
-Should be obvious what this is once you've seen/done the WSGI configuration and read the `ngx_http_uwsgi_module <http://nginx.org/en/docs/http/ngx_http_uwsgi_module.html>`_ documentation.
+Should be obvious what this is once you've seen/done the WSGI configuration and read the `ngx_http_uwsgi_module <https://nginx.org/en/docs/http/ngx_http_uwsgi_module.html>`_ documentation.
 
 Uwsgi also needs ``--ignore-script-name`` (or equivalent config file setting) for `MoinMoin <https://moinmo.in/>`_ otherwise it'll interpret it as a literal path. Moin doesn't do ``PATH_INFO`` very well (or at all).
 

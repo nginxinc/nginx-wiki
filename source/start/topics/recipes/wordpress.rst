@@ -5,7 +5,7 @@
 WordPress
 =========
 
-`NGINX <http://nginx.org>`_ works perfectly well with a wide variety of applications, and `WordPress <https://wordpress.org>`_ is certainly one of them.  NGINX's configuration language is very powerful and straightforward if one is familiar with it, but often people coming from other servers are not sure how things work in NGINX and just copy and paste whatever they see from a blog that seems to fill their needs.  Everyone, especially people new to NGINX, should check out the `nginx.org documentation <http://nginx.org/en/docs/>`_ for an overview of how things work and should be done in NGINX.
+`NGINX <https://nginx.org>`_ works perfectly well with a wide variety of applications, and `WordPress <https://wordpress.org>`_ is certainly one of them.  NGINX's configuration language is very powerful and straightforward if one is familiar with it, but often people coming from other servers are not sure how things work in NGINX and just copy and paste whatever they see from a blog that seems to fill their needs.  Everyone, especially people new to NGINX, should check out the `nginx.org documentation <https://nginx.org/en/docs/>`_ for an overview of how things work and should be done in NGINX.
 
 Recipe
 ------
@@ -52,9 +52,11 @@ First we setup a named upstream for our php, which allows us to abstract the bac
 
             location ~ \.php$ {
                     #NOTE: You should have "cgi.fix_pathinfo = 0;" in php.ini
-                    include fastcgi.conf;
+                    include fastcgi_params;
                     fastcgi_intercept_errors on;
                     fastcgi_pass php;
+                    #The following parameter can be also included in fastcgi_params file
+                    fastcgi_param  SCRIPT_FILENAME $document_root$fastcgi_script_name;
             }
 
             location ~* \.(js|css|png|jpg|jpeg|gif|ico)$ {
@@ -100,7 +102,7 @@ Rewrite rules for Multisite
 
 `WordPress Multisite <https://codex.wordpress.org/Create_A_Network>`_ can be used in multiple ways. Most notably "subdirectories" mode and "subdomains" mode. 
 
-NGINX provides 2 special directive: `X-Accel-Redirect <x-accel.redirect_>` and `map <http://nginx.org/en/docs/http/ngx_http_map_module.html#map>`_. Using these 2 directives, one can eliminate performance hit for static-file serving on WordPress multisite network.
+NGINX provides 2 special directive: `X-Accel-Redirect <x-accel.redirect_>` and `map <https://nginx.org/en/docs/http/ngx_http_map_module.html#map>`_. Using these 2 directives, one can eliminate performance hit for static-file serving on WordPress multisite network.
 
 Rewrite rules for Multisite using subdirectories
 """"""""""""""""""""""""""""""""""""""""""""""""
@@ -205,6 +207,6 @@ Rewrite rules for Multisite using subdomains
     * NGINX WordPress Shared Hosting Model - `AnsiPress <https://github.com/AnsiPress/AnsiPress>`_ can be used. AnsiPress is created based on Ansible playbooks and support NGINX, PHP7, MariaDB, Google PageSpeed installation as well as automate WordPress installations/setup. 
     * For wordpress-nginx based sites management, `EasyEngine <https://github.com/EasyEngine/easyengine>`_ can be used. EasyEngine (ee) is python based command line control panel to setup NGINX server on Ubuntu and Debian Linux distribution for HTML, PHP, MySQL, HHVM, PageSpeed and WordPress sites.
     * map section can be completed manually for small sites. On large multisite network `nginx-helper <https://wordpress.org/plugins/nginx-helper/>`_ wordpress plugin can be used.
-    * Further performance gain is possible by using NGINX's fastcgi_cache. When using `fastcgi_cache <http://nginx.org/en/docs/http/ngx_http_fastcgi_module.html#fastcgi_cache>`_, compile NGINX with `ngx_cache_purge <https://github.com/FRiCKLE/ngx_cache_purge>`_ module and add a wordpress-plugin which performs automatic cache purge on events e.g. a wordpress post/page is edited.
+    * Further performance gain is possible by using NGINX's fastcgi_cache. When using `fastcgi_cache <https://nginx.org/en/docs/http/ngx_http_fastcgi_module.html#fastcgi_cache>`_, compile NGINX with `ngx_cache_purge <https://github.com/FRiCKLE/ngx_cache_purge>`_ module and add a wordpress-plugin which performs automatic cache purge on events e.g. a wordpress post/page is edited.
     * `NGINX Cache Controller <https://wordpress.org/plugins/nginx-champuru/>`_ WordPress plugin provides some functions of controlling NGINX proxy server cache.
     * `NGINX Mobile Theme <https://wordpress.org/plugins/nginx-mobile-theme/>`_ WordPress plugin allows you to switch theme according to the User Agent on the NGINX reverse proxy.

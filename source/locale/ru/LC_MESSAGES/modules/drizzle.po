@@ -915,7 +915,7 @@ msgstr ""
 
 #: ../../source/modules/drizzle.rst:605
 msgid ""
-"Grab the nginx source code from `nginx.org <http://nginx.org/>`_, for "
+"Grab the nginx source code from `nginx.org <https://nginx.org/>`_, for "
 "example, the version 1.7.7 (see `nginx compatibility "
 "<drizzle.compatibility_>`_), and then build the source with this module:"
 msgstr ""

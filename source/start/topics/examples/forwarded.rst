@@ -15,9 +15,9 @@ Traditionally, an HTTP reverse proxy uses non-standard headers to inform the ups
 NGINX even provides a `$proxy_add_x_forwarded_for`_ variable to automatically append `$remote_addr`_ to any incoming ``X-Forwarded-For`` headers.
 
 .. _$proxy_add_x_forwarded_for:
-   http://nginx.org/en/docs/http/ngx_http_proxy_module.html#var_proxy_add_x_forwarded_for
+   https://nginx.org/en/docs/http/ngx_http_proxy_module.html#var_proxy_add_x_forwarded_for
 .. _$remote_addr:
-   http://nginx.org/en/docs/http/ngx_http_core_module.html#var_remote_addr
+   https://nginx.org/en/docs/http/ngx_http_core_module.html#var_remote_addr
 
 `RFC 7239`_ standardizes a new ``Forwarded`` header to carry this information in a more organized way::
 

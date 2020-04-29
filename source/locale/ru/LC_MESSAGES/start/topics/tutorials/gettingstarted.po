@@ -39,7 +39,7 @@ msgstr ""
 msgid ""
 "Go to the :doc:`install` Page of this wiki to download Nginx. Alternatively,"
 " here is a link to the `English download page "
-"<http://nginx.org/en/download.html>`_ and the original `Russian download "
+"<https://nginx.org/en/download.html>`_ and the original `Russian download "
 "page <http://sysoev.ru/nginx/download.html>`_."
 msgstr ""
 

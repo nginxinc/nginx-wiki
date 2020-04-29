@@ -8,13 +8,13 @@ If Is Evil
 Introduction
 ------------
 
-Directive `if <http://nginx.org/en/docs/http/ngx_http_rewrite_module.html#if>`_ has problems when used in location context,
+Directive `if <https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#if>`_ has problems when used in location context,
 in some cases it doesn't do what you expect but something completely different instead.  In some cases it even segfaults.  It's generally a good idea to avoid it if possible.
 
 The only 100% safe things which may be done inside if in a location context are:
 
-* `return <http://nginx.org/en/docs/http/ngx_http_rewrite_module.html#return>`_ ...;
-* `rewrite <http://nginx.org/en/docs/http/ngx_http_rewrite_module.html#rewrite>`_ ... last;
+* `return <https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#return>`_ ...;
+* `rewrite <https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#rewrite>`_ ... last;
 
 Anything else may possibly cause unpredictable behaviour, including potential SIGSEGV.
 
@@ -34,7 +34,7 @@ There are cases where you simply cannot avoid using an if, for example, if you n
 What to do instead
 ------------------
 
-Use `try_files <http://nginx.org/en/docs/http/ngx_http_core_module.html#try_files>`_ if it suits your needs.  Use the "return ..." or "rewrite ... last" in other cases.  In some cases, it's also possible to move ifs to server level (where it's safe as only other rewrite module directives are allowed within it).
+Use `try_files <https://nginx.org/en/docs/http/ngx_http_core_module.html#try_files>`_ if it suits your needs.  Use the "return ..." or "rewrite ... last" in other cases.  In some cases, it's also possible to move ifs to server level (where it's safe as only other rewrite module directives are allowed within it).
 
 E.g. the following may be used to safely change location which will be used to process request:
 
@@ -57,7 +57,7 @@ E.g. the following may be used to safely change location which will be used to p
         ...
     }
 
-In some cases it may be good idea to use embedded scripting modules (`embedded perl <http://nginx.org/en/docs/http/ngx_http_perl_module.html>`_, or various :doc:`../../../modules/index`) to do the scripting.
+In some cases it may be good idea to use embedded scripting modules (`embedded perl <https://nginx.org/en/docs/http/ngx_http_perl_module.html>`_, or various :doc:`../../../modules/index`) to do the scripting.
 
 Examples
 --------

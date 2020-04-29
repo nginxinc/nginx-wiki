@@ -33,26 +33,26 @@ Advanced Example of Starting NGINX
 Options
 ^^^^^^^
 
-+-------------------+--------------------------------------------------------------------------------------------------------+
-| ``-?, -h``        | Print help.                                                                                            |
-+-------------------+--------------------------------------------------------------------------------------------------------+
-| ``-v``            | Print version.                                                                                         |
-+-------------------+--------------------------------------------------------------------------------------------------------+
-| ``-V``            | Print NGINX version, compiler version and configure parameters.                                        |
-+-------------------+--------------------------------------------------------------------------------------------------------+
-| ``-t``            | Don't run, just test the configuration file.                                                           |
-|                   | NGINX checks configuration for correct syntax and then try to open files referred in configuration.    |
-+-------------------+--------------------------------------------------------------------------------------------------------+
-| ``-q``            | Suppress non-error messages during configuration testing.                                              |
-+-------------------+--------------------------------------------------------------------------------------------------------+
-| ``-s signal``     | Send signal to a master process: stop, quit, reopen, reload. (version >= 0.7.53)                       |
-+-------------------+--------------------------------------------------------------------------------------------------------+
-| ``-p prefix``     | Set prefix path (default: ``/usr/local/nginx/``). (version >= 0.7.53)                                  |
-+-------------------+--------------------------------------------------------------------------------------------------------+
-| ``-c filename``   | Specify which configuration file NGINX should use instead of the default.                              |
-+-------------------+--------------------------------------------------------------------------------------------------------+
-| ``-g directives`` | Set `global <http://nginx.org/en/docs/http/ngx_http_core_module.html>`_ directives. (version >= 0.7.4) |
-+-------------------+--------------------------------------------------------------------------------------------------------+
++-------------------+---------------------------------------------------------------------------------------------------------+
+| ``-?, -h``        | Print help.                                                                                             |
++-------------------+---------------------------------------------------------------------------------------------------------+
+| ``-v``            | Print version.                                                                                          |
++-------------------+---------------------------------------------------------------------------------------------------------+
+| ``-V``            | Print NGINX version, compiler version and configure parameters.                                         |
++-------------------+---------------------------------------------------------------------------------------------------------+
+| ``-t``            | Don't run, just test the configuration file.                                                            |
+|                   | NGINX checks configuration for correct syntax and then try to open files referred in configuration.     |
++-------------------+---------------------------------------------------------------------------------------------------------+
+| ``-q``            | Suppress non-error messages during configuration testing.                                               |
++-------------------+---------------------------------------------------------------------------------------------------------+
+| ``-s signal``     | Send signal to a master process: stop, quit, reopen, reload. (version >= 0.7.53)                        |
++-------------------+---------------------------------------------------------------------------------------------------------+
+| ``-p prefix``     | Set prefix path (default: ``/usr/local/nginx/``). (version >= 0.7.53)                                   |
++-------------------+---------------------------------------------------------------------------------------------------------+
+| ``-c filename``   | Specify which configuration file NGINX should use instead of the default.                               |
++-------------------+---------------------------------------------------------------------------------------------------------+
+| ``-g directives`` | Set `global <https://nginx.org/en/docs/http/ngx_http_core_module.html>`_ directives. (version >= 0.7.4) |
++-------------------+---------------------------------------------------------------------------------------------------------+
 
 .. note:: NGINX has only a few command-line parameters. Unlike many other software systems, the configuration is done entirely via the configuration file (imagine that).
 
@@ -206,5 +206,5 @@ If an update is successful and you want to keep the new server, send QUIT signal
 
 References
 ^^^^^^^^^^
-* `Command Line Options <http://nginx.org/ru/docs/switches.html>`_
-* `Signals <http://nginx.org/ru/docs/control.html>`_
+* `Command Line Options <https://nginx.org/ru/docs/switches.html>`_
+* `Signals <https://nginx.org/ru/docs/control.html>`_

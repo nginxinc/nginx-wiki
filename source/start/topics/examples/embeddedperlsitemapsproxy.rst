@@ -43,7 +43,7 @@ So the ``robots.txt`` looks something like this
     Disallow: /uploads/
     sitemap: http://sitemaps.worldsoft-cms.info/ispman.net-sitemap.xml
 
-The domain-name.com is ofcoarse replaced with the correct name.
+The domain-name.com is of course replaced with the correct name.
 This sends all sitemaps requests to a central server running NGINX.
 
 nginx.conf (related parts only):

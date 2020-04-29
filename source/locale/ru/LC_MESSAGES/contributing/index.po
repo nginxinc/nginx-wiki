@@ -19,7 +19,7 @@ msgstr ""
 msgid ""
 "A detailed breakdown of how to contribute code changes to Nginx can be found"
 " in the `Nginx documentation "
-"<http://nginx.org/en/docs/contributing_changes.html>`_."
+"<https://nginx.org/en/docs/contributing_changes.html>`_."
 msgstr ""
 
 #: ../../source/contributing/index.rst:11

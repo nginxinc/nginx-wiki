@@ -35,7 +35,7 @@ msgid "Installation"
 msgstr ""
 
 #: ../../source/modules/iconv.rst:15
-msgid "Get the nginx source code from http://nginx.org."
+msgid "Get the nginx source code from https://nginx.org."
 msgstr ""
 
 #: ../../source/modules/iconv.rst:16

@@ -15,11 +15,11 @@ NGINX has wide range of debugging features, including detailed debug log.
 
 Debugging log
 -------------
-See `a debugging log <http://nginx.org/en/docs/debugging_log.html>`_ in documentation for details.
+See `a debugging log <https://nginx.org/en/docs/debugging_log.html>`_ in documentation for details.
 
-To activate debugging log you have to compile NGINX with *--with-debug* configure option and set debug level in `error_log <http://nginx.org/en/docs/http/ngx_http_core_module.html#error_log>`_ directive.
+To activate debugging log you have to compile NGINX with *--with-debug* configure option and set debug level in `error_log <https://nginx.org/en/docs/http/ngx_http_core_module.html#error_log>`_ directive.
 
-It's possible to debug only connections from specified addresses via `debug_connection <http://nginx.org/en/docs/ngx_core_module.html#debug_connection>`_ directive.
+It's possible to debug only connections from specified addresses via `debug_connection <https://nginx.org/en/docs/ngx_core_module.html#debug_connection>`_ directive.
 
 .. note:: In hard cases (e.g. debugging event method related problems) it's good idea to obtain full debugging log by setting debug level in global *error_log*.
 

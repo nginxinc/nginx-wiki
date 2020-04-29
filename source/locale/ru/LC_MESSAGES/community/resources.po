@@ -22,7 +22,7 @@ msgstr ""
 #: ../../source/community/resources.rst:6
 msgid ""
 "`Contributing Changes (official guide) "
-"<http://nginx.org/en/docs/contributing_changes.html>`_"
+"<https://nginx.org/en/docs/contributing_changes.html>`_"
 msgstr ""
 
 #: ../../source/community/resources.rst:7

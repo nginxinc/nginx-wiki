@@ -146,5 +146,5 @@ msgstr ""
 #: ../../source/start/topics/examples/x-accel.rst:96
 msgid ""
 "`Original Documentation "
-"<http://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_ignore_headers>`_"
+"<https://nginx.org/en/docs/http/ngx_http_proxy_module.html#proxy_ignore_headers>`_"
 msgstr ""

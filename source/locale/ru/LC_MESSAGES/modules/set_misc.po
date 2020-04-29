@@ -925,7 +925,7 @@ msgstr ""
 
 #: ../../source/modules/set_misc.rst:1054
 msgid ""
-"Grab the nginx source code from `nginx.org <http://nginx.org/>`_, for "
+"Grab the nginx source code from `nginx.org <https://nginx.org/>`_, for "
 "example, the version 1.7.7 (see Compatibility_), and then build the source "
 "with this module:"
 msgstr ""

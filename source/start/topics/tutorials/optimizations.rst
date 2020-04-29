@@ -19,8 +19,8 @@ Selection is conducted until the size of table exceeds parameter hash
 max size. For the majority of hashes there are directives, which make it
 possible to change these parameters. For example, the hash with the
 names of servers are controlled by the directives
-`server_names_hash_max_size <http://nginx.org/en/docs/http/ngx_http_core_module.html#server_names_hash_max_size>`_ and
-`server_names_hash_bucket_size <http://nginx.org/en/docs/http/ngx_http_core_module.html#server_names_hash_bucket_size>`_.
+`server_names_hash_max_size <https://nginx.org/en/docs/http/ngx_http_core_module.html#server_names_hash_max_size>`_ and
+`server_names_hash_bucket_size <https://nginx.org/en/docs/http/ngx_http_core_module.html#server_names_hash_bucket_size>`_.
 Parameter hash bucket size is always equalized to the size, multiple
 to the size of the line of processor cache. This makes it possible to
 accelerate the search for key in hash on processors, after decreasing
@@ -76,7 +76,7 @@ References
 ----------
 
 `Original Hash Tables
-Documentation <http://nginx.org/en/docs/hash.html>`__
+Documentation <https://nginx.org/en/docs/hash.html>`__
 
 `Original Events Documentation
-(russian) <http://nginx.org/ru/docs/events.html>`__
+(russian) <https://nginx.org/ru/docs/events.html>`__
