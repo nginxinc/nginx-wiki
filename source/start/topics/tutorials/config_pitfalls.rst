@@ -721,7 +721,7 @@ block with ``alias``.
 .. _bug: https://trac.nginx.org/nginx/ticket/97
 
 Incorrect ``return`` context
---------------------------
+----------------------------
 
 .. _`return` : https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#return
 
