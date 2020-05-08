@@ -2318,3 +2318,7 @@ button.nginx-button.btn-have-icon span.icon{
     }
     
 }
+
+#footer .site-info p {
+       display: inline-block;
+   }   
