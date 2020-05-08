@@ -216,65 +216,60 @@ aside.wiki-sidebar .edit-section ul li i {
 }
 
 
-#footer {
+#colophon {
   background: #32302F;
   padding: 55px 0;
   padding-bottom:30px;
   /*  Mobile Layout: 320px.*/
   /*  Tablet Layout: 320px.*/ }
   @media only screen and (max-width: 767px) {
-    #footer .doc-item {
+    #colophon .doc-item {
       margin-bottom: 20px; } }
   @media only screen and (min-width: 768px) and (max-width: 992px) {
-    #footer .doc-item {
+    #colophon .doc-item {
       margin-bottom: 20px; } }
-  #footer h4 {
+  #colophon h4 {
     padding: 10px 0;
     font-weight: 700;
     color: #999;
     margin: 0; }
-  #footer .menu-block ul {
+  #colophon .menu-block ul {
     padding-left: 0; 
   list-style-type:none;
   }
-    #footer .menu-block ul li:first-child a {
+    #colophon .menu-block ul li:first-child a {
       padding: 10px 0;
       display: block;
       font-weight: 700; }
-    #footer .menu-block ul li a {
+    #colophon .menu-block ul li a {
       color: #999;
       font-weight: 200;
       padding: 2px 0;
       font-size: 15px;
       line-height: 22px; }
-  #footer .footer-social-media ul {
+  #colophon .footer-social-media ul {
     padding-left: 0; }
-    #footer .footer-social-media ul li {
+    #colophon .footer-social-media ul li {
       display: inline-block;
       margin-right: 8px; }
-      #footer .footer-social-media ul li a {
+      #colophon .footer-social-media ul li a {
         font-size: 28px;
         color: #999;
         opacity: .5; }
-
-  #footer .footer-email-signup input {
-    background-color: transparent;
-    border-color: rgba(243, 243, 243, 0.5);
-    border-width: 2px;
-    color: #999;
-    display: block;
-    font-size: 15px;
-    font-size: 1.5rem;
-    height: 36px;
-    line-height: 15px;
-    padding: 3px 35px 3px 10px;
-    width: 100%
+ #colophon .footer-social a[title="youtube"] img {
+     height: 26px;
+ }
+  #colophon .footer-email-signup a {
+    padding: 9px;
+    color: #343434!important;
+    background: #666;
+    border-color: #666;
   }
-  #footer .footer-email-signup input:focus {
+  #colophon .footer-email-signup input:focus {
       color: #999;
       outline: none
   }
-  #footer .footer-email-signup .icon-arrow-submit {
+  #colophon .footer-email-signup .icon-arrow-submit {
       cursor: pointer;
       font-size: 0;
       float: right;
@@ -282,20 +277,31 @@ aside.wiki-sidebar .edit-section ul li i {
       margin: -29px -3px 0 0;
       width: 36px
   }
-  #footer .footer-email-signup .icon-arrow-submit:before {
+  #colophon .footer-email-signup .icon-arrow-submit:before {
       color: rgba(153, 153, 153, 0.5);
       font-size: 24px
   }
+  
+  #colophon .footer-email-signup a {
+      padding:9px 9px; 
+      color:#32302f; 
+      background:#656463; 
+      border-color:#656463;
+  }
      
-  #footer .footer-copyright {
+  #colophon .footer-copyright {
     color: #999;
     text-align: center;
     font-size: 15px;
     font-weight: 200;
     padding-top: 35px;
     opacity: .5; }
-    #footer .footer-copyright a {
+    #colophon .footer-copyright a {
       color: #009639; }
+      
+   #colophon .site-info p {
+       display: inline-block;
+   }   
 
 /* Extra CSS !scss start */
 
@@ -581,7 +587,7 @@ aside.wiki-sidebar .sidebar-widget ul li a {
 
 
 
-#footer .col-md-offset-1::after {
+#colophon .col-md-offset-1::after {
   background-color: #999;
   bottom: -100px;
   content: "";
@@ -665,7 +671,7 @@ aside.wiki-sidebar .sidebar-widget ul li a {
 }
 @media only screen and (max-width: 767px) {
 
-  #footer .col-md-offset-1::after {
+  #colophon .col-md-offset-1::after {
     display: none;
   }
 
