@@ -719,3 +719,34 @@ may need to be edited to remove a ``try_files`` directive if it's included in a 
 block with ``alias``.
 
 .. _bug: https://trac.nginx.org/nginx/ticket/97
+
+Incorrect ``return`` context
+----------------------------
+
+.. _`return` : https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#return
+
+The `return`_ directive applies only inside the topmost context it's defined in. In this example:
+
+.. code-block:: nginx
+
+    server {
+        location /a/ {
+            try_files test.html =404;
+        }
+        
+        return 301 http://example.org;
+    }
+
+A request to ``/a/test.html`` will return a 301. To make this work as expected wrap the second block inside a ``location /``:
+
+.. code-block:: nginx
+
+    server {
+        location /a/ {
+            try_files test.html =404;
+        }
+        
+        location / {
+            return 301 http://example.org;
+        }
+    }
