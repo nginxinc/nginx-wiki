@@ -47,6 +47,7 @@
                     $('.searchbox-icon').css('display','block');
                 }
             }
+            
 
 
 })(jQuery);

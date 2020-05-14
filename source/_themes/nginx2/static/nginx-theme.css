@@ -2250,6 +2250,7 @@ button.nginx-button.btn-have-icon span.icon{
 }
 #nx_gdpr_modal2 p {
     font-size: 1.6rem;
+    color: black;
 }
 #nx_gdpr_modal2 #nx_gdpr_modal_more_info2 {
     padding-bottom: 2rem;
@@ -2318,3 +2319,7 @@ button.nginx-button.btn-have-icon span.icon{
     }
     
 }
+
+#footer .site-info p {
+       display: inline-block;
+   }   
