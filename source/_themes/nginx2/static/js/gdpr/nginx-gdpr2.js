@@ -85,7 +85,7 @@ var NX_GDPR = {
       this.hideInfo();
     }.bind(this));
 
-    document.getElementById('gdpr_accept_btn').addEventListener('click',function() {
+    document.getElementById('nx_gdpr_accept_btn').addEventListener('click',function() {
       this.userAccept();
     }.bind(this));
   },
