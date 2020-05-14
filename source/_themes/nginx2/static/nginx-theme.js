@@ -64,5 +64,9 @@
             event.preventDefault(); event.stopPropagation();window.open(this.href, '_blank');
         });
     });
+    
+                  
+  // Show popup on Cookie Choices click in footer.
+  $('#cookie-link').click(function() {NX_GDPR.showPopup()});
 
 })(jQuery);
