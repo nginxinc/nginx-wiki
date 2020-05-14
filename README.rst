@@ -38,7 +38,7 @@ NGINX will be started on port 8080 so you can view the wiki by browsing to http:
 When you are done, **CTRL-C** will exit NGINX.
 
 Contributing
-------------
+-------------
 
 We welcome edits and additions to this wiki. To find out more about how to do this please see out `Submitting Contributions <https://github.com/nginxinc/nginx-wiki/blob/master/source/contributing/github.rst>`_ page. If you spot any problems please file a `GitHub Issue <https://github.com/nginxinc/nginx-wiki/issues>`_.
 
