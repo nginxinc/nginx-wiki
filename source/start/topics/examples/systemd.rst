@@ -15,7 +15,8 @@ Save this file as ``/lib/systemd/system/nginx.service``
 
     [Unit]
     Description=The NGINX HTTP and reverse proxy server
-    After=syslog.target network.target remote-fs.target nss-lookup.target
+    After=syslog.target network-online.target remote-fs.target nss-lookup.target
+    Wants=network-online.target
 
     [Service]
     Type=forking
