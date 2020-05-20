@@ -2,13 +2,13 @@
 .. meta::
    :description: The NGINX "if" directive is evil. If you need to use it, make sure you actually understand how it works first. You've been warned.
 
-If Is Evil
-==========
+If is Evil... when used in location context
+==========================================
 
 Introduction
 ------------
 
-Directive `if <https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#if>`_ has problems when used in location context,
+Directive `if <https://nginx.org/en/docs/http/ngx_http_rewrite_module.html#if>`_ has problems **when used in location context**,
 in some cases it doesn't do what you expect but something completely different instead.  In some cases it even segfaults.  It's generally a good idea to avoid it if possible.
 
 The only 100% safe things which may be done inside if in a location context are:
@@ -149,8 +149,8 @@ Directive "if" is part of rewrite module which evaluates instructions imperative
 
 Looks like the only correct fix would be to disable non-rewrite directives inside if completely.  It would break many configuration out there though, so wasn't done yet.
 
-If you still want to use if
----------------------------
+If you still want to use if inside location context
+---------------------------------------------------
 
 If you read all of the above and still want to use if:
 
