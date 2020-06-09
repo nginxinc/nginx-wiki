@@ -1,8 +1,6 @@
 ( function($){  
     
   $(document).ready(function(){
-        jQuery('a[href="https://www.nginx.com/free-trial-request/"]').attr("href", "https://www.nginx.com/products/#free-trial");
-        jQuery('a[href="https://www.nginx.com/contact-sales/"]').attr("href", "https://www.nginx.com/products/#contact-us");
 
             var submitIcon = $('.searchbox-icon');
             var inputBox = $('.searchbox-input');
