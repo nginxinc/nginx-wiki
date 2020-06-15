@@ -117,6 +117,12 @@ Recipe
             fastcgi_pass unix:/var/run/php/php7.0-fpm.sock;
         }
 
+        location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg)$ {
+            try_files $uri @rewrite;
+            expires max;
+            log_not_found off;
+        }
+
         # Fighting with Styles? This little gem is amazing.
         # location ~ ^/sites/.*/files/imagecache/ { # For Drupal <= 6
         location ~ ^/sites/.*/files/styles/ { # For Drupal >= 7
@@ -129,11 +135,6 @@ Recipe
             try_files $uri /index.php?$query_string;
         }
 
-        location ~* \.(js|css|png|jpg|jpeg|gif|ico|svg|woff2|woff|ttf|eot)$ {
-            try_files $uri @rewrite;
-            expires max;
-            log_not_found off;
-        }
         # Enforce clean URLs 
         # Removes index.php from urls like www.example.com/index.php/my-page --> www.example.com/my-page
         # Could be done with 301 for permanent or other redirect codes.
