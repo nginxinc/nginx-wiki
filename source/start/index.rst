@@ -49,6 +49,7 @@ Getting Started
    topics/recipes/dokuwiki
    topics/recipes/elgg
    topics/recipes/expressionengine
+   topics/recipes/geth
    topics/recipes/iredmail
    topics/recipes/mailman
    topics/recipes/mediawiki

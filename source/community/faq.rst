@@ -258,6 +258,6 @@ Miscellaneous
 
 Why do I see "Welcome to nginx!" when I'm trying to access Facebook, Yahoo!, Google or some other well-known website? Is NGINX a virus?
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-NGINX is not a virus. Please check a detailed description here::
+NGINX is not a virus. Please check a detailed description here:
 
-  `Welcome to nginx! <https://nginx.org/en/docs/welcome_nginx_facebook.html>`_
+`Welcome to nginx! <https://nginx.org/en/docs/welcome_nginx_facebook.html>`_
