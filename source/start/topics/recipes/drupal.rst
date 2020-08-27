@@ -71,7 +71,8 @@ Recipe
         }
 
         location @rewrite {
-            rewrite ^/(.*)$ /index.php?q=$1;
+            #rewrite ^/(.*)$ /index.php?q=$1; # For Drupal <= 6
+            rewrite ^ /index.php; # For Drupal >= 7
         }
 
         # Don't allow direct access to PHP files in the vendor directory.
