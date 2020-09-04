@@ -134,7 +134,7 @@ fancyindex_ignore
 :Default: *none*
 :Context: *http, server, location*
 
-Specifies a list of file names which will be not be shown in generated listings. 
+Specifies a list of file names which will not be shown in generated listings. 
 If NGINX was built with PCRE support strings are interpreted as regular expressions.
 
 
