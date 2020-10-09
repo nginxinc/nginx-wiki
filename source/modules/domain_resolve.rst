@@ -1,5 +1,5 @@
 .. meta::
-   :description: The Upstream Domain Resolve module implements a load balancer that resolves an upstream domain name asynchronously.
+   :description: The jdomain upstream module extends the upstream's load balancer to resolve an upstream domain name asynchronously.
 
 Upstream Domain Resolve
 =======================
@@ -7,7 +7,9 @@ Upstream Domain Resolve
 Description
 -----------
 
-**ngx_upstream_jdomain** - a load-balancer that resolves an upstream domain name asynchronously. It chooses one IP from its buffer according to round-robin for each request. Its buffer has the latest IPs of the backend domain name. At every interval (one second by default), it resolves the domain name. If it fails to resolve the domain name, the buffer retains the last successfully resolved IPs or uses a fallback IP specified by the user.
+**ngx_upstream_jdomain** - an upstream module that resolves an upstream domain name asynchronously. Its buffer has the latest IPs of the backend domain name and it integrates with the configured load balancing algorithm (least_conn, hash, etc) or the built in round robin if none is explicitly defined. At every interval (one second by default), it resolves the domain name. If it fails to resolve the domain name, the buffer retains the last successfully resolved IPs or uses a backup server IP specified by the user.
+
+.. warning:: The docs on this wiki can get out of date. For the authoritative information, please see the README file inside the module's :github:`git repository <nicholaschiasson/ngx_upstream_jdomain>`
 
 Example
 ^^^^^^^
@@ -18,9 +20,14 @@ Example
 		resolver_timeout 10s;
 
 		upstream backend {
-			jdomain  example.com;
-			# keepalive 10;
+			server 127.0.0.1:55555 backup;
+			jdomain example.com;
+			keepalive 8;
 		}
+		
+		server {
+			listen 55555;
+			return 502 'Panic!';
 
 		server {
 			listen 8080;
@@ -35,15 +42,13 @@ Directives
 
 jdomain
 ^^^^^^^
-:Syntax: *jdomain <domain-name> [port=80] [interval=1] [max_ips=20] [retry_off] [fallback= [strict]]*
+:Syntax: *jdomain <domain-name> [port=80] [interval=1] [max_ips=20] [strict]*
 :Default: *-*
 :Context: *upstream*
 :``port``: Backend's listening port.
 :``interval``: How many seconds to resolve domain name.
-:``max_ips``: IP buffer size.
-:``retry_off``: Do not retry if one IP fails.
-:``fallback``: Optional IP and port to use if <domain-name> resolves no IPs, resolves with a host not found error, or a format error.
-:``strict``: Forces use of fallback even in case of other resolution errors, such as timeouts, DNS server failures, connection refusals, etc.
+:``max_ips``: IP buffer size. Maximum number of resolved IPs to cache.
+:``strict``: As long as there are is another server in the upstream block, require the DNS resolution to succeed and return addresses, otherwise marks the underlying server and peers as down and forces use of other servers in the upstream block. A failed resolution can be a timeout, DNS server failure, connection refusals, response with no addresses, etc.
 
 Installation
 ------------
