@@ -99,9 +99,9 @@ Changelog
 Bugs
 ----
 
-Send bug reports to `Evan Miller <http://www.evanmiller.org/>`_.
+Send bug reports to `Evan Miller <https://www.evanmiller.org/>`_.
 
-`mod_zip <https://code.google.com/archive/p/mod-zip/>`_ at Google Code.
+`mod_zip <https://github.com/evanmiller/mod_zip>`_ on GitHub.
 
 Thanks
 ------
