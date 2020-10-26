@@ -199,7 +199,7 @@ Other Systems
 * :doc:`solaris_10_u5`
 * :doc:`solaris_11`
 * :doc:`openbsd`
-
+* :doc:`IBM Cloud`
 .. warning:: These pages are not thoroughly, if at all, reviewed for accuracy as they are on this page.
 
 After Installing
