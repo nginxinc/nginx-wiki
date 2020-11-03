@@ -121,6 +121,7 @@ We will deploy  Nginx on our cluster
 - Click on  **Enter or Select Namespace** and choose the default Namespace or use a custom one 
 
 .. image:: /source/images/details-namespace.png
+
 - Give a unique **name** to workspace, which you can easily recognize
 
 .. image:: /source/images/details-name.png
@@ -155,6 +156,7 @@ Verify Nginx installation
 - Go to Resources_ in your browser 
 - Click on **Clusters**
 - Click on your Cluster
+
 .. image:: /source/images/resource-select.png
 
 - Now you are at you clusters overview, here Click on **Actions** and **Web terminal** from the dropdown menu
@@ -172,6 +174,7 @@ Verify Nginx installation
 - **Type** in the terminal, please change NAMESPACE to the namespace you choose at the deployment setup:
 
 .. code-block:: bash
+
 $ kubectl get ns
 
 .. image:: /source/images/get-ns.png
