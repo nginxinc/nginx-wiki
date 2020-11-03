@@ -199,6 +199,7 @@ Other Systems
 * :doc:`solaris_10_u5`
 * :doc:`solaris_11`
 * :doc:`openbsd`
+* :doc:`IBM_Cloud`
 
 .. warning:: These pages are not thoroughly, if at all, reviewed for accuracy as they are on this page.
 
