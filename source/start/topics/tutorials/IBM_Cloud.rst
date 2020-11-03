@@ -78,6 +78,128 @@ Step 1 provision Kubernetes Cluster
 
 .. image:: /source/images/cluster-done.png
 
+Step 2 deploy IBM Cloud Block Storage plug-in
+---------------------------------------------
+The Block Storage plug-in is a persistent, high-performance iSCSI storage that you can add to your apps by using Kubernetes Persistent Volumes (PVs).
+ 
+- Click the **Catalog** button on the top 
+- Select **Software** from the catalog
+- Search for **IBM Cloud Block Storage plug-in** and click on it
+
+.. image:: /source/images/block-search.png
+
+- On the application page Click in the _dot_ next to the cluster, you wish to use
+- Click on  **Enter or Select Namespace** and choose the default Namespace or use a custom one (if you get error please wait 30 minutes for the cluster to finalize)
+
+.. image:: /source/images/block-cluster.png
+
+- Give a **name** to this workspace 
+- Click **install** and wait for the deployment
+
+.. image:: /source/images/block-storage-create.png
+ 
+
+Step 3 deploy Nginx
+-------------------
+
+We will deploy  Nginx on our cluster 
+  
+- Click the **Catalog** button on the top 
+- Select **Software** from the catalog
+- Search for **Nginx Opensource** and click on it
+
+.. image:: /source/images/nginx-search.png
+
+- Please select IBM Kubernetes Service
+
+.. image:: /source/images/select-target.png
+
+- On the application page Click in the _dot_ next to the cluster, you wish to use
+
+.. image:: /source/images/select-cluster.png
+
+- Click on  **Enter or Select Namespace** and choose the default Namespace or use a custom one 
+
+.. image:: /source/images/details-namespace.png
+- Give a unique **name** to workspace, which you can easily recognize
+
+.. image:: /source/images/details-name.png
+
+- Select which resource group you want to use, it's for access controll and billing purposes. For more information please visit resource groups_.
+
+.. image:: /source/images/details-resource.png
+
+- Give **tags** to your nginx workspace, for more information visit tags_.
+
+.. image:: /source/images/details-tags.png
+
+- Click on **Parameters with default values**, You can set deployment values or use the default ones
+
+![def-val](/parameters.png
+
+- After finishing everything, **tick** the box next to the agreements and click **install**
+
+.. image:: /source/images/install.png
+
+- The nginx workspace will start installing, wait a couple of minutes 
+
+.. image:: /source/images/in-progress.png
+
+- You nginx workspace has been successfully deployed
+
+.. image:: /source/images/done.png
+
+Verify Nginx installation
+-------------------------
+
+- Go to Resources_ in your browser 
+- Click on **Clusters**
+- Click on your Cluster
+.. image:: /source/images/resource-select.png
+
+- Now you are at you clusters overview, here Click on **Actions** and **Web terminal** from the dropdown menu
+
+
+.. image:: /source/images/cluster-main.png
+
+- Click **install** - wait couple of minutes 
+
+.. image:: /source/images/terminal-install.jpg
+
+- Click on **Actions**
+- Click **Web terminal** --> a terminal will open up
+
+- **Type** in the terminal, please change NAMESPACE to the namespace you choose at the deployment setup:
+
+.. code-block:: bash
+$ kubectl get ns
+
+.. image:: /source/images/get-ns.png
+
+
+.. code-block:: bash
+
+$ kubectl get pod -n NAMESPACE -o wide 
+
+.. image:: /source/images/get-pod.png
+
+.. code-block:: bash
+
+$ kubectl get service -n NAMESPACE
+
+.. image:: /source/images/get-service.png
+
+
+- Running Ngninx service will be visible 
+- Copy the **External ip**, you can access the website on this IP
+- Paste it into your browser
+- Nginx welcome message will be visible
+
+.. image:: /source/images/nginx-welcome.png
+
+You successfully deployed an Nginx webserver on IBM Cloud! 
+
+
 .. _here: http://cloud.ibm.com/registration
 .. _docs: https://cloud.ibm.com/docs/containers?topic=containers-infrastructure_providers
 .. _Locations: https://cloud.ibm.com/docs/containers?topic=containers-regions-and-zones#zones
@@ -85,3 +207,5 @@ Step 1 provision Kubernetes Cluster
 .. _Vlan-spanning: https://cloud.ibm.com/docs/vlans?topic=vlans-vlan-spanning#vlan-spanning
 .. _endpoints: https://cloud.ibm.com/docs/account?topic=account-service-endpoints-overview
 .. _tags: https://cloud.ibm.com/docs/account?topic=account-tag
+.. _Resources: http://cloud.ibm.com/resources
+.. _groups: https://cloud.ibm.com/docs/account?topic=account-account_setup#bp_resourcegroups
