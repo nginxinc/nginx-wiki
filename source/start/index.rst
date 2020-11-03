@@ -87,6 +87,7 @@ Getting Started
    topics/tutorials/solaris_10_u5
    topics/tutorials/solaris_11
    topics/tutorials/openbsd
+   topics/tutorials/IBM_Cloud
 
 We have this handy :doc:`getting started<topics/tutorials/gettingstarted>` document to get you going. There is also the following resources:
 
