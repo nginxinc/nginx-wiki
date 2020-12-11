@@ -1,0 +1,38 @@
+name: Linting
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  lint-html:
+    runs-on: ubuntu-latest
+    name: Lint HTML
+    steps:
+    - uses: actions/checkout@v2
+    - name: Using Python 3.4
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.4"
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+    - name: Lint
+      run: |
+        bash .ci/html.sh
+  linkcheck:
+    runs-on: ubuntu-latest
+    name: Check Links
+    continue-on-error: true
+    steps:
+    - uses: actions/checkout@v2
+    - name: Using Python 3.4
+      uses: actions/setup-python@v2
+      with:
+        python-version: "3.4"
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt
+    - name: Lint
+      run: |
+        bash .ci/linkcheck.sh
