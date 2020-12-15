@@ -161,7 +161,7 @@ upload.
 upload\_progress\_content\_type
 -------------------------------
 :Syntax: *upload\_progress\_content\_type*
-:Default: *test/javascript*
+:Default: *text/javascript*
 :Context: *location*
 
 This directive allows to change the upload progress probe response
