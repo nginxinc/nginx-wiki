@@ -76,6 +76,7 @@ Getting Started
    topics/recipes/zenphoto
    topics/recipes/fcgizope
    topics/recipes/b2evolution
+   topics/recipes/shopware
    topics/depth/ifisevil
    topics/tutorials/gettingstarted
    topics/tutorials/install
