@@ -35,8 +35,6 @@ Recipe
         }
 
         location /recovery/update/ {
-            location /recovery/update/assets {
-            }
             if (!-e $request_filename){
                 rewrite . /recovery/update/index.php last;
             }
