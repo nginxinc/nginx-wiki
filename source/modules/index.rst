@@ -335,6 +335,8 @@ https://github.com/nginxinc/nginx-wiki.
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | :doc:`zip`                | Assemble ZIP archives on the fly                                         | :github:`evanmiller/mod_zip`                                                                   |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| ngx_waf                   | A web application firewall module without complex configuration          | :github:`ADD-SP/ngx_waf`                                                                       |
++---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 
 
 ..
@@ -414,6 +416,7 @@ https://github.com/nginxinc/nginx-wiki.
    * VTS
    * XSS
    * Tarantool upstream module
+   * ngx_waf
 ..
    This is a list of modules we haven't added and why:
    * Access Key - no revision tree, was locally hosted
