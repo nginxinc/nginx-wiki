@@ -194,6 +194,10 @@ demand decreased almost 5%. We finally fell in love with our server.
 
 -- `Gary Stevens, Hosting Canada <https://hostingcanada.org/>`__
 
+NGINX is one of my favourite platforms to host WordPress sites and we at TechEngage host all of our network sites using NGINX technology. It's more faster, reliable and secure than Apache. Further, NGINX is capable of serving more requests than Apache. After years of building sites, we never look for any alternative and are happy with NGINX.
+
+-- `Jazib Zaman, TechEngage <https://techengage.com/>`__
+
 .. _why_use_it.notes:
 
 Notes
