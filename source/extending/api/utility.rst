@@ -144,7 +144,7 @@ ngx_strcmp
 ngx_strlen
 ^^^^^^^^^^
 
-.. c:function:: size_t strlen(const char *s)
+.. c:function:: size_t ngx_strlen(const char *s)
 
    An alias to the standard ``strlen`` function
 
@@ -165,7 +165,7 @@ ngx_strstr
 ngx_strchr
 ^^^^^^^^^^
 
-.. c:function:: char *strchr (const char *s1, int c)
+.. c:function:: char *ngx_strchr (const char *s1, int c)
 
    An alias to the standard ``strchr`` function
 
@@ -188,7 +188,7 @@ ngx_strlchr
 ngx_memzero
 ^^^^^^^^^^^
 
-.. c:function:: void memzero(void *buf, size_t n)
+.. c:function:: void ngx_memzero(void *buf, size_t n)
 
    Sets every byte of a given section of memory to zero
 
@@ -198,7 +198,7 @@ ngx_memzero
 ngx_memset
 ^^^^^^^^^^
 
-.. c:function:: void memset(void *buf, int c, size_t n)
+.. c:function:: void ngx_memset(void *buf, int c, size_t n)
 
    An alias for the standard ``memset`` function
 
