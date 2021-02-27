@@ -198,6 +198,12 @@ NGINX is one of my favourite platforms to host WordPress sites and we at TechEng
 
 -- `Jazib Zaman, TechEngage <https://techengage.com/>`__
 
+NGINX is an indispensable component of our hosting stack and we have always been impressed by how it adds a wonderful flavor to the recipe. Thanks to the varied implementation scenarios, great options, and performance, NGINX has played an important role in growing our customer base and delivering speed and performance that exceeds customers' expectations.
+
+We trust NGINX to take deliver blazing fast page load speed and a smooth experience to our customers who host everything from corporate websites to eLearning platforms to ecommerce shops on the Cloudways Platform.
+
+-- `Cloudways <https://www.cloudways.com/en/>`__
+
 .. _why_use_it.notes:
 
 Notes
