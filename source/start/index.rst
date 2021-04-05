@@ -77,6 +77,7 @@ Getting Started
    topics/recipes/fcgizope
    topics/recipes/b2evolution
    topics/recipes/shopware
+   topics/recipes/bagisto
    topics/depth/ifisevil
    topics/tutorials/gettingstarted
    topics/tutorials/install
