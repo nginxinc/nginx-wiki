@@ -5,7 +5,7 @@ FROM python:3.7
 WORKDIR /app
 
 # copying data
-COPY ./src/nginx-wiki .
+COPY . .
 
 # installing necessary dependencies
 RUN apt-get update && apt-get install -y make nginx
