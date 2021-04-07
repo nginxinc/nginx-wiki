@@ -76,7 +76,9 @@ Getting Started
    topics/recipes/zenphoto
    topics/recipes/fcgizope
    topics/recipes/b2evolution
+   topics/recipes/uvdesk
    topics/recipes/shopware
+   topics/recipes/bagisto
    topics/depth/ifisevil
    topics/tutorials/gettingstarted
    topics/tutorials/install
@@ -186,6 +188,7 @@ applications such as mediawiki don't work, please check if PHP FastCGI
 * :doc:`topics/recipes/zenphoto`
 * :doc:`topics/recipes/fcgizope`
 * :doc:`topics/recipes/b2evolution`
+* :doc:`topics/recipes/uvdesk`
 
 Other Examples
 --------------
