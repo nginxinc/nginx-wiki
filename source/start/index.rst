@@ -79,6 +79,7 @@ Getting Started
    topics/recipes/uvdesk
    topics/recipes/shopware
    topics/recipes/bagisto
+   topics/recipes/qloapps
    topics/depth/ifisevil
    topics/tutorials/gettingstarted
    topics/tutorials/install
@@ -189,6 +190,7 @@ applications such as mediawiki don't work, please check if PHP FastCGI
 * :doc:`topics/recipes/fcgizope`
 * :doc:`topics/recipes/b2evolution`
 * :doc:`topics/recipes/uvdesk`
+* :doc:`topics/recipes/qloapps`
 
 Other Examples
 --------------
