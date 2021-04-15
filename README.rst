@@ -1,8 +1,8 @@
 NGINX wiki
 ==========
 
-.. image:: https://travis-ci.org/nginxinc/nginx-wiki.svg
-    :target: https://travis-ci.org/nginxinc/nginx-wiki
+.. image:: https://github.com/nginxinc/nginx-wiki/workflows/Linting/badge.svg
+    :target: https://github.com/nginxinc/nginx-wiki/actions
 
 This is the source repository for the new NGINX wiki. It is written in reStructuredText format as intended to be compiled into HTML using `Sphinx Documentation Generator <http://sphinx-doc.org/>`_.
 
