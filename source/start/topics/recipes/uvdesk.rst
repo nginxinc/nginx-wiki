@@ -4,7 +4,11 @@
 UVdesk
 =======
 
+Uvdesk helpdesk is Build on top of Symfony(PHP Framework) and Backbone.js, uvdesk community is a service oriented, event driven extensible opensource helpdesk system that can be used by your organization to provide efficient support to your clients effortlessly whichever way you imagine.
+
 UVDesk Opensource Community Helpdesk Project built for all to make a full Ticketing Support System along with many more other features.
+
+https://www.uvdesk.com/en/opensource/
 
 Recipe
 ------
