@@ -10,6 +10,8 @@ From small independent hotels to big hotel chains, QloApps is a one-stop solutio
 
 You will be able to launch your hotel website, showcase your property and take and manage bookings.
 
+https://qloapps.com/
+
 
 Recipe
 ------
