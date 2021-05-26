@@ -9,7 +9,7 @@ Pitfalls and Common Mistakes
 
 New and old users alike can run into a pitfall. Below we outline issues that we
 see frequently as well as explain how to resolve those issues. In the #nginx IRC
-channel on Freenode, we see these issues frequently.
+channel on Libera Chat, we see these issues frequently.
 
 This Guide Says
 ---------------

@@ -60,12 +60,12 @@ the ways that we expect all users and operators to adhere to.
   still expected that our users have and use it. As a general rule, treat
   everyone the way you want to be treated. 
 
-This list is not inclusive. We will uphold the `Freenode Network Guidelines`_
-as well as the `Freenode Channel Guidelines`_. Any and all users should both
+This list is not inclusive. We will uphold the `Libera Chat Network Guidelines`_
+as well as the `Libera Chat Channel Guidelines`_. Any and all users should both
 follow and enforce these guidelines where they see fit.
 
-.. _`Freenode Network Guidelines`: https://freenode.net/policies
-.. _`Freenode Channel Guidelines`: https://freenode.net/changuide
+.. _`Libera Chat Network Guidelines`: https://libera.chat/policies
+.. _`Libera Chat Channel Guidelines`: https://libera.chat/guidelines
 
 Appeals Process
 ---------------
