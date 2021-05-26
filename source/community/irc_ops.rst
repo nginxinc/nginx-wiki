@@ -25,7 +25,7 @@ Here are some points to remember when enabling operator status:
 * *Don't use ignore*: Even when people are very offensive to you in private
   chat, don't use your /ignore function. A soft-ignore (simply not
   responding) works nearly as well. If you /ignore too much, chances are you
-  will miss problems in the channel. Freenode also has +g user mode, which 
+  will miss problems in the channel. Libera Chat also has +g user mode, which 
   blocks private messages and notices but not channel activity. If someone is
   abusive in private, /mode <your_nick> +g can help; you can add exceptions with
   /accept command. Do not filter your channel info (joins/parts/klines etc).
@@ -46,7 +46,7 @@ Here are some points to remember when enabling operator status:
   how to comment on that ban. This makes it both very easy and very efficient to
   add comments about bans, which makes managing future issues much easier. 
 * *Don't retaliate*: If someone misbehaves, don't retaliate. Take only the
-  appropriate actions to prevent further abuse (kick, ban, contact Freenode
+  appropriate actions to prevent further abuse (kick, ban, contact Libera Chat
   staff). Retaliation is against the :ref:`community-irc-coc` and makes us
   look bad as an operator team. As operators we expect users to retaliate when
   we reprimand them. This is what a ban is for and if users attempt to evade a
