@@ -597,6 +597,11 @@ ngx.req.socket
 
 See :github:`openresty/lua-nginx-module#ngxreqsocket`
 
+ngx.req.is_internal
+^^^^^^^^^^^^^^^^^^^
+
+See :github:`openresty/lua-nginx-module#ngxreqis_internal`
+
 ngx.exec
 ^^^^^^^^
 
