@@ -22,6 +22,7 @@ Here's the basic configuration used for the NGINX wiki.
     server {
         server_name wiki.nginx.org;
         root /var/www/mediawiki;
+        index  index.php;
 
         client_max_body_size 5m;
         client_body_timeout 60;
@@ -36,6 +37,10 @@ Here's the basic configuration used for the NGINX wiki.
 
         location ^~ /maintenance/ {
             return 403;
+        }
+        
+         location /rest.php {
+            try_files $uri $uri/ /rest.php?$args;
         }
 
         location ~ \.php$ {
