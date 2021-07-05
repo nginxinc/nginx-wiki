@@ -10,7 +10,7 @@ Binary Releases
 
 Prebuilt Packages for Linux and BSD
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-Most Linux distributions and BSD variants have NGINX in the usual package repositories and they can be installed via whatever method is normally used to install software (``apt-get`` on Debian, ``emerge`` on Gentoo, ``ports`` on FreeBSD, etc).
+Most Linux distributions and BSD variants have NGINX in the usual package repositories and they can be installed via whatever method is normally used to install software (``apt`` on Debian, ``emerge`` on Gentoo, ``ports`` on FreeBSD, etc).
 
 Be aware that these packages are often somewhat out-of-date.
 If you want the latest features and bugfixes, it's recommended to build from source or use packages directly from nginx.org.
@@ -58,28 +58,35 @@ Append the appropriate stanza to ``/etc/apt/sources.list``. If there is concern 
   deb https://nginx.org/packages/ubuntu/ $release nginx
   deb-src https://nginx.org/packages/ubuntu/ $release nginx
 
-e.g. Ubuntu 16.04 (Xenial):
+e.g. Ubuntu 20.04 (Focal Fossa):
 
 .. code-block:: bash
 
-  deb https://nginx.org/packages/ubuntu/ xenial nginx
-  deb-src https://nginx.org/packages/ubuntu/ xenial nginx
+  deb https://nginx.org/packages/ubuntu/ focal nginx
+  deb-src https://nginx.org/packages/ubuntu/ focal nginx
 
 To install the packages, execute in your shell:
 
 .. code-block:: bash
 
-  sudo apt-get update
-  sudo apt-get install nginx
+  sudo apt update
+  sudo apt install nginx
 
-If a ``W: GPG error: https://nginx.org/packages/ubuntu xenial Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY $key`` is encountered during the NGINX repository update, execute the following:
+If a ``W: GPG error: https://nginx.org/packages/ubuntu focal InRelease: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY $key`` is encountered during the NGINX repository update, execute the following:
 
 .. code-block:: bash
 
   ## Replace $key with the corresponding $key from your GPG error.
   sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $key
-  sudo apt-get update
-  sudo apt-get install nginx
+  sudo apt update
+  sudo apt install nginx
+
+You have now nginx installed on your server but not ready to serve web pages. you have to start the nginx.
+You can do this by using this command:
+
+.. code-block:: bash
+
+ sudo systemctl start nginx
 
 Debian 6:
 
@@ -98,15 +105,15 @@ This PPA is maintained by volunteers and is not distributed by nginx.org.  It ha
 You can get the latest stable version of NGINX from the `NGINX PPA <https://launchpad.net/~nginx/+archive/ubuntu/development>`_ on Launchpad:
 You will need to have root privileges to perform the following commands.
 
-For Ubuntu 10.04 and newer:
+For Ubuntu 20.04 and newer:
 
 .. code-block:: bash
 
   sudo -s
   nginx=stable # use nginx=development for latest development version
   add-apt-repository ppa:nginx/$nginx
-  apt-get update
-  apt-get install nginx
+  apt update
+  apt install nginx
 
 If you get an error about add-apt-repository not existing, you will want to install ``python-software-properties``.
 For other Debian/Ubuntu based distributions, you can try the lucid variant of the PPA which is the most likely to work on older package sets:
@@ -117,8 +124,8 @@ For other Debian/Ubuntu based distributions, you can try the lucid variant of th
   nginx=stable # use nginx=development for latest development version
   echo "deb http://ppa.launchpad.net/nginx/$nginx/ubuntu lucid main" > /etc/apt/sources.list.d/nginx-$nginx-lucid.list
   apt-key adv --keyserver keyserver.ubuntu.com --recv-keys C300EE8C
-  apt-get update
-  apt-get install nginx
+  apt update
+  apt install nginx
 
 
 
@@ -153,7 +160,7 @@ In addition, Kevin Worthington maintains earlier `Windows <https://kevinworthing
 
 Source Releases
 ---------------
-There are currently two versions of NGINX available: ``stable (1.10.x)``, ``mainline (1.11.x)``.
+There are currently two versions of NGINX available: ``stable (1.20.x)``, ``mainline (1.21.x)``.
 The mainline branch gets new features and bugfixes sooner but might introduce new bugs as well.
 Critical bugfixes are backported to the stable branch.
 
@@ -163,14 +170,14 @@ See the :ref:`FAQ <faq.is_it_safe>`.
 
 Stable
 ^^^^^^
-| `NGINX 1.10.1 <https://nginx.org/download/nginx-1.10.1.tar.gz>`_  
-| 31 May 2016  
-| `changelog <https://nginx.org/en/CHANGES-1.10>`__  
+| `NGINX 1.20.1 <https://nginx.org/download/nginx-1.20.1.tar.gz>`_  
+| 25 May 2021  
+| `changelog <https://nginx.org/en/CHANGES-1.20>`__  
 
 Mainline
 ^^^^^^^^
-| `NGINX 1.11.3 <https://nginx.org/download/nginx-1.11.3.tar.gz>`_  
-| 26 Jul 2016  
+| `NGINX 1.21.0 <https://nginx.org/download/nginx-1.21.0.tar.gz>`_  
+| 25 May 2021  
 | `changelog <https://nginx.org/en/CHANGES>`__  
 
 Source code repository is at `hg.nginx.org/nginx <http://hg.nginx.org/nginx>`_.
@@ -192,6 +199,7 @@ By default, NGINX will be installed in ``/usr/local/nginx``. You may change this
 
 You might also want to peruse the :doc:`3rd party modules <../../../modules/index>`, since these must be built at compile-time.
 
+You can follow this guide for more detailed instruction for [building nginx from source](https://www.armanism.com/blog/install-nginx-on-ubuntu)
 
 Other Systems
 ^^^^^^^^^^^^^
