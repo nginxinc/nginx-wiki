@@ -199,7 +199,7 @@ By default, NGINX will be installed in ``/usr/local/nginx``. You may change this
 
 You might also want to peruse the :doc:`3rd party modules <../../../modules/index>`, since these must be built at compile-time.
 
-You can follow this guide for more detailed instruction for [building nginx from source](https://www.armanism.com/blog/install-nginx-on-ubuntu)
+You can follow this guide for more detailed instruction for `building nginx from source <https://www.armanism.com/blog/install-nginx-on-ubuntu>`_
 
 Other Systems
 ^^^^^^^^^^^^^
