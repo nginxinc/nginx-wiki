@@ -4,7 +4,7 @@
 Bagisto
 =======
 
-Bagisto is a hand tailored E-Commerce framework built on some of the hottest opensource technologies such as Laravel (a PHP framework) and Vue.js a progressive Javascript framework.
+Bagisto (Community E-Commerce Project by `Webkul <https://store.webkul.com/Bagisto.html>`_) is a hand tailored E-Commerce framework built on some of the hottest opensource technologies such as Laravel (a PHP framework) and Vue.js a progressive Javascript framework.
 
 Bagisto can help you to cut down your time, cost, and workforce for building online stores or migrating from physical stores to the ever demanding online world.
 
