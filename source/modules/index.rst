@@ -309,6 +309,8 @@ https://github.com/nginxinc/nginx-wiki.
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | TestCookie module         | Simple robot (DDoS) mitigation module                                    | :github:`kyprizel/testcookie-nginx-module`                                                     |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| Transcode module          | NGINX module for media transcoding                                       | :github:`HiSunzhenliang/nginx-transcode-module`                                                |
++---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Types Filter              | Changes the *Content-Type* output header on specified conditions         | :github:`flygoast/ngx_http_types_filter`                                                       |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | UnTar                     | serve static file content from tar archives                              | :github:`ajax16384/ngx_http_untar_module`                                                      |
@@ -480,6 +482,7 @@ https://github.com/nginxinc/nginx-wiki.
    redis
    redis2
    tarantool
+   transcode
    rrd_graph
    secure_download
    set_misc
