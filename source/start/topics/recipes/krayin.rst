@@ -1,5 +1,5 @@
 .. meta::
-   :description: A sample NGINX configuration for Bagisto.
+   :description: A sample NGINX configuration for Krayin.
 
 Krayin
 =======
