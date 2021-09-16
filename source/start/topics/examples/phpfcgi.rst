@@ -158,7 +158,7 @@ Notes
 
 #. The ``SCRIPT_FILENAME`` parameter is required as it is passed to PHP FPM to determine the script name.
 
-   In the builds of NGINX for a lot of Linux distributions, this parameter has been added in ``fastcgi_params file``, i.e. ``/etc/nginx/fastcgi_params``so the users could import all the CGI params via the ``include`` directive, i.e. ``include fastcgi_params`` . But for some distributions, such as CentOS, this parameter does not exist in ``fastcgi_params file``.
+   In the builds of NGINX for a lot of Linux distributions, this parameter has been added in the ``fastcgi_params`` file, i.e. ``/etc/nginx/fastcgi_params`` so the users could import all the CGI params via the ``include`` directive, i.e. ``include fastcgi_params`` . But for some distributions, such as CentOS, this parameter does not exist in the ``fastcgi_params`` file.
 
    If this parameter is not set, PHP FPM responses 200 OK with empty content, and there is no error or warning. 
    For more informaton about the CGI params, please refer to `nginx beginners guide <https://nginx.org/en/docs/beginners_guide.html#fastcgi>`_, `$_SERVER in PHP <http://php.net/manual/en/reserved.variables.server.php>`_ and `RFC3875 <http://www.ietf.org/rfc/rfc3875>`_.
