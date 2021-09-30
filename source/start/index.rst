@@ -79,6 +79,7 @@ Getting Started
    topics/recipes/uvdesk
    topics/recipes/shopware
    topics/recipes/bagisto
+   topics/recipes/krayin
    topics/recipes/qloapps
    topics/depth/ifisevil
    topics/tutorials/gettingstarted
