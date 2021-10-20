@@ -341,6 +341,8 @@ https://github.com/nginxinc/nginx-wiki.
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | ngx_sqlite                | Allow accessing SQLite database directly from HTTP requests              | :github:`rryqszq4/ngx_sqlite`                                                                  |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| ngx_casbin                | A powerful authorization module with casbin supports flexible policy     | :github:`casbin-cpp/nginx-casbin-module`                                                       |
++---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 
 ..
    This is a list of modules that didn't have a wiki page on the old wiki:
@@ -420,6 +422,7 @@ https://github.com/nginxinc/nginx-wiki.
    * XSS
    * Tarantool upstream module
    * ngx_waf
+   * ngx_casbin 
 ..
    This is a list of modules we haven't added and why:
    * Access Key - no revision tree, was locally hosted
