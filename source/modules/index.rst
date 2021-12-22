@@ -323,6 +323,8 @@ https://github.com/nginxinc/nginx-wiki.
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Url                       | A module to convert uri to user-defined encoding                         | :github:`vozlt/nginx-module-url`                                                               |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| Upstream Healthcheck      | A module to support upstream health check via various ways               | :github:`yaoweibin/nginx_upstream_check_module`                                                 |
++---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | :doc:`user_agent`         | A more powerful module than the native BrowserModule                     | :github:`alibaba/nginx-http-user-agent`                                                        |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Video Thumb Extractor     | NGINX module to extract thumbs from a video file                         | :github:`wandenberg/nginx-video-thumbextractor-module`                                         |
