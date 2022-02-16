@@ -203,6 +203,9 @@ https://github.com/nginxinc/nginx-wiki.
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | Passenger                 | NGINX-based application server for Ruby, Node.js and Python apps         | `Download <https://www.phusionpassenger.com/>`__, :support:`passenger-open-source`             |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
+| :doc:`phoenix`            | An NGINX proxy that has improved stability and effective resiliency      | :github:`R6-Security-Phoenix/mod-nginx-phoenix`                                                |
+|                           | against man-in-the-middle attacks coming from network.                   |                                                                                                |
++---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | PHP                       | Embedded php script language for nginx-module                            | :github:`rryqszq4/ngx_php`                                                                     |
 +---------------------------+--------------------------------------------------------------------------+------------------------------------------------------------------------------------------------+
 | PHP Session Parser        | Extract values that are stored in a serialized PHP session               | :github:`replay/ngx_http_php_session`                                                          |
@@ -480,6 +483,7 @@ https://github.com/nginxinc/nginx-wiki.
    mp4_streaming
    Nchan
    owner_match
+   phoenix
    push_stream
    rdns
    redis
