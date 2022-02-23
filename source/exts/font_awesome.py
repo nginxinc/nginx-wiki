@@ -85,13 +85,13 @@ def support_role(role, rawtext, text, lineno, inliner, options={}, content=[]):
 
 
 def setup(app): # pragma: no cover
-    app.info('Adding the font awesome icon role')
+    # app.info('Adding the font awesome icon role')
     app.add_role('icon', icon_role)
-    app.info('Adding the font awesome github role')
+    # app.info('Adding the font awesome github role')
     app.add_role('github', github_role)
-    app.info('Adding the font awesome bitbucket role')
+    # app.info('Adding the font awesome bitbucket role')
     app.add_role('bitbucket', bitbucket_role)
-    app.info('Adding the font awesome nginx support link role')
+    # app.info('Adding the font awesome nginx support link role')
     app.add_role('support', support_role)
 
     return
