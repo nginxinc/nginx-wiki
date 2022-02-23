@@ -20,7 +20,7 @@ jobs:
       - name: Using Python 3
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8
+          python-version: 3.x
 
       - name: Install dependencies
         run: |
@@ -41,7 +41,7 @@ jobs:
       - name: Using Python 3
         uses: actions/setup-python@v2
         with:
-          python-version: 3.8
+          python-version: 3.x
 
       - name: Install dependencies
         run: |
