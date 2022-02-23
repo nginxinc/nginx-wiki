@@ -316,7 +316,6 @@ linkcheck_ignore = [
                     r'.*calomel.org.*', # urlopen error EOF occurred in violation of protocol (_ssl.c:600)
                     r'.*linux.die.net/*', # Network unreachable on CI
                     r'.*catap.ru.*' # 302 error
-                    r'.*github.*' # GitHub URLs
                    ]
 
 

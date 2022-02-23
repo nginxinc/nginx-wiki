@@ -1,7 +1,13 @@
 name: Linting
 "on":
-  push:
   pull_request:
+    branches:
+      - master
+  push:
+    branches:
+      - master
+    ignore-tags:
+      - "*"
   workflow_dispatch:
 jobs:
   lint-html:
