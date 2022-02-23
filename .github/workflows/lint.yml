@@ -48,5 +48,6 @@ jobs:
           pip3 install -r requirements.txt
 
       - name: Check links
+        continue-on-error: true
         run: |
           bash .ci/linkcheck.sh
