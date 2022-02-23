@@ -1,1 +1,1 @@
-sphinx-build -b linkcheck -d build/doctrees source build/linkcheck
+sphinx-build --color -b linkcheck -d build/doctrees source build/linkcheck
