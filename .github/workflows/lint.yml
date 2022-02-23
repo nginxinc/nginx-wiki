@@ -33,7 +33,6 @@ jobs:
   linkcheck:
     runs-on: ubuntu-20.04
     name: Check Links
-    continue-on-error: true
     steps:
       - name: Check out the codebase
         uses: actions/checkout@v2
