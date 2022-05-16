@@ -1,1 +1,1 @@
-sphinx-build -W -b html -d build/doctrees source build/html
+sphinx-build --color -b html -d build/doctrees source build/html

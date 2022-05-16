@@ -1,38 +1,52 @@
 name: Linting
-
-on:
-  push:
+"on":
   pull_request:
-
+    branches:
+      - master
+  push:
+    branches:
+      - master
+    ignore-tags:
+      - "*"
+  workflow_dispatch:
 jobs:
   lint-html:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     name: Lint HTML
     steps:
-      - uses: actions/checkout@v2
-      - name: Using Python 3.4
+      - name: Check out the codebase
+        uses: actions/checkout@v2
+
+      - name: Using Python 3
         uses: actions/setup-python@v2
         with:
-          python-version: "3.4"
+          python-version: 3.x
+
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
-      - name: Lint
+          pip3 install -r requirements.txt
+
+      - name: Lint HTML
         run: |
           bash .ci/html.sh
+
   linkcheck:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-20.04
     name: Check Links
-    continue-on-error: true
     steps:
-      - uses: actions/checkout@v2
-      - name: Using Python 3.4
+      - name: Check out the codebase
+        uses: actions/checkout@v2
+
+      - name: Using Python 3
         uses: actions/setup-python@v2
         with:
-          python-version: "3.4"
+          python-version: 3.x
+
       - name: Install dependencies
         run: |
-          pip install -r requirements.txt
-      - name: Lint
+          pip3 install -r requirements.txt
+
+      - name: Check links
+        continue-on-error: true
         run: |
           bash .ci/linkcheck.sh
