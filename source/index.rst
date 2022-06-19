@@ -2,6 +2,10 @@
 .. meta::
    :description: This is the NGINX Wiki. NGINX is a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
 
+
+This NGINX wiki is now archived, and no longer maintained or updated. Please refer to docs.nginx.com for the latest on NGINX documentation.
+
+
 NOTE: The NGINX Wiki is no longer mantained nor is it checked for correctness. The content will remain here for the time being, but it will be taken down and archived at some stage in the near future.
 
 Welcome to NGINX Wiki!
@@ -35,7 +39,6 @@ NGINX powers several high-visibility sites, such as `Netflix <https://www.netfli
    start/index
    community/index
    modules/index
-   contributing/index
    extending/index
 
 .. |moduleicon| replace:: :icon:`puzzle-piece`
