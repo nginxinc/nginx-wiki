@@ -8,6 +8,7 @@ This NGINX wiki is now archived, and no longer maintained or updated. Please ref
 
 NOTE: The NGINX Wiki is no longer mantained nor is it checked for correctness. The content will remain here for the time being, but it will be taken down and archived at some stage in the near future.
 
+
 Welcome to NGINX Wiki!
 ======================
 
@@ -27,11 +28,11 @@ NGINX powers several high-visibility sites, such as `Netflix <https://www.netfli
 
 .. _introtable:
 
-+----------------+------------------+---------------+----------------+
-| |startedicon|_ | |communityicon|_ | |moduleicon|_ | |contribicon|_ |
-+----------------+------------------+---------------+----------------+
-| |startedtext|_ | |communitytext|_ | |moduletext|_ | |contribtext|_ |
-+----------------+------------------+---------------+----------------+
++----------------+------------------+---------------+
+| |startedicon|_ | |communityicon|_ | |moduleicon|_ |
++----------------+------------------+---------------+
+| |startedtext|_ | |communitytext|_ | |moduletext|_ |
++----------------+------------------+---------------+
 
 .. toctree::
    :hidden:
@@ -58,9 +59,3 @@ NGINX powers several high-visibility sites, such as `Netflix <https://www.netfli
 
 .. |startedtext| replace:: Getting Started
 .. _startedtext: start/index.html
-
-.. |contribicon| replace:: :icon:`wrench`
-.. _contribicon: contributing/index.html
-
-.. |contribtext| replace:: Contributing
-.. _contribtext: contributing/index.html
