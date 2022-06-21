@@ -3,7 +3,7 @@
    :description: This is the NGINX Wiki. NGINX is a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
 
 
-**This NGINX wiki is now archived, and no longer maintained or updated. Please refer to `docs.nginx.com <https://docs.nginx.com>`_ for the latest on NGINX documentation.**
+**This NGINX wiki is now archived, and no longer maintained or updated. Please refer to** `docs.nginx.com <https://docs.nginx.com>`_ **for the latest on NGINX documentation.**
 
 
 NOTE: The NGINX Wiki is no longer mantained nor is it checked for correctness. The content will remain here for the time being, but it will be taken down and archived at some stage in the near future.
