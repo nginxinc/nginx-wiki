@@ -2,7 +2,7 @@
 .. meta::
    :description: This is the NGINX Wiki. NGINX is a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
 
-NOTE: The NGINX Wiki is no longer mantained nor is it checked for correctness. The content will remain here for the time being, but it will be taken down and archived at some stage in the near future.
+NOTE: The NGINX Wiki is now archived, and is longer mantained nor checked for correctness. The content will remain archived here for the time being, but it will be taken down at some stage in the near future. Please refer to docs.nginx.com for the latest on NGINX documentation.
 
 Welcome to NGINX Wiki!
 ======================
@@ -23,11 +23,11 @@ NGINX powers several high-visibility sites, such as `Netflix <https://www.netfli
 
 .. _introtable:
 
-+----------------+------------------+---------------+----------------+
-| |startedicon|_ | |communityicon|_ | |moduleicon|_ | |contribicon|_ |
-+----------------+------------------+---------------+----------------+
-| |startedtext|_ | |communitytext|_ | |moduletext|_ | |contribtext|_ |
-+----------------+------------------+---------------+----------------+
++----------------+------------------+---------------+
+| |startedicon|_ | |communityicon|_ | |moduleicon|_ |
++----------------+------------------+---------------+
+| |startedtext|_ | |communitytext|_ | |moduletext|_ |
++----------------+------------------+---------------+
 
 .. toctree::
    :hidden:
@@ -35,7 +35,6 @@ NGINX powers several high-visibility sites, such as `Netflix <https://www.netfli
    start/index
    community/index
    modules/index
-   contributing/index
    extending/index
 
 .. |moduleicon| replace:: :icon:`puzzle-piece`
@@ -55,9 +54,3 @@ NGINX powers several high-visibility sites, such as `Netflix <https://www.netfli
 
 .. |startedtext| replace:: Getting Started
 .. _startedtext: start/index.html
-
-.. |contribicon| replace:: :icon:`wrench`
-.. _contribicon: contributing/index.html
-
-.. |contribtext| replace:: Contributing
-.. _contribtext: contributing/index.html
