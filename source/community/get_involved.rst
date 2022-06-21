@@ -16,7 +16,6 @@ A short list of ways to get involved:
 * Jump into the :ref:`community-irc` and help answer questions.
 * Report and track bugs using the NGINX `bug tracker`_.
 * Subscribe to the :ref:`community-email`.
-* You can also :doc:`contribute <../contributing/index>` to NGINX and this wiki.
 
 There are other ways to contribute, but this is a list of our "big ticket" items.
 
