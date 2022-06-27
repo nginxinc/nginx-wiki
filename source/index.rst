@@ -24,16 +24,17 @@ NGINX powers several high-visibility sites, such as `Netflix <https://www.netfli
 
 .. _introtable:
 
-+----------------+---------------+
-| |startedicon|_ | |moduleicon|_ |
-+----------------+---------------+
-| |startedtext|_ | |moduletext|_ |
-+----------------+---------------+
++----------------+------------------+---------------+
+| |startedicon|_ | |communityicon|_ | |moduleicon|_ |
++----------------+------------------+---------------+
+| |startedtext|_ | |communitytext|_ | |moduletext|_ |
++----------------+------------------+---------------+
 
 .. toctree::
    :hidden:
 
    start/index
+   community/index
    modules/index
    extending/index
 
@@ -42,6 +43,12 @@ NGINX powers several high-visibility sites, such as `Netflix <https://www.netfli
 
 .. |moduletext| replace:: 3\ :sup:`rd` Party Modules
 .. _moduletext: modules/index.html
+
+.. |communityicon| replace:: :icon:`users`
+.. _communityicon: community/index.html
+
+.. |communitytext| replace:: Community
+.. _communitytext: community/index.html
 
 .. |startedicon| replace:: :icon:`play`
 .. _startedicon: start/index.html
