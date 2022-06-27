@@ -3,11 +3,7 @@
    :description: This is the NGINX Wiki. NGINX is a free, open-source, high-performance HTTP server, reverse proxy, and IMAP/POP3 proxy server.
 
 
-**This NGINX wiki is now archived, and no longer maintained or updated. Please refer to** `docs.nginx.com <https://docs.nginx.com>`_ **for the latest on NGINX documentation.**
-
-
-NOTE: The NGINX Wiki is no longer mantained nor is it checked for correctness. The content will remain here for the time being, but it will be taken down and archived at some stage in the near future.
-
+**This NGINX wiki is now archived, and no longer maintained or updated, and the content will be taken down at some stage in the near future. Please refer to** `docs.nginx.com <https://docs.nginx.com>`_ **for the latest on NGINX documentation.**
 
 Welcome to NGINX Wiki!
 ======================
@@ -28,17 +24,16 @@ NGINX powers several high-visibility sites, such as `Netflix <https://www.netfli
 
 .. _introtable:
 
-+----------------+------------------+---------------+
-| |startedicon|_ | |communityicon|_ | |moduleicon|_ |
-+----------------+------------------+---------------+
-| |startedtext|_ | |communitytext|_ | |moduletext|_ |
-+----------------+------------------+---------------+
++----------------+---------------+
+| |startedicon|_ | |moduleicon|_ |
++----------------+---------------+
+| |startedtext|_ | |moduletext|_ |
++----------------+---------------+
 
 .. toctree::
    :hidden:
 
    start/index
-   community/index
    modules/index
    extending/index
 
@@ -47,12 +42,6 @@ NGINX powers several high-visibility sites, such as `Netflix <https://www.netfli
 
 .. |moduletext| replace:: 3\ :sup:`rd` Party Modules
 .. _moduletext: modules/index.html
-
-.. |communityicon| replace:: :icon:`users`
-.. _communityicon: community/index.html
-
-.. |communitytext| replace:: Community
-.. _communitytext: community/index.html
 
 .. |startedicon| replace:: :icon:`play`
 .. _startedicon: start/index.html
