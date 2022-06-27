@@ -133,5 +133,5 @@ Setup Scripts
 What Happens
 ------------
 The sudo command will launch the fcgiwrapper init script as the www-data user. 
-The script bings a listener thread to ``/tmp/cgi.sock``. 
+The script binds a listener thread to ``/tmp/cgi.sock``. 
 This is what you need to use in `fastcgi_pass <https://nginx.org/en/docs/http/ngx_http_fastcgi_module.html#fastcgi_pass>`_: ``fastcgi_pass unix:/tmp/cgi.sock;``
