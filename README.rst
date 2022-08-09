@@ -1,3 +1,5 @@
+# This repository has been archived. There will likely be no further development on the project and security vulnerabilities may be unaddressed.#
+
 **NOTE:** The NGINX Wiki is now archived, and is longer mantained nor checked for correctness. The content will remain archived here for the time being, but it will be taken down at some stage in the near future. Please refer to the `NGINX Docs <https://docs.nginx.com/>`_ for the latest NGINX documentation.
 
 NGINX wiki
