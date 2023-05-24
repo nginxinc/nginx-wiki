@@ -1,4 +1,6 @@
-
+.. image:: https://www.repostatus.org/badges/latest/abandoned.svg
+   :alt: Project Status: Abandoned – Initial development has started, but there has not yet been a stable, usable release; the project has been abandoned and the author(s) do not intend on continuing development.
+   :target: https://www.repostatus.org/#abandoned
 
 **NOTE:** The NGINX Wiki is now archived, and is longer mantained nor checked for correctness. The content will remain archived here for the time being, but it will be taken down at some stage in the near future. Please refer to the `NGINX Docs <https://docs.nginx.com/>`_ for the latest NGINX documentation.
 
